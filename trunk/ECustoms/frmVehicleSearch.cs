@@ -95,8 +95,7 @@ namespace ECustoms
             try
             {
                 grdVehicle.AutoGenerateColumns = false;
-                List<ViewAllVehicleHasGood> result;
-                result = VehicleFactory.SearchVehicle(cbIsCompleted.Checked, txtPlateNumber.Text, cbIsExport.Checked, cbIsImport.Checked, cbIsNotImport.Checked, dtpImportFrom.Value, dtpImportTo.Value,
+                List<ViewAllVehicleHasGood> result = VehicleFactory.SearchVehicle(cbIsCompleted.Checked, txtPlateNumber.Text, cbIsExport.Checked, cbIsImport.Checked, cbIsNotImport.Checked, dtpImportFrom.Value, dtpImportTo.Value,
                                                         dtpExportFrom.Value, dtpExportTo.Value);
                 // Limit xe khong cho hang
                 if(checkBoxNoItem.Checked)

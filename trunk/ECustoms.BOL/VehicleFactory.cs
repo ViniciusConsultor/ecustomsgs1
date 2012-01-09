@@ -32,68 +32,93 @@ namespace ECustoms.BOL
 
             List<ViewAllVehicleHasGood> result;
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            
+
+            IQueryable<ViewAllVehicleHasGood> _viewAllVehicle = db.ViewAllVehicleHasGoods;//.Where(g => g.PlateNumber.Contains(plateNumber));
+            _viewAllVehicle = !string.IsNullOrEmpty(plateNumber) ? _viewAllVehicle.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)) : _viewAllVehicle;
+
+            // Da hoan thanh: la xe co IsCompleted==true (nhap canh co hang va da vao noi dia)
             if (isCompleted)
-            {  // Da hoan thanh: la xe co IsCompleted==true (nhap canh co hang va da vao noi dia)
+            {
+                // Da xuat
                 if (isExport)
-                {  // Da xuat                        
+                {
+                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsGoodsImported == true || g.DeclarationID == 0));
+                    // da nhap theo thoi gian
                     if (isImport)
-                    { // da nhap theo thoi gian
+                    {
                         // Lay nhung ban ghi da hoan thanh theo export va import
-                            result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted==true && g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0 ))).ToList();
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true && g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo));
+                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true && g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
                     }
+                    // Khong quan tam toi thoi gian nhap
                     else
-                    { // Khong quan tam toi thoi gian nhap
+                    {
                         // Chi lay nhung ban ghi da xuat va isImprot = true
-                        result =  db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted==true) && (g.IsExport == true) && (g.IsImport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
+                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
                     }
                 }
+                // da xuat = uncheck
                 else
-                {  // da xuat = uncheck
+                {
                     // Lay tat ca ban ghi ma da hoan tat, khong quan tam toi thoi gian
-                  result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true) &&  (g.IsExport == true) && (g.IsImport == true) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
+                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true));
+                    //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
                 }
             }
-            else // Chua hoanthanh
-            {  
+            // Chua hoanthanh
+            else
+            {
+                // Da xuat
                 if (isExport)
-                {  // Da xuat
-                    if (isNotImport)// chua nhap canh
+                {
+                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsGoodsImported == null || g.IsGoodsImported == false));
+                    // chua nhap canh
+                    if (isNotImport)
                     {
-                        // chi lay nhung ban ghi da xuat, ma chua nhap                            
-                        result =  db.ViewAllVehicleHasGoods.Where(g => g.IsExport == true && (g.IsImport == null ||  g.IsImport == false) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
+                        // chi lay nhung ban ghi da xuat, ma chua nhap      
+                        _viewAllVehicle = _viewAllVehicle.Where(g => g.IsExport == true && (g.IsImport == null || g.IsImport == false) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
+                        //result = db.ViewAllVehicleHasGoods.Where(g => g.IsExport == true && (g.IsImport == null || g.IsImport == false) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
                     }
-                    else if(isImport)
+                    else if (isImport)
                     {
-                        result =  db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) &&  (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();                             
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo));
+                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
                     }
                     else
                     {
                         // chi lay ban ghi da xuat canh, khong quan tam da nhap  hay chua
-                    // chi lay nhung ban ghi da xuat, ma chua nhap                            
-                    // order by exported date
-                    result =  db.ViewAllVehicleHasGoods.Where(g => (g.IsExport != null &&  g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();    
+                        // chi lay nhung ban ghi da xuat, ma chua nhap                            
+                        // order by exported date
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsExport != null && g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
+                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport != null && g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
                     }
                 }
                 else
                 {
                     // lay tat ban ghi chua xuat, chua nhap
-                    result =  db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false)).ToList();
+                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false));
+                    //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false)).ToList();
                 }
             }
-            List<ViewAllVehicleHasGood> listViewAllVehicleHasGood = !string.IsNullOrEmpty(plateNumber) ? result.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)).ToList() : result.ToList();
+            List<ViewAllVehicleHasGood> rsl = (from a in _viewAllVehicle
+                                               orderby a.ModifiedDate descending
+                                               select a).ToList();
+            //List<ViewAllVehicleHasGood> rsl = !string.IsNullOrEmpty(plateNumber) ? result.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)).OrderByDescending(g => g.ModifiedDate).ToList() : result.OrderByDescending(g => g.ModifiedDate).ToList();
             db.Connection.Close();
-            return listViewAllVehicleHasGood;
+            return rsl;
         }
 
-        public static List<ViewAllVehicleHasGood> GetFromViewByDeclarationID(long declarationID) {
+        public static List<ViewAllVehicleHasGood> GetFromViewByDeclarationID(long declarationID)
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            List < ViewAllVehicleHasGood >  list = db.ViewAllVehicleHasGoods.Where(g => g.DeclarationID == declarationID).ToList();
+            List<ViewAllVehicleHasGood> list = db.ViewAllVehicleHasGoods.Where(g => g.DeclarationID == declarationID).ToList();
             db.Connection.Close();
             return list;
         }
 
-        public static tblVehicle GetByID(long vehicleID) {
+        public static tblVehicle GetByID(long vehicleID)
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             tblVehicle vehicle = db.tblVehicles.Where(g => g.VehicleID == vehicleID).FirstOrDefault();
             db.Connection.Close();
@@ -103,7 +128,7 @@ namespace ECustoms.BOL
         public static ViewAllVehicleHasGood GetByIDFromView(long vehicleID)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            ViewAllVehicleHasGood allVehicleHasGood= db.ViewAllVehicleHasGoods.Where(g => g.VehicleID == vehicleID).FirstOrDefault();
+            ViewAllVehicleHasGood allVehicleHasGood = db.ViewAllVehicleHasGoods.Where(g => g.VehicleID == vehicleID).FirstOrDefault();
             db.Connection.Close();
             return allVehicleHasGood;
         }
@@ -119,7 +144,7 @@ namespace ECustoms.BOL
         /// <param name="vehicle"></param>
         /// <param name="declerationID"></param>
         /// <returns></returns>
-        public static int UpdateVehicle(tblVehicle vehicle, long declerationID )
+        public static int UpdateVehicle(tblVehicle vehicle, long declerationID)
         {
             // Set last modified date to now
             vehicle.ModifiedDate = CommonFactory.GetCurrentDate();
@@ -130,31 +155,31 @@ namespace ECustoms.BOL
                     {
                         // Get orgin vehicle
                         var vehicleOrgin = db.tblVehicles.Where(g => g.VehicleID == vehicle.VehicleID).FirstOrDefault();
-                      if (vehicleOrgin != null)
-                      {
-                        db.Attach(vehicleOrgin);
-                        db.ApplyPropertyChanges("tblVehicles", vehicle);
-                        int re = db.SaveChanges();
-                        db.Connection.Close();
-                        return re;  
-                      }
-                      return -1;
+                        if (vehicleOrgin != null)
+                        {
+                            db.Attach(vehicleOrgin);
+                            db.ApplyPropertyChanges("tblVehicles", vehicle);
+                            int re = db.SaveChanges();
+                            db.Connection.Close();
+                            return re;
+                        }
+                        return -1;
                     }
                 default:
                     {
-                        var vehicleOrgin = db.tblVehicles.Where(g => g.VehicleID == vehicle.VehicleID).FirstOrDefault();                        
+                        var vehicleOrgin = db.tblVehicles.Where(g => g.VehicleID == vehicle.VehicleID).FirstOrDefault();
                         db.Attach(vehicleOrgin);
                         db.ApplyPropertyChanges("tblVehicles", vehicle);
                         db.SaveChanges();
                         // Insert to tblVehicleDeclerateion
-                      var vehicleDeclara = new tblDeclarationVehicle();
-                      vehicleDeclara.VehicleID = vehicle.VehicleID;
-                      vehicleDeclara.DeclarationID = declerationID;
-                      db.AddTotblDeclarationVehicles(vehicleDeclara);
-                      int re = db.SaveChanges();
-                      db.Connection.Close();
-                      db.Dispose();
-                      return re;
+                        var vehicleDeclara = new tblDeclarationVehicle();
+                        vehicleDeclara.VehicleID = vehicle.VehicleID;
+                        vehicleDeclara.DeclarationID = declerationID;
+                        db.AddTotblDeclarationVehicles(vehicleDeclara);
+                        int re = db.SaveChanges();
+                        db.Connection.Close();
+                        db.Dispose();
+                        return re;
 
                     }
             }
@@ -169,30 +194,31 @@ namespace ECustoms.BOL
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             var vehicle = db.tblVehicles.Where(g => g.VehicleID == vehicleID).FirstOrDefault();
-            if(vehicle != null)
+            if (vehicle != null)
                 db.DeleteObject(vehicle);
             db.SaveChanges();
             // Revmove from vehicleDecleration
-            var vehicleDeclere = db.tblDeclarationVehicles.Where(g => g.VehicleID== vehicleID).ToList();
+            var vehicleDeclere = db.tblDeclarationVehicles.Where(g => g.VehicleID == vehicleID).ToList();
             foreach (var item in vehicleDeclere)
             {
                 var vehicleDeclereTemp = db.tblDeclarationVehicles.Where(g => g.VehicleID == vehicleID).FirstOrDefault();
-                if(vehicleDeclereTemp != null) 
+                if (vehicleDeclereTemp != null)
                     db.DeleteObject(vehicleDeclereTemp);
                 db.SaveChanges();
             }
             // TODO:
             db.Connection.Close();
             return 1;
-        }        
+        }
 
         /// <summary>
         ///  Get all Exported vehicle
         /// </summary>
         /// <returns></returns>
-        public static List<tblVehicle> GetExported() {
+        public static List<tblVehicle> GetExported()
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var result = db.tblVehicles.Where(g => g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false)).OrderByDescending(g => g.ExportDate).ToList();            
+            var result = db.tblVehicles.Where(g => g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false)).OrderByDescending(g => g.ExportDate).ToList();
             return result;
         }
 
@@ -202,10 +228,10 @@ namespace ECustoms.BOL
         /// <returns></returns>
         public static List<viewDeclarationVehicle> GetExistDeclarationVehicleExported(long vehicleID)
         {
-          var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-          var result = db.viewDeclarationVehicles.Where(g => (g.VehicleID == vehicleID) && (g.DeclarationType == (int)DeclarationType.DeclarationTypeImport)).OrderByDescending(g => g.ExportDate).ToList();
-          db.Connection.Close();
-          return result;
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var result = db.viewDeclarationVehicles.Where(g => (g.VehicleID == vehicleID) && (g.DeclarationType == (int)DeclarationType.DeclarationTypeImport)).OrderByDescending(g => g.ExportDate).ToList();
+            db.Connection.Close();
+            return result;
         }
 
 
@@ -215,20 +241,20 @@ namespace ECustoms.BOL
         /// <returns></returns>
         public static List<viewDeclarationVehicle> GetDeclarationVehicleByVehicleID(long vehicleID)
         {
-          var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-          var result = db.viewDeclarationVehicles.Where(g => (g.VehicleID == vehicleID)).OrderByDescending(g => g.RegisterDate).ToList();
-          db.Connection.Close();
-          return result;
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var result = db.viewDeclarationVehicles.Where(g => (g.VehicleID == vehicleID)).OrderByDescending(g => g.RegisterDate).ToList();
+            db.Connection.Close();
+            return result;
         }
 
 
 
         public static List<viewDeclarationVehicle> GetImportDeclarationVehicleByVehicleID(long vehicleID)
         {
-          var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-          var result = db.viewDeclarationVehicles.Where(g => (g.VehicleID == vehicleID) && (g.DeclarationType == 1) && (g.DeclarationID != 1) && (g.DeclarationID != 0)).OrderByDescending(g => g.RegisterDate).ToList();
-          db.Connection.Close();
-          return result;
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var result = db.viewDeclarationVehicles.Where(g => (g.VehicleID == vehicleID) && (g.DeclarationType == 1) && (g.DeclarationID != 1) && (g.DeclarationID != 0)).OrderByDescending(g => g.RegisterDate).ToList();
+            db.Connection.Close();
+            return result;
         }
 
 
@@ -255,19 +281,20 @@ namespace ECustoms.BOL
             return re;
         }
 
-        public static List<ViewAllVehicleHasGood> GetByDeclarationID(long declaractionID) {
+        public static List<ViewAllVehicleHasGood> GetByDeclarationID(long declaractionID)
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            List < ViewAllVehicleHasGood >  list = db.ViewAllVehicleHasGoods.Where(g => g.DeclarationID == declaractionID).ToList();
+            List<ViewAllVehicleHasGood> list = db.ViewAllVehicleHasGoods.Where(g => g.DeclarationID == declaractionID).ToList();
             db.Connection.Close();
             return list;
         }
 
         public static List<ViewAllVehicle> GetAllViewAllVehicle()
         {
-          var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-          List < ViewAllVehicle >  list = db.ViewAllVehicles.ToList();
-          db.Connection.Close();
-          return list;
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            List<ViewAllVehicle> list = db.ViewAllVehicles.ToList();
+            db.Connection.Close();
+            return list;
         }
     }
 }
