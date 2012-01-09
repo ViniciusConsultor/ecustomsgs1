@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace ECustoms.Utilities
 {
   public class ObjectToXml
-  {
+  {      
     public static void ConvertObjectToXml(object obj, string path_to_xml)
     {
       //serialize and persist it to it's file

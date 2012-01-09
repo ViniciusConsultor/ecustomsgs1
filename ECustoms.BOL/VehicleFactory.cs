@@ -72,7 +72,7 @@ namespace ECustoms.BOL
                         // chi lay ban ghi da xuat canh, khong quan tam da nhap  hay chua
                     // chi lay nhung ban ghi da xuat, ma chua nhap                            
                     // order by exported date
-                    result =  db.ViewAllVehicleHasGoods.Where(g => (g.IsExport != null &&  g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).OrderByDescending(g => g.ExportDate).ToList();    
+                    result =  db.ViewAllVehicleHasGoods.Where(g => (g.IsExport != null &&  g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();    
                     }
                 }
                 else
@@ -81,7 +81,7 @@ namespace ECustoms.BOL
                     result =  db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false)).ToList();
                 }
             }
-            List<ViewAllVehicleHasGood> listViewAllVehicleHasGood = !string.IsNullOrEmpty(plateNumber) ? result.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)).OrderByDescending(g => g.ModifiedDate).ToList() : result.OrderByDescending(g => g.ModifiedDate).ToList();
+            List<ViewAllVehicleHasGood> listViewAllVehicleHasGood = !string.IsNullOrEmpty(plateNumber) ? result.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)).ToList() : result.ToList();
             db.Connection.Close();
             return listViewAllVehicleHasGood;
         }
