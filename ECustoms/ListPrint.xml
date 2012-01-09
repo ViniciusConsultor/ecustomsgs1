@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prints>
+  <print name="print1" ip="192.168.1.1" />
+  <print name="print2" ip="192.168.1.2" />  
+</prints>
