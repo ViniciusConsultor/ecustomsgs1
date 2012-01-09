@@ -74,7 +74,7 @@ namespace ECustoms
                             var dt = new DataTable();
                             adpater.Fill(dt);
                             xuatCanhXeKhong.SetDataSource(dt);
-                            crystalReportViewer1.ReportSource = xuatCanhXeKhong;
+                            crystalReportViewer1.ReportSource = xuatCanhXeKhong;                            
                         }
                         break;
                     case ReportType.ImportAndNoItem: // Type 2

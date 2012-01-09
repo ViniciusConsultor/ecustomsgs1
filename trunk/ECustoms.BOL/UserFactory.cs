@@ -16,14 +16,7 @@ namespace ECustoms.BOL
           new dbEcustomEntities(
               Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
       private static ILog logger = LogManager.GetLogger("ECustoms.UserFactory");
-    
-
-    public UserFactory()
-    {
-      // Get connectionString from the config file
-      _dbConnectionString = Utilities.Common.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["connectionString"], true);
-      }
-
+  
     /// <summary>
     /// Gets the user info.
     /// </summary>

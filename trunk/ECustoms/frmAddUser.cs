@@ -15,9 +15,7 @@ namespace ECustoms
     private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmLogin");
     private frmUser _parrent;
     private int _mode;
-    private int _userID;
-    private UserFactory _userBOL;
-    private PermissionFactory _permissionBOL;
+    private int _userID;        
     private UserInfo _userInfo;
     private TabPage _tabUser;
     private TabPage _tabGroup;
@@ -60,9 +58,7 @@ namespace ECustoms
     {
       this.Text = "Thông tin người dùng" + ConstantInfo.MESSAGE_TITLE;
       // Show form to the center
-      this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);
-      _userBOL = new UserFactory();
-      _permissionBOL = new PermissionFactory();
+      this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);      
       grvGroup.AutoGenerateColumns = false;
       grvPermission.AutoGenerateColumns = false;
       Init();
