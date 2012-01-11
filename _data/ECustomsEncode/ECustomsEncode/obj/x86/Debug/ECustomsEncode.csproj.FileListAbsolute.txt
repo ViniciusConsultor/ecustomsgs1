@@ -1,0 +1,20 @@
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.frmEncode.resources
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.Properties.Resources.resources
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\bin\Debug\ECustomsEncode.exe
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\bin\Debug\ECustomsEncode.pdb
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.exe
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.pdb
+D:\Working\ECUstoms\SourceCode\_data\ECustomsEncode\ECustomsEncode\bin\Debug\ECustomsEncode.exe.config
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\bin\Debug\ECustomsEncode.exe.config
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.exe
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.pdb
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\bin\Debug\ECustomsEncode.exe
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\bin\Debug\ECustomsEncode.pdb
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.frmEncode.resources
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\ECustomsEncode.Properties.Resources.resources
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\MY JOBS\Vuong Working\ecustom-projects\_data\ECustomsEncode\ECustomsEncode\obj\x86\Debug\GenerateResource.write.1.tlog
