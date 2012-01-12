@@ -13,15 +13,14 @@ namespace ECustoms
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.FrmAddCheck");
         private UserInfo _userInfo;
         private int _mode;
-        private long _checkID; 
+        private long _checkID;
         public FrmAddCheck()
         {
             InitializeComponent();
         }
-        
+
         public FrmAddCheck(UserInfo userInfo, int mode, long checkID)
         {
-
             InitializeComponent();
             _userInfo = userInfo;
             _mode = mode;
@@ -29,7 +28,7 @@ namespace ECustoms
         }
 
         private void FrmAddCheck_Load(object sender, EventArgs e)
-        {            
+        {
             this.Location = new Point((this.Owner.Width - this.Width) / 2, (this.Owner.Height - this.Height) / 2);
             InitData();
         }
@@ -60,7 +59,7 @@ namespace ECustoms
                 if (check == null)
                     return;
                 txtCode.Text = check.CheckCode;
-                txtPlateNumber.Text = check.PlateNumber;
+                txtPlateNumber.Text = check.PlateNumber.ToUpper();
                 txtDeclarationNumber.Text = check.DeclarationNumber.ToString();
                 txtCompanyCode.Text = check.CompanyCode;
                 if (check.DeclarationType != null) comboBoxDeclarationType.SelectedIndex = check.DeclarationType.Value;
@@ -77,13 +76,13 @@ namespace ECustoms
                 // Validate
                 var check = new tblCheck();
                 check.CheckCode = txtCode.Text;
-                check.PlateNumber = txtPlateNumber.Text;
+                check.PlateNumber = txtPlateNumber.Text.Trim().ToUpper();
                 if (txtDeclarationNumber.Text != "")
                 {
-                    check.DeclarationNumber = Convert.ToInt32(txtDeclarationNumber.Text);    
+                    check.DeclarationNumber = Convert.ToInt32(txtDeclarationNumber.Text);
                 }
-                
-                check.CompanyCode = txtCompanyCode.Text;                
+
+                check.CompanyCode = txtCompanyCode.Text;
                 check.DeclarationType = comboBoxDeclarationType.SelectedIndex;
                 var from = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day, 0, 0, 0);
                 var to = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day, 23, 59, 59);
@@ -103,8 +102,8 @@ namespace ECustoms
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
         }
-        
-        private bool  Validate()
+
+        private bool Validate()
         {
             var to = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day, 23, 59, 59);
 
@@ -129,7 +128,7 @@ namespace ECustoms
                 // Get the current check
                 var check = CheckFactory.SelectByID(_checkID);
                 if (check == null) return;
-                check.PlateNumber = txtPlateNumber.Text;
+                check.PlateNumber = txtPlateNumber.Text.Trim().ToUpper();
                 check.CompanyCode = txtCompanyCode.Text;
                 if (txtDeclarationNumber.Text != "")
                 {

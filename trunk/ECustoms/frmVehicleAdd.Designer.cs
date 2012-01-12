@@ -98,6 +98,7 @@
             // txtPlateNumber
             // 
             this.txtPlateNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtPlateNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPlateNumber.Location = new System.Drawing.Point(130, 28);
             this.txtPlateNumber.MaxLength = 12;
             this.txtPlateNumber.Name = "txtPlateNumber";
