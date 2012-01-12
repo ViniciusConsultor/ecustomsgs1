@@ -159,6 +159,7 @@ namespace ECustoms
                 lblCohangNC.Text = xeNhapHangDaNC.ToString();
                 lblCoHangXC.Text = xeCoHangDaXC.ToString();
                 lblVaonoidia.Text = xeVaoNoiDia.ToString();
+                txtPlateNumber.Focus();
             }
             catch (Exception ex)
             {
