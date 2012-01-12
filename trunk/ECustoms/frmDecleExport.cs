@@ -550,7 +550,7 @@ namespace ECustoms
                       v.ExportDate = vehicle.ExportDate;
                       v.IsExport = vehicle.IsExport;
                       v.Note = vehicle.Note;
-                      v.Status = vehicle.Status;
+                      //v.Status = vehicle.Status;
                       v.IsCompleted = vehicle.IsCompleted;
                       v.IsGoodsImported = vehicle.IsGoodsImported;
                       v.ImportStatus = vehicle.ImportStatus;
@@ -897,6 +897,22 @@ namespace ECustoms
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void FrmDecleExport_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                if (_declerationType == Common.DeclerationType.Export) btnComfirmExport_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F6)
+            {
+                if (_declerationType == Common.DeclerationType.Import) bntConfirmImportCH_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F7)
+            {
+                if (_declerationType == Common.DeclerationType.Import) btnConfirmImportKH_Click(sender, e);
             }
         }
     }
