@@ -74,7 +74,6 @@ namespace ECustoms
                 {
                     MessageBox.Show("Bạn cần chọn 1 cảnh báo.");
                 }
-
             }
             catch (Exception ex)
             {
@@ -121,9 +120,9 @@ namespace ECustoms
             checks = checks.Where(g => (g.CheckFrom >= from) && (g.CheckFrom <= to) && (g.CheckTo <= to)).ToList();
 
             // Filter by plateNumber)
-            if (!string.IsNullOrEmpty(txtPlateNumber.Text))
+            if (!string.IsNullOrEmpty(txtPlateNumber.Text.Trim().ToUpper()))
             {
-                checks = checks.Where(g => g.PlateNumber.Contains(txtPlateNumber.Text)).ToList();
+                checks = checks.Where(g => g.PlateNumber.Contains(txtPlateNumber.Text.Trim().ToUpper())).ToList();
             }
 
             // Filter by DeclarationNumber
@@ -146,7 +145,7 @@ namespace ECustoms
 
             if (comboBoxDeclarationType.SelectedIndex >= 1)
             {
-                checks = checks.Where(g => g.DeclarationType == comboBoxDeclarationType.SelectedIndex-1).ToList();
+                checks = checks.Where(g => g.DeclarationType == comboBoxDeclarationType.SelectedIndex - 1).ToList();
             }
 
             // Bind data to the current search
@@ -155,27 +154,27 @@ namespace ECustoms
 
         private void grdCheck_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-          //check permission
-          if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_DE_NGHI_KIEM_TRA) == false)
-          {
-            return;
-          }
-
-          try
-          {
-            if (e.RowIndex >= 0 && grdCheck.SelectedRows.Count == 1) // Only select one row
+            //check permission
+            if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_DE_NGHI_KIEM_TRA) == false)
             {
-              var frmAddCheck = new FrmAddCheck(_userInfo, 1,
-                                                  Convert.ToInt64(grdCheck.SelectedRows[0].Cells["CheckID"].Value));
-
-              frmAddCheck.Show(this);
+                return;
             }
-          }
-          catch (Exception ex)
-          {
-            logger.Error(ex.ToString());
-            if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
-          }
+
+            try
+            {
+                if (e.RowIndex >= 0 && grdCheck.SelectedRows.Count == 1) // Only select one row
+                {
+                    var frmAddCheck = new FrmAddCheck(_userInfo, 1,
+                                                        Convert.ToInt64(grdCheck.SelectedRows[0].Cells["CheckID"].Value));
+
+                    frmAddCheck.Show(this);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

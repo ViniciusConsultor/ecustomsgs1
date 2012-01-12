@@ -80,6 +80,7 @@
             // 
             // txtPlateNumber
             // 
+            this.txtPlateNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPlateNumber.Location = new System.Drawing.Point(131, 9);
             this.txtPlateNumber.MaxLength = 12;
             this.txtPlateNumber.Name = "txtPlateNumber";
