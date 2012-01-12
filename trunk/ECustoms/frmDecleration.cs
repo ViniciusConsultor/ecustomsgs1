@@ -20,7 +20,7 @@ namespace ECustoms
     public partial class frmDecleration : Form
     {
         private readonly ILog logger = LogManager.GetLogger("Ecustoms.frmDecleration");
-        
+
         private UserInfo _userInfo;
         private readonly Form _mainForm;
         private System.Timers.Timer aTimer;
@@ -37,7 +37,6 @@ namespace ECustoms
             _mainForm = mainForm;
         }
 
-
         private void frmDecleration_Load(object sender, EventArgs e)
         {
             try
@@ -50,7 +49,7 @@ namespace ECustoms
                 dtpConfirmTo.Enabled = false;
                 dtpConfirmFrom.Enabled = false;
                 // Show form to the center
-                this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);                
+                this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
 
                 this._listDeclarationinfo = DeclarationFactory.SelectAllFromView();
                 BindData();
@@ -66,8 +65,8 @@ namespace ECustoms
                 this.aTimer.Enabled = true;
 
                 //check user permission
-                btnAdd.Enabled =_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI);
-                btnAddImport.Enabled =_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI);
+                btnAdd.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI);
+                btnAddImport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI);
                 btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
                 btnDelete.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_TO_KHAI);
                 btnConfirm.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_HO_SO);
@@ -133,41 +132,41 @@ namespace ECustoms
                 var companyName = txtCompanyName.Text.Trim();
                 List<ViewAllDeclaration> result = null;
 
-                result =_listDeclarationinfo.OrderByDescending(p => p.ModifiedDate).ToList();
+                result = _listDeclarationinfo.OrderByDescending(p => p.ModifiedDate).ToList();
                 //filter by declarationNumber
                 if (string.IsNullOrEmpty(txtDeclaraceNumber.Text) == false) //TODO: xem lai cho nay vua sua dâtbae
                 { //has nunber, not has copany name
-                  result = result.Where(d => d.Number.ToString().Contains(declarationNumber)).OrderByDescending(p => p.ModifiedDate).ToList();
+                    result = result.Where(d => d.Number.ToString().Contains(declarationNumber)).OrderByDescending(p => p.ModifiedDate).ToList();
                 }
 
                 //filter by CompanyName
                 if (string.IsNullOrEmpty(txtCompanyName.Text) == false)
                 { // has company name, has not number
-                  result = result.Where(d => (d.CompanyName != null) && (d.CompanyName.Contains(companyName))).OrderByDescending(p => p.ModifiedDate).ToList();
+                    result = result.Where(d => (d.CompanyName != null) && (d.CompanyName.Contains(companyName))).OrderByDescending(p => p.ModifiedDate).ToList();
                 }
 
                 //filter by RegisterDate
                 if (cbRegDate.Checked == true)
                 {
-                  result =
-                    result.Where(g => g.RegisterDate >= from && g.RegisterDate <= to).OrderByDescending(
-                      p => p.ModifiedDate).ToList();
+                    result =
+                      result.Where(g => g.RegisterDate >= from && g.RegisterDate <= to).OrderByDescending(
+                        p => p.ModifiedDate).ToList();
                 }
                 else
                 {
-                  result = result.OrderByDescending(p => p.ModifiedDate).ToList();
+                    result = result.OrderByDescending(p => p.ModifiedDate).ToList();
                 }
 
                 //filter by ConfirmDate (ngay tra ho so)
                 if (cbConfirmDate.Checked == true)
                 {
-                  result =
-                    result.Where(g => g.ConfirmStatus !=null && g.ConfirmDate >= confirmFrom && g.ConfirmDate <= confirmTo).OrderByDescending(
-                      p => p.ModifiedDate).ToList();
+                    result =
+                      result.Where(g => g.ConfirmStatus != null && g.ConfirmDate >= confirmFrom && g.ConfirmDate <= confirmTo).OrderByDescending(
+                        p => p.ModifiedDate).ToList();
                 }
                 else
                 {
-                  result = result.OrderByDescending(p => p.ModifiedDate).ToList();
+                    result = result.OrderByDescending(p => p.ModifiedDate).ToList();
                 }
 
                 // Filter by Type
@@ -189,10 +188,10 @@ namespace ECustoms
                         grvDecleration.Rows[i].DefaultCellStyle.BackColor = col;
                     }
                 }
-                
+
                 if (result != null && result.Count > 0)
                 {
-                   SetVehicleInfo(grvDecleration.Rows[0]);
+                    SetVehicleInfo(grvDecleration.Rows[0]);
                 }
                 else
                 {  // No result
@@ -204,9 +203,8 @@ namespace ECustoms
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
-            }            
+            }
         }
-
 
         #region Private methods
 
@@ -257,7 +255,6 @@ namespace ECustoms
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -271,7 +268,8 @@ namespace ECustoms
                     {
                         var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt32(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Export);
                         frmExport.Show(this);
-                    } else
+                    }
+                    else
                     {
                         var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt32(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Import);
                         frmExport.Show(this);
@@ -285,7 +283,7 @@ namespace ECustoms
             catch (Exception ex)
             {
                 logger.Error(ex.ToString());
-                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());              
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
         }
 
@@ -304,7 +302,7 @@ namespace ECustoms
         {
             try
             {
-                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us"); 
+                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
                 var excel = new ApplicationClass();
                 excel.Application.Workbooks.Add(true);
 
@@ -319,36 +317,33 @@ namespace ECustoms
                 int rowIndex = 0;
                 foreach (DataGridViewRow dataRow in grvDecleration.Rows)
                 {
-                  rowIndex++;
+                    rowIndex++;
 
-                  excel.Cells[rowIndex + 1, 1] = dataRow.Cells["Number"].Value != null ? dataRow.Cells["Number"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 2] = dataRow.Cells["CompanyCode"].Value != null ? dataRow.Cells["CompanyCode"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 3] = dataRow.Cells["ExportType"].Value != null ? dataRow.Cells["ExportType"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 4] = dataRow.Cells["RegisterDate"].Value != null ? ((DateTime)(dataRow.Cells["RegisterDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
-                  excel.Cells[rowIndex + 1, 5] = dataRow.Cells["ConfirmStatus"].Value != null ? dataRow.Cells["ConfirmStatus"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 6] = dataRow.Cells["ConfirmDate"].Value != null ? ((DateTime)(dataRow.Cells["ConfirmDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
-                  excel.Cells[rowIndex + 1, 7] = dataRow.Cells["ProductName"].Value != null ? dataRow.Cells["ProductName"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 8] = dataRow.Cells["CompanyName"].Value != null ? dataRow.Cells["CompanyName"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 9] = dataRow.Cells["ProductAmount"].Value != null ? dataRow.Cells["ProductAmount"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 10] = dataRow.Cells["Unit"].Value != null ? dataRow.Cells["Unit"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 11] = dataRow.Cells["ModifiedDate"].Value != null ? dataRow.Cells["ModifiedDate"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 12] = dataRow.Cells["ModifiedBy"].Value != null ? dataRow.Cells["ModifiedBy"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 13] = dataRow.Cells["CreatedBy"].Value != null ? dataRow.Cells["CreatedBy"].Value.ToString() : "";
-                  excel.Cells[rowIndex + 1, 14] = dataRow.Cells["CreatedDate"].Value != null ? dataRow.Cells["CreatedDate"].Value.ToString() : "";
-
+                    excel.Cells[rowIndex + 1, 1] = dataRow.Cells["Number"].Value != null ? dataRow.Cells["Number"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 2] = dataRow.Cells["CompanyCode"].Value != null ? dataRow.Cells["CompanyCode"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 3] = dataRow.Cells["ExportType"].Value != null ? dataRow.Cells["ExportType"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 4] = dataRow.Cells["RegisterDate"].Value != null ? ((DateTime)(dataRow.Cells["RegisterDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 5] = dataRow.Cells["ConfirmStatus"].Value != null ? dataRow.Cells["ConfirmStatus"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 6] = dataRow.Cells["ConfirmDate"].Value != null ? ((DateTime)(dataRow.Cells["ConfirmDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 7] = dataRow.Cells["ProductName"].Value != null ? dataRow.Cells["ProductName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 8] = dataRow.Cells["CompanyName"].Value != null ? dataRow.Cells["CompanyName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 9] = dataRow.Cells["ProductAmount"].Value != null ? dataRow.Cells["ProductAmount"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 10] = dataRow.Cells["Unit"].Value != null ? dataRow.Cells["Unit"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 11] = dataRow.Cells["ModifiedDate"].Value != null ? dataRow.Cells["ModifiedDate"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 12] = dataRow.Cells["ModifiedBy"].Value != null ? dataRow.Cells["ModifiedBy"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 13] = dataRow.Cells["CreatedBy"].Value != null ? dataRow.Cells["CreatedBy"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 14] = dataRow.Cells["CreatedDate"].Value != null ? dataRow.Cells["CreatedDate"].Value.ToString() : "";
                 }
-              
+
                 excel.Visible = true;
                 var worksheet = (Worksheet)excel.ActiveSheet;
                 worksheet.Activate();
-
             }
             catch (Exception ex)
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -374,7 +369,7 @@ namespace ECustoms
         //        if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
         //        logger.Error(ex.ToString());
         //    }
-            
+
         //}
 
         private void grvDecleration_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -389,14 +384,15 @@ namespace ECustoms
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
-            }            
+            }
         }
 
         /// <summary>
         /// Set Vehicel
         /// </summary>
         /// <param name="row"></param>
-        private void SetVehicleInfo(DataGridViewRow row) {
+        private void SetVehicleInfo(DataGridViewRow row)
+        {
             try
             {
                 // Clear result
@@ -407,12 +403,12 @@ namespace ECustoms
                 var declarationType = row.Cells["DeclarationType"].Value;
 
                 if (declarationType.Equals((short)Common.DeclerationType.Export)) // tờ khai xuất
-                    lblHeader.Text = "Thông tin về phương tiện chở hàng cho tờ khai xuất " + exportNumber + ":";    
+                    lblHeader.Text = "Thông tin về phương tiện chở hàng cho tờ khai xuất " + exportNumber + ":";
                 else
-                    lblHeader.Text = "Thông tin về phương tiện chở hàng cho tờ khai nhập " + exportNumber + ":";    
-                
+                    lblHeader.Text = "Thông tin về phương tiện chở hàng cho tờ khai nhập " + exportNumber + ":";
+
                 // Get List vehicle 
-                var declaractionID = Convert.ToInt32(row.Cells["DeclarationID"].Value);                
+                var declaractionID = Convert.ToInt32(row.Cells["DeclarationID"].Value);
                 var listVehicle = VehicleFactory.GetByDeclarationID(declaractionID);
                 StringBuilder vehicleInfo;
                 // return if does not any vehicle
@@ -434,7 +430,7 @@ namespace ECustoms
                     {
                         vehicleInfo.Append(" Chưa XC;");
                     }
-                    
+
                     // Import Information
                     if (currentVehicle.IsImport != null && currentVehicle.IsImport.Value) // Imported
                     {
@@ -473,31 +469,31 @@ namespace ECustoms
 
         private void grvDecleration_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
-          if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI))
-          {
-            try
+            if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI))
             {
-              if (e.RowIndex >= 0 && grvDecleration.SelectedRows.Count == 1) // Only select one row
-              {
-                var declarationType = grvDecleration.SelectedRows[0].Cells["DeclarationType"].Value;
-                if (declarationType.Equals((short)Common.DeclerationType.Export)) // tờ khai xuất
+                try
                 {
-                  var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Export);
-                  frmExport.Show(this);
+                    if (e.RowIndex >= 0 && grvDecleration.SelectedRows.Count == 1) // Only select one row
+                    {
+                        var declarationType = grvDecleration.SelectedRows[0].Cells["DeclarationType"].Value;
+                        if (declarationType.Equals((short)Common.DeclerationType.Export)) // tờ khai xuất
+                        {
+                            var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Export);
+                            frmExport.Show(this);
+                        }
+                        else
+                        {
+                            var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Import);
+                            frmExport.Show(this);
+                        }
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                  var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Import);
-                  frmExport.Show(this);
+                    logger.Error(ex.ToString());
+                    if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
                 }
-              }
             }
-            catch (Exception ex)
-            {
-              logger.Error(ex.ToString());
-              if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
-            }
-          }
         }
 
         private void btnAddImport_Click(object sender, EventArgs e)
@@ -508,37 +504,34 @@ namespace ECustoms
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-          try
-          {
-            if (grvDecleration.SelectedRows.Count != 0)
+            try
             {
-            
-              var dr = MessageBox.Show("Bạn có chắc là muốn xác nhận?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (grvDecleration.SelectedRows.Count != 0)
+                {
+                    var dr = MessageBox.Show("Bạn có chắc là muốn xác nhận?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
-                      var result = DeclarationFactory.ConfirmReturnDocument("Đã trả hồ sơ",
-                                                       Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value));
-                      BindData();
-                      if (result > 0)
-                        MessageBox.Show("Xác nhận thành công");
-                      else
-                      {
-                        MessageBox.Show("Xác nhận không thành công");
-                      }
+                        var result = DeclarationFactory.ConfirmReturnDocument("Đã trả hồ sơ",
+                                                         Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value));
+                        BindData();
+                        if (result > 0)
+                            MessageBox.Show("Xác nhận thành công");
+                        else
+                        {
+                            MessageBox.Show("Xác nhận không thành công");
+                        }
                     }
-
-              
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần chọn 1 tờ khai cần cập nhật.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-              MessageBox.Show("Bạn cần chọn 1 tờ khai cần cập nhật.");
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
-          }
-          catch (Exception ex)
-          {
-            logger.Error(ex.ToString());
-            if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
-          }
         }
 
         private void grvDecleration_RowLeave(object sender, DataGridViewCellEventArgs e)
@@ -553,35 +546,35 @@ namespace ECustoms
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
-            }    
+            }
         }
 
         private void cbRegDate_CheckedChanged(object sender, EventArgs e)
         {
-          if (cbRegDate.Checked == true)
-          {
-            dtpFrom.Enabled = true;
-            dtpTo.Enabled = true;
-          }
-          else
-          {
-            dtpFrom.Enabled = false;
-            dtpTo.Enabled = false;
-          }
+            if (cbRegDate.Checked == true)
+            {
+                dtpFrom.Enabled = true;
+                dtpTo.Enabled = true;
+            }
+            else
+            {
+                dtpFrom.Enabled = false;
+                dtpTo.Enabled = false;
+            }
         }
 
         private void cbConfirmDate_CheckedChanged(object sender, EventArgs e)
         {
-          if (cbConfirmDate.Checked == true)
-          {
-            dtpConfirmFrom.Enabled = true;
-            dtpConfirmTo.Enabled = true;
-          }
-          else
-          {
-            dtpConfirmFrom.Enabled = false;
-            dtpConfirmTo.Enabled = false;
-          }
+            if (cbConfirmDate.Checked == true)
+            {
+                dtpConfirmFrom.Enabled = true;
+                dtpConfirmTo.Enabled = true;
+            }
+            else
+            {
+                dtpConfirmFrom.Enabled = false;
+                dtpConfirmTo.Enabled = false;
+            }
         }
     }
 }
