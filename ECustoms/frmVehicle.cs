@@ -17,7 +17,7 @@ namespace ECustoms
         private List<ViewAllVehicleHasGood> _vehicleInfosTemp;
         private List<ViewAllVehicleHasGood> _newAddingVehicles = new List<ViewAllVehicleHasGood>();
         private int _mode = 0;
-        private long _vehicleID;
+        private long _vehicleID;        
         private int _declarationID;
         private bool _isExport = false;
         private bool _isImport = false;
@@ -43,7 +43,7 @@ namespace ECustoms
 
         //    if (_userInfo.Type == UserType.Admin)
         //    {
-
+                
         //    }
         //    else if (_userInfo.Type == UserType.Confirm)
         //    {
@@ -106,7 +106,7 @@ namespace ECustoms
             // allow empty when inserting new verhicle,
             // the driver name might be filled later
 
-            if (string.IsNullOrEmpty(txtPlateNumber.Text.Trim().ToUpper()))
+            if (string.IsNullOrEmpty(txtPlateNumber.Text.Trim()))
             {
                 MessageBox.Show("BKS không được để trống!");
                 txtPlateNumber.Focus();
@@ -139,11 +139,11 @@ namespace ECustoms
 
         private void CheckPermisson()
         {
-            //btnAdd.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_MOI_PHUONG_TIEN);
-            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_PHUONG_TIEN);
-            btnDelete.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN);
-            btnConfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
-            btnConfirmImport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
+          //btnAdd.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_MOI_PHUONG_TIEN);
+          btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_PHUONG_TIEN);
+          btnDelete.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN);
+          btnConfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
+          btnConfirmImport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
         }
 
         private void frmVehicle_Load(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace ECustoms
             this.Text = "Khai báo phương tiện" + ConstantInfo.MESSAGE_TITLE;
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
             Init();
-
+          
         }
 
         private void Init()
@@ -292,7 +292,7 @@ namespace ECustoms
             try
             {
                 txtDriverName.Text = vehicleInfo.DriverName;
-                txtPlateNumber.Text = vehicleInfo.PlateNumber.ToUpper();
+                txtPlateNumber.Text = vehicleInfo.PlateNumber;
                 txtNumberOfContainer.Text = vehicleInfo.NumberOfContainer;
 
                 if (vehicleInfo.IsImport != null && vehicleInfo.IsImport.Value)
@@ -327,8 +327,7 @@ namespace ECustoms
 
                 txtStatus.Text = vehicleInfo.Status;
                 txtNote.Text = vehicleInfo.Note;
-                if (vehicleInfo.IsImport != null)
-                {
+                if(vehicleInfo.IsImport != null) {
                     _isImport = vehicleInfo.IsImport.Value;
                 }
 
@@ -342,7 +341,7 @@ namespace ECustoms
 
                 if (vehicleInfo.ConfirmExportBy != null && vehicleInfo.ConfirmExportBy != 0 && vehicleInfo.ConfirmExportBy != _userInfo.UserID)
                 {
-                    btnConfirmExport.Enabled = false;
+                  btnConfirmExport.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -400,7 +399,7 @@ namespace ECustoms
                     }
                     else if (_mode == 4 || _mode == 3)
                     {
-                        _isExport = true;
+                        _isExport = true;                        
                     }
                 }
                 else
@@ -503,7 +502,7 @@ namespace ECustoms
                 // Add data to veicleInfo list
                 var vehicleInfo = new ViewAllVehicleHasGood();
                 vehicleInfo.DriverName = txtDriverName.Text.Trim();
-                vehicleInfo.PlateNumber = txtPlateNumber.Text.Trim().ToUpper();
+                vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                 if (txtNumberOfContainer.Text != "")
                 {
                     vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
@@ -511,18 +510,18 @@ namespace ECustoms
 
                 if (_isExport)
                 {
-                    vehicleInfo.ExportDate = dtpExportDate.Value;
+                    vehicleInfo.ExportDate = dtpExportDate.Value;                    
                     vehicleInfo.ConfirmExportBy = _userInfo.UserID;
                 }
 
                 if (_isImport)
                 {
-                    vehicleInfo.ImportDate = dtpImportDate.Value;
+                    vehicleInfo.ImportDate = dtpImportDate.Value;                    
                     vehicleInfo.ConfirmImportBy = _userInfo.UserID;
                 }
 
                 vehicleInfo.Status = txtStatus.Text;
-                vehicleInfo.Note = txtNote.Text;
+                vehicleInfo.Note = txtNote.Text;                
                 vehicleInfo.IsExport = _isExport;
                 vehicleInfo.IsImport = _isImport;
                 vehicleInfo.IsCompleted = _isCompleted;
@@ -585,7 +584,7 @@ namespace ECustoms
                         return;
                     }
                     result.DriverName = txtDriverName.Text.Trim();
-                    result.PlateNumber = txtPlateNumber.Text.Trim().ToUpper();
+                    result.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                     result.NumberOfContainer = txtNumberOfContainer.Text;
                     result.Status = txtStatus.Text;
                     result.Note = txtNote.Text;
@@ -614,20 +613,18 @@ namespace ECustoms
                         if (count == _count)
                         {
                             vehicleInfo.DriverName = txtDriverName.Text.Trim();
-                            vehicleInfo.PlateNumber = txtPlateNumber.Text.Trim().ToUpper();
+                            vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                             vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
                             vehicleInfo.ExportDate = dtpExportDate.Value;
                             // Add hour and minuites 
-                            if (_isExport)
-                            {
+                            if (_isExport) {
                                 vehicleInfo.ExportDate = Common.AddHourMinutes(vehicleInfo.ExportDate.Value, mtxtExportHour.Text);
                             }
-                            if (_isImport)
-                            {
+                            if (_isImport) {
                                 // Add hour and minuites 
                                 vehicleInfo.ImportDate = Common.AddHourMinutes(vehicleInfo.ImportDate.Value, mtxtImportHour.Text);
-                            }
-
+                            }                                                        
+                            
                             vehicleInfo.Status = txtStatus.Text;
                             vehicleInfo.Note = txtNote.Text;
                             vehicleInfo.IsCompleted = _isCompleted;
@@ -642,17 +639,17 @@ namespace ECustoms
                             break;
                         }
                     }
-
+                    
                     ((FrmDecleExport)this.Owner).BindVehicle(_vehicleInfosTemp);
                     MessageBox.Show("Lưu thành công.");
                     this.Close();
                 }
 
                 if (_mode == 3) // Edit mode from Search form
-                {
+                {                    
                     var vehicle = VehicleFactory.GetByID(_vehicleID);
                     vehicle.DriverName = txtDriverName.Text.Trim();
-                    vehicle.PlateNumber = txtPlateNumber.Text.Trim().ToUpper();
+                    vehicle.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                     if (!string.IsNullOrEmpty(txtNumberOfContainer.Text.Trim()))
                         vehicle.NumberOfContainer = txtNumberOfContainer.Text.Trim();
 
@@ -734,7 +731,7 @@ namespace ECustoms
                 {
                     if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-
+                           
                         // Delete from database
                         VehicleFactory.DeleteByID(_vehicleID);
                         // Get Vehicle by DeclarationID
@@ -784,7 +781,7 @@ namespace ECustoms
                     // Add data to veicleInfo list
                     var vehicleInfo = new ViewAllVehicleHasGood();
                     vehicleInfo.DriverName = txtDriverName.Text.Trim();
-                    vehicleInfo.PlateNumber = txtPlateNumber.Text.Trim().ToUpper();
+                    vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                     if (txtNumberOfContainer.Text != "")
                     {
                         vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
@@ -846,7 +843,7 @@ namespace ECustoms
             {
                 if (_newAddingVehicles.Count < 0) return;
                 var driverName = txtDriverName.Text.Trim();
-                var plateNumber = txtPlateNumber.Text.Trim().ToUpper();
+                var plateNumber = txtPlateNumber.Text.Trim();
 
                 if (string.IsNullOrEmpty(driverName) && string.IsNullOrEmpty(plateNumber))
                 {
@@ -873,7 +870,7 @@ namespace ECustoms
                 var plateNumber = grdVehicle.Rows[e.RowIndex].Cells["PlateNumber"].Value.ToString();
                 var result = _newAddingVehicles.Where(v => v.PlateNumber.ToString().Equals(plateNumber, StringComparison.InvariantCultureIgnoreCase)).ToList().FirstOrDefault();
                 txtDriverName.Text = result.DriverName;
-                txtPlateNumber.Text = result.PlateNumber.ToUpper();
+                txtPlateNumber.Text = result.PlateNumber;
                 txtNumberOfContainer.Text = result.NumberOfContainer.ToString();
                 txtStatus.Text = result.Status;
                 txtNote.Text = result.Note;
@@ -902,7 +899,7 @@ namespace ECustoms
                 foreach (var vehicle in _newAddingVehicles)
                 {
                     var v = new tblVehicle();
-                    v.VehicleID = vehicle.VehicleID;
+                    v.VehicleID = vehicle.VehicleID;                    
                     v.PlateNumber = vehicle.PlateNumber;
                     v.NumberOfContainer = vehicle.NumberOfContainer;
                     v.DriverName = vehicle.DriverName;
@@ -920,7 +917,7 @@ namespace ECustoms
                     v.ConfirmExportBy = vehicle.ConfirmExportBy;
                     v.ConfirmImportBy = vehicle.ConfirmImportBy;
                     v.ConfirmLocalImportBy = vehicle.ConfirmLocalImportBy;
-                    VehicleFactory.InsertVehicle(v, _parrentDeclaration.DeclarationID);
+                    VehicleFactory.InsertVehicle(v,_parrentDeclaration.DeclarationID);                                        
                 }
 
                 ((FrmDecleExport)this.Owner).grdVehicle.DataSource = null;
@@ -932,6 +929,11 @@ namespace ECustoms
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txtPlateNumber_Leave(object sender, EventArgs e)
+        {
+          txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
         }
     }
 }
