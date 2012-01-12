@@ -80,6 +80,7 @@
     <Compile Include="PrintTicketSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportFiles.cs" />
+    <Compile Include="StringUtil.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="UserType.cs" />
   </ItemGroup>
