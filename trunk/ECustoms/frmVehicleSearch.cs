@@ -1323,39 +1323,68 @@ namespace ECustoms
                     break;
                 case 2:
                     txtPrintType.Text = "Nhập cảnh";
+                    if (vehicleInfo.HasGoodsImportedTocalPrint != null)
+                    {
+                      vehicleInfo.HasGoodsImportedTocalPrint = vehicleInfo.HasGoodsImportedTocalPrint + 1;
+                    }
+                    else
+                    {
+                      vehicleInfo.HasGoodsImportedTocalPrint = 1;
+                    }
+                    txtSTT.Text = vehicleInfo.HasGoodsImportedTocalPrint.ToString();
                     break;
                 case 3:
                     txtPrintType.Text = "Xác nhận hàng vào bãi";
+                    if (vehicleInfo.ParkingTotalPrint != null)
+                    {
+                      vehicleInfo.ParkingTotalPrint = vehicleInfo.ParkingTotalPrint + 1;
+                    }
+                    else
+                    {
+                      vehicleInfo.ParkingTotalPrint = 1;
+                    }
+                    txtSTT.Text = vehicleInfo.ParkingTotalPrint.ToString();
                     break;
             }
             txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
+            DateTime currentDate = CommonFactory.GetCurrentDate();
+            //cap nhat so lan in ticket cua phuong tien vao CSDL
+
+            VehicleFactory.UpdateTicketTotalPrint(vehicleInfo);
+
 
             //cap nhat so thu tu cua ticket
-            tblApplicationObject appObj = ApplicationObjectFactory.getByName(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
-            DateTime currentDate = CommonFactory.GetCurrentDate();
-            if (appObj == null)
-            {
-                appObj = new tblApplicationObject();
-                appObj.ApplicationObjectName = ApplicationObjectFactory.TOTAL_TICKET_IN_DATE;
-                appObj.ApplicationObjectValueDatetime = CommonFactory.GetCurrentDate();
-                appObj.ApplicationObjectValueLong = 1;
-                ApplicationObjectFactory.Insert(appObj);
-            }
-            else
-            {
-                if (currentDate.DayOfYear != ((DateTime)appObj.ApplicationObjectValueDatetime).DayOfYear)
-                {
-                    appObj.ApplicationObjectValueDatetime = currentDate;
-                    appObj.ApplicationObjectValueLong = 1;
-                }
-                else
-                {
-                    appObj.ApplicationObjectValueLong = appObj.ApplicationObjectValueLong + 1;
-                }
-                ApplicationObjectFactory.Update(appObj);
-            }
+            //day la tong so lan in ticket trong 1 ngay
+            // tam thoi commen lai
+            //tblApplicationObject appObj = ApplicationObjectFactory.getByName(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
+            //DateTime currentDate = CommonFactory.GetCurrentDate();
+            //if (appObj == null)
+            //{
+            //    appObj = new tblApplicationObject();
+            //    appObj.ApplicationObjectName = ApplicationObjectFactory.TOTAL_TICKET_IN_DATE;
+            //    appObj.ApplicationObjectValueDatetime = CommonFactory.GetCurrentDate();
+            //    appObj.ApplicationObjectValueLong = 1;
+            //    ApplicationObjectFactory.Insert(appObj);
+            //}
+            //else
+            //{
+            //    if (currentDate.DayOfYear != ((DateTime)appObj.ApplicationObjectValueDatetime).DayOfYear)
+            //    {
+            //        appObj.ApplicationObjectValueDatetime = currentDate;
+            //        appObj.ApplicationObjectValueLong = 1;
+            //    }
+            //    else
+            //    {
+            //        appObj.ApplicationObjectValueLong = appObj.ApplicationObjectValueLong + 1;
+            //    }
+            //    ApplicationObjectFactory.Update(appObj);
+            //}
+            //txtSTT.Text = appObj.ApplicationObjectValueLong.ToString();
+            //day la tong so lan in ticket trong 1 ngay
+            // tam thoi commen lai
+            //END
 
-            txtSTT.Text = appObj.ApplicationObjectValueLong.ToString();
+
             txtPrintDate.Text = currentDate.ToString("dd/MM/yyyy HH:mm");
 
             //preview ticket
