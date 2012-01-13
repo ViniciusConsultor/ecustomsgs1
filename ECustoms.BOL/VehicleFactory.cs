@@ -296,5 +296,18 @@ namespace ECustoms.BOL
             db.Connection.Close();
             return list;
         }
+
+        //c ap nhat so lan in ticket cua vehicle
+        public static int UpdateTicketTotalPrint(tblVehicle vehicle)
+        {
+          var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+          tblVehicle vehicleObj = db.tblVehicles.Where(g => g.VehicleID == vehicle.VehicleID).FirstOrDefault();
+
+          vehicleObj.HasGoodsImportedTocalPrint = vehicle.HasGoodsImportedTocalPrint;
+          vehicleObj.ParkingTotalPrint = vehicle.ParkingTotalPrint;
+          int re = db.SaveChanges();
+          db.Connection.Close();
+          return re;
+        }
     }
 }
