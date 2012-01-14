@@ -608,7 +608,17 @@ namespace ECustoms
                 //print ticket
                 if (_printSetting != null && _printSetting.PrintImportHasGood == true)
                 {
+                  if (vehicle.HasGoodsImportedTocalPrint != null)
+                  {
+                    if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                      printTicket(2, vehicle);
+                    }
+                  }
+                  else
+                  {
                     printTicket(2, vehicle);
+                  }
                 }
             }
             catch (Exception ex)
@@ -1228,7 +1238,18 @@ namespace ECustoms
                 //print ticket
                 if (_printSetting != null && _printSetting.PrintParking == true)
                 {
+                  if (vehicleInfo.ParkingTotalPrint != null)
+                  {
+                    if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                      printTicket(3, vehicleInfo);
+                    }
+                  }
+                  else
+                  {
                     printTicket(3, vehicleInfo);
+                  }
+                   
                 }
             }
             catch (Exception ex)
