@@ -77,7 +77,7 @@ namespace ECustoms
                 }
                 else
                 {
-                    MessageBox.Show("Bạn cần chọn 1 tờ khai cần cập nhật.");
+                    MessageBox.Show("Bạn cần chọn 1 người dùng");
                 }
             }
             catch (Exception ex)
