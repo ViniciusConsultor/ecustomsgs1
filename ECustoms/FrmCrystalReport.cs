@@ -219,9 +219,9 @@ namespace ECustoms
                             buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
-                            buffer.Append(" AND StatusGate = " + Common.GateTranfer.Export);
-                            buffer.Append(" AND ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND StatusGate = " + (Int32)Common.GateTranfer.Export);
+                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND CreatedDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -236,9 +236,9 @@ namespace ECustoms
                             buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
-                            buffer.Append(" AND StatusGate = " + Common.GateTranfer.Import);
-                            buffer.Append(" AND ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND StatusGate = " + (Int32)Common.GateTranfer.Import);
+                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND CreatedDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -253,9 +253,9 @@ namespace ECustoms
                             buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
-                            buffer.Append(" AND StatusGate = " + Common.GateTranfer.Reexport);
-                            buffer.Append(" AND ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            //buffer.Append(" AND StatusGate = " + (Int32)Common.GateTranfer.Reexport);
+                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND CreatedDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
