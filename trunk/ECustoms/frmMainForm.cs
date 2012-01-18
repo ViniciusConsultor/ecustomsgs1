@@ -213,5 +213,11 @@ namespace ECustoms
           var frmPrintTicketSetting = new frmPrintTicketSetting(_userInfo);
           frmPrintTicketSetting.Show(this);
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var frmCcp = new frmCompletedCustomsProcedures(_userInfo, this);
+            frmCcp.Show(this);
+        }
     }
 }

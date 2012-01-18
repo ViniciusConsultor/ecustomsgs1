@@ -49,6 +49,10 @@
             this.menuManageInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.mnReview = new System.Windows.Forms.ToolStripMenuItem();
             this.mnReviewSummary = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýHàngNTXCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhậpKhẩuChuyểnCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +63,7 @@
             this.toolStripButtonSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.quảnLýHàngNTXCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhậpKhẩuChuyểnCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hàngTạmNhậpTáiXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -244,6 +245,34 @@
             this.mnReviewSummary.Text = "Tổng hợp kết quả kiểm tra";
             this.mnReviewSummary.Click += new System.EventHandler(this.mnReviewSummary_Click);
             // 
+            // quảnLýHàngNTXCKToolStripMenuItem
+            // 
+            this.quảnLýHàngNTXCKToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem,
+            this.nhậpKhẩuChuyểnCKToolStripMenuItem,
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem});
+            this.quảnLýHàngNTXCKToolStripMenuItem.Name = "quảnLýHàngNTXCKToolStripMenuItem";
+            this.quảnLýHàngNTXCKToolStripMenuItem.Size = new System.Drawing.Size(174, 25);
+            this.quảnLýHàngNTXCKToolStripMenuItem.Text = "Quản lý hàng NTX, CK";
+            // 
+            // xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem
+            // 
+            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Name = "xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem";
+            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Text = "Xuất khẩu chuyển cửa khẩu";
+            // 
+            // nhậpKhẩuChuyểnCKToolStripMenuItem
+            // 
+            this.nhậpKhẩuChuyểnCKToolStripMenuItem.Name = "nhậpKhẩuChuyểnCKToolStripMenuItem";
+            this.nhậpKhẩuChuyểnCKToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.nhậpKhẩuChuyểnCKToolStripMenuItem.Text = "Nhập Khẩu chuyển CK";
+            // 
+            // hàngTạmNhậpTáiXuấtToolStripMenuItem
+            // 
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Name = "hàngTạmNhậpTáiXuấtToolStripMenuItem";
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Text = "Hàng tạm nhập tái xuất";
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -273,7 +302,8 @@
             this.tsExport,
             this.tsImport,
             this.toolStripButtonSearch,
-            this.toolStripButtonListdeclarace});
+            this.toolStripButtonListdeclarace,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 29);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 30);
             this.toolStrip1.Name = "toolStrip1";
@@ -338,33 +368,16 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // quảnLýHàngNTXCKToolStripMenuItem
+            // toolStripButton1
             // 
-            this.quảnLýHàngNTXCKToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem,
-            this.nhậpKhẩuChuyểnCKToolStripMenuItem,
-            this.hàngTạmNhậpTáiXuấtToolStripMenuItem});
-            this.quảnLýHàngNTXCKToolStripMenuItem.Name = "quảnLýHàngNTXCKToolStripMenuItem";
-            this.quảnLýHàngNTXCKToolStripMenuItem.Size = new System.Drawing.Size(174, 25);
-            this.quảnLýHàngNTXCKToolStripMenuItem.Text = "Quản lý hàng NTX, CK";
-            // 
-            // xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem
-            // 
-            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Name = "xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem";
-            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
-            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Text = "Xuất khẩu chuyển cửa khẩu";
-            // 
-            // nhậpKhẩuChuyểnCKToolStripMenuItem
-            // 
-            this.nhậpKhẩuChuyểnCKToolStripMenuItem.Name = "nhậpKhẩuChuyểnCKToolStripMenuItem";
-            this.nhậpKhẩuChuyểnCKToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
-            this.nhậpKhẩuChuyểnCKToolStripMenuItem.Text = "Nhập Khẩu chuyển CK";
-            // 
-            // hàngTạmNhậpTáiXuấtToolStripMenuItem
-            // 
-            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Name = "hàngTạmNhậpTáiXuấtToolStripMenuItem";
-            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
-            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Text = "Hàng tạm nhập tái xuất";
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 27);
+            this.toolStripButton1.Text = "Đã hoàn thành thủ tục hải quan";
+            this.toolStripButton1.ToolTipText = "Đã hoàn thành thủ tục hải quan";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // frmMainForm
             // 
@@ -426,5 +439,6 @@
         private System.Windows.Forms.ToolStripMenuItem xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhậpKhẩuChuyểnCKToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hàngTạmNhậpTáiXuấtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
