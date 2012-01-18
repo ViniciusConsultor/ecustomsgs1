@@ -10,6 +10,14 @@ namespace ECustoms.BOL
 {
     public class VehicleFactory
     {
+        public static List<ViewAllVehicleHasGood> GetAllAllVehicleCompleted()
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null).ToList();
+            db.Connection.Close();
+            return data;
+        }
+
         /// <summary>
         /// Search Vehicle
         /// </summary>
@@ -30,7 +38,7 @@ namespace ECustoms.BOL
             exportFrom = new DateTime(exportFrom.Year, exportFrom.Month, exportFrom.Day, 0, 0, 0);
             exportTo = new DateTime(exportTo.Year, exportTo.Month, exportTo.Day, 23, 59, 59);
 
-            List<ViewAllVehicleHasGood> result;
+            //List<ViewAllVehicleHasGood> result;
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
 
             IQueryable<ViewAllVehicleHasGood> _viewAllVehicle = db.ViewAllVehicleHasGoods;//.Where(g => g.PlateNumber.Contains(plateNumber));
