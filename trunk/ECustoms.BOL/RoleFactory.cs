@@ -44,14 +44,14 @@ namespace ECustoms.BOL
             return list;
         }
 
-        public List<tlbRole> GetAllRoles()
-        {
-          _db.Connection.Open();
-          List < tlbRole >  list = _db.tlbRoles.ToList();
-          _db.Connection.Close();
-          return list;
+        //public List<tlbRole> GetAllRoles()
+        //{
+        //  _db.Connection.Open();
+        //  List < tlbRole >  list = _db.tlbRoles.ToList();
+        //  _db.Connection.Close();
+        //  return list;
 
-        }
+        //}
 
         public int DeleteGroup(int groupID)
         {

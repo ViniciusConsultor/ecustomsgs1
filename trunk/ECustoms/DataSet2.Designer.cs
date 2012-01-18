@@ -982,6 +982,8 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnDirectExport;
             
+            private global::System.Data.DataColumn columnNumberTemp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ViewAllVehicleHasGoodDataTable() {
@@ -1393,6 +1395,14 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberTempColumn {
+                get {
+                    return this.columnNumberTemp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1475,7 +1485,8 @@ namespace ECustoms {
                         string CustomsStatistics, 
                         string StatusGate, 
                         string Seal, 
-                        string DirectExport) {
+                        string DirectExport, 
+                        int NumberTemp) {
                 ViewAllVehicleHasGoodRow rowViewAllVehicleHasGoodRow = ((ViewAllVehicleHasGoodRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         VehicleID,
@@ -1524,7 +1535,8 @@ namespace ECustoms {
                         CustomsStatistics,
                         StatusGate,
                         Seal,
-                        DirectExport};
+                        DirectExport,
+                        NumberTemp};
                 rowViewAllVehicleHasGoodRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewAllVehicleHasGoodRow);
                 return rowViewAllVehicleHasGoodRow;
@@ -1594,6 +1606,7 @@ namespace ECustoms {
                 this.columnStatusGate = base.Columns["StatusGate"];
                 this.columnSeal = base.Columns["Seal"];
                 this.columnDirectExport = base.Columns["DirectExport"];
+                this.columnNumberTemp = base.Columns["NumberTemp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1693,6 +1706,8 @@ namespace ECustoms {
                 base.Columns.Add(this.columnSeal);
                 this.columnDirectExport = new global::System.Data.DataColumn("DirectExport", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDirectExport);
+                this.columnNumberTemp = new global::System.Data.DataColumn("NumberTemp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberTemp);
                 this.columnVehicleID.AllowDBNull = false;
                 this.columnPlateNumber.MaxLength = 50;
                 this.columnNumberOfContainer.MaxLength = 50;
@@ -3203,6 +3218,22 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NumberTemp {
+                get {
+                    try {
+                        return ((int)(this[this.tableViewAllVehicleHasGood.NumberTempColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberTemp\' in table \'ViewAllVehicleHasGood\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllVehicleHasGood.NumberTempColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlateNumberNull() {
                 return this.IsNull(this.tableViewAllVehicleHasGood.PlateNumberColumn);
             }
@@ -3740,6 +3771,18 @@ namespace ECustoms {
             public void SetDirectExportNull() {
                 this[this.tableViewAllVehicleHasGood.DirectExportColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberTempNull() {
+                return this.IsNull(this.tableViewAllVehicleHasGood.NumberTempColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberTempNull() {
+                this[this.tableViewAllVehicleHasGood.NumberTempColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -4169,6 +4212,7 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("StatusGate", "StatusGate");
             tableMapping.ColumnMappings.Add("Seal", "Seal");
             tableMapping.ColumnMappings.Add("DirectExport", "DirectExport");
+            tableMapping.ColumnMappings.Add("NumberTemp", "NumberTemp");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
