@@ -122,6 +122,24 @@
       <DependentUpon>ExportAndHasItem.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExportGateTransfer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExportGateTransfer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GoodsTempImportedReexport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoodsTempImportedReexport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImportGateTransfer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportGateTransfer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FrmAddCheck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +318,18 @@
     <EmbeddedResource Include="ExportAndHasItem.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ExportAndHasItem.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportGateTransfer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExportGateTransfer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsTempImportedReexport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GoodsTempImportedReexport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportGateTransfer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ImportGateTransfer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddCheck.resx">
       <DependentUpon>FrmAddCheck.cs</DependentUpon>

@@ -203,6 +203,67 @@ namespace ECustoms
                             crystalReportViewer1.ReportSource = localImportAndHasItem1;
                         }
                         break;
+                    case ReportType.ExportGateTransfer:
+                        {
+                            //var createdlocalImportAndHasItem = (TextObject)exportGateTransfer1.Section1.ReportObjects["CreatedBy"];
+                            //createdlocalImportAndHasItem.Text = _userInfo.Name;
+                            //createdlocalImportAndHasItem.Text = _userInfo.Name;
+
+                            //var dateFromlocalImportAndHasItem = (TextObject)exportGateTransfer1.Section1.ReportObjects["dateFrom"];
+                            //dateFromlocalImportAndHasItem.Text = _from.ToString("dd/MM/yyy HH:mm");
+
+                            //var dateTolocalImportAndHasItem = (TextObject)exportGateTransfer1.Section1.ReportObjects["dateTo"];
+                            //dateTolocalImportAndHasItem.Text = _to.ToString("dd/MM/yyy HH:mm");
+
+                            StringBuilder buffer = new StringBuilder();
+                            buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+                            buffer.Append(" WHERE ");
+                            buffer.Append(" DeclarationID > 1 ");
+                            buffer.Append(" AND StatusGate = " + Common.GateTranfer.Export);
+                            buffer.Append(" AND ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+
+                            var adpater = new SqlDataAdapter(buffer.ToString(), connection);
+                            var dt = new DataTable();
+                            adpater.Fill(dt);
+                            localImportAndHasItem1.SetDataSource(dt);
+                            crystalReportViewer1.ReportSource = exportGateTransfer1;
+                        }
+                        break;
+                    case ReportType.ImportGateTransfer:
+                        {
+                            StringBuilder buffer = new StringBuilder();
+                            buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+                            buffer.Append(" WHERE ");
+                            buffer.Append(" DeclarationID > 1 ");
+                            buffer.Append(" AND StatusGate = " + Common.GateTranfer.Import);
+                            buffer.Append(" AND ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+
+                            var adpater = new SqlDataAdapter(buffer.ToString(), connection);
+                            var dt = new DataTable();
+                            adpater.Fill(dt);
+                            localImportAndHasItem1.SetDataSource(dt);
+                            crystalReportViewer1.ReportSource = importGateTransfer1;
+                        }
+                        break;
+                    case ReportType.GoodsTempImportedReexport:
+                        {
+                            StringBuilder buffer = new StringBuilder();
+                            buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+                            buffer.Append(" WHERE ");
+                            buffer.Append(" DeclarationID > 1 ");
+                            buffer.Append(" AND StatusGate = " + Common.GateTranfer.Reexport);
+                            buffer.Append(" AND ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+
+                            var adpater = new SqlDataAdapter(buffer.ToString(), connection);
+                            var dt = new DataTable();
+                            adpater.Fill(dt);
+                            localImportAndHasItem1.SetDataSource(dt);
+                            crystalReportViewer1.ReportSource = goodsTempImportedReexport1;
+                        }
+                        break;
                 }
             }
             catch (Exception ex)

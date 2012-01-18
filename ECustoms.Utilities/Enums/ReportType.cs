@@ -17,6 +17,11 @@ namespace ECustoms.Utilities.Enums
         ImportAndHasItem = 4,
         //Sổ theo dõi phương tiện chở hàng đã hoàn thành thủ tục Hải quan vào nội địa
         LocalImportAndHasItem = 5,
-
+        //
+        ExportGateTransfer = 6,
+        //
+        ImportGateTransfer = 7,
+        //
+        GoodsTempImportedReexport = 8,
     }
 }

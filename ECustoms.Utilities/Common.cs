@@ -16,6 +16,16 @@ namespace ECustoms.Utilities
             Export = 0,
             Import = 1
         }
+
+        /// <summary>
+        /// Management of temporary import for reexport
+        /// </summary>
+        public enum GateTranfer
+        {
+            Export = 0,
+            Import = 1,
+            Reexport =2
+        }
        
         #endregion
 

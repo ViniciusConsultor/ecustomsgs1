@@ -35,6 +35,9 @@
             this.importAndHasItem1 = new ECustoms.ImportAndHasItem();
             this.localImportAndHasItem1 = new ECustoms.LocalImportAndHasItem();
             this.nhapCanhXeKhong1 = new ECustoms.NhapCanhXeKhong();
+            this.exportGateTransfer1 = new ECustoms.ExportGateTransfer();
+            this.importGateTransfer1 = new ECustoms.ImportGateTransfer();
+            this.goodsTempImportedReexport1 = new ECustoms.GoodsTempImportedReexport();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -69,5 +72,8 @@
         private ImportAndHasItem importAndHasItem1;
         private LocalImportAndHasItem localImportAndHasItem1;
         private NhapCanhXeKhong nhapCanhXeKhong1;
+        private ExportGateTransfer exportGateTransfer1;
+        private ImportGateTransfer importGateTransfer1;
+        private GoodsTempImportedReexport goodsTempImportedReexport1;
     }
 }

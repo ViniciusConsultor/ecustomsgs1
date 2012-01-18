@@ -28,6 +28,9 @@ namespace ECustoms
             cbReportType.Items.Add("Phương tiện chở hàng xuất khẩu");
             cbReportType.Items.Add("Phương tiện chở hàng nhập khẩu");
             cbReportType.Items.Add("Phương tiện hoàn thành thủ tục Hải quan vào nội địa");
+            cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
+            cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
+            cbReportType.Items.Add("Hàng tạm nhập tái xuất");
             cbReportType.SelectedIndex = 0;
         }
 
@@ -80,7 +83,16 @@ namespace ECustoms
                     break;
                 case 5:
                     return ReportType.LocalImportAndHasItem;
-                break;
+                    break;
+                case 6:
+                    return ReportType.ExportGateTransfer;
+                    break;
+                case 7:
+                    return ReportType.ImportGateTransfer;
+                    break;
+                case 8:
+                    return ReportType.GoodsTempImportedReexport;
+                    break;
             }
             return ReportType.ExportAndNoItem;
         }
