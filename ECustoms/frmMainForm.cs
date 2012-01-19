@@ -219,5 +219,10 @@ namespace ECustoms
             var frmCcp = new frmCompletedCustomsProcedures(_userInfo, this);
             frmCcp.Show(this);
         }
+
+        private void xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

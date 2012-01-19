@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompletedCustomsProcedures));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grdVehicleCompleted = new System.Windows.Forms.DataGridView();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +48,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.grdVehicleCompleted);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(915, 469);
+            this.groupBox1.Size = new System.Drawing.Size(958, 584);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đã hoàn thành thủ tục hải quan";
@@ -58,7 +62,7 @@
             this.grdVehicleCompleted.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -72,23 +76,23 @@
             this.ImportDate,
             this.ConfirmStatus,
             this.Parking});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdVehicleCompleted.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Format = "g";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdVehicleCompleted.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdVehicleCompleted.Location = new System.Drawing.Point(6, 19);
             this.grdVehicleCompleted.MultiSelect = false;
             this.grdVehicleCompleted.Name = "grdVehicleCompleted";
             this.grdVehicleCompleted.ReadOnly = true;
             this.grdVehicleCompleted.RowHeadersVisible = false;
             this.grdVehicleCompleted.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleCompleted.Size = new System.Drawing.Size(903, 444);
+            this.grdVehicleCompleted.Size = new System.Drawing.Size(937, 558);
             this.grdVehicleCompleted.TabIndex = 0;
             // 
             // PlateNumber
@@ -97,7 +101,7 @@
             this.PlateNumber.HeaderText = "Biển kiểm soát";
             this.PlateNumber.Name = "PlateNumber";
             this.PlateNumber.ReadOnly = true;
-            this.PlateNumber.Width = 135;
+            this.PlateNumber.Width = 150;
             // 
             // DriverName
             // 
@@ -110,6 +114,8 @@
             // ExportDate
             // 
             this.ExportDate.DataPropertyName = "ExportDate";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
+            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.ExportDate.HeaderText = "Ngày xuất cảnh";
             this.ExportDate.Name = "ExportDate";
             this.ExportDate.ReadOnly = true;
@@ -118,6 +124,8 @@
             // ImportDate
             // 
             this.ImportDate.DataPropertyName = "ImportDate";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
+            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ImportDate.HeaderText = "Ngày nhập cảnh";
             this.ImportDate.Name = "ImportDate";
             this.ImportDate.ReadOnly = true;
@@ -129,7 +137,7 @@
             this.ConfirmStatus.HeaderText = "Trạng thái hồ sơ";
             this.ConfirmStatus.Name = "ConfirmStatus";
             this.ConfirmStatus.ReadOnly = true;
-            this.ConfirmStatus.Width = 145;
+            this.ConfirmStatus.Width = 160;
             // 
             // Parking
             // 
@@ -143,8 +151,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 493);
+            this.ClientSize = new System.Drawing.Size(980, 601);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCompletedCustomsProcedures";
             this.Text = "frmCompletedCustomsProcedures";
             this.Load += new System.EventHandler(this.frmCompletedCustomsProcedures_Load);
