@@ -62,8 +62,8 @@
             this.tsImport = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
-            this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -260,6 +260,7 @@
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Name = "xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem";
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Text = "Xuất khẩu chuyển cửa khẩu";
+            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Click += new System.EventHandler(this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem_Click);
             // 
             // nhậpKhẩuChuyểnCKToolStripMenuItem
             // 
@@ -364,10 +365,6 @@
             this.toolStripButtonListdeclarace.ToolTipText = "Danh sách tờ khai";
             this.toolStripButtonListdeclarace.Click += new System.EventHandler(this.toolStripButtonListdeclarace_Click);
             // 
-            // viewAllVehicleTableAdapter1
-            // 
-            this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -378,6 +375,10 @@
             this.toolStripButton1.Text = "Đã hoàn thành thủ tục hải quan";
             this.toolStripButton1.ToolTipText = "Đã hoàn thành thủ tục hải quan";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // viewAllVehicleTableAdapter1
+            // 
+            this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
             // frmMainForm
             // 

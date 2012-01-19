@@ -122,7 +122,7 @@ namespace ECustoms
                 var allVehicles = db.ViewAllVehicles.ToList();
                 db.Connection.Close();
                 // var allVehicles = VehicleFactory.GetAllViewAllVehicle();
-                var q = (from x in allVehicles where listVehilceID.Contains(x.VehicleID) select x).OrderByDescending(g => g.ModifiedDate).ToList();
+                var q = (from x in allVehicles where listVehilceID.Contains(x.VehicleID) select x).OrderByDescending(g=> g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
 
                 grdVehicle.DataSource = q;
 
