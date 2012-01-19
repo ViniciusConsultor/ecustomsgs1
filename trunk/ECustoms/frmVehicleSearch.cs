@@ -122,7 +122,7 @@ namespace ECustoms
                 var allVehicles = db.ViewAllVehicles.ToList();
                 db.Connection.Close();
                 // var allVehicles = VehicleFactory.GetAllViewAllVehicle();
-                var q = (from x in allVehicles where listVehilceID.Contains(x.VehicleID) select x).OrderByDescending(g=> g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
+                var q = (from x in allVehicles where listVehilceID.Contains(x.VehicleID) select x).OrderByDescending(g => g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
 
                 grdVehicle.DataSource = q;
 
@@ -601,24 +601,24 @@ namespace ECustoms
 
                     vehicle.ConfirmImportBy = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicle);
-                }
-                // Bind data to gridview
-                BindData();
+                    // Bind data to gridview
+                    BindData();
 
-                //print ticket
-                if (_printSetting != null && _printSetting.PrintImportHasGood == true)
-                {
-                  if (vehicle.HasGoodsImportedTocalPrint != null)
-                  {
-                    if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    //print ticket
+                    if (_printSetting != null && _printSetting.PrintImportHasGood == true)
                     {
-                      printTicket(2, vehicle);
+                        if (vehicle.HasGoodsImportedTocalPrint != null)
+                        {
+                            if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                printTicket(2, vehicle);
+                            }
+                        }
+                        else
+                        {
+                            printTicket(2, vehicle);
+                        }
                     }
-                  }
-                  else
-                  {
-                    printTicket(2, vehicle);
-                  }
                 }
             }
             catch (Exception ex)
@@ -1238,18 +1238,18 @@ namespace ECustoms
                 //print ticket
                 if (_printSetting != null && _printSetting.PrintParking == true)
                 {
-                  if (vehicleInfo.ParkingTotalPrint != null)
-                  {
-                    if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (vehicleInfo.ParkingTotalPrint != null)
                     {
-                      printTicket(3, vehicleInfo);
+                        if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            printTicket(3, vehicleInfo);
+                        }
                     }
-                  }
-                  else
-                  {
-                    printTicket(3, vehicleInfo);
-                  }
-                   
+                    else
+                    {
+                        printTicket(3, vehicleInfo);
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -1346,11 +1346,11 @@ namespace ECustoms
                     txtPrintType.Text = "Nhập cảnh";
                     if (vehicleInfo.HasGoodsImportedTocalPrint != null)
                     {
-                      vehicleInfo.HasGoodsImportedTocalPrint = vehicleInfo.HasGoodsImportedTocalPrint + 1;
+                        vehicleInfo.HasGoodsImportedTocalPrint = vehicleInfo.HasGoodsImportedTocalPrint + 1;
                     }
                     else
                     {
-                      vehicleInfo.HasGoodsImportedTocalPrint = 1;
+                        vehicleInfo.HasGoodsImportedTocalPrint = 1;
                     }
                     txtSTT.Text = vehicleInfo.HasGoodsImportedTocalPrint.ToString();
                     break;
@@ -1358,11 +1358,11 @@ namespace ECustoms
                     txtPrintType.Text = "Xác nhận hàng vào bãi";
                     if (vehicleInfo.ParkingTotalPrint != null)
                     {
-                      vehicleInfo.ParkingTotalPrint = vehicleInfo.ParkingTotalPrint + 1;
+                        vehicleInfo.ParkingTotalPrint = vehicleInfo.ParkingTotalPrint + 1;
                     }
                     else
                     {
-                      vehicleInfo.ParkingTotalPrint = 1;
+                        vehicleInfo.ParkingTotalPrint = 1;
                     }
                     txtSTT.Text = vehicleInfo.ParkingTotalPrint.ToString();
                     break;
