@@ -13,7 +13,7 @@ namespace ECustoms.BOL
         public static List<ViewAllVehicleHasGood> GetAllAllVehicleCompleted()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null).ToList();
+            var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null && g.IsGoodsImported == true && g.IsCompleted == true).ToList();
             db.Connection.Close();
             return data;
         }
