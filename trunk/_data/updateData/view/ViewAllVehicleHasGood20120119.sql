@@ -1,12 +1,3 @@
-USE [eCustoms]
-GO
-
-/****** Object:  View [dbo].[ViewAllVehicleHasGood]    Script Date: 01/19/2012 00:57:52 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
 
 ALTER VIEW [dbo].[ViewAllVehicleHasGood]
 AS

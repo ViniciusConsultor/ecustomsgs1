@@ -1,12 +1,3 @@
-USE [eCustoms]
-GO
-
-/****** Object:  Table [dbo].[tblDeclaration]    Script Date: 01/19/2012 00:58:38 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
 
 ALTER TABLE [dbo].[tblDeclaration]
 ADD
