@@ -915,5 +915,14 @@ namespace ECustoms
                 if (_declerationType == Common.DeclerationType.Import) btnConfirmImportKH_Click(sender, e);
             }
         }
+
+        private void grdVehicle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+          if ((e.ColumnIndex == 1) && (grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null))
+          {
+            string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
+            grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+          }
+        }
     }
 }
