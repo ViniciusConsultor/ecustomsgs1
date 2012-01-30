@@ -227,6 +227,7 @@
           this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
           this.grdVehicle.Size = new System.Drawing.Size(816, 232);
           this.grdVehicle.TabIndex = 10;
+          this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
           // 
           // Count
           // 

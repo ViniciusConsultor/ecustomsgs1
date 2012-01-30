@@ -874,8 +874,14 @@ namespace ECustoms
                 txtNumberOfContainer.Text = result.NumberOfContainer.ToString();
                 txtStatus.Text = result.Status;
                 txtNote.Text = result.Note;
-                mtxtImportHour.Text = result.ImportDate.Value.ToString("HH:mm");
-                mtxtExportHour.Text = result.ExportDate.Value.ToString("HH:mm");
+                if (result.ImportDate != null)
+                {
+                  mtxtImportHour.Text = result.ImportDate.Value.ToString("HH:mm");
+                }
+                if (result.ExportDate != null)
+                {
+                  mtxtExportHour.Text = result.ExportDate.Value.ToString("HH:mm");
+                }
                 _currentModifyPlateNumber = plateNumber;
                 btnAdd.Enabled = false;
                 btnUpdate.Enabled = true;
@@ -934,6 +940,15 @@ namespace ECustoms
         private void txtPlateNumber_Leave(object sender, EventArgs e)
         {
           txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+        }
+
+        private void grdVehicle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+          if ((e.ColumnIndex == 0) && (grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null))
+          {
+            string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
+            grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+          }
         }
     }
 }

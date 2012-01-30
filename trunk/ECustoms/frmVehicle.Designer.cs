@@ -375,6 +375,7 @@
           this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
           this.grdVehicle.Size = new System.Drawing.Size(882, 245);
           this.grdVehicle.TabIndex = 19;
+          this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
           this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
           // 
           // PlateNumber
