@@ -1294,6 +1294,7 @@ namespace ECustoms
             var txtUnit = (TextObject)vehicleTicket.Section1.ReportObjects["txtUnit"];
             var txtBarcode = (TextObject)vehicleTicket.Section1.ReportObjects["txtBarcode"];
             var txtSTT = (TextObject)vehicleTicket.Section1.ReportObjects["txtSTT"];
+            var txtTotalPrintVehicleTicketOfDay = (TextObject)vehicleTicket.Section1.ReportObjects["txtTotalPrintVehicleTicketOfDay"];
             var txtPrintDate = (TextObject)vehicleTicket.Section1.ReportObjects["txtPrintDate"];
 
             txtVehicleNumber.Text = vehicleInfo.PlateNumber;
@@ -1337,6 +1338,8 @@ namespace ECustoms
             }
 
             txtPrintUser.Text = _userInfo.Name;
+
+            
             switch (printType)
             {
                 case 1:
@@ -1351,6 +1354,9 @@ namespace ECustoms
                     else
                     {
                         vehicleInfo.HasGoodsImportedTocalPrint = 1;
+
+                        //update tong so lan print ticket trong 1 ngay
+                        updateTotalTicketPrint();
                     }
                     txtSTT.Text = vehicleInfo.HasGoodsImportedTocalPrint.ToString();
                     break;
@@ -1363,48 +1369,23 @@ namespace ECustoms
                     else
                     {
                         vehicleInfo.ParkingTotalPrint = 1;
+
+                        //update tong so lan print ticket trong 1 ngay
+                        updateTotalTicketPrint();
                     }
                     txtSTT.Text = vehicleInfo.ParkingTotalPrint.ToString();
                     break;
             }
+
+            //lay tong so lan print ticket trong 1 ngay
+            tblApplicationObject appObj = ApplicationObjectFactory.getByName(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
+            txtTotalPrintVehicleTicketOfDay.Text = appObj.ApplicationObjectValueLong.GetValueOrDefault().ToString();
+
             txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
             DateTime currentDate = CommonFactory.GetCurrentDate();
             //cap nhat so lan in ticket cua phuong tien vao CSDL
 
             VehicleFactory.UpdateTicketTotalPrint(vehicleInfo);
-
-
-            //cap nhat so thu tu cua ticket
-            //day la tong so lan in ticket trong 1 ngay
-            // tam thoi commen lai
-            //tblApplicationObject appObj = ApplicationObjectFactory.getByName(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
-            //DateTime currentDate = CommonFactory.GetCurrentDate();
-            //if (appObj == null)
-            //{
-            //    appObj = new tblApplicationObject();
-            //    appObj.ApplicationObjectName = ApplicationObjectFactory.TOTAL_TICKET_IN_DATE;
-            //    appObj.ApplicationObjectValueDatetime = CommonFactory.GetCurrentDate();
-            //    appObj.ApplicationObjectValueLong = 1;
-            //    ApplicationObjectFactory.Insert(appObj);
-            //}
-            //else
-            //{
-            //    if (currentDate.DayOfYear != ((DateTime)appObj.ApplicationObjectValueDatetime).DayOfYear)
-            //    {
-            //        appObj.ApplicationObjectValueDatetime = currentDate;
-            //        appObj.ApplicationObjectValueLong = 1;
-            //    }
-            //    else
-            //    {
-            //        appObj.ApplicationObjectValueLong = appObj.ApplicationObjectValueLong + 1;
-            //    }
-            //    ApplicationObjectFactory.Update(appObj);
-            //}
-            //txtSTT.Text = appObj.ApplicationObjectValueLong.ToString();
-            //day la tong so lan in ticket trong 1 ngay
-            // tam thoi commen lai
-            //END
-
 
             txtPrintDate.Text = currentDate.ToString("dd/MM/yyyy HH:mm");
 
@@ -1429,6 +1410,37 @@ namespace ECustoms
             }
 
             return;
+        }
+
+        //cap nhat so thu tu cua ticket
+        //day la tong so lan in ticket trong 1 ngay
+        private long updateTotalTicketPrint()
+        {
+          tblApplicationObject appObj = ApplicationObjectFactory.getByName(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
+          DateTime currentDate = CommonFactory.GetCurrentDate();
+          if (appObj == null)
+          {
+              appObj = new tblApplicationObject();
+              appObj.ApplicationObjectName = ApplicationObjectFactory.TOTAL_TICKET_IN_DATE;
+              appObj.ApplicationObjectValueDatetime = CommonFactory.GetCurrentDate();
+              appObj.ApplicationObjectValueLong = 1;
+              ApplicationObjectFactory.Insert(appObj);
+          }
+          else
+          {
+              if (currentDate.DayOfYear != ((DateTime)appObj.ApplicationObjectValueDatetime).DayOfYear)
+              {
+                  appObj.ApplicationObjectValueDatetime = currentDate;
+                  appObj.ApplicationObjectValueLong = 1;
+              }
+              else
+              {
+                  appObj.ApplicationObjectValueLong = appObj.ApplicationObjectValueLong + 1;
+              }
+              ApplicationObjectFactory.Update(appObj);
+          }
+          long applicationObjectValueLong =  appObj.ApplicationObjectValueLong.GetValueOrDefault();
+          return applicationObjectValueLong;
         }
 
         private void AutoPrintReport(string printerName, String reportFileURL)
