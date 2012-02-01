@@ -313,6 +313,10 @@ namespace ECustoms.BOL
 
           vehicleObj.HasGoodsImportedTocalPrint = vehicle.HasGoodsImportedTocalPrint;
           vehicleObj.ParkingTotalPrint = vehicle.ParkingTotalPrint;
+
+          vehicleObj.HasGoodsImportedPrintOrderNumber = vehicle.HasGoodsImportedPrintOrderNumber;
+          vehicleObj.ParkingTotalPrintOrderNumber = vehicle.ParkingTotalPrintOrderNumber;
+
           int re = db.SaveChanges();
           db.Connection.Close();
           return re;

@@ -1349,37 +1349,46 @@ namespace ECustoms
                     txtPrintType.Text = "Nhập cảnh";
                     if (vehicleInfo.HasGoodsImportedTocalPrint != null)
                     {
+                        //tang so lan in
                         vehicleInfo.HasGoodsImportedTocalPrint = vehicleInfo.HasGoodsImportedTocalPrint + 1;
                     }
                     else
                     {
+                        //in lan dau tien
                         vehicleInfo.HasGoodsImportedTocalPrint = 1;
 
                         //update tong so lan print ticket trong 1 ngay
-                        updateTotalTicketPrint();
+                        long orderNumber = updateTotalTicketPrint();
+
+                        //cap nhat so tu thu in cua xe
+                        vehicleInfo.HasGoodsImportedPrintOrderNumber = orderNumber;
+
                     }
                     txtSTT.Text = vehicleInfo.HasGoodsImportedTocalPrint.ToString();
+                    txtTotalPrintVehicleTicketOfDay.Text = vehicleInfo.HasGoodsImportedPrintOrderNumber.GetValueOrDefault().ToString();
                     break;
                 case 3:
                     txtPrintType.Text = "Xác nhận hàng vào bãi";
                     if (vehicleInfo.ParkingTotalPrint != null)
                     {
+                        //tang so lan in
                         vehicleInfo.ParkingTotalPrint = vehicleInfo.ParkingTotalPrint + 1;
                     }
                     else
                     {
+                        //in lan dau tien
                         vehicleInfo.ParkingTotalPrint = 1;
 
                         //update tong so lan print ticket trong 1 ngay
-                        updateTotalTicketPrint();
+                        long orderNumber= updateTotalTicketPrint();
+
+                        //cap nhat so tu thu in cua xe
+                        vehicleInfo.ParkingTotalPrintOrderNumber = orderNumber;
                     }
                     txtSTT.Text = vehicleInfo.ParkingTotalPrint.ToString();
+                    txtTotalPrintVehicleTicketOfDay.Text = vehicleInfo.ParkingTotalPrintOrderNumber.GetValueOrDefault().ToString();
                     break;
             }
-
-            //lay tong so lan print ticket trong 1 ngay
-            tblApplicationObject appObj = ApplicationObjectFactory.getByName(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
-            txtTotalPrintVehicleTicketOfDay.Text = appObj.ApplicationObjectValueLong.GetValueOrDefault().ToString();
 
             txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
             DateTime currentDate = CommonFactory.GetCurrentDate();
