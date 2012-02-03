@@ -267,12 +267,14 @@
             this.nhậpKhẩuChuyểnCKToolStripMenuItem.Name = "nhậpKhẩuChuyểnCKToolStripMenuItem";
             this.nhậpKhẩuChuyểnCKToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
             this.nhậpKhẩuChuyểnCKToolStripMenuItem.Text = "Nhập Khẩu chuyển CK";
+            this.nhậpKhẩuChuyểnCKToolStripMenuItem.Click += new System.EventHandler(this.nhậpKhẩuChuyểnCKToolStripMenuItem_Click);
             // 
             // hàngTạmNhậpTáiXuấtToolStripMenuItem
             // 
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Name = "hàngTạmNhậpTáiXuấtToolStripMenuItem";
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Text = "Hàng tạm nhập tái xuất";
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Click += new System.EventHandler(this.hàngTạmNhậpTáiXuấtToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 

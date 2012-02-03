@@ -161,7 +161,7 @@ namespace ECustoms
 
         private void mnItemReport_Click(object sender, EventArgs e)
         {
-            var frmReport = new frmReport(this, _userInfo);
+            var frmReport = new frmReport(this, _userInfo, 0);
             frmReport.Show(this);
         }
 
@@ -222,7 +222,20 @@ namespace ECustoms
 
         private void xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var frmReport = new frmReport(this, _userInfo, 5);
+            frmReport.Show(this);
+        }
 
+        private void nhậpKhẩuChuyểnCKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmReport = new frmReport(this, _userInfo, 6);
+            frmReport.Show(this);
+        }
+
+        private void hàngTạmNhậpTáiXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmReport = new frmReport(this, _userInfo, 7);
+            frmReport.Show(this);
         }
     }
 }
