@@ -16,10 +16,10 @@ namespace ECustoms.BOL
         /// <param name="vehicleInfos"></param>
         /// <param name="listVehicleUpdate"></param>
         /// <param name="userID"></param>
-        public static int  AddDeclaration(tblDeclaration declarationInfo, List<tblVehicle> vehicleInfos,List<tblVehicle> listVehicleUpdate, int userID)
+        public static int AddDeclaration(tblDeclaration declarationInfo, List<tblVehicle> vehicleInfos, List<tblVehicle> listVehicleUpdate, int userID)
         {
             var result = -1;
-                          
+
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
 
             declarationInfo.tblUser = db.tblUsers.Where(g => g.UserID.Equals(userID)).FirstOrDefault();
@@ -29,7 +29,7 @@ namespace ECustoms.BOL
             db.AddTotblDeclarations(declarationInfo);
             db.SaveChanges();
             // Return if insert fail
-            if(declarationInfo.DeclarationID <= 0) return - 1;            
+            if (declarationInfo.DeclarationID <= 0) return -1;
             // Add vehicle
             foreach (var vehicle in vehicleInfos)
             {
@@ -43,7 +43,7 @@ namespace ECustoms.BOL
                 vehicleDeclara.DeclarationID = declarationInfo.DeclarationID;
                 db.AddTotblDeclarationVehicles(vehicleDeclara);
                 db.SaveChanges();
-              // Add data to tblDecleVehicle
+                // Add data to tblDecleVehicle
             }
 
             // Update the vehicle
@@ -56,7 +56,7 @@ namespace ECustoms.BOL
                     // Add to tblDeclerateVehcle
                     var declerartionTem =
                         db.tblDeclarations.Where(g => g.DeclarationID == declarationInfo.DeclarationID).FirstOrDefault();
-                    
+
                     var vehicleDeclara = new tblDeclarationVehicle();
                     vehicleDeclara.VehicleID = vehicle.VehicleID;
                     vehicleDeclara.DeclarationID = declerartionTem.DeclarationID;
@@ -65,7 +65,7 @@ namespace ECustoms.BOL
                 }
             }
             db.Connection.Close();
-            return result;                        
+            return result;
         }
 
         /// <summary>
@@ -99,12 +99,11 @@ namespace ECustoms.BOL
         /// <param name="declarationID">DeclarationID</param>
         /// <returns>DeclarationInfo object</returns>
         public static tblDeclaration SelectByID(long declarationID)
-        {            
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            tblDeclaration declaration= db.tblDeclarations.Where(g => g.DeclarationID == declarationID).FirstOrDefault();
+            tblDeclaration declaration = db.tblDeclarations.Where(g => g.DeclarationID == declarationID).FirstOrDefault();
             db.Connection.Close();
             return declaration;
-            
         }
 
         /// <summary>
@@ -112,7 +111,8 @@ namespace ECustoms.BOL
         /// </summary>
         /// <param name="declaration"></param>
         /// <returns></returns>
-        public static int Update(tblDeclaration declaration) {
+        public static int Update(tblDeclaration declaration)
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             declaration.ModifiedDate = CommonFactory.GetCurrentDate();
             // Get orgin object
@@ -121,35 +121,33 @@ namespace ECustoms.BOL
             db.ApplyPropertyChanges("tblDeclarations", declaration);
             int re = db.SaveChanges();
             db.Connection.Close();
-            return re;           
+            return re;
         }
 
+        /// <summary>
+        /// Confirm return document
+        /// </summary>
+        /// <param name="confirmStatus"></param>
+        /// <param name="declerationID"></param>
+        /// <returns></returns>
+        public static int ConfirmReturnDocument(string confirmStatus, long declerationID)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var decleration = db.tblDeclarations.Where(g => g.DeclarationID == declerationID).FirstOrDefault();
+            decleration.ConfirmStatus = confirmStatus;
+            decleration.ConfirmDate = DateTime.Now;
+            int re = db.SaveChanges();
+            db.Connection.Close();
+            return re;
+        }
 
-      /// <summary>
-      /// Confirm return document
-      /// </summary>
-      /// <param name="confirmStatus"></param>
-      /// <param name="declerationID"></param>
-      /// <returns></returns>
-      public  static int ConfirmReturnDocument(string confirmStatus, long declerationID)
-      {
-        var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-        var decleration = db.tblDeclarations.Where(g => g.DeclarationID == declerationID).FirstOrDefault();
-        decleration.ConfirmStatus = confirmStatus;
-        decleration.ConfirmDate = DateTime.Now;
-        int re = db.SaveChanges();
-        db.Connection.Close();
-        return re;
-      }
-
-
-      public static List<ViewAllDeclaration> SelectAllFromView() {
+        public static List<ViewAllDeclaration> SelectAllFromView()
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             // Dont' get the DeclerationID = 0 and 1
-            List < ViewAllDeclaration >  list =db.ViewAllDeclarations.Where(g => g.DeclarationID != 0 && g.DeclarationID != 1).ToList();
+            List<ViewAllDeclaration> list = db.ViewAllDeclarations.Where(g => g.DeclarationID != 0 && g.DeclarationID != 1).ToList();
             db.Connection.Close();
             return list;
-
         }
 
         /// <summary>
@@ -157,18 +155,18 @@ namespace ECustoms.BOL
         /// </summary>
         /// <param name="vehicleID"></param>
         /// <returns></returns>
-      public static List<ViewAllVehicleHasGood> GetByVehicleID(long vehicleID)
-      {
+        public static List<ViewAllVehicleHasGood> GetByVehicleID(long vehicleID)
+        {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            List < ViewAllVehicleHasGood >  list = db.ViewAllVehicleHasGoods.Where(g => g.VehicleID == vehicleID && g.DeclarationID > 1).ToList();
+            List<ViewAllVehicleHasGood> list = db.ViewAllVehicleHasGoods.Where(g => g.VehicleID == vehicleID && g.DeclarationID > 1).ToList();
             db.Connection.Close();
             return list;
-      }
+        }
 
         public static List<ViewAllVehicleHasGood> GetAllVehicleByVehicleID(long vehicleID)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            List < ViewAllVehicleHasGood >  list = db.ViewAllVehicleHasGoods.Where(g => g.VehicleID == vehicleID).ToList();
+            List<ViewAllVehicleHasGood> list = db.ViewAllVehicleHasGoods.Where(g => g.VehicleID == vehicleID).ToList();
             db.Connection.Close();
             return list;
         }
