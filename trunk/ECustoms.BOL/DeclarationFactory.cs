@@ -98,7 +98,7 @@ namespace ECustoms.BOL
         /// </summary>
         /// <param name="declarationID">DeclarationID</param>
         /// <returns>DeclarationInfo object</returns>
-        public static tblDeclaration SelectByID(long declarationID)
+        public static tblDeclaration GetByID(long declarationID)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             tblDeclaration declaration = db.tblDeclarations.Where(g => g.DeclarationID == declarationID).FirstOrDefault();

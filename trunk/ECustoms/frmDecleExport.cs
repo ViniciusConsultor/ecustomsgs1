@@ -67,7 +67,7 @@ namespace ECustoms
                 }
                 else
                 {
-                    declarationInfo = DeclarationFactory.SelectByID(_declerationID);
+                    declarationInfo = DeclarationFactory.GetByID(_declerationID);
                     if (!string.IsNullOrEmpty(txtExportNumber.Text))
                     {
                         declarationInfo.Number = Convert.ToInt32(txtExportNumber.Text);
@@ -92,7 +92,8 @@ namespace ECustoms
             try
             {
                 if (!Validate()) return;
-                var declarationInfo = GetDeclarationInfo();
+                var declaratioInfo = new tblDeclaration();
+                var declarationInfo = GetDeclarationInfo(ref declaratioInfo);
                 var listVehicleInfo = new List<tblVehicle>();
                 var listVehicleUpdate = new List<tblVehicle>();
                 tblVehicle vehicleInfo;
@@ -210,12 +211,11 @@ namespace ECustoms
         #region Private methods
 
         /// <summary>
-        /// Get Declaration from Controls
+        /// Get information from UI        
         /// </summary>
         /// <returns></returns>
-        private tblDeclaration GetDeclarationInfo()
-        {
-            var declarationInfo = new tblDeclaration();
+        private tblDeclaration GetDeclarationInfo(ref tblDeclaration declarationInfo)
+        {            
             declarationInfo.DeclarationType = (short)_declerationType;
             declarationInfo.Number = !string.IsNullOrEmpty(txtExportNumber.Text) ? Convert.ToInt32(txtExportNumber.Text.Trim()) : 0;
             declarationInfo.Type = txtTypeExport.Text.Trim();
@@ -230,6 +230,7 @@ namespace ECustoms
             declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
             return declarationInfo;
         }
+
 
         private void ResetForm()
         {
@@ -344,7 +345,7 @@ namespace ECustoms
                 btnAdd.Enabled = false;                
 
                 // Get Decleration information
-                var declarationInfo = DeclarationFactory.SelectByID(this._declerationID);
+                var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
                 // Bind Declaration to controls
                 if (declarationInfo != null)
                 {
@@ -528,9 +529,10 @@ namespace ECustoms
               if (!Validate()) return;
               if (_declerationID != 0)
               {
-                  var declerationInfo = GetDeclarationInfo();
-                  // Set DeclerationID
-                  declerationInfo.DeclarationID = this._declerationID;
+                  // Get decleration by ID
+                  var declerationInfoTemp = DeclarationFactory.GetByID(_declerationID);
+                  var declerationInfo = GetDeclarationInfo(ref declerationInfoTemp);
+                  
                   // Update Decleration
                   DeclarationFactory.Update(declerationInfo);
                   // Delete all existing vehicle by DeclarationID from tblDeclarationVehicle
