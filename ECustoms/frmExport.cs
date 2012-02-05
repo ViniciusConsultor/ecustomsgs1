@@ -304,7 +304,7 @@ namespace ECustoms
                 btnReset.Enabled = false;
 
                 // Get Decleration information
-                var declarationInfo = DeclarationFactory.SelectByID(this._declerationID);
+                var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
                 // Bind Declaration to controls
                 if (declarationInfo != null)
                 {
@@ -657,7 +657,7 @@ namespace ECustoms
             cbImportHasDeclaration.Checked = true;
             btnAddExisting.Enabled = true;
 
-            var declarationInfo = DeclarationFactory.SelectByID(this._declerationID);
+            var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
 
             //// Move all data from export form to import form if it is not existing
             //if (_mode == 0 || (declarationInfo != null && (declarationInfo.ImportNumber != null || declarationInfo.ImportNumber < 1)))
