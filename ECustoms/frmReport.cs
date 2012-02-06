@@ -31,12 +31,15 @@ namespace ECustoms
             cbReportType.Items.Add("Phương tiện chở hàng xuất khẩu");
             cbReportType.Items.Add("Phương tiện chở hàng nhập khẩu");
             cbReportType.Items.Add("Phương tiện hoàn thành thủ tục Hải quan vào nội địa");
-            if (_type != 0)
-            {
-                cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
-                cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
-                cbReportType.Items.Add("Hàng tạm nhập tái xuất");
-            }
+            cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
+            cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
+            cbReportType.Items.Add("Hàng tạm nhập tái xuất");
+            //if (_type != 0)
+            //{
+            //    cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
+            //    cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
+            //    cbReportType.Items.Add("Hàng tạm nhập tái xuất");
+            //}
             cbReportType.SelectedIndex = _type;
             if (_type != 0)
                 cbReportType.Enabled = false;
