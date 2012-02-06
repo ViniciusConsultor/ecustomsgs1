@@ -513,13 +513,7 @@ namespace ECustoms
                     {
                         var result = DeclarationFactory.ConfirmReturnDocument("Đã trả hồ sơ",
                                                          Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value));
-                        BindData();
-                        if (result > 0)
-                            MessageBox.Show("Xác nhận thành công");
-                        else
-                        {
-                            MessageBox.Show("Xác nhận không thành công");
-                        }
+                        BindData();                        
                     }
                 }
                 else
