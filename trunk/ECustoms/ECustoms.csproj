@@ -111,6 +111,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportGate.cs">
+      <DependentUpon>ExportGate.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FrmDecleOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDecleOption.Designer.cs">
+      <DependentUpon>FrmDecleOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeclerationOptionInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeclerationOptionInfo.Designer.cs">
+      <DependentUpon>frmDeclerationOptionInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -321,6 +339,16 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="ExportGate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExportGate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDecleOption.resx">
+      <DependentUpon>FrmDecleOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeclerationOptionInfo.resx">
+      <DependentUpon>frmDeclerationOptionInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExportAndHasItem.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ExportAndHasItem.cs</LastGenOutput>

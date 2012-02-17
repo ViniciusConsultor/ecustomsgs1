@@ -237,5 +237,11 @@ namespace ECustoms
             var frmReport = new frmReport(this, _userInfo, 7);
             frmReport.Show(this);
         }
+
+        private void quảnLýHàngNTXCKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmDeclerationOptionInfo = new frmDeclerationOptionInfo(_userInfo,this);
+            frmDeclerationOptionInfo.Show(this);
+        }
     }
 }

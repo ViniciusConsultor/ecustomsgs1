@@ -26,6 +26,13 @@ namespace ECustoms.Utilities
             Import = 1,
             Reexport =2
         }
+        
+        public enum DeclerationOptionType
+        {
+          XKCK,
+          NKCK,
+          TNTX
+        }
        
         #endregion
 

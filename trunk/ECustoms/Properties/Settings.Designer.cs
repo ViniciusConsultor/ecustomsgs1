@@ -33,5 +33,15 @@ namespace ECustoms.Properties {
                 return ((string)(this["dbEcustomConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Cosmos-Lap;Initial Catalog=eCustoms;Integrated Security=True")]
+        public string eCustomsConnectionString {
+            get {
+                return ((string)(this["eCustomsConnectionString"]));
+            }
+        }
     }
 }

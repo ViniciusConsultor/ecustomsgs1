@@ -35,6 +35,10 @@
           System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
           System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
           this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
+          this.txtMoney = new System.Windows.Forms.MaskedTextBox();
+          this.label2 = new System.Windows.Forms.Label();
+          this.txtRegisterPlace = new System.Windows.Forms.TextBox();
+          this.lblRegisterPlace = new System.Windows.Forms.Label();
           this.txtExportTotalVehicles = new System.Windows.Forms.MaskedTextBox();
           this.lblTotalVehicles = new System.Windows.Forms.Label();
           this.dtpExportRegisterDate = new System.Windows.Forms.DateTimePicker();
@@ -50,7 +54,6 @@
           this.txtExportNumber = new System.Windows.Forms.MaskedTextBox();
           this.txtExportCompanyName = new System.Windows.Forms.TextBox();
           this.lblProductAmount = new System.Windows.Forms.Label();
-          this.txtExportProductAmount = new System.Windows.Forms.TextBox();
           this.txtExportUnit = new System.Windows.Forms.TextBox();
           this.lblUnit = new System.Windows.Forms.Label();
           this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
@@ -77,6 +80,7 @@
           this.btnUpdate = new System.Windows.Forms.Button();
           this.button1 = new System.Windows.Forms.Button();
           this.btnAdd = new System.Windows.Forms.Button();
+          this.txtProductAmount = new System.Windows.Forms.TextBox();
           this.gbExportDeclaration.SuspendLayout();
           this.groupBoxVehicle.SuspendLayout();
           ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
@@ -84,6 +88,11 @@
           // 
           // gbExportDeclaration
           // 
+          this.gbExportDeclaration.Controls.Add(this.txtProductAmount);
+          this.gbExportDeclaration.Controls.Add(this.txtMoney);
+          this.gbExportDeclaration.Controls.Add(this.label2);
+          this.gbExportDeclaration.Controls.Add(this.txtRegisterPlace);
+          this.gbExportDeclaration.Controls.Add(this.lblRegisterPlace);
           this.gbExportDeclaration.Controls.Add(this.txtExportTotalVehicles);
           this.gbExportDeclaration.Controls.Add(this.lblTotalVehicles);
           this.gbExportDeclaration.Controls.Add(this.dtpExportRegisterDate);
@@ -99,16 +108,50 @@
           this.gbExportDeclaration.Controls.Add(this.txtExportNumber);
           this.gbExportDeclaration.Controls.Add(this.txtExportCompanyName);
           this.gbExportDeclaration.Controls.Add(this.lblProductAmount);
-          this.gbExportDeclaration.Controls.Add(this.txtExportProductAmount);
           this.gbExportDeclaration.Controls.Add(this.txtExportUnit);
           this.gbExportDeclaration.Controls.Add(this.lblUnit);
           this.gbExportDeclaration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
           this.gbExportDeclaration.Location = new System.Drawing.Point(12, 41);
           this.gbExportDeclaration.Name = "gbExportDeclaration";
-          this.gbExportDeclaration.Size = new System.Drawing.Size(928, 150);
+          this.gbExportDeclaration.Size = new System.Drawing.Size(928, 191);
           this.gbExportDeclaration.TabIndex = 19;
           this.gbExportDeclaration.TabStop = false;
           this.gbExportDeclaration.Text = "Thông tin tờ khai xuất cảnh";
+          // 
+          // txtMoney
+          // 
+          this.txtMoney.Location = new System.Drawing.Point(792, 120);
+          this.txtMoney.Mask = "000000000000";
+          this.txtMoney.Name = "txtMoney";
+          this.txtMoney.Size = new System.Drawing.Size(128, 26);
+          this.txtMoney.TabIndex = 20;
+          // 
+          // label2
+          // 
+          this.label2.AutoSize = true;
+          this.label2.Location = new System.Drawing.Point(689, 124);
+          this.label2.Name = "label2";
+          this.label2.Size = new System.Drawing.Size(100, 20);
+          this.label2.TabIndex = 18;
+          this.label2.Text = "Trị giá (USD)";
+          // 
+          // txtRegisterPlace
+          // 
+          this.txtRegisterPlace.Location = new System.Drawing.Point(416, 152);
+          this.txtRegisterPlace.Multiline = true;
+          this.txtRegisterPlace.Name = "txtRegisterPlace";
+          this.txtRegisterPlace.Size = new System.Drawing.Size(251, 28);
+          this.txtRegisterPlace.TabIndex = 17;
+          this.txtRegisterPlace.Text = "B15E-Chi cục Hải quan Tân Thanh";
+          // 
+          // lblRegisterPlace
+          // 
+          this.lblRegisterPlace.AutoSize = true;
+          this.lblRegisterPlace.Location = new System.Drawing.Point(272, 152);
+          this.lblRegisterPlace.Name = "lblRegisterPlace";
+          this.lblRegisterPlace.Size = new System.Drawing.Size(114, 20);
+          this.lblRegisterPlace.TabIndex = 16;
+          this.lblRegisterPlace.Text = "Nơi đăng ký TK";
           // 
           // txtExportTotalVehicles
           // 
@@ -242,13 +285,6 @@
           this.lblProductAmount.TabIndex = 6;
           this.lblProductAmount.Text = "Lượng Hàng";
           // 
-          // txtExportProductAmount
-          // 
-          this.txtExportProductAmount.Location = new System.Drawing.Point(792, 15);
-          this.txtExportProductAmount.Name = "txtExportProductAmount";
-          this.txtExportProductAmount.Size = new System.Drawing.Size(129, 26);
-          this.txtExportProductAmount.TabIndex = 7;
-          // 
           // txtExportUnit
           // 
           this.txtExportUnit.Location = new System.Drawing.Point(792, 49);
@@ -276,7 +312,7 @@
           this.groupBoxVehicle.Controls.Add(this.btnAddVehicle);
           this.groupBoxVehicle.Controls.Add(this.grdVehicle);
           this.groupBoxVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.groupBoxVehicle.Location = new System.Drawing.Point(12, 197);
+          this.groupBoxVehicle.Location = new System.Drawing.Point(12, 238);
           this.groupBoxVehicle.Name = "groupBoxVehicle";
           this.groupBoxVehicle.Size = new System.Drawing.Size(927, 316);
           this.groupBoxVehicle.TabIndex = 20;
@@ -519,7 +555,7 @@
           this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
           this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
           this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-          this.btnUpdate.Location = new System.Drawing.Point(214, 519);
+          this.btnUpdate.Location = new System.Drawing.Point(214, 560);
           this.btnUpdate.Name = "btnUpdate";
           this.btnUpdate.Size = new System.Drawing.Size(171, 33);
           this.btnUpdate.TabIndex = 31;
@@ -536,7 +572,7 @@
           this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
           this.button1.Image = global::ECustoms.Properties.Resources.close;
           this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-          this.button1.Location = new System.Drawing.Point(391, 519);
+          this.button1.Location = new System.Drawing.Point(391, 560);
           this.button1.Name = "button1";
           this.button1.Size = new System.Drawing.Size(93, 33);
           this.button1.TabIndex = 33;
@@ -552,7 +588,7 @@
           this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
           this.btnAdd.Image = global::ECustoms.Properties.Resources.save_icon;
           this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-          this.btnAdd.Location = new System.Drawing.Point(19, 519);
+          this.btnAdd.Location = new System.Drawing.Point(19, 560);
           this.btnAdd.Name = "btnAdd";
           this.btnAdd.Size = new System.Drawing.Size(189, 33);
           this.btnAdd.TabIndex = 30;
@@ -561,13 +597,20 @@
           this.btnAdd.UseVisualStyleBackColor = true;
           this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
           // 
+          // txtProductAmount
+          // 
+          this.txtProductAmount.Location = new System.Drawing.Point(792, 16);
+          this.txtProductAmount.Name = "txtProductAmount";
+          this.txtProductAmount.Size = new System.Drawing.Size(129, 26);
+          this.txtProductAmount.TabIndex = 21;
+          // 
           // FrmDecleExport
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
           this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
           this.BackColor = System.Drawing.SystemColors.Control;
           this.CancelButton = this.button1;
-          this.ClientSize = new System.Drawing.Size(951, 560);
+          this.ClientSize = new System.Drawing.Size(951, 602);
           this.Controls.Add(this.btnUpdate);
           this.Controls.Add(this.button1);
           this.Controls.Add(this.btnAdd);
@@ -634,5 +677,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfContainer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
+        private System.Windows.Forms.MaskedTextBox txtMoney;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRegisterPlace;
+        private System.Windows.Forms.Label lblRegisterPlace;
+        private System.Windows.Forms.TextBox txtProductAmount;
     }
 }
