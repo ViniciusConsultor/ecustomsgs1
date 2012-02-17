@@ -16,14 +16,14 @@ namespace ECustoms {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ExportGateTransfer : ReportClass {
+    public class ExportGate : ReportClass {
         
-        public ExportGateTransfer() {
+        public ExportGate() {
         }
         
         public override string ResourceName {
             get {
-                return "ExportGateTransfer.rpt";
+                return "ExportGate.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ECustoms {
         
         public override string FullResourceName {
             get {
-                return "ECustoms.ExportGateTransfer.rpt";
+                return "ECustoms.ExportGate.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ECustoms {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedExportGateTransfer : Component, ICachedReport {
+    public class CachedExportGate : Component, ICachedReport {
         
-        public CachedExportGateTransfer() {
+        public CachedExportGate() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ECustoms {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ExportGateTransfer rpt = new ExportGateTransfer();
+            ExportGate rpt = new ExportGate();
             rpt.Site = this.Site;
             return rpt;
         }

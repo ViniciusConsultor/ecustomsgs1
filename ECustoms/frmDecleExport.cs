@@ -58,7 +58,7 @@ namespace ECustoms
                 }
                 declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
                 declarationInfo.ProductName = txtExportProductName.Text;
-                declarationInfo.ProductAmount = txtExportProductAmount.Text;                
+                declarationInfo.ProductAmount = txtProductAmount.Text;                
                 // Add Mode
                 if (_mode == 0)
                 {
@@ -74,7 +74,7 @@ namespace ECustoms
                     }
                     declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
                     declarationInfo.ProductName = txtExportProductName.Text;
-                    declarationInfo.ProductAmount = txtExportProductAmount.Text;                    
+                    declarationInfo.ProductAmount = txtProductAmount.Text;                    
                     // Update Mode
                     var vehicle = new frmVehicle(4, _mainForm, ref _vehicleInfosTemp, declarationInfo, _userInfo);
                     vehicle.Show(this);
@@ -222,12 +222,14 @@ namespace ECustoms
             declarationInfo.CompanyName = txtExportCompanyName.Text;
             declarationInfo.CompanyCode = txtExportCompanyCode.Text;
             declarationInfo.RegisterDate = dtpExportRegisterDate.Value;
-            declarationInfo.ProductAmount = txtExportProductAmount.Text.Trim();
+            declarationInfo.ProductAmount = txtProductAmount.Text.Trim();
             declarationInfo.Unit = txtExportUnit.Text.Trim();
             declarationInfo.ProductName = txtExportProductName.Text;
             declarationInfo.ModifiedDate = CommonFactory.GetCurrentDate();
             declarationInfo.ModifiedByID = _userInfo.UserID;
             declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
+            declarationInfo.RegisterPlace = txtRegisterPlace.Text.Trim();
+            declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
             return declarationInfo;
         }
 
@@ -237,7 +239,7 @@ namespace ECustoms
           txtExportNumber.Text = "";
           txtExportProductName.Text = "";
           txtExportCompanyName.Text = "";
-          txtExportProductAmount.Text = "";
+          txtProductAmount.Text = "";
           txtExportUnit.Text = "";
           txtExportTotalVehicles.Text = "";
           txtTypeExport.Text = string.Empty;
@@ -245,6 +247,8 @@ namespace ECustoms
           _vehicleInfosTemp.Clear();
           txtExportCompanyCode.Text = "";
           dtpExportRegisterDate.Value = DateTime.Now;
+          txtMoney.Text = "";
+          txtRegisterPlace.Text = "B15E-Chi cục Hải quan Tân Thanh";
         }
 
         private bool Validate()
@@ -352,11 +356,13 @@ namespace ECustoms
                     txtExportNumber.Text = declarationInfo.Number.ToString();
                     txtExportProductName.Text = declarationInfo.ProductName;
                     txtExportCompanyName.Text = declarationInfo.CompanyName;
-                    txtExportProductAmount.Text = declarationInfo.ProductAmount;
+                    txtProductAmount.Text = declarationInfo.ProductAmount;
                     txtExportUnit.Text = declarationInfo.Unit;
                     txtTypeExport.Text = declarationInfo.Type;
                     txtExportCompanyCode.Text = declarationInfo.CompanyCode;
                     dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
+                    txtRegisterPlace.Text = declarationInfo.RegisterPlace;
+                    txtMoney.Text = declarationInfo.Money.ToString();
                 }
 
                 // Get Vehicle by DeclarationID
@@ -402,7 +408,7 @@ namespace ECustoms
                 }
                 declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
                 declarationInfo.ProductName = txtExportProductName.Text;
-                declarationInfo.ProductAmount = txtExportProductAmount.Text;
+                declarationInfo.ProductAmount = txtProductAmount.Text;
                 // New mode
                 if (grdVehicle.SelectedRows.Count == 1 && this._mode == 0)
                 {
@@ -644,7 +650,7 @@ namespace ECustoms
                 }
                 declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
                 declarationInfo.ProductName = txtExportProductName.Text;
-                declarationInfo.ProductAmount = txtExportProductAmount.Text;
+                declarationInfo.ProductAmount = txtProductAmount.Text;
 
                 // Bind the gridview data to the vehicleInfo object, make sure, the vehicleInfotem dat is same as the gridview.
                 // Validate data of the gridview.
