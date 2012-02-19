@@ -149,7 +149,7 @@ namespace ECustoms
                     declarations = declarations.Where(g => g.DeclarationType == (short)Common.DeclerationType.Import && (g.TypeOption == (short) Common.DeclerationOptionType.NKCK)).ToList();
                     break;
               case Common.DeclerationOptionType.TNTX:
-                    declarations = declarations.Where(g => g.TypeOption == (short)Common.DeclerationOptionType.TNTX).ToList();
+                    declarations = declarations.Where(g => g.DeclarationType == (short)Common.DeclerationType.Import && g.TypeOption == (short)Common.DeclerationOptionType.TNTX).ToList();
                     break;
             }
         }
