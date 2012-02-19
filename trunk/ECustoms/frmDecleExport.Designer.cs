@@ -35,6 +35,9 @@
           System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
           System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
           this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
+          this.cbTNTX = new System.Windows.Forms.ComboBox();
+          this.label3 = new System.Windows.Forms.Label();
+          this.txtProductAmount = new System.Windows.Forms.TextBox();
           this.txtMoney = new System.Windows.Forms.MaskedTextBox();
           this.label2 = new System.Windows.Forms.Label();
           this.txtRegisterPlace = new System.Windows.Forms.TextBox();
@@ -80,7 +83,6 @@
           this.btnUpdate = new System.Windows.Forms.Button();
           this.button1 = new System.Windows.Forms.Button();
           this.btnAdd = new System.Windows.Forms.Button();
-          this.txtProductAmount = new System.Windows.Forms.TextBox();
           this.gbExportDeclaration.SuspendLayout();
           this.groupBoxVehicle.SuspendLayout();
           ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
@@ -88,6 +90,8 @@
           // 
           // gbExportDeclaration
           // 
+          this.gbExportDeclaration.Controls.Add(this.cbTNTX);
+          this.gbExportDeclaration.Controls.Add(this.label3);
           this.gbExportDeclaration.Controls.Add(this.txtProductAmount);
           this.gbExportDeclaration.Controls.Add(this.txtMoney);
           this.gbExportDeclaration.Controls.Add(this.label2);
@@ -118,9 +122,37 @@
           this.gbExportDeclaration.TabStop = false;
           this.gbExportDeclaration.Text = "Thông tin tờ khai xuất cảnh";
           // 
+          // cbTNTX
+          // 
+          this.cbTNTX.Items.AddRange(new object[] {
+            "Không là TNTX",
+            "XK chuyển CK",
+            "NK chuyển CK",
+            "Tạm nhập tái xuất"});
+          this.cbTNTX.Location = new System.Drawing.Point(131, 118);
+          this.cbTNTX.Name = "cbTNTX";
+          this.cbTNTX.Size = new System.Drawing.Size(136, 28);
+          this.cbTNTX.TabIndex = 25;
+          // 
+          // label3
+          // 
+          this.label3.AutoSize = true;
+          this.label3.Location = new System.Drawing.Point(6, 118);
+          this.label3.Name = "label3";
+          this.label3.Size = new System.Drawing.Size(92, 20);
+          this.label3.TabIndex = 24;
+          this.label3.Text = "Hàng TNTX";
+          // 
+          // txtProductAmount
+          // 
+          this.txtProductAmount.Location = new System.Drawing.Point(792, 16);
+          this.txtProductAmount.Name = "txtProductAmount";
+          this.txtProductAmount.Size = new System.Drawing.Size(129, 26);
+          this.txtProductAmount.TabIndex = 21;
+          // 
           // txtMoney
           // 
-          this.txtMoney.Location = new System.Drawing.Point(792, 120);
+          this.txtMoney.Location = new System.Drawing.Point(792, 115);
           this.txtMoney.Mask = "000000000000";
           this.txtMoney.Name = "txtMoney";
           this.txtMoney.Size = new System.Drawing.Size(128, 26);
@@ -129,7 +161,7 @@
           // label2
           // 
           this.label2.AutoSize = true;
-          this.label2.Location = new System.Drawing.Point(689, 124);
+          this.label2.Location = new System.Drawing.Point(689, 121);
           this.label2.Name = "label2";
           this.label2.Size = new System.Drawing.Size(100, 20);
           this.label2.TabIndex = 18;
@@ -137,7 +169,7 @@
           // 
           // txtRegisterPlace
           // 
-          this.txtRegisterPlace.Location = new System.Drawing.Point(416, 152);
+          this.txtRegisterPlace.Location = new System.Drawing.Point(414, 144);
           this.txtRegisterPlace.Multiline = true;
           this.txtRegisterPlace.Name = "txtRegisterPlace";
           this.txtRegisterPlace.Size = new System.Drawing.Size(251, 28);
@@ -147,7 +179,7 @@
           // lblRegisterPlace
           // 
           this.lblRegisterPlace.AutoSize = true;
-          this.lblRegisterPlace.Location = new System.Drawing.Point(272, 152);
+          this.lblRegisterPlace.Location = new System.Drawing.Point(273, 147);
           this.lblRegisterPlace.Name = "lblRegisterPlace";
           this.lblRegisterPlace.Size = new System.Drawing.Size(114, 20);
           this.lblRegisterPlace.TabIndex = 16;
@@ -219,7 +251,7 @@
           // label1
           // 
           this.label1.AutoSize = true;
-          this.label1.Location = new System.Drawing.Point(10, 91);
+          this.label1.Location = new System.Drawing.Point(6, 86);
           this.label1.Name = "label1";
           this.label1.Size = new System.Drawing.Size(73, 20);
           this.label1.TabIndex = 10;
@@ -245,7 +277,7 @@
           // 
           // txtExportProductName
           // 
-          this.txtExportProductName.Location = new System.Drawing.Point(414, 86);
+          this.txtExportProductName.Location = new System.Drawing.Point(414, 82);
           this.txtExportProductName.Multiline = true;
           this.txtExportProductName.Name = "txtExportProductName";
           this.txtExportProductName.Size = new System.Drawing.Size(251, 54);
@@ -597,13 +629,6 @@
           this.btnAdd.UseVisualStyleBackColor = true;
           this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
           // 
-          // txtProductAmount
-          // 
-          this.txtProductAmount.Location = new System.Drawing.Point(792, 16);
-          this.txtProductAmount.Name = "txtProductAmount";
-          this.txtProductAmount.Size = new System.Drawing.Size(129, 26);
-          this.txtProductAmount.TabIndex = 21;
-          // 
           // FrmDecleExport
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,5 +707,7 @@
         private System.Windows.Forms.TextBox txtRegisterPlace;
         private System.Windows.Forms.Label lblRegisterPlace;
         private System.Windows.Forms.TextBox txtProductAmount;
+        private System.Windows.Forms.ComboBox cbTNTX;
+        public System.Windows.Forms.Label label3;
     }
 }

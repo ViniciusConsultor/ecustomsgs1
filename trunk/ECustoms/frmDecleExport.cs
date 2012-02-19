@@ -230,6 +230,7 @@ namespace ECustoms
             declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
             declarationInfo.RegisterPlace = txtRegisterPlace.Text.Trim();
             declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
+            if (cbTNTX.SelectedIndex > 0) declarationInfo.TypeOption = (short) cbTNTX.SelectedIndex;
             return declarationInfo;
         }
 
@@ -249,6 +250,7 @@ namespace ECustoms
           dtpExportRegisterDate.Value = DateTime.Now;
           txtMoney.Text = "";
           txtRegisterPlace.Text = "B15E-Chi cục Hải quan Tân Thanh";
+          cbTNTX.SelectedIndex = 0;
         }
 
         private bool Validate()
@@ -338,6 +340,7 @@ namespace ECustoms
             // New mode))
             if (this._mode == 0)
             {
+                cbTNTX.SelectedIndex = 0;
                 btnUpdate.Enabled = false;
                 btnAdd.Enabled = true;
                 btnAdd.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI);
@@ -363,6 +366,7 @@ namespace ECustoms
                     dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
                     txtRegisterPlace.Text = declarationInfo.RegisterPlace;
                     txtMoney.Text = declarationInfo.Money.ToString();
+                    cbTNTX.SelectedIndex = declarationInfo.TypeOption != null ? declarationInfo.TypeOption.Value : 0;
                 }
 
                 // Get Vehicle by DeclarationID

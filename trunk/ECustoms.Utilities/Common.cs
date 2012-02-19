@@ -29,6 +29,7 @@ namespace ECustoms.Utilities
         
         public enum DeclerationOptionType
         {
+          NONE,
           XKCK,
           NKCK,
           TNTX

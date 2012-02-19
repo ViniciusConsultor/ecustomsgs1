@@ -222,26 +222,20 @@ namespace ECustoms
 
         private void xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frmReport = new frmReport(this, _userInfo, 5);
-            frmReport.Show(this);
+          var frmDeclerationOptionInfo = new frmDeclerationOptionInfo(_userInfo, this, Common.DeclerationOptionType.XKCK);
+          frmDeclerationOptionInfo.Show(this);
         }
 
-        private void nhậpKhẩuChuyểnCKToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frmReport = new frmReport(this, _userInfo, 6);
-            frmReport.Show(this);
+          var frmDeclerationOptionInfo = new frmDeclerationOptionInfo(_userInfo, this, Common.DeclerationOptionType.NKCK);
+          frmDeclerationOptionInfo.Show(this);
         }
 
         private void hàngTạmNhậpTáiXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frmReport = new frmReport(this, _userInfo, 7);
-            frmReport.Show(this);
-        }
-
-        private void quảnLýHàngNTXCKToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frmDeclerationOptionInfo = new frmDeclerationOptionInfo(_userInfo,this);
-            frmDeclerationOptionInfo.Show(this);
+          var frmDeclerationOptionInfo = new frmDeclerationOptionInfo(_userInfo, this, Common.DeclerationOptionType.TNTX);
+          frmDeclerationOptionInfo.Show(this);
         }
     }
 }
