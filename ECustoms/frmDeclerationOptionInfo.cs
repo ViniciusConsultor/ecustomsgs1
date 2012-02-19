@@ -19,21 +19,23 @@ namespace ECustoms
 {
     public partial class frmDeclerationOptionInfo : Form
     {
-        private readonly ILog logger = LogManager.GetLogger("Ecustoms.frmDecleration");
+        private readonly ILog logger = LogManager.GetLogger("Ecustoms.frmDeclerationOptionInfo");
 
         private UserInfo _userInfo;
         private readonly Form _mainForm;
         private List<ViewAllDeclaration> _listDeclarationinfo;
+        private Common.DeclerationOptionType _declerationOptionType;
         public frmDeclerationOptionInfo()
         {
             InitializeComponent();
         }
 
-        public frmDeclerationOptionInfo(UserInfo userInfo, Form mainForm)
+        public frmDeclerationOptionInfo(UserInfo userInfo, Form mainForm, Common.DeclerationOptionType declerationOptionType)
         {
             InitializeComponent();
             _userInfo = userInfo;
             _mainForm = mainForm;
+            _declerationOptionType = declerationOptionType;
         }
 
         private void frmDeclerationOptionInfo_Load(object sender, EventArgs e)
@@ -41,7 +43,20 @@ namespace ECustoms
             try
             {
                 this.Text = "Danh sách tờ khai" + ConstantInfo.MESSAGE_TITLE;
-                cbOptionType.SelectedIndex = 0;
+                switch (_declerationOptionType)
+                {
+                  case Common.DeclerationOptionType.XKCK:
+                    lblHeader.Text = "Quản lý hàng xuất khẩu chuyển cửa khẩu";
+                    break;
+                  case Common.DeclerationOptionType.NKCK:
+                    lblHeader.Text = "Quản lý hàng nhập khẩu chuyển cửa khẩu";
+                    break;
+                  case Common.DeclerationOptionType.TNTX:
+                    lblHeader.Text = "Quản lý hàng tạm nhập tái xuất";
+                    break;
+                  default:
+                    break;
+                }
                 // Show form to the center
                 this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
 
@@ -125,16 +140,16 @@ namespace ECustoms
         /// <param name="declarations"></param>
         private void FilterByType(ref List<ViewAllDeclaration> declarations)
         {
-            switch (cbOptionType.SelectedIndex)
+            switch (_declerationOptionType)
             {
-                case 0:
-                    declarations = declarations.Where(g => g.DeclarationType == (short)Common.DeclerationType.Export && (g.TypeOption == null || g.TypeOption == (short) Common.DeclerationOptionType.XKCK)).ToList();
+                case Common.DeclerationOptionType.XKCK:
+                    declarations = declarations.Where(g => g.DeclarationType == (short)Common.DeclerationType.Export && (g.TypeOption == (short) Common.DeclerationOptionType.XKCK)).ToList();
                     break;
-                case 1:
-                    declarations = declarations.Where(g => g.DeclarationType == (short)Common.DeclerationType.Import && (g.TypeOption == null || g.TypeOption == (short) Common.DeclerationOptionType.NKCK)).ToList();
+                case Common.DeclerationOptionType.NKCK:
+                    declarations = declarations.Where(g => g.DeclarationType == (short)Common.DeclerationType.Import && (g.TypeOption == (short) Common.DeclerationOptionType.NKCK)).ToList();
                     break;
-                case 2:
-                    declarations = declarations.Where(g => g.DeclarationType == (short)Common.DeclerationType.Import && (g.TypeOption == null || g.TypeOption == (short)Common.DeclerationOptionType.TNTX)).ToList();
+              case Common.DeclerationOptionType.TNTX:
+                    declarations = declarations.Where(g => g.TypeOption == (short)Common.DeclerationOptionType.TNTX).ToList();
                     break;
             }
         }
@@ -215,7 +230,7 @@ namespace ECustoms
                         //    frmExport.Show(this);
                         //}
 
-                        var frmExport = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), (Common.DeclerationOptionType) cbOptionType.SelectedIndex);
+                        var frmExport = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), _declerationOptionType);
                         frmExport.Show(this);
                     }
                 }
@@ -241,9 +256,5 @@ namespace ECustoms
             }
         }
 
-        private void cbOptionType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          grvDecleration.DataSource = null;
-        }
     }
 }

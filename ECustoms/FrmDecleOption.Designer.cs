@@ -54,9 +54,9 @@
           this.lblUnit = new System.Windows.Forms.Label();
           this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
           this.pnTNTX = new System.Windows.Forms.Panel();
-          this.lblNumberExport = new System.Windows.Forms.Label();
+          this.lblNumberTemp = new System.Windows.Forms.Label();
           this.lblSeal = new System.Windows.Forms.Label();
-          this.txtNumberExport = new System.Windows.Forms.MaskedTextBox();
+          this.txtNumberTemp = new System.Windows.Forms.MaskedTextBox();
           this.txtSeal = new System.Windows.Forms.TextBox();
           this.txtGateExport = new System.Windows.Forms.TextBox();
           this.lblGateEx = new System.Windows.Forms.Label();
@@ -109,7 +109,7 @@
           // txtMoney
           // 
           this.txtMoney.Enabled = false;
-          this.txtMoney.Location = new System.Drawing.Point(792, 120);
+          this.txtMoney.Location = new System.Drawing.Point(792, 115);
           this.txtMoney.Mask = "000000000000";
           this.txtMoney.Name = "txtMoney";
           this.txtMoney.Size = new System.Drawing.Size(128, 26);
@@ -118,7 +118,7 @@
           // label2
           // 
           this.label2.AutoSize = true;
-          this.label2.Location = new System.Drawing.Point(689, 124);
+          this.label2.Location = new System.Drawing.Point(689, 118);
           this.label2.Name = "label2";
           this.label2.Size = new System.Drawing.Size(100, 20);
           this.label2.TabIndex = 18;
@@ -127,7 +127,7 @@
           // txtRegisterPlace
           // 
           this.txtRegisterPlace.Enabled = false;
-          this.txtRegisterPlace.Location = new System.Drawing.Point(414, 152);
+          this.txtRegisterPlace.Location = new System.Drawing.Point(414, 139);
           this.txtRegisterPlace.Multiline = true;
           this.txtRegisterPlace.Name = "txtRegisterPlace";
           this.txtRegisterPlace.Size = new System.Drawing.Size(251, 28);
@@ -137,7 +137,7 @@
           // lblRegisterPlace
           // 
           this.lblRegisterPlace.AutoSize = true;
-          this.lblRegisterPlace.Location = new System.Drawing.Point(272, 152);
+          this.lblRegisterPlace.Location = new System.Drawing.Point(273, 142);
           this.lblRegisterPlace.Name = "lblRegisterPlace";
           this.lblRegisterPlace.Size = new System.Drawing.Size(114, 20);
           this.lblRegisterPlace.TabIndex = 16;
@@ -203,7 +203,7 @@
           // txtTypeExport
           // 
           this.txtTypeExport.Enabled = false;
-          this.txtTypeExport.Location = new System.Drawing.Point(131, 85);
+          this.txtTypeExport.Location = new System.Drawing.Point(131, 86);
           this.txtTypeExport.Name = "txtTypeExport";
           this.txtTypeExport.Size = new System.Drawing.Size(106, 26);
           this.txtTypeExport.TabIndex = 3;
@@ -211,7 +211,7 @@
           // label1
           // 
           this.label1.AutoSize = true;
-          this.label1.Location = new System.Drawing.Point(10, 91);
+          this.label1.Location = new System.Drawing.Point(6, 91);
           this.label1.Name = "label1";
           this.label1.Size = new System.Drawing.Size(73, 20);
           this.label1.TabIndex = 10;
@@ -238,7 +238,7 @@
           // txtExportProductName
           // 
           this.txtExportProductName.Enabled = false;
-          this.txtExportProductName.Location = new System.Drawing.Point(414, 86);
+          this.txtExportProductName.Location = new System.Drawing.Point(414, 79);
           this.txtExportProductName.Multiline = true;
           this.txtExportProductName.Name = "txtExportProductName";
           this.txtExportProductName.Size = new System.Drawing.Size(251, 54);
@@ -324,9 +324,9 @@
           // 
           // pnTNTX
           // 
-          this.pnTNTX.Controls.Add(this.lblNumberExport);
+          this.pnTNTX.Controls.Add(this.lblNumberTemp);
           this.pnTNTX.Controls.Add(this.lblSeal);
-          this.pnTNTX.Controls.Add(this.txtNumberExport);
+          this.pnTNTX.Controls.Add(this.txtNumberTemp);
           this.pnTNTX.Controls.Add(this.txtSeal);
           this.pnTNTX.Controls.Add(this.txtGateExport);
           this.pnTNTX.Controls.Add(this.lblGateEx);
@@ -335,14 +335,14 @@
           this.pnTNTX.Size = new System.Drawing.Size(416, 112);
           this.pnTNTX.TabIndex = 27;
           // 
-          // lblNumberExport
+          // lblNumberTemp
           // 
-          this.lblNumberExport.AutoSize = true;
-          this.lblNumberExport.Location = new System.Drawing.Point(0, 0);
-          this.lblNumberExport.Name = "lblNumberExport";
-          this.lblNumberExport.Size = new System.Drawing.Size(114, 20);
-          this.lblNumberExport.TabIndex = 21;
-          this.lblNumberExport.Text = "Số tờ khai xuất";
+          this.lblNumberTemp.AutoSize = true;
+          this.lblNumberTemp.Location = new System.Drawing.Point(0, 0);
+          this.lblNumberTemp.Name = "lblNumberTemp";
+          this.lblNumberTemp.Size = new System.Drawing.Size(114, 20);
+          this.lblNumberTemp.TabIndex = 21;
+          this.lblNumberTemp.Text = "Số tờ khai xuất";
           // 
           // lblSeal
           // 
@@ -353,13 +353,13 @@
           this.lblSeal.TabIndex = 22;
           this.lblSeal.Text = "Số ký hiệu Seal";
           // 
-          // txtNumberExport
+          // txtNumberTemp
           // 
-          this.txtNumberExport.Location = new System.Drawing.Point(136, 0);
-          this.txtNumberExport.Mask = "0000000000";
-          this.txtNumberExport.Name = "txtNumberExport";
-          this.txtNumberExport.Size = new System.Drawing.Size(96, 26);
-          this.txtNumberExport.TabIndex = 22;
+          this.txtNumberTemp.Location = new System.Drawing.Point(136, 0);
+          this.txtNumberTemp.Mask = "0000000000";
+          this.txtNumberTemp.Name = "txtNumberTemp";
+          this.txtNumberTemp.Size = new System.Drawing.Size(96, 26);
+          this.txtNumberTemp.TabIndex = 22;
           // 
           // txtSeal
           // 
@@ -441,11 +441,11 @@
           // 
           this.lblHeader.AutoSize = true;
           this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.lblHeader.Location = new System.Drawing.Point(346, 9);
+          this.lblHeader.Location = new System.Drawing.Point(375, 9);
           this.lblHeader.Name = "lblHeader";
-          this.lblHeader.Size = new System.Drawing.Size(229, 29);
+          this.lblHeader.Size = new System.Drawing.Size(194, 29);
           this.lblHeader.TabIndex = 21;
-          this.lblHeader.Text = "Khai báo xuất cảnh";
+          this.lblHeader.Text = "Hàng hóa TNTX";
           // 
           // btnUpdate
           // 
@@ -547,8 +547,8 @@
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox txtNumberHandover;
-        public System.Windows.Forms.Label lblNumberExport;
-        private System.Windows.Forms.MaskedTextBox txtNumberExport;
+        public System.Windows.Forms.Label lblNumberTemp;
+        private System.Windows.Forms.MaskedTextBox txtNumberTemp;
         private System.Windows.Forms.Panel pnTNTX;
     }
 }

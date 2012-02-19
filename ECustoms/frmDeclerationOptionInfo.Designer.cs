@@ -52,8 +52,6 @@
           this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
           this.DeclarationType = new System.Windows.Forms.DataGridViewTextBoxColumn();
           this.groupBox1 = new System.Windows.Forms.GroupBox();
-          this.cbOptionType = new System.Windows.Forms.ComboBox();
-          this.label1 = new System.Windows.Forms.Label();
           this.btnSearch = new System.Windows.Forms.Button();
           this.txtCompanyName = new System.Windows.Forms.TextBox();
           this.lblCompanyName = new System.Windows.Forms.Label();
@@ -61,6 +59,7 @@
           this.lblDeclaraceNumber = new System.Windows.Forms.Label();
           this.btnClose = new System.Windows.Forms.Button();
           this.btnUpdate = new System.Windows.Forms.Button();
+          this.lblHeader = new System.Windows.Forms.Label();
           this.grbDecleration.SuspendLayout();
           ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).BeginInit();
           this.groupBox1.SuspendLayout();
@@ -246,43 +245,18 @@
           // 
           // groupBox1
           // 
-          this.groupBox1.Controls.Add(this.cbOptionType);
-          this.groupBox1.Controls.Add(this.label1);
           this.groupBox1.Controls.Add(this.btnSearch);
           this.groupBox1.Controls.Add(this.txtCompanyName);
           this.groupBox1.Controls.Add(this.lblCompanyName);
           this.groupBox1.Controls.Add(this.txtDeclaraceNumber);
           this.groupBox1.Controls.Add(this.lblDeclaraceNumber);
           this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.groupBox1.Location = new System.Drawing.Point(12, 3);
+          this.groupBox1.Location = new System.Drawing.Point(10, 41);
           this.groupBox1.Name = "groupBox1";
-          this.groupBox1.Size = new System.Drawing.Size(962, 101);
+          this.groupBox1.Size = new System.Drawing.Size(962, 65);
           this.groupBox1.TabIndex = 7;
           this.groupBox1.TabStop = false;
           this.groupBox1.Text = "Điều kiện tìm kiếm";
-          // 
-          // cbOptionType
-          // 
-          this.cbOptionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-          this.cbOptionType.FormattingEnabled = true;
-          this.cbOptionType.Items.AddRange(new object[] {
-            "Xuất khẩu chuyển cửa khẩu",
-            "Nhập khẩu chuyển cửa khẩu",
-            "Hàng tạm nhập tái xuất"});
-          this.cbOptionType.Location = new System.Drawing.Point(56, 24);
-          this.cbOptionType.Name = "cbOptionType";
-          this.cbOptionType.Size = new System.Drawing.Size(237, 28);
-          this.cbOptionType.TabIndex = 8;
-          this.cbOptionType.SelectedIndexChanged += new System.EventHandler(this.cbOptionType_SelectedIndexChanged);
-          // 
-          // label1
-          // 
-          this.label1.AutoSize = true;
-          this.label1.Location = new System.Drawing.Point(11, 27);
-          this.label1.Name = "label1";
-          this.label1.Size = new System.Drawing.Size(39, 20);
-          this.label1.TabIndex = 7;
-          this.label1.Text = "Loại";
           // 
           // btnSearch
           // 
@@ -291,7 +265,7 @@
           this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
           this.btnSearch.Image = global::ECustoms.Properties.Resources.search41;
           this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-          this.btnSearch.Location = new System.Drawing.Point(784, 40);
+          this.btnSearch.Location = new System.Drawing.Point(778, 23);
           this.btnSearch.Name = "btnSearch";
           this.btnSearch.Size = new System.Drawing.Size(145, 33);
           this.btnSearch.TabIndex = 6;
@@ -301,15 +275,15 @@
           // 
           // txtCompanyName
           // 
-          this.txtCompanyName.Location = new System.Drawing.Point(472, 64);
+          this.txtCompanyName.Location = new System.Drawing.Point(480, 26);
           this.txtCompanyName.Name = "txtCompanyName";
-          this.txtCompanyName.Size = new System.Drawing.Size(248, 26);
+          this.txtCompanyName.Size = new System.Drawing.Size(179, 26);
           this.txtCompanyName.TabIndex = 3;
           // 
           // lblCompanyName
           // 
           this.lblCompanyName.AutoSize = true;
-          this.lblCompanyName.Location = new System.Drawing.Point(328, 64);
+          this.lblCompanyName.Location = new System.Drawing.Point(337, 29);
           this.lblCompanyName.Name = "lblCompanyName";
           this.lblCompanyName.Size = new System.Drawing.Size(137, 20);
           this.lblCompanyName.TabIndex = 2;
@@ -317,15 +291,15 @@
           // 
           // txtDeclaraceNumber
           // 
-          this.txtDeclaraceNumber.Location = new System.Drawing.Point(472, 24);
+          this.txtDeclaraceNumber.Location = new System.Drawing.Point(124, 26);
           this.txtDeclaraceNumber.Name = "txtDeclaraceNumber";
-          this.txtDeclaraceNumber.Size = new System.Drawing.Size(248, 26);
+          this.txtDeclaraceNumber.Size = new System.Drawing.Size(144, 26);
           this.txtDeclaraceNumber.TabIndex = 1;
           // 
           // lblDeclaraceNumber
           // 
           this.lblDeclaraceNumber.AutoSize = true;
-          this.lblDeclaraceNumber.Location = new System.Drawing.Point(328, 24);
+          this.lblDeclaraceNumber.Location = new System.Drawing.Point(27, 29);
           this.lblDeclaraceNumber.Name = "lblDeclaraceNumber";
           this.lblDeclaraceNumber.Size = new System.Drawing.Size(80, 20);
           this.lblDeclaraceNumber.TabIndex = 0;
@@ -363,11 +337,22 @@
           this.btnUpdate.UseVisualStyleBackColor = true;
           this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
           // 
+          // lblHeader
+          // 
+          this.lblHeader.AutoSize = true;
+          this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+          this.lblHeader.Location = new System.Drawing.Point(292, 9);
+          this.lblHeader.Name = "lblHeader";
+          this.lblHeader.Size = new System.Drawing.Size(284, 29);
+          this.lblHeader.TabIndex = 22;
+          this.lblHeader.Text = "Quản lý hàng hóa TNTX";
+          // 
           // frmDeclerationOptionInfo
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
           this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
           this.ClientSize = new System.Drawing.Size(985, 517);
+          this.Controls.Add(this.lblHeader);
           this.Controls.Add(this.groupBox1);
           this.Controls.Add(this.btnClose);
           this.Controls.Add(this.btnUpdate);
@@ -381,6 +366,7 @@
           this.groupBox1.ResumeLayout(false);
           this.groupBox1.PerformLayout();
           this.ResumeLayout(false);
+          this.PerformLayout();
 
         }
 
@@ -396,8 +382,6 @@
         private System.Windows.Forms.TextBox txtDeclaraceNumber;
         private System.Windows.Forms.Label lblDeclaraceNumber;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cbOptionType;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeclarationID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyCode;
@@ -414,5 +398,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeclarationType;
+        private System.Windows.Forms.Label lblHeader;
     }
 }
