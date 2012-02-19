@@ -83,6 +83,8 @@
           this.btnUpdate = new System.Windows.Forms.Button();
           this.button1 = new System.Windows.Forms.Button();
           this.btnAdd = new System.Windows.Forms.Button();
+          this.label4 = new System.Windows.Forms.Label();
+          this.txtNumberTemp = new System.Windows.Forms.MaskedTextBox();
           this.gbExportDeclaration.SuspendLayout();
           this.groupBoxVehicle.SuspendLayout();
           ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
@@ -90,6 +92,8 @@
           // 
           // gbExportDeclaration
           // 
+          this.gbExportDeclaration.Controls.Add(this.txtNumberTemp);
+          this.gbExportDeclaration.Controls.Add(this.label4);
           this.gbExportDeclaration.Controls.Add(this.cbTNTX);
           this.gbExportDeclaration.Controls.Add(this.label3);
           this.gbExportDeclaration.Controls.Add(this.txtProductAmount);
@@ -124,15 +128,13 @@
           // 
           // cbTNTX
           // 
-          this.cbTNTX.Items.AddRange(new object[] {
-            "Không là TNTX",
-            "XK chuyển CK",
-            "NK chuyển CK",
-            "Tạm nhập tái xuất"});
+          this.cbTNTX.DisplayMember = "Text";
+          this.cbTNTX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
           this.cbTNTX.Location = new System.Drawing.Point(131, 118);
           this.cbTNTX.Name = "cbTNTX";
           this.cbTNTX.Size = new System.Drawing.Size(136, 28);
           this.cbTNTX.TabIndex = 25;
+          this.cbTNTX.ValueMember = "Value";
           // 
           // label3
           // 
@@ -629,6 +631,23 @@
           this.btnAdd.UseVisualStyleBackColor = true;
           this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
           // 
+          // label4
+          // 
+          this.label4.AutoSize = true;
+          this.label4.Location = new System.Drawing.Point(6, 155);
+          this.label4.Name = "label4";
+          this.label4.Size = new System.Drawing.Size(92, 20);
+          this.label4.TabIndex = 26;
+          this.label4.Text = "Số TK thứ 2";
+          // 
+          // txtNumberTemp
+          // 
+          this.txtNumberTemp.Location = new System.Drawing.Point(131, 152);
+          this.txtNumberTemp.Mask = "0000000000";
+          this.txtNumberTemp.Name = "txtNumberTemp";
+          this.txtNumberTemp.Size = new System.Drawing.Size(66, 26);
+          this.txtNumberTemp.TabIndex = 27;
+          // 
           // FrmDecleExport
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -709,5 +728,7 @@
         private System.Windows.Forms.TextBox txtProductAmount;
         private System.Windows.Forms.ComboBox cbTNTX;
         public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox txtNumberTemp;
+        public System.Windows.Forms.Label label4;
     }
 }
