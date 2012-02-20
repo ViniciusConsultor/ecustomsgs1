@@ -162,17 +162,8 @@ namespace ECustoms
             {
                 if (grvDecleration.SelectedRows.Count != 0)
                 {
-                    var declarationType = grvDecleration.SelectedRows[0].Cells["DeclarationType"].Value;
-                    if (declarationType.Equals((short)Common.DeclerationType.Export)) // tờ khai xuất
-                    {
-                        var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt32(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Export);
-                        frmExport.Show(this);
-                    }
-                    else
-                    {
-                        var frmExport = new FrmDecleExport(_mainForm, _userInfo, 1, Convert.ToInt32(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationType.Import);
-                        frmExport.Show(this);
-                    }
+                    var frmDecleExportOption = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), _declerationOptionType);
+                    frmDecleExportOption.Show(this);
                 }
                 else
                 {

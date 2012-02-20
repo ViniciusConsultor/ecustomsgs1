@@ -112,12 +112,11 @@ namespace ECustoms
               //this.BackColor = col ;
               lblHeader.Text = "Nhập khẩu chuyển cửa khẩu";
               gbExportDeclaration.Text = "Thông tin tờ khai nhập khẩu";
-              pnTNTX.Visible = false;
-              
+              pnTNTX.Visible = false;             
               break;
             case Common.DeclerationOptionType.TNTX:
               lblHeader.Text = "Tạm nhập tái xuất";
-              gbExportDeclaration.Text = "Thông tin tờ khai tạm nhập";
+              gbExportDeclaration.Text = "Thông tin tờ khai nhập";
               break;
             default:
               break;
@@ -141,28 +140,29 @@ namespace ECustoms
                 dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
                 txtRegisterPlace.Text = declarationInfo.RegisterPlace;
                 txtMoney.Text = declarationInfo.Money.ToString();
-              //Option infomation
-              txtNumberHandover.Text = declarationInfo.NumberHandover != null ? declarationInfo.NumberHandover.ToString() : "";
-              dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : CommonFactory.GetCurrentDate();
-              dtpReturn.Value = declarationInfo.DateReturn != null ? declarationInfo.DateReturn.Value : CommonFactory.GetCurrentDate();
-              if ( _declerationOptionType.Equals(Common.DeclerationOptionType.TNTX))
-              {
-                txtNumberTemp.Text = declarationInfo.NumberTemp != null ? declarationInfo.NumberTemp.ToString() : "";
-                txtSeal.Text = declarationInfo.Seal ?? "";
-                txtGateExport.Text = declarationInfo.GateExport ?? "";
-                if (declarationInfo.DeclarationType == (short) Common.DeclerationType.Export)
+                //Option infomation
+                txtNumberHandover.Text = declarationInfo.NumberHandover != null ? declarationInfo.NumberHandover.ToString() : "";
+                dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : CommonFactory.GetCurrentDate();
+                dtpReturn.Value = declarationInfo.DateReturn != null ? declarationInfo.DateReturn.Value : CommonFactory.GetCurrentDate();
+                if ( _declerationOptionType.Equals(Common.DeclerationOptionType.TNTX))
                 {
-                  gbExportDeclaration.Text =  "Thông tin tờ khai tái xuất";
-                  lblNumberTemp.Text = "Số tờ khai nhập";
+                  txtNumberTemp.Text = declarationInfo.NumberTemp != null ? declarationInfo.NumberTemp.ToString() : "";
+                  txtSeal.Text = declarationInfo.Seal ?? "";
+                  txtGateExport.Text = declarationInfo.GateExport ?? "";
+                  if (declarationInfo.DeclarationType == (short) Common.DeclerationType.Export)
+                  {
+                    gbExportDeclaration.Text =  "Thông tin tờ khai xuất";
+                    lblNumberTemp.Text = "Số tờ khai nhập";
+                  }
+                  else
+                  {
+                    gbExportDeclaration.Text =  "Thông tin tờ khai nhập";
+                    lblNumberTemp.Text = "Số tờ khai xuất";
+                  }
                 }
-                else
-                {
-                  gbExportDeclaration.Text =  "Thông tin tờ khai tạm nhập";
-                  lblNumberTemp.Text = "Số tờ khai xuất";
-                }
-                
-
-              }
+                // Get Vehicle by DeclarationID
+                var listVehicle = VehicleFactory.GetFromViewByDeclarationID(this._declerationID);
+                txtExportTotalVehicles.Text = listVehicle.Count.ToString();
             }
         }
 
