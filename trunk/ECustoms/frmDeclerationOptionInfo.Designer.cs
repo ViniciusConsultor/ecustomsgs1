@@ -268,7 +268,7 @@
           this.btnSearch.Location = new System.Drawing.Point(778, 23);
           this.btnSearch.Name = "btnSearch";
           this.btnSearch.Size = new System.Drawing.Size(145, 33);
-          this.btnSearch.TabIndex = 6;
+          this.btnSearch.TabIndex = 2;
           this.btnSearch.Text = "Tìm tờ khai";
           this.btnSearch.UseVisualStyleBackColor = true;
           this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -278,7 +278,7 @@
           this.txtCompanyName.Location = new System.Drawing.Point(480, 26);
           this.txtCompanyName.Name = "txtCompanyName";
           this.txtCompanyName.Size = new System.Drawing.Size(179, 26);
-          this.txtCompanyName.TabIndex = 3;
+          this.txtCompanyName.TabIndex = 1;
           // 
           // lblCompanyName
           // 
@@ -294,7 +294,7 @@
           this.txtDeclaraceNumber.Location = new System.Drawing.Point(124, 26);
           this.txtDeclaraceNumber.Name = "txtDeclaraceNumber";
           this.txtDeclaraceNumber.Size = new System.Drawing.Size(144, 26);
-          this.txtDeclaraceNumber.TabIndex = 1;
+          this.txtDeclaraceNumber.TabIndex = 0;
           // 
           // lblDeclaraceNumber
           // 
@@ -315,7 +315,7 @@
           this.btnClose.Location = new System.Drawing.Point(192, 472);
           this.btnClose.Name = "btnClose";
           this.btnClose.Size = new System.Drawing.Size(86, 33);
-          this.btnClose.TabIndex = 5;
+          this.btnClose.TabIndex = 1;
           this.btnClose.Text = "Đóng";
           this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
           this.btnClose.UseVisualStyleBackColor = true;
@@ -331,7 +331,7 @@
           this.btnUpdate.Location = new System.Drawing.Point(16, 472);
           this.btnUpdate.Name = "btnUpdate";
           this.btnUpdate.Size = new System.Drawing.Size(161, 33);
-          this.btnUpdate.TabIndex = 2;
+          this.btnUpdate.TabIndex = 0;
           this.btnUpdate.Text = "Cập nhật tờ khai";
           this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
           this.btnUpdate.UseVisualStyleBackColor = true;
