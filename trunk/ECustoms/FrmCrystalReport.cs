@@ -205,17 +205,14 @@ namespace ECustoms
                         break;
                     case ReportType.ExportGateTransfer:
                         {
-                          var createdlocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["CreatedBy"];
-                          createdlocalImportAndHasItem.Text = _userInfo.Name;
-
                           var dateFromlocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateFrom"];
-                          dateFromlocalImportAndHasItem.Text = _from.ToString("dd/MM/yyy HH:mm");
+                          dateFromlocalImportAndHasItem.Text = _from.ToString("dd/MM/yyyy");
 
                           var dateTolocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateTo"];
-                          dateTolocalImportAndHasItem.Text = _to.ToString("dd/MM/yyy HH:mm");
+                          dateTolocalImportAndHasItem.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT     * FROM ViewAllVehicleHasGood ");
+                            buffer.Append(" SELECT     * FROM ViewAllDeclaration ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.XKCK);
@@ -225,6 +222,11 @@ namespace ECustoms
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
+                            if (dt.Rows.Count > 0 )
+                            {
+                              var createdimportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["CreatedBy"];
+                              createdimportAndHasItem.Text = _userInfo.Name;
+                            }
                             exportGate1.SetDataSource(dt);
                             crystalReportViewer1.ReportSource = exportGate1;
                         }
