@@ -10,10 +10,19 @@ namespace ECustoms.BOL
 {
     public class VehicleFactory
     {
+        /// <summary>
+        /// Hien lên những xe đã hoàn thành thủ tục và đã trả hồ sơ của ngày hiện tại
+        /// </summary>
+        /// <returns></returns>
         public static List<ViewAllVehicleHasGood> GetAllAllVehicleCompleted()
         {
+            DateTime today = CommonFactory.GetCurrentDate();
+
+            var startToday = new DateTime(today.Year, today.Month, today.Day, 0, 0, 0);
+            var endToday = new DateTime(today.Year, today.Month, today.Day, 23, 59, 59);
+
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null && g.IsGoodsImported == true && g.IsCompleted == true).OrderByDescending(g => g.ImportDate).ToList();
+            var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null && g.IsGoodsImported == true && g.IsCompleted == true && g.ConfirmDate >= startToday && g.ConfirmDate <= endToday).OrderByDescending(g => g.ImportDate).ToList();
             db.Connection.Close();
             return data;
         }
