@@ -309,7 +309,7 @@ namespace ECustoms
       grdVehicle.AutoGenerateColumns = false;
       //Init data for cbTNTX
       var listTNTX = new List<ComboBoxItem>();
-      listTNTX.Add(new ComboBoxItem("0", "Không là TNTX"));
+      listTNTX.Add(new ComboBoxItem("0", "Tất cả"));
       listTNTX.Add(new ComboBoxItem("1","XK chuyển CK"));
       listTNTX.Add(new ComboBoxItem("2","NK chuyển CK"));
       listTNTX.Add(new ComboBoxItem("3", "Tạm nhập tái xuất"));
