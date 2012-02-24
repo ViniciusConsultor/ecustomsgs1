@@ -72,7 +72,7 @@ namespace ECustoms
             declarationInfo.TypeOption = (short) _declerationOptionType;
             if (_declerationOptionType == Common.DeclerationOptionType.TNTX)
             {
-              declarationInfo.NumberTemp = !string.IsNullOrEmpty(txtNumberTemp.Text) ? Convert.ToInt32(txtNumberTemp.Text.Trim()) : 0;
+              declarationInfo.NumberTemp = !string.IsNullOrEmpty(txtNumberTemp.Text) ? txtNumberTemp.Text.Trim() : "";
               declarationInfo.Seal = txtSeal.Text.Trim();
               declarationInfo.GateExport = txtGateExport.Text.Trim();
 
@@ -146,7 +146,7 @@ namespace ECustoms
                 dtpReturn.Value = declarationInfo.DateReturn != null ? declarationInfo.DateReturn.Value : CommonFactory.GetCurrentDate();
                 if ( _declerationOptionType.Equals(Common.DeclerationOptionType.TNTX))
                 {
-                  txtNumberTemp.Text = declarationInfo.NumberTemp != null ? declarationInfo.NumberTemp.ToString() : "";
+                  txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
                   txtSeal.Text = declarationInfo.Seal ?? "";
                   txtGateExport.Text = declarationInfo.GateExport ?? "";
                   if (declarationInfo.DeclarationType == (short) Common.DeclerationType.Export)

@@ -170,5 +170,13 @@ namespace ECustoms.BOL
             db.Connection.Close();
             return list;
         }
+
+        public static List<string> GetAllRegisterPlace()
+        {
+          var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+          var lstResult = db.tblDeclarations.Where(g => g.RegisterPlace != null && g.RegisterPlace != "").Select(g=> g.RegisterPlace).Distinct().ToList();
+          db.Connection.Close();
+          return lstResult;
+        }
     }
 }

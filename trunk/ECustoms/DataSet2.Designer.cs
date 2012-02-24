@@ -974,8 +974,6 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnSeal;
             
-            private global::System.Data.DataColumn columnNumberTemp;
-            
             private global::System.Data.DataColumn columnGateExport;
             
             private global::System.Data.DataColumn columnDateReturn;
@@ -985,6 +983,8 @@ namespace ECustoms {
             private global::System.Data.DataColumn columnRegisterPlace;
             
             private global::System.Data.DataColumn columnTypeOption;
+            
+            private global::System.Data.DataColumn columnNumberTemp;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1365,14 +1365,6 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NumberTempColumn {
-                get {
-                    return this.columnNumberTemp;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn GateExportColumn {
                 get {
                     return this.columnGateExport;
@@ -1408,6 +1400,14 @@ namespace ECustoms {
             public global::System.Data.DataColumn TypeOptionColumn {
                 get {
                     return this.columnTypeOption;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumberTempColumn {
+                get {
+                    return this.columnNumberTemp;
                 }
             }
             
@@ -1492,12 +1492,12 @@ namespace ECustoms {
                         decimal Money, 
                         System.DateTime DateHandover, 
                         string Seal, 
-                        int NumberTemp, 
                         string GateExport, 
                         System.DateTime DateReturn, 
                         int NumberHandover, 
                         string RegisterPlace, 
-                        short TypeOption) {
+                        short TypeOption, 
+                        string NumberTemp) {
                 ViewAllVehicleHasGoodRow rowViewAllVehicleHasGoodRow = ((ViewAllVehicleHasGoodRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         VehicleID,
@@ -1543,12 +1543,12 @@ namespace ECustoms {
                         Money,
                         DateHandover,
                         Seal,
-                        NumberTemp,
                         GateExport,
                         DateReturn,
                         NumberHandover,
                         RegisterPlace,
-                        TypeOption};
+                        TypeOption,
+                        NumberTemp};
                 rowViewAllVehicleHasGoodRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewAllVehicleHasGoodRow);
                 return rowViewAllVehicleHasGoodRow;
@@ -1614,12 +1614,12 @@ namespace ECustoms {
                 this.columnMoney = base.Columns["Money"];
                 this.columnDateHandover = base.Columns["DateHandover"];
                 this.columnSeal = base.Columns["Seal"];
-                this.columnNumberTemp = base.Columns["NumberTemp"];
                 this.columnGateExport = base.Columns["GateExport"];
                 this.columnDateReturn = base.Columns["DateReturn"];
                 this.columnNumberHandover = base.Columns["NumberHandover"];
                 this.columnRegisterPlace = base.Columns["RegisterPlace"];
                 this.columnTypeOption = base.Columns["TypeOption"];
+                this.columnNumberTemp = base.Columns["NumberTemp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1711,8 +1711,6 @@ namespace ECustoms {
                 base.Columns.Add(this.columnDateHandover);
                 this.columnSeal = new global::System.Data.DataColumn("Seal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSeal);
-                this.columnNumberTemp = new global::System.Data.DataColumn("NumberTemp", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumberTemp);
                 this.columnGateExport = new global::System.Data.DataColumn("GateExport", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGateExport);
                 this.columnDateReturn = new global::System.Data.DataColumn("DateReturn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1723,6 +1721,8 @@ namespace ECustoms {
                 base.Columns.Add(this.columnRegisterPlace);
                 this.columnTypeOption = new global::System.Data.DataColumn("TypeOption", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTypeOption);
+                this.columnNumberTemp = new global::System.Data.DataColumn("NumberTemp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberTemp);
                 this.columnVehicleID.AllowDBNull = false;
                 this.columnPlateNumber.MaxLength = 50;
                 this.columnNumberOfContainer.MaxLength = 50;
@@ -1748,6 +1748,7 @@ namespace ECustoms {
                 this.columnSeal.MaxLength = 100;
                 this.columnGateExport.MaxLength = 500;
                 this.columnRegisterPlace.MaxLength = 500;
+                this.columnNumberTemp.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3167,22 +3168,6 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int NumberTemp {
-                get {
-                    try {
-                        return ((int)(this[this.tableViewAllVehicleHasGood.NumberTempColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NumberTemp\' in table \'ViewAllVehicleHasGood\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewAllVehicleHasGood.NumberTempColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string GateExport {
                 get {
                     try {
@@ -3259,6 +3244,22 @@ namespace ECustoms {
                 }
                 set {
                     this[this.tableViewAllVehicleHasGood.TypeOptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumberTemp {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewAllVehicleHasGood.NumberTempColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberTemp\' in table \'ViewAllVehicleHasGood\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllVehicleHasGood.NumberTempColumn] = value;
                 }
             }
             
@@ -3756,18 +3757,6 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNumberTempNull() {
-                return this.IsNull(this.tableViewAllVehicleHasGood.NumberTempColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNumberTempNull() {
-                this[this.tableViewAllVehicleHasGood.NumberTempColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsGateExportNull() {
                 return this.IsNull(this.tableViewAllVehicleHasGood.GateExportColumn);
             }
@@ -3824,6 +3813,18 @@ namespace ECustoms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTypeOptionNull() {
                 this[this.tableViewAllVehicleHasGood.TypeOptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumberTempNull() {
+                return this.IsNull(this.tableViewAllVehicleHasGood.NumberTempColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumberTempNull() {
+                this[this.tableViewAllVehicleHasGood.NumberTempColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4250,12 +4251,12 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("Money", "Money");
             tableMapping.ColumnMappings.Add("DateHandover", "DateHandover");
             tableMapping.ColumnMappings.Add("Seal", "Seal");
-            tableMapping.ColumnMappings.Add("NumberTemp", "NumberTemp");
             tableMapping.ColumnMappings.Add("GateExport", "GateExport");
             tableMapping.ColumnMappings.Add("DateReturn", "DateReturn");
             tableMapping.ColumnMappings.Add("NumberHandover", "NumberHandover");
             tableMapping.ColumnMappings.Add("RegisterPlace", "RegisterPlace");
             tableMapping.ColumnMappings.Add("TypeOption", "TypeOption");
+            tableMapping.ColumnMappings.Add("NumberTemp", "NumberTemp");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4272,7 +4273,7 @@ namespace ECustoms.DataSet2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ViewAllVehicleHasGood.*\r\nFROM            ViewAllVehicleHasGood";
+            this._commandCollection[0].CommandText = @"SELECT VehicleID, PlateNumber, NumberOfContainer, DriverName, ImportDate, IsImport, ExportDate, IsExport, Note, Status, IsCompleted, IsGoodsImported, ImportStatus, ImportedLocalTime, HasGoodsImported, ConfirmImportBy, ConfirmExportBy, ConfirmLocalImportBy, DeclarationID, Number, ProductName, CompanyName, ProductAmount, Unit, CreatedByID, ModifiedByID, ModifiedDate, CreatedDate, HasDeclaration, Type, CompanyCode, RegisterDate, DeclarationType, ConfirmExportByName, ConfirmImportByName, ConfirmLocalImportByName, ConfirmStatus, ConfirmDate, Parking, ParkingDate, Money, DateHandover, Seal, GateExport, DateReturn, NumberHandover, RegisterPlace, TypeOption FROM ViewAllVehicleHasGood";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

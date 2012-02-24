@@ -47,11 +47,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewAllVehicleHasGoodTableAdapter" GeneratorDataComponentClassName="ViewAllVehicleHasGoodTableAdapter" Name="ViewAllVehicleHasGood" UserDataComponentName="ViewAllVehicleHasGoodTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="eCustomsConnectionString (Settings)" DbObjectName="eCustoms.dbo.ViewAllVehicleHasGood" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="eCustomsConnectionString (Settings)" DbObjectName="eCustoms.dbo.ViewAllVehicleHasGood" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ViewAllVehicleHasGood.*
-FROM            ViewAllVehicleHasGood</CommandText>
+                    <CommandText>SELECT VehicleID, PlateNumber, NumberOfContainer, DriverName, ImportDate, IsImport, ExportDate, IsExport, Note, Status, IsCompleted, IsGoodsImported, ImportStatus, ImportedLocalTime, HasGoodsImported, ConfirmImportBy, ConfirmExportBy, ConfirmLocalImportBy, DeclarationID, Number, ProductName, CompanyName, ProductAmount, Unit, CreatedByID, ModifiedByID, ModifiedDate, CreatedDate, HasDeclaration, Type, CompanyCode, RegisterDate, DeclarationType, ConfirmExportByName, ConfirmImportByName, ConfirmLocalImportByName, ConfirmStatus, ConfirmDate, Parking, ParkingDate, Money, DateHandover, Seal, GateExport, DateReturn, NumberHandover, RegisterPlace, TypeOption FROM ViewAllVehicleHasGood</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -101,12 +100,12 @@ FROM            ViewAllVehicleHasGood</CommandText>
               <Mapping SourceColumn="Money" DataSetColumn="Money" />
               <Mapping SourceColumn="DateHandover" DataSetColumn="DateHandover" />
               <Mapping SourceColumn="Seal" DataSetColumn="Seal" />
-              <Mapping SourceColumn="NumberTemp" DataSetColumn="NumberTemp" />
               <Mapping SourceColumn="GateExport" DataSetColumn="GateExport" />
               <Mapping SourceColumn="DateReturn" DataSetColumn="DateReturn" />
               <Mapping SourceColumn="NumberHandover" DataSetColumn="NumberHandover" />
               <Mapping SourceColumn="RegisterPlace" DataSetColumn="RegisterPlace" />
               <Mapping SourceColumn="TypeOption" DataSetColumn="TypeOption" />
+              <Mapping SourceColumn="NumberTemp" DataSetColumn="NumberTemp" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -353,7 +352,6 @@ FROM            ViewAllVehicleHasGood</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NumberTemp" msprop:Generator_ColumnVarNameInTable="columnNumberTemp" msprop:Generator_ColumnPropNameInRow="NumberTemp" msprop:Generator_ColumnPropNameInTable="NumberTempColumn" msprop:Generator_UserColumnName="NumberTemp" type="xs:int" minOccurs="0" />
               <xs:element name="GateExport" msprop:Generator_ColumnVarNameInTable="columnGateExport" msprop:Generator_ColumnPropNameInRow="GateExport" msprop:Generator_ColumnPropNameInTable="GateExportColumn" msprop:Generator_UserColumnName="GateExport" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -371,6 +369,13 @@ FROM            ViewAllVehicleHasGood</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="TypeOption" msprop:Generator_ColumnVarNameInTable="columnTypeOption" msprop:Generator_ColumnPropNameInRow="TypeOption" msprop:Generator_ColumnPropNameInTable="TypeOptionColumn" msprop:Generator_UserColumnName="TypeOption" type="xs:short" minOccurs="0" />
+              <xs:element name="NumberTemp" msprop:Generator_ColumnVarNameInTable="columnNumberTemp" msprop:Generator_ColumnPropNameInRow="NumberTemp" msprop:Generator_ColumnPropNameInTable="NumberTempColumn" msprop:Generator_UserColumnName="NumberTemp" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
