@@ -234,7 +234,7 @@ namespace ECustoms
       declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
       declarationInfo.TypeOption = short.Parse(((ComboBoxItem) cbTNTX.SelectedItem).Value);
       if (!string.IsNullOrEmpty(txtNumberTemp.Text.Trim()))
-        declarationInfo.NumberTemp = Convert.ToInt32(txtNumberTemp.Text.Trim());
+        declarationInfo.NumberTemp = txtNumberTemp.Text.Trim();
       return declarationInfo;
     }
 
@@ -306,6 +306,14 @@ namespace ECustoms
     /// </summary>
     private void Init()
     {
+      //Autocomplete registerplace
+      var auto = new AutoCompleteStringCollection();
+      var lstAuto = DeclarationFactory.GetAllRegisterPlace();
+      auto.AddRange(lstAuto.ToArray());
+      txtRegisterPlace.AutoCompleteMode = AutoCompleteMode.Suggest;
+      txtRegisterPlace.AutoCompleteSource = AutoCompleteSource.CustomSource;
+      txtRegisterPlace.AutoCompleteCustomSource = auto;
+
       grdVehicle.AutoGenerateColumns = false;
       //Init data for cbTNTX
       var listTNTX = new List<ComboBoxItem>();
@@ -382,7 +390,7 @@ namespace ECustoms
           txtRegisterPlace.Text = declarationInfo.RegisterPlace;
           txtMoney.Text = declarationInfo.Money.ToString();
           cbTNTX.SelectedItem = declarationInfo.TypeOption != null ? listTNTX[ (int) declarationInfo.TypeOption] : listTNTX[0];
-          txtNumberTemp.Text = declarationInfo.NumberTemp != null ? declarationInfo.NumberTemp.ToString() : "";
+          txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
         }
 
         // Get Vehicle by DeclarationID
