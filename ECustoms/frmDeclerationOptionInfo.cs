@@ -43,16 +43,20 @@ namespace ECustoms
             try
             {
                 this.Text = "Danh sách tờ khai" + ConstantInfo.MESSAGE_TITLE;
+                cbRegDate.Checked = true;
                 switch (_declerationOptionType)
                 {
                   case Common.DeclerationOptionType.XKCK:
                     lblHeader.Text = "Quản lý hàng xuất khẩu chuyển cửa khẩu";
+                    lblGateExport.Visible = txtGateExport.Visible = false;
                     break;
                   case Common.DeclerationOptionType.NKCK:
                     lblHeader.Text = "Quản lý hàng nhập khẩu chuyển cửa khẩu";
+                    lblGateExport.Visible = txtGateExport.Visible = false;
                     break;
                   case Common.DeclerationOptionType.TNTX:
                     lblHeader.Text = "Quản lý hàng tạm nhập tái xuất";
+                    lblRegisterPlace.Visible = txtRegisterPlace.Visible = false;
                     break;
                   default:
                     break;
@@ -101,7 +105,24 @@ namespace ECustoms
                 //filter by CompanyName
                 if (string.IsNullOrEmpty(txtCompanyName.Text) == false)
                 { // has company name, has not number
-                    result = result.Where(d => (d.CompanyName != null) && (d.CompanyName.Contains(companyName))).OrderByDescending(p => p.ModifiedDate).ToList();
+                    result = result.Where(d => (d.CompanyName != null) && (d.CompanyName.Contains(companyName))).ToList();
+                }
+                //filter by RegisterDate
+                var from = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day, 0, 0, 0);
+                var to = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day, 23, 59, 59);
+                if (cbRegDate.Checked)
+                {
+                  result = result.Where(g => g.RegisterDate >= from && g.RegisterDate <= to).ToList();
+                }
+                //filter by Register Place
+                if (!string.IsNullOrEmpty(txtRegisterPlace.Text))
+                { 
+                  result = result.Where(d => (d.RegisterPlace != null) && (d.RegisterPlace.Contains(txtRegisterPlace.Text.Trim()))).ToList();
+                }
+                //filter by Gate export
+                if (!string.IsNullOrEmpty(txtGateExport.Text))
+                {
+                  result = result.Where(d => (d.GateExport != null) && (d.GateExport.Contains(txtGateExport.Text.Trim()))).ToList();
                 }
 
                 // Filter by Type
@@ -209,18 +230,6 @@ namespace ECustoms
                 {
                     if (e.RowIndex >= 0 && grvDecleration.SelectedRows.Count == 1) // Only select one row
                     {
-                        //var declarationType = grvDecleration.SelectedRows[0].Cells["DeclarationType"].Value;
-                        //if (declarationType.Equals((short)Common.DeclerationType.Export)) // tờ khai xuất
-                        //{
-                        //    var frmExport = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationOptionType.NKCK);
-                        //    frmExport.Show(this);
-                        //}
-                        //else
-                        //{
-                        //  var frmExport = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Common.DeclerationOptionType.NKCK);
-                        //    frmExport.Show(this);
-                        //}
-
                         var frmExport = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), _declerationOptionType);
                         frmExport.Show(this);
                     }
@@ -245,6 +254,20 @@ namespace ECustoms
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void cbRegDate_CheckedChanged(object sender, EventArgs e)
+        {
+          if (cbRegDate.Checked)
+          {
+            dtpFrom.Enabled = true;
+            dtpTo.Enabled = true;
+          }
+          else
+          {
+            dtpFrom.Enabled = false;
+            dtpTo.Enabled = false;
+          }
         }
 
     }
