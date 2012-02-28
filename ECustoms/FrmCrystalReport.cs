@@ -157,14 +157,31 @@ namespace ECustoms
                             lblHeader.Text = "Sổ theo dõi phương tiện chở hàng nhập khẩu";
 
                             var sql = new StringBuilder();
-                            sql.Append("SELECT * FROM ViewAllVehicleHasGood ");
-                            sql.Append(" WHERE ");
-                            sql.Append(" (DeclarationID > 0 OR DeclarationID = 1) "); // LAY NHUNG PHUONG TIEN THUOC TO KHAI 1, CO NGHIA LA DANG O BAI                        
-                            sql.Append(" AND HasGoodsImported = 1 ");
-                            sql.Append(" AND DeclarationType = 1 ");
-                            sql.Append(" AND IsImport = 1 ");
-                            sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            //sql.Append("SELECT * FROM ViewAllVehicleHasGood ");
+                            //sql.Append(" WHERE ");
+                            //sql.Append(" (DeclarationID > 0 OR DeclarationID = 1) "); // LAY NHUNG PHUONG TIEN THUOC TO KHAI 1, CO NGHIA LA DANG O BAI                        
+                            //sql.Append(" AND HasGoodsImported = 1 ");
+                            //sql.Append(" AND DeclarationType = 1 ");
+                            //sql.Append(" AND IsImport = 1 ");
+                            //sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            //sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+
+                            sql.Append("select * from ViewAllVehicleHasGood as table1");
+                            sql.Append(" inner join");
+                            sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID, DeclarationType from ViewAllVehicleHasGood ");
+                            sql.Append(" where 1=1");
+                            sql.Append(" group by ViewAllVehicleHasGood.VehicleID, ViewAllVehicleHasGood.DeclarationType) as table2");
+
+                            sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
+                            sql.Append(" AND");
+
+
+                            sql.Append(" (table1.DeclarationID > 0 OR table1.DeclarationID = 1) "); // LAY NHUNG PHUONG TIEN THUOC TO KHAI 1, CO NGHIA LA DANG O BAI                        
+                            sql.Append(" AND table1.HasGoodsImported = 1 ");
+                            sql.Append(" AND table1.DeclarationType = 1 ");
+                            sql.Append(" AND table1.IsImport = 1 ");
+                            sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
