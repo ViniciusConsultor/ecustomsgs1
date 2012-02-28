@@ -255,6 +255,7 @@ namespace ECustoms
       txtMoney.Text = "";
       txtRegisterPlace.Text = "B15E-Chi cục Hải quan Tân Thanh";
       cbTNTX.SelectedIndex = 0;
+      txtNumberTemp.Text = "";
     }
 
     private bool Validate()
