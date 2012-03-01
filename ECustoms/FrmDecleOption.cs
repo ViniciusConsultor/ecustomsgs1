@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using ECustoms.BOL;
 using ECustoms.DAL;
@@ -68,7 +66,7 @@ namespace ECustoms
             //declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
             declarationInfo.NumberHandover = !string.IsNullOrEmpty(txtNumberHandover.Text) ? Convert.ToInt32(txtNumberHandover.Text.Trim()) : 0;
             declarationInfo.DateHandover = dtpHandover.Value;
-            declarationInfo.DateReturn = dtpReturn.Value;
+            //declarationInfo.DateReturn = dtpReturn.Value;
             declarationInfo.TypeOption = (short) _declerationOptionType;
             if (_declerationOptionType == Common.DeclerationOptionType.TNTX)
             {
@@ -142,8 +140,16 @@ namespace ECustoms
                 txtMoney.Text = declarationInfo.Money.ToString();
                 //Option infomation
                 txtNumberHandover.Text = declarationInfo.NumberHandover != null ? declarationInfo.NumberHandover.ToString() : "";
-                dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : CommonFactory.GetCurrentDate();
-                dtpReturn.Value = declarationInfo.DateReturn != null ? declarationInfo.DateReturn.Value : CommonFactory.GetCurrentDate();
+                dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : DateTime.Now;
+                if (declarationInfo.DateReturn == null)
+                {
+                    btConfirmReturn.Enabled = true;
+                    dtpReturn.Visible = false;
+                }
+                else
+	            {
+                    btConfirmReturn.Enabled = false;
+	            }
                 if ( _declerationOptionType.Equals(Common.DeclerationOptionType.TNTX))
                 {
                   txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
@@ -215,6 +221,23 @@ namespace ECustoms
             Init();
             //InitialPermission();
 
+        }
+
+        private void btConfirmReturn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeclarationFactory.UpdateReturnInfo(_declerationID, _userInfo.UserID);
+                dtpReturn.Value = DateTime.Now;
+                dtpReturn.Visible = true;
+                MessageBox.Show("Xác nhận hồi báo thành công.");
+                btConfirmReturn.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
         }
 
     }
