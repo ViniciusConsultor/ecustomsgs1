@@ -178,5 +178,15 @@ namespace ECustoms.BOL
           db.Connection.Close();
           return lstResult;
         }
+        public static int UpdateReturnInfo(long declerationID, int userID)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var decleration = db.tblDeclarations.Where(g => g.DeclarationID == declerationID).FirstOrDefault();
+            decleration.PersonConfirmReturnID = userID;
+            decleration.DateReturn = DateTime.Now;
+            int re = db.SaveChanges();
+            db.Connection.Close();
+            return re;
+        }
     }
 }
