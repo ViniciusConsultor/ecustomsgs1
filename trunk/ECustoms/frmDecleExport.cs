@@ -311,7 +311,7 @@ namespace ECustoms
       var auto = new AutoCompleteStringCollection();
       var lstAuto = DeclarationFactory.GetAllRegisterPlace();
       auto.AddRange(lstAuto.ToArray());
-      txtRegisterPlace.AutoCompleteMode = AutoCompleteMode.Suggest;
+      txtRegisterPlace.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
       txtRegisterPlace.AutoCompleteSource = AutoCompleteSource.CustomSource;
       txtRegisterPlace.AutoCompleteCustomSource = auto;
 

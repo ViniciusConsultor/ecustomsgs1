@@ -70,6 +70,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btConfirmReturn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPersonHandover = new System.Windows.Forms.TextBox();
+            this.txtPersonConfirmReturn = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.gbExportDeclaration.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
             this.pnTNTX.SuspendLayout();
@@ -308,6 +312,10 @@
             // 
             // groupBoxVehicle
             // 
+            this.groupBoxVehicle.Controls.Add(this.txtPersonConfirmReturn);
+            this.groupBoxVehicle.Controls.Add(this.label7);
+            this.groupBoxVehicle.Controls.Add(this.txtPersonHandover);
+            this.groupBoxVehicle.Controls.Add(this.label6);
             this.groupBoxVehicle.Controls.Add(this.pnTNTX);
             this.groupBoxVehicle.Controls.Add(this.dtpReturn);
             this.groupBoxVehicle.Controls.Add(this.label5);
@@ -318,7 +326,7 @@
             this.groupBoxVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxVehicle.Location = new System.Drawing.Point(12, 238);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
-            this.groupBoxVehicle.Size = new System.Drawing.Size(927, 138);
+            this.groupBoxVehicle.Size = new System.Drawing.Size(927, 223);
             this.groupBoxVehicle.TabIndex = 1;
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Thông tin bổ sung";
@@ -390,7 +398,7 @@
             this.dtpReturn.CustomFormat = "dd/MM/yyyy";
             this.dtpReturn.Enabled = false;
             this.dtpReturn.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpReturn.Location = new System.Drawing.Point(200, 98);
+            this.dtpReturn.Location = new System.Drawing.Point(200, 134);
             this.dtpReturn.Name = "dtpReturn";
             this.dtpReturn.Size = new System.Drawing.Size(106, 26);
             this.dtpReturn.TabIndex = 2;
@@ -398,11 +406,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 103);
+            this.label5.Location = new System.Drawing.Point(16, 139);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 20);
+            this.label5.Size = new System.Drawing.Size(141, 20);
             this.label5.TabIndex = 24;
-            this.label5.Text = "Ngày hồi báo";
+            this.label5.Text = "Ngày nhận hồi báo";
             // 
             // dtpHandover
             // 
@@ -456,7 +464,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(8, 384);
+            this.btnUpdate.Location = new System.Drawing.Point(8, 467);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(171, 33);
             this.btnUpdate.TabIndex = 2;
@@ -473,7 +481,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ECustoms.Properties.Resources.close;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(342, 384);
+            this.button1.Location = new System.Drawing.Point(342, 467);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 33);
             this.button1.TabIndex = 3;
@@ -489,7 +497,7 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.confirm;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(185, 384);
+            this.btConfirmReturn.Location = new System.Drawing.Point(185, 467);
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(151, 33);
             this.btConfirmReturn.TabIndex = 24;
@@ -498,13 +506,46 @@
             this.btConfirmReturn.UseVisualStyleBackColor = true;
             this.btConfirmReturn.Click += new System.EventHandler(this.btConfirmReturn_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 20);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Người lập BBBG";
+            // 
+            // txtPersonHandover
+            // 
+            this.txtPersonHandover.Location = new System.Drawing.Point(200, 97);
+            this.txtPersonHandover.Name = "txtPersonHandover";
+            this.txtPersonHandover.Size = new System.Drawing.Size(162, 26);
+            this.txtPersonHandover.TabIndex = 28;
+            // 
+            // txtPersonConfirmReturn
+            // 
+            this.txtPersonConfirmReturn.Enabled = false;
+            this.txtPersonConfirmReturn.Location = new System.Drawing.Point(200, 172);
+            this.txtPersonConfirmReturn.Name = "txtPersonConfirmReturn";
+            this.txtPersonConfirmReturn.Size = new System.Drawing.Size(162, 26);
+            this.txtPersonConfirmReturn.TabIndex = 30;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 175);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(167, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Người theo dõi hồi báo";
+            // 
             // FrmDecleExportOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(951, 432);
+            this.ClientSize = new System.Drawing.Size(951, 509);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);
@@ -570,5 +611,9 @@
         private System.Windows.Forms.Panel pnTNTX;
         private System.Windows.Forms.TextBox txtNumberTemp;
         private System.Windows.Forms.Button btConfirmReturn;
+        private System.Windows.Forms.TextBox txtPersonConfirmReturn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPersonHandover;
+        private System.Windows.Forms.Label label6;
     }
 }

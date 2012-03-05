@@ -38,7 +38,6 @@ namespace ECustoms
             try
             {
                 this.Text = "Danh sách tờ khai" + ConstantInfo.MESSAGE_TITLE;
-                cbRegDate.Checked = true;
                 switch (_declerationOptionType)
                 {
                     case Common.DeclerationOptionType.XKCK:
@@ -117,6 +116,11 @@ namespace ECustoms
                 if (cbRegDate.Checked)
                 {
                     result = result.Where(g => g.RegisterDate >= from && g.RegisterDate <= to).ToList();
+                }
+                //filter by Return
+                if (cbReturn.Checked != cbNotReturn.Checked)
+                {
+                    result = cbReturn.Checked ? result.Where(g => g.DateReturn != null).ToList() : result.Where(g => g.DateReturn == null).ToList();
                 }
                 //filter by Register Place
                 if (!string.IsNullOrEmpty(txtRegisterPlace.Text))

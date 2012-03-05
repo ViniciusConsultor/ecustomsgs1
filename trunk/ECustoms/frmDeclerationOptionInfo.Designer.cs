@@ -28,21 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeclerationOptionInfo));
             this.grbDecleration = new System.Windows.Forms.GroupBox();
             this.grvDecleration = new System.Windows.Forms.DataGridView();
+            this.DeclarationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RegisterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConfirmStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConfirmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonConfirmReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModifiedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModifiedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeclarationType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbReturn = new System.Windows.Forms.CheckBox();
+            this.cbNotReturn = new System.Windows.Forms.CheckBox();
             this.txtGateExport = new System.Windows.Forms.TextBox();
             this.lblGateExport = new System.Windows.Forms.Label();
             this.txtRegisterPlace = new System.Windows.Forms.TextBox();
@@ -80,24 +100,6 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DeclarationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExportType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RegisterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConfirmStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConfirmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PersonConfirmReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModifiedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModifiedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeclarationType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDecleration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -107,7 +109,7 @@
             // 
             this.grbDecleration.Controls.Add(this.grvDecleration);
             this.grbDecleration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDecleration.Location = new System.Drawing.Point(8, 183);
+            this.grbDecleration.Location = new System.Drawing.Point(8, 187);
             this.grbDecleration.Name = "grbDecleration";
             this.grbDecleration.Size = new System.Drawing.Size(964, 352);
             this.grbDecleration.TabIndex = 1;
@@ -149,8 +151,144 @@
             this.grvDecleration.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvDecleration_CellMouseDoubleClick_1);
             this.grvDecleration.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvDecleration_RowLeave);
             // 
+            // DeclarationID
+            // 
+            this.DeclarationID.DataPropertyName = "DeclarationID";
+            this.DeclarationID.HeaderText = "DeclarationID";
+            this.DeclarationID.Name = "DeclarationID";
+            this.DeclarationID.Visible = false;
+            // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "Number";
+            this.Number.HeaderText = "Số tờ khai";
+            this.Number.Name = "Number";
+            this.Number.Width = 110;
+            // 
+            // CompanyCode
+            // 
+            this.CompanyCode.DataPropertyName = "CompanyCode";
+            this.CompanyCode.HeaderText = "Mã doanh nghiệp";
+            this.CompanyCode.Name = "CompanyCode";
+            this.CompanyCode.Width = 160;
+            // 
+            // ExportType
+            // 
+            this.ExportType.DataPropertyName = "Type";
+            this.ExportType.HeaderText = "Loại hình";
+            this.ExportType.Name = "ExportType";
+            // 
+            // RegisterDate
+            // 
+            this.RegisterDate.DataPropertyName = "RegisterDate";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy hh:mm";
+            this.RegisterDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.RegisterDate.HeaderText = "Ngày đăng ký";
+            this.RegisterDate.Name = "RegisterDate";
+            this.RegisterDate.Width = 150;
+            // 
+            // ConfirmStatus
+            // 
+            this.ConfirmStatus.DataPropertyName = "ConfirmStatus";
+            this.ConfirmStatus.HeaderText = "Trạng thái hồ sơ";
+            this.ConfirmStatus.Name = "ConfirmStatus";
+            this.ConfirmStatus.Width = 150;
+            // 
+            // ConfirmDate
+            // 
+            this.ConfirmDate.DataPropertyName = "ConfirmDate";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
+            this.ConfirmDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ConfirmDate.HeaderText = "Ngày trả hồ sơ";
+            this.ConfirmDate.Name = "ConfirmDate";
+            this.ConfirmDate.Width = 150;
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "Tên hàng";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Width = 120;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.DataPropertyName = "CompanyName";
+            this.CompanyName.HeaderText = "Tên doanh nghiệp";
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.Width = 160;
+            // 
+            // ProductAmount
+            // 
+            this.ProductAmount.DataPropertyName = "ProductAmount";
+            this.ProductAmount.HeaderText = "Lượng hàng";
+            this.ProductAmount.Name = "ProductAmount";
+            this.ProductAmount.Width = 130;
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "Unit";
+            this.Unit.HeaderText = "Đơn vị tính";
+            this.Unit.Name = "Unit";
+            this.Unit.Width = 150;
+            // 
+            // DateReturn
+            // 
+            this.DateReturn.DataPropertyName = "DateReturn";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
+            this.DateReturn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DateReturn.HeaderText = "Ngày hồi báo";
+            this.DateReturn.Name = "DateReturn";
+            this.DateReturn.Width = 150;
+            // 
+            // PersonConfirmReturn
+            // 
+            this.PersonConfirmReturn.DataPropertyName = "PersonConfirmReturn";
+            this.PersonConfirmReturn.HeaderText = "Người XN hồi báo";
+            this.PersonConfirmReturn.Name = "PersonConfirmReturn";
+            this.PersonConfirmReturn.Width = 160;
+            // 
+            // ModifiedDate
+            // 
+            this.ModifiedDate.DataPropertyName = "ModifiedDate";
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy hh:mm";
+            this.ModifiedDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ModifiedDate.HeaderText = "Sửa lần cuối";
+            this.ModifiedDate.Name = "ModifiedDate";
+            this.ModifiedDate.Width = 150;
+            // 
+            // ModifiedBy
+            // 
+            this.ModifiedBy.DataPropertyName = "ModifiedBy";
+            this.ModifiedBy.HeaderText = "Người cập nhật";
+            this.ModifiedBy.Name = "ModifiedBy";
+            this.ModifiedBy.Width = 150;
+            // 
+            // CreatedBy
+            // 
+            this.CreatedBy.DataPropertyName = "CreatedBy";
+            this.CreatedBy.HeaderText = "Người tạo";
+            this.CreatedBy.Name = "CreatedBy";
+            // 
+            // CreatedDate
+            // 
+            this.CreatedDate.DataPropertyName = "CreatedDate";
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy hh:mm";
+            this.CreatedDate.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CreatedDate.HeaderText = "Ngày tạo";
+            this.CreatedDate.Name = "CreatedDate";
+            this.CreatedDate.Width = 150;
+            // 
+            // DeclarationType
+            // 
+            this.DeclarationType.DataPropertyName = "DeclarationType";
+            this.DeclarationType.HeaderText = "DeclarationType";
+            this.DeclarationType.Name = "DeclarationType";
+            this.DeclarationType.Visible = false;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbReturn);
+            this.groupBox1.Controls.Add(this.cbNotReturn);
             this.groupBox1.Controls.Add(this.txtGateExport);
             this.groupBox1.Controls.Add(this.lblGateExport);
             this.groupBox1.Controls.Add(this.txtRegisterPlace);
@@ -173,9 +311,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
             // 
+            // cbReturn
+            // 
+            this.cbReturn.AutoSize = true;
+            this.cbReturn.Location = new System.Drawing.Point(779, 28);
+            this.cbReturn.Name = "cbReturn";
+            this.cbReturn.Size = new System.Drawing.Size(105, 24);
+            this.cbReturn.TabIndex = 26;
+            this.cbReturn.Text = "Đã hồi báo";
+            this.cbReturn.UseVisualStyleBackColor = true;
+            // 
+            // cbNotReturn
+            // 
+            this.cbNotReturn.AutoSize = true;
+            this.cbNotReturn.Location = new System.Drawing.Point(779, 58);
+            this.cbNotReturn.Name = "cbNotReturn";
+            this.cbNotReturn.Size = new System.Drawing.Size(122, 24);
+            this.cbNotReturn.TabIndex = 25;
+            this.cbNotReturn.Text = "Chưa hồi báo";
+            this.cbNotReturn.UseVisualStyleBackColor = true;
+            // 
             // txtGateExport
             // 
-            this.txtGateExport.Location = new System.Drawing.Point(556, 102);
+            this.txtGateExport.Location = new System.Drawing.Point(556, 104);
             this.txtGateExport.Name = "txtGateExport";
             this.txtGateExport.Size = new System.Drawing.Size(179, 26);
             this.txtGateExport.TabIndex = 6;
@@ -183,7 +341,7 @@
             // lblGateExport
             // 
             this.lblGateExport.AutoSize = true;
-            this.lblGateExport.Location = new System.Drawing.Point(407, 105);
+            this.lblGateExport.Location = new System.Drawing.Point(407, 107);
             this.lblGateExport.Name = "lblGateExport";
             this.lblGateExport.Size = new System.Drawing.Size(111, 20);
             this.lblGateExport.TabIndex = 23;
@@ -191,7 +349,7 @@
             // 
             // txtRegisterPlace
             // 
-            this.txtRegisterPlace.Location = new System.Drawing.Point(164, 102);
+            this.txtRegisterPlace.Location = new System.Drawing.Point(164, 104);
             this.txtRegisterPlace.Name = "txtRegisterPlace";
             this.txtRegisterPlace.Size = new System.Drawing.Size(189, 26);
             this.txtRegisterPlace.TabIndex = 5;
@@ -199,7 +357,7 @@
             // lblRegisterPlace
             // 
             this.lblRegisterPlace.AutoSize = true;
-            this.lblRegisterPlace.Location = new System.Drawing.Point(27, 105);
+            this.lblRegisterPlace.Location = new System.Drawing.Point(27, 107);
             this.lblRegisterPlace.Name = "lblRegisterPlace";
             this.lblRegisterPlace.Size = new System.Drawing.Size(114, 20);
             this.lblRegisterPlace.TabIndex = 21;
@@ -208,7 +366,7 @@
             // cbRegDate
             // 
             this.cbRegDate.AutoSize = true;
-            this.cbRegDate.Location = new System.Drawing.Point(31, 68);
+            this.cbRegDate.Location = new System.Drawing.Point(31, 69);
             this.cbRegDate.Name = "cbRegDate";
             this.cbRegDate.Size = new System.Drawing.Size(123, 24);
             this.cbRegDate.TabIndex = 2;
@@ -219,8 +377,9 @@
             // dtpTo
             // 
             this.dtpTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpTo.Enabled = false;
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(556, 64);
+            this.dtpTo.Location = new System.Drawing.Point(556, 65);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(117, 26);
             this.dtpTo.TabIndex = 4;
@@ -228,7 +387,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(407, 69);
+            this.label3.Location = new System.Drawing.Point(407, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 17;
@@ -237,8 +396,9 @@
             // dtpFrom
             // 
             this.dtpFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpFrom.Enabled = false;
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(231, 64);
+            this.dtpFrom.Location = new System.Drawing.Point(231, 65);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(122, 26);
             this.dtpFrom.TabIndex = 3;
@@ -246,7 +406,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 69);
+            this.label2.Location = new System.Drawing.Point(160, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 15;
@@ -259,7 +419,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search41;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(779, 63);
+            this.btnSearch.Location = new System.Drawing.Point(779, 97);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(145, 33);
             this.btnSearch.TabIndex = 7;
@@ -306,7 +466,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(340, 543);
+            this.btnClose.Location = new System.Drawing.Point(340, 547);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 33);
             this.btnClose.TabIndex = 3;
@@ -322,7 +482,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(16, 543);
+            this.btnUpdate.Location = new System.Drawing.Point(16, 547);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(161, 33);
             this.btnUpdate.TabIndex = 2;
@@ -348,7 +508,7 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.confirm;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(183, 543);
+            this.btConfirmReturn.Location = new System.Drawing.Point(183, 547);
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(151, 33);
             this.btConfirmReturn.TabIndex = 23;
@@ -499,145 +659,11 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Width = 50;
             // 
-            // DeclarationID
-            // 
-            this.DeclarationID.DataPropertyName = "DeclarationID";
-            this.DeclarationID.HeaderText = "DeclarationID";
-            this.DeclarationID.Name = "DeclarationID";
-            this.DeclarationID.Visible = false;
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.HeaderText = "Số tờ khai";
-            this.Number.Name = "Number";
-            this.Number.Width = 110;
-            // 
-            // CompanyCode
-            // 
-            this.CompanyCode.DataPropertyName = "CompanyCode";
-            this.CompanyCode.HeaderText = "Mã doanh nghiệp";
-            this.CompanyCode.Name = "CompanyCode";
-            this.CompanyCode.Width = 160;
-            // 
-            // ExportType
-            // 
-            this.ExportType.DataPropertyName = "Type";
-            this.ExportType.HeaderText = "Loại hình";
-            this.ExportType.Name = "ExportType";
-            // 
-            // RegisterDate
-            // 
-            this.RegisterDate.DataPropertyName = "RegisterDate";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy hh:mm";
-            this.RegisterDate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.RegisterDate.HeaderText = "Ngày đăng ký";
-            this.RegisterDate.Name = "RegisterDate";
-            this.RegisterDate.Width = 150;
-            // 
-            // ConfirmStatus
-            // 
-            this.ConfirmStatus.DataPropertyName = "ConfirmStatus";
-            this.ConfirmStatus.HeaderText = "Trạng thái hồ sơ";
-            this.ConfirmStatus.Name = "ConfirmStatus";
-            this.ConfirmStatus.Width = 150;
-            // 
-            // ConfirmDate
-            // 
-            this.ConfirmDate.DataPropertyName = "ConfirmDate";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
-            this.ConfirmDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ConfirmDate.HeaderText = "Ngày trả hồ sơ";
-            this.ConfirmDate.Name = "ConfirmDate";
-            this.ConfirmDate.Width = 150;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "Tên hàng";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.Width = 120;
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.DataPropertyName = "CompanyName";
-            this.CompanyName.HeaderText = "Tên doanh nghiệp";
-            this.CompanyName.Name = "CompanyName";
-            this.CompanyName.Width = 160;
-            // 
-            // ProductAmount
-            // 
-            this.ProductAmount.DataPropertyName = "ProductAmount";
-            this.ProductAmount.HeaderText = "Lượng hàng";
-            this.ProductAmount.Name = "ProductAmount";
-            this.ProductAmount.Width = 130;
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "Unit";
-            this.Unit.HeaderText = "Đơn vị tính";
-            this.Unit.Name = "Unit";
-            this.Unit.Width = 150;
-            // 
-            // DateReturn
-            // 
-            this.DateReturn.DataPropertyName = "DateReturn";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
-            this.DateReturn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DateReturn.HeaderText = "Ngày hồi báo";
-            this.DateReturn.Name = "DateReturn";
-            this.DateReturn.Width = 150;
-            // 
-            // PersonConfirmReturn
-            // 
-            this.PersonConfirmReturn.DataPropertyName = "PersonConfirmReturn";
-            this.PersonConfirmReturn.HeaderText = "Người XN hồi báo";
-            this.PersonConfirmReturn.Name = "PersonConfirmReturn";
-            this.PersonConfirmReturn.Width = 160;
-            // 
-            // ModifiedDate
-            // 
-            this.ModifiedDate.DataPropertyName = "ModifiedDate";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy hh:mm";
-            this.ModifiedDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ModifiedDate.HeaderText = "Sửa lần cuối";
-            this.ModifiedDate.Name = "ModifiedDate";
-            this.ModifiedDate.Width = 150;
-            // 
-            // ModifiedBy
-            // 
-            this.ModifiedBy.DataPropertyName = "ModifiedBy";
-            this.ModifiedBy.HeaderText = "Người cập nhật";
-            this.ModifiedBy.Name = "ModifiedBy";
-            this.ModifiedBy.Width = 150;
-            // 
-            // CreatedBy
-            // 
-            this.CreatedBy.DataPropertyName = "CreatedBy";
-            this.CreatedBy.HeaderText = "Người tạo";
-            this.CreatedBy.Name = "CreatedBy";
-            // 
-            // CreatedDate
-            // 
-            this.CreatedDate.DataPropertyName = "CreatedDate";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy hh:mm";
-            this.CreatedDate.DefaultCellStyle = dataGridViewCellStyle5;
-            this.CreatedDate.HeaderText = "Ngày tạo";
-            this.CreatedDate.Name = "CreatedDate";
-            this.CreatedDate.Width = 150;
-            // 
-            // DeclarationType
-            // 
-            this.DeclarationType.DataPropertyName = "DeclarationType";
-            this.DeclarationType.HeaderText = "DeclarationType";
-            this.DeclarationType.Name = "DeclarationType";
-            this.DeclarationType.Visible = false;
-            // 
             // frmDeclerationOptionInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 586);
+            this.ClientSize = new System.Drawing.Size(985, 591);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBox1);
@@ -717,5 +743,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeclarationType;
+        private System.Windows.Forms.CheckBox cbNotReturn;
+        private System.Windows.Forms.CheckBox cbReturn;
     }
 }

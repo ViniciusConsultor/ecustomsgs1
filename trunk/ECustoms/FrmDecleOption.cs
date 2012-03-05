@@ -66,6 +66,7 @@ namespace ECustoms
             //declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
             declarationInfo.NumberHandover = !string.IsNullOrEmpty(txtNumberHandover.Text) ? Convert.ToInt32(txtNumberHandover.Text.Trim()) : 0;
             declarationInfo.DateHandover = dtpHandover.Value;
+            declarationInfo.PersonHandover = txtPersonHandover.Text.Trim();
             //declarationInfo.DateReturn = dtpReturn.Value;
             declarationInfo.TypeOption = (short) _declerationOptionType;
             if (_declerationOptionType == Common.DeclerationOptionType.TNTX)
@@ -115,6 +116,13 @@ namespace ECustoms
             case Common.DeclerationOptionType.TNTX:
               lblHeader.Text = "Tạm nhập tái xuất";
               gbExportDeclaration.Text = "Thông tin tờ khai nhập";
+              //Autocomplete
+              var auto = new AutoCompleteStringCollection();
+              var lstAuto = DeclarationFactory.GetAllGateExport();
+              auto.AddRange(lstAuto.ToArray());
+              txtGateExport.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+              txtGateExport.AutoCompleteSource = AutoCompleteSource.CustomSource;
+              txtGateExport.AutoCompleteCustomSource = auto;  
               break;
             default:
               break;
@@ -147,9 +155,16 @@ namespace ECustoms
                     dtpReturn.Visible = false;
                 }
                 else
-	            {
+                {
+                    dtpReturn.Value = declarationInfo.DateReturn.Value;
                     btConfirmReturn.Enabled = false;
 	            }
+                txtPersonHandover.Text = declarationInfo.PersonHandover;
+                if (declarationInfo.PersonConfirmReturnID != null)
+                {
+                    txtPersonConfirmReturn.Text = UserFactory.GetByID((int) declarationInfo.PersonConfirmReturnID).Name;   
+                }
+                
                 if ( _declerationOptionType.Equals(Common.DeclerationOptionType.TNTX))
                 {
                   txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
