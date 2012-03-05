@@ -178,6 +178,15 @@ namespace ECustoms.BOL
           db.Connection.Close();
           return lstResult;
         }
+
+        public static List<string> GetAllGateExport()
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var lstResult = db.tblDeclarations.Where(g => g.GateExport != null && g.GateExport != "").Select(g => g.GateExport).Distinct().ToList();
+            db.Connection.Close();
+            return lstResult;
+        }
+
         public static int UpdateReturnInfo(long declerationID, int userID)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
