@@ -18,7 +18,7 @@ namespace ECustoms
         #endregion
 
         public FrmDecleExportOption(UserInfo userInfo, Common.DeclerationOptionType declerationOptionType, Form mainForm)
-        {          
+        {
             InitializeComponent();
             _userInfo = userInfo;
             _mainForm = mainForm;
@@ -68,12 +68,12 @@ namespace ECustoms
             declarationInfo.DateHandover = dtpHandover.Value;
             declarationInfo.PersonHandover = txtPersonHandover.Text.Trim();
             //declarationInfo.DateReturn = dtpReturn.Value;
-            declarationInfo.TypeOption = (short) _declerationOptionType;
+            declarationInfo.TypeOption = (short)_declerationOptionType;
             if (_declerationOptionType == Common.DeclerationOptionType.TNTX)
             {
-              declarationInfo.NumberTemp = !string.IsNullOrEmpty(txtNumberTemp.Text) ? txtNumberTemp.Text.Trim() : "";
-              declarationInfo.Seal = txtSeal.Text.Trim();
-              declarationInfo.GateExport = txtGateExport.Text.Trim();
+                declarationInfo.NumberTemp = !string.IsNullOrEmpty(txtNumberTemp.Text) ? txtNumberTemp.Text.Trim() : "";
+                declarationInfo.Seal = txtSeal.Text.Trim();
+                declarationInfo.GateExport = txtGateExport.Text.Trim();
 
             }
             return declarationInfo;
@@ -82,14 +82,14 @@ namespace ECustoms
 
         private bool Validate()
         {
-          // Validate export declaration
-          if (string.IsNullOrEmpty(txtExportNumber.Text.Trim()))
-          {
-              MessageBox.Show(ConstantInfo.MESSAGE_BLANK_DECLARATION_NUMBER);
-              txtExportNumber.Focus();
-              return false;
-          }
-          return true;
+            // Validate export declaration
+            if (string.IsNullOrEmpty(txtExportNumber.Text.Trim()))
+            {
+                MessageBox.Show(ConstantInfo.MESSAGE_BLANK_DECLARATION_NUMBER);
+                txtExportNumber.Focus();
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
@@ -97,39 +97,40 @@ namespace ECustoms
         /// </summary>
         private void Init()
         {
-          switch (_declerationOptionType)
-          {
-            case Common.DeclerationOptionType.XKCK:
-              //System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#ffc0c0");
-              //this.BackColor = col;
-              lblHeader.Text = "Xuất khẩu chuyển cửa khẩu";
-              gbExportDeclaration.Text = "Thông tin tờ khai xuất khẩu";
-              pnTNTX.Visible = false;
-              break;
-            case Common.DeclerationOptionType.NKCK:
-              //System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#c1ffc0");
-              //this.BackColor = col ;
-              lblHeader.Text = "Nhập khẩu chuyển cửa khẩu";
-              gbExportDeclaration.Text = "Thông tin tờ khai nhập khẩu";
-              pnTNTX.Visible = false;             
-              break;
-            case Common.DeclerationOptionType.TNTX:
-              lblHeader.Text = "Tạm nhập tái xuất";
-              gbExportDeclaration.Text = "Thông tin tờ khai nhập";
-              //Autocomplete
-              var auto = new AutoCompleteStringCollection();
-              var lstAuto = DeclarationFactory.GetAllGateExport();
-              auto.AddRange(lstAuto.ToArray());
-              txtGateExport.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-              txtGateExport.AutoCompleteSource = AutoCompleteSource.CustomSource;
-              txtGateExport.AutoCompleteCustomSource = auto;  
-              break;
-            default:
-              break;
-          }
-            
+            switch (_declerationOptionType)
+            {
+                case Common.DeclerationOptionType.XKCK:
+                    //System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#ffc0c0");
+                    //this.BackColor = col;
+                    lblHeader.Text = "Xuất khẩu chuyển cửa khẩu";
+                    gbExportDeclaration.Text = "Thông tin tờ khai xuất khẩu";
+                    pnTNTX.Visible = false;
+                    pnXKCK.Visible = true;
+                    break;
+                case Common.DeclerationOptionType.NKCK:
+                    //System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#c1ffc0");
+                    //this.BackColor = col ;
+                    lblHeader.Text = "Nhập khẩu chuyển cửa khẩu";
+                    gbExportDeclaration.Text = "Thông tin tờ khai nhập khẩu";
+                    pnTNTX.Visible = false;
+                    break;
+                case Common.DeclerationOptionType.TNTX:
+                    lblHeader.Text = "Tạm nhập tái xuất";
+                    gbExportDeclaration.Text = "Thông tin tờ khai nhập";
+                    //Autocomplete
+                    var auto = new AutoCompleteStringCollection();
+                    var lstAuto = DeclarationFactory.GetAllGateExport();
+                    auto.AddRange(lstAuto.ToArray());
+                    txtGateExport.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txtGateExport.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    txtGateExport.AutoCompleteCustomSource = auto;
+                    break;
+                default:
+                    break;
+            }
+
             btnUpdate.Enabled = true;
-            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);               
+            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
 
             // Get Decleration information
             var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
@@ -158,32 +159,38 @@ namespace ECustoms
                 {
                     dtpReturn.Value = declarationInfo.DateReturn.Value;
                     btConfirmReturn.Enabled = false;
-	            }
+                }
                 txtPersonHandover.Text = declarationInfo.PersonHandover;
                 if (declarationInfo.PersonConfirmReturnID != null)
                 {
-                    txtPersonConfirmReturn.Text = UserFactory.GetByID((int) declarationInfo.PersonConfirmReturnID).Name;   
+                    txtPersonConfirmReturn.Text = UserFactory.GetByID((int)declarationInfo.PersonConfirmReturnID).Name;
                 }
-                
-                if ( _declerationOptionType.Equals(Common.DeclerationOptionType.TNTX))
+
+                if (_declerationOptionType.Equals(Common.DeclerationOptionType.TNTX))
                 {
-                  txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
-                  txtSeal.Text = declarationInfo.Seal ?? "";
-                  txtGateExport.Text = declarationInfo.GateExport ?? "";
-                  if (declarationInfo.DeclarationType == (short) Common.DeclerationType.Export)
-                  {
-                    gbExportDeclaration.Text =  "Thông tin tờ khai xuất";
-                    lblNumberTemp.Text = "Số tờ khai nhập";
-                  }
-                  else
-                  {
-                    gbExportDeclaration.Text =  "Thông tin tờ khai nhập";
-                    lblNumberTemp.Text = "Số tờ khai xuất";
-                  }
+                    txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
+                    txtSeal.Text = declarationInfo.Seal ?? "";
+                    txtGateExport.Text = declarationInfo.GateExport ?? "";
+                    if (declarationInfo.DeclarationType == (short)Common.DeclerationType.Export)
+                    {
+                        gbExportDeclaration.Text = "Thông tin tờ khai xuất";
+                        lblNumberTemp.Text = "Số tờ khai nhập";
+                    }
+                    else
+                    {
+                        gbExportDeclaration.Text = "Thông tin tờ khai nhập";
+                        lblNumberTemp.Text = "Số tờ khai xuất";
+                    }
                 }
                 // Get Vehicle by DeclarationID
                 var listVehicle = VehicleFactory.GetFromViewByDeclarationID(this._declerationID);
                 txtExportTotalVehicles.Text = listVehicle.Count.ToString();
+                if (_declerationOptionType.Equals(Common.DeclerationOptionType.XKCK))
+                {
+                    grvVehicle.AutoGenerateColumns = false;
+                    grvVehicle.DataSource = listVehicle;
+                }
+
             }
         }
 
@@ -198,18 +205,18 @@ namespace ECustoms
         {
             try
             {
-              if (!Validate()) return;
-              if (_declerationID != 0)
-              {
-                  // Get decleration by ID
-                  var declerationInfoTemp = DeclarationFactory.GetByID(_declerationID);
-                  var declerationInfo = GetDeclarationInfo(ref declerationInfoTemp);
-                  
-                  // Update Decleration
-                  DeclarationFactory.Update(declerationInfo);
+                if (!Validate()) return;
+                if (_declerationID != 0)
+                {
+                    // Get decleration by ID
+                    var declerationInfoTemp = DeclarationFactory.GetByID(_declerationID);
+                    var declerationInfo = GetDeclarationInfo(ref declerationInfoTemp);
 
-                  MessageBox.Show("Cập nhật thành công");
-              }
+                    // Update Decleration
+                    DeclarationFactory.Update(declerationInfo);
+
+                    MessageBox.Show("Cập nhật thành công");
+                }
             }
             catch (Exception ex)
             {
@@ -220,7 +227,7 @@ namespace ECustoms
 
         private void CheckPermission()
         {
-          btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
+            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
         }
 
         private void FrmDecleOption_Load(object sender, EventArgs e)

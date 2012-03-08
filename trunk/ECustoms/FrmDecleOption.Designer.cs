@@ -53,6 +53,22 @@
             this.txtExportUnit = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
+            this.pnXKCK = new System.Windows.Forms.Panel();
+            this.txtPersonSignConfirm = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPersonConfirmReturn = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPersonHandover = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpReturn = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpHandover = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNumberHandover = new System.Windows.Forms.MaskedTextBox();
             this.pnTNTX = new System.Windows.Forms.Panel();
             this.txtNumberTemp = new System.Windows.Forms.TextBox();
             this.lblNumberTemp = new System.Windows.Forms.Label();
@@ -60,23 +76,21 @@
             this.txtSeal = new System.Windows.Forms.TextBox();
             this.txtGateExport = new System.Windows.Forms.TextBox();
             this.lblGateEx = new System.Windows.Forms.Label();
-            this.dtpReturn = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpHandover = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNumberHandover = new System.Windows.Forms.MaskedTextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btConfirmReturn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPersonHandover = new System.Windows.Forms.TextBox();
-            this.txtPersonConfirmReturn = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.grvVehicle = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusVehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbExportDeclaration.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
+            this.pnXKCK.SuspendLayout();
             this.pnTNTX.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).BeginInit();
             this.SuspendLayout();
             // 
             // gbExportDeclaration
@@ -312,17 +326,18 @@
             // 
             // groupBoxVehicle
             // 
+            this.groupBoxVehicle.Controls.Add(this.pnXKCK);
             this.groupBoxVehicle.Controls.Add(this.txtPersonConfirmReturn);
             this.groupBoxVehicle.Controls.Add(this.label7);
             this.groupBoxVehicle.Controls.Add(this.txtPersonHandover);
             this.groupBoxVehicle.Controls.Add(this.label6);
-            this.groupBoxVehicle.Controls.Add(this.pnTNTX);
             this.groupBoxVehicle.Controls.Add(this.dtpReturn);
             this.groupBoxVehicle.Controls.Add(this.label5);
             this.groupBoxVehicle.Controls.Add(this.dtpHandover);
             this.groupBoxVehicle.Controls.Add(this.label3);
             this.groupBoxVehicle.Controls.Add(this.label4);
             this.groupBoxVehicle.Controls.Add(this.txtNumberHandover);
+            this.groupBoxVehicle.Controls.Add(this.pnTNTX);
             this.groupBoxVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxVehicle.Location = new System.Drawing.Point(12, 238);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
@@ -330,6 +345,150 @@
             this.groupBoxVehicle.TabIndex = 1;
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Thông tin bổ sung";
+            // 
+            // pnXKCK
+            // 
+            this.pnXKCK.Controls.Add(this.grvVehicle);
+            this.pnXKCK.Controls.Add(this.txtPersonSignConfirm);
+            this.pnXKCK.Controls.Add(this.label10);
+            this.pnXKCK.Controls.Add(this.label13);
+            this.pnXKCK.Controls.Add(this.lblStatus);
+            this.pnXKCK.Controls.Add(this.label11);
+            this.pnXKCK.Location = new System.Drawing.Point(512, 12);
+            this.pnXKCK.Name = "pnXKCK";
+            this.pnXKCK.Size = new System.Drawing.Size(416, 205);
+            this.pnXKCK.TabIndex = 31;
+            this.pnXKCK.Visible = false;
+            // 
+            // txtPersonSignConfirm
+            // 
+            this.txtPersonSignConfirm.Location = new System.Drawing.Point(151, 179);
+            this.txtPersonSignConfirm.Name = "txtPersonSignConfirm";
+            this.txtPersonSignConfirm.Size = new System.Drawing.Size(174, 26);
+            this.txtPersonSignConfirm.TabIndex = 34;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(273, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Danh sách phương tiện thuộc tờ khai:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 182);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(137, 20);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Người ký xác nhận";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(96, 147);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(229, 20);
+            this.lblStatus.TabIndex = 32;
+            this.lblStatus.Text = "Hàng chưa xuất hết, còn tồn xe";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(2, 147);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 20);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Tình trạng: ";
+            // 
+            // txtPersonConfirmReturn
+            // 
+            this.txtPersonConfirmReturn.Enabled = false;
+            this.txtPersonConfirmReturn.Location = new System.Drawing.Point(200, 175);
+            this.txtPersonConfirmReturn.Name = "txtPersonConfirmReturn";
+            this.txtPersonConfirmReturn.Size = new System.Drawing.Size(162, 26);
+            this.txtPersonConfirmReturn.TabIndex = 30;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(167, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Người theo dõi hồi báo";
+            // 
+            // txtPersonHandover
+            // 
+            this.txtPersonHandover.Location = new System.Drawing.Point(200, 97);
+            this.txtPersonHandover.Name = "txtPersonHandover";
+            this.txtPersonHandover.Size = new System.Drawing.Size(162, 26);
+            this.txtPersonHandover.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 20);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Người lập BBBG";
+            // 
+            // dtpReturn
+            // 
+            this.dtpReturn.CustomFormat = "dd/MM/yyyy";
+            this.dtpReturn.Enabled = false;
+            this.dtpReturn.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpReturn.Location = new System.Drawing.Point(200, 134);
+            this.dtpReturn.Name = "dtpReturn";
+            this.dtpReturn.Size = new System.Drawing.Size(106, 26);
+            this.dtpReturn.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 139);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 20);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Ngày nhận hồi báo";
+            // 
+            // dtpHandover
+            // 
+            this.dtpHandover.CustomFormat = "dd/MM/yyyy";
+            this.dtpHandover.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHandover.Location = new System.Drawing.Point(200, 60);
+            this.dtpHandover.Name = "dtpHandover";
+            this.dtpHandover.Size = new System.Drawing.Size(106, 26);
+            this.dtpHandover.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Số biên bản bàn giao";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 20);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Ngày biên bản bàn giao";
+            // 
+            // txtNumberHandover
+            // 
+            this.txtNumberHandover.Location = new System.Drawing.Point(200, 24);
+            this.txtNumberHandover.Mask = "0000000000";
+            this.txtNumberHandover.Name = "txtNumberHandover";
+            this.txtNumberHandover.Size = new System.Drawing.Size(104, 26);
+            this.txtNumberHandover.TabIndex = 0;
             // 
             // pnTNTX
             // 
@@ -393,60 +552,6 @@
             this.lblGateEx.TabIndex = 26;
             this.lblGateEx.Text = "Cửa khẩu xuất";
             // 
-            // dtpReturn
-            // 
-            this.dtpReturn.CustomFormat = "dd/MM/yyyy";
-            this.dtpReturn.Enabled = false;
-            this.dtpReturn.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpReturn.Location = new System.Drawing.Point(200, 134);
-            this.dtpReturn.Name = "dtpReturn";
-            this.dtpReturn.Size = new System.Drawing.Size(106, 26);
-            this.dtpReturn.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 139);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 20);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Ngày nhận hồi báo";
-            // 
-            // dtpHandover
-            // 
-            this.dtpHandover.CustomFormat = "dd/MM/yyyy";
-            this.dtpHandover.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHandover.Location = new System.Drawing.Point(200, 62);
-            this.dtpHandover.Name = "dtpHandover";
-            this.dtpHandover.Size = new System.Drawing.Size(106, 26);
-            this.dtpHandover.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 20);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Số biên bản bàn giao";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 20);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Ngày biên bản bàn giao";
-            // 
-            // txtNumberHandover
-            // 
-            this.txtNumberHandover.Location = new System.Drawing.Point(200, 24);
-            this.txtNumberHandover.Mask = "0000000000";
-            this.txtNumberHandover.Name = "txtNumberHandover";
-            this.txtNumberHandover.Size = new System.Drawing.Size(104, 26);
-            this.txtNumberHandover.TabIndex = 0;
-            // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
@@ -506,38 +611,54 @@
             this.btConfirmReturn.UseVisualStyleBackColor = true;
             this.btConfirmReturn.Click += new System.EventHandler(this.btConfirmReturn_Click);
             // 
-            // label6
+            // grvVehicle
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 100);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 20);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Người lập BBBG";
+            this.grvVehicle.AllowUserToAddRows = false;
+            this.grvVehicle.AllowUserToDeleteRows = false;
+            this.grvVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PlateNumber,
+            this.StatusVehicle});
+            this.grvVehicle.Location = new System.Drawing.Point(7, 23);
+            this.grvVehicle.Name = "grvVehicle";
+            this.grvVehicle.ReadOnly = true;
+            this.grvVehicle.RowHeadersVisible = false;
+            this.grvVehicle.Size = new System.Drawing.Size(401, 121);
+            this.grvVehicle.TabIndex = 35;
             // 
-            // txtPersonHandover
+            // dataGridViewTextBoxColumn1
             // 
-            this.txtPersonHandover.Location = new System.Drawing.Point(200, 97);
-            this.txtPersonHandover.Name = "txtPersonHandover";
-            this.txtPersonHandover.Size = new System.Drawing.Size(162, 26);
-            this.txtPersonHandover.TabIndex = 28;
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
-            // txtPersonConfirmReturn
+            // dataGridViewTextBoxColumn2
             // 
-            this.txtPersonConfirmReturn.Enabled = false;
-            this.txtPersonConfirmReturn.Location = new System.Drawing.Point(200, 172);
-            this.txtPersonConfirmReturn.Name = "txtPersonConfirmReturn";
-            this.txtPersonConfirmReturn.Size = new System.Drawing.Size(162, 26);
-            this.txtPersonConfirmReturn.TabIndex = 30;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PlateNumber";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Biển số";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
             // 
-            // label7
+            // dataGridViewTextBoxColumn3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 175);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 20);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Người theo dõi hồi báo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tình trạng";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 130;
+            // 
+            // PlateNumber
+            // 
+            this.PlateNumber.DataPropertyName = "PlateNumber";
+            this.PlateNumber.HeaderText = "Biển số";
+            this.PlateNumber.Name = "PlateNumber";
+            this.PlateNumber.ReadOnly = true;
+            this.PlateNumber.Width = 140;
+            // 
+            // StatusVehicle
+            // 
+            this.StatusVehicle.HeaderText = "Tình trạng";
+            this.StatusVehicle.Name = "StatusVehicle";
+            this.StatusVehicle.ReadOnly = true;
+            this.StatusVehicle.Width = 140;
             // 
             // FrmDecleExportOption
             // 
@@ -561,8 +682,11 @@
             this.gbExportDeclaration.PerformLayout();
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
+            this.pnXKCK.ResumeLayout(false);
+            this.pnXKCK.PerformLayout();
             this.pnTNTX.ResumeLayout(false);
             this.pnTNTX.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,5 +739,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPersonHandover;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnXKCK;
+        private System.Windows.Forms.TextBox txtPersonSignConfirm;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridView grvVehicle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusVehicle;
     }
 }
