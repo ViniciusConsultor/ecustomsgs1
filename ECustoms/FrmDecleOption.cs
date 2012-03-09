@@ -283,6 +283,7 @@ namespace ECustoms
                 DeclarationFactory.UpdateReturnInfo(_declerationID, _userInfo.UserID);
                 dtpReturn.Value = DateTime.Now;
                 dtpReturn.Visible = true;
+                txtPersonConfirmReturn.Text = _userInfo.Name;
                 MessageBox.Show("Xác nhận hồi báo thành công.");
                 btConfirmReturn.Enabled = false;
             }
