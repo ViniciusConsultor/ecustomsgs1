@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using ECustoms.BOL;
@@ -189,6 +190,36 @@ namespace ECustoms
                 {
                     grvVehicle.AutoGenerateColumns = false;
                     grvVehicle.DataSource = listVehicle;
+                    var status = 0;
+                    for (var i = 0; i < grvVehicle.Rows.Count; i++)
+                    {
+                        grvVehicle.Rows[i].Cells["Index"].Value = (i + 1).ToString();
+                        if (bool.Parse(grvVehicle.Rows[i].Cells["IsExport"].Value.ToString()))
+                        {
+                            grvVehicle.Rows[i].Cells["StatusVehicle"].Value =  "Đã xuất cảnh";
+                            status++;
+                            if (i == grvVehicle.Rows.Count - 1)
+                            {
+                                txtPersonSignConfirm.Text = grvVehicle.Rows[i].Cells["PersonConfirm"].Value.ToString();
+                            }
+                        }
+                        else
+                        {
+                            grvVehicle.Rows[i].Cells["StatusVehicle"].Value =  "Chưa xuất cảnh";
+                        } 
+                    }
+                    if (status == grvVehicle.Rows.Count)
+                    {
+                        lblStatus.Text = status == 0 ? "Không có hàng hóa cho tờ khai này" : "Hàng hóa đã xuất khẩu";
+                    }
+                    else if ((status < grvVehicle.Rows.Count) && status == 0)
+                    {
+                        lblStatus.Text = "Chưa xuất khẩu";        
+                    }
+                    else
+                    {
+                        lblStatus.Text = string.Format("Chưa xuất khẩu hết, còn tồn {0} xe", (grvVehicle.Rows.Count - status)); 
+                    }
                 }
 
             }
