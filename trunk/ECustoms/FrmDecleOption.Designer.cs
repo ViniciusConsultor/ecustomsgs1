@@ -30,6 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExportOption));
             this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
             this.txtMoney = new System.Windows.Forms.MaskedTextBox();
@@ -55,18 +61,6 @@
             this.txtExportUnit = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
-            this.pnXKCK = new System.Windows.Forms.Panel();
-            this.grvVehicle = new System.Windows.Forms.DataGridView();
-            this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsExport = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PersonConfirm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusVehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPersonSignConfirm = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtPersonConfirmReturn = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPersonHandover = new System.Windows.Forms.TextBox();
@@ -84,6 +78,17 @@
             this.txtSeal = new System.Windows.Forms.TextBox();
             this.txtGateExport = new System.Windows.Forms.TextBox();
             this.lblGateEx = new System.Windows.Forms.Label();
+            this.pnXKCK = new System.Windows.Forms.Panel();
+            this.grvVehicle = new System.Windows.Forms.DataGridView();
+            this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataExport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonConfirm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsExport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -93,12 +98,14 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.gbExportDeclaration.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
+            this.pnTNTX.SuspendLayout();
             this.pnXKCK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).BeginInit();
-            this.pnTNTX.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbExportDeclaration
@@ -176,7 +183,7 @@
             this.txtExportTotalVehicles.Location = new System.Drawing.Point(791, 85);
             this.txtExportTotalVehicles.Mask = "00000";
             this.txtExportTotalVehicles.Name = "txtExportTotalVehicles";
-            this.txtExportTotalVehicles.Size = new System.Drawing.Size(66, 26);
+            this.txtExportTotalVehicles.Size = new System.Drawing.Size(55, 26);
             this.txtExportTotalVehicles.TabIndex = 9;
             this.txtExportTotalVehicles.ValidatingType = typeof(int);
             // 
@@ -232,7 +239,7 @@
             this.txtTypeExport.Enabled = false;
             this.txtTypeExport.Location = new System.Drawing.Point(125, 53);
             this.txtTypeExport.Name = "txtTypeExport";
-            this.txtTypeExport.Size = new System.Drawing.Size(106, 26);
+            this.txtTypeExport.Size = new System.Drawing.Size(154, 26);
             this.txtTypeExport.TabIndex = 1;
             // 
             // label1
@@ -334,7 +341,6 @@
             // 
             // groupBoxVehicle
             // 
-            this.groupBoxVehicle.Controls.Add(this.pnXKCK);
             this.groupBoxVehicle.Controls.Add(this.txtPersonConfirmReturn);
             this.groupBoxVehicle.Controls.Add(this.label7);
             this.groupBoxVehicle.Controls.Add(this.txtPersonHandover);
@@ -346,130 +352,14 @@
             this.groupBoxVehicle.Controls.Add(this.label4);
             this.groupBoxVehicle.Controls.Add(this.txtNumberHandover);
             this.groupBoxVehicle.Controls.Add(this.pnTNTX);
+            this.groupBoxVehicle.Controls.Add(this.pnXKCK);
             this.groupBoxVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxVehicle.Location = new System.Drawing.Point(12, 198);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
-            this.groupBoxVehicle.Size = new System.Drawing.Size(927, 223);
+            this.groupBoxVehicle.Size = new System.Drawing.Size(927, 212);
             this.groupBoxVehicle.TabIndex = 1;
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Thông tin bổ sung";
-            // 
-            // pnXKCK
-            // 
-            this.pnXKCK.Controls.Add(this.grvVehicle);
-            this.pnXKCK.Controls.Add(this.txtPersonSignConfirm);
-            this.pnXKCK.Controls.Add(this.label10);
-            this.pnXKCK.Controls.Add(this.label13);
-            this.pnXKCK.Controls.Add(this.lblStatus);
-            this.pnXKCK.Controls.Add(this.label11);
-            this.pnXKCK.Location = new System.Drawing.Point(512, 12);
-            this.pnXKCK.Name = "pnXKCK";
-            this.pnXKCK.Size = new System.Drawing.Size(416, 205);
-            this.pnXKCK.TabIndex = 31;
-            this.pnXKCK.Visible = false;
-            // 
-            // grvVehicle
-            // 
-            this.grvVehicle.AllowUserToAddRows = false;
-            this.grvVehicle.AllowUserToDeleteRows = false;
-            this.grvVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Index,
-            this.PlateNumber,
-            this.IsExport,
-            this.PersonConfirm,
-            this.StatusVehicle});
-            this.grvVehicle.Location = new System.Drawing.Point(7, 23);
-            this.grvVehicle.Name = "grvVehicle";
-            this.grvVehicle.ReadOnly = true;
-            this.grvVehicle.RowHeadersVisible = false;
-            this.grvVehicle.Size = new System.Drawing.Size(401, 121);
-            this.grvVehicle.TabIndex = 1;
-            // 
-            // Index
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Index.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Index.HeaderText = "STT";
-            this.Index.Name = "Index";
-            this.Index.ReadOnly = true;
-            this.Index.Width = 50;
-            // 
-            // PlateNumber
-            // 
-            this.PlateNumber.DataPropertyName = "PlateNumber";
-            this.PlateNumber.HeaderText = "Biển số";
-            this.PlateNumber.Name = "PlateNumber";
-            this.PlateNumber.ReadOnly = true;
-            this.PlateNumber.Width = 174;
-            // 
-            // IsExport
-            // 
-            this.IsExport.DataPropertyName = "IsExport";
-            this.IsExport.HeaderText = "IsExport";
-            this.IsExport.Name = "IsExport";
-            this.IsExport.ReadOnly = true;
-            this.IsExport.Visible = false;
-            // 
-            // PersonConfirm
-            // 
-            this.PersonConfirm.DataPropertyName = "ConfirmExportByName";
-            this.PersonConfirm.HeaderText = "Người ký xác nhận";
-            this.PersonConfirm.Name = "PersonConfirm";
-            this.PersonConfirm.ReadOnly = true;
-            this.PersonConfirm.Visible = false;
-            // 
-            // StatusVehicle
-            // 
-            this.StatusVehicle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StatusVehicle.HeaderText = "Tình trạng";
-            this.StatusVehicle.Name = "StatusVehicle";
-            this.StatusVehicle.ReadOnly = true;
-            this.StatusVehicle.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // txtPersonSignConfirm
-            // 
-            this.txtPersonSignConfirm.Enabled = false;
-            this.txtPersonSignConfirm.Location = new System.Drawing.Point(151, 179);
-            this.txtPersonSignConfirm.Name = "txtPersonSignConfirm";
-            this.txtPersonSignConfirm.Size = new System.Drawing.Size(174, 26);
-            this.txtPersonSignConfirm.TabIndex = 34;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(273, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Danh sách phương tiện thuộc tờ khai:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 182);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(137, 20);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Người ký xác nhận";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(96, 147);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(229, 20);
-            this.lblStatus.TabIndex = 32;
-            this.lblStatus.Text = "Hàng chưa xuất hết, còn tồn xe";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(2, 147);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 20);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Tình trạng: ";
             // 
             // txtPersonConfirmReturn
             // 
@@ -569,7 +459,7 @@
             this.pnTNTX.Location = new System.Drawing.Point(512, 12);
             this.pnTNTX.Name = "pnTNTX";
             this.pnTNTX.Size = new System.Drawing.Size(416, 124);
-            this.pnTNTX.TabIndex = 27;
+            this.pnTNTX.TabIndex = 6;
             // 
             // txtNumberTemp
             // 
@@ -577,7 +467,7 @@
             this.txtNumberTemp.MaxLength = 50;
             this.txtNumberTemp.Name = "txtNumberTemp";
             this.txtNumberTemp.Size = new System.Drawing.Size(136, 26);
-            this.txtNumberTemp.TabIndex = 27;
+            this.txtNumberTemp.TabIndex = 0;
             // 
             // lblNumberTemp
             // 
@@ -620,15 +510,131 @@
             this.lblGateEx.TabIndex = 26;
             this.lblGateEx.Text = "Cửa khẩu xuất";
             // 
+            // pnXKCK
+            // 
+            this.pnXKCK.Controls.Add(this.grvVehicle);
+            this.pnXKCK.Controls.Add(this.lblStatus);
+            this.pnXKCK.Controls.Add(this.label11);
+            this.pnXKCK.Controls.Add(this.label10);
+            this.pnXKCK.Location = new System.Drawing.Point(443, 12);
+            this.pnXKCK.Name = "pnXKCK";
+            this.pnXKCK.Size = new System.Drawing.Size(485, 189);
+            this.pnXKCK.TabIndex = 5;
+            this.pnXKCK.Visible = false;
+            // 
+            // grvVehicle
+            // 
+            this.grvVehicle.AllowUserToAddRows = false;
+            this.grvVehicle.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grvVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grvVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Index,
+            this.PlateNumber,
+            this.NumberContainer,
+            this.DataExport,
+            this.PersonConfirm,
+            this.IsExport});
+            this.grvVehicle.Location = new System.Drawing.Point(7, 23);
+            this.grvVehicle.Name = "grvVehicle";
+            this.grvVehicle.ReadOnly = true;
+            this.grvVehicle.RowHeadersVisible = false;
+            this.grvVehicle.Size = new System.Drawing.Size(469, 140);
+            this.grvVehicle.TabIndex = 0;
+            // 
+            // Index
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Index.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Index.HeaderText = "STT";
+            this.Index.Name = "Index";
+            this.Index.ReadOnly = true;
+            this.Index.Width = 40;
+            // 
+            // PlateNumber
+            // 
+            this.PlateNumber.DataPropertyName = "PlateNumber";
+            this.PlateNumber.HeaderText = "Biển số";
+            this.PlateNumber.Name = "PlateNumber";
+            this.PlateNumber.ReadOnly = true;
+            this.PlateNumber.Width = 120;
+            // 
+            // NumberContainer
+            // 
+            this.NumberContainer.DataPropertyName = "NumberOfContainer";
+            this.NumberContainer.HeaderText = "Số Container";
+            this.NumberContainer.Name = "NumberContainer";
+            this.NumberContainer.ReadOnly = true;
+            // 
+            // DataExport
+            // 
+            this.DataExport.DataPropertyName = "ExportDate";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
+            this.DataExport.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataExport.HeaderText = "Ngày xuất cảnh";
+            this.DataExport.Name = "DataExport";
+            this.DataExport.ReadOnly = true;
+            this.DataExport.Width = 135;
+            // 
+            // PersonConfirm
+            // 
+            this.PersonConfirm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PersonConfirm.DataPropertyName = "ConfirmExportByName";
+            this.PersonConfirm.HeaderText = "Người ký XN";
+            this.PersonConfirm.Name = "PersonConfirm";
+            this.PersonConfirm.ReadOnly = true;
+            // 
+            // IsExport
+            // 
+            this.IsExport.DataPropertyName = "IsExport";
+            this.IsExport.HeaderText = "IsExport";
+            this.IsExport.Name = "IsExport";
+            this.IsExport.ReadOnly = true;
+            this.IsExport.Visible = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(100, 166);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(229, 20);
+            this.lblStatus.TabIndex = 1;
+            this.lblStatus.Text = "Hàng chưa xuất hết, còn tồn xe";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 166);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 20);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Tình trạng: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(183, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Thông tin về phương tiện";
+            // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(375, 9);
+            this.lblHeader.Location = new System.Drawing.Point(12, 9);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(194, 29);
+            this.lblHeader.Size = new System.Drawing.Size(928, 29);
             this.lblHeader.TabIndex = 21;
             this.lblHeader.Text = "Hàng hóa TNTX";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnUpdate
             // 
@@ -637,7 +643,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(8, 427);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 419);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(171, 33);
             this.btnUpdate.TabIndex = 2;
@@ -654,7 +660,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ECustoms.Properties.Resources.close;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(342, 427);
+            this.button1.Location = new System.Drawing.Point(346, 419);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 33);
             this.button1.TabIndex = 4;
@@ -670,7 +676,7 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.confirm;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(185, 427);
+            this.btConfirmReturn.Location = new System.Drawing.Point(189, 419);
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(151, 33);
             this.btConfirmReturn.TabIndex = 3;
@@ -681,8 +687,8 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn1.HeaderText = "STT";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -691,6 +697,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "PlateNumber";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn2.HeaderText = "Biển số";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -700,6 +708,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "PlateNumber";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn3.HeaderText = "Tình trạng";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -710,18 +720,41 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ConfirmExportByName";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn4.HeaderText = "Tình trạng";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ConfirmExportByName";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn5.HeaderText = "Tình trạng";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "IsExport";
+            this.dataGridViewTextBoxColumn6.HeaderText = "IsExport";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tình trạng";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn7.Visible = false;
             // 
             // dataGridViewComboBoxColumn1
             // 
@@ -743,7 +776,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(951, 469);
+            this.ClientSize = new System.Drawing.Size(951, 462);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);
@@ -759,13 +792,12 @@
             this.gbExportDeclaration.PerformLayout();
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
+            this.pnTNTX.ResumeLayout(false);
+            this.pnTNTX.PerformLayout();
             this.pnXKCK.ResumeLayout(false);
             this.pnXKCK.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).EndInit();
-            this.pnTNTX.ResumeLayout(false);
-            this.pnTNTX.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -817,9 +849,7 @@
         private System.Windows.Forms.TextBox txtPersonHandover;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnXKCK;
-        private System.Windows.Forms.TextBox txtPersonSignConfirm;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -828,11 +858,14 @@
         private System.Windows.Forms.DataGridView grvVehicle;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Index;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsExport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberContainer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn PersonConfirm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusVehicle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsExport;
     }
 }

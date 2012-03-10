@@ -196,17 +196,9 @@ namespace ECustoms
                         grvVehicle.Rows[i].Cells["Index"].Value = (i + 1).ToString();
                         if (bool.Parse(grvVehicle.Rows[i].Cells["IsExport"].Value.ToString()))
                         {
-                            grvVehicle.Rows[i].Cells["StatusVehicle"].Value =  "Đã xuất cảnh";
+                            //grvVehicle.Rows[i].Cells["StatusVehicle"].Value =  "Đã xuất cảnh";
                             status++;
-                            if (i == grvVehicle.Rows.Count - 1)
-                            {
-                                txtPersonSignConfirm.Text = grvVehicle.Rows[i].Cells["PersonConfirm"].Value.ToString();
-                            }
                         }
-                        else
-                        {
-                            grvVehicle.Rows[i].Cells["StatusVehicle"].Value =  "Chưa xuất cảnh";
-                        } 
                     }
                     if (status == grvVehicle.Rows.Count)
                     {
