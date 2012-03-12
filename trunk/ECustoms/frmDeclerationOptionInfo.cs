@@ -191,7 +191,7 @@ namespace ECustoms
             {
                 if (grvDecleration.SelectedRows.Count != 0)
                 {
-                    var frmDecleExportOption = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), _declerationOptionType);
+                    var frmDecleExportOption = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells["DeclarationID"].Value), _declerationOptionType);
                     frmDecleExportOption.Show(this);
                 }
                 else
