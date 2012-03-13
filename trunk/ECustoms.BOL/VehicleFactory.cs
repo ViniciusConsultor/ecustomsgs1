@@ -22,9 +22,24 @@ namespace ECustoms.BOL
             var endToday = new DateTime(today.Year, today.Month, today.Day, 23, 59, 59);
 
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null && g.IsGoodsImported == true && g.IsCompleted == true && g.ConfirmDate >= startToday && g.ConfirmDate <= endToday).OrderByDescending(g => g.ImportDate).ToList();
+            //var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null && g.IsGoodsImported == true && g.IsCompleted == true && g.ConfirmDate >= startToday && g.ConfirmDate <= endToday).OrderByDescending(g => g.ImportDate).ToList();
+
+            List<ViewAllVehicleHasGood> data = db.ViewAllVehicleHasGoods.Where(g => g.IsGoodsImported == true && g.IsCompleted == true && g.ImportedLocalTime >= startToday && g.ImportedLocalTime <= endToday).OrderByDescending(g => g.ImportedLocalTime).ToList();
             db.Connection.Close();
-            return data;
+            List<ViewAllVehicleHasGood> list = new List<ViewAllVehicleHasGood>();
+            HashSet<long> listVehicleId = new HashSet<long>();
+            if (data != null && data.Count > 0)
+            {
+                foreach (ViewAllVehicleHasGood obj in data)
+                {
+                    if (listVehicleId.Add(obj.VehicleID))
+                    {
+                        list.Add(obj);
+                    }
+                }
+            }
+
+            return list;
         }
 
         /// <summary>
