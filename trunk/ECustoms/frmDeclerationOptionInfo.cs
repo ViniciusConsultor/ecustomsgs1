@@ -73,7 +73,8 @@ namespace ECustoms
                 //InitialPermission();
 
                 //check user permission
-                btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
+                btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
+                btConfirmReturn.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_HOI_BAO_TNTX);
             }
             catch (Exception ex)
             {
@@ -232,22 +233,21 @@ namespace ECustoms
 
         private void grvDecleration_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI))
+
+            try
             {
-                try
+                if (e.RowIndex >= 0 && grvDecleration.SelectedRows.Count == 1) // Only select one row
                 {
-                    if (e.RowIndex >= 0 && grvDecleration.SelectedRows.Count == 1) // Only select one row
-                    {
-                        var frmExport = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells["DeclarationID"].Value), _declerationOptionType);
-                        frmExport.Show(this);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    logger.Error(ex.ToString());
-                    if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+                    var frmExport = new FrmDecleExportOption(_mainForm, _userInfo, Convert.ToInt64(grvDecleration.SelectedRows[0].Cells["DeclarationID"].Value), _declerationOptionType);
+                    frmExport.Show(this);
                 }
             }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         private void grvDecleration_RowLeave(object sender, DataGridViewCellEventArgs e)

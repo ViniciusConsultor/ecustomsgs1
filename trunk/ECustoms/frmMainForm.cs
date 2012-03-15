@@ -46,7 +46,8 @@ namespace ECustoms
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_NHOM_NGUOI_DUNG) ||
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_NHOM_NGUOI_DUNG);
 
-            mnItemReport.Visible = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_IN_BAO_CAO);
+            mnItemReport.Visible = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_IN_BAO_CAO) ||
+                                   _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_IN_BAO_CAO_TNTX);
 
             mnReview.Visible = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_MOI_THONG_TIN_DE_NGHI_KIEM_TRA) ||
                      _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_DE_NGHI_KIEM_TRA) ||
@@ -75,6 +76,22 @@ namespace ECustoms
             toolStripButtonListdeclarace.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI) ||
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI) ||
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_TO_KHAI);
+
+            //Xuat khau chuyen cua khau
+            xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_TNTX) ||
+                    _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_HOI_BAO_TNTX) ||
+                    _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
+
+            //nhap khau chuyen cua khau
+            nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_TNTX) ||
+                    _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_HOI_BAO_TNTX) ||
+                    _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
+
+            //tam nhap tai xuat
+            hàngTạmNhậpTáiXuấtToolStripMenuItem.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_TNTX) ||
+                    _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_HOI_BAO_TNTX) ||
+                    _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
+
         }
 
         private void mnExport_Click(object sender, EventArgs e)

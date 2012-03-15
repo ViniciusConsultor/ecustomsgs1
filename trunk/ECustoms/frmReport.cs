@@ -16,11 +16,12 @@ namespace ECustoms
 
         public frmReport(Form mainFrom, UserInfo userInfo, int type)
         {
+            _userInfo = userInfo;
             _type = type;
             InitializeComponent();
             InitializeReportType();
             _mainForm = mainFrom;
-            _userInfo = userInfo;
+
         }
 
         private void InitializeReportType()
@@ -31,9 +32,14 @@ namespace ECustoms
             cbReportType.Items.Add("Phương tiện chở hàng xuất khẩu");
             cbReportType.Items.Add("Phương tiện chở hàng nhập khẩu");
             cbReportType.Items.Add("Phương tiện hoàn thành thủ tục Hải quan vào nội địa");
-            cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
-            cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
-            cbReportType.Items.Add("Hàng tạm nhập tái xuất");
+
+            if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_IN_BAO_CAO_TNTX))
+            {
+                cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
+                cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
+                cbReportType.Items.Add("Hàng tạm nhập tái xuất");
+            }
+
             //if (_type != 0)
             //{
             //    cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
