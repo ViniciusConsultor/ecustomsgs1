@@ -222,14 +222,16 @@ namespace ECustoms
                         break;
                     case ReportType.ExportGateTransfer:
                         {
-                          var dateFromlocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateFrom"];
-                          dateFromlocalImportAndHasItem.Text = _from.ToString("dd/MM/yyyy");
+                            var dateFromlocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateFrom"];
+                            dateFromlocalImportAndHasItem.Text = _from.ToString("dd/MM/yyyy");
 
-                          var dateTolocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateTo"];
-                          dateTolocalImportAndHasItem.Text = _to.ToString("dd/MM/yyyy");
+                            var dateTolocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateTo"];
+                            dateTolocalImportAndHasItem.Text = _to.ToString("dd/MM/yyyy");
+                            var createdBy = (TextObject)exportGate1.Section1.ReportObjects["createdBy"];
+                            createdBy.Text = _userInfo.Name;
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT     * FROM ViewAllDeclaration ");
+                            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.XKCK);
@@ -239,11 +241,6 @@ namespace ECustoms
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
-                            if (dt.Rows.Count > 0 )
-                            {
-                              var createdimportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["CreatedBy"];
-                              createdimportAndHasItem.Text = _userInfo.Name;
-                            }
                             exportGate1.SetDataSource(dt);
                             crystalReportViewer1.ReportSource = exportGate1;
                         }
