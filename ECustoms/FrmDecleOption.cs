@@ -131,7 +131,7 @@ namespace ECustoms
             }
 
             btnUpdate.Enabled = true;
-            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
+            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
 
             // Get Decleration information
             var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
@@ -153,7 +153,8 @@ namespace ECustoms
                 dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : DateTime.Now;
                 if (declarationInfo.DateReturn == null)
                 {
-                    btConfirmReturn.Enabled = true;
+                    
+                    btConfirmReturn.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_HOI_BAO_TNTX);
                     dtpReturn.Visible = false;
                 }
                 else
@@ -250,7 +251,7 @@ namespace ECustoms
 
         private void CheckPermission()
         {
-            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
+            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
         }
 
         private void FrmDecleOption_Load(object sender, EventArgs e)

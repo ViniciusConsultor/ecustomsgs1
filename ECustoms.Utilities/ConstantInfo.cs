@@ -85,6 +85,24 @@
         public const int PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH = 32;
         public const int PERMISSON_XOA_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH = 33;
         public const int PERMISSON_CAP_NHAT_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH = 34;
+
+        public const int PERMISSON_TRA_CUU_THONG_TIN_TNTX = 35;
+        public const int PERMISSON_XAC_NHAN_HOI_BAO_TNTX = 36;
+        public const int PERMISSON_BO_XUNG_THONG_TIN_TNTX = 37;
+        public const int PERMISSON_IN_BAO_CAO_TNTX = 38;
+
+        //public const int PERMISSON_TRA_CUU_THONG_TIN_XKCCK = 35;
+        //public const int PERMISSON_XAC_NHAN_HOI_BAO_XKCCK = 36;
+        //public const int PERMISSON_BO_XUNG_THONG_TIN_XKCCK = 37;
+        //public const int PERMISSON_IN_BAO_CAO_XKCCK = 38;
+
+        //public const int PERMISSON_TRA_CUU_THONG_TIN_NKCCK = 39;
+        //public const int PERMISSON_XAC_NHAN_HOI_BAO_NKCCK = 40;
+        //public const int PERMISSON_BO_XUNG_THONG_TIN_NKCCK = 41;
+        //public const int PERMISSON_IN_BAO_CAO_NKCCK = 42;
+
+
+
         #region System
 
         public const string HashString = "dfkjdk234fda23fdfssf";
