@@ -222,61 +222,76 @@ namespace ECustoms
                         break;
                     case ReportType.ExportGateTransfer:
                         {
-                            var dateFromlocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateFrom"];
-                            dateFromlocalImportAndHasItem.Text = _from.ToString("dd/MM/yyyy");
+                            var dateFrom = (TextObject)exportGate1.Section1.ReportObjects["dateFrom"];
+                            dateFrom.Text = _from.ToString("dd/MM/yyyy");
 
-                            var dateTolocalImportAndHasItem = (TextObject)exportGate1.Section1.ReportObjects["dateTo"];
-                            dateTolocalImportAndHasItem.Text = _to.ToString("dd/MM/yyyy");
-                            var createdBy = (TextObject)exportGate1.Section1.ReportObjects["createdBy"];
-                            createdBy.Text = _userInfo.Name;
+                            var dateTo = (TextObject)exportGate1.Section1.ReportObjects["dateTo"];
+                            dateTo.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
                             buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.XKCK);
-                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND RegisterDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND RegisterDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
+                            dt.Columns.Add("Status");
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+                                dt.Rows[i]["Status"] = "aaa";
+                            }
                             exportGate1.SetDataSource(dt);
                             crystalReportViewer1.ReportSource = exportGate1;
                         }
                         break;
                     case ReportType.ImportGateTransfer:
                         {
+                            var dateFrom = (TextObject)importGate1.Section1.ReportObjects["dateFrom"];
+                            dateFrom.Text = _from.ToString("dd/MM/yyyy");
+
+                            var dateTo = (TextObject)importGate1.Section1.ReportObjects["dateTo"];
+                            dateTo.Text = _to.ToString("dd/MM/yyyy");
+
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+                            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.NKCK);
-                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND CreatedDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND RegisterDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND RegisterDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
-                            importGateTransfer1.SetDataSource(dt);
-                            crystalReportViewer1.ReportSource = importGateTransfer1;
+                            importGate1.SetDataSource(dt);
+                            crystalReportViewer1.ReportSource = importGate1;
                         }
                         break;
-                    case ReportType.GoodsTempImportedReexport:
+                    case ReportType.TempImportedReExport:
                         {
+                            var dateFrom = (TextObject)tempImportReExport1.Section1.ReportObjects["dateFrom"];
+                            dateFrom.Text = _from.ToString("dd/MM/yyyy");
+
+                            var dateTo = (TextObject)tempImportReExport1.Section1.ReportObjects["dateTo"];
+                            dateTo.Text = _to.ToString("dd/MM/yyyy");
+
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+                            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.TNTX);
-                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND CreatedDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND RegisterDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND RegisterDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
-                            goodsTempImportedReexport1.SetDataSource(dt);
-                            crystalReportViewer1.ReportSource = goodsTempImportedReexport1;
+                            tempImportReExport1.SetDataSource(dt);
+                            crystalReportViewer1.ReportSource = tempImportReExport1;
                         }
                         break;
                 }
