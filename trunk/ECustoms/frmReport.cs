@@ -36,7 +36,7 @@ namespace ECustoms
             if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_IN_BAO_CAO_TNTX))
             {
                 cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
-                cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
+                cbReportType.Items.Add("Nhập khẩu chuyển cửa khẩu");
                 cbReportType.Items.Add("Hàng tạm nhập tái xuất");
             }
 
@@ -108,7 +108,7 @@ namespace ECustoms
                     return ReportType.ImportGateTransfer;
                     break;
                 case 8:
-                    return ReportType.GoodsTempImportedReexport;
+                    return ReportType.TempImportedReExport;
                     break;
             }
             return ReportType.ExportAndNoItem;

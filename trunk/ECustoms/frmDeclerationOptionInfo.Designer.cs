@@ -466,7 +466,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(340, 547);
+            this.btnClose.Location = new System.Drawing.Point(316, 547);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 33);
             this.btnClose.TabIndex = 3;
@@ -510,9 +510,9 @@
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btConfirmReturn.Location = new System.Drawing.Point(183, 547);
             this.btConfirmReturn.Name = "btConfirmReturn";
-            this.btConfirmReturn.Size = new System.Drawing.Size(151, 33);
+            this.btConfirmReturn.Size = new System.Drawing.Size(127, 33);
             this.btConfirmReturn.TabIndex = 23;
-            this.btConfirmReturn.Text = "XN đã hồi báo";
+            this.btConfirmReturn.Text = "Đã hồi báo";
             this.btConfirmReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btConfirmReturn.UseVisualStyleBackColor = true;
             this.btConfirmReturn.Click += new System.EventHandler(this.btConfirmReturn_Click);
