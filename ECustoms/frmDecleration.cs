@@ -169,6 +169,16 @@ namespace ECustoms
                     result = result.OrderByDescending(p => p.ModifiedDate).ToList();
                 }
 
+                //fillter by ConfirmStatus
+                if (cbConfirmStatus.Checked == true)
+                {
+                    result = result.Where(g => g.ConfirmStatus == null).OrderByDescending(p => p.ModifiedDate).ToList();
+                }
+                else
+                {
+                    result = result.OrderByDescending(p => p.ModifiedDate).ToList();
+                }
+
                 // Filter by Type
                 FilterByType(ref result);
                 grvDecleration.AutoGenerateColumns = false;
@@ -563,11 +573,27 @@ namespace ECustoms
             {
                 dtpConfirmFrom.Enabled = true;
                 dtpConfirmTo.Enabled = true;
+                cbConfirmStatus.Checked = false;
             }
             else
             {
                 dtpConfirmFrom.Enabled = false;
                 dtpConfirmTo.Enabled = false;
+                cbConfirmStatus.Enabled = true;
+            }
+        }
+
+        private void cbConfirmStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbConfirmStatus.Checked == true)
+            {
+                cbConfirmDate.Checked = false;
+                dtpConfirmFrom.Enabled = false;
+                dtpConfirmTo.Enabled = false;
+            }
+            else
+            {
+                cbConfirmDate.Enabled = true;
             }
         }
     }
