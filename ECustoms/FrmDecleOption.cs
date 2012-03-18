@@ -132,6 +132,16 @@ namespace ECustoms
 
             btnUpdate.Enabled = true;
             btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
+            if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX)==false)
+            {
+                txtNumberHandover.Enabled=false;
+                dtpHandover.Enabled=false;
+                txtPersonHandover.Enabled=false;
+                dtpReturn.Enabled=false;
+                txtNumberTemp.Enabled=false;
+                txtSeal.Enabled=false;
+                txtGateExport.Enabled = false;
+            }
 
             // Get Decleration information
             var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
