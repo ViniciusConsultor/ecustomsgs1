@@ -322,6 +322,13 @@ namespace ECustoms
             txtRegisterPlace.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtRegisterPlace.AutoCompleteCustomSource = auto;
 
+            //Autocomplete type export
+            var autoType = new AutoCompleteStringCollection();
+            autoType.AddRange(DeclarationFactory.GetAllTypeExport().ToArray());
+            txtTypeExport.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtTypeExport.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtTypeExport.AutoCompleteCustomSource = autoType;
+
             grdVehicle.AutoGenerateColumns = false;
             //Init data for cbTNTX
             var listTNTX = new List<ComboBoxItem>();
