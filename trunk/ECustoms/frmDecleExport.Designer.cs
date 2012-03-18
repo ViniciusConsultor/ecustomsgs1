@@ -36,6 +36,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
             this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
+            this.pnTXTN = new System.Windows.Forms.Panel();
+            this.txtNumberHandover = new System.Windows.Forms.MaskedTextBox();
+            this.lblNumberHandover = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpHandover = new System.Windows.Forms.DateTimePicker();
             this.txtRegisterPlace = new System.Windows.Forms.TextBox();
             this.txtNumberTemp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,15 +91,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.pnTXTN = new System.Windows.Forms.Panel();
-            this.lblNumberHandover = new System.Windows.Forms.Label();
-            this.dtpHandover = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtNumberHandover = new System.Windows.Forms.MaskedTextBox();
             this.gbExportDeclaration.SuspendLayout();
+            this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
-            this.pnTXTN.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbExportDeclaration
@@ -133,6 +133,53 @@
             this.gbExportDeclaration.TabIndex = 0;
             this.gbExportDeclaration.TabStop = false;
             this.gbExportDeclaration.Text = "Thông tin tờ khai xuất cảnh";
+            // 
+            // pnTXTN
+            // 
+            this.pnTXTN.Controls.Add(this.txtNumberHandover);
+            this.pnTXTN.Controls.Add(this.lblNumberHandover);
+            this.pnTXTN.Controls.Add(this.label6);
+            this.pnTXTN.Controls.Add(this.dtpHandover);
+            this.pnTXTN.Location = new System.Drawing.Point(287, 149);
+            this.pnTXTN.Name = "pnTXTN";
+            this.pnTXTN.Size = new System.Drawing.Size(378, 60);
+            this.pnTXTN.TabIndex = 9;
+            this.pnTXTN.Visible = false;
+            // 
+            // txtNumberHandover
+            // 
+            this.txtNumberHandover.Location = new System.Drawing.Point(142, 0);
+            this.txtNumberHandover.Mask = "0000000000";
+            this.txtNumberHandover.Name = "txtNumberHandover";
+            this.txtNumberHandover.Size = new System.Drawing.Size(136, 26);
+            this.txtNumberHandover.TabIndex = 0;
+            // 
+            // lblNumberHandover
+            // 
+            this.lblNumberHandover.AutoSize = true;
+            this.lblNumberHandover.Location = new System.Drawing.Point(-4, 3);
+            this.lblNumberHandover.Name = "lblNumberHandover";
+            this.lblNumberHandover.Size = new System.Drawing.Size(79, 20);
+            this.lblNumberHandover.TabIndex = 31;
+            this.lblNumberHandover.Text = "Số BBBG";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-4, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 20);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Ngày BBBG";
+            // 
+            // dtpHandover
+            // 
+            this.dtpHandover.CustomFormat = "dd/MM/yyyy";
+            this.dtpHandover.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHandover.Location = new System.Drawing.Point(142, 32);
+            this.dtpHandover.Name = "dtpHandover";
+            this.dtpHandover.Size = new System.Drawing.Size(136, 26);
+            this.dtpHandover.TabIndex = 1;
             // 
             // txtRegisterPlace
             // 
@@ -271,6 +318,7 @@
             // 
             // txtTypeExport
             // 
+            this.txtTypeExport.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTypeExport.Location = new System.Drawing.Point(131, 53);
             this.txtTypeExport.Name = "txtTypeExport";
             this.txtTypeExport.Size = new System.Drawing.Size(136, 26);
@@ -659,53 +707,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pnTXTN
-            // 
-            this.pnTXTN.Controls.Add(this.txtNumberHandover);
-            this.pnTXTN.Controls.Add(this.lblNumberHandover);
-            this.pnTXTN.Controls.Add(this.label6);
-            this.pnTXTN.Controls.Add(this.dtpHandover);
-            this.pnTXTN.Location = new System.Drawing.Point(287, 149);
-            this.pnTXTN.Name = "pnTXTN";
-            this.pnTXTN.Size = new System.Drawing.Size(378, 60);
-            this.pnTXTN.TabIndex = 9;
-            this.pnTXTN.Visible = false;
-            // 
-            // lblNumberHandover
-            // 
-            this.lblNumberHandover.AutoSize = true;
-            this.lblNumberHandover.Location = new System.Drawing.Point(-4, 3);
-            this.lblNumberHandover.Name = "lblNumberHandover";
-            this.lblNumberHandover.Size = new System.Drawing.Size(79, 20);
-            this.lblNumberHandover.TabIndex = 31;
-            this.lblNumberHandover.Text = "Số BBBG";
-            // 
-            // dtpHandover
-            // 
-            this.dtpHandover.CustomFormat = "dd/MM/yyyy";
-            this.dtpHandover.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHandover.Location = new System.Drawing.Point(142, 32);
-            this.dtpHandover.Name = "dtpHandover";
-            this.dtpHandover.Size = new System.Drawing.Size(136, 26);
-            this.dtpHandover.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(-4, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 20);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Ngày BBBG";
-            // 
-            // txtNumberHandover
-            // 
-            this.txtNumberHandover.Location = new System.Drawing.Point(142, 0);
-            this.txtNumberHandover.Mask = "0000000000";
-            this.txtNumberHandover.Name = "txtNumberHandover";
-            this.txtNumberHandover.Size = new System.Drawing.Size(136, 26);
-            this.txtNumberHandover.TabIndex = 0;
-            // 
             // FrmDecleExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -727,10 +728,10 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDecleExport_KeyDown);
             this.gbExportDeclaration.ResumeLayout(false);
             this.gbExportDeclaration.PerformLayout();
-            this.groupBoxVehicle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).EndInit();
             this.pnTXTN.ResumeLayout(false);
             this.pnTXTN.PerformLayout();
+            this.groupBoxVehicle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

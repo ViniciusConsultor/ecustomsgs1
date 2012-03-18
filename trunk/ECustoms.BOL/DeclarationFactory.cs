@@ -179,6 +179,14 @@ namespace ECustoms.BOL
           return lstResult;
         }
 
+        public static List<string> GetAllTypeExport()
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var lstResult = db.tblDeclarations.Where(g => g.Type != null && g.Type != "").Select(g => g.Type).Distinct().ToList();
+            db.Connection.Close();
+            return lstResult;
+        }
+
         public static List<string> GetAllGateExport()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
