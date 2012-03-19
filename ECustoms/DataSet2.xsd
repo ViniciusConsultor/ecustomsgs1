@@ -130,6 +130,7 @@ FROM            ViewAllDeclarationTNTX</CommandText>
               <Mapping SourceColumn="ProductAmount" DataSetColumn="ProductAmount" />
               <Mapping SourceColumn="Unit" DataSetColumn="Unit" />
               <Mapping SourceColumn="CreatedByID" DataSetColumn="CreatedByID" />
+              <Mapping SourceColumn="CreatedByName" DataSetColumn="CreatedByName" />
               <Mapping SourceColumn="ModifiedByID" DataSetColumn="ModifiedByID" />
               <Mapping SourceColumn="ModifiedDate" DataSetColumn="ModifiedDate" />
               <Mapping SourceColumn="CreatedDate" DataSetColumn="CreatedDate" />
@@ -461,6 +462,13 @@ FROM            ViewAllDeclarationTNTX</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="CreatedByID" msprop:Generator_ColumnVarNameInTable="columnCreatedByID" msprop:Generator_ColumnPropNameInRow="CreatedByID" msprop:Generator_ColumnPropNameInTable="CreatedByIDColumn" msprop:Generator_UserColumnName="CreatedByID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreatedByName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCreatedByName" msprop:Generator_ColumnPropNameInRow="CreatedByName" msprop:Generator_ColumnPropNameInTable="CreatedByNameColumn" msprop:Generator_UserColumnName="CreatedByName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="ModifiedByID" msprop:Generator_ColumnVarNameInTable="columnModifiedByID" msprop:Generator_ColumnPropNameInRow="ModifiedByID" msprop:Generator_ColumnPropNameInTable="ModifiedByIDColumn" msprop:Generator_UserColumnName="ModifiedByID" type="xs:int" minOccurs="0" />
               <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:dateTime" minOccurs="0" />

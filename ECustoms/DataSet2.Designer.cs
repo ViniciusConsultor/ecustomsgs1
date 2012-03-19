@@ -1931,6 +1931,8 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnCreatedByID;
             
+            private global::System.Data.DataColumn columnCreatedByName;
+            
             private global::System.Data.DataColumn columnModifiedByID;
             
             private global::System.Data.DataColumn columnModifiedDate;
@@ -2065,6 +2067,14 @@ namespace ECustoms {
             public global::System.Data.DataColumn CreatedByIDColumn {
                 get {
                     return this.columnCreatedByID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CreatedByNameColumn {
+                get {
+                    return this.columnCreatedByName;
                 }
             }
             
@@ -2305,6 +2315,7 @@ namespace ECustoms {
                         string ProductAmount, 
                         string Unit, 
                         int CreatedByID, 
+                        string CreatedByName, 
                         int ModifiedByID, 
                         System.DateTime ModifiedDate, 
                         System.DateTime CreatedDate, 
@@ -2338,6 +2349,7 @@ namespace ECustoms {
                         ProductAmount,
                         Unit,
                         CreatedByID,
+                        CreatedByName,
                         ModifiedByID,
                         ModifiedDate,
                         CreatedDate,
@@ -2391,6 +2403,7 @@ namespace ECustoms {
                 this.columnProductAmount = base.Columns["ProductAmount"];
                 this.columnUnit = base.Columns["Unit"];
                 this.columnCreatedByID = base.Columns["CreatedByID"];
+                this.columnCreatedByName = base.Columns["CreatedByName"];
                 this.columnModifiedByID = base.Columns["ModifiedByID"];
                 this.columnModifiedDate = base.Columns["ModifiedDate"];
                 this.columnCreatedDate = base.Columns["CreatedDate"];
@@ -2434,6 +2447,8 @@ namespace ECustoms {
                 base.Columns.Add(this.columnUnit);
                 this.columnCreatedByID = new global::System.Data.DataColumn("CreatedByID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatedByID);
+                this.columnCreatedByName = new global::System.Data.DataColumn("CreatedByName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCreatedByName);
                 this.columnModifiedByID = new global::System.Data.DataColumn("ModifiedByID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModifiedByID);
                 this.columnModifiedDate = new global::System.Data.DataColumn("ModifiedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -2487,6 +2502,8 @@ namespace ECustoms {
                 this.columnProductName.MaxLength = 500;
                 this.columnProductAmount.MaxLength = 500;
                 this.columnUnit.MaxLength = 500;
+                this.columnCreatedByName.ReadOnly = true;
+                this.columnCreatedByName.MaxLength = 500;
                 this.columnType.MaxLength = 200;
                 this.columnCompanyCode.MaxLength = 500;
                 this.columnConfirmStatus.MaxLength = 200;
@@ -4702,6 +4719,23 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CreatedByName {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewAllDeclarationTNTX.CreatedByNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedByName\' in table \'ViewAllDeclarationTNTX\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.CreatedByNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ModifiedByID {
                 get {
                     try {
@@ -5157,6 +5191,18 @@ namespace ECustoms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCreatedByIDNull() {
                 this[this.tableViewAllDeclarationTNTX.CreatedByIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCreatedByNameNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.CreatedByNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCreatedByNameNull() {
+                this[this.tableViewAllDeclarationTNTX.CreatedByNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6072,6 +6118,7 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("ProductAmount", "ProductAmount");
             tableMapping.ColumnMappings.Add("Unit", "Unit");
             tableMapping.ColumnMappings.Add("CreatedByID", "CreatedByID");
+            tableMapping.ColumnMappings.Add("CreatedByName", "CreatedByName");
             tableMapping.ColumnMappings.Add("ModifiedByID", "ModifiedByID");
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
             tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate");
