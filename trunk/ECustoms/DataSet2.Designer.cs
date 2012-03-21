@@ -1981,6 +1981,8 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnNumberOfContainer;
             
+            private global::System.Data.DataColumn columnIsExport;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ViewAllDeclarationTNTXDataTable() {
@@ -2272,6 +2274,14 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IsExportColumn {
+                get {
+                    return this.columnIsExport;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2339,7 +2349,8 @@ namespace ECustoms {
                         string Seal, 
                         long VehicleID, 
                         string PlateNumber, 
-                        string NumberOfContainer) {
+                        string NumberOfContainer, 
+                        bool IsExport) {
                 ViewAllDeclarationTNTXRow rowViewAllDeclarationTNTXRow = ((ViewAllDeclarationTNTXRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DeclarationID,
@@ -2373,7 +2384,8 @@ namespace ECustoms {
                         Seal,
                         VehicleID,
                         PlateNumber,
-                        NumberOfContainer};
+                        NumberOfContainer,
+                        IsExport};
                 rowViewAllDeclarationTNTXRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewAllDeclarationTNTXRow);
                 return rowViewAllDeclarationTNTXRow;
@@ -2428,6 +2440,7 @@ namespace ECustoms {
                 this.columnVehicleID = base.Columns["VehicleID"];
                 this.columnPlateNumber = base.Columns["PlateNumber"];
                 this.columnNumberOfContainer = base.Columns["NumberOfContainer"];
+                this.columnIsExport = base.Columns["IsExport"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2497,6 +2510,8 @@ namespace ECustoms {
                 base.Columns.Add(this.columnPlateNumber);
                 this.columnNumberOfContainer = new global::System.Data.DataColumn("NumberOfContainer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumberOfContainer);
+                this.columnIsExport = new global::System.Data.DataColumn("IsExport", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsExport);
                 this.columnDeclarationID.AllowDBNull = false;
                 this.columnCompanyName.MaxLength = 500;
                 this.columnProductName.MaxLength = 500;
@@ -5123,6 +5138,22 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExport {
+                get {
+                    try {
+                        return ((bool)(this[this.tableViewAllDeclarationTNTX.IsExportColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsExport\' in table \'ViewAllDeclarationTNTX\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.IsExportColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumberNull() {
                 return this.IsNull(this.tableViewAllDeclarationTNTX.NumberColumn);
             }
@@ -5479,6 +5510,18 @@ namespace ECustoms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNumberOfContainerNull() {
                 this[this.tableViewAllDeclarationTNTX.NumberOfContainerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIsExportNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.IsExportColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIsExportNull() {
+                this[this.tableViewAllDeclarationTNTX.IsExportColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6143,6 +6186,7 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("VehicleID", "VehicleID");
             tableMapping.ColumnMappings.Add("PlateNumber", "PlateNumber");
             tableMapping.ColumnMappings.Add("NumberOfContainer", "NumberOfContainer");
+            tableMapping.ColumnMappings.Add("IsExport", "IsExport");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
