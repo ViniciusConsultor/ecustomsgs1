@@ -239,11 +239,6 @@ namespace ECustoms
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
-                            dt.Columns.Add("Status");
-                            for (int i = 0; i < dt.Rows.Count; i++)
-                            {
-                                dt.Rows[i]["Status"] = "aaa";
-                            }
                             exportGate1.SetDataSource(dt);
                             crystalReportViewer1.ReportSource = exportGate1;
                         }

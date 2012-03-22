@@ -380,6 +380,7 @@
             // 
             // txtPersonHandover
             // 
+            this.txtPersonHandover.Enabled = false;
             this.txtPersonHandover.Location = new System.Drawing.Point(200, 97);
             this.txtPersonHandover.Name = "txtPersonHandover";
             this.txtPersonHandover.Size = new System.Drawing.Size(162, 26);

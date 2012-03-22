@@ -240,6 +240,7 @@ namespace ECustoms
                     declarationInfo.NumberHandover = int.Parse(txtNumberHandover.Text.Trim());
                 }
                 declarationInfo.DateHandover = dtpHandover.Value;
+                declarationInfo.PersonHandoverID = _userInfo.UserID;
             }
             if (!string.IsNullOrEmpty(txtNumberTemp.Text.Trim()))
                 declarationInfo.NumberTemp = txtNumberTemp.Text.Trim();

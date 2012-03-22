@@ -67,7 +67,7 @@ namespace ECustoms
             //declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
             declarationInfo.NumberHandover = !string.IsNullOrEmpty(txtNumberHandover.Text) ? Convert.ToInt32(txtNumberHandover.Text.Trim()) : 0;
             declarationInfo.DateHandover = dtpHandover.Value;
-            declarationInfo.PersonHandover = txtPersonHandover.Text.Trim();
+            declarationInfo.PersonHandoverID = _userInfo.UserID;
             //declarationInfo.DateReturn = dtpReturn.Value;
             declarationInfo.TypeOption = (short)_declerationOptionType;
             if (_declerationOptionType == Common.DeclerationOptionType.TNTX)
@@ -172,7 +172,10 @@ namespace ECustoms
                     dtpReturn.Value = declarationInfo.DateReturn.Value;
                     btConfirmReturn.Enabled = false;
                 }
-                txtPersonHandover.Text = declarationInfo.PersonHandover;
+                if (declarationInfo.PersonHandoverID != null)
+                {
+                    txtPersonHandover.Text = UserFactory.GetByID((int)declarationInfo.PersonHandoverID).Name;
+                }
                 if (declarationInfo.PersonConfirmReturnID != null)
                 {
                     txtPersonConfirmReturn.Text = UserFactory.GetByID((int)declarationInfo.PersonConfirmReturnID).Name;
@@ -248,7 +251,7 @@ namespace ECustoms
 
                     // Update Decleration
                     DeclarationFactory.Update(declerationInfo);
-
+                    txtPersonHandover.Text = _userInfo.Name;
                     MessageBox.Show("Cập nhật thành công");
                 }
             }
