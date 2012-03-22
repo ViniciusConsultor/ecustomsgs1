@@ -205,7 +205,7 @@ namespace ECustoms
                     for (var i = 0; i < grvVehicle.Rows.Count; i++)
                     {
                         grvVehicle.Rows[i].Cells["Index"].Value = (i + 1).ToString();
-                        if (bool.Parse(grvVehicle.Rows[i].Cells["IsExport"].Value.ToString()))
+                        if (grvVehicle.Rows[i].Cells["IsExport"].Value !=null && bool.Parse(grvVehicle.Rows[i].Cells["IsExport"].Value.ToString()))
                         {
                             //grvVehicle.Rows[i].Cells["StatusVehicle"].Value =  "Đã xuất cảnh";
                             status++;
