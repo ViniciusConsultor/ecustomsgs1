@@ -107,6 +107,8 @@ FROM            ViewAllVehicleHasGood</CommandText>
               <Mapping SourceColumn="RegisterPlace" DataSetColumn="RegisterPlace" />
               <Mapping SourceColumn="TypeOption" DataSetColumn="TypeOption" />
               <Mapping SourceColumn="NumberTemp" DataSetColumn="NumberTemp" />
+              <Mapping SourceColumn="PersonHandoverID" DataSetColumn="PersonHandoverID" />
+              <Mapping SourceColumn="PersonConfirmReturnID" DataSetColumn="PersonConfirmReturnID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -156,6 +158,9 @@ FROM            ViewAllDeclarationTNTX</CommandText>
               <Mapping SourceColumn="PlateNumber" DataSetColumn="PlateNumber" />
               <Mapping SourceColumn="NumberOfContainer" DataSetColumn="NumberOfContainer" />
               <Mapping SourceColumn="IsExport" DataSetColumn="IsExport" />
+              <Mapping SourceColumn="StatusExport" DataSetColumn="StatusExport" />
+              <Mapping SourceColumn="PersonHandoverID" DataSetColumn="PersonHandoverID" />
+              <Mapping SourceColumn="PersonHandoverName" DataSetColumn="PersonHandoverName" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -426,6 +431,8 @@ FROM            ViewAllDeclarationTNTX</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="PersonHandoverID" msprop:Generator_ColumnVarNameInTable="columnPersonHandoverID" msprop:Generator_ColumnPropNameInRow="PersonHandoverID" msprop:Generator_ColumnPropNameInTable="PersonHandoverIDColumn" msprop:Generator_UserColumnName="PersonHandoverID" type="xs:int" minOccurs="0" />
+              <xs:element name="PersonConfirmReturnID" msprop:Generator_ColumnVarNameInTable="columnPersonConfirmReturnID" msprop:Generator_ColumnPropNameInRow="PersonConfirmReturnID" msprop:Generator_ColumnPropNameInTable="PersonConfirmReturnIDColumn" msprop:Generator_UserColumnName="PersonConfirmReturnID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -555,6 +562,21 @@ FROM            ViewAllDeclarationTNTX</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="IsExport" msprop:Generator_ColumnVarNameInTable="columnIsExport" msprop:Generator_ColumnPropNameInRow="IsExport" msprop:Generator_ColumnPropNameInTable="IsExportColumn" msprop:Generator_UserColumnName="IsExport" type="xs:boolean" minOccurs="0" />
+              <xs:element name="StatusExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStatusExport" msprop:Generator_ColumnPropNameInRow="StatusExport" msprop:Generator_ColumnPropNameInTable="StatusExportColumn" msprop:Generator_UserColumnName="StatusExport" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonHandoverID" msprop:Generator_ColumnVarNameInTable="columnPersonHandoverID" msprop:Generator_ColumnPropNameInRow="PersonHandoverID" msprop:Generator_ColumnPropNameInTable="PersonHandoverIDColumn" msprop:Generator_UserColumnName="PersonHandoverID" type="xs:int" minOccurs="0" />
+              <xs:element name="PersonHandoverName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPersonHandoverName" msprop:Generator_ColumnPropNameInRow="PersonHandoverName" msprop:Generator_ColumnPropNameInTable="PersonHandoverNameColumn" msprop:Generator_UserColumnName="PersonHandoverName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

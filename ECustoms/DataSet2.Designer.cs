@@ -1021,6 +1021,10 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnNumberTemp;
             
+            private global::System.Data.DataColumn columnPersonHandoverID;
+            
+            private global::System.Data.DataColumn columnPersonConfirmReturnID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ViewAllVehicleHasGoodDataTable() {
@@ -1448,6 +1452,22 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PersonHandoverIDColumn {
+                get {
+                    return this.columnPersonHandoverID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PersonConfirmReturnIDColumn {
+                get {
+                    return this.columnPersonConfirmReturnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1532,7 +1552,9 @@ namespace ECustoms {
                         int NumberHandover, 
                         string RegisterPlace, 
                         short TypeOption, 
-                        string NumberTemp) {
+                        string NumberTemp, 
+                        int PersonHandoverID, 
+                        int PersonConfirmReturnID) {
                 ViewAllVehicleHasGoodRow rowViewAllVehicleHasGoodRow = ((ViewAllVehicleHasGoodRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         VehicleID,
@@ -1583,7 +1605,9 @@ namespace ECustoms {
                         NumberHandover,
                         RegisterPlace,
                         TypeOption,
-                        NumberTemp};
+                        NumberTemp,
+                        PersonHandoverID,
+                        PersonConfirmReturnID};
                 rowViewAllVehicleHasGoodRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewAllVehicleHasGoodRow);
                 return rowViewAllVehicleHasGoodRow;
@@ -1655,6 +1679,8 @@ namespace ECustoms {
                 this.columnRegisterPlace = base.Columns["RegisterPlace"];
                 this.columnTypeOption = base.Columns["TypeOption"];
                 this.columnNumberTemp = base.Columns["NumberTemp"];
+                this.columnPersonHandoverID = base.Columns["PersonHandoverID"];
+                this.columnPersonConfirmReturnID = base.Columns["PersonConfirmReturnID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1758,6 +1784,10 @@ namespace ECustoms {
                 base.Columns.Add(this.columnTypeOption);
                 this.columnNumberTemp = new global::System.Data.DataColumn("NumberTemp", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumberTemp);
+                this.columnPersonHandoverID = new global::System.Data.DataColumn("PersonHandoverID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonHandoverID);
+                this.columnPersonConfirmReturnID = new global::System.Data.DataColumn("PersonConfirmReturnID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonConfirmReturnID);
                 this.columnVehicleID.AllowDBNull = false;
                 this.columnPlateNumber.MaxLength = 50;
                 this.columnNumberOfContainer.MaxLength = 50;
@@ -1982,6 +2012,12 @@ namespace ECustoms {
             private global::System.Data.DataColumn columnNumberOfContainer;
             
             private global::System.Data.DataColumn columnIsExport;
+            
+            private global::System.Data.DataColumn columnStatusExport;
+            
+            private global::System.Data.DataColumn columnPersonHandoverID;
+            
+            private global::System.Data.DataColumn columnPersonHandoverName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2282,6 +2318,30 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatusExportColumn {
+                get {
+                    return this.columnStatusExport;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PersonHandoverIDColumn {
+                get {
+                    return this.columnPersonHandoverID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PersonHandoverNameColumn {
+                get {
+                    return this.columnPersonHandoverName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2350,7 +2410,10 @@ namespace ECustoms {
                         long VehicleID, 
                         string PlateNumber, 
                         string NumberOfContainer, 
-                        bool IsExport) {
+                        bool IsExport, 
+                        string StatusExport, 
+                        int PersonHandoverID, 
+                        string PersonHandoverName) {
                 ViewAllDeclarationTNTXRow rowViewAllDeclarationTNTXRow = ((ViewAllDeclarationTNTXRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DeclarationID,
@@ -2385,7 +2448,10 @@ namespace ECustoms {
                         VehicleID,
                         PlateNumber,
                         NumberOfContainer,
-                        IsExport};
+                        IsExport,
+                        StatusExport,
+                        PersonHandoverID,
+                        PersonHandoverName};
                 rowViewAllDeclarationTNTXRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewAllDeclarationTNTXRow);
                 return rowViewAllDeclarationTNTXRow;
@@ -2441,6 +2507,9 @@ namespace ECustoms {
                 this.columnPlateNumber = base.Columns["PlateNumber"];
                 this.columnNumberOfContainer = base.Columns["NumberOfContainer"];
                 this.columnIsExport = base.Columns["IsExport"];
+                this.columnStatusExport = base.Columns["StatusExport"];
+                this.columnPersonHandoverID = base.Columns["PersonHandoverID"];
+                this.columnPersonHandoverName = base.Columns["PersonHandoverName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2512,6 +2581,12 @@ namespace ECustoms {
                 base.Columns.Add(this.columnNumberOfContainer);
                 this.columnIsExport = new global::System.Data.DataColumn("IsExport", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsExport);
+                this.columnStatusExport = new global::System.Data.DataColumn("StatusExport", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatusExport);
+                this.columnPersonHandoverID = new global::System.Data.DataColumn("PersonHandoverID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonHandoverID);
+                this.columnPersonHandoverName = new global::System.Data.DataColumn("PersonHandoverName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPersonHandoverName);
                 this.columnDeclarationID.AllowDBNull = false;
                 this.columnCompanyName.MaxLength = 500;
                 this.columnProductName.MaxLength = 500;
@@ -2531,6 +2606,10 @@ namespace ECustoms {
                 this.columnVehicleID.AllowDBNull = false;
                 this.columnPlateNumber.MaxLength = 50;
                 this.columnNumberOfContainer.MaxLength = 50;
+                this.columnStatusExport.ReadOnly = true;
+                this.columnStatusExport.MaxLength = 100;
+                this.columnPersonHandoverName.ReadOnly = true;
+                this.columnPersonHandoverName.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4047,6 +4126,40 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PersonHandoverID {
+                get {
+                    try {
+                        return ((int)(this[this.tableViewAllVehicleHasGood.PersonHandoverIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PersonHandoverID\' in table \'ViewAllVehicleHasGood\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllVehicleHasGood.PersonHandoverIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PersonConfirmReturnID {
+                get {
+                    try {
+                        return ((int)(this[this.tableViewAllVehicleHasGood.PersonConfirmReturnIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PersonConfirmReturnID\' in table \'ViewAllVehicleHasGood\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllVehicleHasGood.PersonConfirmReturnIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlateNumberNull() {
                 return this.IsNull(this.tableViewAllVehicleHasGood.PlateNumberColumn);
             }
@@ -4608,6 +4721,30 @@ namespace ECustoms {
             public void SetNumberTempNull() {
                 this[this.tableViewAllVehicleHasGood.NumberTempColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPersonHandoverIDNull() {
+                return this.IsNull(this.tableViewAllVehicleHasGood.PersonHandoverIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPersonHandoverIDNull() {
+                this[this.tableViewAllVehicleHasGood.PersonHandoverIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPersonConfirmReturnIDNull() {
+                return this.IsNull(this.tableViewAllVehicleHasGood.PersonConfirmReturnIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPersonConfirmReturnIDNull() {
+                this[this.tableViewAllVehicleHasGood.PersonConfirmReturnIDColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -5154,6 +5291,56 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StatusExport {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewAllDeclarationTNTX.StatusExportColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StatusExport\' in table \'ViewAllDeclarationTNTX\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.StatusExportColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PersonHandoverID {
+                get {
+                    try {
+                        return ((int)(this[this.tableViewAllDeclarationTNTX.PersonHandoverIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PersonHandoverID\' in table \'ViewAllDeclarationTNTX\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.PersonHandoverIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PersonHandoverName {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewAllDeclarationTNTX.PersonHandoverNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PersonHandoverName\' in table \'ViewAllDeclarationTNTX\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.PersonHandoverNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumberNull() {
                 return this.IsNull(this.tableViewAllDeclarationTNTX.NumberColumn);
             }
@@ -5522,6 +5709,42 @@ namespace ECustoms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetIsExportNull() {
                 this[this.tableViewAllDeclarationTNTX.IsExportColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatusExportNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.StatusExportColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatusExportNull() {
+                this[this.tableViewAllDeclarationTNTX.StatusExportColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPersonHandoverIDNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.PersonHandoverIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPersonHandoverIDNull() {
+                this[this.tableViewAllDeclarationTNTX.PersonHandoverIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPersonHandoverNameNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.PersonHandoverNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPersonHandoverNameNull() {
+                this[this.tableViewAllDeclarationTNTX.PersonHandoverNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5988,6 +6211,8 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("RegisterPlace", "RegisterPlace");
             tableMapping.ColumnMappings.Add("TypeOption", "TypeOption");
             tableMapping.ColumnMappings.Add("NumberTemp", "NumberTemp");
+            tableMapping.ColumnMappings.Add("PersonHandoverID", "PersonHandoverID");
+            tableMapping.ColumnMappings.Add("PersonConfirmReturnID", "PersonConfirmReturnID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -6187,6 +6412,9 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("PlateNumber", "PlateNumber");
             tableMapping.ColumnMappings.Add("NumberOfContainer", "NumberOfContainer");
             tableMapping.ColumnMappings.Add("IsExport", "IsExport");
+            tableMapping.ColumnMappings.Add("StatusExport", "StatusExport");
+            tableMapping.ColumnMappings.Add("PersonHandoverID", "PersonHandoverID");
+            tableMapping.ColumnMappings.Add("PersonHandoverName", "PersonHandoverName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
