@@ -23,8 +23,9 @@ namespace ECustoms.BOL
 
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             //var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null && g.IsGoodsImported == true && g.IsCompleted == true && g.ConfirmDate >= startToday && g.ConfirmDate <= endToday).OrderByDescending(g => g.ImportDate).ToList();
-
-            List<ViewAllVehicleHasGood> data = db.ViewAllVehicleHasGoods.Where(g => g.IsGoodsImported == true && g.IsCompleted == true && g.ImportedLocalTime >= startToday && g.ImportedLocalTime <= endToday).OrderByDescending(g => g.ImportedLocalTime).ToList();
+            
+            //tim cac xe da nhap canh co hang, nhung chua vao noi dia, va co to khai da xac nhan tra ho so, chi hien thi theo ngay tra so so = ngay hien tai
+            List<ViewAllVehicleHasGood> data = db.ViewAllVehicleHasGoods.Where(g => g.HasGoodsImported == true && g.IsCompleted != true && g.ConfirmStatus != null && g.ConfirmDate >= startToday && g.ConfirmDate <= endToday).OrderByDescending(g => g.ConfirmDate).ToList();
             db.Connection.Close();
             List<ViewAllVehicleHasGood> list = new List<ViewAllVehicleHasGood>();
             HashSet<long> listVehicleId = new HashSet<long>();
