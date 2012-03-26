@@ -113,5 +113,10 @@ namespace ECustoms
             }
             return ReportType.ExportAndNoItem;
         }
+
+        private void cbReportType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblTime.Text = cbReportType.SelectedIndex > 4 ? "Thời gian nhập máy từ:" : "Thời gian từ:";
+        }
     }
 }
