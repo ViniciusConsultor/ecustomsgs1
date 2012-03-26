@@ -233,8 +233,8 @@ namespace ECustoms
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.XKCK);
-                            buffer.Append(" AND RegisterDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND RegisterDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -256,8 +256,8 @@ namespace ECustoms
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.NKCK);
-                            buffer.Append(" AND RegisterDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND RegisterDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -279,8 +279,8 @@ namespace ECustoms
                             buffer.Append(" WHERE ");
                             buffer.Append(" DeclarationID > 1 ");
                             buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.TNTX);
-                            buffer.Append(" AND RegisterDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND RegisterDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();

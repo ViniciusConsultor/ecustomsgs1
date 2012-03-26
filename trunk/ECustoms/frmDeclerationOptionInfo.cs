@@ -112,11 +112,19 @@ namespace ECustoms
                     result = result.Where(d => (d.CompanyName != null) && (d.CompanyName.Contains(companyName))).ToList();
                 }
                 //filter by RegisterDate
-                var from = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day, 0, 0, 0);
-                var to = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day, 23, 59, 59);
+                DateTime from, to;
                 if (cbRegDate.Checked)
                 {
+                    from = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day, 0, 0, 0);
+                    to = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day, 23, 59, 59);
                     result = result.Where(g => g.RegisterDate >= from && g.RegisterDate <= to).ToList();
+                }
+                //filter by CreatedDate
+                if (cbCreatedDate.Checked)
+                {
+                    from = new DateTime(dtpCreatedFrom.Value.Year, dtpCreatedFrom.Value.Month, dtpCreatedFrom.Value.Day, 0, 0, 0);
+                    to = new DateTime(dtpCreatedTo.Value.Year, dtpCreatedTo.Value.Month, dtpCreatedTo.Value.Day, 23, 59, 59);
+                    result = result.Where(g => g.CreatedDate >= from && g.CreatedDate <= to).ToList();
                 }
                 //filter by Return
                 if (cbReturn.Checked != cbNotReturn.Checked)
@@ -334,6 +342,18 @@ namespace ECustoms
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cbCreatedDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbCreatedDate.Checked)
+            {
+                dtpCreatedFrom.Enabled = dtpCreatedTo.Enabled = true;
+            }
+            else
+            {
+                dtpCreatedFrom.Enabled = dtpCreatedTo.Enabled = false;
             }
         }
 
