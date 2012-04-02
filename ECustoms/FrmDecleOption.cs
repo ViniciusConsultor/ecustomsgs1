@@ -51,20 +51,6 @@ namespace ECustoms
         /// <returns></returns>
         private tblDeclaration GetDeclarationInfo(ref tblDeclaration declarationInfo)
         {
-            //declarationInfo.DeclarationType = declarationInfo.DeclarationType;
-            //declarationInfo.Number = !string.IsNullOrEmpty(txtExportNumber.Text) ? Convert.ToInt32(txtExportNumber.Text.Trim()) : 0;
-            //declarationInfo.Type = txtTypeExport.Text.Trim();
-            //declarationInfo.CompanyName = txtExportCompanyName.Text;
-            //declarationInfo.CompanyCode = txtExportCompanyCode.Text;
-            //declarationInfo.RegisterDate = dtpExportRegisterDate.Value;
-            //declarationInfo.ProductAmount = lblGateExport.Text.Trim();
-            //declarationInfo.Unit = txtExportUnit.Text.Trim();
-            //declarationInfo.ProductName = txtExportProductName.Text;
-            //declarationInfo.ModifiedDate = CommonFactory.GetCurrentDate();
-            //declarationInfo.ModifiedByID = _userInfo.UserID;
-            //declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
-            //declarationInfo.RegisterPlace = txtRegisterPlace.Text.Trim();
-            //declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
             declarationInfo.NumberHandover = !string.IsNullOrEmpty(txtNumberHandover.Text) ? Convert.ToInt32(txtNumberHandover.Text.Trim()) : 0;
             declarationInfo.DateHandover = dtpHandover.Value;
             declarationInfo.PersonHandoverID = _userInfo.UserID;
