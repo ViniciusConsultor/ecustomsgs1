@@ -227,9 +227,9 @@ namespace ECustoms
             declarationInfo.ProductAmount = txtProductAmount.Text.Trim();
             declarationInfo.Unit = txtExportUnit.Text.Trim();
             declarationInfo.ProductName = txtExportProductName.Text;
-            declarationInfo.ModifiedDate = CommonFactory.GetCurrentDate();
             declarationInfo.ModifiedByID = _userInfo.UserID;
-            declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
+            //declarationInfo.ModifiedDate = CommonFactory.GetCurrentDate();
+            //declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
             declarationInfo.RegisterPlace = txtRegisterPlace.Text.Trim();
             declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
             declarationInfo.TypeOption = short.Parse(((ComboBoxItem)cbTNTX.SelectedItem).Value);
