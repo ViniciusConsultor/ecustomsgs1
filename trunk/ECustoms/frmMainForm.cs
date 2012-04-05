@@ -254,5 +254,17 @@ namespace ECustoms
           var frmDeclerationOptionInfo = new frmDeclerationOptionInfo(_userInfo, this, Common.DeclerationOptionType.TNTX);
           frmDeclerationOptionInfo.Show(this);
         }
+
+        private void vehicleChineseSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addVehicleChinese_Click(object sender, EventArgs e)
+        {
+            var frmVehicleChineseAdd = new frmVehicleChineseAdd(_userInfo);
+            frmVehicleChineseAdd.MdiParent = this;
+            frmVehicleChineseAdd.Show();
+        }
     }
 }

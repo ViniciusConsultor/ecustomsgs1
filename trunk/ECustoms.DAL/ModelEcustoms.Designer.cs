@@ -13,7 +13,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("dbEcustomModel", "FK_tblDeclaration_tblUser", "tblUser", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ECustoms.DAL.tblUser), "tblDeclaration", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ECustoms.DAL.tblDeclaration))]
 
 // Original file name:
-// Generation date: 3/23/2012 1:59:39 AM
+// Generation date: 4/6/2012 3:39:51 AM
 namespace ECustoms.DAL
 {
     
@@ -3471,6 +3471,60 @@ namespace ECustoms.DAL
         partial void OnParkingTotalPrintOrderNumberChanging(global::System.Nullable<long> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnParkingTotalPrintOrderNumberChanged();
+        /// <summary>
+        /// There are no comments for property IsChineseVehicle in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<bool> IsChineseVehicle
+        {
+            get
+            {
+                return this._IsChineseVehicle;
+            }
+            set
+            {
+                this.OnIsChineseVehicleChanging(value);
+                this.ReportPropertyChanging("IsChineseVehicle");
+                this._IsChineseVehicle = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("IsChineseVehicle");
+                this.OnIsChineseVehicleChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<bool> _IsChineseVehicle;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIsChineseVehicleChanging(global::System.Nullable<bool> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIsChineseVehicleChanged();
+        /// <summary>
+        /// There are no comments for property PlateNumberPartnerID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<long> PlateNumberPartnerID
+        {
+            get
+            {
+                return this._PlateNumberPartnerID;
+            }
+            set
+            {
+                this.OnPlateNumberPartnerIDChanging(value);
+                this.ReportPropertyChanging("PlateNumberPartnerID");
+                this._PlateNumberPartnerID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("PlateNumberPartnerID");
+                this.OnPlateNumberPartnerIDChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<long> _PlateNumberPartnerID;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnPlateNumberPartnerIDChanging(global::System.Nullable<long> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnPlateNumberPartnerIDChanged();
     }
     /// <summary>
     /// There are no comments for dbEcustomModel.tblVehicleCheck in the schema.

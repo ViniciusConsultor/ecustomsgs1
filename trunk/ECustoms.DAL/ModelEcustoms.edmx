@@ -477,6 +477,8 @@
           <Property Name="ParkingTotalPrint" Type="int" />
           <Property Name="HasGoodsImportedPrintOrderNumber" Type="bigint" />
           <Property Name="ParkingTotalPrintOrderNumber" Type="bigint" />
+          <Property Name="IsChineseVehicle" Type="bit" />
+          <Property Name="PlateNumberPartnerID" Type="bigint" />
         </EntityType>
         <EntityType Name="tblVehicleCheck">
           <Key>
@@ -1087,6 +1089,8 @@
           <Property Type="Int32" Name="ParkingTotalPrint" />
           <Property Type="Int64" Name="HasGoodsImportedPrintOrderNumber" />
           <Property Type="Int64" Name="ParkingTotalPrintOrderNumber" />
+          <Property Type="Boolean" Name="IsChineseVehicle" />
+          <Property Type="Int64" Name="PlateNumberPartnerID" />
         </EntityType>
         <EntityType Name="tblVehicleCheck">
           <Key>
@@ -1564,6 +1568,8 @@
           <EntitySetMapping Name="tblVehicles">
             <EntityTypeMapping TypeName="dbEcustomModel.tblVehicle">
               <MappingFragment StoreEntitySet="tblVehicle">
+                <ScalarProperty Name="PlateNumberPartnerID" ColumnName="PlateNumberPartnerID" />
+                <ScalarProperty Name="IsChineseVehicle" ColumnName="IsChineseVehicle" />
                 <ScalarProperty Name="ParkingTotalPrintOrderNumber" ColumnName="ParkingTotalPrintOrderNumber" />
                 <ScalarProperty Name="HasGoodsImportedPrintOrderNumber" ColumnName="HasGoodsImportedPrintOrderNumber" />
                 <ScalarProperty Name="ParkingTotalPrint" ColumnName="ParkingTotalPrint" />
@@ -1966,7 +1972,7 @@
         <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="5.5" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserGroupPermission" Width="1.5" PointX="9.75" PointY="3.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserInGroup" Width="1.5" PointX="9.75" PointY="7.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="9.75" PointY="10.75" Height="6.0186165364583246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="9.75" PointY="10.75" Height="6.2109179687500031" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="11.75" PointY="0.75" Height="3.7109993489583246" />
         <EntityTypeShape EntityType="dbEcustomModel.tlbRole" Width="1.5" PointX="0.75" PointY="0.875" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="0.75" PointY="11.75" Height="3.9033007812499818" />

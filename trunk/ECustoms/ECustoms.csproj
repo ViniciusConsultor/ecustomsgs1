@@ -111,6 +111,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmVehicleChineseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehicleChineseAdd.Designer.cs">
+      <DependentUpon>frmVehicleChineseAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExportGate.cs">
       <DependentUpon>ExportGate.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -333,6 +339,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmVehicleChineseAdd.resx">
+      <DependentUpon>frmVehicleChineseAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExportGate.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ExportGate.cs</LastGenOutput>
