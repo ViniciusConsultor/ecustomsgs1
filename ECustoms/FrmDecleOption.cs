@@ -146,7 +146,7 @@ namespace ECustoms
                 txtMoney.Text = declarationInfo.Money.ToString();
                 //Option infomation
                 txtNumberHandover.Text = declarationInfo.NumberHandover != null ? declarationInfo.NumberHandover.ToString() : "";
-                dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : DateTime.Now;
+                dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : CommonFactory.GetCurrentDate();
                 if (declarationInfo.DateReturn == null)
                 {
                     
@@ -273,7 +273,7 @@ namespace ECustoms
             try
             {
                 DeclarationFactory.UpdateReturnInfo(_declerationID, _userInfo.UserID);
-                dtpReturn.Value = DateTime.Now;
+                dtpReturn.Value = CommonFactory.GetCurrentDate();
                 dtpReturn.Visible = true;
                 txtPersonConfirmReturn.Text = _userInfo.Name;
                 MessageBox.Show("Xác nhận hồi báo thành công.");

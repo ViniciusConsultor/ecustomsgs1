@@ -135,7 +135,7 @@ namespace ECustoms.BOL
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             var decleration = db.tblDeclarations.Where(g => g.DeclarationID == declerationID).FirstOrDefault();
             decleration.ConfirmStatus = confirmStatus;
-            decleration.ConfirmDate = DateTime.Now;
+            decleration.ConfirmDate = CommonFactory.GetCurrentDate();
             int re = db.SaveChanges();
             db.Connection.Close();
             return re;
@@ -200,7 +200,7 @@ namespace ECustoms.BOL
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             var decleration = db.tblDeclarations.Where(g => g.DeclarationID == declerationID).FirstOrDefault();
             decleration.PersonConfirmReturnID = userID;
-            decleration.DateReturn = DateTime.Now;
+            decleration.DateReturn = CommonFactory.GetCurrentDate();
             int re = db.SaveChanges();
             db.Connection.Close();
             return re;

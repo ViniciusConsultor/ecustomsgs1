@@ -9,20 +9,18 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class frmVehicleAdd : Form
+    public partial class frmVehicleChineseAdd : Form
     {
-        private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmVehicleAdd");
+        private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmVehicleChineseAdd");
         #region Priority
-        private List<ViewAllVehicleHasGood> _vehicleInfosTemp = new List<ViewAllVehicleHasGood>();        
+        private List<tblVehicle> _vehicleInfosTemp = new List<tblVehicle>();
         private UserInfo _userInfo;
 
-        public List<ViewAllVehicleHasGood> VehicleInfosTemp
+        public List<tblVehicle> VehicleInfosTemp
         {
             get { return _vehicleInfosTemp; }
             set { _vehicleInfosTemp = value; }
         }
-
-       
 
         public UserInfo UserInfo
         {
@@ -47,18 +45,17 @@ namespace ECustoms
             }
 
 
-          for (int i = 0; i < grdVehicle.Rows.Count; i++)
-          {
-            if (grdVehicle.Rows[i].Cells["PlateNumber"].Value.Equals(txtPlateNumber.Text))
+            for (int i = 0; i < grdVehicle.Rows.Count; i++)
             {
-              MessageBox.Show("Biểm kiểm soát đã được nhập");
-              txtPlateNumber.Focus();
-              pictureBoxValid.Visible = false;
-              pictureBoxInvalid.Visible = true;
-              return false;
+                if (grdVehicle.Rows[i].Cells["PlateNumber"].Value.Equals(txtPlateNumber.Text))
+                {
+                    MessageBox.Show("Biểm kiểm soát đã được nhập");
+                    txtPlateNumber.Focus();
+                    pictureBoxValid.Visible = false;
+                    pictureBoxInvalid.Visible = true;
+                    return false;
+                }
             }
-          }
-            
 
             return true;
         }
@@ -72,15 +69,17 @@ namespace ECustoms
             txtNumberOfContainer.Text = "";
             txtStatus.Text = "";
             txtNote.Text = "";
-            if(cbConfirmExport.Checked && !isAll)
+            rbHasGoods.Checked = true;
+            if (cbConfirmExport.Checked && !isAll)
             {
-                dateTimePickerExport.Value = CommonFactory.GetCurrentDate();
-                mtxtExportHour.Text = string.Format("{0:HH:mm}", CommonFactory.GetCurrentDate());
+                var timeNow = CommonFactory.GetCurrentDate();
+                dateTimePickerExport.Value = timeNow;
+                mtxtExportHour.Text = string.Format("{0:HH:mm}", timeNow);
 
-                dateTimePickerImport.Value = CommonFactory.GetCurrentDate();
-                mtxtImportHour.Text = string.Format("{0:HH:mm}", CommonFactory.GetCurrentDate());
-
-            } else
+                dateTimePickerImport.Value = timeNow;
+                mtxtImportHour.Text = string.Format("{0:HH:mm}", timeNow);
+            }
+            else
             {
                 dateTimePickerExport.Visible = false;
                 mtxtExportHour.Visible = false;
@@ -93,7 +92,7 @@ namespace ECustoms
                 cbConfirmImport.Checked = false;
             }
 
-            
+            cbConfirmImport.Checked = true;
 
             pictureBoxInvalid.Visible = false;
             pictureBoxValid.Visible = false;
@@ -102,17 +101,18 @@ namespace ECustoms
             txtPlateNumber.Focus();
         }
 
-        private ViewAllVehicleHasGood GetVehicle()
+        private tblVehicle GetVehicle()
         {
-            var vehicleInfo = new ViewAllVehicleHasGood();
+            var vehicleInfo = new tblVehicle();
             try
             {
                 if (!Validate())
                     return null;
                 // Add data to veicleInfo list
-                
+
                 vehicleInfo.DriverName = txtDriverName.Text.Trim();
                 vehicleInfo.PlateNumber = txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+                vehicleInfo.IsChineseVehicle = true;
                 if (txtNumberOfContainer.Text != "")
                 {
                     vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
@@ -120,19 +120,29 @@ namespace ECustoms
 
                 if (cbConfirmExport.Checked)
                 {
-                    vehicleInfo.ExportDate = dateTimePickerExport.Value;                    
+                    vehicleInfo.ExportDate = dateTimePickerExport.Value;
                     vehicleInfo.ConfirmExportBy = _userInfo.UserID;
                 }
 
                 if (cbConfirmImport.Checked)
                 {
-                    vehicleInfo.ImportDate = dateTimePickerImport.Value;                    
+                    vehicleInfo.ImportDate = dateTimePickerImport.Value;
                     vehicleInfo.ConfirmImportBy = _userInfo.UserID;
+                    if (rbHasGoods.Checked)
+                    {
+                        vehicleInfo.HasGoodsImported = true;
+                        vehicleInfo.ImportStatus = "Nhập cảnh có hàng";  
+                    }
+                    else
+                    {
+                        vehicleInfo.HasGoodsImported = false;
+                        vehicleInfo.ImportStatus = "Nhập cảnh không có hàng"; 
+                    }
                 }
 
                 vehicleInfo.Status = txtStatus.Text;
                 vehicleInfo.Note = txtNote.Text;
-                vehicleInfo.VehicleID = _vehicleInfosTemp.Count + 1;
+                //vehicleInfo.VehicleID = _vehicleInfosTemp.Count + 1;
                 vehicleInfo.IsExport = cbConfirmExport.Checked;
                 vehicleInfo.IsImport = cbConfirmImport.Checked;
                 vehicleInfo.IsCompleted = false;
@@ -144,7 +154,7 @@ namespace ECustoms
                 if (vehicleInfo.ImportDate != null && vehicleInfo.ImportDate.Value.Year.Equals(1900))
                 {
                     vehicleInfo.ImportDate = null;
-                }                
+                }
             }
             catch (Exception ex)
             {
@@ -154,28 +164,28 @@ namespace ECustoms
             return vehicleInfo;
         }
 
-        public frmVehicleAdd(UserInfo userInfor)
+        public frmVehicleChineseAdd(UserInfo userInfor)
         {
             InitializeComponent();
             grdVehicle.AutoGenerateColumns = false;
             _userInfo = userInfor;
-            
+
             //check permission
             cbConfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
             cbConfirmImport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
         }
         #region Action Handler
-
-        private void frmVehicleAdd_Load(object sender, EventArgs e)
+        private void frmVehicleChineseAdd_Load(object sender, EventArgs e)
         {
             try
             {
-                this.Text = "Khai báo phương tiện" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Khai báo phương tiện xe Trung Quốc nhập cảnh" + ConstantInfo.MESSAGE_TITLE;
                 //this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);
 
                 pictureBoxInvalid.Visible = false;
                 pictureBoxValid.Visible = false;
                 //InitialPermission();
+                cbConfirmImport.Checked = true;
             }
             catch (Exception ex)
             {
@@ -183,7 +193,7 @@ namespace ECustoms
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
         }
-      
+
         //private void InitialPermission()
         //{
         //    //throw new NotImplementedException();
@@ -226,26 +236,27 @@ namespace ECustoms
             }
         }
 
-        public void BindVehicle(List<ViewAllVehicleHasGood> vehicleInfos)
+        public void BindVehicle(List<tblVehicle> vehicleInfos)
         {
             try
             {
                 grdVehicle.DataSource = null;
-                
+
                 // Bind count column
+                // Add to count Column
+                
                 
                 grdVehicle.DataSource = vehicleInfos;
-                // Add to count Column
                 for (int i = 0; i < grdVehicle.Rows.Count; i++)
                 {
                     grdVehicle.Rows[i].Cells[0].Value = i + 1;
                 }
-
                 //Set curent cell for poiter to bottom
-                if (grdVehicle.Rows.Count >0)
+                if (grdVehicle.Rows.Count > 0)
                 {
-                    this.grdVehicle.CurrentCell = this.grdVehicle[0, this.grdVehicle.Rows.Count - 1];
+                    this.grdVehicle.CurrentCell = this.grdVehicle[0, this.grdVehicle.Rows.Count - 1];  
                 }
+                
             }
             catch (Exception ex)
             {
@@ -307,7 +318,7 @@ namespace ECustoms
                 dateTimePickerExport.Visible = true;
                 mtxtExportHour.Visible = true;
                 dateTimePickerExport.Value = CommonFactory.GetCurrentDate();
-                mtxtExportHour.Text = string.Format("{0:HH:mm}", CommonFactory.GetCurrentDate());
+                mtxtExportHour.Text = string.Format("{0:HH:mm}", dateTimePickerExport.Value);
                 lblIsExport.Visible = false;
             }
             else
@@ -325,8 +336,9 @@ namespace ECustoms
                 dateTimePickerImport.Visible = true;
                 mtxtImportHour.Visible = true;
                 dateTimePickerImport.Value = CommonFactory.GetCurrentDate();
-                mtxtImportHour.Text = string.Format("{0:HH:mm}", CommonFactory.GetCurrentDate());
+                mtxtImportHour.Text = string.Format("{0:HH:mm}", dateTimePickerImport.Value);
                 lblIsImport.Visible = false;
+                pnGoodsImports.Visible = true;
 
             }
             else
@@ -334,32 +346,20 @@ namespace ECustoms
                 dateTimePickerImport.Visible = false;
                 mtxtImportHour.Visible = false;
                 lblIsImport.Visible = true;
+                pnGoodsImports.Visible = false;
 
             }
         }
+        
         private void btnSaveAll_Click(object sender, EventArgs e)
         {
             try
             {
                 if (VehicleInfosTemp.Count == 0)
                     throw new Exception("Phương tiện không được để trống");
-                
-                foreach (var info in VehicleInfosTemp)
+
+                foreach (var vehicleInfo in VehicleInfosTemp)
                 {
-                    var vehicleInfo = new tblVehicle();
-                    vehicleInfo.DriverName = info.DriverName;
-                    vehicleInfo.PlateNumber = info.PlateNumber;
-                    vehicleInfo.NumberOfContainer = info.NumberOfContainer;
-                    vehicleInfo.ExportDate = info.ExportDate;
-                    vehicleInfo.ConfirmExportBy = info.ConfirmExportBy;
-                    vehicleInfo.ImportDate = info.ImportDate;
-                    vehicleInfo.ConfirmImportBy = info.ConfirmImportBy;
-                    vehicleInfo.Status = info.Status;
-                    vehicleInfo.Note = info.Note;
-                    vehicleInfo.VehicleID = info.VehicleID;
-                    vehicleInfo.IsExport = info.IsExport;
-                    vehicleInfo.IsImport = info.IsImport;
-                    vehicleInfo.IsCompleted = info.IsCompleted;
                     VehicleFactory.InsertVehicle(vehicleInfo);
                 }
 
@@ -378,41 +378,25 @@ namespace ECustoms
 
         private void txtPlateNumber_KeyDown(object sender, KeyEventArgs e)
         {
-          if(e.KeyValue == 13) // Enter key
-          {
-            try
+            if (e.KeyValue == 13) // Enter key
             {
-              var vehicleInfo = GetVehicle();
-              if (vehicleInfo != null)
-              {
-                // Bind to gridview.
-                VehicleInfosTemp.Add(vehicleInfo);
-                BindVehicle(VehicleInfosTemp);
-
-                ResetForm(false);
-              }
+                btnAdd_Click(null, null);
             }
-            catch (Exception ex)
-            {
-              logger.Error(ex.ToString());
-              if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
-            }
-          }
-
         }
 
         private void txtPlateNumber_Leave(object sender, EventArgs e)
         {
-          txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+            txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
         }
 
         private void grdVehicle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-          if ((e.ColumnIndex == 1) && (grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null))
-          {
-            string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
-            grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
-          }
+            if ((e.ColumnIndex == 1) && (grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null))
+            {
+                string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
+                grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+            }
         }
+
     }
 }
