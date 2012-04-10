@@ -346,5 +346,12 @@ namespace ECustoms.BOL
           db.Connection.Close();
           return re;
         }
+
+        public static List<tblVehicle> GetChineseVehicle()
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var result = db.tblVehicles.Where(g => g.IsChineseVehicle == true).OrderByDescending(g => g.ModifiedDate).ToList();
+            return result;
+        }
     }
 }

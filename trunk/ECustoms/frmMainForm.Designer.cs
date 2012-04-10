@@ -65,6 +65,7 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
+            this.vehicleChineseSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -161,7 +162,8 @@
             this.mnImport,
             this.vehicleSearch,
             this.addNewVehiceToolStripMenuItem,
-            this.addVehicleChinese});
+            this.addVehicleChinese,
+            this.vehicleChineseSearch});
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Name = "khaiBáoXuấtNhậpKhẩuToolStripMenuItem";
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Size = new System.Drawing.Size(192, 25);
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Text = "Khai báo xuất nhập khẩu";
@@ -392,6 +394,14 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
+            // vehicleChineseSearch
+            // 
+            this.vehicleChineseSearch.Image = global::ECustoms.Properties.Resources.search41;
+            this.vehicleChineseSearch.Name = "vehicleChineseSearch";
+            this.vehicleChineseSearch.Size = new System.Drawing.Size(313, 26);
+            this.vehicleChineseSearch.Text = "Tìm kiếm xe Trung Quốc";
+            this.vehicleChineseSearch.Click += new System.EventHandler(this.vehicleChineseSearch_Click);
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,5 +464,6 @@
         private System.Windows.Forms.ToolStripMenuItem nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hàngTạmNhậpTáiXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addVehicleChinese;
+        private System.Windows.Forms.ToolStripMenuItem vehicleChineseSearch;
     }
 }

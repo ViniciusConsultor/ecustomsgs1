@@ -111,6 +111,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmVehicleChineseSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehicleChineseSelect.Designer.cs">
+      <DependentUpon>frmVehicleChineseSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVehicleChineseAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmVehicleChineseSelect.resx">
+      <DependentUpon>frmVehicleChineseSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVehicleChineseAdd.resx">
       <DependentUpon>frmVehicleChineseAdd.cs</DependentUpon>
     </EmbeddedResource>
