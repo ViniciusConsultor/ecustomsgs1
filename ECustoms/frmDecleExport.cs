@@ -345,7 +345,8 @@ namespace ECustoms
                 this.BackColor = col;
                 lblHeader.Text = "Khai báo xuất cảnh";
                 gbExportDeclaration.Text = "Thông tin tờ khai xuất khẩu";
-                btnAddExisting.Enabled = false;
+                btnAddExisting.Text = "Thêm từ xe trong bãi xuất";
+                btnAddExisting.Enabled = true;
                 bntConfirmImportCH.Visible = false;
                 btnConfirmImportKH.Visible = false;
                 btnComfirmExport.Visible = true;
@@ -745,7 +746,7 @@ namespace ECustoms
             else
             {
                 btnAddVehicle.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
-                //btnAddExisting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_MOI_PHUONG_TIEN);
+                btnAddExisting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
                 btnUpdateVehicle.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
                 btnDeleteVehicle.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
             }
@@ -825,15 +826,25 @@ namespace ECustoms
 
         private void btnAddExisting_Click(object sender, EventArgs e)
         {
-            var frmSelect = new frmVehicleSelect(_declerationID);
-            frmSelect.OnSelectedVehichle += new frmVehicleSelect.OnSelectedVehicleHandler(frmSelect_OnSelectedVehichle);
-            frmSelect.Show(this);
+            //neu la khai bao nhap canh, thi them tu phuong tien da xuat canh
+            if (_declerationType.Equals(Common.DeclerationType.Import))
+            {
+                var frmSelect = new frmVehicleSelect(_declerationID);
+                frmSelect.OnSelectedVehichle += new frmVehicleSelect.OnSelectedVehicleHandler(frmSelect_OnSelectedVehichle);
+                frmSelect.Show(this);
+            }
+            else //neu la khai bao xuat canh thi them tu phuont tien trong bai xuat
+            {
+                var frmSelectExport = new FrmAddSelectVehichleFromExportPark(_declerationID);
+                frmSelectExport.OnSelectedVehichle += new FrmAddSelectVehichleFromExportPark.OnSelectedVehicleHandler(frmSelect_OnSelectedVehichle);
+                frmSelectExport.Show(this);
+            }
         }
 
         void frmSelect_OnSelectedVehichle(object sender, EventArgs e)
         {
-
             var arg = (SelectedVehichleEventArgs)(e);
+
             var vehicleInfo = arg.Vehicle;
 
             foreach (var v in _vehicleInfosTemp)
@@ -843,6 +854,35 @@ namespace ECustoms
             }
             _vehicleInfosTemp.Add(vehicleInfo);
             this.BindVehicle(_vehicleInfosTemp);
+
+            //if (_declerationType.Equals(Common.DeclerationType.Import))
+            //{
+            //    var arg = (SelectedVehichleEventArgs)(e);
+
+            //    var vehicleInfo = arg.Vehicle;
+
+            //    foreach (var v in _vehicleInfosTemp)
+            //    {
+            //        if (v.VehicleID == vehicleInfo.VehicleID)
+            //            throw new Exception("Phương tiện này đã tồn tại trong tờ khai!");
+            //    }
+            //    _vehicleInfosTemp.Add(vehicleInfo);
+            //    this.BindVehicle(_vehicleInfosTemp);
+            //}
+            //else
+            //{
+            //    var arg = (ECustoms.SelectedVehichleEventArgs)(e);
+
+            //    var vehicleInfo = arg.Vehicle;
+
+            //    foreach (var v in _vehicleInfosTemp)
+            //    {
+            //        if (v.VehicleID == vehicleInfo.VehicleID)
+            //            throw new Exception("Phương tiện này đã tồn tại trong tờ khai!");
+            //    }
+            //    _vehicleInfosTemp.Add(vehicleInfo);
+            //    this.BindVehicle(_vehicleInfosTemp);
+            //}
 
         }
 

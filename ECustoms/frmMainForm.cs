@@ -92,6 +92,8 @@ namespace ECustoms
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_HOI_BAO_TNTX) ||
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
 
+            mnuExportParking.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PT_VAO_BAI_XUAT);
+
         }
 
         private void mnExport_Click(object sender, EventArgs e)
@@ -266,6 +268,13 @@ namespace ECustoms
         {
             var frmVehicleChineseSearch = new frmVehicleChineseSelect();
             frmVehicleChineseSearch.Show(this);
+        }
+
+        private void mnuExportParking_Click(object sender, EventArgs e)
+        {
+            var frmExportparking = new FrmAddVehicleExportParking(_userInfo);
+            frmExportparking.MdiParent = this;
+            frmExportparking.Show();
         }
     }
 }
