@@ -111,6 +111,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddSelectVehichleFromExportPark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddSelectVehichleFromExportPark.Designer.cs">
+      <DependentUpon>FrmAddSelectVehichleFromExportPark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddVehicleExportParking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddVehicleExportParking.Designer.cs">
+      <DependentUpon>FrmAddVehicleExportParking.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVehicleChineseSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +357,12 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FrmAddSelectVehichleFromExportPark.resx">
+      <DependentUpon>FrmAddSelectVehichleFromExportPark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddVehicleExportParking.resx">
+      <DependentUpon>FrmAddVehicleExportParking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVehicleChineseSelect.resx">
       <DependentUpon>frmVehicleChineseSelect.cs</DependentUpon>
     </EmbeddedResource>

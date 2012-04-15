@@ -91,6 +91,9 @@
         public const int PERMISSON_BO_XUNG_THONG_TIN_TNTX = 37;
         public const int PERMISSON_IN_BAO_CAO_TNTX = 38;
 
+        public const int PERMISSON_THEM_PT_VAO_BAI_XUAT = 39;
+
+
         //public const int PERMISSON_TRA_CUU_THONG_TIN_XKCCK = 35;
         //public const int PERMISSON_XAC_NHAN_HOI_BAO_XKCCK = 36;
         //public const int PERMISSON_BO_XUNG_THONG_TIN_XKCCK = 37;

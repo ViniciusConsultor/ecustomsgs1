@@ -255,6 +255,18 @@ namespace ECustoms.BOL
             return result;
         }
 
+
+        /// <summary>
+        ///  Get all Vehicle in Export Park
+        /// </summary>
+        /// <returns></returns>
+        public static List<tblVehicle> GetVehicleInExportPark()
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var result = db.tblVehicles.Where(g => g.IsExport == false && (g.IsGoodsImported == null || g.IsGoodsImported == false) && g.IsExportParking==true).OrderByDescending(g => g.ExportParkingDate).ToList();
+            return result;
+        }
+
         /// <summary>
         ///  Get Exist DeclarationVehicle Exported vehicle by vehicleID
         /// </summary>
@@ -263,6 +275,19 @@ namespace ECustoms.BOL
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             var result = db.viewDeclarationVehicles.Where(g => (g.VehicleID == vehicleID) && (g.DeclarationType == (int)DeclarationType.DeclarationTypeImport)).OrderByDescending(g => g.ExportDate).ToList();
+            db.Connection.Close();
+            return result;
+        }
+
+
+        /// <summary>
+        ///  Get Exist DeclarationExported that contain vehicleInExportPark
+        /// </summary>
+        /// <returns></returns>
+        public static List<viewDeclarationVehicle> GetExistDeclarationExportOfVehicleInExportPark(long vehicleID)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var result = db.viewDeclarationVehicles.Where(g => g.DeclarationID != 0 && (g.VehicleID == vehicleID) && (g.DeclarationType == (int)DeclarationType.DeclarationTypeExport)).OrderByDescending(g => g.ExportDate).ToList();
             db.Connection.Close();
             return result;
         }

@@ -45,6 +45,7 @@
             this.vehicleSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewVehiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addVehicleChinese = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehicleChineseSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnItemReport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManageInformation = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,7 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.vehicleChineseSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuExportParking = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -163,7 +164,8 @@
             this.vehicleSearch,
             this.addNewVehiceToolStripMenuItem,
             this.addVehicleChinese,
-            this.vehicleChineseSearch});
+            this.vehicleChineseSearch,
+            this.mnuExportParking});
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Name = "khaiBáoXuấtNhậpKhẩuToolStripMenuItem";
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Size = new System.Drawing.Size(192, 25);
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Text = "Khai báo xuất nhập khẩu";
@@ -215,6 +217,14 @@
             this.addVehicleChinese.Size = new System.Drawing.Size(313, 26);
             this.addVehicleChinese.Text = "Thêm phương tiện xe Trung Quốc";
             this.addVehicleChinese.Click += new System.EventHandler(this.addVehicleChinese_Click);
+            // 
+            // vehicleChineseSearch
+            // 
+            this.vehicleChineseSearch.Image = global::ECustoms.Properties.Resources.search41;
+            this.vehicleChineseSearch.Name = "vehicleChineseSearch";
+            this.vehicleChineseSearch.Size = new System.Drawing.Size(313, 26);
+            this.vehicleChineseSearch.Text = "Tìm kiếm xe Trung Quốc";
+            this.vehicleChineseSearch.Click += new System.EventHandler(this.vehicleChineseSearch_Click);
             // 
             // toolStripMenuReport
             // 
@@ -394,13 +404,13 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // vehicleChineseSearch
+            // mnuExportParking
             // 
-            this.vehicleChineseSearch.Image = global::ECustoms.Properties.Resources.search41;
-            this.vehicleChineseSearch.Name = "vehicleChineseSearch";
-            this.vehicleChineseSearch.Size = new System.Drawing.Size(313, 26);
-            this.vehicleChineseSearch.Text = "Tìm kiếm xe Trung Quốc";
-            this.vehicleChineseSearch.Click += new System.EventHandler(this.vehicleChineseSearch_Click);
+            this.mnuExportParking.Image = global::ECustoms.Properties.Resources.export;
+            this.mnuExportParking.Name = "mnuExportParking";
+            this.mnuExportParking.Size = new System.Drawing.Size(313, 26);
+            this.mnuExportParking.Text = "Thêm xe vào bãi xuất";
+            this.mnuExportParking.Click += new System.EventHandler(this.mnuExportParking_Click);
             // 
             // frmMainForm
             // 
@@ -465,5 +475,6 @@
         private System.Windows.Forms.ToolStripMenuItem hàngTạmNhậpTáiXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addVehicleChinese;
         private System.Windows.Forms.ToolStripMenuItem vehicleChineseSearch;
+        private System.Windows.Forms.ToolStripMenuItem mnuExportParking;
     }
 }
