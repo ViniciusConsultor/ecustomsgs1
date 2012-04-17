@@ -35,6 +35,7 @@ namespace ECustoms
       {
         cbPrintImportHasGood.Checked = printSetting.PrintImportHasGood;
         cbPrintParking.Checked = printSetting.PrintParking;
+        cbPrintExportPark.Checked = printSetting.PrintInputExportPark;
       }
       BindPrints();
     }
@@ -86,9 +87,11 @@ namespace ECustoms
       printSetting.ListPrinter = listPrinter;
       printSetting.PrintImportHasGood = cbPrintImportHasGood.Checked;
       printSetting.PrintParking = cbPrintParking.Checked;
+      printSetting.PrintInputExportPark = cbPrintExportPark.Checked;
+
       var filePath = Application.StartupPath + @"\conf\print_ticket.xml";
       ObjectToXml.ConvertObjectToXml(printSetting, filePath);
-      MessageBox.Show("Cấu hình thành công");
+      MessageBox.Show("Cấu hình thành công. Bạn cần đăng nhập lại để cấu hình này có tác dụng");
     }
   }
 }
