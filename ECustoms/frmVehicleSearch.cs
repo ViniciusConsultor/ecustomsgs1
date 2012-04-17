@@ -1425,31 +1425,7 @@ namespace ECustoms
         //day la tong so lan in ticket trong 1 ngay
         private long updateTotalTicketPrint()
         {
-          tblApplicationObject appObj = ApplicationObjectFactory.getByName(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
-          DateTime currentDate = CommonFactory.GetCurrentDate();
-          if (appObj == null)
-          {
-              appObj = new tblApplicationObject();
-              appObj.ApplicationObjectName = ApplicationObjectFactory.TOTAL_TICKET_IN_DATE;
-              appObj.ApplicationObjectValueDatetime = CommonFactory.GetCurrentDate();
-              appObj.ApplicationObjectValueLong = 1;
-              ApplicationObjectFactory.Insert(appObj);
-          }
-          else
-          {
-              if (currentDate.DayOfYear != ((DateTime)appObj.ApplicationObjectValueDatetime).DayOfYear)
-              {
-                  appObj.ApplicationObjectValueDatetime = currentDate;
-                  appObj.ApplicationObjectValueLong = 1;
-              }
-              else
-              {
-                  appObj.ApplicationObjectValueLong = appObj.ApplicationObjectValueLong + 1;
-              }
-              ApplicationObjectFactory.Update(appObj);
-          }
-          long applicationObjectValueLong =  appObj.ApplicationObjectValueLong.GetValueOrDefault();
-          return applicationObjectValueLong;
+            return ApplicationObjectFactory.updateTotalTicketPrint(ApplicationObjectFactory.TOTAL_TICKET_IN_DATE);
         }
 
         private void AutoPrintReport(string printerName, String reportFileURL)

@@ -36,6 +36,14 @@ namespace ECustoms
           this.WindowState = FormWindowState.Maximized;
         }
 
+        public FrmCrystalReport(VehicleExportParkTicket vehicleTicket, UserInfo userInfo)
+        {
+            InitializeComponent();
+            _userInfo = userInfo;
+            crystalReportViewer1.ReportSource = vehicleTicket;
+            this.WindowState = FormWindowState.Maximized;
+        }
+
         private  void ViewReport()
         {
             try

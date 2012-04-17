@@ -10,6 +10,8 @@ using ECustoms.BOL;
 using ECustoms.DAL;
 using log4net;
 using ECustoms.Utilities;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace ECustoms
 {
@@ -18,6 +20,7 @@ namespace ECustoms
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.FrmAddVehicleExportParking");
         private List<ViewAllVehicleHasGood> _vehicleInfosTemp = new List<ViewAllVehicleHasGood>();
         private UserInfo _userInfo;
+        private PrintTicketSetting _printSetting;
 
         public List<ViewAllVehicleHasGood> VehicleInfosTemp
         {
@@ -40,9 +43,17 @@ namespace ECustoms
 
         public FrmAddVehicleExportParking(UserInfo userInfor)
         {
+
             InitializeComponent();
+            LoadPrintSetting();
             grdVehicle.AutoGenerateColumns = false;
             _userInfo = userInfor;
+        }
+
+        public void LoadPrintSetting()
+        {
+            var filePath = System.Windows.Forms.Application.StartupPath + @"\conf\print_ticket.xml";
+            _printSetting = ObjectToXml.GetTicketSetting(filePath);
         }
 
         private bool Validate()
@@ -152,6 +163,11 @@ namespace ECustoms
                     // Bind to gridview.
                     VehicleInfosTemp.Add(vehicleInfo);
                     BindVehicle(VehicleInfosTemp);
+                    //print ticket
+                    if (_printSetting != null && _printSetting.PrintInputExportPark == true)
+                    {
+                        PrintTicket(vehicleInfo);
+                    }
 
                     ResetForm(false);
                 }
@@ -316,6 +332,78 @@ namespace ECustoms
                 string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
                 grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
             }
+        }
+
+        private void PrintTicket(ViewAllVehicleHasGood vehicleInfo)
+        {
+            var vehicleTicket = new ECustoms.VehicleExportParkTicket();
+
+            var txtPrintUser = (TextObject)vehicleTicket.Section3.ReportObjects["txtPrintUser"];
+            var txtPrintType = (TextObject)vehicleTicket.Section3.ReportObjects["txtPrintType"];
+
+            var txtTotalPrintVehicleTicketOfDay = (TextObject)vehicleTicket.Section3.ReportObjects["txtTotalPrintVehicleTicketOfDay"];
+            var txtPrintDate = (TextObject)vehicleTicket.Section3.ReportObjects["txtPrintDate"];
+            var txtParkingDate = (TextObject)vehicleTicket.Section3.ReportObjects["txtParkingDate"];
+            var txtVehicleNumber = (TextObject)vehicleTicket.Section3.ReportObjects["txtVehicleNumber"];
+            var txtBarcode = (TextObject)vehicleTicket.Section3.ReportObjects["txtBarcode"];
+            
+            txtVehicleNumber.Text = vehicleInfo.PlateNumber;
+
+            if (vehicleInfo.ExportParkingDate != null)
+            {
+                txtParkingDate.Text = ((DateTime)vehicleInfo.ExportParkingDate).ToString("dd/MM/yyyy HH:mm");
+            }
+
+            txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
+
+            txtPrintUser.Text = _userInfo.Name;
+            txtPrintType.Text = "Nhập xe vào bãi xuất";
+            DateTime currentDate = CommonFactory.GetCurrentDate();
+            txtPrintDate.Text = currentDate.ToString("dd/MM/yyyy HH:mm");
+
+            //update tong so lan print ticket trong 1 ngay
+            long orderNumber = ApplicationObjectFactory.updateTotalTicketPrint(ApplicationObjectFactory.TOTAL_EXPORT_PARK_TICKET_IN_DATE);
+
+            txtTotalPrintVehicleTicketOfDay.Text = orderNumber.ToString();
+
+            //preview ticket
+            //var report = new FrmCrystalReport(vehicleTicket, _userInfo);
+            //report.MaximizeBox = true;
+            //report.Show(this);
+
+            //Print ticket directly
+            vehicleTicket.ExportToDisk(ExportFormatType.CrystalReport, "VehicleTicket.rpt");
+
+            foreach (String printerName in _printSetting.ListPrinter)
+            {
+                try
+                {
+                    AutoPrintReport(printerName, "VehicleTicket.rpt");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Không kết nối được với máy in: " + printerName);
+                }
+            }
+
+        
+        }
+
+        private void AutoPrintReport(string printerName, String reportFileURL)
+        {
+            //PageMargins margins;
+            ReportDocument Report = new ReportDocument();
+
+            //VehicleInputTicket ticket = new VehicleInputTicket();
+            //ticket.ExportToDisk(ExportFormatType.CrystalReport, "VehicleTicket.rpt");
+            Report.Load(reportFileURL);
+
+            // Select the printer.
+            Report.PrintOptions.PrinterName = printerName;
+
+            // Print the report. Set the startPageN and endPageN
+            // parameters to 0 to print all pages.
+            Report.PrintToPrinter(1, false, 0, 0);
         }
 
     }
