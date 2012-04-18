@@ -91,8 +91,12 @@ namespace ECustoms
             hàngTạmNhậpTáiXuấtToolStripMenuItem.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_TNTX) ||
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_HOI_BAO_TNTX) ||
                     _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_BO_XUNG_THONG_TIN_TNTX);
-
+            
+            //nhập phương tiện vào bãi xuất
             mnuExportParking.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PT_VAO_BAI_XUAT);
+
+            //nhập phương tiện xe Trung Quốc
+            addVehicleChinese.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PT_XE_TRUNG_QUOC);
 
         }
 

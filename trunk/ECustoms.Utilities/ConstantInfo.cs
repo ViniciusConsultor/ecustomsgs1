@@ -93,6 +93,8 @@
 
         public const int PERMISSON_THEM_PT_VAO_BAI_XUAT = 39;
 
+        public const int PERMISSON_THEM_PT_XE_TRUNG_QUOC = 40;
+
 
         //public const int PERMISSON_TRA_CUU_THONG_TIN_XKCCK = 35;
         //public const int PERMISSON_XAC_NHAN_HOI_BAO_XKCCK = 36;
