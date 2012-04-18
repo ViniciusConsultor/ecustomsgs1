@@ -119,6 +119,7 @@ namespace ECustoms
         {
             txtDriverName.Text = "";
             txtPlateNumber.Text = "";
+            txtVehicleChinese.Text = "";
             txtNumberOfContainer.Text = "";
             dtpExportDate.Value = CommonFactory.GetCurrentDate();
             mtxtExportHour.Text = "";
@@ -293,6 +294,7 @@ namespace ECustoms
             {
                 txtDriverName.Text = vehicleInfo.DriverName;
                 txtPlateNumber.Text = vehicleInfo.PlateNumber;
+                txtVehicleChinese.Text = vehicleInfo.PlateNumberPartner;
                 txtNumberOfContainer.Text = vehicleInfo.NumberOfContainer;
 
                 if (vehicleInfo.IsImport != null && vehicleInfo.IsImport.Value)
@@ -503,6 +505,7 @@ namespace ECustoms
                 var vehicleInfo = new ViewAllVehicleHasGood();
                 vehicleInfo.DriverName = txtDriverName.Text.Trim();
                 vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+                vehicleInfo.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
                 if (txtNumberOfContainer.Text != "")
                 {
                     vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
@@ -585,6 +588,7 @@ namespace ECustoms
                     }
                     result.DriverName = txtDriverName.Text.Trim();
                     result.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+                    result.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
                     result.NumberOfContainer = txtNumberOfContainer.Text;
                     result.Status = txtStatus.Text;
                     result.Note = txtNote.Text;
@@ -614,6 +618,7 @@ namespace ECustoms
                         {
                             vehicleInfo.DriverName = txtDriverName.Text.Trim();
                             vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+                            vehicleInfo.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
                             vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
                             vehicleInfo.ExportDate = dtpExportDate.Value;
                             // Add hour and minuites 
@@ -650,6 +655,7 @@ namespace ECustoms
                     var vehicle = VehicleFactory.GetByID(_vehicleID);
                     vehicle.DriverName = txtDriverName.Text.Trim();
                     vehicle.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+                    vehicle.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
                     if (!string.IsNullOrEmpty(txtNumberOfContainer.Text.Trim()))
                         vehicle.NumberOfContainer = txtNumberOfContainer.Text.Trim();
 
@@ -752,6 +758,7 @@ namespace ECustoms
         {
             txtDriverName.Text = "";
             txtPlateNumber.Text = "";
+            txtVehicleChinese.Text = "";
             txtNumberOfContainer.Text = "";
             dtpImportDate.Visible = false;
             dtpExportDate.Visible = false;
@@ -782,6 +789,7 @@ namespace ECustoms
                     var vehicleInfo = new ViewAllVehicleHasGood();
                     vehicleInfo.DriverName = txtDriverName.Text.Trim();
                     vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+                    vehicleInfo.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
                     if (txtNumberOfContainer.Text != "")
                     {
                         vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
@@ -871,6 +879,7 @@ namespace ECustoms
                 var result = _newAddingVehicles.Where(v => v.PlateNumber.ToString().Equals(plateNumber, StringComparison.InvariantCultureIgnoreCase)).ToList().FirstOrDefault();
                 txtDriverName.Text = result.DriverName;
                 txtPlateNumber.Text = result.PlateNumber;
+                txtVehicleChinese.Text = result.PlateNumberPartner;
                 txtNumberOfContainer.Text = result.NumberOfContainer.ToString();
                 txtStatus.Text = result.Status;
                 txtNote.Text = result.Note;

@@ -601,6 +601,7 @@ namespace ECustoms
                         var v = new tblVehicle();
                         v.VehicleID = vehicle.VehicleID;
                         v.PlateNumber = vehicle.PlateNumber;
+                        v.PlateNumberPartner = vehicle.PlateNumberPartner;
                         v.NumberOfContainer = vehicle.NumberOfContainer;
                         v.DriverName = vehicle.DriverName;
                         v.ImportDate = vehicle.ImportDate;
