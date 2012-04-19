@@ -95,8 +95,8 @@ namespace ECustoms
             try
             {
                 grdVehicle.AutoGenerateColumns = false;
-                List<ViewAllVehicleHasGood> result = VehicleFactory.SearchVehicle(cbIsCompleted.Checked, txtPlateNumber.Text.Trim().ToUpper(), cbIsExport.Checked, cbIsImport.Checked, cbIsNotImport.Checked, dtpImportFrom.Value, dtpImportTo.Value,
-                                                        dtpExportFrom.Value, dtpExportTo.Value);
+                List<ViewAllVehicleHasGood> result = VehicleFactory.SearchVehicle(cbIsCompleted.Checked, txtPlateNumber.Text.Trim().ToUpper(), txtPlateNumberChinese.Text.Trim().ToUpper(), cbIsExport.Checked, cbIsImport.Checked, cbIsNotImport.Checked, dtpImportFrom.Value, dtpImportTo.Value,
+                                                        dtpExportFrom.Value, dtpExportTo.Value, cbIsChineseVehicle.Checked);
                 // Limit xe khong cho hang
                 if (checkBoxNoItem.Checked)
                 {
@@ -502,6 +502,17 @@ namespace ECustoms
             }
         }
 
+        private void txtPlateNumberChinese_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) // Enter key
+            {
+                BindData();
+                if (grdVehicle.Rows.Count > 0) // Set focus
+                {
+                    btnXacNhanXuatCanh.Focus();
+                }
+            }
+        }
         private void btnXacNhanXuatCanh_Click(object sender, EventArgs e)
         {
             try
@@ -1444,5 +1455,16 @@ namespace ECustoms
             // parameters to 0 to print all pages.
             Report.PrintToPrinter(1, false, 0, 0);
         }
+
+        private void cbIsChineseVehicle_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPlateNumberChinese.Visible = lblPlateNumberChinese.Visible = grdVehicle.Columns["PlateNumberPartner"].Visible = !cbIsChineseVehicle.Checked;
+            BindData();
+            if (grdVehicle.Rows.Count > 0) // Set focus
+            {
+                btnXacNhanXuatCanh.Focus();
+            }
+        }
+
     }
 }

@@ -65,7 +65,7 @@
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtVehicleChinese = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblVehicleChinese = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
             this.SuspendLayout();
@@ -443,15 +443,15 @@
             this.txtVehicleChinese.Size = new System.Drawing.Size(98, 20);
             this.txtVehicleChinese.TabIndex = 22;
             // 
-            // label2
+            // lblVehicleChinese
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(280, 20);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Biển kiểm soát xe Trung Quốc sang tải";
+            this.lblVehicleChinese.AutoSize = true;
+            this.lblVehicleChinese.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehicleChinese.Location = new System.Drawing.Point(12, 33);
+            this.lblVehicleChinese.Name = "lblVehicleChinese";
+            this.lblVehicleChinese.Size = new System.Drawing.Size(280, 20);
+            this.lblVehicleChinese.TabIndex = 21;
+            this.lblVehicleChinese.Text = "Biển kiểm soát xe Trung Quốc sang tải";
             // 
             // frmVehicle
             // 
@@ -459,7 +459,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 594);
             this.Controls.Add(this.txtVehicleChinese);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblVehicleChinese);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDelete);
@@ -536,6 +536,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.TextBox txtVehicleChinese;
-        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lblVehicleChinese;
     }
 }

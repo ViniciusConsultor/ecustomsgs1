@@ -177,7 +177,8 @@
       [ViewAllVehicle].[ConfirmLocalImportByName] AS [ConfirmLocalImportByName], 
       [ViewAllVehicle].[ModifiedDate] AS [ModifiedDate], 
       [ViewAllVehicle].[Parking] AS [Parking], 
-      [ViewAllVehicle].[ParkingDate] AS [ParkingDate]
+      [ViewAllVehicle].[ParkingDate] AS [ParkingDate], 
+      [ViewAllVehicle].[PlateNumberPartner] AS [PlateNumberPartner]
       FROM [dbo].[ViewAllVehicle] AS [ViewAllVehicle]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewAllVehicleHasGood" EntityType="dbEcustomModel.Store.ViewAllVehicleHasGood" store:Type="Views" store:Schema="dbo" store:Name="ViewAllVehicleHasGood">
@@ -685,6 +686,7 @@
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Parking" Type="nvarchar" MaxLength="250" />
           <Property Name="ParkingDate" Type="datetime" />
+          <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -1288,6 +1290,7 @@
           <Property Type="DateTime" Name="ModifiedDate" />
           <Property Type="String" Name="Parking" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="ParkingDate" />
+          <Property Type="String" Name="PlateNumberPartner" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="viewDeclarationVehicle">
           <Key>
@@ -1780,6 +1783,7 @@
           <EntitySetMapping Name="ViewAllVehicles">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewAllVehicle">
               <MappingFragment StoreEntitySet="ViewAllVehicle">
+                <ScalarProperty Name="PlateNumberPartner" ColumnName="PlateNumberPartner" />
                 <ScalarProperty Name="ParkingDate" ColumnName="ParkingDate" />
                 <ScalarProperty Name="Parking" ColumnName="Parking" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
