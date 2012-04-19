@@ -47,6 +47,7 @@ namespace ECustoms.BOL
         /// Search Vehicle
         /// </summary>
         /// <param name="plateNumber"></param>
+        /// <param name="plateNumberPartner"></param>
         /// <param name="isExport">IsExport</param>
         /// <param name="isImport">IsImport</param>
         /// <param name="isNotImport">IsNotImport</param>
@@ -56,7 +57,7 @@ namespace ECustoms.BOL
         /// <param name="exportTo">Export to date</param>
         /// <param name="isCompleted"></param>
         /// <returns>List vehicleInfo object</returns>
-        public static List<ViewAllVehicleHasGood> SearchVehicle(bool isCompleted, string plateNumber, bool isExport, bool isImport, bool isNotImport, DateTime importFrom, DateTime importTo, DateTime exportFrom, DateTime exportTo)
+        public static List<ViewAllVehicleHasGood> SearchVehicle(bool isCompleted, string plateNumber, string plateNumberPartner, bool isExport, bool isImport, bool isNotImport, DateTime importFrom, DateTime importTo, DateTime exportFrom, DateTime exportTo, bool isChineseVehicle)
         {
             importFrom = new DateTime(importFrom.Year, importFrom.Month, importFrom.Day, 0, 0, 0);
             importTo = new DateTime(importTo.Year, importTo.Month, importTo.Day, 23, 59, 59);
@@ -68,6 +69,16 @@ namespace ECustoms.BOL
 
             IQueryable<ViewAllVehicleHasGood> _viewAllVehicle = db.ViewAllVehicleHasGoods;//.Where(g => g.PlateNumber.Contains(plateNumber));
             _viewAllVehicle = !string.IsNullOrEmpty(plateNumber) ? _viewAllVehicle.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)) : _viewAllVehicle;
+            // Check is Chinese vehicle
+            if (isChineseVehicle)
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.IsChineseVehicle == true);
+            }
+            else
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.IsChineseVehicle == null || g.IsChineseVehicle == false);
+                _viewAllVehicle = !string.IsNullOrEmpty(plateNumberPartner) ? _viewAllVehicle.Where(g => g.PlateNumberPartner != null && g.PlateNumberPartner.Contains(plateNumberPartner)) : _viewAllVehicle;
+            }
 
             // Da hoan thanh: la xe co IsCompleted==true (nhap canh co hang va da vao noi dia)
             if (isCompleted)
@@ -134,6 +145,7 @@ namespace ECustoms.BOL
                     //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false)).ToList();
                 }
             }
+            
             List<ViewAllVehicleHasGood> rsl = (from a in _viewAllVehicle
                                                orderby a.ModifiedDate descending
                                                select a).ToList();
@@ -251,7 +263,7 @@ namespace ECustoms.BOL
         public static List<tblVehicle> GetExported()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var result = db.tblVehicles.Where(g => g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false)).OrderByDescending(g => g.ExportDate).ToList();
+            var result = db.tblVehicles.Where(g => g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false) && (g.IsChineseVehicle == null || g.IsChineseVehicle == false)).OrderByDescending(g => g.ExportDate).ToList();
             return result;
         }
 
@@ -263,7 +275,7 @@ namespace ECustoms.BOL
         public static List<tblVehicle> GetVehicleInExportPark()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var result = db.tblVehicles.Where(g => g.IsExport == false && (g.IsGoodsImported == null || g.IsGoodsImported == false) && g.IsExportParking==true).OrderByDescending(g => g.ExportParkingDate).ToList();
+            var result = db.tblVehicles.Where(g => g.IsExport == false && (g.IsGoodsImported == null || g.IsGoodsImported == false) && g.IsExportParking == true && (g.IsChineseVehicle == null || g.IsChineseVehicle == false)).OrderByDescending(g => g.ExportParkingDate).ToList();
             return result;
         }
 
@@ -377,6 +389,14 @@ namespace ECustoms.BOL
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             var result = db.tblVehicles.Where(g => g.IsChineseVehicle == true).OrderByDescending(g => g.ModifiedDate).ToList();
             return result;
+        }
+
+        public static List<string> GetAllPlateNumberChinese()
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var lstResult = db.tblVehicles.Where(g => g.IsChineseVehicle == true).Select(g => g.PlateNumber).Distinct().ToList();
+            db.Connection.Close();
+            return lstResult;
         }
     }
 }

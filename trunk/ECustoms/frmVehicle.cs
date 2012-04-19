@@ -159,6 +159,14 @@ namespace ECustoms
         {
             try
             {
+                //Autocomplete registerplace
+                var auto = new AutoCompleteStringCollection();
+                var lstAuto = VehicleFactory.GetAllPlateNumberChinese();
+                auto.AddRange(lstAuto.ToArray());
+                txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtVehicleChinese.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtVehicleChinese.AutoCompleteCustomSource = auto;
+
                 if (_type.Equals(Common.DeclerationType.Export))
                 {
                     btnConfirmExport.Enabled = true;
@@ -294,7 +302,15 @@ namespace ECustoms
             {
                 txtDriverName.Text = vehicleInfo.DriverName;
                 txtPlateNumber.Text = vehicleInfo.PlateNumber;
-                txtVehicleChinese.Text = vehicleInfo.PlateNumberPartner;
+                if (vehicleInfo.IsChineseVehicle == null || vehicleInfo.IsChineseVehicle == false)
+                {
+                    lblVehicleChinese.Visible = txtVehicleChinese.Visible = true;
+                    txtVehicleChinese.Text = vehicleInfo.PlateNumberPartner;    
+                }
+                else
+                {
+                    lblVehicleChinese.Visible = txtVehicleChinese.Visible = false;
+                }
                 txtNumberOfContainer.Text = vehicleInfo.NumberOfContainer;
 
                 if (vehicleInfo.IsImport != null && vehicleInfo.IsImport.Value)
