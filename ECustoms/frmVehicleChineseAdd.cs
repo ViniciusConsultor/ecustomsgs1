@@ -136,7 +136,8 @@ namespace ECustoms
                     else
                     {
                         vehicleInfo.HasGoodsImported = false;
-                        vehicleInfo.ImportStatus = "Nhập cảnh không có hàng"; 
+                        vehicleInfo.ImportStatus = "Nhập cảnh không có hàng";
+                        vehicleInfo.IsExportParking = true;
                     }
                 }
 

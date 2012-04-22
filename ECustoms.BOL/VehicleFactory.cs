@@ -263,7 +263,7 @@ namespace ECustoms.BOL
         public static List<tblVehicle> GetExported()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var result = db.tblVehicles.Where(g => g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false) && (g.IsChineseVehicle == null || g.IsChineseVehicle == false)).OrderByDescending(g => g.ExportDate).ToList();
+            var result = db.tblVehicles.Where(g => (g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false) && (g.IsChineseVehicle == null || g.IsChineseVehicle == false)) || (g.IsChineseVehicle == true && g.IsExport == false && g.IsImport == true && g.HasGoodsImported == true)).OrderByDescending(g => g.ExportDate).ToList();
             return result;
         }
 
@@ -275,7 +275,7 @@ namespace ECustoms.BOL
         public static List<tblVehicle> GetVehicleInExportPark()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var result = db.tblVehicles.Where(g => g.IsExport == false && (g.IsGoodsImported == null || g.IsGoodsImported == false) && g.IsExportParking == true && (g.IsChineseVehicle == null || g.IsChineseVehicle == false)).OrderByDescending(g => g.ExportParkingDate).ToList();
+            var result = db.tblVehicles.Where(g => g.IsExport == false && (g.IsGoodsImported == null || g.IsGoodsImported == false) && g.IsExportParking == true).OrderByDescending(g => g.ExportParkingDate).ToList();
             return result;
         }
 
