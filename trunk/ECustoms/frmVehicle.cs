@@ -159,19 +159,21 @@ namespace ECustoms
         {
             try
             {
-                //Autocomplete registerplace
-                var auto = new AutoCompleteStringCollection();
-                var lstAuto = VehicleFactory.GetAllPlateNumberChinese();
-                auto.AddRange(lstAuto.ToArray());
-                txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtVehicleChinese.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txtVehicleChinese.AutoCompleteCustomSource = auto;
+                
 
                 if (_type.Equals(Common.DeclerationType.Export))
                 {
                     btnConfirmExport.Enabled = true;
                     btnConfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
                     btnConfirmImport.Enabled = false;
+
+                    //Autocomplete registerplace
+                    var auto = new AutoCompleteStringCollection();
+                    var lstAuto = VehicleFactory.GetAllPlateNumberChineseNoGoods();
+                    auto.AddRange(lstAuto.ToArray());
+                    txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txtVehicleChinese.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    txtVehicleChinese.AutoCompleteCustomSource = auto;
                 }
                 else
                 {
@@ -302,15 +304,21 @@ namespace ECustoms
             {
                 txtDriverName.Text = vehicleInfo.DriverName;
                 txtPlateNumber.Text = vehicleInfo.PlateNumber;
-                if (vehicleInfo.IsChineseVehicle == null || vehicleInfo.IsChineseVehicle == false)
+                //if (vehicleInfo.IsChineseVehicle == null || vehicleInfo.IsChineseVehicle == false)
+                //{
+                //    lblVehicleChinese.Visible = txtVehicleChinese.Visible = true;
+                //    txtVehicleChinese.Text = vehicleInfo.PlateNumberPartner;    
+                //}
+                //else
+                //{
+                //    lblVehicleChinese.Visible = txtVehicleChinese.Visible = false;
+                //}
+                txtVehicleChinese.Text = vehicleInfo.PlateNumberPartner;
+                if (vehicleInfo.IsChineseVehicle == true)
                 {
-                    lblVehicleChinese.Visible = txtVehicleChinese.Visible = true;
-                    txtVehicleChinese.Text = vehicleInfo.PlateNumberPartner;    
+                    txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.None;
                 }
-                else
-                {
-                    lblVehicleChinese.Visible = txtVehicleChinese.Visible = false;
-                }
+
                 txtNumberOfContainer.Text = vehicleInfo.NumberOfContainer;
 
                 if (vehicleInfo.IsImport != null && vehicleInfo.IsImport.Value)

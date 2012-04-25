@@ -437,21 +437,21 @@
             // 
             // txtVehicleChinese
             // 
-            this.txtVehicleChinese.Location = new System.Drawing.Point(307, 35);
+            this.txtVehicleChinese.Location = new System.Drawing.Point(307, 38);
             this.txtVehicleChinese.MaxLength = 12;
             this.txtVehicleChinese.Name = "txtVehicleChinese";
-            this.txtVehicleChinese.Size = new System.Drawing.Size(98, 20);
+            this.txtVehicleChinese.Size = new System.Drawing.Size(173, 20);
             this.txtVehicleChinese.TabIndex = 22;
             // 
             // lblVehicleChinese
             // 
             this.lblVehicleChinese.AutoSize = true;
             this.lblVehicleChinese.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleChinese.Location = new System.Drawing.Point(12, 33);
+            this.lblVehicleChinese.Location = new System.Drawing.Point(12, 36);
             this.lblVehicleChinese.Name = "lblVehicleChinese";
-            this.lblVehicleChinese.Size = new System.Drawing.Size(280, 20);
+            this.lblVehicleChinese.Size = new System.Drawing.Size(193, 20);
             this.lblVehicleChinese.TabIndex = 21;
-            this.lblVehicleChinese.Text = "Biển kiểm soát xe Trung Quốc sang tải";
+            this.lblVehicleChinese.Text = "Biển kiểm soát xe sang tải";
             // 
             // frmVehicle
             // 
