@@ -280,5 +280,13 @@ namespace ECustoms
             frmExportparking.MdiParent = this;
             frmExportparking.Show();
         }
+
+        private void mnuVehidleType_Click(object sender, EventArgs e)
+        {
+            var frmListVehicleType = new frmListVehicleType(_userInfo);
+            frmListVehicleType.MdiParent = this;
+            frmListVehicleType.Show();
+
+        }
     }
 }
