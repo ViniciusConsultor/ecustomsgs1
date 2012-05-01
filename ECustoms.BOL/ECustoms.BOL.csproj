@@ -83,6 +83,7 @@
     <Compile Include="UserInGroupFactory.cs" />
     <Compile Include="VehicleCheckFactory.cs" />
     <Compile Include="VehicleFactory.cs" />
+    <Compile Include="VehicleTypeFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ECustoms.DAL\ECustoms.DAL.csproj">
