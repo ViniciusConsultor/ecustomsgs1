@@ -13,7 +13,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("dbEcustomModel", "FK_tblRoleInGroup_tlbRole", "tlbRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ECustoms.DAL.tlbRole), "tblRoleInGroup", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ECustoms.DAL.tblRoleInGroup))]
 
 // Original file name:
-// Generation date: 5/1/2012 10:10:48 PM
+// Generation date: 5/1/2012 10:58:40 PM
 namespace ECustoms.DAL
 {
     
@@ -11138,59 +11138,32 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnCapacityChanged();
         /// <summary>
-        /// There are no comments for property HourPrice in the schema.
+        /// There are no comments for property FeePrice in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<long> HourPrice
+        public global::System.Nullable<long> FeePrice
         {
             get
             {
-                return this._HourPrice;
+                return this._FeePrice;
             }
             set
             {
-                this.OnHourPriceChanging(value);
-                this.ReportPropertyChanging("HourPrice");
-                this._HourPrice = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("HourPrice");
-                this.OnHourPriceChanged();
+                this.OnFeePriceChanging(value);
+                this.ReportPropertyChanging("FeePrice");
+                this._FeePrice = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("FeePrice");
+                this.OnFeePriceChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<long> _HourPrice;
+        private global::System.Nullable<long> _FeePrice;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnHourPriceChanging(global::System.Nullable<long> value);
+        partial void OnFeePriceChanging(global::System.Nullable<long> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnHourPriceChanged();
-        /// <summary>
-        /// There are no comments for property DayPrice in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<long> DayPrice
-        {
-            get
-            {
-                return this._DayPrice;
-            }
-            set
-            {
-                this.OnDayPriceChanging(value);
-                this.ReportPropertyChanging("DayPrice");
-                this._DayPrice = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("DayPrice");
-                this.OnDayPriceChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<long> _DayPrice;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnDayPriceChanging(global::System.Nullable<long> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnDayPriceChanged();
+        partial void OnFeePriceChanged();
         /// <summary>
         /// There are no comments for property Description in the schema.
         /// </summary>

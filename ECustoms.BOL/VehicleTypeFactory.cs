@@ -44,8 +44,7 @@ namespace ECustoms.BOL
             _vehicletype.Name = vehicletype.Name;
             _vehicletype.Capacity = vehicletype.Capacity;
             _vehicletype.Description = vehicletype.Description;
-            _vehicletype.DayPrice = vehicletype.DayPrice;
-            _vehicletype.HourPrice = vehicletype.HourPrice;
+            _vehicletype.FeePrice = vehicletype.FeePrice;
             vehicletype.UpdatedDate = CommonFactory.GetCurrentDate();
             try
             {
