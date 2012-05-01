@@ -55,6 +55,8 @@
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFeeManagement = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuVehidleType = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +81,7 @@
             this.toolStripMenuReport,
             this.menuManageInformation,
             this.quảnLýHàngNTXCKToolStripMenuItem,
+            this.mnuFeeManagement,
             this.trợGiúpToolStripMenuItem,
             this.inTicketToolStripMenuItem});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
@@ -296,6 +299,21 @@
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Text = "Hàng tạm nhập tái xuất";
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Click += new System.EventHandler(this.hàngTạmNhậpTáiXuấtToolStripMenuItem_Click);
             // 
+            // mnuFeeManagement
+            // 
+            this.mnuFeeManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuVehidleType});
+            this.mnuFeeManagement.Name = "mnuFeeManagement";
+            this.mnuFeeManagement.Size = new System.Drawing.Size(133, 25);
+            this.mnuFeeManagement.Text = "Quản lý tính phí";
+            // 
+            // mnuVehidleType
+            // 
+            this.mnuVehidleType.Name = "mnuVehidleType";
+            this.mnuVehidleType.Size = new System.Drawing.Size(278, 26);
+            this.mnuVehidleType.Text = "Loại phương tiện và biểu phí";
+            this.mnuVehidleType.Click += new System.EventHandler(this.mnuVehidleType_Click);
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -465,5 +483,7 @@
         private System.Windows.Forms.ToolStripMenuItem hàngTạmNhậpTáiXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addVehicleChinese;
         private System.Windows.Forms.ToolStripMenuItem mnuExportParking;
+        private System.Windows.Forms.ToolStripMenuItem mnuFeeManagement;
+        private System.Windows.Forms.ToolStripMenuItem mnuVehidleType;
     }
 }
