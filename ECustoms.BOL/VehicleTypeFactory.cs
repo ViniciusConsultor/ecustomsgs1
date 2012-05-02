@@ -9,7 +9,7 @@ using System.Data;
 
 namespace ECustoms.BOL
 {
-    class VehicleTypeFactory
+    public class VehicleTypeFactory
     {
         public static int Insert(tblVehicleType vehicletype)
         {

@@ -123,6 +123,12 @@
     <Compile Include="FrmAddVehicleExportParking.Designer.cs">
       <DependentUpon>FrmAddVehicleExportParking.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddVehicleType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddVehicleType.Designer.cs">
+      <DependentUpon>frmAddVehicleType.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListVehicleType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddVehicleExportParking.resx">
       <DependentUpon>FrmAddVehicleExportParking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddVehicleType.resx">
+      <DependentUpon>frmAddVehicleType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListVehicleType.resx">
       <DependentUpon>frmListVehicleType.cs</DependentUpon>
