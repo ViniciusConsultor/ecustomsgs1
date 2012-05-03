@@ -199,7 +199,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnUpdate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmListVehicleType";
             this.Load += new System.EventHandler(this.frmListVehicleType_Load);
             this.grbUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicleType)).EndInit();
