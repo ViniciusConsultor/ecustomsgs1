@@ -492,6 +492,17 @@
           <Property Name="ExportParkingDate" Type="datetime" />
           <Property Name="ConfirmExportParkingBy" Type="int" />
           <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
+          <Property Name="vehicleTypeId" Type="int" />
+          <Property Name="quantityExport" Type="bigint" />
+          <Property Name="quantityImport" Type="bigint" />
+          <Property Name="feeExportStatus" Type="bit" />
+          <Property Name="feeImportStatus" Type="bit" />
+          <Property Name="feeExportAmount" Type="bigint" />
+          <Property Name="feeImportAmount" Type="bigint" />
+          <Property Name="feeExportDate" Type="datetime" />
+          <Property Name="feeImportDate" Type="datetime" />
+          <Property Name="confirmFeeExportBy" Type="int" />
+          <Property Name="confirmFeeImportBy" Type="int" />
         </EntityType>
         <EntityType Name="tblVehicleCheck">
           <Key>
@@ -964,8 +975,8 @@
             <End Role="tblRoleInGroup" EntitySet="tblRoleInGroups" />
           </AssociationSet>
           <EntitySet Name="ViewAllVehicleHasGoods" EntityType="dbEcustomModel.ViewAllVehicleHasGood" />
-          <EntitySet Name="tblVehicles" EntityType="dbEcustomModel.tblVehicle" />
           <EntitySet Name="tblVehicleTypes" EntityType="dbEcustomModel.tblVehicleType" />
+          <EntitySet Name="tblVehicles" EntityType="dbEcustomModel.tblVehicle" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -1442,6 +1453,21 @@
           <Property Type="String" Name="PlateNumberPartner" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="IsChineseVehicle" />
         </EntityType>
+        <EntityType Name="tblVehicleType">
+          <Key>
+            <PropertyRef Name="VehicleTypeID" />
+          </Key>
+          <Property Type="Int32" Name="VehicleTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Capacity" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="FeePrice" />
+          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedUser" />
+          <Property Type="DateTime" Name="UpdatedDate" />
+          <Property Type="Int32" Name="UpdatedUser" />
+        </EntityType>
         <EntityType Name="tblVehicle">
           <Key>
             <PropertyRef Name="VehicleID" />
@@ -1477,21 +1503,17 @@
           <Property Type="DateTime" Name="ExportParkingDate" />
           <Property Type="Int32" Name="ConfirmExportParkingBy" />
           <Property Type="String" Name="PlateNumberPartner" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tblVehicleType">
-          <Key>
-            <PropertyRef Name="VehicleTypeID" />
-          </Key>
-          <Property Type="Int32" Name="VehicleTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Name" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Capacity" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="FeePrice" />
-          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="CreatedDate" />
-          <Property Type="Int32" Name="CreatedUser" />
-          <Property Type="DateTime" Name="UpdatedDate" />
-          <Property Type="Int32" Name="UpdatedUser" />
+          <Property Type="Int32" Name="vehicleTypeId" />
+          <Property Type="Int64" Name="quantityExport" />
+          <Property Type="Int64" Name="quantityImport" />
+          <Property Type="Boolean" Name="feeExportStatus" />
+          <Property Type="Boolean" Name="feeImportStatus" />
+          <Property Type="Int64" Name="feeExportAmount" />
+          <Property Type="Int64" Name="feeImportAmount" />
+          <Property Type="DateTime" Name="feeExportDate" />
+          <Property Type="DateTime" Name="feeImportDate" />
+          <Property Type="Int32" Name="confirmFeeExportBy" />
+          <Property Type="Int32" Name="confirmFeeImportBy" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1980,9 +2002,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblVehicleTypes">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblVehicleType">
+              <MappingFragment StoreEntitySet="tblVehicleType">
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FeePrice" ColumnName="FeePrice" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblVehicles">
             <EntityTypeMapping TypeName="dbEcustomModel.tblVehicle">
               <MappingFragment StoreEntitySet="tblVehicle">
+                <ScalarProperty Name="confirmFeeImportBy" ColumnName="confirmFeeImportBy" />
+                <ScalarProperty Name="confirmFeeExportBy" ColumnName="confirmFeeExportBy" />
+                <ScalarProperty Name="feeImportDate" ColumnName="feeImportDate" />
+                <ScalarProperty Name="feeExportDate" ColumnName="feeExportDate" />
+                <ScalarProperty Name="feeImportAmount" ColumnName="feeImportAmount" />
+                <ScalarProperty Name="feeExportAmount" ColumnName="feeExportAmount" />
+                <ScalarProperty Name="feeImportStatus" ColumnName="feeImportStatus" />
+                <ScalarProperty Name="feeExportStatus" ColumnName="feeExportStatus" />
+                <ScalarProperty Name="quantityImport" ColumnName="quantityImport" />
+                <ScalarProperty Name="quantityExport" ColumnName="quantityExport" />
+                <ScalarProperty Name="vehicleTypeId" ColumnName="vehicleTypeId" />
                 <ScalarProperty Name="PlateNumberPartner" ColumnName="PlateNumberPartner" />
                 <ScalarProperty Name="ConfirmExportParkingBy" ColumnName="ConfirmExportParkingBy" />
                 <ScalarProperty Name="ExportParkingDate" ColumnName="ExportParkingDate" />
@@ -2014,22 +2063,6 @@
                 <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
                 <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
                 <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblVehicleTypes">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblVehicleType">
-              <MappingFragment StoreEntitySet="tblVehicleType">
-                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
-                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="FeePrice" ColumnName="FeePrice" />
-                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2085,8 +2118,8 @@
           <ConnectorPoint PointX="3" PointY="1.797841796874998" />
         </AssociationConnector>
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="13.75" PointY="0.875" Height="10.056946614583325" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="9.125" PointY="11.625" Height="6.9801236979166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="16.375" PointY="6.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="9.375" PointY="14.75" Height="9.09543945312501" />
       </Diagram>
     </Diagrams>
   </Designer>
