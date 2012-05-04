@@ -38,6 +38,7 @@
             this.importGate1 = new ECustoms.ImportGate();
             this.tempImportReExport1 = new ECustoms.TempImportReExport();
             this.exportGate1 = new ECustoms.ExportGate();
+            this.vehicleTransportGoods1 = new ECustoms.VehicleTransportGoods();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -75,5 +76,6 @@
         private ImportGate importGate1;
         private TempImportReExport tempImportReExport1;
         private ExportGate exportGate1;
+        private VehicleTransportGoods vehicleTransportGoods1;
     }
 }

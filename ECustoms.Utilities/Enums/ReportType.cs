@@ -23,5 +23,7 @@ namespace ECustoms.Utilities.Enums
         ImportGateTransfer = 7,
         //Sổ theo dõi hàng hóa kinh doanh tạm nhập tái xuất
         TempImportedReExport = 8,
+        //Số liệu phương tiện vận chuyển hàng hóa
+        VehicleTransportGoods = 9,
     }
 }

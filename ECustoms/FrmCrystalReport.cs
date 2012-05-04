@@ -297,6 +297,16 @@ namespace ECustoms
                             crystalReportViewer1.ReportSource = tempImportReExport1;
                         }
                         break;
+                    case ReportType.VehicleTransportGoods:
+                        {
+                            var dateFrom = (TextObject)vehicleTransportGoods1.Section1.ReportObjects["dateFrom"];
+                            dateFrom.Text = _from.ToString("dd/MM/yyyy");
+
+                            var dateTo = (TextObject)vehicleTransportGoods1.Section1.ReportObjects["dateTo"];
+                            dateTo.Text = _to.ToString("dd/MM/yyyy");
+                            crystalReportViewer1.ReportSource = vehicleTransportGoods1;
+                            break;
+                        }
                 }
             }
             catch (Exception ex)

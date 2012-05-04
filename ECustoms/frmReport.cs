@@ -40,12 +40,7 @@ namespace ECustoms
                 cbReportType.Items.Add("Hàng tạm nhập tái xuất");
             }
 
-            //if (_type != 0)
-            //{
-            //    cbReportType.Items.Add("Xuất khẩu chuyển cửa khẩu");
-            //    cbReportType.Items.Add("Nhập Khẩu chuyển cửa khẩu");
-            //    cbReportType.Items.Add("Hàng tạm nhập tái xuất");
-            //}
+            cbReportType.Items.Add("Số liệu phương tiện vận chuyển hàng hóa");
             cbReportType.SelectedIndex = _type;
             if (_type != 0)
                 cbReportType.Enabled = false;
@@ -110,13 +105,16 @@ namespace ECustoms
                 case 8:
                     return ReportType.TempImportedReExport;
                     break;
+                case 9:
+                    return ReportType.VehicleTransportGoods;
+                    break;
             }
             return ReportType.ExportAndNoItem;
         }
 
         private void cbReportType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblTime.Text = cbReportType.SelectedIndex > 4 ? "Thời gian nhập máy từ:" : "Thời gian từ:";
+            lblTime.Text = (cbReportType.SelectedIndex > 4 && cbReportType.SelectedIndex < 8) ? "Thời gian nhập máy từ:" : "Thời gian từ:";
         }
     }
 }
