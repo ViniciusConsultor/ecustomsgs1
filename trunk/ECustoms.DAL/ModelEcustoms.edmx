@@ -22,7 +22,7 @@
           <EntitySet Name="tblCheck" EntityType="dbEcustomModel.Store.tblCheck" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclaration" EntityType="dbEcustomModel.Store.tblDeclaration" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclarationVehicle" EntityType="dbEcustomModel.Store.tblDeclarationVehicle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblGoodType" EntityType="dbEcustomModel.Store.tblGoodType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblGoodsType" EntityType="dbEcustomModel.Store.tblGoodsType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblGroup" EntityType="dbEcustomModel.Store.tblGroup" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblPermission" EntityType="dbEcustomModel.Store.tblPermission" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblRoleInGroup" EntityType="dbEcustomModel.Store.tblRoleInGroup" store:Type="Tables" Schema="dbo" />
@@ -394,7 +394,7 @@
           <Property Name="DeclarationID" Type="bigint" Nullable="false" />
           <Property Name="VehicleID" Type="bigint" Nullable="false" />
         </EntityType>
-        <EntityType Name="tblGoodType">
+        <EntityType Name="tblGoodsType">
           <Key>
             <PropertyRef Name="TypeId" />
           </Key>
@@ -988,7 +988,7 @@
           </AssociationSet>
           <EntitySet Name="ViewAllVehicleHasGoods" EntityType="dbEcustomModel.ViewAllVehicleHasGood" />
           <EntitySet Name="tblVehicleTypes" EntityType="dbEcustomModel.tblVehicleType" />
-          <EntitySet Name="tblGoodTypes" EntityType="dbEcustomModel.tblGoodType" />
+          <EntitySet Name="tblGoodsTypes" EntityType="dbEcustomModel.tblGoodsType" />
           <EntitySet Name="tblVehicles" EntityType="dbEcustomModel.tblVehicle" />
         </EntityContainer>
         <EntityType Name="Log">
@@ -1481,7 +1481,7 @@
           <Property Type="DateTime" Name="UpdatedDate" />
           <Property Type="Int32" Name="UpdatedUser" />
         </EntityType>
-        <EntityType Name="tblGoodType">
+        <EntityType Name="tblGoodsType">
           <Key>
             <PropertyRef Name="TypeId" />
           </Key>
@@ -1544,7 +1544,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-        <EntityContainerMapping StorageEntityContainer="dbEcustomModelStoreContainer" CdmEntityContainer="dbEcustomEntities">
+        <EntityContainerMapping CdmEntityContainer="dbEcustomEntities" StorageEntityContainer="dbEcustomModelStoreContainer">
           <EntitySetMapping Name="Logs">
             <EntityTypeMapping TypeName="dbEcustomModel.Log">
               <MappingFragment StoreEntitySet="Log">
@@ -2042,9 +2042,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblGoodTypes">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblGoodType">
-              <MappingFragment StoreEntitySet="tblGoodType">
+          <EntitySetMapping Name="tblGoodsTypes">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblGoodsType">
+              <MappingFragment StoreEntitySet="tblGoodsType">
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="TypeName" ColumnName="TypeName" />
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
@@ -2155,7 +2155,7 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="13.75" PointY="0.875" Height="10.056946614583325" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="16.375" PointY="6.75" Height="2.9417936197916674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblGoodType" Width="1.5" PointX="9.375" PointY="14.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="9.375" PointY="14.75" Height="1.5956835937500102" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="16.375" PointY="10.75" Height="9.67234375000001" />
       </Diagram>
     </Diagrams>

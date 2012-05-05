@@ -13,7 +13,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("dbEcustomModel", "FK_tblRoleInGroup_tlbRole", "tlbRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ECustoms.DAL.tlbRole), "tblRoleInGroup", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ECustoms.DAL.tblRoleInGroup))]
 
 // Original file name:
-// Generation date: 5/5/2012 10:59:00 PM
+// Generation date: 5/5/2012 11:14:11 PM
 namespace ECustoms.DAL
 {
     
@@ -456,22 +456,22 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         private global::System.Data.Objects.ObjectQuery<tblVehicleType> _tblVehicleTypes;
         /// <summary>
-        /// There are no comments for tblGoodTypes in the schema.
+        /// There are no comments for tblGoodsTypes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tblGoodType> tblGoodTypes
+        public global::System.Data.Objects.ObjectQuery<tblGoodsType> tblGoodsTypes
         {
             get
             {
-                if ((this._tblGoodTypes == null))
+                if ((this._tblGoodsTypes == null))
                 {
-                    this._tblGoodTypes = base.CreateQuery<tblGoodType>("[tblGoodTypes]");
+                    this._tblGoodsTypes = base.CreateQuery<tblGoodsType>("[tblGoodsTypes]");
                 }
-                return this._tblGoodTypes;
+                return this._tblGoodsTypes;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tblGoodType> _tblGoodTypes;
+        private global::System.Data.Objects.ObjectQuery<tblGoodsType> _tblGoodsTypes;
         /// <summary>
         /// There are no comments for tblVehicles in the schema.
         /// </summary>
@@ -682,12 +682,12 @@ namespace ECustoms.DAL
             base.AddObject("tblVehicleTypes", tblVehicleType);
         }
         /// <summary>
-        /// There are no comments for tblGoodTypes in the schema.
+        /// There are no comments for tblGoodsTypes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotblGoodTypes(tblGoodType tblGoodType)
+        public void AddTotblGoodsTypes(tblGoodsType tblGoodsType)
         {
-            base.AddObject("tblGoodTypes", tblGoodType);
+            base.AddObject("tblGoodsTypes", tblGoodsType);
         }
         /// <summary>
         /// There are no comments for tblVehicles in the schema.
@@ -10466,26 +10466,26 @@ namespace ECustoms.DAL
         partial void OnUpdatedUserChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomModel.tblGoodType in the schema.
+    /// There are no comments for dbEcustomModel.tblGoodsType in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TypeId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblGoodType")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblGoodsType")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class tblGoodType : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class tblGoodsType : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new tblGoodType object.
+        /// Create a new tblGoodsType object.
         /// </summary>
         /// <param name="typeId">Initial value of TypeId.</param>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public static tblGoodType CreatetblGoodType(int typeId)
+        public static tblGoodsType CreatetblGoodsType(int typeId)
         {
-            tblGoodType tblGoodType = new tblGoodType();
-            tblGoodType.TypeId = typeId;
-            return tblGoodType;
+            tblGoodsType tblGoodsType = new tblGoodsType();
+            tblGoodsType.TypeId = typeId;
+            return tblGoodsType;
         }
         /// <summary>
         /// There are no comments for property TypeId in the schema.
