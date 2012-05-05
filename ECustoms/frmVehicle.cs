@@ -152,7 +152,6 @@ namespace ECustoms
             this.Text = "Khai báo phương tiện" + ConstantInfo.MESSAGE_TITLE;
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
             Init();
-            MessageBox.Show("df");
           
         }
 
@@ -169,7 +168,7 @@ namespace ECustoms
                 }
                 //init goodType
                 var listGoodType = GoodTypeFactory.SelectAll();
-                foreach (tblGoodType goodType in listGoodType)
+                foreach (tblGoodsType goodType in listGoodType)
                 {
                     cbGoodType.Items.Add(goodType.TypeName);
                 }

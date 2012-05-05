@@ -8,10 +8,10 @@ namespace ECustoms.BOL
 {
     public class GoodTypeFactory
     {
-        public static List<tblGoodType> SelectAll()
+        public static List<tblGoodsType> SelectAll()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            List<tblGoodType> list = db.tblGoodTypes.ToList();
+            List<tblGoodsType> list = db.tblGoodsTypes.ToList();
             db.Connection.Close();
             return list;
         }
