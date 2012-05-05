@@ -74,6 +74,7 @@
     <Compile Include="CommonFactory.cs" />
     <Compile Include="DeclarationFactory.cs" />
     <Compile Include="DeclarationVehicleFactory.cs" />
+    <Compile Include="GoodTypeFactory.cs" />
     <Compile Include="GroupFactory.cs" />
     <Compile Include="PermissionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -66,6 +66,10 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtVehicleChinese = new System.Windows.Forms.TextBox();
             this.lblVehicleChinese = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbVehicleType = new System.Windows.Forms.ComboBox();
+            this.cbGoodType = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
             this.SuspendLayout();
@@ -197,7 +201,7 @@
             this.txtStatus.Location = new System.Drawing.Point(111, 108);
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(566, 73);
+            this.txtStatus.Size = new System.Drawing.Size(658, 73);
             this.txtStatus.TabIndex = 9;
             // 
             // txtNote
@@ -205,7 +209,7 @@
             this.txtNote.Location = new System.Drawing.Point(109, 187);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(568, 73);
+            this.txtNote.Size = new System.Drawing.Size(660, 73);
             this.txtNote.TabIndex = 10;
             // 
             // lblNote
@@ -222,7 +226,7 @@
             // 
             this.btnConfirmExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnConfirmExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmExport.Location = new System.Drawing.Point(683, 12);
+            this.btnConfirmExport.Location = new System.Drawing.Point(790, 94);
             this.btnConfirmExport.Name = "btnConfirmExport";
             this.btnConfirmExport.Size = new System.Drawing.Size(210, 52);
             this.btnConfirmExport.TabIndex = 11;
@@ -233,7 +237,7 @@
             // btnConfirmImport
             // 
             this.btnConfirmImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmImport.Location = new System.Drawing.Point(683, 68);
+            this.btnConfirmImport.Location = new System.Drawing.Point(790, 150);
             this.btnConfirmImport.Name = "btnConfirmImport";
             this.btnConfirmImport.Size = new System.Drawing.Size(210, 52);
             this.btnConfirmImport.TabIndex = 12;
@@ -353,7 +357,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(5, 311);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(888, 270);
+            this.groupBox1.Size = new System.Drawing.Size(998, 270);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các xe vừa nhập";
@@ -375,7 +379,7 @@
             this.grdVehicle.MultiSelect = false;
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(882, 245);
+            this.grdVehicle.Size = new System.Drawing.Size(992, 245);
             this.grdVehicle.TabIndex = 19;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
@@ -427,7 +431,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(683, 126);
+            this.btnSearch.Location = new System.Drawing.Point(790, 208);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(210, 52);
             this.btnSearch.TabIndex = 13;
@@ -453,11 +457,55 @@
             this.lblVehicleChinese.TabIndex = 21;
             this.lblVehicleChinese.Text = "Biển kiểm soát xe sang tải";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(702, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 20);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Loại trọng tải";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(693, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Loại hàng hóa";
+            // 
+            // cbVehicleType
+            // 
+            this.cbVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVehicleType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehicleType.FormattingEnabled = true;
+            this.cbVehicleType.Location = new System.Drawing.Point(809, 5);
+            this.cbVehicleType.Name = "cbVehicleType";
+            this.cbVehicleType.Size = new System.Drawing.Size(197, 23);
+            this.cbVehicleType.TabIndex = 26;
+            // 
+            // cbGoodType
+            // 
+            this.cbGoodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGoodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGoodType.FormattingEnabled = true;
+            this.cbGoodType.Location = new System.Drawing.Point(809, 39);
+            this.cbGoodType.Name = "cbGoodType";
+            this.cbGoodType.Size = new System.Drawing.Size(197, 23);
+            this.cbGoodType.TabIndex = 27;
+            // 
             // frmVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 594);
+            this.ClientSize = new System.Drawing.Size(1010, 594);
+            this.Controls.Add(this.cbGoodType);
+            this.Controls.Add(this.cbVehicleType);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtVehicleChinese);
             this.Controls.Add(this.lblVehicleChinese);
             this.Controls.Add(this.btnSearch);
@@ -537,5 +585,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.TextBox txtVehicleChinese;
         public System.Windows.Forms.Label lblVehicleChinese;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbVehicleType;
+        private System.Windows.Forms.ComboBox cbGoodType;
     }
 }
