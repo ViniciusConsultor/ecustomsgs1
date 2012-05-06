@@ -112,6 +112,10 @@ namespace ECustoms
 
                 vehicleInfo.DriverName = txtDriverName.Text.Trim();
                 vehicleInfo.PlateNumber = txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+
+                vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
+                vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+
                 if (txtNumberOfContainer.Text != "")
                 {
                     vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
@@ -142,6 +146,23 @@ namespace ECustoms
             try
             {
                 this.Text = "Khai báo phương tiện nhập bãi xuất" + ConstantInfo.MESSAGE_TITLE;
+
+                //init vehicleType
+                var listVehicleType = VehicleTypeFactory.getAllVehicleType();
+                foreach (tblVehicleType vehicleType in listVehicleType)
+                {
+                    dataSet2.tblVehicleType.Rows.Add(vehicleType.VehicleTypeID, vehicleType.Name);
+                }
+                cbVehicleType.DataSource = dataSet2.tblVehicleType;
+
+                //init goodType
+                var listGoodType = GoodTypeFactory.SelectAll();
+                foreach (tblGoodsType goodType in listGoodType)
+                {
+                    dataSet2.tblGoodsType.Rows.Add(goodType.TypeId, goodType.TypeName);
+                }
+                cbGoodType.DataSource = dataSet2.tblGoodsType;
+                
                 pictureBoxInvalid.Visible = false;
                 pictureBoxValid.Visible = false;
                 //InitialPermission();
@@ -276,6 +297,9 @@ namespace ECustoms
                     vehicleInfo.IsExport = info.IsExport;
                     vehicleInfo.IsImport = info.IsImport;
                     vehicleInfo.IsCompleted = info.IsCompleted;
+
+                    vehicleInfo.vehicleTypeId = info.vehicleTypeId;
+                    vehicleInfo.GoodTypeId = info.GoodTypeId;
 
                     vehicleInfo.IsExportParking = info.IsExportParking;
                     vehicleInfo.ExportParkingDate = info.ExportParkingDate;
