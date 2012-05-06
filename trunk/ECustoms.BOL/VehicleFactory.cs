@@ -406,5 +406,12 @@ namespace ECustoms.BOL
             db.Connection.Close();
             return result <= 0;           
         }
+
+        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber, DateTime packFrom, DateTime packTo)
+        {
+            // TODO:
+            return null;
+
+        }
     }
 }
