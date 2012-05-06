@@ -38,8 +38,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblRetypePassword = new System.Windows.Forms.Label();
             this.txtCapacity = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtFeePrice = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -51,7 +49,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(309, 303);
+            this.btnClose.Location = new System.Drawing.Point(309, 262);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(82, 33);
@@ -68,7 +66,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(187, 303);
+            this.btnUpdate.Location = new System.Drawing.Point(187, 262);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(114, 33);
@@ -85,7 +83,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(61, 303);
+            this.btnAdd.Location = new System.Drawing.Point(61, 262);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(118, 33);
@@ -159,31 +157,10 @@
             this.txtCapacity.Size = new System.Drawing.Size(339, 26);
             this.txtCapacity.TabIndex = 43;
             // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(57, 142);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(31, 20);
-            this.lblEmail.TabIndex = 49;
-            this.lblEmail.Text = "Phí";
-            // 
-            // txtFeePrice
-            // 
-            this.txtFeePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFeePrice.Location = new System.Drawing.Point(218, 144);
-            this.txtFeePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtFeePrice.Name = "txtFeePrice";
-            this.txtFeePrice.Size = new System.Drawing.Size(339, 26);
-            this.txtFeePrice.TabIndex = 44;
-            this.txtFeePrice.TextChanged += new System.EventHandler(this.txtFeePrice_TextChanged);
-            // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(218, 185);
+            this.txtDescription.Location = new System.Drawing.Point(218, 147);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescription.MaxLength = 1000;
             this.txtDescription.Multiline = true;
@@ -195,7 +172,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(57, 185);
+            this.lblAddress.Location = new System.Drawing.Point(57, 147);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(49, 20);
@@ -206,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 347);
+            this.ClientSize = new System.Drawing.Size(628, 307);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -216,8 +193,6 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblRetypePassword);
             this.Controls.Add(this.txtCapacity);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtFeePrice);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblAddress);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -240,8 +215,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.TextBox txtCapacity;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtFeePrice;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblAddress;
     }

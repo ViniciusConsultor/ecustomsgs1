@@ -59,8 +59,6 @@ namespace ECustoms
                 txtCode.Text = vehicleType.Code;
                 txtCapacity.Text = vehicleType.Capacity;
                 txtDescription.Text = vehicleType.Description;
-                txtFeePrice.Text = vehicleType.FeePrice.ToString();
-
             }
         }
 
@@ -82,9 +80,6 @@ namespace ECustoms
                 vehicleType.Code = txtCode.Text.Trim();
                 vehicleType.Capacity = txtCapacity.Text.Trim();
                 vehicleType.Description = txtDescription.Text.Trim();
-                vehicleType.FeePrice = long.Parse(txtFeePrice.Text.Trim());
-
-
                 vehicleType.CreatedUser = _userInfo.UserID;
                 vehicleType.UpdatedUser = _userInfo.UserID;
 
@@ -96,7 +91,6 @@ namespace ECustoms
                     txtCode.Text = "";
                     txtDescription.Text = "";
                     txtName.Text = "";
-                    txtFeePrice.Text = "";
                     frmMainForm mainForm = (frmMainForm)this.MdiParent;
                     Form[] listForm = mainForm.MdiChildren;
                     foreach (Form form in listForm)
@@ -127,23 +121,11 @@ namespace ECustoms
             }
             try
             {
-                if (txtFeePrice.Text == "")
-                {
-                    MessageBox.Show("Chưa nhập phí theo giờ");
-                    return;
-                }
-                if (txtFeePrice.Text == "")
-                {
-                    MessageBox.Show("Chưa nhập phí theo ngày");
-                    return;
-                }
                 var vehicleType = VehicleTypeFactory.FindById(_vehicleTypeID);
                 vehicleType.Name = txtName.Text.Trim();
                 vehicleType.Code = txtCode.Text.Trim();
                 vehicleType.Capacity = txtCapacity.Text.Trim();
                 vehicleType.Description = txtDescription.Text.Trim();
-                vehicleType.FeePrice = long.Parse(txtFeePrice.Text.Trim());
-
                 int result = VehicleTypeFactory.Update(vehicleType);
                 if (result == 0)
                 {
@@ -152,7 +134,6 @@ namespace ECustoms
                     txtCode.Text = "";
                     txtDescription.Text = "";
                     txtName.Text = "";
-                    txtFeePrice.Text = "";
                     frmMainForm mainForm = (frmMainForm)this.MdiParent;
                     Form[] listForm = mainForm.MdiChildren;
                     foreach (Form form in listForm)
@@ -216,15 +197,6 @@ namespace ECustoms
                 return check;
             }
 
-            if (txtFeePrice.Text.Trim().Length == 0)
-            {
-                check = false;
-                txtFeePrice.Focus();
-                MessageBox.Show("Chưa nhập phí", "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return check;
-            }
-
-
             return check;
         }
 
@@ -268,28 +240,7 @@ namespace ECustoms
                 return check;
             }
 
-            if (txtFeePrice.Text.Trim().Length == 0)
-            {
-                check = false;
-                txtFeePrice.Focus();
-                MessageBox.Show("Chưa nhập phí", "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return check;
-            }
-
-
             return check;
-        }
-
-        private void txtFeePrice_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                txtFeePrice.Text = Convert.ToInt32(txtFeePrice.Text).ToString();
-            }
-            catch (System.Exception ex)
-            {
-                txtFeePrice.Text = "";
-            }
         }
 
         private void txtCode_Leave(object sender, EventArgs e)
