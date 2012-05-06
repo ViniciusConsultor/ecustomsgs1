@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using ECustoms.BOL;
 using ECustoms.Utilities;
+using ECustoms.Utilities.Enums;
 using Microsoft.Office.Interop.Excel;
 using Point = System.Drawing.Point;
 using ECustoms.DAL;
@@ -557,7 +558,7 @@ namespace ECustoms
 
                     vehicleInfo.ConfirmExportBy = _userInfo.UserID;
                     vehicleInfo.IsExport = true;
-                    if (isExportNoGood) vehicleInfo.feeExportStatus = false;
+                    if (isExportNoGood) vehicleInfo.feeExportStatus = (int) FeeStatus.NotNeedPayFee;
                     VehicleFactory.UpdateVehicle(vehicleInfo);
                 
                     // Bind to grid
@@ -606,13 +607,24 @@ namespace ECustoms
             message.AppendLine("Loại hàng: " + goodType);
         }
 
-        private string GetFeeStatus(bool? feeStatus)
+        private string GetFeeStatus(int? feeStatus)
         {
             if (feeStatus == null)
             {
                 return "Chưa thu phí";
             }
-            return feeStatus == true ? "Đã thu phí" : "Không thu phí";
+            switch (feeStatus)
+            {
+                case (int)FeeStatus.NotNeedPayFee:
+                    return "Không thu phí";
+                case (int)FeeStatus.HasNotPayFee:
+                    return "Chưa thu phí";
+                case (int)FeeStatus.PaidFee:
+                    return "Đã thu phí";
+                default:
+                    return "Không xác định";
+            }
+            
         }
 
         private void btnXacNhanNhapCanhCoHang_Click(object sender, EventArgs e)
@@ -737,7 +749,7 @@ namespace ECustoms
 
                     vehicle.ConfirmImportBy = _userInfo.UserID;
                     vehicle.ImportStatus = "Nhập cảnh không có hàng";
-                    vehicle.feeImportStatus = false;
+                    vehicle.feeImportStatus = (int) FeeStatus.NotNeedPayFee;
                     VehicleFactory.UpdateVehicle(vehicle);
                 }
                 // Bind data
