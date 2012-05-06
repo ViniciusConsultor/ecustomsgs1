@@ -808,8 +808,8 @@
           <Property Name="TypeName" Type="nvarchar" MaxLength="500" />
           <Property Name="quantityExport" Type="bigint" />
           <Property Name="quantityImport" Type="bigint" />
-          <Property Name="feeExportStatus" Type="bit" />
-          <Property Name="feeImportStatus" Type="bit" />
+          <Property Name="feeExportStatus" Type="int" />
+          <Property Name="feeImportStatus" Type="int" />
           <Property Name="feeExportAmount" Type="bigint" />
           <Property Name="feeImportAmount" Type="bigint" />
           <Property Name="feeExportDate" Type="datetime" />
@@ -1577,8 +1577,8 @@
           <Property Type="String" Name="TypeName" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Int64" Name="quantityExport" />
           <Property Type="Int64" Name="quantityImport" />
-          <Property Type="Boolean" Name="feeExportStatus" />
-          <Property Type="Boolean" Name="feeImportStatus" />
+          <Property Type="Int32" Name="feeExportStatus" />
+          <Property Type="Int32" Name="feeImportStatus" />
           <Property Type="Int64" Name="feeExportAmount" />
           <Property Type="Int64" Name="feeImportAmount" />
           <Property Type="DateTime" Name="feeExportDate" />
