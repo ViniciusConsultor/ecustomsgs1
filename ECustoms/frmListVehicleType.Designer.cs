@@ -33,14 +33,13 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.grbUser = new System.Windows.Forms.GroupBox();
             this.grvVehicleType = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.VehicleTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FeePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.grbUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicleType)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +97,6 @@
             this.Code,
             this.Name,
             this.Capacity,
-            this.FeePrice,
             this.Description});
             this.grvVehicleType.Location = new System.Drawing.Point(6, 25);
             this.grvVehicleType.MultiSelect = false;
@@ -108,53 +106,6 @@
             this.grvVehicleType.Size = new System.Drawing.Size(909, 334);
             this.grvVehicleType.TabIndex = 1;
             this.grvVehicleType.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvVehicleType_CellMouseDoubleClick);
-            // 
-            // VehicleTypeID
-            // 
-            this.VehicleTypeID.DataPropertyName = "VehicleTypeID";
-            this.VehicleTypeID.HeaderText = "VehicleTypeID";
-            this.VehicleTypeID.Name = "VehicleTypeID";
-            this.VehicleTypeID.ReadOnly = true;
-            this.VehicleTypeID.Visible = false;
-            // 
-            // Code
-            // 
-            this.Code.DataPropertyName = "Code";
-            this.Code.HeaderText = "Mã nhóm";
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            // 
-            // Name
-            // 
-            this.Name.DataPropertyName = "Name";
-            this.Name.HeaderText = "Tên nhóm";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            this.Name.Width = 150;
-            // 
-            // Capacity
-            // 
-            this.Capacity.DataPropertyName = "Capacity";
-            this.Capacity.HeaderText = "Loại trọng tải";
-            this.Capacity.Name = "Capacity";
-            this.Capacity.ReadOnly = true;
-            this.Capacity.Width = 150;
-            // 
-            // FeePrice
-            // 
-            this.FeePrice.DataPropertyName = "FeePrice";
-            this.FeePrice.HeaderText = "Biểu phí";
-            this.FeePrice.Name = "FeePrice";
-            this.FeePrice.ReadOnly = true;
-            this.FeePrice.Width = 130;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Mô tả";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 200;
             // 
             // btnAdd
             // 
@@ -188,6 +139,45 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // VehicleTypeID
+            // 
+            this.VehicleTypeID.DataPropertyName = "VehicleTypeID";
+            this.VehicleTypeID.HeaderText = "VehicleTypeID";
+            this.VehicleTypeID.Name = "VehicleTypeID";
+            this.VehicleTypeID.ReadOnly = true;
+            this.VehicleTypeID.Visible = false;
+            // 
+            // Code
+            // 
+            this.Code.DataPropertyName = "Code";
+            this.Code.HeaderText = "Mã nhóm";
+            this.Code.Name = "Code";
+            this.Code.ReadOnly = true;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Tên nhóm";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Width = 250;
+            // 
+            // Capacity
+            // 
+            this.Capacity.DataPropertyName = "Capacity";
+            this.Capacity.HeaderText = "Loại trọng tải";
+            this.Capacity.Name = "Capacity";
+            this.Capacity.ReadOnly = true;
+            this.Capacity.Width = 150;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Mô tả";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 300;
+            // 
             // frmListVehicleType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,7 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Capacity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FeePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }
