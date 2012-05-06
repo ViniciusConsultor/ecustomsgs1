@@ -68,6 +68,7 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
+            this.menuGetFee = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -302,7 +303,8 @@
             // mnuFeeManagement
             // 
             this.mnuFeeManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuVehidleType});
+            this.mnuVehidleType,
+            this.menuGetFee});
             this.mnuFeeManagement.Name = "mnuFeeManagement";
             this.mnuFeeManagement.Size = new System.Drawing.Size(133, 25);
             this.mnuFeeManagement.Text = "Quản lý tính phí";
@@ -420,6 +422,13 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
+            // menuGetFee
+            // 
+            this.menuGetFee.Name = "menuGetFee";
+            this.menuGetFee.Size = new System.Drawing.Size(278, 26);
+            this.menuGetFee.Text = "Thu phí";
+            this.menuGetFee.Click += new System.EventHandler(this.menuGetFee_Click);
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,5 +494,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuExportParking;
         private System.Windows.Forms.ToolStripMenuItem mnuFeeManagement;
         private System.Windows.Forms.ToolStripMenuItem mnuVehidleType;
+        private System.Windows.Forms.ToolStripMenuItem menuGetFee;
     }
 }

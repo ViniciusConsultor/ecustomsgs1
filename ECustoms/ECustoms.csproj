@@ -111,6 +111,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGetFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetFee.Designer.cs">
+      <DependentUpon>frmGetFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehicleTransportGoods.cs">
       <DependentUpon>VehicleTransportGoods.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -381,6 +387,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmGetFee.resx">
+      <DependentUpon>frmGetFee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VehicleTransportGoods.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VehicleTransportGoods.cs</LastGenOutput>
@@ -672,6 +681,7 @@
   <ItemGroup>
     <None Include="Resources\GS1_icon.ico" />
     <Content Include="ListPrint.xml" />
+    <None Include="Resources\1336316540_document-export.png" />
     <Content Include="Resources\imageGS1.jpg" />
     <None Include="Resources\user.png" />
     <None Include="Resources\4469.png" />
