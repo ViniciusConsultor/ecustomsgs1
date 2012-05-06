@@ -71,6 +71,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="ConstantInfo.cs" />
     <Compile Include="Enums\DeclarationType.cs" />
+    <Compile Include="Enums\FeeStatus.cs" />
     <Compile Include="Enums\Mode.cs" />
     <Compile Include="Enums\ReportType.cs" />
     <Compile Include="Enums\RoleType.cs" />
