@@ -127,6 +127,9 @@ namespace ECustoms
                         if (grdVehicle.Rows[i].Cells["NumberOfContainer"].Value != null)
                             vehicleInfo.NumberOfContainer = grdVehicle.Rows[i].Cells["NumberOfContainer"].Value.ToString();
 
+                        vehicleInfo.vehicleTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["VehicleType"].Value.ToString());
+                        vehicleInfo.GoodTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["GoodsType"].Value.ToString());
+                        
                         if (grdVehicle.Rows[i].Cells["DriverName"].Value != null)
                             vehicleInfo.DriverName = grdVehicle.Rows[i].Cells["DriverName"].Value.ToString();
 
@@ -315,6 +318,21 @@ namespace ECustoms
         /// </summary>
         private void Init()
         {
+
+            //init vehicleType
+            var listVehicleType = VehicleTypeFactory.getAllVehicleType();
+            foreach (tblVehicleType vehicleType in listVehicleType)
+            {
+                dataSet2.tblVehicleType.Rows.Add(vehicleType.VehicleTypeID, vehicleType.Name);
+            }
+
+            //init goodType
+            var listGoodType = GoodTypeFactory.SelectAll();
+            foreach (tblGoodsType goodType in listGoodType)
+            {
+                dataSet2.tblGoodsType.Rows.Add(goodType.TypeId, goodType.TypeName);
+            }
+
             //Autocomplete registerplace
             var auto = new AutoCompleteStringCollection();
             var lstAuto = DeclarationFactory.GetAllRegisterPlace();

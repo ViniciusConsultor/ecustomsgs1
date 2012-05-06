@@ -580,6 +580,22 @@ FROM            ViewAllDeclarationTNTX</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tblVehicleType" msprop:Generator_TableClassName="tblVehicleTypeDataTable" msprop:Generator_TableVarName="tabletblVehicleType" msprop:Generator_TablePropName="tblVehicleType" msprop:Generator_RowDeletingName="tblVehicleTypeRowDeleting" msprop:Generator_UserTableName="tblVehicleType" msprop:Generator_RowChangingName="tblVehicleTypeRowChanging" msprop:Generator_RowEvHandlerName="tblVehicleTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="tblVehicleTypeRowDeleted" msprop:Generator_RowEvArgName="tblVehicleTypeRowChangeEvent" msprop:Generator_RowChangedName="tblVehicleTypeRowChanged" msprop:Generator_RowClassName="tblVehicleTypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VehicleTypeID" msprop:Generator_ColumnVarNameInTable="columnVehicleTypeID" msprop:Generator_ColumnPropNameInRow="VehicleTypeID" msprop:Generator_ColumnPropNameInTable="VehicleTypeIDColumn" msprop:Generator_UserColumnName="VehicleTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblGoodsType" msprop:Generator_TableClassName="tblGoodsTypeDataTable" msprop:Generator_TableVarName="tabletblGoodsType" msprop:Generator_TablePropName="tblGoodsType" msprop:Generator_RowDeletingName="tblGoodsTypeRowDeleting" msprop:Generator_UserTableName="tblGoodsType" msprop:Generator_RowChangingName="tblGoodsTypeRowChanging" msprop:Generator_RowEvHandlerName="tblGoodsTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="tblGoodsTypeRowDeleted" msprop:Generator_RowEvArgName="tblGoodsTypeRowChangeEvent" msprop:Generator_RowChangedName="tblGoodsTypeRowChanged" msprop:Generator_RowClassName="tblGoodsTypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TypeId" msprop:Generator_ColumnVarNameInTable="columnTypeId" msprop:Generator_ColumnPropNameInRow="TypeId" msprop:Generator_ColumnPropNameInTable="TypeIdColumn" msprop:Generator_UserColumnName="TypeId" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_UserColumnName="TypeName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
