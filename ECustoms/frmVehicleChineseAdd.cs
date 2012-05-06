@@ -111,6 +111,9 @@ namespace ECustoms
                 // Add data to veicleInfo list
 
                 vehicleInfo.DriverName = txtDriverName.Text.Trim();
+                vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
+                vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+
                 vehicleInfo.PlateNumber = txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                 vehicleInfo.IsChineseVehicle = true;
                 if (txtNumberOfContainer.Text != "")
@@ -182,6 +185,22 @@ namespace ECustoms
             {
                 this.Text = "Khai báo phương tiện xe Trung Quốc nhập cảnh" + ConstantInfo.MESSAGE_TITLE;
                 //this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);
+
+                //init vehicleType
+                var listVehicleType = VehicleTypeFactory.getAllVehicleType();
+                foreach (tblVehicleType vehicleType in listVehicleType)
+                {
+                    dataSet2.tblVehicleType.Rows.Add(vehicleType.VehicleTypeID, vehicleType.Name);
+                }
+                cbVehicleType.DataSource = dataSet2.tblVehicleType;
+
+                //init goodType
+                var listGoodType = GoodTypeFactory.SelectAll();
+                foreach (tblGoodsType goodType in listGoodType)
+                {
+                    dataSet2.tblGoodsType.Rows.Add(goodType.TypeId, goodType.TypeName);
+                }
+                cbGoodType.DataSource = dataSet2.tblGoodsType;
 
                 pictureBoxInvalid.Visible = false;
                 pictureBoxValid.Visible = false;
