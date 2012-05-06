@@ -398,5 +398,13 @@ namespace ECustoms.BOL
             db.Connection.Close();
             return lstResult;
         }
+
+        public static bool IsVehicleExportNoGood(long vehicleID)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var result = db.viewDeclarationVehicles.Where(g => g.DeclarationID != 0 && g.VehicleID == vehicleID && g.DeclarationType == (int)DeclarationType.DeclarationTypeExport).OrderByDescending(g => g.ExportDate).Count();
+            db.Connection.Close();
+            return result <= 0;           
+        }
     }
 }

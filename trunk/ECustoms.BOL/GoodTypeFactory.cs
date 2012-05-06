@@ -15,5 +15,12 @@ namespace ECustoms.BOL
             db.Connection.Close();
             return list;
         }
+        public static string GetTypeNameById(int goodTypeId)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var typeName = db.tblGoodsTypes.Where(g => g.TypeId == goodTypeId).Select(g=>g.TypeName).FirstOrDefault();
+            db.Connection.Close();
+            return typeName;
+        }
     }
 }
