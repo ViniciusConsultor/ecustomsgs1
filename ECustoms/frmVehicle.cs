@@ -159,19 +159,22 @@ namespace ECustoms
         {
             try
             {
-                
+
                 //init vehicleType
                 var listVehicleType = VehicleTypeFactory.getAllVehicleType();
                 foreach (tblVehicleType vehicleType in listVehicleType)
                 {
-                    cbVehicleType.Items.Add(vehicleType.Name);
+                    dataSet2.tblVehicleType.Rows.Add(vehicleType.VehicleTypeID, vehicleType.Name);
                 }
+                cbVehicleType.DataSource = dataSet2.tblVehicleType;
+
                 //init goodType
                 var listGoodType = GoodTypeFactory.SelectAll();
                 foreach (tblGoodsType goodType in listGoodType)
                 {
-                    cbGoodType.Items.Add(goodType.TypeName);
+                    dataSet2.tblGoodsType.Rows.Add(goodType.TypeId, goodType.TypeName);
                 }
+                cbGoodType.DataSource = dataSet2.tblGoodsType;
 
                 if (_type.Equals(Common.DeclerationType.Export))
                 {
@@ -381,6 +384,9 @@ namespace ECustoms
                 {
                   btnConfirmExport.Enabled = false;
                 }
+
+                cbGoodType.SelectedValue = vehicleInfo.GoodTypeId;
+                cbVehicleType.SelectedValue = vehicleInfo.vehicleTypeId;
             }
             catch (Exception ex)
             {
@@ -574,6 +580,9 @@ namespace ECustoms
                     vehicleInfo.ImportDate = null;
                 }
 
+                vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
+                vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+ 
                 // Add Mode
                 if (_mode == 0)
                 {
@@ -916,7 +925,7 @@ namespace ECustoms
                 txtDriverName.Text = result.DriverName;
                 txtPlateNumber.Text = result.PlateNumber;
                 txtVehicleChinese.Text = result.PlateNumberPartner;
-                txtNumberOfContainer.Text = result.NumberOfContainer.ToString();
+                txtNumberOfContainer.Text = result.NumberOfContainer!=null? result.NumberOfContainer.ToString():"";
                 txtStatus.Text = result.Status;
                 txtNote.Text = result.Note;
                 if (result.ImportDate != null)
@@ -927,6 +936,10 @@ namespace ECustoms
                 {
                   mtxtExportHour.Text = result.ExportDate.Value.ToString("HH:mm");
                 }
+
+                cbVehicleType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value.ToString();
+                cbGoodType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["GoodsType"].Value.ToString();
+                
                 _currentModifyPlateNumber = plateNumber;
                 btnAdd.Enabled = false;
                 btnUpdate.Enabled = true;
