@@ -288,5 +288,12 @@ namespace ECustoms
             frmListVehicleType.Show();
 
         }
+
+        private void menuGetFee_Click(object sender, EventArgs e)
+        {
+            var frmGetfee = new frmGetFee(_userInfo);
+            frmGetfee.MdiParent = this;
+            frmGetfee.Show();
+        }
     }
 }
