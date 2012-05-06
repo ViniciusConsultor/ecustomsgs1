@@ -532,10 +532,21 @@ namespace ECustoms
                     return;
                 }
 
-                var message = new StringBuilder();
-                message.Append("Thời gian xuất cảnh: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
-
                 var vehicleInfo = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
+
+                var message = new StringBuilder();
+                
+                message.AppendLine("Thời gian xuất cảnh: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
+                //Kiem tra co phai xe khong cho hang
+                var isExportNoGood = VehicleFactory.IsVehicleExportNoGood(vehicleInfo.VehicleID);
+                if (isExportNoGood)
+                {
+                    message.AppendLine("Xe không chở hàng, không thu phí");
+                }
+                else
+                {
+                    GetInfoVehicleDialog(message, vehicleInfo, 0);
+                }
 
                 if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -546,19 +557,62 @@ namespace ECustoms
 
                     vehicleInfo.ConfirmExportBy = _userInfo.UserID;
                     vehicleInfo.IsExport = true;
+                    if (isExportNoGood) vehicleInfo.feeExportStatus = false;
                     VehicleFactory.UpdateVehicle(vehicleInfo);
-                }
-                // Bind to grid
-                BindData();
+                
+                    // Bind to grid
+                    BindData();
 
-                //print ticket
-                //printTicket(1, vehicleInfo);
+                    //print ticket
+                    //printTicket(1, vehicleInfo);
+                }
             }
             catch (Exception ex)
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void GetInfoVehicleDialog(StringBuilder message, tblVehicle vehicleInfo, int type)
+        {
+            //Loại trọng tải
+            var vehicleType = string.Empty;
+            if (vehicleInfo.vehicleTypeId == null)
+            {
+                vehicleType = "Chưa xác định";
+            }
+            else
+            {
+                var vehicleTypeInfo = VehicleTypeFactory.FindById((int)vehicleInfo.vehicleTypeId);
+                if (vehicleTypeInfo != null)
+                {
+                    vehicleType = vehicleTypeInfo.Capacity;
+                }
+
+            }
+            message.AppendLine("Loại trọng tải: " + vehicleType);
+            //Tình trạng thu phí, type = 0 : XN xuất khẩu, type = 1: XN nhập khẩu
+            if (type == 0)
+            {
+                message.AppendLine("Tình trạng thu phí xuất: " + GetFeeStatus(vehicleInfo.feeExportStatus));
+            }
+            else
+            {
+                message.AppendLine("Tình trạng thu phí nhập: " + GetFeeStatus(vehicleInfo.feeImportStatus));
+            }
+            //Loại hàng
+            var goodType = vehicleInfo.GoodTypeId == null ? "Chưa xác định" : GoodTypeFactory.GetTypeNameById((int)vehicleInfo.GoodTypeId);
+            message.AppendLine("Loại hàng: " + goodType);
+        }
+
+        private string GetFeeStatus(bool? feeStatus)
+        {
+            if (feeStatus == null)
+            {
+                return "Chưa thu phí";
+            }
+            return feeStatus == true ? "Đã thu phí" : "Không thu phí";
         }
 
         private void btnXacNhanNhapCanhCoHang_Click(object sender, EventArgs e)
@@ -668,7 +722,8 @@ namespace ECustoms
                 }
 
                 var message = new StringBuilder();
-                message.Append("Thời gian nhập cảnh: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
+                message.AppendLine("Thời gian nhập cảnh: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
+                message.AppendLine("Nhập cảnh không có hàng, không thu phí");
 
                 //var vehicle = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
 
@@ -682,6 +737,7 @@ namespace ECustoms
 
                     vehicle.ConfirmImportBy = _userInfo.UserID;
                     vehicle.ImportStatus = "Nhập cảnh không có hàng";
+                    vehicle.feeImportStatus = false;
                     VehicleFactory.UpdateVehicle(vehicle);
                 }
                 // Bind data
@@ -723,36 +779,45 @@ namespace ECustoms
                     return;
                 }
 
-                // Neu thoa man dieu kien canh bao, hoac la xe nay khong co to khai nhap, thi cung hien len canh bao
-                //neu da canh bao roi thi thoi khong canh bao nua
-                var vehicleCheck = VehicleCheckFactory.GetExistingVehicleHasChecked(vehicleID).FirstOrDefault();
-                if (IsCheck(vehicleID, VehicleCheckFactory.CHECK_TYPE_IMPORT_LOCAL) || (IsNotHasDeclerationImport(vehicleID) && vehicleCheck == null))
+                var message = new StringBuilder();
+
+                message.AppendLine("Thời gian vào nội địa: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
+
+                GetInfoVehicleDialog(message, vehicle, 1);
+
+                if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    // Show alert form
-                    var frmAlert = new FrmAlert(_userInfo, vehicleID, _checkID, VehicleCheckFactory.CHECK_TYPE_IMPORT_LOCAL);
-                    frmAlert.Show(this);
-                    return;
+                    // Neu thoa man dieu kien canh bao, hoac la xe nay khong co to khai nhap, thi cung hien len canh bao
+                    //neu da canh bao roi thi thoi khong canh bao nua
+                    var vehicleCheck = VehicleCheckFactory.GetExistingVehicleHasChecked(vehicleID).FirstOrDefault();
+                    if (IsCheck(vehicleID, VehicleCheckFactory.CHECK_TYPE_IMPORT_LOCAL) || (IsNotHasDeclerationImport(vehicleID) && vehicleCheck == null))
+                    {
+                        // Show alert form
+                        var frmAlert = new FrmAlert(_userInfo, vehicleID, _checkID, VehicleCheckFactory.CHECK_TYPE_IMPORT_LOCAL);
+                        frmAlert.Show(this);
+                        return;
+                    }
+
+                    var vehicleInfo = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
+                    vehicleInfo.IsGoodsImported = true;
+                    vehicleInfo.ImportedLocalTime = CommonFactory.GetCurrentDate();
+                    // is completed when user is confirm is local 
+                    vehicleInfo.IsCompleted = true;
+
+                    if (vehicleInfo.ConfirmLocalImportBy != null && vehicleInfo.ConfirmLocalImportBy != 0 && vehicleInfo.ConfirmLocalImportBy != _userInfo.UserID)
+                        throw new Exception("Phương tiện đã được xác nhận bởi một người dùng khác!");
+
+                    if (DeclarationVehicleFactory.IsExisting(vehicleInfo.VehicleID, 1)) // Neu ton tai thi xoa trong to khai 1
+                    {
+                        DeclarationVehicleFactory.DeleteByVehicleDeclarationID(vehicleInfo.VehicleID, 1);
+                    }
+
+                    vehicleInfo.ConfirmLocalImportBy = _userInfo.UserID;
+
+                    VehicleFactory.UpdateVehicle(vehicleInfo);
+                    // Bind data to gridview
+                    BindData();
                 }
-
-                var vehicleInfo = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
-                vehicleInfo.IsGoodsImported = true;
-                vehicleInfo.ImportedLocalTime = CommonFactory.GetCurrentDate();
-                // is completed when user is confirm is local 
-                vehicleInfo.IsCompleted = true;
-
-                if (vehicleInfo.ConfirmLocalImportBy != null && vehicleInfo.ConfirmLocalImportBy != 0 && vehicleInfo.ConfirmLocalImportBy != _userInfo.UserID)
-                    throw new Exception("Phương tiện đã được xác nhận bởi một người dùng khác!");
-
-                if (DeclarationVehicleFactory.IsExisting(vehicleInfo.VehicleID, 1)) // Neu ton tai thi xoa trong to khai 1
-                {
-                    DeclarationVehicleFactory.DeleteByVehicleDeclarationID(vehicleInfo.VehicleID, 1);
-                }
-
-                vehicleInfo.ConfirmLocalImportBy = _userInfo.UserID;
-
-                VehicleFactory.UpdateVehicle(vehicleInfo);
-                // Bind data to gridview
-                BindData();
             }
             catch (Exception ex)
             {
