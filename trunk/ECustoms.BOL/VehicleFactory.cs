@@ -407,10 +407,34 @@ namespace ECustoms.BOL
             return result <= 0;           
         }
 
-        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber, DateTime packFrom, DateTime packTo)
+        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber, DateTime packFrom, DateTime packTo, bool isFeeExport, bool isFeeImport)
         {
-            // TODO:
-            return null;
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            IQueryable<ViewAllVehicleHasGood> _viewAllVehicle = db.ViewAllVehicleHasGoods;
+            _viewAllVehicle = !string.IsNullOrEmpty(plateNumber) ? _viewAllVehicle.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)) : _viewAllVehicle;
+            _viewAllVehicle = !string.IsNullOrEmpty(receiptNumber) ? _viewAllVehicle.Where(g => g.ExportReceiptNumber.Contains(receiptNumber) || g.ImportReceiptNumber.Contains(receiptNumber)) : _viewAllVehicle;
+            _viewAllVehicle = _viewAllVehicle.Where(g => g.Parking != null && g.ParkingDate >= packFrom && g.ParkingDate <= packTo);
+            if (isFeeExport)
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeExportStatus == (int) FeeStatus.PaidFee);
+            }
+            else
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeExportStatus == null || g.feeExportStatus == (int)FeeStatus.HasNotPayFee);
+            }
+            if (isFeeImport)
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeImportStatus == (int)FeeStatus.PaidFee);
+            }
+            else
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeImportStatus == null || g.feeImportStatus == (int)FeeStatus.HasNotPayFee);
+            }    
+
+            List<ViewAllVehicleHasGood> result = (from a in _viewAllVehicle
+                                               orderby a.ModifiedDate descending
+                                               select a).ToList();
+            return result;
 
         }
     }
