@@ -13,7 +13,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("dbEcustomModel", "FK_tblRoleInGroup_tlbRole", "tlbRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ECustoms.DAL.tlbRole), "tblRoleInGroup", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ECustoms.DAL.tblRoleInGroup))]
 
 // Original file name:
-// Generation date: 5/7/2012 1:42:30 AM
+// Generation date: 5/7/2012 2:00:23 AM
 namespace ECustoms.DAL
 {
     
@@ -11974,7 +11974,7 @@ namespace ECustoms.DAL
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<bool> feeExportStatus
+        public global::System.Nullable<int> feeExportStatus
         {
             get
             {
@@ -11990,9 +11990,9 @@ namespace ECustoms.DAL
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<bool> _feeExportStatus;
+        private global::System.Nullable<int> _feeExportStatus;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnfeeExportStatusChanging(global::System.Nullable<bool> value);
+        partial void OnfeeExportStatusChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnfeeExportStatusChanged();
         /// <summary>
@@ -12001,7 +12001,7 @@ namespace ECustoms.DAL
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<bool> feeImportStatus
+        public global::System.Nullable<int> feeImportStatus
         {
             get
             {
@@ -12017,9 +12017,9 @@ namespace ECustoms.DAL
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<bool> _feeImportStatus;
+        private global::System.Nullable<int> _feeImportStatus;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnfeeImportStatusChanging(global::System.Nullable<bool> value);
+        partial void OnfeeImportStatusChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnfeeImportStatusChanged();
         /// <summary>
