@@ -385,8 +385,14 @@ namespace ECustoms
                   btnConfirmExport.Enabled = false;
                 }
 
-                cbGoodType.SelectedValue = vehicleInfo.GoodTypeId;
-                cbVehicleType.SelectedValue = vehicleInfo.vehicleTypeId;
+                if (vehicleInfo.GoodTypeId != null)
+                {
+                    cbGoodType.SelectedValue = vehicleInfo.GoodTypeId;
+                }
+                if (vehicleInfo.vehicleTypeId != null)
+                {
+                    cbVehicleType.SelectedValue = vehicleInfo.vehicleTypeId;
+                }
             }
             catch (Exception ex)
             {

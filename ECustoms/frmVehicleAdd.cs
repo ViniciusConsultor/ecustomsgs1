@@ -130,6 +130,7 @@ namespace ECustoms
                     vehicleInfo.ConfirmImportBy = _userInfo.UserID;
                 }
 
+                vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
                 vehicleInfo.Status = txtStatus.Text;
                 vehicleInfo.Note = txtNote.Text;
                 vehicleInfo.VehicleID = _vehicleInfosTemp.Count + 1;
@@ -172,6 +173,14 @@ namespace ECustoms
             {
                 this.Text = "Khai báo phương tiện" + ConstantInfo.MESSAGE_TITLE;
                 //this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);
+
+                //init vehicleType
+                var listVehicleType = VehicleTypeFactory.getAllVehicleType();
+                foreach (tblVehicleType vehicleType in listVehicleType)
+                {
+                    dataSet2.tblVehicleType.Rows.Add(vehicleType.VehicleTypeID, vehicleType.Name);
+                }
+                cbVehicleType.DataSource = dataSet2.tblVehicleType;
 
                 pictureBoxInvalid.Visible = false;
                 pictureBoxValid.Visible = false;
@@ -360,6 +369,7 @@ namespace ECustoms
                     vehicleInfo.IsExport = info.IsExport;
                     vehicleInfo.IsImport = info.IsImport;
                     vehicleInfo.IsCompleted = info.IsCompleted;
+                    vehicleInfo.vehicleTypeId = info.vehicleTypeId;
                     VehicleFactory.InsertVehicle(vehicleInfo);
                 }
 
