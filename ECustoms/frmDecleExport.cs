@@ -126,9 +126,14 @@ namespace ECustoms
 
                         if (grdVehicle.Rows[i].Cells["NumberOfContainer"].Value != null)
                             vehicleInfo.NumberOfContainer = grdVehicle.Rows[i].Cells["NumberOfContainer"].Value.ToString();
-
-                        vehicleInfo.vehicleTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["VehicleType"].Value.ToString());
-                        vehicleInfo.GoodTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["GoodsType"].Value.ToString());
+                        if (grdVehicle.Rows[i].Cells["VehicleType"].Value != null)
+                        {
+                            vehicleInfo.vehicleTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["VehicleType"].Value.ToString());
+                        }
+                        if (grdVehicle.Rows[i].Cells["GoodsType"].Value != null)
+                        {
+                            vehicleInfo.GoodTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["GoodsType"].Value.ToString());
+                        }
                         
                         if (grdVehicle.Rows[i].Cells["DriverName"].Value != null)
                             vehicleInfo.DriverName = grdVehicle.Rows[i].Cells["DriverName"].Value.ToString();
