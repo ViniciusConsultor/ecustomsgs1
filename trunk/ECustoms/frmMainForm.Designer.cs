@@ -57,6 +57,7 @@
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFeeManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVehidleType = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGetFee = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,7 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.menuGetFee = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFeeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -304,7 +305,8 @@
             // 
             this.mnuFeeManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuVehidleType,
-            this.menuGetFee});
+            this.menuGetFee,
+            this.mnuFeeReport});
             this.mnuFeeManagement.Name = "mnuFeeManagement";
             this.mnuFeeManagement.Size = new System.Drawing.Size(133, 25);
             this.mnuFeeManagement.Text = "Quản lý tính phí";
@@ -315,6 +317,13 @@
             this.mnuVehidleType.Size = new System.Drawing.Size(278, 26);
             this.mnuVehidleType.Text = "Loại phương tiện và biểu phí";
             this.mnuVehidleType.Click += new System.EventHandler(this.mnuVehidleType_Click);
+            // 
+            // menuGetFee
+            // 
+            this.menuGetFee.Name = "menuGetFee";
+            this.menuGetFee.Size = new System.Drawing.Size(278, 26);
+            this.menuGetFee.Text = "Thu phí";
+            this.menuGetFee.Click += new System.EventHandler(this.menuGetFee_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -422,12 +431,12 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // menuGetFee
+            // mnuFeeReport
             // 
-            this.menuGetFee.Name = "menuGetFee";
-            this.menuGetFee.Size = new System.Drawing.Size(278, 26);
-            this.menuGetFee.Text = "Thu phí";
-            this.menuGetFee.Click += new System.EventHandler(this.menuGetFee_Click);
+            this.mnuFeeReport.Name = "mnuFeeReport";
+            this.mnuFeeReport.Size = new System.Drawing.Size(278, 26);
+            this.mnuFeeReport.Text = "Báo cáo thu phí";
+            this.mnuFeeReport.Click += new System.EventHandler(this.mnuFeeReport_Click);
             // 
             // frmMainForm
             // 
@@ -495,5 +504,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFeeManagement;
         private System.Windows.Forms.ToolStripMenuItem mnuVehidleType;
         private System.Windows.Forms.ToolStripMenuItem menuGetFee;
+        private System.Windows.Forms.ToolStripMenuItem mnuFeeReport;
     }
 }
