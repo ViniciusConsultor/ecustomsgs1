@@ -111,6 +111,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConfirmFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmFee.Designer.cs">
+      <DependentUpon>frmConfirmFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGetFee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmConfirmFee.resx">
+      <DependentUpon>frmConfirmFee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGetFee.resx">
       <DependentUpon>frmGetFee.cs</DependentUpon>
     </EmbeddedResource>
