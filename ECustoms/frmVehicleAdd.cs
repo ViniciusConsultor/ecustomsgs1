@@ -131,6 +131,7 @@ namespace ECustoms
                 }
 
                 vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
+                vehicleInfo.GoodTypeId = 0; //khong phan loai
                 vehicleInfo.Status = txtStatus.Text;
                 vehicleInfo.Note = txtNote.Text;
                 vehicleInfo.VehicleID = _vehicleInfosTemp.Count + 1;
@@ -176,6 +177,7 @@ namespace ECustoms
 
                 //init vehicleType
                 var listVehicleType = VehicleTypeFactory.getAllVehicleType();
+                dataSet2.tblVehicleType.Rows.Add(0, "Không phân loại");
                 foreach (tblVehicleType vehicleType in listVehicleType)
                 {
                     dataSet2.tblVehicleType.Rows.Add(vehicleType.VehicleTypeID, vehicleType.Name);
