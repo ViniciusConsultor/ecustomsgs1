@@ -295,5 +295,12 @@ namespace ECustoms
             frmGetfee.MdiParent = this;
             frmGetfee.Show();
         }
+
+        private void mnuFeeReport_Click(object sender, EventArgs e)
+        {
+            FrmVehicleFeeReport report = new FrmVehicleFeeReport(_userInfo);
+            report.MdiParent = this;
+            report.Show();
+        }
     }
 }
