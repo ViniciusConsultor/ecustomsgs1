@@ -335,8 +335,10 @@ namespace ECustoms.BOL
 
         public static int InsertVehicle(tblVehicle vehicle, long declarationID)
         {
-            // Update last modified date by now
-            vehicle.ModifiedDate = CommonFactory.GetCurrentDate();
+            // Update created, last modified date by now
+            var now = CommonFactory.GetCurrentDate();
+            vehicle.CreatedDate = now;
+            vehicle.ModifiedDate = now;
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             db.tblDeclarations.Where(g => g.DeclarationID == declarationID).FirstOrDefault();
             db.AddTotblVehicles(vehicle);
@@ -407,13 +409,22 @@ namespace ECustoms.BOL
             return result <= 0;           
         }
 
-        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber, DateTime packFrom, DateTime packTo, bool isFeeExport, bool isFeeImport)
+        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber,bool isCreatedDateVehicle, DateTime createdFrom, DateTime createdTo, bool isParking, DateTime packFrom, DateTime packTo, bool isFeeExport, bool isFeeImport)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             IQueryable<ViewAllVehicleHasGood> _viewAllVehicle = db.ViewAllVehicleHasGoods;
             _viewAllVehicle = !string.IsNullOrEmpty(plateNumber) ? _viewAllVehicle.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)) : _viewAllVehicle;
             _viewAllVehicle = !string.IsNullOrEmpty(receiptNumber) ? _viewAllVehicle.Where(g => g.ExportReceiptNumber.Contains(receiptNumber) || g.ImportReceiptNumber.Contains(receiptNumber)) : _viewAllVehicle;
-            _viewAllVehicle = _viewAllVehicle.Where(g => g.Parking != null && g.ParkingDate >= packFrom && g.ParkingDate <= packTo);
+            if (isCreatedDateVehicle)
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.CreatedDateVehicle != null && g.CreatedDateVehicle >= createdFrom && g.CreatedDateVehicle <= createdTo);
+            }
+            
+            if (isParking)
+            {
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.Parking != null && g.ParkingDate >= packFrom && g.ParkingDate <= packTo);
+            }
+            
             if (isFeeExport)
             {
                 _viewAllVehicle = _viewAllVehicle.Where(g => g.feeExportStatus == (int) FeeStatus.PaidFee);

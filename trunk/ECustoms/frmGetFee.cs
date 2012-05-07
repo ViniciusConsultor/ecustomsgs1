@@ -65,7 +65,9 @@ namespace ECustoms
         {
             var packFrom = new DateTime(dtpParkingDateFrom.Value.Year, dtpParkingDateFrom.Value.Month, dtpParkingDateFrom.Value.Day, 0, 0, 0);
             var packTo = new DateTime(dtpParkingDateTo.Value.Year, dtpParkingDateTo.Value.Month, dtpParkingDateTo.Value.Day, 23, 59, 59);
-            var listVehicle =  VehicleFactory.SeachFee(txtPlateNumber.Text.Trim(), txtReceiptNumber.Text.Trim(), packFrom, packTo, cbHasFeeExport.Checked, cbHasFeeImport.Checked);
+            var createdFrom = new DateTime(dtpCreatedDateFrom.Value.Year, dtpCreatedDateFrom.Value.Month, dtpCreatedDateFrom.Value.Day, 0, 0, 0);
+            var createdTo = new DateTime(dtpCreatedDateTo.Value.Year, dtpCreatedDateTo.Value.Month, dtpCreatedDateTo.Value.Day, 23, 59, 59);
+            var listVehicle =  VehicleFactory.SeachFee(txtPlateNumber.Text.Trim(), txtReceiptNumber.Text.Trim(),cbCreatedVehicle.Checked, createdFrom, createdTo, cbIsParking.Checked, packFrom, packTo, cbHasFeeExport.Checked, cbHasFeeImport.Checked);
             // Bind data to the gridview
             grdVehicle.AutoGenerateColumns = false;
 
@@ -90,14 +92,13 @@ namespace ECustoms
             {
                 if (Object.ReferenceEquals(x, y)) return true;
                 if (Object.ReferenceEquals(x, null) || Object.ReferenceEquals(y, null)) return false;
-                return x.VehicleID == y.VehicleID && x.PlateNumber == y.PlateNumber;
+                return x.VehicleID == y.VehicleID;
             }
             public int GetHashCode(ViewAllVehicleHasGood vehicle)
             {
                 if (Object.ReferenceEquals(vehicle, null)) return 0;
                 var hashVehicleId = vehicle.VehicleID.GetHashCode();
-                var hashPlateNumber = vehicle.PlateNumber.GetHashCode();
-                return hashVehicleId ^ hashPlateNumber;
+                return hashVehicleId;
             }
         }
         #endregion
@@ -115,6 +116,30 @@ namespace ECustoms
             if (e.KeyChar == 13) // Enter key
             {
                 Search();
+            }
+        }
+
+        private void cbCreatedVehicle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbCreatedVehicle.Checked)
+            {
+                dtpCreatedDateFrom.Enabled = dtpCreatedDateTo.Enabled = true;
+            }
+            else
+            {
+                dtpCreatedDateFrom.Enabled = dtpCreatedDateTo.Enabled = false;    
+            }
+        }
+
+        private void cbIsParking_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbIsParking.Checked)
+            {
+                dtpParkingDateFrom.Enabled = dtpParkingDateTo.Enabled = true;
+            }
+            else
+            {
+                dtpParkingDateFrom.Enabled = dtpParkingDateTo.Enabled = false;
             }
         }
     }
