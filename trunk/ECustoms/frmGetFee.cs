@@ -16,7 +16,7 @@ namespace ECustoms
 {
     public partial class frmGetFee : Form
     {
-        private static ILog logger = LogManager.GetLogger("ECustoms.frmListVehicleType");
+        private static ILog logger = LogManager.GetLogger("ECustoms.frmGetFee");
         private UserInfo _userinfo;
 
         public frmGetFee()
@@ -67,7 +67,7 @@ namespace ECustoms
             var packTo = new DateTime(dtpParkingDateTo.Value.Year, dtpParkingDateTo.Value.Month, dtpParkingDateTo.Value.Day, 23, 59, 59);
             var createdFrom = new DateTime(dtpCreatedDateFrom.Value.Year, dtpCreatedDateFrom.Value.Month, dtpCreatedDateFrom.Value.Day, 0, 0, 0);
             var createdTo = new DateTime(dtpCreatedDateTo.Value.Year, dtpCreatedDateTo.Value.Month, dtpCreatedDateTo.Value.Day, 23, 59, 59);
-            var listVehicle =  VehicleFactory.SeachFee(txtPlateNumber.Text.Trim(), txtReceiptNumber.Text.Trim(),cbCreatedVehicle.Checked, createdFrom, createdTo, cbIsParking.Checked, packFrom, packTo, cbHasFeeExport.Checked, cbHasFeeImport.Checked);
+            var listVehicle =  VehicleFactory.SeachFee(txtPlateNumber.Text.Trim(), txtReceiptNumber.Text.Trim(), cbCreatedVehicle.Checked, createdFrom, createdTo, cbIsParking.Checked, packFrom, packTo, cbHasFeeExport.Checked, cbHasFeeImport.Checked);
             // Bind data to the gridview
             grdVehicle.AutoGenerateColumns = false;
 
@@ -75,11 +75,6 @@ namespace ECustoms
 
             grdVehicle.DataSource = listVehicle;
             txtPlateNumber.Focus();
-        }
-
-        private void btnFeeExport_Click(object sender, EventArgs e)
-        {
-
         }
 
         #region Private Class
@@ -141,6 +136,72 @@ namespace ECustoms
             {
                 dtpParkingDateFrom.Enabled = dtpParkingDateTo.Enabled = false;
             }
+        }
+
+        private void btnFeeExport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grdVehicle.SelectedRows.Count == 1)
+                {
+                    var vehicleId = long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString());
+                    var mode = 0; //add new
+                    if (cbHasFeeExport.Checked) mode = 1; //edit
+                    var frmConfirmFee = new frmConfirmFee(_userinfo, mode, 0, vehicleId);
+                    if (frmConfirmFee.ShowDialog() == DialogResult.OK)
+                    {
+                        Search();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần chọn 1 phương tiện cần xác nhận.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnFeeImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grdVehicle.SelectedRows.Count == 1)
+                {
+                    var vehicleId = long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString());
+                    var mode = 0; //add new
+                    if (cbHasFeeImport.Checked) mode = 1; //edit
+                    var frmConfirmFee = new frmConfirmFee(_userinfo, mode, 1, vehicleId);
+                    if (frmConfirmFee.ShowDialog() == DialogResult.OK)
+                    {
+                        Search();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần chọn 1 phương tiện cần xác nhận.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cbHasFeeExport_CheckedChanged(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void cbHasFeeImport_CheckedChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

@@ -431,7 +431,7 @@ namespace ECustoms.BOL
             }
             else
             {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeExportStatus == null || g.feeExportStatus == (int)FeeStatus.HasNotPayFee);
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeExportStatus == null || g.feeExportStatus != (int)FeeStatus.PaidFee);
             }
             if (isFeeImport)
             {
@@ -439,7 +439,7 @@ namespace ECustoms.BOL
             }
             else
             {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeImportStatus == null || g.feeImportStatus == (int)FeeStatus.HasNotPayFee);
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeImportStatus == null || g.feeImportStatus != (int)FeeStatus.PaidFee);
             }    
 
             List<ViewAllVehicleHasGood> result = (from a in _viewAllVehicle
