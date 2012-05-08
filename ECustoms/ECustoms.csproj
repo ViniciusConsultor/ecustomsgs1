@@ -20,6 +20,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -32,7 +33,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -101,6 +101,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -132,6 +133,12 @@
     </Compile>
     <Compile Include="FrmVehicleFeeReport.Designer.cs">
       <DependentUpon>FrmVehicleFeeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleFeeReport1.cs">
+      <DependentUpon>VehicleFeeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="VehicleTransportGoods.cs">
       <DependentUpon>VehicleTransportGoods.rpt</DependentUpon>
@@ -411,6 +418,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVehicleFeeReport.resx">
       <DependentUpon>FrmVehicleFeeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleFeeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VehicleFeeReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleTransportGoods.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

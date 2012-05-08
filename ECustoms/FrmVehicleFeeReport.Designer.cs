@@ -168,6 +168,7 @@
             this.btnSearch.Text = "Hiện báo cáo";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // FrmVehicleFeeReport
             // 

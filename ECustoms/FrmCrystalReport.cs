@@ -17,6 +17,12 @@ namespace ECustoms
         private DateTime _to;
         private UserInfo _userInfo;
 
+        public FrmCrystalReport(VehicleFeeReport report)
+        {
+            InitializeComponent();
+            crystalReportViewer1.ReportSource = report;
+        }
+
         public FrmCrystalReport(ReportType type, DateTime from, DateTime to, UserInfo userInfo)
         {
             InitializeComponent();
