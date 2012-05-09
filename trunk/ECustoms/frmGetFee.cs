@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Data;
-using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Windows.Forms;
-using ECustoms.DAL;
-using ECustoms.Utilities;
-using log4net;
 using ECustoms.BOL;
+using ECustoms.Utilities;
+using Microsoft.Office.Interop.Excel;
+using Point = System.Drawing.Point;
+using log4net;
+using ECustoms.DAL;
+using System.Configuration;
 
 namespace ECustoms
 {
@@ -202,6 +205,51 @@ namespace ECustoms
         private void cbHasFeeImport_CheckedChanged(object sender, EventArgs e)
         {
             Search();
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
+                var excel = new ApplicationClass();
+                excel.Application.Workbooks.Add(true);
+
+                var columnIndex = 0;
+                for (var i = 0; i < grdVehicle.Columns.Count; i++)
+                {
+                    if (!grdVehicle.Columns[i].Visible) continue;
+                    columnIndex++;
+                    excel.Cells[1, columnIndex] = grdVehicle.Columns[i].HeaderText;
+                    ((Range)excel.Cells[1, columnIndex]).Font.Bold = true;
+                }
+                int rowIndex = 0;
+                foreach (DataGridViewRow dataRow in grdVehicle.Rows)
+                {
+                    rowIndex++;
+                    excel.Cells[rowIndex + 1, 1] = dataRow.Cells["PlateNumber"].Value != null ? dataRow.Cells["PlateNumber"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 2] = dataRow.Cells["DriverName"].Value != null ? dataRow.Cells["DriverName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 3] = dataRow.Cells["ExportDate"].Value != null ? ((DateTime)(dataRow.Cells["ExportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 4] = dataRow.Cells["NumberOfContainer"].Value != null ? dataRow.Cells["NumberOfContainer"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 5] = dataRow.Cells["ImportDate"].Value != null ? ((DateTime)(dataRow.Cells["ImportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 6] = dataRow.Cells["parking"].Value != null ? dataRow.Cells["parking"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 7] = dataRow.Cells["ParkingDate"].Value != null ? ((DateTime)(dataRow.Cells["ParkingDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 8] = dataRow.Cells["status"].Value != null ? dataRow.Cells["status"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 9] = dataRow.Cells["Note"].Value != null ? dataRow.Cells["Note"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 10] = dataRow.Cells["ImportStatus"].Value != null ? dataRow.Cells["ImportStatus"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 11] = dataRow.Cells["ConfirmExportByName"].Value != null ? dataRow.Cells["ConfirmExportByName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 12] = dataRow.Cells["ConfirmImportByName"].Value != null ? dataRow.Cells["ConfirmImportByName"].Value.ToString() : "";
+                }
+
+                excel.Visible = true;
+                var worksheet = (Worksheet)excel.ActiveSheet;
+                worksheet.Activate();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
