@@ -31,17 +31,24 @@ namespace ECustoms
         private void cbFeeImport_CheckedChanged(object sender, EventArgs e)
         {
             dtpImportFrom.Enabled = cbFeeImport.Checked;
+            lblImportFrom.Enabled = cbFeeImport.Checked;
             dtpImportTo.Enabled = cbFeeImport.Checked;
+            lblImportTo.Enabled = cbFeeImport.Checked;
         }
 
         private void cbFeeExport_CheckedChanged(object sender, EventArgs e)
         {
             dtpExportFrom.Enabled = cbFeeExport.Checked;
             dtpExportTo.Enabled = cbFeeExport.Checked;
+
+            lblExportFrom.Enabled = cbFeeExport.Checked;
+            lblExportTo.Enabled = cbFeeExport.Checked;
+            
         }
 
         private void FrmVehicleFeeReport_Load(object sender, EventArgs e)
         {
+            this.Text = "Báo cáo thu phí" + ConstantInfo.MESSAGE_TITLE;
             cbFeeExport.Checked = true;
             cbFeeImport.Checked = true;
         }

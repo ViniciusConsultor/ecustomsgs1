@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVehicleFeeReport));
             this.dtpImportTo = new System.Windows.Forms.DateTimePicker();
             this.dtpImportFrom = new System.Windows.Forms.DateTimePicker();
+            this.lblExportTo = new System.Windows.Forms.Label();
             this.lblImportTo = new System.Windows.Forms.Label();
-            this.lblImportFrom = new System.Windows.Forms.Label();
             this.dtpExportTo = new System.Windows.Forms.DateTimePicker();
             this.dtpExportFrom = new System.Windows.Forms.DateTimePicker();
-            this.lblExportTo = new System.Windows.Forms.Label();
             this.lblExportFrom = new System.Windows.Forms.Label();
+            this.lblImportFrom = new System.Windows.Forms.Label();
             this.cbFeeImport = new System.Windows.Forms.CheckBox();
             this.cbFeeExport = new System.Windows.Forms.CheckBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -64,27 +64,25 @@
             this.dtpImportFrom.Size = new System.Drawing.Size(122, 26);
             this.dtpImportFrom.TabIndex = 16;
             // 
+            // lblExportTo
+            // 
+            this.lblExportTo.AutoSize = true;
+            this.lblExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExportTo.Location = new System.Drawing.Point(489, 73);
+            this.lblExportTo.Name = "lblExportTo";
+            this.lblExportTo.Size = new System.Drawing.Size(81, 20);
+            this.lblExportTo.TabIndex = 14;
+            this.lblExportTo.Text = "Đến ngày:";
+            // 
             // lblImportTo
             // 
             this.lblImportTo.AutoSize = true;
-            this.lblImportTo.Enabled = false;
             this.lblImportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImportTo.Location = new System.Drawing.Point(489, 73);
+            this.lblImportTo.Location = new System.Drawing.Point(489, 24);
             this.lblImportTo.Name = "lblImportTo";
             this.lblImportTo.Size = new System.Drawing.Size(81, 20);
-            this.lblImportTo.TabIndex = 14;
+            this.lblImportTo.TabIndex = 13;
             this.lblImportTo.Text = "Đến ngày:";
-            // 
-            // lblImportFrom
-            // 
-            this.lblImportFrom.AutoSize = true;
-            this.lblImportFrom.Enabled = false;
-            this.lblImportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImportFrom.Location = new System.Drawing.Point(489, 24);
-            this.lblImportFrom.Name = "lblImportFrom";
-            this.lblImportFrom.Size = new System.Drawing.Size(81, 20);
-            this.lblImportFrom.TabIndex = 13;
-            this.lblImportFrom.Text = "Đến ngày:";
             // 
             // dtpExportTo
             // 
@@ -108,27 +106,25 @@
             this.dtpExportFrom.Size = new System.Drawing.Size(122, 26);
             this.dtpExportFrom.TabIndex = 12;
             // 
-            // lblExportTo
-            // 
-            this.lblExportTo.AutoSize = true;
-            this.lblExportTo.Enabled = false;
-            this.lblExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExportTo.Location = new System.Drawing.Point(238, 74);
-            this.lblExportTo.Name = "lblExportTo";
-            this.lblExportTo.Size = new System.Drawing.Size(69, 20);
-            this.lblExportTo.TabIndex = 11;
-            this.lblExportTo.Text = "Từ ngày:";
-            // 
             // lblExportFrom
             // 
             this.lblExportFrom.AutoSize = true;
-            this.lblExportFrom.Enabled = false;
             this.lblExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExportFrom.Location = new System.Drawing.Point(237, 27);
+            this.lblExportFrom.Location = new System.Drawing.Point(238, 74);
             this.lblExportFrom.Name = "lblExportFrom";
             this.lblExportFrom.Size = new System.Drawing.Size(69, 20);
-            this.lblExportFrom.TabIndex = 10;
+            this.lblExportFrom.TabIndex = 11;
             this.lblExportFrom.Text = "Từ ngày:";
+            // 
+            // lblImportFrom
+            // 
+            this.lblImportFrom.AutoSize = true;
+            this.lblImportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImportFrom.Location = new System.Drawing.Point(237, 27);
+            this.lblImportFrom.Name = "lblImportFrom";
+            this.lblImportFrom.Size = new System.Drawing.Size(69, 20);
+            this.lblImportFrom.TabIndex = 10;
+            this.lblImportFrom.Text = "Từ ngày:";
             // 
             // cbFeeImport
             // 
@@ -180,12 +176,12 @@
             this.Controls.Add(this.cbFeeImport);
             this.Controls.Add(this.dtpImportTo);
             this.Controls.Add(this.dtpImportFrom);
+            this.Controls.Add(this.lblExportTo);
             this.Controls.Add(this.lblImportTo);
-            this.Controls.Add(this.lblImportFrom);
             this.Controls.Add(this.dtpExportTo);
             this.Controls.Add(this.dtpExportFrom);
-            this.Controls.Add(this.lblExportTo);
             this.Controls.Add(this.lblExportFrom);
+            this.Controls.Add(this.lblImportFrom);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVehicleFeeReport";
             this.Text = "FrmVehicleFeeReport";
@@ -199,12 +195,12 @@
 
         private System.Windows.Forms.DateTimePicker dtpImportTo;
         private System.Windows.Forms.DateTimePicker dtpImportFrom;
+        private System.Windows.Forms.Label lblExportTo;
         private System.Windows.Forms.Label lblImportTo;
-        private System.Windows.Forms.Label lblImportFrom;
         private System.Windows.Forms.DateTimePicker dtpExportTo;
         private System.Windows.Forms.DateTimePicker dtpExportFrom;
-        private System.Windows.Forms.Label lblExportTo;
         private System.Windows.Forms.Label lblExportFrom;
+        private System.Windows.Forms.Label lblImportFrom;
         private System.Windows.Forms.CheckBox cbFeeImport;
         private System.Windows.Forms.CheckBox cbFeeExport;
         private System.Windows.Forms.Button btnSearch;
