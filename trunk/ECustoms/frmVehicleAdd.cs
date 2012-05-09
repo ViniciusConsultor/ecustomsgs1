@@ -394,6 +394,7 @@ namespace ECustoms
           {
             try
             {
+              AutoFillVehicleType();
               var vehicleInfo = GetVehicle();
               if (vehicleInfo != null)
               {
@@ -416,6 +417,7 @@ namespace ECustoms
         private void txtPlateNumber_Leave(object sender, EventArgs e)
         {
           txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+          AutoFillVehicleType();
         }
 
         private void grdVehicle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -424,7 +426,31 @@ namespace ECustoms
           {
             string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
             grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+
+            //auto fill data
+            tblVehicle vehicle = VehicleFactory.GetByPlateNumber(newValue);
+            if (vehicle != null)
+            {
+                grdVehicle.Rows[e.RowIndex].Cells["DriverName"].Value = vehicle.DriverName;
+                if (vehicle.vehicleTypeId != null)
+                {
+                    grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value = vehicle.vehicleTypeId;
+                }
+            }
           }
+        }
+
+        private void AutoFillVehicleType()
+        {
+            tblVehicle vehicle = VehicleFactory.GetByPlateNumber(txtPlateNumber.Text);
+            if (vehicle != null)
+            {
+                if (vehicle.vehicleTypeId != null)
+                {
+                    cbVehicleType.SelectedValue = vehicle.vehicleTypeId;
+                }
+                txtDriverName.Text = vehicle.DriverName;
+            }
         }
     }
 }

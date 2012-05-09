@@ -1045,6 +1045,17 @@ namespace ECustoms
             {
                 string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
                 grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+
+                //auto fill data
+                tblVehicle vehicle = VehicleFactory.GetByPlateNumber(newValue);
+                if (vehicle != null)
+                {
+                    grdVehicle.Rows[e.RowIndex].Cells["DriverName"].Value = vehicle.DriverName;
+                    if (vehicle.vehicleTypeId != null)
+                    {
+                        grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value = vehicle.vehicleTypeId;
+                    }
+                }
             }
         }
 

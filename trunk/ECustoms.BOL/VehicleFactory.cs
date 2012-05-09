@@ -170,6 +170,15 @@ namespace ECustoms.BOL
             return vehicle;
         }
 
+
+        public static tblVehicle GetByPlateNumber(String platNumber)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            tblVehicle vehicle = db.tblVehicles.Where(g => g.PlateNumber == platNumber).OrderByDescending(g => g.VehicleID).FirstOrDefault();
+            db.Connection.Close();
+            return vehicle;
+        }
+
         public static ViewAllVehicleHasGood GetByIDFromView(long vehicleID)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
