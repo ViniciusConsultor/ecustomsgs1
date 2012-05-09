@@ -592,7 +592,7 @@
             // 
             // GoodTypeName
             // 
-            this.GoodTypeName.DataPropertyName = "GoodTypeName";
+            this.GoodTypeName.DataPropertyName = "TypeName";
             this.GoodTypeName.HeaderText = "Loại hàng";
             this.GoodTypeName.Name = "GoodTypeName";
             this.GoodTypeName.ReadOnly = true;
@@ -600,7 +600,7 @@
             // 
             // VehicleTypeCapacity
             // 
-            this.VehicleTypeCapacity.DataPropertyName = "VehicleTypeCapacity";
+            this.VehicleTypeCapacity.DataPropertyName = "Capacity";
             this.VehicleTypeCapacity.HeaderText = "Loại trọng tải";
             this.VehicleTypeCapacity.Name = "VehicleTypeCapacity";
             this.VehicleTypeCapacity.ReadOnly = true;
