@@ -610,6 +610,7 @@ FROM            ViewAllDeclarationTNTX</CommandText>
               <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" type="xs:string" minOccurs="0" />
               <xs:element name="ExportDate" msprop:Generator_ColumnVarNameInTable="columnExportDate" msprop:Generator_ColumnPropNameInRow="ExportDate" msprop:Generator_ColumnPropNameInTable="ExportDateColumn" msprop:Generator_UserColumnName="ExportDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="ImportedLocalTime" msprop:Generator_ColumnVarNameInTable="columnImportedLocalTime" msprop:Generator_ColumnPropNameInRow="ImportedLocalTime" msprop:Generator_ColumnPropNameInTable="ImportedLocalTimeColumn" msprop:Generator_UserColumnName="ImportedLocalTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
