@@ -229,16 +229,20 @@ namespace ECustoms
                     rowIndex++;
                     excel.Cells[rowIndex + 1, 1] = dataRow.Cells["PlateNumber"].Value != null ? dataRow.Cells["PlateNumber"].Value.ToString() : "";
                     excel.Cells[rowIndex + 1, 2] = dataRow.Cells["DriverName"].Value != null ? dataRow.Cells["DriverName"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 3] = dataRow.Cells["ExportDate"].Value != null ? ((DateTime)(dataRow.Cells["ExportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
-                    excel.Cells[rowIndex + 1, 4] = dataRow.Cells["NumberOfContainer"].Value != null ? dataRow.Cells["NumberOfContainer"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 5] = dataRow.Cells["ImportDate"].Value != null ? ((DateTime)(dataRow.Cells["ImportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
-                    excel.Cells[rowIndex + 1, 6] = dataRow.Cells["parking"].Value != null ? dataRow.Cells["parking"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 7] = dataRow.Cells["ParkingDate"].Value != null ? ((DateTime)(dataRow.Cells["ParkingDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
-                    excel.Cells[rowIndex + 1, 8] = dataRow.Cells["status"].Value != null ? dataRow.Cells["status"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 9] = dataRow.Cells["Note"].Value != null ? dataRow.Cells["Note"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 10] = dataRow.Cells["ImportStatus"].Value != null ? dataRow.Cells["ImportStatus"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 11] = dataRow.Cells["ConfirmExportByName"].Value != null ? dataRow.Cells["ConfirmExportByName"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 12] = dataRow.Cells["ConfirmImportByName"].Value != null ? dataRow.Cells["ConfirmImportByName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 3] = dataRow.Cells["GoodTypeName"].Value != null ? dataRow.Cells["GoodTypeName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 4] = dataRow.Cells["VehicleTypeCapacity"].Value != null ? dataRow.Cells["VehicleTypeCapacity"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 5] = dataRow.Cells["ExportReceiptNumber"].Value != null ? dataRow.Cells["ExportReceiptNumber"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 6] = dataRow.Cells["ImportReceiptNumber"].Value != null ? dataRow.Cells["ImportReceiptNumber"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 7] = dataRow.Cells["ExportDate"].Value != null ? ((DateTime)(dataRow.Cells["ExportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 8] = dataRow.Cells["NumberOfContainer"].Value != null ? dataRow.Cells["NumberOfContainer"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 9] = dataRow.Cells["ImportDate"].Value != null ? ((DateTime)(dataRow.Cells["ImportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 10] = dataRow.Cells["parking"].Value != null ? dataRow.Cells["parking"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 11] = dataRow.Cells["ParkingDate"].Value != null ? ((DateTime)(dataRow.Cells["ParkingDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 12] = dataRow.Cells["status"].Value != null ? dataRow.Cells["status"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 13] = dataRow.Cells["Note"].Value != null ? dataRow.Cells["Note"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 14] = dataRow.Cells["ImportStatus"].Value != null ? dataRow.Cells["ImportStatus"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 15] = dataRow.Cells["ConfirmExportByName"].Value != null ? dataRow.Cells["ConfirmExportByName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 16] = dataRow.Cells["ConfirmImportByName"].Value != null ? dataRow.Cells["ConfirmImportByName"].Value.ToString() : "";
                 }
 
                 excel.Visible = true;
