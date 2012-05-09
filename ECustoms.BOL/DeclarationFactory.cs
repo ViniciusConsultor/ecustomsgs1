@@ -19,13 +19,13 @@ namespace ECustoms.BOL
         public static int AddDeclaration(tblDeclaration declarationInfo, List<tblVehicle> vehicleInfos, List<tblVehicle> listVehicleUpdate, int userID)
         {
             var result = -1;
-
+            var currentDate = CommonFactory.GetCurrentDate();
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
 
             declarationInfo.tblUser = db.tblUsers.Where(g => g.UserID.Equals(userID)).FirstOrDefault();
             // Set Created date and Last modified date
-            declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
-            declarationInfo.ModifiedDate = CommonFactory.GetCurrentDate();
+            declarationInfo.CreatedDate = currentDate;
+            declarationInfo.ModifiedDate = currentDate;
             db.AddTotblDeclarations(declarationInfo);
             db.SaveChanges();
             // Return if insert fail
@@ -33,7 +33,9 @@ namespace ECustoms.BOL
             // Add vehicle
             foreach (var vehicle in vehicleInfos)
             {
-                vehicle.ModifiedDate = CommonFactory.GetCurrentDate();
+                // Update movidifedDate and Created date
+                vehicle.CreatedDate = currentDate;
+                vehicle.ModifiedDate = currentDate;
                 db.AddTotblVehicles(vehicle);
                 db.SaveChanges();
 
