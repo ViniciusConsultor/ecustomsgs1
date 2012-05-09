@@ -670,6 +670,9 @@ namespace ECustoms
                         if (count == _count)
                         {
                             vehicleInfo.DriverName = txtDriverName.Text.Trim();
+                            vehicleInfo.vehicleTypeId = Convert.ToInt32(cbVehicleType.SelectedValue);
+                            vehicleInfo.GoodTypeId = Convert.ToInt32(cbGoodType.SelectedValue);
+
                             vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                             vehicleInfo.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
                             vehicleInfo.NumberOfContainer = txtNumberOfContainer.Text.Trim();
@@ -716,6 +719,8 @@ namespace ECustoms
                     vehicle.Note = txtNote.Text;
                     vehicle.IsExport = _isExport;
                     vehicle.IsImport = _isImport;
+                    vehicle.vehicleTypeId = Convert.ToInt32(cbVehicleType.SelectedValue);
+                    vehicle.GoodTypeId = Convert.ToInt32(cbGoodType.SelectedValue);
 
                     if ((vehicle.ConfirmExportBy == null || vehicle.ConfirmExportBy.Value == 0) && vehicle.IsExport.Value)
                         vehicle.ConfirmExportBy = _userInfo.UserID;
