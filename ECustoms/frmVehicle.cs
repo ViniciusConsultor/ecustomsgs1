@@ -841,11 +841,16 @@ namespace ECustoms
             {
                 if ((_mode == 0 || _mode == 4) && e.KeyChar == 13)
                 {
+                    AutoFillVehicleType();
                     if (!Validate()) return;
 
                     // Add data to veicleInfo list
                     var vehicleInfo = new ViewAllVehicleHasGood();
                     vehicleInfo.DriverName = txtDriverName.Text.Trim();
+
+                    vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
+                    vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+ 
                     vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                     vehicleInfo.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
                     if (txtNumberOfContainer.Text != "")
@@ -1011,6 +1016,7 @@ namespace ECustoms
         private void txtPlateNumber_Leave(object sender, EventArgs e)
         {
           txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
+          AutoFillVehicleType();
         }
 
         private void grdVehicle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -1019,7 +1025,32 @@ namespace ECustoms
           {
             string newValue = StringUtil.RemoveAllNonAlphanumericString(grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ToUpper();
             grdVehicle.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = newValue;
+
+            //auto fill data
+            tblVehicle vehicle = VehicleFactory.GetByPlateNumber(newValue);
+            if (vehicle != null)
+            {
+                grdVehicle.Rows[e.RowIndex].Cells["DriverName"].Value = vehicle.DriverName;
+                if (vehicle.vehicleTypeId != null)
+                {
+                    grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value = vehicle.vehicleTypeId;
+                }
+            }
           }
+        }
+
+        private void AutoFillVehicleType()
+        {
+            tblVehicle vehicle = VehicleFactory.GetByPlateNumber(txtPlateNumber.Text);
+            if (vehicle != null)
+            {
+                if (vehicle.vehicleTypeId != null)
+                {
+                    cbVehicleType.SelectedValue = vehicle.vehicleTypeId;
+                }
+                txtDriverName.Text = vehicle.DriverName;
+            }
+            
         }
     }
 }
