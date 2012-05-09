@@ -71,7 +71,7 @@
             this.grbResult.Location = new System.Drawing.Point(12, 12);
             this.grbResult.Name = "grbResult";
             this.grbResult.Size = new System.Drawing.Size(332, 134);
-            this.grbResult.TabIndex = 1;
+            this.grbResult.TabIndex = 0;
             this.grbResult.TabStop = false;
             this.grbResult.Text = "Thông tin thu phí";
             // 
@@ -81,7 +81,7 @@
             this.txtMoney.Mask = "000000000000";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(185, 26);
-            this.txtMoney.TabIndex = 32;
+            this.txtMoney.TabIndex = 1;
             // 
             // label3
             // 
@@ -99,7 +99,7 @@
             this.dtpFee.Location = new System.Drawing.Point(134, 95);
             this.dtpFee.Name = "dtpFee";
             this.dtpFee.Size = new System.Drawing.Size(125, 26);
-            this.dtpFee.TabIndex = 30;
+            this.dtpFee.TabIndex = 2;
             // 
             // mtxtFeeHour
             // 
@@ -107,7 +107,7 @@
             this.mtxtFeeHour.Mask = "00:00";
             this.mtxtFeeHour.Name = "mtxtFeeHour";
             this.mtxtFeeHour.Size = new System.Drawing.Size(54, 26);
-            this.mtxtFeeHour.TabIndex = 29;
+            this.mtxtFeeHour.TabIndex = 3;
             this.mtxtFeeHour.ValidatingType = typeof(System.DateTime);
             // 
             // txtReceipt
@@ -116,7 +116,7 @@
             this.txtReceipt.Location = new System.Drawing.Point(134, 31);
             this.txtReceipt.Name = "txtReceipt";
             this.txtReceipt.Size = new System.Drawing.Size(185, 26);
-            this.txtReceipt.TabIndex = 2;
+            this.txtReceipt.TabIndex = 0;
             // 
             // label2
             // 
@@ -146,7 +146,7 @@
             this.btnConfirmFee.Location = new System.Drawing.Point(121, 152);
             this.btnConfirmFee.Name = "btnConfirmFee";
             this.btnConfirmFee.Size = new System.Drawing.Size(119, 33);
-            this.btnConfirmFee.TabIndex = 2;
+            this.btnConfirmFee.TabIndex = 1;
             this.btnConfirmFee.Text = "Xác nhận";
             this.btnConfirmFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmFee.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
             this.btnClose.Location = new System.Drawing.Point(255, 152);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Đóng";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
