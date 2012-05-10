@@ -305,12 +305,24 @@ namespace ECustoms
                         break;
                     case ReportType.VehicleTransportGoods:
                         {
-                            var dateFrom = (TextObject)vehicleTransportGoods1.Section1.ReportObjects["dateFrom"];
+                            var dateFrom = (TextObject)vehicleFreight1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
 
-                            var dateTo = (TextObject)vehicleTransportGoods1.Section1.ReportObjects["dateTo"];
+                            var dateTo = (TextObject)vehicleFreight1.Section1.ReportObjects["dateTo"];
                             dateTo.Text = _to.ToString("dd/MM/yyyy");
-                            crystalReportViewer1.ReportSource = vehicleTransportGoods1;
+
+                            StringBuilder buffer = new StringBuilder();
+                            buffer.Append(" SELECT vehicleTypeId, GoodTypeId, COUNT(*) as CountVehicle, SUM (feeExportAmount) as SumFeeExport, SUM (feeImportAmount) as SumFeeImport, Name, TypeName FROM ViewVehicleFreight ");
+                            buffer.Append(" WHERE ");
+                            buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            buffer.Append(" GROUP BY vehicleTypeId, GoodTypeId, Name, TypeName");
+
+                            var adpater = new SqlDataAdapter(buffer.ToString(), connection);
+                            var dt = new DataTable();
+                            adpater.Fill(dt);
+                            vehicleFreight1.SetDataSource(dt);
+                            crystalReportViewer1.ReportSource = vehicleFreight1;
                             break;
                         }
                 }

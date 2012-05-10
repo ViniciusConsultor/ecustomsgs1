@@ -304,6 +304,21 @@
       [ViewUserGroup].[PhoneNumber] AS [PhoneNumber]
       FROM [dbo].[ViewUserGroup] AS [ViewUserGroup]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ViewVehicleFreight" EntityType="dbEcustomModel.Store.ViewVehicleFreight" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFreight">
+            <DefiningQuery>SELECT 
+      [ViewVehicleFreight].[VehicleID] AS [VehicleID], 
+      [ViewVehicleFreight].[PlateNumber] AS [PlateNumber], 
+      [ViewVehicleFreight].[CreatedDate] AS [CreatedDate], 
+      [ViewVehicleFreight].[vehicleTypeId] AS [vehicleTypeId], 
+      [ViewVehicleFreight].[Code] AS [Code], 
+      [ViewVehicleFreight].[Name] AS [Name], 
+      [ViewVehicleFreight].[GoodTypeId] AS [GoodTypeId], 
+      [ViewVehicleFreight].[TypeName] AS [TypeName], 
+      [ViewVehicleFreight].[feeExportAmount] AS [feeExportAmount], 
+      [ViewVehicleFreight].[feeImportAmount] AS [feeImportAmount], 
+      [ViewVehicleFreight].[DeclarationType] AS [DeclarationType]
+      FROM [dbo].[ViewVehicleFreight] AS [ViewVehicleFreight]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_tblDeclaration_tblUser" Association="dbEcustomModel.Store.FK_tblDeclaration_tblUser">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblDeclaration" EntitySet="tblDeclaration" />
@@ -890,6 +905,25 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'eCustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewVehicleFreight">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="bigint" Nullable="false" />
+          <Property Name="PlateNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="vehicleTypeId" Type="int" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GoodTypeId" Type="int" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="500" />
+          <Property Name="feeExportAmount" Type="bigint" />
+          <Property Name="feeImportAmount" Type="bigint" />
+          <Property Name="DeclarationType" Type="smallint" />
+        </EntityType>
         <Association Name="FK_tblDeclaration_tblUser">
           <End Role="tblUser" Type="dbEcustomModel.Store.tblUser" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -1028,6 +1062,7 @@
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblDeclaration" EntitySet="tblDeclarations" />
           </AssociationSet>
+          <EntitySet Name="ViewVehicleFreights" EntityType="dbEcustomModel.ViewVehicleFreight" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -1596,6 +1631,22 @@
           <End Type="dbEcustomModel.tblUser" Role="tblUser" Multiplicity="0..1" />
           <End Type="dbEcustomModel.tblDeclaration" Role="tblDeclaration" Multiplicity="*" />
         </Association>
+        <EntityType Name="ViewVehicleFreight">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Type="Int64" Name="VehicleID" Nullable="false" />
+          <Property Type="String" Name="PlateNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="vehicleTypeId" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GoodTypeId" />
+          <Property Type="String" Name="TypeName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="feeExportAmount" />
+          <Property Type="Int64" Name="feeImportAmount" />
+          <Property Type="Int16" Name="DeclarationType" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2178,6 +2229,23 @@
             </EndProperty>
             <Condition ColumnName="CreatedByID" IsNull="false" />
           </AssociationSetMapping>
+          <EntitySetMapping Name="ViewVehicleFreights">
+            <EntityTypeMapping TypeName="dbEcustomModel.ViewVehicleFreight">
+              <MappingFragment StoreEntitySet="ViewVehicleFreight">
+                <ScalarProperty Name="DeclarationType" ColumnName="DeclarationType" />
+                <ScalarProperty Name="feeImportAmount" ColumnName="feeImportAmount" />
+                <ScalarProperty Name="feeExportAmount" ColumnName="feeExportAmount" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="GoodTypeId" ColumnName="GoodTypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="vehicleTypeId" ColumnName="vehicleTypeId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2233,6 +2301,7 @@
           <ConnectorPoint PointX="2.25" PointY="7.4131982421875" />
           <ConnectorPoint PointX="3" PointY="7.4131982421875" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="0.75" PointY="16.75" Height="3.1340950520833246" />
       </Diagram>
     </Diagrams>
   </Designer>
