@@ -55,6 +55,11 @@ namespace ECustoms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (cbFeeExport.Checked == false && cbFeeImport.Checked == false)
+            {
+                MessageBox.Show("Bạn cần chọn loại báo cáo");
+                return;
+            }
             try
             {
 
@@ -92,9 +97,9 @@ namespace ECustoms
                 {
                     sql.Append("select * from ViewAllVehicleHasGood as table1");
                     sql.Append(" inner join");
-                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID, DeclarationType from ViewAllVehicleHasGood ");
+                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID from ViewAllVehicleHasGood ");
                     sql.Append(" where 1=1");
-                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID, ViewAllVehicleHasGood.DeclarationType) as table2");
+                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID) as table2");
 
                     sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
 
@@ -107,9 +112,9 @@ namespace ECustoms
                 {
                     sql.Append("select * from ViewAllVehicleHasGood as table1");
                     sql.Append(" inner join");
-                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID, DeclarationType from ViewAllVehicleHasGood ");
+                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID from ViewAllVehicleHasGood ");
                     sql.Append(" where 1=1");
-                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID, ViewAllVehicleHasGood.DeclarationType) as table2");
+                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID) as table2");
 
                     sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
 
@@ -122,9 +127,9 @@ namespace ECustoms
                 {
                     sql.Append("select * from ViewAllVehicleHasGood as table1");
                     sql.Append(" inner join");
-                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID, DeclarationType from ViewAllVehicleHasGood ");
+                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID from ViewAllVehicleHasGood ");
                     sql.Append(" where 1=1");
-                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID, ViewAllVehicleHasGood.DeclarationType) as table2");
+                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID) as table2");
 
                     sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
 
