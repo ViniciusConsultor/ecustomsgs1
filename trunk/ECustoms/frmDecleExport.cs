@@ -634,7 +634,9 @@ namespace ECustoms
                         v.ExportDate = vehicle.ExportDate;
                         v.IsExport = vehicle.IsExport;
                         v.Note = vehicle.Note;
-                        //v.Status = vehicle.Status;
+                        v.Status = vehicle.Status;
+                        v.vehicleTypeId = vehicle.vehicleTypeId;
+                        v.GoodTypeId = vehicle.GoodTypeId;
                         v.IsCompleted = vehicle.IsCompleted;
                         v.IsGoodsImported = vehicle.IsGoodsImported;
                         v.ImportStatus = vehicle.ImportStatus;
