@@ -146,7 +146,7 @@
             this.btnConfirmFee.Location = new System.Drawing.Point(121, 152);
             this.btnConfirmFee.Name = "btnConfirmFee";
             this.btnConfirmFee.Size = new System.Drawing.Size(119, 33);
-            this.btnConfirmFee.TabIndex = 1;
+            this.btnConfirmFee.TabIndex = 0;
             this.btnConfirmFee.Text = "Xác nhận";
             this.btnConfirmFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmFee.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
             this.btnClose.Location = new System.Drawing.Point(255, 152);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Đóng";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;

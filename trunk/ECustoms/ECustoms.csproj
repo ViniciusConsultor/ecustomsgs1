@@ -140,8 +140,8 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="VehicleTransportGoods.cs">
-      <DependentUpon>VehicleTransportGoods.rpt</DependentUpon>
+    <Compile Include="VehicleFreight.cs">
+      <DependentUpon>VehicleFreight.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -423,9 +423,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VehicleFeeReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="VehicleTransportGoods.rpt">
+    <EmbeddedResource Include="VehicleFreight.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>VehicleTransportGoods.cs</LastGenOutput>
+      <LastGenOutput>VehicleFreight.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddSelectVehichleFromExportPark.resx">
       <DependentUpon>FrmAddSelectVehichleFromExportPark.cs</DependentUpon>
