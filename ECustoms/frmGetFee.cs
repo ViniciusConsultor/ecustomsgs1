@@ -9,6 +9,7 @@ using System.Timers;
 using System.Windows.Forms;
 using ECustoms.BOL;
 using ECustoms.Utilities;
+using ECustoms.Utilities.Enums;
 using Microsoft.Office.Interop.Excel;
 using Point = System.Drawing.Point;
 using log4net;
@@ -66,16 +67,10 @@ namespace ECustoms
         /// </summary>        
         private void Search()
         {
-            var packFrom = new DateTime(dtpParkingDateFrom.Value.Year, dtpParkingDateFrom.Value.Month, dtpParkingDateFrom.Value.Day, 0, 0, 0);
-            var packTo = new DateTime(dtpParkingDateTo.Value.Year, dtpParkingDateTo.Value.Month, dtpParkingDateTo.Value.Day, 23, 59, 59);
-            var createdFrom = new DateTime(dtpCreatedDateFrom.Value.Year, dtpCreatedDateFrom.Value.Month, dtpCreatedDateFrom.Value.Day, 0, 0, 0);
-            var createdTo = new DateTime(dtpCreatedDateTo.Value.Year, dtpCreatedDateTo.Value.Month, dtpCreatedDateTo.Value.Day, 23, 59, 59);
-            var listVehicle =  VehicleFactory.SeachFee(txtPlateNumber.Text.Trim(), txtReceiptNumber.Text.Trim(), cbCreatedVehicle.Checked, createdFrom, createdTo, cbIsParking.Checked, packFrom, packTo, cbHasFeeExport.Checked, cbHasFeeImport.Checked);
+            var listVehicle =  VehicleFactory.SeachFee(txtPlateNumber.Text.Trim(), txtReceiptNumber.Text.Trim(), cbCreatedVehicle.Checked, dtpCreatedDateFrom.Value, dtpCreatedDateTo.Value, cbIsParking.Checked, dtpParkingDateFrom.Value, dtpParkingDateTo.Value, cbGetFee.Checked, dtpFeeFrom.Value, dtpFeeTo.Value);
             // Bind data to the gridview
             grdVehicle.AutoGenerateColumns = false;
-
             listVehicle = listVehicle.Distinct(new ViewAllVehicleHasGoodComparer()).ToList();
-
             grdVehicle.DataSource = listVehicle;
             txtPlateNumber.Focus();
         }
@@ -149,7 +144,8 @@ namespace ECustoms
                 {
                     var vehicleId = long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString());
                     var mode = 0; //add new
-                    if (cbHasFeeExport.Checked) mode = 1; //edit
+                    var feeStatus = grdVehicle.SelectedRows[0].Cells["feeExportStatus"].Value;
+                    if (feeStatus != null && int.Parse(feeStatus.ToString()) == (int)FeeStatus.PaidFee) mode = 1; //edit
                     var frmConfirmFee = new frmConfirmFee(_userinfo, mode, 0, vehicleId);
                     if (frmConfirmFee.ShowDialog() == DialogResult.OK)
                     {
@@ -177,7 +173,8 @@ namespace ECustoms
                 {
                     var vehicleId = long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString());
                     var mode = 0; //add new
-                    if (cbHasFeeImport.Checked) mode = 1; //edit
+                    var feeStatus = grdVehicle.SelectedRows[0].Cells["feeImportStatus"].Value;
+                    if (feeStatus != null && int.Parse(feeStatus.ToString()) == (int)FeeStatus.PaidFee) mode = 1; //edit
                     var frmConfirmFee = new frmConfirmFee(_userinfo, mode, 1, vehicleId);
                     if (frmConfirmFee.ShowDialog() == DialogResult.OK)
                     {
@@ -195,16 +192,6 @@ namespace ECustoms
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void cbHasFeeExport_CheckedChanged(object sender, EventArgs e)
-        {
-            Search();
-        }
-
-        private void cbHasFeeImport_CheckedChanged(object sender, EventArgs e)
-        {
-            Search();
         }
 
         private void btnExportExcel_Click(object sender, EventArgs e)
@@ -253,6 +240,18 @@ namespace ECustoms
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cbGetFee_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbGetFee.Checked)
+            {
+                dtpFeeFrom.Enabled = dtpFeeTo.Enabled = true;
+            }
+            else
+            {
+                dtpFeeFrom.Enabled = dtpFeeTo.Enabled = false;
             }
         }
     }

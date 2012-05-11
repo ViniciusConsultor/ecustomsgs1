@@ -418,7 +418,7 @@ namespace ECustoms.BOL
             return result <= 0;           
         }
 
-        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber,bool isCreatedDateVehicle, DateTime createdFrom, DateTime createdTo, bool isParking, DateTime packFrom, DateTime packTo, bool isFeeExport, bool isFeeImport)
+        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber,bool isCreatedDateVehicle, DateTime createdFrom, DateTime createdTo, bool isParking, DateTime parkingFrom, DateTime parkingTo, bool isGetFee, DateTime feeFrom, DateTime feeTo)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             IQueryable<ViewAllVehicleHasGood> _viewAllVehicle = db.ViewAllVehicleHasGoods;
@@ -426,30 +426,24 @@ namespace ECustoms.BOL
             _viewAllVehicle = !string.IsNullOrEmpty(receiptNumber) ? _viewAllVehicle.Where(g => g.ExportReceiptNumber.Contains(receiptNumber) || g.ImportReceiptNumber.Contains(receiptNumber)) : _viewAllVehicle;
             if (isCreatedDateVehicle)
             {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.CreatedDateVehicle != null && g.CreatedDateVehicle >= createdFrom && g.CreatedDateVehicle <= createdTo);
+                createdFrom = new DateTime(createdFrom.Year, createdFrom.Month, createdFrom.Day, 0, 0, 0);
+                createdTo = new DateTime(createdTo.Year, createdTo.Month, createdTo.Day, 0, 0, 0).AddDays(1);
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.CreatedDateVehicle != null && g.CreatedDateVehicle >= createdFrom && g.CreatedDateVehicle < createdTo);
             }
             
             if (isParking)
             {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.Parking != null && g.ParkingDate >= packFrom && g.ParkingDate <= packTo);
+                parkingFrom = new DateTime(parkingFrom.Year, parkingFrom.Month, parkingFrom.Day, 0, 0, 0);
+                parkingTo = new DateTime(parkingTo.Year, parkingTo.Month, parkingTo.Day, 0, 0, 0).AddDays(1);
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.Parking != null && g.ParkingDate >= parkingFrom && g.ParkingDate < parkingTo);
             }
             
-            if (isFeeExport)
+            if (isGetFee)
             {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeExportStatus == (int) FeeStatus.PaidFee);
-            }
-            else
-            {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeExportStatus == null || g.feeExportStatus != (int)FeeStatus.PaidFee);
-            }
-            if (isFeeImport)
-            {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeImportStatus == (int)FeeStatus.PaidFee);
-            }
-            else
-            {
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.feeImportStatus == null || g.feeImportStatus != (int)FeeStatus.PaidFee);
-            }    
+                feeFrom = new DateTime(feeFrom.Year, feeFrom.Month, feeFrom.Day, 0 ,0, 0);
+                feeTo = new DateTime(feeTo.Year, feeTo.Month, feeTo.Day, 0, 0, 0).AddDays(1);
+                _viewAllVehicle = _viewAllVehicle.Where(g => (g.feeExportDate >= feeFrom && g.feeExportDate < feeTo) || (g.feeImportDate >= feeFrom && g.feeImportDate < feeTo));
+            }  
 
             List<ViewAllVehicleHasGood> result = (from a in _viewAllVehicle
                                                orderby a.ModifiedDate descending
