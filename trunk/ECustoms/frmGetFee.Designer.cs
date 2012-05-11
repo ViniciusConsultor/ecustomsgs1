@@ -46,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbIsParking = new System.Windows.Forms.CheckBox();
-            this.cbHasFeeImport = new System.Windows.Forms.CheckBox();
-            this.cbHasFeeExport = new System.Windows.Forms.CheckBox();
             this.dtpParkingDateTo = new System.Windows.Forms.DateTimePicker();
             this.dtpParkingDateFrom = new System.Windows.Forms.DateTimePicker();
             this.lblParkingDateTo = new System.Windows.Forms.Label();
@@ -81,6 +79,9 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbGetFee = new System.Windows.Forms.CheckBox();
+            this.dtpFeeTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFeeFrom = new System.Windows.Forms.DateTimePicker();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GoodTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +99,8 @@
             this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConfirmExportByName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConfirmImportByName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeExportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeImportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbConditionSearch.SuspendLayout();
             this.grbResult.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -106,14 +109,15 @@
             // 
             // grbConditionSearch
             // 
+            this.grbConditionSearch.Controls.Add(this.cbGetFee);
+            this.grbConditionSearch.Controls.Add(this.dtpFeeTo);
+            this.grbConditionSearch.Controls.Add(this.dtpFeeFrom);
             this.grbConditionSearch.Controls.Add(this.cbCreatedVehicle);
             this.grbConditionSearch.Controls.Add(this.dtpCreatedDateTo);
             this.grbConditionSearch.Controls.Add(this.dtpCreatedDateFrom);
             this.grbConditionSearch.Controls.Add(this.label1);
             this.grbConditionSearch.Controls.Add(this.label2);
             this.grbConditionSearch.Controls.Add(this.cbIsParking);
-            this.grbConditionSearch.Controls.Add(this.cbHasFeeImport);
-            this.grbConditionSearch.Controls.Add(this.cbHasFeeExport);
             this.grbConditionSearch.Controls.Add(this.dtpParkingDateTo);
             this.grbConditionSearch.Controls.Add(this.dtpParkingDateFrom);
             this.grbConditionSearch.Controls.Add(this.lblParkingDateTo);
@@ -183,8 +187,6 @@
             // cbIsParking
             // 
             this.cbIsParking.AutoSize = true;
-            this.cbIsParking.Checked = true;
-            this.cbIsParking.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbIsParking.Location = new System.Drawing.Point(449, 30);
             this.cbIsParking.Name = "cbIsParking";
             this.cbIsParking.Size = new System.Drawing.Size(103, 24);
@@ -193,31 +195,10 @@
             this.cbIsParking.UseVisualStyleBackColor = true;
             this.cbIsParking.CheckedChanged += new System.EventHandler(this.cbIsParking_CheckedChanged);
             // 
-            // cbHasFeeImport
-            // 
-            this.cbHasFeeImport.AutoSize = true;
-            this.cbHasFeeImport.Location = new System.Drawing.Point(619, 65);
-            this.cbHasFeeImport.Name = "cbHasFeeImport";
-            this.cbHasFeeImport.Size = new System.Drawing.Size(141, 24);
-            this.cbHasFeeImport.TabIndex = 9;
-            this.cbHasFeeImport.Text = "Đã thu phí nhập";
-            this.cbHasFeeImport.UseVisualStyleBackColor = true;
-            this.cbHasFeeImport.CheckedChanged += new System.EventHandler(this.cbHasFeeImport_CheckedChanged);
-            // 
-            // cbHasFeeExport
-            // 
-            this.cbHasFeeExport.AutoSize = true;
-            this.cbHasFeeExport.Location = new System.Drawing.Point(619, 30);
-            this.cbHasFeeExport.Name = "cbHasFeeExport";
-            this.cbHasFeeExport.Size = new System.Drawing.Size(135, 24);
-            this.cbHasFeeExport.TabIndex = 8;
-            this.cbHasFeeExport.Text = "Đã thu phí xuất";
-            this.cbHasFeeExport.UseVisualStyleBackColor = true;
-            this.cbHasFeeExport.CheckedChanged += new System.EventHandler(this.cbHasFeeExport_CheckedChanged);
-            // 
             // dtpParkingDateTo
             // 
             this.dtpParkingDateTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpParkingDateTo.Enabled = false;
             this.dtpParkingDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpParkingDateTo.Location = new System.Drawing.Point(490, 93);
             this.dtpParkingDateTo.Name = "dtpParkingDateTo";
@@ -227,6 +208,7 @@
             // dtpParkingDateFrom
             // 
             this.dtpParkingDateFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpParkingDateFrom.Enabled = false;
             this.dtpParkingDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpParkingDateFrom.Location = new System.Drawing.Point(490, 61);
             this.dtpParkingDateFrom.Name = "dtpParkingDateFrom";
@@ -348,7 +330,9 @@
             this.ImportStatus,
             this.VehicleID,
             this.ConfirmExportByName,
-            this.ConfirmImportByName});
+            this.ConfirmImportByName,
+            this.feeExportStatus,
+            this.feeImportStatus});
             this.grdVehicle.Location = new System.Drawing.Point(11, 25);
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.ReadOnly = true;
@@ -575,6 +559,37 @@
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.Width = 200;
             // 
+            // cbGetFee
+            // 
+            this.cbGetFee.AutoSize = true;
+            this.cbGetFee.Location = new System.Drawing.Point(638, 30);
+            this.cbGetFee.Name = "cbGetFee";
+            this.cbGetFee.Size = new System.Drawing.Size(116, 24);
+            this.cbGetFee.TabIndex = 30;
+            this.cbGetFee.Text = "Ngày thu phí";
+            this.cbGetFee.UseVisualStyleBackColor = true;
+            this.cbGetFee.CheckedChanged += new System.EventHandler(this.cbGetFee_CheckedChanged);
+            // 
+            // dtpFeeTo
+            // 
+            this.dtpFeeTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpFeeTo.Enabled = false;
+            this.dtpFeeTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFeeTo.Location = new System.Drawing.Point(638, 93);
+            this.dtpFeeTo.Name = "dtpFeeTo";
+            this.dtpFeeTo.Size = new System.Drawing.Size(118, 26);
+            this.dtpFeeTo.TabIndex = 32;
+            // 
+            // dtpFeeFrom
+            // 
+            this.dtpFeeFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpFeeFrom.Enabled = false;
+            this.dtpFeeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFeeFrom.Location = new System.Drawing.Point(638, 61);
+            this.dtpFeeFrom.Name = "dtpFeeFrom";
+            this.dtpFeeFrom.Size = new System.Drawing.Size(118, 26);
+            this.dtpFeeFrom.TabIndex = 31;
+            // 
             // PlateNumber
             // 
             this.PlateNumber.DataPropertyName = "PlateNumber";
@@ -717,6 +732,22 @@
             this.ConfirmImportByName.ReadOnly = true;
             this.ConfirmImportByName.Width = 200;
             // 
+            // feeExportStatus
+            // 
+            this.feeExportStatus.DataPropertyName = "feeExportStatus";
+            this.feeExportStatus.HeaderText = "Trạng thái thu phí xuất";
+            this.feeExportStatus.Name = "feeExportStatus";
+            this.feeExportStatus.ReadOnly = true;
+            this.feeExportStatus.Visible = false;
+            // 
+            // feeImportStatus
+            // 
+            this.feeImportStatus.DataPropertyName = "feeImportStatus";
+            this.feeImportStatus.HeaderText = "Trạng thái thu phí nhập";
+            this.feeImportStatus.Name = "feeImportStatus";
+            this.feeImportStatus.ReadOnly = true;
+            this.feeImportStatus.Visible = false;
+            // 
             // frmGetFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -773,8 +804,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.CheckBox cbHasFeeExport;
-        private System.Windows.Forms.CheckBox cbHasFeeImport;
         private System.Windows.Forms.CheckBox cbCreatedVehicle;
         private System.Windows.Forms.DateTimePicker dtpCreatedDateTo;
         private System.Windows.Forms.DateTimePicker dtpCreatedDateFrom;
@@ -786,6 +815,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.CheckBox cbGetFee;
+        private System.Windows.Forms.DateTimePicker dtpFeeTo;
+        private System.Windows.Forms.DateTimePicker dtpFeeFrom;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
         private System.Windows.Forms.DataGridViewTextBoxColumn GoodTypeName;
@@ -803,5 +835,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConfirmExportByName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConfirmImportByName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feeExportStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feeImportStatus;
     }
 }
