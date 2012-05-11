@@ -230,6 +230,13 @@ namespace ECustoms
                 }
                 else if (_mode == 1) // Add mode - CLick on Update
                 {
+                    //neu la cap nhat phuong tien nhap canh, khong cho thay doi bien so va loai trong tai
+                    if (_type == Common.DeclerationType.Import)
+                    {
+                        txtPlateNumber.Enabled = false;
+                        cbVehicleType.Enabled = false;
+                    }
+
                     dtpImportDate.Visible = false;
                     mtxtImportHour.Visible = false;
                     btnUpdate.Enabled = true;
@@ -252,6 +259,12 @@ namespace ECustoms
                 }
                 else if (_mode == 2 || _mode == 3) // EditMode - Update
                 {
+                    //neu la cap nhat phuong tien nhap canh, khong cho thay doi bien so va loai trong tai
+                    if (_type == Common.DeclerationType.Import)
+                    {
+                        txtPlateNumber.Enabled = false;
+                        cbVehicleType.Enabled = false;
+                    }
                     btnAdd.Enabled = false;
                     // Get data from database                    
                     var vehicleInfo = VehicleFactory.GetByIDFromView(_vehicleID);
