@@ -77,13 +77,13 @@
             this.btnUpdateVehicle = new System.Windows.Forms.Button();
             this.btnAddVehicle = new System.Windows.Forms.Button();
             this.grdVehicle = new System.Windows.Forms.DataGridView();
+            this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new ECustoms.DataSet2();
+            this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dataSet2 = new ECustoms.DataSet2();
-            this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,8 +101,8 @@
             this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGoodsTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -572,6 +572,21 @@
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
             // 
+            // tblVehicleTypeBindingSource
+            // 
+            this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
+            this.tblVehicleTypeBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblGoodsTypeBindingSource
+            // 
+            this.tblGoodsTypeBindingSource.DataMember = "tblGoodsType";
+            this.tblGoodsTypeBindingSource.DataSource = this.dataSet2;
+            // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
@@ -631,21 +646,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblVehicleTypeBindingSource
-            // 
-            this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
-            this.tblVehicleTypeBindingSource.DataSource = this.dataSet2;
-            // 
-            // tblGoodsTypeBindingSource
-            // 
-            this.tblGoodsTypeBindingSource.DataMember = "tblGoodsType";
-            this.tblGoodsTypeBindingSource.DataSource = this.dataSet2;
-            // 
             // Count
             // 
             this.Count.HeaderText = "STT";
@@ -677,6 +677,7 @@
             this.VehicleType.DisplayMember = "Name";
             this.VehicleType.HeaderText = "Loại trọng tải";
             this.VehicleType.Name = "VehicleType";
+            this.VehicleType.ReadOnly = true;
             this.VehicleType.ValueMember = "VehicleTypeID";
             this.VehicleType.Width = 200;
             // 
@@ -778,8 +779,8 @@
             this.pnTXTN.PerformLayout();
             this.groupBoxVehicle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGoodsTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -834,14 +835,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpHandover;
         private System.Windows.Forms.MaskedTextBox txtNumberHandover;
+        private System.Windows.Forms.BindingSource tblVehicleTypeBindingSource;
+        private DataSet2 dataSet2;
+        private System.Windows.Forms.BindingSource tblGoodsTypeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfContainer;
         private System.Windows.Forms.DataGridViewComboBoxColumn VehicleType;
-        private System.Windows.Forms.BindingSource tblVehicleTypeBindingSource;
-        private DataSet2 dataSet2;
         private System.Windows.Forms.DataGridViewComboBoxColumn GoodsType;
-        private System.Windows.Forms.BindingSource tblGoodsTypeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
