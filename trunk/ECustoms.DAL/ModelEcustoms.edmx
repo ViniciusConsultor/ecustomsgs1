@@ -31,6 +31,7 @@
           <EntitySet Name="tblUserInGroup" EntityType="dbEcustomModel.Store.tblUserInGroup" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicle" EntityType="dbEcustomModel.Store.tblVehicle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicleCheck" EntityType="dbEcustomModel.Store.tblVehicleCheck" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblVehicleFeeSetting" EntityType="dbEcustomModel.Store.tblVehicleFeeSetting" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicleType" EntityType="dbEcustomModel.Store.tblVehicleType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tlbRole" EntityType="dbEcustomModel.Store.tlbRole" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ViewAllCheck" EntityType="dbEcustomModel.Store.ViewAllCheck" store:Type="Views" store:Schema="dbo" store:Name="ViewAllCheck">
@@ -297,12 +298,23 @@
       [ViewUserGroup].[UserID] AS [UserID], 
       [ViewUserGroup].[UserFullName] AS [UserFullName], 
       [ViewUserGroup].[UserName] AS [UserName], 
-      [ViewUserGroup].[GroupID] AS [GroupID], 
-      [ViewUserGroup].[GroupName] AS [GroupName], 
       [ViewUserGroup].[Address] AS [Address], 
       [ViewUserGroup].[Email] AS [Email], 
-      [ViewUserGroup].[PhoneNumber] AS [PhoneNumber]
+      [ViewUserGroup].[PhoneNumber] AS [PhoneNumber], 
+      [ViewUserGroup].[GroupID] AS [GroupID], 
+      [ViewUserGroup].[GroupName] AS [GroupName]
       FROM [dbo].[ViewUserGroup] AS [ViewUserGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="viewVehicleFeeSetting" EntityType="dbEcustomModel.Store.viewVehicleFeeSetting" store:Type="Views" store:Schema="dbo" store:Name="viewVehicleFeeSetting">
+            <DefiningQuery>SELECT 
+      [viewVehicleFeeSetting].[VehicleTypeId] AS [VehicleTypeId], 
+      [viewVehicleFeeSetting].[GoodsTypeId] AS [GoodsTypeId], 
+      [viewVehicleFeeSetting].[Fee] AS [Fee], 
+      [viewVehicleFeeSetting].[Description] AS [Description], 
+      [viewVehicleFeeSetting].[GoodTypeName] AS [GoodTypeName], 
+      [viewVehicleFeeSetting].[VehicleTypeName] AS [VehicleTypeName], 
+      [viewVehicleFeeSetting].[Capacity] AS [Capacity]
+      FROM [dbo].[viewVehicleFeeSetting] AS [viewVehicleFeeSetting]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewVehicleFreight" EntityType="dbEcustomModel.Store.ViewVehicleFreight" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFreight">
             <DefiningQuery>SELECT 
@@ -329,7 +341,7 @@
           </AssociationSet>
         </EntityContainer>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Log">
           <Key>
@@ -412,13 +424,13 @@
           <Property Name="Money" Type="numeric" />
           <Property Name="NumberHandover" Type="int" />
           <Property Name="DateHandover" Type="datetime" />
-          <Property Name="PersonHandoverID" Type="int" />
           <Property Name="DateReturn" Type="datetime" />
           <Property Name="PersonConfirmReturnID" Type="int" />
           <Property Name="NumberTemp" Type="nvarchar" MaxLength="50" />
           <Property Name="GateExport" Type="nvarchar" MaxLength="500" />
           <Property Name="Seal" Type="nvarchar" MaxLength="100" />
           <Property Name="TypeOption" Type="smallint" />
+          <Property Name="PersonHandoverID" Type="int" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -565,10 +577,24 @@
           <Property Name="Result" Type="ntext" />
           <Property Name="CheckFrom" Type="datetime" />
           <Property Name="CheckTo" Type="datetime" />
-          <Property Name="CheckCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="CheckCode" Type="nchar" MaxLength="500" />
           <Property Name="IsImportChecked" Type="bit" />
           <Property Name="IsExportChecked" Type="bit" />
           <Property Name="IsLocalImportChecked" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblVehicleFeeSetting">
+          <Key>
+            <PropertyRef Name="VehicleTypeId" />
+            <PropertyRef Name="GoodsTypeId" />
+          </Key>
+          <Property Name="VehicleTypeId" Type="int" Nullable="false" />
+          <Property Name="GoodsTypeId" Type="int" Nullable="false" />
+          <Property Name="Fee" Type="bigint" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedUser" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedUser" Type="int" />
         </EntityType>
         <EntityType Name="tblVehicleType">
           <Key>
@@ -593,7 +619,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheck">
           <Key>
@@ -616,7 +642,7 @@
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheckResult">
           <Key>
@@ -638,12 +664,12 @@
           <Property Name="CompanyCode" Type="nvarchar" MaxLength="500" />
           <Property Name="PlateNumber" Type="varchar" MaxLength="50" />
           <Property Name="DeclarationType" Type="smallint" />
-          <Property Name="CheckCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="CheckCode" Type="nchar" MaxLength="500" />
           <Property Name="ImportDate" Type="datetime" />
           <Property Name="ExportDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclaration">
           <Key>
@@ -687,7 +713,7 @@
           <Property Name="PersonHandoverName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclarationTNTX">
           <Key>
@@ -732,7 +758,7 @@
           <Property Name="PersonHandoverName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicle">
           <Key>
@@ -765,7 +791,7 @@
           <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicleHasGood">
           <Key>
@@ -840,7 +866,7 @@
           <Property Name="Capacity" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewDeclarationVehicle">
           <Key>
@@ -879,7 +905,7 @@
           <Property Name="RegisterDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewGetCurrentDate">
           <Key>
@@ -888,7 +914,7 @@
           <Property Name="CurrentDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewUserGroup">
           <Key>
@@ -899,14 +925,30 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="UserFullName" Type="nvarchar" MaxLength="500" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
-          <Property Name="GroupID" Type="int" Nullable="false" />
-          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
           <Property Name="Address" Type="nvarchar" MaxLength="300" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="viewVehicleFeeSetting">
+          <Key>
+            <PropertyRef Name="VehicleTypeId" />
+            <PropertyRef Name="GoodsTypeId" />
+          </Key>
+          <Property Name="VehicleTypeId" Type="int" Nullable="false" />
+          <Property Name="GoodsTypeId" Type="int" Nullable="false" />
+          <Property Name="Fee" Type="bigint" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="GoodTypeName" Type="nvarchar" MaxLength="500" />
+          <Property Name="VehicleTypeName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Capacity" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbECustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFreight">
           <Key>
@@ -1063,6 +1105,8 @@
             <End Role="tblDeclaration" EntitySet="tblDeclarations" />
           </AssociationSet>
           <EntitySet Name="ViewVehicleFreights" EntityType="dbEcustomModel.ViewVehicleFreight" />
+          <EntitySet Name="tblVehicleFeeSettings" EntityType="dbEcustomModel.tblVehicleFeeSetting" />
+          <EntitySet Name="viewVehicleFeeSettings" EntityType="dbEcustomModel.viewVehicleFeeSetting" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -1646,6 +1690,33 @@
           <Property Type="Int64" Name="feeExportAmount" />
           <Property Type="Int64" Name="feeImportAmount" />
           <Property Type="Int16" Name="DeclarationType" />
+        </EntityType>
+        <EntityType Name="tblVehicleFeeSetting">
+          <Key>
+            <PropertyRef Name="VehicleTypeId" />
+            <PropertyRef Name="GoodsTypeId" />
+          </Key>
+          <Property Type="Int32" Name="VehicleTypeId" Nullable="false" />
+          <Property Type="Int32" Name="GoodsTypeId" Nullable="false" />
+          <Property Type="Int64" Name="Fee" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedUser" />
+          <Property Type="DateTime" Name="UpdatedDate" />
+          <Property Type="Int32" Name="UpdatedUser" />
+        </EntityType>
+        <EntityType Name="viewVehicleFeeSetting">
+          <Key>
+            <PropertyRef Name="VehicleTypeId" />
+            <PropertyRef Name="GoodsTypeId" />
+          </Key>
+          <Property Type="Int32" Name="VehicleTypeId" Nullable="false" />
+          <Property Type="Int32" Name="GoodsTypeId" Nullable="false" />
+          <Property Type="Int64" Name="Fee" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GoodTypeName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VehicleTypeName" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Capacity" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2246,6 +2317,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblVehicleFeeSettings">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblVehicleFeeSetting">
+              <MappingFragment StoreEntitySet="tblVehicleFeeSetting">
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="GoodsTypeId" ColumnName="GoodsTypeId" />
+                <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="viewVehicleFeeSettings">
+            <EntityTypeMapping TypeName="dbEcustomModel.viewVehicleFeeSetting">
+              <MappingFragment StoreEntitySet="viewVehicleFeeSetting">
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="VehicleTypeName" ColumnName="VehicleTypeName" />
+                <ScalarProperty Name="GoodTypeName" ColumnName="GoodTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="GoodsTypeId" ColumnName="GoodsTypeId" />
+                <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2302,6 +2400,8 @@
           <ConnectorPoint PointX="3" PointY="7.4131982421875" />
         </AssociationConnector>
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="0.75" PointY="16.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="3.375" PointY="16.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="16.375" PointY="14.75" Height="2.3648893229166674" />
       </Diagram>
     </Diagrams>
   </Designer>
