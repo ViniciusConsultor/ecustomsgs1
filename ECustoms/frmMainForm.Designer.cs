@@ -58,6 +58,7 @@
             this.mnuFeeManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuVehidleType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGetFee = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFeeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,7 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.mnuFeeReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFeeSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -306,7 +307,8 @@
             this.mnuFeeManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuVehidleType,
             this.menuGetFee,
-            this.mnuFeeReport});
+            this.mnuFeeReport,
+            this.mnuFeeSetting});
             this.mnuFeeManagement.Name = "mnuFeeManagement";
             this.mnuFeeManagement.Size = new System.Drawing.Size(133, 25);
             this.mnuFeeManagement.Text = "Quản lý tính phí";
@@ -314,16 +316,23 @@
             // mnuVehidleType
             // 
             this.mnuVehidleType.Name = "mnuVehidleType";
-            this.mnuVehidleType.Size = new System.Drawing.Size(278, 26);
-            this.mnuVehidleType.Text = "Loại phương tiện và biểu phí";
+            this.mnuVehidleType.Size = new System.Drawing.Size(288, 26);
+            this.mnuVehidleType.Text = "Loại phương tiện";
             this.mnuVehidleType.Click += new System.EventHandler(this.mnuVehidleType_Click);
             // 
             // menuGetFee
             // 
             this.menuGetFee.Name = "menuGetFee";
-            this.menuGetFee.Size = new System.Drawing.Size(278, 26);
+            this.menuGetFee.Size = new System.Drawing.Size(288, 26);
             this.menuGetFee.Text = "Thu phí";
             this.menuGetFee.Click += new System.EventHandler(this.menuGetFee_Click);
+            // 
+            // mnuFeeReport
+            // 
+            this.mnuFeeReport.Name = "mnuFeeReport";
+            this.mnuFeeReport.Size = new System.Drawing.Size(288, 26);
+            this.mnuFeeReport.Text = "Báo cáo thu phí";
+            this.mnuFeeReport.Click += new System.EventHandler(this.mnuFeeReport_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -431,12 +440,12 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // mnuFeeReport
+            // mnuFeeSetting
             // 
-            this.mnuFeeReport.Name = "mnuFeeReport";
-            this.mnuFeeReport.Size = new System.Drawing.Size(278, 26);
-            this.mnuFeeReport.Text = "Báo cáo thu phí";
-            this.mnuFeeReport.Click += new System.EventHandler(this.mnuFeeReport_Click);
+            this.mnuFeeSetting.Name = "mnuFeeSetting";
+            this.mnuFeeSetting.Size = new System.Drawing.Size(288, 26);
+            this.mnuFeeSetting.Text = "Cấu hình tính phí phương tiện";
+            this.mnuFeeSetting.Click += new System.EventHandler(this.mnuFeeSetting_Click);
             // 
             // frmMainForm
             // 
@@ -505,5 +514,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuVehidleType;
         private System.Windows.Forms.ToolStripMenuItem menuGetFee;
         private System.Windows.Forms.ToolStripMenuItem mnuFeeReport;
+        private System.Windows.Forms.ToolStripMenuItem mnuFeeSetting;
     }
 }
