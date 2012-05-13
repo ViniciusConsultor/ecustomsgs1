@@ -302,5 +302,12 @@ namespace ECustoms
             report.MdiParent = this;
             report.Show();
         }
+
+        private void mnuFeeSetting_Click(object sender, EventArgs e)
+        {
+            FrmVehicleFeeSetting form = new FrmVehicleFeeSetting(_userInfo);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

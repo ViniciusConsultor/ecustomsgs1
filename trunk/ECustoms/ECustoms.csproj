@@ -134,6 +134,12 @@
     <Compile Include="FrmVehicleFeeReport.Designer.cs">
       <DependentUpon>FrmVehicleFeeReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVehicleFeeSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVehicleFeeSetting.Designer.cs">
+      <DependentUpon>FrmVehicleFeeSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehicleFeeReport1.cs">
       <DependentUpon>VehicleFeeReport.rpt</DependentUpon>
       <SubType>Component</SubType>
@@ -418,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVehicleFeeReport.resx">
       <DependentUpon>FrmVehicleFeeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVehicleFeeSetting.resx">
+      <DependentUpon>FrmVehicleFeeSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleFeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
