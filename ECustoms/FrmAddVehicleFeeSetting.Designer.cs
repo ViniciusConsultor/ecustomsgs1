@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddVehicleFeeSetting));
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,16 +42,23 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.dataSet2 = new ECustoms.DataSet2();
+            this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblGoodsTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(181, 172);
+            this.txtDescription.MaxLength = 500;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(263, 60);
-            this.txtDescription.TabIndex = 53;
+            this.txtDescription.TabIndex = 47;
             // 
             // label5
             // 
@@ -76,12 +84,15 @@
             // 
             this.txtFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFee.Location = new System.Drawing.Point(181, 124);
+            this.txtFee.MaxLength = 20;
             this.txtFee.Name = "txtFee";
             this.txtFee.Size = new System.Drawing.Size(263, 26);
             this.txtFee.TabIndex = 46;
+            this.txtFee.Leave += new System.EventHandler(this.txtFee_Leave);
             // 
             // cbGoodType
             // 
+            this.cbGoodType.DataSource = this.tblGoodsTypeBindingSource;
             this.cbGoodType.DisplayMember = "TypeName";
             this.cbGoodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGoodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,6 +105,7 @@
             // 
             // cbVehicleType
             // 
+            this.cbVehicleType.DataSource = this.tblVehicleTypeBindingSource;
             this.cbVehicleType.DisplayMember = "Name";
             this.cbVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVehicleType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,6 +150,7 @@
             this.btnReset.Text = "Làm lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnUpdate
             // 
@@ -153,6 +166,7 @@
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnClose
             // 
@@ -168,6 +182,7 @@
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAdd
             // 
@@ -183,6 +198,22 @@
             this.btnAdd.Text = "Thêm mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblVehicleTypeBindingSource
+            // 
+            this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
+            this.tblVehicleTypeBindingSource.DataSource = this.dataSet2;
+            // 
+            // tblGoodsTypeBindingSource
+            // 
+            this.tblGoodsTypeBindingSource.DataMember = "tblGoodsType";
+            this.tblGoodsTypeBindingSource.DataSource = this.dataSet2;
             // 
             // FrmAddVehicleFeeSetting
             // 
@@ -205,6 +236,9 @@
             this.Name = "FrmAddVehicleFeeSetting";
             this.Text = "FrmAddVehicleFeeSetting";
             this.Load += new System.EventHandler(this.FrmAddVehicleFeeSetting_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblGoodsTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +258,8 @@
         private System.Windows.Forms.ComboBox cbVehicleType;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource tblGoodsTypeBindingSource;
+        private DataSet2 dataSet2;
+        private System.Windows.Forms.BindingSource tblVehicleTypeBindingSource;
     }
 }
