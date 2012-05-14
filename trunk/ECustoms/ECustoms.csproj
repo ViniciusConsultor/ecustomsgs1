@@ -112,6 +112,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddVehicleFeeSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddVehicleFeeSetting.Designer.cs">
+      <DependentUpon>FrmAddVehicleFeeSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConfirmFee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +422,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FrmAddVehicleFeeSetting.resx">
+      <DependentUpon>FrmAddVehicleFeeSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConfirmFee.resx">
       <DependentUpon>frmConfirmFee.cs</DependentUpon>
     </EmbeddedResource>
