@@ -145,7 +145,7 @@ namespace ECustoms
         {
             try
             {
-                this.Text = "Khai báo phương tiện nhập bãi xuất" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Khai bao phuong tien nhap bai xuat" + ConstantInfo.MESSAGE_TITLE;
 
                 //init vehicleType
                 var listVehicleType = VehicleTypeFactory.getAllVehicleType();

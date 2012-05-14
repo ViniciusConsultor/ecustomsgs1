@@ -22,7 +22,7 @@ namespace ECustoms
 
     private void frmPrintTicketSetting_Load(object sender, EventArgs e)
     {
-      this.Text = "Thiết lập cấu hình in ticket" + ConstantInfo.MESSAGE_TITLE;
+      this.Text = "Thiet lap cau hinh in ticket" + ConstantInfo.MESSAGE_TITLE;
       this.Location = new Point((this.Owner.Width - this.Width) / 2, (this.Owner.Height - this.Height) / 2);
       InitData();
     }

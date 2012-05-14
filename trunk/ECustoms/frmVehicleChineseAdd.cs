@@ -183,7 +183,7 @@ namespace ECustoms
         {
             try
             {
-                this.Text = "Khai báo phương tiện xe Trung Quốc nhập cảnh" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Khai bao phuong tien xe Trung Quoc nhap canh" + ConstantInfo.MESSAGE_TITLE;
                 //this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);
 
                 //init vehicleType

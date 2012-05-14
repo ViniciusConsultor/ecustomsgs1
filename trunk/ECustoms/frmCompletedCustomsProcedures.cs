@@ -34,7 +34,7 @@ namespace ECustoms
 
         private void frmCompletedCustomsProcedures_Load(object sender, EventArgs e)
         {
-            this.Text = "Đã hoàn thành thủ tục hải quan" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Da hoan thanh thu tuc hai quan" + ConstantInfo.MESSAGE_TITLE;
 
             BindData();
         }

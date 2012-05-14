@@ -256,7 +256,7 @@ namespace ECustoms
         private void FrmDecleOption_Load(object sender, EventArgs e)
         {
             txtExportTotalVehicles.Focus();
-            this.Text = "Quản lý hàng NTX, CK" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Quan ly hang NTX, CK" + ConstantInfo.MESSAGE_TITLE;
             // Show form to the center            
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
 

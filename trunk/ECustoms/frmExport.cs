@@ -231,7 +231,7 @@ namespace ECustoms
         private void frmExport_Load(object sender, EventArgs e)
         {
             txtExportTotalVehicles.Focus();
-            this.Text = "Khai báo xuất nhập cảnh" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Khai bao xuat nhap canh" + ConstantInfo.MESSAGE_TITLE;
             // Show form to the center
             this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);                        
             // Init form.

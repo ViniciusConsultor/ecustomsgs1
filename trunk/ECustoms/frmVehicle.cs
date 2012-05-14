@@ -149,7 +149,7 @@ namespace ECustoms
 
         private void frmVehicle_Load(object sender, EventArgs e)
         {
-            this.Text = "Khai báo phương tiện" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Khai bao phuong tien" + ConstantInfo.MESSAGE_TITLE;
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
             Init();
           
