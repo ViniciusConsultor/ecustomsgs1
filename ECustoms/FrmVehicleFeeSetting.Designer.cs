@@ -43,11 +43,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grdVehicle = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GoodsType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.VehicleType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.GoodsType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
@@ -173,7 +173,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
             this.btnClose.TabIndex = 38;
-            this.btnClose.Text = "Đóng";
+            this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             // 
@@ -211,23 +211,12 @@
             this.grdVehicle.Size = new System.Drawing.Size(782, 271);
             this.grdVehicle.TabIndex = 20;
             // 
-            // Id
+            // VehicleType
             // 
-            this.Id.HeaderText = "VehicleID";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Mô tả";
-            this.description.Name = "description";
-            this.description.Width = 200;
-            // 
-            // fee
-            // 
-            this.fee.HeaderText = "Biểu phí";
-            this.fee.Name = "fee";
-            this.fee.Width = 150;
+            this.VehicleType.DataPropertyName = "vehicleTypeId";
+            this.VehicleType.HeaderText = "Loại trọng tải";
+            this.VehicleType.Name = "VehicleType";
+            this.VehicleType.Width = 200;
             // 
             // GoodsType
             // 
@@ -236,18 +225,29 @@
             this.GoodsType.Name = "GoodsType";
             this.GoodsType.Width = 200;
             // 
-            // VehicleType
+            // fee
             // 
-            this.VehicleType.DataPropertyName = "vehicleTypeId";
-            this.VehicleType.HeaderText = "Loại trọng tải";
-            this.VehicleType.Name = "VehicleType";
-            this.VehicleType.Width = 200;
+            this.fee.HeaderText = "Biểu phí";
+            this.fee.Name = "fee";
+            this.fee.Width = 150;
+            // 
+            // description
+            // 
+            this.description.HeaderText = "Mô tả";
+            this.description.Name = "description";
+            this.description.Width = 200;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "VehicleID";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.grdVehicle);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

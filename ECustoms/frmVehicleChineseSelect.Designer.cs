@@ -121,13 +121,14 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(182, 452);
+            this.btnClose.Location = new System.Drawing.Point(249, 452);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(71, 33);
+            this.btnClose.Size = new System.Drawing.Size(89, 33);
             this.btnClose.TabIndex = 14;
-            this.btnClose.Text = "Đóng";
+            this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -136,11 +137,12 @@
             // 
             this.btnAddVehichle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddVehichle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddVehichle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVehichle.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAddVehichle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehichle.Location = new System.Drawing.Point(12, 452);
+            this.btnAddVehichle.Location = new System.Drawing.Point(18, 451);
             this.btnAddVehichle.Name = "btnAddVehichle";
-            this.btnAddVehichle.Size = new System.Drawing.Size(164, 33);
+            this.btnAddVehichle.Size = new System.Drawing.Size(225, 33);
             this.btnAddVehichle.TabIndex = 15;
             this.btnAddVehichle.Text = "Sang tải cho xe Việt Nam";
             this.btnAddVehichle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

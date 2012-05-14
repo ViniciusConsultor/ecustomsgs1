@@ -204,9 +204,9 @@
             this.btnAddExisting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddExisting.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAddExisting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExisting.Location = new System.Drawing.Point(409, 273);
+            this.btnAddExisting.Location = new System.Drawing.Point(400, 273);
             this.btnAddExisting.Name = "btnAddExisting";
-            this.btnAddExisting.Size = new System.Drawing.Size(249, 33);
+            this.btnAddExisting.Size = new System.Drawing.Size(241, 33);
             this.btnAddExisting.TabIndex = 24;
             this.btnAddExisting.Text = "Thêm từ phương tiện đã XK";
             this.btnAddExisting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -220,7 +220,7 @@
             this.btnDeleteVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteVehicle.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDeleteVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteVehicle.Location = new System.Drawing.Point(664, 273);
+            this.btnDeleteVehicle.Location = new System.Drawing.Point(647, 273);
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
             this.btnDeleteVehicle.Size = new System.Drawing.Size(163, 33);
             this.btnDeleteVehicle.TabIndex = 25;
@@ -236,7 +236,7 @@
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(203, 273);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(194, 273);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(200, 33);
             this.btnUpdateVehicle.TabIndex = 23;
@@ -254,7 +254,7 @@
             this.btnAddVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddVehicle.Location = new System.Drawing.Point(8, 273);
             this.btnAddVehicle.Name = "btnAddVehicle";
-            this.btnAddVehicle.Size = new System.Drawing.Size(189, 33);
+            this.btnAddVehicle.Size = new System.Drawing.Size(178, 33);
             this.btnAddVehicle.TabIndex = 22;
             this.btnAddVehicle.Text = "Thêm phương tiện";
             this.btnAddVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -784,7 +784,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 33);
             this.button1.TabIndex = 29;
-            this.button1.Text = "Đóng";
+            this.button1.Text = "Thoát";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
