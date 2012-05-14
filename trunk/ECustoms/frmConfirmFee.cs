@@ -53,6 +53,14 @@ namespace ECustoms
         private void Init()
         {
             mtxtFeeHour.Text = string.Format("{0:HH:mm}", CommonFactory.GetCurrentDate());
+
+            //auto fill fee
+            var vehicleInfo = VehicleFactory.GetByID(_vehicleId);
+            tblVehicleFeeSetting vehiclFee = VehicleFeeSettingFactory.find(vehicleInfo.vehicleTypeId.GetValueOrDefault(), vehicleInfo.GoodTypeId.GetValueOrDefault());
+            if (vehiclFee != null)
+            {
+                txtMoney.Text = vehiclFee.Fee.ToString();
+            }
         }
 
         private void InitData()
