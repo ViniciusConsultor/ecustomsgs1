@@ -98,7 +98,7 @@ namespace ECustoms
 
         private void frmVehicleSelect_Load(object sender, EventArgs e)
         {
-          this.Text = "Thêm từ phương tiện đã xuất khẩu" + ConstantInfo.MESSAGE_TITLE;
+          this.Text = "Them tu phuong tien da xuat canh" + ConstantInfo.MESSAGE_TITLE;
           this.Location = new Point((this.Owner.Width - this.Width) / 2 + 400, (this.Owner.Height - this.Height) / 2);
           // Set focus
           txtPlate.Focus();

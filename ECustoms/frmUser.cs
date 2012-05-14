@@ -23,7 +23,7 @@ namespace ECustoms
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-            this.Text = "Quản lý người dùng" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Quan ly nguoi dung" + ConstantInfo.MESSAGE_TITLE;
             // Show form to the center
             this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);            
             _userBOL = new UserFactory();

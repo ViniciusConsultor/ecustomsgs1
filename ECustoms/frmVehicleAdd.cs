@@ -172,7 +172,7 @@ namespace ECustoms
         {
             try
             {
-                this.Text = "Khai báo phương tiện" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Khai bao phuong tien" + ConstantInfo.MESSAGE_TITLE;
                 //this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);
 
                 //init vehicleType

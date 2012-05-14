@@ -37,7 +37,7 @@ namespace ECustoms
 
         private void frmGetFee_Load(object sender, EventArgs e)
         {
-            this.Text = "Thu phí" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Thu phi" + ConstantInfo.MESSAGE_TITLE;
             //Init data
             Search();
         }

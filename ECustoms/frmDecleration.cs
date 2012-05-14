@@ -42,7 +42,7 @@ namespace ECustoms
             try
             {
                 this.FormClosed += new FormClosedEventHandler(frmDecleration_FormClosed);
-                this.Text = "Danh sách tờ khai" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Danh sach to khai" + ConstantInfo.MESSAGE_TITLE;
                 comboBoxType.SelectedIndex = 0;
                 cbRegDate.Checked = true;
                 cbConfirmDate.Checked = false;

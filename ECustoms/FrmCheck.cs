@@ -62,7 +62,7 @@ namespace ECustoms
 
         private void FrmCheck_Load(object sender, EventArgs e)
         {
-            this.Text = "Nhập thông tin kiểm tra" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Nhap thong tin kiem tra" + ConstantInfo.MESSAGE_TITLE;
             // Show form to the center
             this.Location = new Point((this.Owner.Owner.Width - this.Width) / 2, (this.Owner.Owner.Height - this.Height) / 2);
             Init();

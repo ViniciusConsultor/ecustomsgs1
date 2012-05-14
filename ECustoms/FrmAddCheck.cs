@@ -44,7 +44,7 @@ namespace ECustoms
             txtPlateNumber.Focus();
             if (_mode.Equals(0))
             {  // Add mode
-                this.Text = "Thêm mới đề nghị kiểm tra" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "The moi de nghi kiem tra" + ConstantInfo.MESSAGE_TITLE;
                 lblHeader.Text = "Thêm mới đề nghị kiểm tra";
                 btnUpdate.Enabled = false;
                 btnAdd.Enabled = true;
@@ -52,7 +52,7 @@ namespace ECustoms
             }
             else // Edit mode
             {
-                this.Text = "Cập nhật thông tin đề nghị kiểm tra" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Cap nhat thong tin de nghi kiem tra" + ConstantInfo.MESSAGE_TITLE;
                 lblHeader.Text = "Cập nhật thông tin đề nghị kiểm tra";
                 btnUpdate.Enabled = true;
                 btnAdd.Enabled = false;

@@ -29,7 +29,7 @@ namespace ECustoms
 
         private void FrmVehicleFeeSetting_Load(object sender, EventArgs e)
         {
-            this.Text = "Cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Cau hinh tinh phi phuong tien" + ConstantInfo.MESSAGE_TITLE;
             
         }
     }

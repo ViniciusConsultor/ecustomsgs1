@@ -33,7 +33,7 @@ namespace ECustoms
 
         private void frmListVehicleType_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sách loại phương tiện và biểu phí" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach loai phuong tien va bieu phi" + ConstantInfo.MESSAGE_TITLE;
             init();
         }
 

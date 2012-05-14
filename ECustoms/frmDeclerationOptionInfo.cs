@@ -37,7 +37,7 @@ namespace ECustoms
         {
             try
             {
-                this.Text = "Danh sách tờ khai" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Danh sach to khai" + ConstantInfo.MESSAGE_TITLE;
                 switch (_declerationOptionType)
                 {
                     case Common.DeclerationOptionType.XKCK:

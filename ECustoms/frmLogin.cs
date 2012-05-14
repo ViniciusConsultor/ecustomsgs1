@@ -100,7 +100,7 @@ namespace ECustoms
 
         private void frmLogin_Load(object sender, EventArgs e)
         {                  
-            this.Text = "Đăng nhập" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Dang nhap" + ConstantInfo.MESSAGE_TITLE;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
