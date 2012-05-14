@@ -61,6 +61,11 @@
             this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeclarationType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbCreatedDate = new System.Windows.Forms.CheckBox();
+            this.dtpCreatedTo = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpCreatedFrom = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbReturn = new System.Windows.Forms.CheckBox();
             this.cbNotReturn = new System.Windows.Forms.CheckBox();
             this.txtGateExport = new System.Windows.Forms.TextBox();
@@ -100,11 +105,6 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cbCreatedDate = new System.Windows.Forms.CheckBox();
-            this.dtpCreatedTo = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpCreatedFrom = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.grbDecleration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -321,6 +321,55 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
             // 
+            // cbCreatedDate
+            // 
+            this.cbCreatedDate.AutoSize = true;
+            this.cbCreatedDate.Location = new System.Drawing.Point(31, 107);
+            this.cbCreatedDate.Name = "cbCreatedDate";
+            this.cbCreatedDate.Size = new System.Drawing.Size(137, 24);
+            this.cbCreatedDate.TabIndex = 27;
+            this.cbCreatedDate.Text = "Ngày nhập máy";
+            this.cbCreatedDate.UseVisualStyleBackColor = true;
+            this.cbCreatedDate.CheckedChanged += new System.EventHandler(this.cbCreatedDate_CheckedChanged);
+            // 
+            // dtpCreatedTo
+            // 
+            this.dtpCreatedTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpCreatedTo.Enabled = false;
+            this.dtpCreatedTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCreatedTo.Location = new System.Drawing.Point(556, 103);
+            this.dtpCreatedTo.Name = "dtpCreatedTo";
+            this.dtpCreatedTo.Size = new System.Drawing.Size(117, 26);
+            this.dtpCreatedTo.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(407, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Đến ngày";
+            // 
+            // dtpCreatedFrom
+            // 
+            this.dtpCreatedFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpCreatedFrom.Enabled = false;
+            this.dtpCreatedFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCreatedFrom.Location = new System.Drawing.Point(241, 102);
+            this.dtpCreatedFrom.Name = "dtpCreatedFrom";
+            this.dtpCreatedFrom.Size = new System.Drawing.Size(122, 26);
+            this.dtpCreatedFrom.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(170, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Từ ngày";
+            // 
             // cbReturn
             // 
             this.cbReturn.AutoSize = true;
@@ -480,7 +529,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 33);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Đóng";
+            this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -668,55 +717,6 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Chọn tất cả";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Width = 50;
-            // 
-            // cbCreatedDate
-            // 
-            this.cbCreatedDate.AutoSize = true;
-            this.cbCreatedDate.Location = new System.Drawing.Point(31, 107);
-            this.cbCreatedDate.Name = "cbCreatedDate";
-            this.cbCreatedDate.Size = new System.Drawing.Size(137, 24);
-            this.cbCreatedDate.TabIndex = 27;
-            this.cbCreatedDate.Text = "Ngày nhập máy";
-            this.cbCreatedDate.UseVisualStyleBackColor = true;
-            this.cbCreatedDate.CheckedChanged += new System.EventHandler(this.cbCreatedDate_CheckedChanged);
-            // 
-            // dtpCreatedTo
-            // 
-            this.dtpCreatedTo.CustomFormat = "dd/MM/yyyy";
-            this.dtpCreatedTo.Enabled = false;
-            this.dtpCreatedTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreatedTo.Location = new System.Drawing.Point(556, 103);
-            this.dtpCreatedTo.Name = "dtpCreatedTo";
-            this.dtpCreatedTo.Size = new System.Drawing.Size(117, 26);
-            this.dtpCreatedTo.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(407, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Đến ngày";
-            // 
-            // dtpCreatedFrom
-            // 
-            this.dtpCreatedFrom.CustomFormat = "dd/MM/yyyy";
-            this.dtpCreatedFrom.Enabled = false;
-            this.dtpCreatedFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreatedFrom.Location = new System.Drawing.Point(241, 102);
-            this.dtpCreatedFrom.Name = "dtpCreatedFrom";
-            this.dtpCreatedFrom.Size = new System.Drawing.Size(122, 26);
-            this.dtpCreatedFrom.TabIndex = 28;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(170, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Từ ngày";
             // 
             // frmDeclerationOptionInfo
             // 
