@@ -115,6 +115,7 @@ namespace ECustoms
 
                 vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
                 vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+                vehicleInfo.Name = cbVehicleType.Text;
 
                 if (txtNumberOfContainer.Text != "")
                 {
@@ -385,8 +386,18 @@ namespace ECustoms
             var txtParkingDate = (TextObject)vehicleTicket.Section3.ReportObjects["txtParkingDate"];
             var txtVehicleNumber = (TextObject)vehicleTicket.Section3.ReportObjects["txtVehicleNumber"];
             var txtBarcode = (TextObject)vehicleTicket.Section3.ReportObjects["txtBarcode"];
-            
+            var txtVehicleType = (TextObject)vehicleTicket.Section3.ReportObjects["txtVehicleType"];
             txtVehicleNumber.Text = vehicleInfo.PlateNumber;
+
+            if (String.IsNullOrEmpty(vehicleInfo.Name) ==false)
+            {
+                txtVehicleType.Text = vehicleInfo.Name;
+            }
+            else
+            {
+                txtVehicleType.Text = "Không phân loại";
+            }
+
 
             if (vehicleInfo.ExportParkingDate != null)
             {
