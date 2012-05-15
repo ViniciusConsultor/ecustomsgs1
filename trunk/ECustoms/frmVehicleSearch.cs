@@ -1370,6 +1370,7 @@ namespace ECustoms
             var txtPrintUser = (TextObject)vehicleTicket.Section1.ReportObjects["txtPrintUser"];
             var txtPrintType = (TextObject)vehicleTicket.Section1.ReportObjects["txtPrintType"];
             var txtVehicleNumber = (TextObject)vehicleTicket.Section1.ReportObjects["txtVehicleNumber"];
+            var txtVehicleType = (TextObject)vehicleTicket.Section1.ReportObjects["txtVehicleType"];
             var txtExportDate = (TextObject)vehicleTicket.Section1.ReportObjects["txtExportDate"];
             var txtImportDate = (TextObject)vehicleTicket.Section1.ReportObjects["txtImportDate"];
             var txtParkingDate = (TextObject)vehicleTicket.Section1.ReportObjects["txtParkingDate"];
@@ -1386,6 +1387,24 @@ namespace ECustoms
             var txtPrintDate = (TextObject)vehicleTicket.Section1.ReportObjects["txtPrintDate"];
 
             txtVehicleNumber.Text = vehicleInfo.PlateNumber;
+
+            if(vehicleInfo.vehicleTypeId !=null && vehicleInfo.vehicleTypeId>0)
+            {
+                tblVehicleType vehicleType = VehicleTypeFactory.FindById(vehicleInfo.vehicleTypeId.GetValueOrDefault());
+                if(vehicleType!=null)
+                {
+                    txtVehicleType.Text = vehicleType.Name;
+                }
+                else
+                {
+                    txtVehicleType.Text = "Không phân loại";
+                }
+            }
+            else
+            {
+                txtVehicleType.Text = "Không phân loại";
+            }
+
             if (vehicleInfo.ExportDate != null)
             {
                 txtExportDate.Text = ((DateTime)vehicleInfo.ExportDate).ToString("dd/MM/yyyy HH:mm");
