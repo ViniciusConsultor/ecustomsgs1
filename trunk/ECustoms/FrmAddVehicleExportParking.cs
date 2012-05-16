@@ -114,7 +114,7 @@ namespace ECustoms
                 vehicleInfo.PlateNumber = txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
 
                 vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
-                vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+                vehicleInfo.ExportGoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
                 vehicleInfo.Name = cbVehicleType.Text;
 
                 if (txtNumberOfContainer.Text != "")
@@ -302,7 +302,8 @@ namespace ECustoms
                     vehicleInfo.IsCompleted = info.IsCompleted;
 
                     vehicleInfo.vehicleTypeId = info.vehicleTypeId;
-                    vehicleInfo.GoodTypeId = info.GoodTypeId;
+                    vehicleInfo.ExportGoodTypeId = info.ExportGoodTypeId;
+                    vehicleInfo.ImportGoodTypeId = info.ImportGoodTypeId;
 
                     vehicleInfo.IsExportParking = info.IsExportParking;
                     vehicleInfo.ExportParkingDate = info.ExportParkingDate;

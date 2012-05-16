@@ -176,7 +176,11 @@ namespace ECustoms
                 {
                     dataSet2.tblGoodsType.Rows.Add(goodType.TypeId, goodType.TypeName);
                 }
-                cbGoodType.DataSource = dataSet2.tblGoodsType;
+
+                cbExportGoodType.DataSource = dataSet2.tblGoodsType;
+                var dt = new DataSet2.tblGoodsTypeDataTable();
+                dt.Merge(dataSet2.tblGoodsType);
+                cbImportGoodType.DataSource = dt;
 
                 if (_type.Equals(Common.DeclerationType.Export))
                 {
@@ -400,9 +404,13 @@ namespace ECustoms
                   btnConfirmExport.Enabled = false;
                 }
 
-                if (vehicleInfo.GoodTypeId != null)
+                if (vehicleInfo.ExportGoodTypeId != null)
                 {
-                    cbGoodType.SelectedValue = vehicleInfo.GoodTypeId;
+                    cbExportGoodType.SelectedValue = vehicleInfo.ExportGoodTypeId;
+                }
+                if (vehicleInfo.ImportGoodTypeId != null)
+                {
+                    cbImportGoodType.SelectedValue = vehicleInfo.ImportGoodTypeId;
                 }
                 if (vehicleInfo.vehicleTypeId != null)
                 {
@@ -602,7 +610,8 @@ namespace ECustoms
                 }
 
                 vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
-                vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+                vehicleInfo.ExportGoodTypeId = Int32.Parse(cbExportGoodType.SelectedValue.ToString());
+                vehicleInfo.ImportGoodTypeId = Int32.Parse(cbImportGoodType.SelectedValue.ToString());
  
                 // Add Mode
                 if (_mode == 0)
@@ -684,7 +693,8 @@ namespace ECustoms
                         {
                             vehicleInfo.DriverName = txtDriverName.Text.Trim();
                             vehicleInfo.vehicleTypeId = Convert.ToInt32(cbVehicleType.SelectedValue);
-                            vehicleInfo.GoodTypeId = Convert.ToInt32(cbGoodType.SelectedValue);
+                            vehicleInfo.ExportGoodTypeId = Convert.ToInt32(cbExportGoodType.SelectedValue);
+                            vehicleInfo.ImportGoodTypeId = Convert.ToInt32(cbImportGoodType.SelectedValue);
 
                             vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                             vehicleInfo.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
@@ -733,7 +743,8 @@ namespace ECustoms
                     vehicle.IsExport = _isExport;
                     vehicle.IsImport = _isImport;
                     vehicle.vehicleTypeId = Convert.ToInt32(cbVehicleType.SelectedValue);
-                    vehicle.GoodTypeId = Convert.ToInt32(cbGoodType.SelectedValue);
+                    vehicle.ExportGoodTypeId = Convert.ToInt32(cbExportGoodType.SelectedValue);
+                    vehicle.ImportGoodTypeId = Convert.ToInt32(cbImportGoodType.SelectedValue);
 
                     if ((vehicle.ConfirmExportBy == null || vehicle.ConfirmExportBy.Value == 0) && vehicle.IsExport.Value)
                         vehicle.ConfirmExportBy = _userInfo.UserID;
@@ -862,7 +873,8 @@ namespace ECustoms
                     vehicleInfo.DriverName = txtDriverName.Text.Trim();
 
                     vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
-                    vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+                    vehicleInfo.ExportGoodTypeId = Int32.Parse(cbExportGoodType.SelectedValue.ToString());
+                    vehicleInfo.ImportGoodTypeId = Int32.Parse(cbImportGoodType.SelectedValue.ToString());
  
                     vehicleInfo.PlateNumber = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                     vehicleInfo.PlateNumberPartner = StringUtil.RemoveAllNonAlphanumericString(txtVehicleChinese.Text).ToUpper();
@@ -969,7 +981,8 @@ namespace ECustoms
                 }
 
                 cbVehicleType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value.ToString();
-                cbGoodType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["GoodsType"].Value.ToString();
+                cbExportGoodType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["ExportGoodType"].Value.ToString();
+                cbImportGoodType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["ImportGoodType"].Value.ToString();
                 
                 _currentModifyPlateNumber = plateNumber;
                 btnAdd.Enabled = false;

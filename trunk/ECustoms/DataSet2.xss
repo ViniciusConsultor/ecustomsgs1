@@ -9,10 +9,10 @@
     <Shape ID="DesignTable:ViewAllVehicle" ZOrder="7" X="70" Y="70" Height="305" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:ViewAllVehicleHasGood" ZOrder="6" X="387" Y="76" Height="305" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:ViewAllDeclarationTNTX" ZOrder="5" X="743" Y="80" Height="305" Width="287" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:ViewVehicleFreight" ZOrder="1" X="839" Y="432" Height="191" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:tblVehicleType" ZOrder="4" X="74" Y="419" Height="67" Width="152" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="63" />
     <Shape ID="DesignTable:tblGoodsType" ZOrder="3" X="386" Y="437" Height="67" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="63" />
     <Shape ID="DesignTable:tblVehicleFree" ZOrder="2" X="621" Y="439" Height="257" Width="164" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
-    <Shape ID="DesignTable:ViewVehicleFreight" ZOrder="1" X="839" Y="432" Height="210" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

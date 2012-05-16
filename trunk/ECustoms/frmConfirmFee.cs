@@ -56,7 +56,8 @@ namespace ECustoms
 
             //auto fill fee
             var vehicleInfo = VehicleFactory.GetByID(_vehicleId);
-            tblVehicleFeeSetting vehiclFee = VehicleFeeSettingFactory.find(vehicleInfo.vehicleTypeId.GetValueOrDefault(), vehicleInfo.GoodTypeId.GetValueOrDefault());
+            var goodTypeId = _type == 0 ? vehicleInfo.ExportGoodTypeId.GetValueOrDefault() : vehicleInfo.ImportGoodTypeId.GetValueOrDefault();
+            tblVehicleFeeSetting vehiclFee = VehicleFeeSettingFactory.find(vehicleInfo.vehicleTypeId.GetValueOrDefault(), goodTypeId);
             if (vehiclFee != null)
             {
                 txtMoney.Text = vehiclFee.Fee.ToString();

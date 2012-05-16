@@ -131,7 +131,8 @@ namespace ECustoms
                 }
 
                 vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
-                vehicleInfo.GoodTypeId = 0; //khong phan loai
+                vehicleInfo.ExportGoodTypeId = 0; //khong phan loai
+                vehicleInfo.ImportGoodTypeId = 0; //khong phan loai
                 vehicleInfo.Status = txtStatus.Text;
                 vehicleInfo.Note = txtNote.Text;
                 vehicleInfo.VehicleID = _vehicleInfosTemp.Count + 1;

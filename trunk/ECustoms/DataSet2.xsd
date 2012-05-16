@@ -169,9 +169,9 @@ FROM            ViewAllDeclarationTNTX</CommandText>
               <DbSource ConnectionRef="eCustomsConnectionString (Settings)" DbObjectName="eCustoms.dbo.ViewVehicleFreight" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        vehicleTypeId, GoodTypeId, COUNT(*) AS CountVehicle, SUM(feeExportAmount) AS SumFeeExport, SUM(feeImportAmount) AS SumFeeImport, Name, TypeName
+                    <CommandText>SELECT        vehicleTypeId, GoodTypeName, COUNT(*) AS CountVehicle, SUM(feeExportAmount) AS SumFeeExport, SUM(feeImportAmount) AS SumFeeImport, Name
 FROM            ViewVehicleFreight
-GROUP BY vehicleTypeId, GoodTypeId, Name, TypeName</CommandText>
+GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -179,12 +179,11 @@ GROUP BY vehicleTypeId, GoodTypeId, Name, TypeName</CommandText>
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="vehicleTypeId" DataSetColumn="vehicleTypeId" />
-              <Mapping SourceColumn="GoodTypeId" DataSetColumn="GoodTypeId" />
               <Mapping SourceColumn="CountVehicle" DataSetColumn="CountVehicle" />
               <Mapping SourceColumn="SumFeeExport" DataSetColumn="SumFeeExport" />
               <Mapping SourceColumn="SumFeeImport" DataSetColumn="SumFeeImport" />
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
-              <Mapping SourceColumn="TypeName" DataSetColumn="TypeName" />
+              <Mapping SourceColumn="GoodTypeName" DataSetColumn="GoodTypeName" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -642,7 +641,6 @@ GROUP BY vehicleTypeId, GoodTypeId, Name, TypeName</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vehicleTypeId" msprop:Generator_ColumnVarNameInTable="columnvehicleTypeId" msprop:Generator_ColumnPropNameInRow="vehicleTypeId" msprop:Generator_ColumnPropNameInTable="vehicleTypeIdColumn" msprop:Generator_UserColumnName="vehicleTypeId" type="xs:int" minOccurs="0" />
-              <xs:element name="GoodTypeId" msprop:Generator_ColumnVarNameInTable="columnGoodTypeId" msprop:Generator_ColumnPropNameInRow="GoodTypeId" msprop:Generator_ColumnPropNameInTable="GoodTypeIdColumn" msprop:Generator_UserColumnName="GoodTypeId" type="xs:int" minOccurs="0" />
               <xs:element name="CountVehicle" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountVehicle" msprop:Generator_ColumnPropNameInRow="CountVehicle" msprop:Generator_ColumnPropNameInTable="CountVehicleColumn" msprop:Generator_UserColumnName="CountVehicle" type="xs:int" minOccurs="0" />
               <xs:element name="SumFeeExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumFeeExport" msprop:Generator_ColumnPropNameInRow="SumFeeExport" msprop:Generator_ColumnPropNameInTable="SumFeeExportColumn" msprop:Generator_UserColumnName="SumFeeExport" type="xs:long" minOccurs="0" />
               <xs:element name="SumFeeImport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumFeeImport" msprop:Generator_ColumnPropNameInRow="SumFeeImport" msprop:Generator_ColumnPropNameInTable="SumFeeImportColumn" msprop:Generator_UserColumnName="SumFeeImport" type="xs:long" minOccurs="0" />
@@ -653,7 +651,7 @@ GROUP BY vehicleTypeId, GoodTypeId, Name, TypeName</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_UserColumnName="TypeName" minOccurs="0">
+              <xs:element name="GoodTypeName" msprop:Generator_ColumnVarNameInTable="columnGoodTypeName" msprop:Generator_ColumnPropNameInRow="GoodTypeName" msprop:Generator_ColumnPropNameInTable="GoodTypeNameColumn" msprop:Generator_UserColumnName="GoodTypeName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />

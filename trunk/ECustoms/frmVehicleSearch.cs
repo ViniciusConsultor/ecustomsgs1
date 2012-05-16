@@ -603,7 +603,8 @@ namespace ECustoms
                 message.AppendLine("Tình trạng thu phí nhập: " + GetFeeStatus(vehicleInfo.feeImportStatus));
             }
             //Loại hàng
-            var goodType = vehicleInfo.GoodTypeId == null ? "Chưa xác định" : GoodTypeFactory.GetTypeNameById((int)vehicleInfo.GoodTypeId);
+            var goodTypeId = type == 0 ? vehicleInfo.ExportGoodTypeId : vehicleInfo.ImportGoodTypeId;
+            var goodType = goodTypeId == null ? "Chưa xác định" : GoodTypeFactory.GetTypeNameById((int)goodTypeId);
             message.AppendLine("Loại hàng: " + goodType);
         }
 
