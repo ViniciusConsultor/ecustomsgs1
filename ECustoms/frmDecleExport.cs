@@ -130,9 +130,13 @@ namespace ECustoms
                         {
                             vehicleInfo.vehicleTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["VehicleType"].Value.ToString());
                         }
-                        if (grdVehicle.Rows[i].Cells["GoodsType"].Value != null)
+                        if (grdVehicle.Rows[i].Cells["ExportGoodType"].Value != null)
                         {
-                            vehicleInfo.GoodTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["GoodsType"].Value.ToString());
+                            vehicleInfo.ExportGoodTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["ExportGoodType"].Value.ToString());
+                        }
+                        if (grdVehicle.Rows[i].Cells["ImportGoodType"].Value != null)
+                        {
+                            vehicleInfo.ImportGoodTypeId = Int32.Parse(grdVehicle.Rows[i].Cells["ImportGoodType"].Value.ToString());
                         }
                         
                         if (grdVehicle.Rows[i].Cells["DriverName"].Value != null)
@@ -636,7 +640,8 @@ namespace ECustoms
                         v.Note = vehicle.Note;
                         v.Status = vehicle.Status;
                         v.vehicleTypeId = vehicle.vehicleTypeId;
-                        v.GoodTypeId = vehicle.GoodTypeId;
+                        v.ExportGoodTypeId = vehicle.ExportGoodTypeId;
+                        v.ImportGoodTypeId = vehicle.ImportGoodTypeId;
                         v.IsCompleted = vehicle.IsCompleted;
                         v.IsGoodsImported = vehicle.IsGoodsImported;
                         v.ImportStatus = vehicle.ImportStatus;

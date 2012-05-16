@@ -112,7 +112,7 @@ namespace ECustoms
 
                 vehicleInfo.DriverName = txtDriverName.Text.Trim();
                 vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
-                vehicleInfo.GoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
+                vehicleInfo.ImportGoodTypeId = Int32.Parse(cbGoodType.SelectedValue.ToString());
 
                 vehicleInfo.PlateNumber = txtPlateNumber.Text = StringUtil.RemoveAllNonAlphanumericString(txtPlateNumber.Text).ToUpper();
                 vehicleInfo.IsChineseVehicle = true;

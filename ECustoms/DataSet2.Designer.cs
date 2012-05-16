@@ -2885,8 +2885,6 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnvehicleTypeId;
             
-            private global::System.Data.DataColumn columnGoodTypeId;
-            
             private global::System.Data.DataColumn columnCountVehicle;
             
             private global::System.Data.DataColumn columnSumFeeExport;
@@ -2895,7 +2893,7 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnTypeName;
+            private global::System.Data.DataColumn columnGoodTypeName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2940,14 +2938,6 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GoodTypeIdColumn {
-                get {
-                    return this.columnGoodTypeId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn CountVehicleColumn {
                 get {
                     return this.columnCountVehicle;
@@ -2980,9 +2970,9 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeNameColumn {
+            public global::System.Data.DataColumn GoodTypeNameColumn {
                 get {
-                    return this.columnTypeName;
+                    return this.columnGoodTypeName;
                 }
             }
             
@@ -3023,16 +3013,15 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewVehicleFreightRow AddViewVehicleFreightRow(int vehicleTypeId, int GoodTypeId, int CountVehicle, long SumFeeExport, long SumFeeImport, string Name, string TypeName) {
+            public ViewVehicleFreightRow AddViewVehicleFreightRow(int vehicleTypeId, int CountVehicle, long SumFeeExport, long SumFeeImport, string Name, string GoodTypeName) {
                 ViewVehicleFreightRow rowViewVehicleFreightRow = ((ViewVehicleFreightRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         vehicleTypeId,
-                        GoodTypeId,
                         CountVehicle,
                         SumFeeExport,
                         SumFeeImport,
                         Name,
-                        TypeName};
+                        GoodTypeName};
                 rowViewVehicleFreightRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewVehicleFreightRow);
                 return rowViewVehicleFreightRow;
@@ -3056,12 +3045,11 @@ namespace ECustoms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnvehicleTypeId = base.Columns["vehicleTypeId"];
-                this.columnGoodTypeId = base.Columns["GoodTypeId"];
                 this.columnCountVehicle = base.Columns["CountVehicle"];
                 this.columnSumFeeExport = base.Columns["SumFeeExport"];
                 this.columnSumFeeImport = base.Columns["SumFeeImport"];
                 this.columnName = base.Columns["Name"];
-                this.columnTypeName = base.Columns["TypeName"];
+                this.columnGoodTypeName = base.Columns["GoodTypeName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3069,8 +3057,6 @@ namespace ECustoms {
             private void InitClass() {
                 this.columnvehicleTypeId = new global::System.Data.DataColumn("vehicleTypeId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvehicleTypeId);
-                this.columnGoodTypeId = new global::System.Data.DataColumn("GoodTypeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGoodTypeId);
                 this.columnCountVehicle = new global::System.Data.DataColumn("CountVehicle", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCountVehicle);
                 this.columnSumFeeExport = new global::System.Data.DataColumn("SumFeeExport", typeof(long), null, global::System.Data.MappingType.Element);
@@ -3079,13 +3065,13 @@ namespace ECustoms {
                 base.Columns.Add(this.columnSumFeeImport);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnTypeName = new global::System.Data.DataColumn("TypeName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTypeName);
+                this.columnGoodTypeName = new global::System.Data.DataColumn("GoodTypeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGoodTypeName);
                 this.columnCountVehicle.ReadOnly = true;
                 this.columnSumFeeExport.ReadOnly = true;
                 this.columnSumFeeImport.ReadOnly = true;
                 this.columnName.MaxLength = 1000;
-                this.columnTypeName.MaxLength = 500;
+                this.columnGoodTypeName.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7179,22 +7165,6 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int GoodTypeId {
-                get {
-                    try {
-                        return ((int)(this[this.tableViewVehicleFreight.GoodTypeIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GoodTypeId\' in table \'ViewVehicleFreight\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewVehicleFreight.GoodTypeIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int CountVehicle {
                 get {
                     try {
@@ -7259,17 +7229,17 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TypeName {
+            public string GoodTypeName {
                 get {
                     try {
-                        return ((string)(this[this.tableViewVehicleFreight.TypeNameColumn]));
+                        return ((string)(this[this.tableViewVehicleFreight.GoodTypeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TypeName\' in table \'ViewVehicleFreight\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GoodTypeName\' in table \'ViewVehicleFreight\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableViewVehicleFreight.TypeNameColumn] = value;
+                    this[this.tableViewVehicleFreight.GoodTypeNameColumn] = value;
                 }
             }
             
@@ -7283,18 +7253,6 @@ namespace ECustoms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetvehicleTypeIdNull() {
                 this[this.tableViewVehicleFreight.vehicleTypeIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGoodTypeIdNull() {
-                return this.IsNull(this.tableViewVehicleFreight.GoodTypeIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGoodTypeIdNull() {
-                this[this.tableViewVehicleFreight.GoodTypeIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7347,14 +7305,14 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTypeNameNull() {
-                return this.IsNull(this.tableViewVehicleFreight.TypeNameColumn);
+            public bool IsGoodTypeNameNull() {
+                return this.IsNull(this.tableViewVehicleFreight.GoodTypeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTypeNameNull() {
-                this[this.tableViewVehicleFreight.TypeNameColumn] = global::System.Convert.DBNull;
+            public void SetGoodTypeNameNull() {
+                this[this.tableViewVehicleFreight.GoodTypeNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8821,12 +8779,11 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ViewVehicleFreight";
             tableMapping.ColumnMappings.Add("vehicleTypeId", "vehicleTypeId");
-            tableMapping.ColumnMappings.Add("GoodTypeId", "GoodTypeId");
             tableMapping.ColumnMappings.Add("CountVehicle", "CountVehicle");
             tableMapping.ColumnMappings.Add("SumFeeExport", "SumFeeExport");
             tableMapping.ColumnMappings.Add("SumFeeImport", "SumFeeImport");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("TypeName", "TypeName");
+            tableMapping.ColumnMappings.Add("GoodTypeName", "GoodTypeName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -8843,10 +8800,9 @@ namespace ECustoms.DataSet2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        vehicleTypeId, GoodTypeId, COUNT(*) AS CountVehicle, SUM(feeExportA" +
-                "mount) AS SumFeeExport, SUM(feeImportAmount) AS SumFeeImport, Name, TypeName\r\nFR" +
-                "OM            ViewVehicleFreight\r\nGROUP BY vehicleTypeId, GoodTypeId, Name, Type" +
-                "Name";
+            this._commandCollection[0].CommandText = "SELECT        vehicleTypeId, GoodTypeName, COUNT(*) AS CountVehicle, SUM(feeExpor" +
+                "tAmount) AS SumFeeExport, SUM(feeImportAmount) AS SumFeeImport, Name\r\nFROM      " +
+                "      ViewVehicleFreight\r\nGROUP BY vehicleTypeId, GoodTypeName, Name";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

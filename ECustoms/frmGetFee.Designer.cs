@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGetFee));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +36,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbConditionSearch = new System.Windows.Forms.GroupBox();
             this.cbGetFee = new System.Windows.Forms.CheckBox();
             this.dtpFeeTo = new System.Windows.Forms.DateTimePicker();
@@ -61,25 +61,6 @@
             this.grbResult = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grdVehicle = new System.Windows.Forms.DataGridView();
-            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GoodTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VehicleTypeCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExportReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImportReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parking = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parkingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConfirmExportByName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConfirmImportByName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feeExportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feeImportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFeeImport = new System.Windows.Forms.Button();
             this.btnFeeExport = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -101,6 +82,26 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleTypeCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GoodTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImportGoodTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImportReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parking = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parkingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConfirmExportByName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConfirmImportByName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeExportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeImportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbConditionSearch.SuspendLayout();
             this.grbResult.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -347,8 +348,9 @@
             this.grdVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PlateNumber,
             this.DriverName,
-            this.GoodTypeName,
             this.VehicleTypeCapacity,
+            this.GoodTypeName,
+            this.ImportGoodTypeName,
             this.ExportReceiptNumber,
             this.ImportReceiptNumber,
             this.ExportDate,
@@ -370,164 +372,6 @@
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdVehicle.Size = new System.Drawing.Size(863, 336);
             this.grdVehicle.TabIndex = 0;
-            // 
-            // PlateNumber
-            // 
-            this.PlateNumber.DataPropertyName = "PlateNumber";
-            this.PlateNumber.HeaderText = "Biển kiểm soát";
-            this.PlateNumber.Name = "PlateNumber";
-            this.PlateNumber.ReadOnly = true;
-            this.PlateNumber.Width = 140;
-            // 
-            // DriverName
-            // 
-            this.DriverName.DataPropertyName = "DriverName";
-            this.DriverName.HeaderText = "Tên lái xe";
-            this.DriverName.Name = "DriverName";
-            this.DriverName.ReadOnly = true;
-            // 
-            // GoodTypeName
-            // 
-            this.GoodTypeName.DataPropertyName = "TypeName";
-            this.GoodTypeName.HeaderText = "Loại hàng";
-            this.GoodTypeName.Name = "GoodTypeName";
-            this.GoodTypeName.ReadOnly = true;
-            this.GoodTypeName.Width = 150;
-            // 
-            // VehicleTypeCapacity
-            // 
-            this.VehicleTypeCapacity.DataPropertyName = "Capacity";
-            this.VehicleTypeCapacity.HeaderText = "Loại trọng tải";
-            this.VehicleTypeCapacity.Name = "VehicleTypeCapacity";
-            this.VehicleTypeCapacity.ReadOnly = true;
-            this.VehicleTypeCapacity.Width = 150;
-            // 
-            // ExportReceiptNumber
-            // 
-            this.ExportReceiptNumber.DataPropertyName = "ExportReceiptNumber";
-            this.ExportReceiptNumber.HeaderText = "Số biên lai xuất";
-            this.ExportReceiptNumber.Name = "ExportReceiptNumber";
-            this.ExportReceiptNumber.ReadOnly = true;
-            this.ExportReceiptNumber.Width = 150;
-            // 
-            // ImportReceiptNumber
-            // 
-            this.ImportReceiptNumber.DataPropertyName = "ImportReceiptNumber";
-            this.ImportReceiptNumber.HeaderText = "Số biên lai nhập";
-            this.ImportReceiptNumber.Name = "ImportReceiptNumber";
-            this.ImportReceiptNumber.ReadOnly = true;
-            this.ImportReceiptNumber.Width = 150;
-            // 
-            // ExportDate
-            // 
-            this.ExportDate.DataPropertyName = "ExportDate";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy hh:mm";
-            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ExportDate.HeaderText = "Ngày xuất cảnh";
-            this.ExportDate.Name = "ExportDate";
-            this.ExportDate.ReadOnly = true;
-            this.ExportDate.Width = 150;
-            // 
-            // Importdate
-            // 
-            this.Importdate.DataPropertyName = "ImportDate";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
-            this.Importdate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Importdate.HeaderText = "Ngày nhập cảnh";
-            this.Importdate.Name = "Importdate";
-            this.Importdate.ReadOnly = true;
-            this.Importdate.Width = 150;
-            // 
-            // NumberOfContainer
-            // 
-            this.NumberOfContainer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NumberOfContainer.DataPropertyName = "NumberOfContainer";
-            this.NumberOfContainer.HeaderText = "Số container";
-            this.NumberOfContainer.Name = "NumberOfContainer";
-            this.NumberOfContainer.ReadOnly = true;
-            this.NumberOfContainer.Width = 135;
-            // 
-            // parking
-            // 
-            this.parking.DataPropertyName = "parking";
-            this.parking.HeaderText = "Hàng vào bãi";
-            this.parking.Name = "parking";
-            this.parking.ReadOnly = true;
-            this.parking.Width = 140;
-            // 
-            // parkingDate
-            // 
-            this.parkingDate.DataPropertyName = "ParkingDate";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
-            this.parkingDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.parkingDate.HeaderText = "Ngày vào bãi";
-            this.parkingDate.Name = "parkingDate";
-            this.parkingDate.ReadOnly = true;
-            this.parkingDate.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Diễn giải";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 120;
-            // 
-            // Note
-            // 
-            this.Note.DataPropertyName = "Note";
-            this.Note.HeaderText = "Ghi chú";
-            this.Note.Name = "Note";
-            this.Note.ReadOnly = true;
-            this.Note.Width = 150;
-            // 
-            // ImportStatus
-            // 
-            this.ImportStatus.DataPropertyName = "ImportStatus";
-            this.ImportStatus.HeaderText = "Trạng thái nhập cảnh";
-            this.ImportStatus.Name = "ImportStatus";
-            this.ImportStatus.ReadOnly = true;
-            this.ImportStatus.Width = 200;
-            // 
-            // VehicleID
-            // 
-            this.VehicleID.DataPropertyName = "VehicleID";
-            this.VehicleID.HeaderText = "VehicleID";
-            this.VehicleID.Name = "VehicleID";
-            this.VehicleID.ReadOnly = true;
-            this.VehicleID.Visible = false;
-            // 
-            // ConfirmExportByName
-            // 
-            this.ConfirmExportByName.DataPropertyName = "ConfirmExportByName";
-            this.ConfirmExportByName.HeaderText = "Người xác nhận xuất";
-            this.ConfirmExportByName.Name = "ConfirmExportByName";
-            this.ConfirmExportByName.ReadOnly = true;
-            this.ConfirmExportByName.Width = 200;
-            // 
-            // ConfirmImportByName
-            // 
-            this.ConfirmImportByName.DataPropertyName = "ConfirmImportByName";
-            this.ConfirmImportByName.HeaderText = "Người xác nhận nhập";
-            this.ConfirmImportByName.Name = "ConfirmImportByName";
-            this.ConfirmImportByName.ReadOnly = true;
-            this.ConfirmImportByName.Width = 200;
-            // 
-            // feeExportStatus
-            // 
-            this.feeExportStatus.DataPropertyName = "feeExportStatus";
-            this.feeExportStatus.HeaderText = "Trạng thái thu phí xuất";
-            this.feeExportStatus.Name = "feeExportStatus";
-            this.feeExportStatus.ReadOnly = true;
-            this.feeExportStatus.Visible = false;
-            // 
-            // feeImportStatus
-            // 
-            this.feeImportStatus.DataPropertyName = "feeImportStatus";
-            this.feeImportStatus.HeaderText = "Trạng thái thu phí nhập";
-            this.feeImportStatus.Name = "feeImportStatus";
-            this.feeImportStatus.ReadOnly = true;
-            this.feeImportStatus.Visible = false;
             // 
             // btnFeeImport
             // 
@@ -748,6 +592,172 @@
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.Width = 200;
             // 
+            // PlateNumber
+            // 
+            this.PlateNumber.DataPropertyName = "PlateNumber";
+            this.PlateNumber.HeaderText = "Biển kiểm soát";
+            this.PlateNumber.Name = "PlateNumber";
+            this.PlateNumber.ReadOnly = true;
+            this.PlateNumber.Width = 140;
+            // 
+            // DriverName
+            // 
+            this.DriverName.DataPropertyName = "DriverName";
+            this.DriverName.HeaderText = "Tên lái xe";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.ReadOnly = true;
+            // 
+            // VehicleTypeCapacity
+            // 
+            this.VehicleTypeCapacity.DataPropertyName = "Capacity";
+            this.VehicleTypeCapacity.HeaderText = "Loại trọng tải";
+            this.VehicleTypeCapacity.Name = "VehicleTypeCapacity";
+            this.VehicleTypeCapacity.ReadOnly = true;
+            this.VehicleTypeCapacity.Width = 150;
+            // 
+            // GoodTypeName
+            // 
+            this.GoodTypeName.DataPropertyName = "ExportGoodTypeName";
+            this.GoodTypeName.HeaderText = "Loại hàng hóa xuất";
+            this.GoodTypeName.Name = "GoodTypeName";
+            this.GoodTypeName.ReadOnly = true;
+            this.GoodTypeName.Width = 200;
+            // 
+            // ImportGoodTypeName
+            // 
+            this.ImportGoodTypeName.DataPropertyName = "ImportGoodTypeName";
+            this.ImportGoodTypeName.HeaderText = "Loại hàng hóa nhập";
+            this.ImportGoodTypeName.Name = "ImportGoodTypeName";
+            this.ImportGoodTypeName.ReadOnly = true;
+            this.ImportGoodTypeName.Width = 200;
+            // 
+            // ExportReceiptNumber
+            // 
+            this.ExportReceiptNumber.DataPropertyName = "ExportReceiptNumber";
+            this.ExportReceiptNumber.HeaderText = "Số biên lai xuất";
+            this.ExportReceiptNumber.Name = "ExportReceiptNumber";
+            this.ExportReceiptNumber.ReadOnly = true;
+            this.ExportReceiptNumber.Width = 150;
+            // 
+            // ImportReceiptNumber
+            // 
+            this.ImportReceiptNumber.DataPropertyName = "ImportReceiptNumber";
+            this.ImportReceiptNumber.HeaderText = "Số biên lai nhập";
+            this.ImportReceiptNumber.Name = "ImportReceiptNumber";
+            this.ImportReceiptNumber.ReadOnly = true;
+            this.ImportReceiptNumber.Width = 150;
+            // 
+            // ExportDate
+            // 
+            this.ExportDate.DataPropertyName = "ExportDate";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy hh:mm";
+            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ExportDate.HeaderText = "Ngày xuất cảnh";
+            this.ExportDate.Name = "ExportDate";
+            this.ExportDate.ReadOnly = true;
+            this.ExportDate.Width = 150;
+            // 
+            // Importdate
+            // 
+            this.Importdate.DataPropertyName = "ImportDate";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
+            this.Importdate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Importdate.HeaderText = "Ngày nhập cảnh";
+            this.Importdate.Name = "Importdate";
+            this.Importdate.ReadOnly = true;
+            this.Importdate.Width = 150;
+            // 
+            // NumberOfContainer
+            // 
+            this.NumberOfContainer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NumberOfContainer.DataPropertyName = "NumberOfContainer";
+            this.NumberOfContainer.HeaderText = "Số container";
+            this.NumberOfContainer.Name = "NumberOfContainer";
+            this.NumberOfContainer.ReadOnly = true;
+            this.NumberOfContainer.Width = 135;
+            // 
+            // parking
+            // 
+            this.parking.DataPropertyName = "parking";
+            this.parking.HeaderText = "Hàng vào bãi";
+            this.parking.Name = "parking";
+            this.parking.ReadOnly = true;
+            this.parking.Width = 140;
+            // 
+            // parkingDate
+            // 
+            this.parkingDate.DataPropertyName = "ParkingDate";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
+            this.parkingDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.parkingDate.HeaderText = "Ngày vào bãi";
+            this.parkingDate.Name = "parkingDate";
+            this.parkingDate.ReadOnly = true;
+            this.parkingDate.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Diễn giải";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 120;
+            // 
+            // Note
+            // 
+            this.Note.DataPropertyName = "Note";
+            this.Note.HeaderText = "Ghi chú";
+            this.Note.Name = "Note";
+            this.Note.ReadOnly = true;
+            this.Note.Width = 150;
+            // 
+            // ImportStatus
+            // 
+            this.ImportStatus.DataPropertyName = "ImportStatus";
+            this.ImportStatus.HeaderText = "Trạng thái nhập cảnh";
+            this.ImportStatus.Name = "ImportStatus";
+            this.ImportStatus.ReadOnly = true;
+            this.ImportStatus.Width = 200;
+            // 
+            // VehicleID
+            // 
+            this.VehicleID.DataPropertyName = "VehicleID";
+            this.VehicleID.HeaderText = "VehicleID";
+            this.VehicleID.Name = "VehicleID";
+            this.VehicleID.ReadOnly = true;
+            this.VehicleID.Visible = false;
+            // 
+            // ConfirmExportByName
+            // 
+            this.ConfirmExportByName.DataPropertyName = "ConfirmExportByName";
+            this.ConfirmExportByName.HeaderText = "Người xác nhận xuất";
+            this.ConfirmExportByName.Name = "ConfirmExportByName";
+            this.ConfirmExportByName.ReadOnly = true;
+            this.ConfirmExportByName.Width = 200;
+            // 
+            // ConfirmImportByName
+            // 
+            this.ConfirmImportByName.DataPropertyName = "ConfirmImportByName";
+            this.ConfirmImportByName.HeaderText = "Người xác nhận nhập";
+            this.ConfirmImportByName.Name = "ConfirmImportByName";
+            this.ConfirmImportByName.ReadOnly = true;
+            this.ConfirmImportByName.Width = 200;
+            // 
+            // feeExportStatus
+            // 
+            this.feeExportStatus.DataPropertyName = "feeExportStatus";
+            this.feeExportStatus.HeaderText = "Trạng thái thu phí xuất";
+            this.feeExportStatus.Name = "feeExportStatus";
+            this.feeExportStatus.ReadOnly = true;
+            this.feeExportStatus.Visible = false;
+            // 
+            // feeImportStatus
+            // 
+            this.feeImportStatus.DataPropertyName = "feeImportStatus";
+            this.feeImportStatus.HeaderText = "Trạng thái thu phí nhập";
+            this.feeImportStatus.Name = "feeImportStatus";
+            this.feeImportStatus.ReadOnly = true;
+            this.feeImportStatus.Visible = false;
+            // 
             // frmGetFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,8 +830,9 @@
         private System.Windows.Forms.DateTimePicker dtpFeeFrom;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GoodTypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleTypeCapacity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GoodTypeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImportGoodTypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportReceiptNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImportReceiptNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;

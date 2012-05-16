@@ -312,11 +312,11 @@ namespace ECustoms
                             dateTo.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT vehicleTypeId, GoodTypeId, COUNT(*) as CountVehicle, SUM (feeExportAmount) as SumFeeExport, SUM (feeImportAmount) as SumFeeImport, Name, TypeName FROM ViewVehicleFreight ");
+                            buffer.Append(" SELECT vehicleTypeId, GoodTypeName, COUNT(*) as CountVehicle, SUM (feeExportAmount) as SumFeeExport, SUM (feeImportAmount) as SumFeeImport, Name FROM ViewVehicleFreight ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
                             buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
-                            buffer.Append(" GROUP BY vehicleTypeId, GoodTypeId, Name, TypeName");
+                            buffer.Append(" GROUP BY vehicleTypeId, GoodTypeName, Name");
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
