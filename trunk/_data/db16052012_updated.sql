@@ -7,7 +7,8 @@ DROP COLUMN GoodTypeId
 ALTER TABLE dbo.tblVehicle
 ADD ExportGoodTypeId int NULL,
 	ImportGoodTypeId int NULL
-	
+
+GO	
 ALTER VIEW [dbo].[ViewAllVehicleHasGood]
 AS
 SELECT     dbo.tblVehicle.VehicleID, dbo.tblVehicle.PlateNumber, dbo.tblVehicle.NumberOfContainer, dbo.tblVehicle.DriverName, dbo.tblVehicle.ImportDate, 
