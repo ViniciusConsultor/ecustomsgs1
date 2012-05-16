@@ -97,6 +97,8 @@ namespace ECustoms
             pictureBoxInvalid.Visible = false;
             pictureBoxValid.Visible = false;
 
+            cbGoodType.SelectedIndex = 0;
+            cbVehicleType.SelectedIndex = 0;
             // Set focus
             txtPlateNumber.Focus();
         }
