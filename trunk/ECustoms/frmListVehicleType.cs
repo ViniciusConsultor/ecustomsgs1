@@ -34,6 +34,11 @@ namespace ECustoms
         private void frmListVehicleType_Load(object sender, EventArgs e)
         {
             this.Text = "Danh sach loai phuong tien va bieu phi" + ConstantInfo.MESSAGE_TITLE;
+            //check permission
+            btnAdd.Enabled = _userinfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_MOI_THONG_TIN_LOAI_PHUONG_TIEN);
+            btnUpdate.Enabled = _userinfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LOAI_PHUONG_TIEN);
+            btnDelete.Enabled = _userinfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_THONG_TIN_LOAI_PHUONG_TIEN);
+
             init();
         }
 
@@ -121,6 +126,11 @@ namespace ECustoms
 
         private void grvVehicleType_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (_userinfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LOAI_PHUONG_TIEN) == false)
+            {
+                return;
+            }
+
             try
             {
                 if (e.RowIndex >= 0 && grvVehicleType.SelectedRows.Count == 1) // Only select one row

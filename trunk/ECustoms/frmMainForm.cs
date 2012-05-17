@@ -98,6 +98,27 @@ namespace ECustoms
             //nhập phương tiện xe Trung Quốc
             addVehicleChinese.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PT_XE_TRUNG_QUOC);
 
+            //loai phuong tien/loai trong tai
+            mnuVehidleType.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_LOAI_PHUONG_TIEN) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_MOI_THONG_TIN_LOAI_PHUONG_TIEN) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LOAI_PHUONG_TIEN) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_THONG_TIN_LOAI_PHUONG_TIEN);
+            
+            //thu phi phuong tien
+            menuGetFee.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_THU_PHI_PHUONG_TIEN) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_THU_PHI_PHUONG_TIEN_XUAT_CANH) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_THU_PHI_PHUONG_TIEN_NHAP_CANH) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XUAT_EXCEL_THONG_TIN_THU_PHI_PHUONG_TIEN);
+            
+            //bao cao thu phi
+            mnuFeeReport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XEM_BAO_CAO_THU_PHI_PHUONG_TIEN);
+
+            //cau hinh tinh phi phuong tien
+            mnuFeeSetting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_MOI_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN);
+            
         }
 
         private void mnExport_Click(object sender, EventArgs e)
