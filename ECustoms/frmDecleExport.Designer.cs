@@ -77,18 +77,14 @@
             this.btnUpdateVehicle = new System.Windows.Forms.Button();
             this.btnAddVehicle = new System.Windows.Forms.Button();
             this.grdVehicle = new System.Windows.Forms.DataGridView();
-            this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet2 = new ECustoms.DataSet2();
-            this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new ECustoms.DataSet2();
             this.ExportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ImportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +94,11 @@
             this.IsImport = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnFee = new System.Windows.Forms.Button();
             this.gbExportDeclaration.SuspendLayout();
             this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
@@ -574,80 +575,6 @@
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
             // 
-            // tblVehicleTypeBindingSource
-            // 
-            this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
-            this.tblVehicleTypeBindingSource.DataSource = this.dataSet2;
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblGoodsTypeBindingSource
-            // 
-            this.tblGoodsTypeBindingSource.DataMember = "tblGoodsType";
-            this.tblGoodsTypeBindingSource.DataSource = this.dataSet2;
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(346, 9);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(229, 29);
-            this.lblHeader.TabIndex = 21;
-            this.lblHeader.Text = "Khai báo xuất cảnh";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(214, 584);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(160, 33);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Cập nhật tờ khai";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // button1
-            // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::ECustoms.Properties.Resources.close;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(380, 584);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thoát";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::ECustoms.Properties.Resources.save_icon;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(19, 584);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(189, 33);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Tạo mới/lưu tờ khai";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // Count
             // 
             this.Count.HeaderText = "STT";
@@ -683,6 +610,16 @@
             this.VehicleType.ValueMember = "VehicleTypeID";
             this.VehicleType.Width = 200;
             // 
+            // tblVehicleTypeBindingSource
+            // 
+            this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
+            this.tblVehicleTypeBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ExportGoodType
             // 
             this.ExportGoodType.DataPropertyName = "ExportGoodTypeId";
@@ -692,6 +629,11 @@
             this.ExportGoodType.Name = "ExportGoodType";
             this.ExportGoodType.ValueMember = "TypeId";
             this.ExportGoodType.Width = 200;
+            // 
+            // tblGoodsTypeBindingSource
+            // 
+            this.tblGoodsTypeBindingSource.DataMember = "tblGoodsType";
+            this.tblGoodsTypeBindingSource.DataSource = this.dataSet2;
             // 
             // ImportGoodType
             // 
@@ -766,6 +708,81 @@
             this.ExportDate.Visible = false;
             this.ExportDate.Width = 110;
             // 
+            // lblHeader
+            // 
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(346, 9);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(229, 29);
+            this.lblHeader.TabIndex = 21;
+            this.lblHeader.Text = "Khai báo xuất cảnh";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(214, 584);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(160, 33);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Cập nhật tờ khai";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::ECustoms.Properties.Resources.close;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(528, 584);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 33);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Thoát";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::ECustoms.Properties.Resources.save_icon;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(19, 584);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(189, 33);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Tạo mới/lưu tờ khai";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnFee
+            // 
+            this.btnFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFee.Image = ((System.Drawing.Image)(resources.GetObject("btnFee.Image")));
+            this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFee.Location = new System.Drawing.Point(380, 584);
+            this.btnFee.Name = "btnFee";
+            this.btnFee.Size = new System.Drawing.Size(142, 33);
+            this.btnFee.TabIndex = 23;
+            this.btnFee.Text = "Thu phí nhập";
+            this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFee.UseVisualStyleBackColor = true;
+            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
+            // 
             // FrmDecleExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -773,6 +790,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(951, 627);
+            this.Controls.Add(this.btnFee);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdd);
@@ -864,5 +882,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsImport;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
+        private System.Windows.Forms.Button btnFee;
     }
 }
