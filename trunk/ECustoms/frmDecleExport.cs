@@ -383,7 +383,9 @@ namespace ECustoms
                 cbTNTX.Items.RemoveAt(3);
                 cbTNTX.Items.RemoveAt(2);
                 grdVehicle.Columns["ImportGoodType"].ReadOnly = true;
-
+                // Thu phí
+                btnFee.Text = "Thu phí xuất";
+                btnFee.Image = Properties.Resources._1336316540_document_export;
             }
             else
             {
@@ -407,6 +409,7 @@ namespace ECustoms
                 cbTNTX.Items.RemoveAt(1);
 
                 grdVehicle.Columns["ExportGoodType"].ReadOnly = true;
+
             }
 
             // New mode))
@@ -778,6 +781,7 @@ namespace ECustoms
                 btnAddExisting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_NHAP_CANH);
                 btnUpdateVehicle.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_PHUONG_TIEN_CHO_TO_KHAI_NHAP_CANH);
                 btnDeleteVehicle.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN_CHO_TO_KHAI_NHAP_CANH);
+                btnFee.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_THU_PHI_PHUONG_TIEN_NHAP_CANH);
             }
             else
             {
@@ -785,6 +789,7 @@ namespace ECustoms
                 btnAddExisting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
                 btnUpdateVehicle.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
                 btnDeleteVehicle.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
+                btnFee.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_THU_PHI_PHUONG_TIEN_XUAT_CANH);
             }
 
             btnComfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
@@ -792,7 +797,7 @@ namespace ECustoms
             bntConfirmImportCH.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
 
             btnAdd.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI);
-            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);
+            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_TO_KHAI);           
         }
 
         private void FrmDecleExport_Load(object sender, EventArgs e)
@@ -1074,6 +1079,12 @@ namespace ECustoms
             pnTXTN.Visible = ((ComboBox)sender).SelectedIndex > 0;
         }
 
+        private void btnFee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Class
         public class ComboBoxItem
         {
             public string Value;
@@ -1088,5 +1099,7 @@ namespace ECustoms
                 return Text;
             }
         }
+        #endregion
+
     }
 }
