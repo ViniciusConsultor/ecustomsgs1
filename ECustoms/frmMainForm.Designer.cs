@@ -59,6 +59,7 @@
             this.mnuVehidleType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGetFee = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFeeReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFeeSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +71,6 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.mnuFeeSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -220,6 +220,7 @@
             this.addVehicleChinese.Name = "addVehicleChinese";
             this.addVehicleChinese.Size = new System.Drawing.Size(313, 26);
             this.addVehicleChinese.Text = "Thêm phương tiện xe Trung Quốc";
+            this.addVehicleChinese.Visible = false;
             this.addVehicleChinese.Click += new System.EventHandler(this.addVehicleChinese_Click);
             // 
             // mnuExportParking
@@ -334,6 +335,13 @@
             this.mnuFeeReport.Text = "Báo cáo thu phí";
             this.mnuFeeReport.Click += new System.EventHandler(this.mnuFeeReport_Click);
             // 
+            // mnuFeeSetting
+            // 
+            this.mnuFeeSetting.Name = "mnuFeeSetting";
+            this.mnuFeeSetting.Size = new System.Drawing.Size(288, 26);
+            this.mnuFeeSetting.Text = "Cấu hình tính phí phương tiện";
+            this.mnuFeeSetting.Click += new System.EventHandler(this.mnuFeeSetting_Click);
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -439,13 +447,6 @@
             // viewAllVehicleTableAdapter1
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
-            // 
-            // mnuFeeSetting
-            // 
-            this.mnuFeeSetting.Name = "mnuFeeSetting";
-            this.mnuFeeSetting.Size = new System.Drawing.Size(288, 26);
-            this.mnuFeeSetting.Text = "Cấu hình tính phí phương tiện";
-            this.mnuFeeSetting.Click += new System.EventHandler(this.mnuFeeSetting_Click);
             // 
             // frmMainForm
             // 

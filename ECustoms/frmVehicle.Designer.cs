@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVehicle));
             this.lblPlateNumber = new System.Windows.Forms.Label();
             this.txtPlateNumber = new System.Windows.Forms.TextBox();
@@ -59,9 +59,18 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grdVehicle = new System.Windows.Forms.DataGridView();
+            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new ECustoms.DataSet2();
+            this.ExportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tblGoodsTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ImportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtVehicleChinese = new System.Windows.Forms.TextBox();
             this.lblVehicleChinese = new System.Windows.Forms.Label();
@@ -79,15 +88,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbImportGoodType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VehicleType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ExportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ImportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).BeginInit();
@@ -410,6 +410,39 @@
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
             // 
+            // PlateNumber
+            // 
+            this.PlateNumber.DataPropertyName = "PlateNumber";
+            this.PlateNumber.HeaderText = "Biển kiểm soát";
+            this.PlateNumber.Name = "PlateNumber";
+            this.PlateNumber.Width = 140;
+            // 
+            // DriverName
+            // 
+            this.DriverName.DataPropertyName = "DriverName";
+            this.DriverName.HeaderText = "Tên lái xe";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.Width = 200;
+            // 
+            // ExportDate
+            // 
+            this.ExportDate.DataPropertyName = "ExportDate";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ExportDate.HeaderText = "Ngày xuất cảnh";
+            this.ExportDate.Name = "ExportDate";
+            this.ExportDate.Width = 150;
+            // 
+            // VehicleType
+            // 
+            this.VehicleType.DataPropertyName = "vehicleTypeId";
+            this.VehicleType.DataSource = this.tblVehicleTypeBindingSource;
+            this.VehicleType.DisplayMember = "Name";
+            this.VehicleType.HeaderText = "Loại trọng tải";
+            this.VehicleType.Name = "VehicleType";
+            this.VehicleType.ValueMember = "VehicleTypeID";
+            this.VehicleType.Width = 200;
+            // 
             // tblVehicleTypeBindingSource
             // 
             this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
@@ -420,10 +453,51 @@
             this.dataSet2.DataSetName = "DataSet2";
             this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // ExportGoodType
+            // 
+            this.ExportGoodType.DataPropertyName = "ExportGoodTypeId";
+            this.ExportGoodType.DataSource = this.tblGoodsTypeBindingSource1;
+            this.ExportGoodType.DisplayMember = "TypeName";
+            this.ExportGoodType.HeaderText = "Loại hàng hóa xuất";
+            this.ExportGoodType.Name = "ExportGoodType";
+            this.ExportGoodType.ValueMember = "TypeId";
+            this.ExportGoodType.Width = 200;
+            // 
             // tblGoodsTypeBindingSource1
             // 
             this.tblGoodsTypeBindingSource1.DataMember = "tblGoodsType";
             this.tblGoodsTypeBindingSource1.DataSource = this.dataSet2;
+            // 
+            // ImportGoodType
+            // 
+            this.ImportGoodType.DataPropertyName = "ImportGoodTypeId";
+            this.ImportGoodType.DataSource = this.tblGoodsTypeBindingSource1;
+            this.ImportGoodType.DisplayMember = "TypeName";
+            this.ImportGoodType.HeaderText = "Loại hàng hóa nhập";
+            this.ImportGoodType.Name = "ImportGoodType";
+            this.ImportGoodType.ValueMember = "TypeId";
+            this.ImportGoodType.Width = 200;
+            // 
+            // VehicleID
+            // 
+            this.VehicleID.DataPropertyName = "VehicleID";
+            this.VehicleID.HeaderText = "VehicleID";
+            this.VehicleID.Name = "VehicleID";
+            this.VehicleID.Visible = false;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Diễn giải";
+            this.Status.Name = "Status";
+            this.Status.Width = 150;
+            // 
+            // Note
+            // 
+            this.Note.DataPropertyName = "Note";
+            this.Note.HeaderText = "Ghi chú";
+            this.Note.Name = "Note";
+            this.Note.Width = 198;
             // 
             // btnSearch
             // 
@@ -443,6 +517,7 @@
             this.txtVehicleChinese.Name = "txtVehicleChinese";
             this.txtVehicleChinese.Size = new System.Drawing.Size(173, 20);
             this.txtVehicleChinese.TabIndex = 5;
+            this.txtVehicleChinese.Visible = false;
             // 
             // lblVehicleChinese
             // 
@@ -453,6 +528,7 @@
             this.lblVehicleChinese.Size = new System.Drawing.Size(193, 20);
             this.lblVehicleChinese.TabIndex = 21;
             this.lblVehicleChinese.Text = "Biển kiểm soát xe sang tải";
+            this.lblVehicleChinese.Visible = false;
             // 
             // label2
             // 
@@ -576,80 +652,6 @@
             this.label4.Size = new System.Drawing.Size(150, 20);
             this.label4.TabIndex = 27;
             this.label4.Text = "Loại hàng hóa nhập";
-            // 
-            // PlateNumber
-            // 
-            this.PlateNumber.DataPropertyName = "PlateNumber";
-            this.PlateNumber.HeaderText = "Biển kiểm soát";
-            this.PlateNumber.Name = "PlateNumber";
-            this.PlateNumber.Width = 140;
-            // 
-            // DriverName
-            // 
-            this.DriverName.DataPropertyName = "DriverName";
-            this.DriverName.HeaderText = "Tên lái xe";
-            this.DriverName.Name = "DriverName";
-            this.DriverName.Width = 200;
-            // 
-            // ExportDate
-            // 
-            this.ExportDate.DataPropertyName = "ExportDate";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ExportDate.HeaderText = "Ngày xuất cảnh";
-            this.ExportDate.Name = "ExportDate";
-            this.ExportDate.Width = 150;
-            // 
-            // VehicleType
-            // 
-            this.VehicleType.DataPropertyName = "vehicleTypeId";
-            this.VehicleType.DataSource = this.tblVehicleTypeBindingSource;
-            this.VehicleType.DisplayMember = "Name";
-            this.VehicleType.HeaderText = "Loại trọng tải";
-            this.VehicleType.Name = "VehicleType";
-            this.VehicleType.ValueMember = "VehicleTypeID";
-            this.VehicleType.Width = 200;
-            // 
-            // ExportGoodType
-            // 
-            this.ExportGoodType.DataPropertyName = "ExportGoodTypeId";
-            this.ExportGoodType.DataSource = this.tblGoodsTypeBindingSource1;
-            this.ExportGoodType.DisplayMember = "TypeName";
-            this.ExportGoodType.HeaderText = "Loại hàng hóa xuất";
-            this.ExportGoodType.Name = "ExportGoodType";
-            this.ExportGoodType.ValueMember = "TypeId";
-            this.ExportGoodType.Width = 200;
-            // 
-            // ImportGoodType
-            // 
-            this.ImportGoodType.DataPropertyName = "ImportGoodTypeId";
-            this.ImportGoodType.DataSource = this.tblGoodsTypeBindingSource1;
-            this.ImportGoodType.DisplayMember = "TypeName";
-            this.ImportGoodType.HeaderText = "Loại hàng hóa nhập";
-            this.ImportGoodType.Name = "ImportGoodType";
-            this.ImportGoodType.ValueMember = "TypeId";
-            this.ImportGoodType.Width = 200;
-            // 
-            // VehicleID
-            // 
-            this.VehicleID.DataPropertyName = "VehicleID";
-            this.VehicleID.HeaderText = "VehicleID";
-            this.VehicleID.Name = "VehicleID";
-            this.VehicleID.Visible = false;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Diễn giải";
-            this.Status.Name = "Status";
-            this.Status.Width = 150;
-            // 
-            // Note
-            // 
-            this.Note.DataPropertyName = "Note";
-            this.Note.HeaderText = "Ghi chú";
-            this.Note.Name = "Note";
-            this.Note.Width = 198;
             // 
             // frmVehicle
             // 
