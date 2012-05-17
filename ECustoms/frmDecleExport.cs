@@ -382,6 +382,7 @@ namespace ECustoms
                 btnComfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
                 cbTNTX.Items.RemoveAt(3);
                 cbTNTX.Items.RemoveAt(2);
+                grdVehicle.Columns["ImportGoodType"].ReadOnly = true;
 
             }
             else
@@ -404,6 +405,8 @@ namespace ECustoms
                 lblTotalVehicles.Visible = false;
                 txtExportTotalVehicles.Visible = false;
                 cbTNTX.Items.RemoveAt(1);
+
+                grdVehicle.Columns["ExportGoodType"].ReadOnly = true;
             }
 
             // New mode))

@@ -195,12 +195,16 @@ namespace ECustoms
                     txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                     txtVehicleChinese.AutoCompleteSource = AutoCompleteSource.CustomSource;
                     txtVehicleChinese.AutoCompleteCustomSource = auto;
+                    
+                    cbImportGoodType.Enabled = false;
                 }
                 else
                 {
                     btnConfirmExport.Enabled = false;
                     btnConfirmImport.Enabled = true;
                     btnConfirmImport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
+                   
+                    cbExportGoodType.Enabled = false;
                 }
 
                 // TODO: Need to handler it
