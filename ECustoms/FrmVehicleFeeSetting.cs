@@ -33,6 +33,12 @@ namespace ECustoms
 
             this.Text = "Cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE;
             grdVehicleFee.AutoGenerateColumns = false;
+
+            //check permission
+            btnAdd.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_MOI_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN);
+            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN);
+            btnDelete.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN);
+
             init();
             
         }
@@ -128,6 +134,11 @@ namespace ECustoms
 
         private void grdVehicleFee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN) == false)
+            {
+                return;
+            }
+
             try
             {
                 if (grdVehicleFee.SelectedRows.Count == 1)

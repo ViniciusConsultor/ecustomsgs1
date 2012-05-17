@@ -96,15 +96,22 @@
         public const int PERMISSON_THEM_PT_XE_TRUNG_QUOC = 40;
 
 
-        //public const int PERMISSON_TRA_CUU_THONG_TIN_XKCCK = 35;
-        //public const int PERMISSON_XAC_NHAN_HOI_BAO_XKCCK = 36;
-        //public const int PERMISSON_BO_XUNG_THONG_TIN_XKCCK = 37;
-        //public const int PERMISSON_IN_BAO_CAO_XKCCK = 38;
+        public const int PERMISSON_TRA_CUU_THONG_TIN_LOAI_PHUONG_TIEN = 41;
+        public const int PERMISSON_THEM_MOI_THONG_TIN_LOAI_PHUONG_TIEN = 42;
+        public const int PERMISSON_CAP_NHAT_THONG_TIN_LOAI_PHUONG_TIEN = 43;
+        public const int PERMISSON_XOA_THONG_TIN_LOAI_PHUONG_TIEN = 44;
 
-        //public const int PERMISSON_TRA_CUU_THONG_TIN_NKCCK = 39;
-        //public const int PERMISSON_XAC_NHAN_HOI_BAO_NKCCK = 40;
-        //public const int PERMISSON_BO_XUNG_THONG_TIN_NKCCK = 41;
-        //public const int PERMISSON_IN_BAO_CAO_NKCCK = 42;
+        public const int PERMISSON_TRA_CUU_THONG_TIN_THU_PHI_PHUONG_TIEN = 45;
+        public const int PERMISSON_XAC_NHAN_THU_PHI_PHUONG_TIEN_XUAT_CANH = 46;
+        public const int PERMISSON_XAC_NHAN_THU_PHI_PHUONG_TIEN_NHAP_CANH = 47;
+        public const int PERMISSON_XUAT_EXCEL_THONG_TIN_THU_PHI_PHUONG_TIEN = 48;
+
+        public const int PERMISSON_XEM_BAO_CAO_THU_PHI_PHUONG_TIEN = 49;
+
+        public const int PERMISSON_TRA_CUU_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN = 50;
+        public const int PERMISSON_THEM_MOI_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN = 51;
+        public const int PERMISSON_CAP_NHAT_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN = 52;
+        public const int PERMISSON_XOA_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN = 53;
 
 
 
