@@ -3731,13 +3731,9 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnPlateNumber;
             
-            private global::System.Data.DataColumn columnExportReceiptNumber;
+            private global::System.Data.DataColumn columnFeeReceiptNumber;
             
-            private global::System.Data.DataColumn columnImportReceiptNumber;
-            
-            private global::System.Data.DataColumn columnFeeExportAmount;
-            
-            private global::System.Data.DataColumn columnFeeImportAmount;
+            private global::System.Data.DataColumn columnFeeAmount;
             
             private global::System.Data.DataColumn columnNumber;
             
@@ -3749,7 +3745,11 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnImportedLocalTime;
             
-            private global::System.Data.DataColumn columnName;
+            private global::System.Data.DataColumn columnVehicleTypeName;
+            
+            private global::System.Data.DataColumn columnFeeType;
+            
+            private global::System.Data.DataColumn columnFeeDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3802,33 +3802,17 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExportReceiptNumberColumn {
+            public global::System.Data.DataColumn FeeReceiptNumberColumn {
                 get {
-                    return this.columnExportReceiptNumber;
+                    return this.columnFeeReceiptNumber;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ImportReceiptNumberColumn {
+            public global::System.Data.DataColumn FeeAmountColumn {
                 get {
-                    return this.columnImportReceiptNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FeeExportAmountColumn {
-                get {
-                    return this.columnFeeExportAmount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FeeImportAmountColumn {
-                get {
-                    return this.columnFeeImportAmount;
+                    return this.columnFeeAmount;
                 }
             }
             
@@ -3874,9 +3858,25 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
+            public global::System.Data.DataColumn VehicleTypeNameColumn {
                 get {
-                    return this.columnName;
+                    return this.columnVehicleTypeName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FeeTypeColumn {
+                get {
+                    return this.columnFeeType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FeeDateColumn {
+                get {
+                    return this.columnFeeDate;
                 }
             }
             
@@ -3917,21 +3917,21 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblVehicleFreeRow AddtblVehicleFreeRow(long VehicleID, string PlateNumber, string ExportReceiptNumber, string ImportReceiptNumber, long FeeExportAmount, long FeeImportAmount, string Number, string Type, string ProductName, System.DateTime ExportDate, System.DateTime ImportedLocalTime, string Name) {
+            public tblVehicleFreeRow AddtblVehicleFreeRow(long VehicleID, string PlateNumber, string FeeReceiptNumber, long FeeAmount, int Number, string Type, string ProductName, System.DateTime ExportDate, System.DateTime ImportedLocalTime, string VehicleTypeName, string FeeType, System.DateTime FeeDate) {
                 tblVehicleFreeRow rowtblVehicleFreeRow = ((tblVehicleFreeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         VehicleID,
                         PlateNumber,
-                        ExportReceiptNumber,
-                        ImportReceiptNumber,
-                        FeeExportAmount,
-                        FeeImportAmount,
+                        FeeReceiptNumber,
+                        FeeAmount,
                         Number,
                         Type,
                         ProductName,
                         ExportDate,
                         ImportedLocalTime,
-                        Name};
+                        VehicleTypeName,
+                        FeeType,
+                        FeeDate};
                 rowtblVehicleFreeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblVehicleFreeRow);
                 return rowtblVehicleFreeRow;
@@ -3956,16 +3956,16 @@ namespace ECustoms {
             internal void InitVars() {
                 this.columnVehicleID = base.Columns["VehicleID"];
                 this.columnPlateNumber = base.Columns["PlateNumber"];
-                this.columnExportReceiptNumber = base.Columns["ExportReceiptNumber"];
-                this.columnImportReceiptNumber = base.Columns["ImportReceiptNumber"];
-                this.columnFeeExportAmount = base.Columns["FeeExportAmount"];
-                this.columnFeeImportAmount = base.Columns["FeeImportAmount"];
+                this.columnFeeReceiptNumber = base.Columns["FeeReceiptNumber"];
+                this.columnFeeAmount = base.Columns["FeeAmount"];
                 this.columnNumber = base.Columns["Number"];
                 this.columnType = base.Columns["Type"];
                 this.columnProductName = base.Columns["ProductName"];
                 this.columnExportDate = base.Columns["ExportDate"];
                 this.columnImportedLocalTime = base.Columns["ImportedLocalTime"];
-                this.columnName = base.Columns["Name"];
+                this.columnVehicleTypeName = base.Columns["VehicleTypeName"];
+                this.columnFeeType = base.Columns["FeeType"];
+                this.columnFeeDate = base.Columns["FeeDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3975,15 +3975,11 @@ namespace ECustoms {
                 base.Columns.Add(this.columnVehicleID);
                 this.columnPlateNumber = new global::System.Data.DataColumn("PlateNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlateNumber);
-                this.columnExportReceiptNumber = new global::System.Data.DataColumn("ExportReceiptNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExportReceiptNumber);
-                this.columnImportReceiptNumber = new global::System.Data.DataColumn("ImportReceiptNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImportReceiptNumber);
-                this.columnFeeExportAmount = new global::System.Data.DataColumn("FeeExportAmount", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFeeExportAmount);
-                this.columnFeeImportAmount = new global::System.Data.DataColumn("FeeImportAmount", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFeeImportAmount);
-                this.columnNumber = new global::System.Data.DataColumn("Number", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnFeeReceiptNumber = new global::System.Data.DataColumn("FeeReceiptNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFeeReceiptNumber);
+                this.columnFeeAmount = new global::System.Data.DataColumn("FeeAmount", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFeeAmount);
+                this.columnNumber = new global::System.Data.DataColumn("Number", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumber);
                 this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnType);
@@ -3993,8 +3989,12 @@ namespace ECustoms {
                 base.Columns.Add(this.columnExportDate);
                 this.columnImportedLocalTime = new global::System.Data.DataColumn("ImportedLocalTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImportedLocalTime);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
+                this.columnVehicleTypeName = new global::System.Data.DataColumn("VehicleTypeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVehicleTypeName);
+                this.columnFeeType = new global::System.Data.DataColumn("FeeType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFeeType);
+                this.columnFeeDate = new global::System.Data.DataColumn("FeeDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFeeDate);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7506,74 +7506,42 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ExportReceiptNumber {
+            public string FeeReceiptNumber {
                 get {
                     try {
-                        return ((string)(this[this.tabletblVehicleFree.ExportReceiptNumberColumn]));
+                        return ((string)(this[this.tabletblVehicleFree.FeeReceiptNumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExportReceiptNumber\' in table \'tblVehicleFree\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FeeReceiptNumber\' in table \'tblVehicleFree\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblVehicleFree.ExportReceiptNumberColumn] = value;
+                    this[this.tabletblVehicleFree.FeeReceiptNumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ImportReceiptNumber {
+            public long FeeAmount {
                 get {
                     try {
-                        return ((string)(this[this.tabletblVehicleFree.ImportReceiptNumberColumn]));
+                        return ((long)(this[this.tabletblVehicleFree.FeeAmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ImportReceiptNumber\' in table \'tblVehicleFree\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FeeAmount\' in table \'tblVehicleFree\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblVehicleFree.ImportReceiptNumberColumn] = value;
+                    this[this.tabletblVehicleFree.FeeAmountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long FeeExportAmount {
+            public int Number {
                 get {
                     try {
-                        return ((long)(this[this.tabletblVehicleFree.FeeExportAmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FeeExportAmount\' in table \'tblVehicleFree\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblVehicleFree.FeeExportAmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long FeeImportAmount {
-                get {
-                    try {
-                        return ((long)(this[this.tabletblVehicleFree.FeeImportAmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FeeImportAmount\' in table \'tblVehicleFree\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblVehicleFree.FeeImportAmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Number {
-                get {
-                    try {
-                        return ((string)(this[this.tabletblVehicleFree.NumberColumn]));
+                        return ((int)(this[this.tabletblVehicleFree.NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Number\' in table \'tblVehicleFree\' is DBNull.", e);
@@ -7650,17 +7618,49 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
+            public string VehicleTypeName {
                 get {
                     try {
-                        return ((string)(this[this.tabletblVehicleFree.NameColumn]));
+                        return ((string)(this[this.tabletblVehicleFree.VehicleTypeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'tblVehicleFree\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'VehicleTypeName\' in table \'tblVehicleFree\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblVehicleFree.NameColumn] = value;
+                    this[this.tabletblVehicleFree.VehicleTypeNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FeeType {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblVehicleFree.FeeTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FeeType\' in table \'tblVehicleFree\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblVehicleFree.FeeTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FeeDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblVehicleFree.FeeDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FeeDate\' in table \'tblVehicleFree\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblVehicleFree.FeeDateColumn] = value;
                 }
             }
             
@@ -7690,50 +7690,26 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExportReceiptNumberNull() {
-                return this.IsNull(this.tabletblVehicleFree.ExportReceiptNumberColumn);
+            public bool IsFeeReceiptNumberNull() {
+                return this.IsNull(this.tabletblVehicleFree.FeeReceiptNumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExportReceiptNumberNull() {
-                this[this.tabletblVehicleFree.ExportReceiptNumberColumn] = global::System.Convert.DBNull;
+            public void SetFeeReceiptNumberNull() {
+                this[this.tabletblVehicleFree.FeeReceiptNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsImportReceiptNumberNull() {
-                return this.IsNull(this.tabletblVehicleFree.ImportReceiptNumberColumn);
+            public bool IsFeeAmountNull() {
+                return this.IsNull(this.tabletblVehicleFree.FeeAmountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetImportReceiptNumberNull() {
-                this[this.tabletblVehicleFree.ImportReceiptNumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFeeExportAmountNull() {
-                return this.IsNull(this.tabletblVehicleFree.FeeExportAmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFeeExportAmountNull() {
-                this[this.tabletblVehicleFree.FeeExportAmountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFeeImportAmountNull() {
-                return this.IsNull(this.tabletblVehicleFree.FeeImportAmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFeeImportAmountNull() {
-                this[this.tabletblVehicleFree.FeeImportAmountColumn] = global::System.Convert.DBNull;
+            public void SetFeeAmountNull() {
+                this[this.tabletblVehicleFree.FeeAmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7798,14 +7774,38 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tabletblVehicleFree.NameColumn);
+            public bool IsVehicleTypeNameNull() {
+                return this.IsNull(this.tabletblVehicleFree.VehicleTypeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNameNull() {
-                this[this.tabletblVehicleFree.NameColumn] = global::System.Convert.DBNull;
+            public void SetVehicleTypeNameNull() {
+                this[this.tabletblVehicleFree.VehicleTypeNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFeeTypeNull() {
+                return this.IsNull(this.tabletblVehicleFree.FeeTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFeeTypeNull() {
+                this[this.tabletblVehicleFree.FeeTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFeeDateNull() {
+                return this.IsNull(this.tabletblVehicleFree.FeeDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFeeDateNull() {
+                this[this.tabletblVehicleFree.FeeDateColumn] = global::System.Convert.DBNull;
             }
         }
         

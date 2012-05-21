@@ -21,6 +21,7 @@ namespace ECustoms
         {
             InitializeComponent();
             crystalReportViewer1.ReportSource = report;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public FrmCrystalReport(ReportType type, DateTime from, DateTime to, UserInfo userInfo)
