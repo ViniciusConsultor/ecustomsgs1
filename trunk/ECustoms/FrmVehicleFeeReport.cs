@@ -95,58 +95,49 @@ namespace ECustoms
 
                 if (cbFeeImport.Checked == true && cbFeeExport.Checked == false)
                 {
-                    sql.Append("select * from ViewAllVehicleHasGood as table1");
-                    sql.Append(" inner join");
-                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID from ViewAllVehicleHasGood ");
-                    sql.Append(" where 1=1");
-                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID) as table2");
+                    sql.Append("select * from ViewVehicleFee");
 
-                    sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
+                    sql.Append(" where FeeTypeID=2");
 
-                    sql.Append(" AND  table1.feeImportDate >= '" + dateImportValueFrom.ToString("yyyy-MM-dd HH:mm"));
-                    sql.Append("' AND table1.feeImportDate < = '" + dateImportValueTo.ToString("yyyy-MM-dd HH:mm") + "'");
+                    sql.Append(" AND  FeeDate >= '" + dateImportValueFrom.ToString("yyyy-MM-dd HH:mm"));
+                    sql.Append("' AND FeeDate < = '" + dateImportValueTo.ToString("yyyy-MM-dd HH:mm") + "'");
                 }
 
 
                 if (cbFeeImport.Checked == false && cbFeeExport.Checked == true)
                 {
-                    sql.Append("select * from ViewAllVehicleHasGood as table1");
-                    sql.Append(" inner join");
-                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID from ViewAllVehicleHasGood ");
-                    sql.Append(" where 1=1");
-                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID) as table2");
+                    sql.Append("select * from ViewVehicleFee");
 
-                    sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
+                    sql.Append(" where FeeTypeID=1");
 
-                    sql.Append(" AND  table1.feeExportDate >= '" + dateExportValueFrom.ToString("yyyy-MM-dd HH:mm"));
-                    sql.Append("' AND table1.feeExportDate < = '" + dateExportValueTo.ToString("yyyy-MM-dd HH:mm") + "'");
+                    sql.Append(" AND  FeeDate >= '" + dateExportValueFrom.ToString("yyyy-MM-dd HH:mm"));
+                    sql.Append("' AND FeeDate < = '" + dateExportValueTo.ToString("yyyy-MM-dd HH:mm") + "'");
                 }
 
 
                 if (cbFeeImport.Checked == true && cbFeeExport.Checked == true)
                 {
-                    sql.Append("select * from ViewAllVehicleHasGood as table1");
-                    sql.Append(" inner join");
-                    sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID from ViewAllVehicleHasGood ");
-                    sql.Append(" where 1=1");
-                    sql.Append(" group by ViewAllVehicleHasGood.VehicleID) as table2");
+                    sql.Append("select * from ViewVehicleFee");
 
-                    sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
+                    sql.Append(" where (FeeTypeID=1");
 
-                    sql.Append(" AND  ((table1.feeExportDate >= '" + dateImportValueFrom.ToString("yyyy-MM-dd HH:mm"));
-                    sql.Append("' AND table1.feeExportDate < = '" + dateImportValueTo.ToString("yyyy-MM-dd HH:mm") + "')");
+                    sql.Append(" AND  FeeDate >= '" + dateExportValueFrom.ToString("yyyy-MM-dd HH:mm"));
+                    sql.Append("' AND FeeDate < = '" + dateExportValueTo.ToString("yyyy-MM-dd HH:mm") + "')");
 
-                    sql.Append(" OR ( table1.feeImportDate >= '" + dateExportValueFrom.ToString("yyyy-MM-dd HH:mm"));
-                    sql.Append("' AND table1.feeImportDate < = '" + dateExportValueTo.ToString("yyyy-MM-dd HH:mm") + "'))");
+                    sql.Append(" OR (FeeTypeID=2");
+
+                    sql.Append(" AND  FeeDate >= '" + dateImportValueFrom.ToString("yyyy-MM-dd HH:mm"));
+                    sql.Append("' AND FeeDate < = '" + dateImportValueTo.ToString("yyyy-MM-dd HH:mm") + "')");
                 }
 
                 var adpater = new SqlDataAdapter(sql.ToString(), connection);
                 var dt = new DataTable();
                 adpater.Fill(dt);
                 vehicleFeeReport.SetDataSource(dt);
-
+                adpater.Dispose();
                 FrmCrystalReport frmReport = new FrmCrystalReport(vehicleFeeReport);
-                frmReport.Show(); 
+                frmReport.MaximizeBox = true;
+                frmReport.Show(this); 
             }
             catch (Exception ex)
             {
