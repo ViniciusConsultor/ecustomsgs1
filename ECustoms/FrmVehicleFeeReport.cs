@@ -95,6 +95,8 @@ namespace ECustoms
 
                 if (cbFeeImport.Checked == true && cbFeeExport.Checked == false)
                 {
+                    dateExportFrom.Text = "";
+                    dateExportTo.Text = "";
                     sql.Append("select * from ViewVehicleFee");
 
                     sql.Append(" where FeeTypeID=2");
@@ -106,6 +108,8 @@ namespace ECustoms
 
                 if (cbFeeImport.Checked == false && cbFeeExport.Checked == true)
                 {
+                    dateImportFrom.Text = "";
+                    dateImportTo.Text = "";
                     sql.Append("select * from ViewVehicleFee");
 
                     sql.Append(" where FeeTypeID=1");
