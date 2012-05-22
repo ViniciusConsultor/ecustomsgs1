@@ -46,19 +46,23 @@ namespace ECustoms
                 return false;
             }
 
-
-          for (int i = 0; i < grdVehicle.Rows.Count; i++)
-          {
-            if (grdVehicle.Rows[i].Cells["PlateNumber"].Value.Equals(txtPlateNumber.Text))
+            for (int i = 0; i < grdVehicle.Rows.Count; i++)
             {
-              MessageBox.Show("Biểm kiểm soát đã được nhập");
-              txtPlateNumber.Focus();
-              pictureBoxValid.Visible = false;
-              pictureBoxInvalid.Visible = true;
-              return false;
+                if (grdVehicle.Rows[i].Cells["PlateNumber"].Value.Equals(txtPlateNumber.Text))
+                {
+                    MessageBox.Show("Biểm kiểm soát đã được nhập");
+                    txtPlateNumber.Focus();
+                    pictureBoxValid.Visible = false;
+                    pictureBoxInvalid.Visible = true;
+                    return false;
+                }
             }
-          }
-            
+            if (cbVehicleType.SelectedIndex == 0 )
+            {
+                MessageBox.Show("Bạn phải chọn loại trọng tải!");
+                cbVehicleType.Focus();
+                return false;
+            }
 
             return true;
         }
