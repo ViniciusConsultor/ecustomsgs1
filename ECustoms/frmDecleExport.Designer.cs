@@ -243,7 +243,7 @@
             this.txtProductAmount.Location = new System.Drawing.Point(793, 21);
             this.txtProductAmount.Name = "txtProductAmount";
             this.txtProductAmount.Size = new System.Drawing.Size(129, 26);
-            this.txtProductAmount.TabIndex = 10;
+            this.txtProductAmount.TabIndex = 9;
             // 
             // txtMoney
             // 
@@ -251,7 +251,7 @@
             this.txtMoney.Mask = "000000000000";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(128, 26);
-            this.txtMoney.TabIndex = 12;
+            this.txtMoney.TabIndex = 11;
             // 
             // label2
             // 
@@ -277,7 +277,7 @@
             this.txtExportTotalVehicles.Mask = "00000";
             this.txtExportTotalVehicles.Name = "txtExportTotalVehicles";
             this.txtExportTotalVehicles.Size = new System.Drawing.Size(127, 26);
-            this.txtExportTotalVehicles.TabIndex = 13;
+            this.txtExportTotalVehicles.TabIndex = 12;
             this.txtExportTotalVehicles.ValidatingType = typeof(int);
             this.txtExportTotalVehicles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExportTotalVehicles_KeyDown);
             this.txtExportTotalVehicles.Leave += new System.EventHandler(this.txtExportTotalVehicles_Leave);
@@ -409,7 +409,7 @@
             this.txtExportUnit.Location = new System.Drawing.Point(794, 53);
             this.txtExportUnit.Name = "txtExportUnit";
             this.txtExportUnit.Size = new System.Drawing.Size(129, 26);
-            this.txtExportUnit.TabIndex = 11;
+            this.txtExportUnit.TabIndex = 10;
             // 
             // lblUnit
             // 
@@ -745,7 +745,7 @@
             this.button1.Location = new System.Drawing.Point(528, 584);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 33);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Thoát";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -777,7 +777,7 @@
             this.btnFee.Location = new System.Drawing.Point(380, 584);
             this.btnFee.Name = "btnFee";
             this.btnFee.Size = new System.Drawing.Size(142, 33);
-            this.btnFee.TabIndex = 23;
+            this.btnFee.TabIndex = 4;
             this.btnFee.Text = "Thu phí nhập";
             this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFee.UseVisualStyleBackColor = true;

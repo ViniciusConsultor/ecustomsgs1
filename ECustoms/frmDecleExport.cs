@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using ECustoms.BOL;
 using ECustoms.DAL;
 using ECustoms.Utilities;
+using ECustoms.Utilities.Enums;
+using System.Linq;
 
 namespace ECustoms
 {
@@ -20,6 +22,7 @@ namespace ECustoms
         private UserInfo _userInfo;
         private Form _mainForm;
         private Common.DeclerationType _declerationType;
+        private int _statusFee;  // 0: k ấn xác nhận thu phí, 1: ấn xác nhận thu phí tất cả phương tiện
         #endregion
 
         public FrmDecleExport(UserInfo userInfo, int mode, Common.DeclerationType declerationType, Form mainForm)
@@ -101,6 +104,11 @@ namespace ECustoms
                 // Validate Vehicle information
                 if (grdVehicle.Rows.Count > 0)
                 {
+                    List<tblVehicleFeeSetting> listFee = null;
+                    if (_statusFee == 1)
+                    {
+                        listFee = VehicleFeeSettingFactory.getAllVehicleFeeSetting();
+                    }
                     for (int i = 0; i < grdVehicle.Rows.Count; i++)
                     {
                         if (grdVehicle.Rows[i].Cells["VehicleID"].Value != null && Convert.ToInt64(grdVehicle.Rows[i].Cells["VehicleID"].Value) > 0) // Update this vehicle only.
@@ -164,6 +172,33 @@ namespace ECustoms
                             vehicleInfo.Note = grdVehicle.Rows[i].Cells["Note"].Value.ToString();
                         if (grdVehicle.Rows[i].Cells["Status"].Value != null)
                             vehicleInfo.Status = grdVehicle.Rows[i].Cells["Status"].Value.ToString();
+                        
+                        //Set Fee
+                        if (_statusFee == 1)
+                        {
+                            var currentDate = CommonFactory.GetCurrentDate();
+                            if (_declerationType.Equals(Common.DeclerationType.Export))
+                            {
+                                vehicleInfo.ExportReceiptNumber = "9999";
+                                var feeSetting = listFee.Where(f =>f.VehicleTypeId == vehicleInfo.vehicleTypeId && f.GoodsTypeId == vehicleInfo.ExportGoodTypeId).FirstOrDefault();
+                                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                                vehicleInfo.feeExportAmount = amount;
+                                vehicleInfo.feeExportDate = currentDate;
+                                vehicleInfo.feeExportStatus = (int)FeeStatus.PaidFee;
+                                vehicleInfo.confirmFeeExportBy = _userInfo.UserID;
+                            }
+                            else
+                            {
+                                vehicleInfo.ImportReceiptNumber = "9999";
+                                var feeSetting = listFee.Where(f => f.VehicleTypeId == vehicleInfo.vehicleTypeId && f.GoodsTypeId == vehicleInfo.ImportGoodTypeId).FirstOrDefault();
+                                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                                vehicleInfo.feeImportAmount = amount;
+                                vehicleInfo.feeImportDate = currentDate;
+                                vehicleInfo.feeImportStatus = (int)FeeStatus.PaidFee;
+                                vehicleInfo.confirmFeeImportBy = _userInfo.UserID;
+                            }    
+                        }
+                        
 
                         if (grdVehicle.Rows[i].Cells["VehicleID"].Value != null && Convert.ToInt64(grdVehicle.Rows[i].Cells["VehicleID"].Value) > 0) // Update this vehicle only.
                         {
@@ -276,6 +311,7 @@ namespace ECustoms
             txtRegisterPlace.Text = "B15E-Chi cục Hải quan Tân Thanh";
             cbTNTX.SelectedIndex = 0;
             txtNumberTemp.Text = "";
+            _statusFee = 0;
         }
 
         private bool Validate()
@@ -628,6 +664,11 @@ namespace ECustoms
                     DeclarationFactory.Update(declerationInfo);
                     // Delete all existing vehicle by DeclarationID from tblDeclarationVehicle
                     DeclarationVehicleFactory.DeleteVehicleByDecarationID(_declerationID);
+                    List<tblVehicleFeeSetting> listFee = null;
+                    if (_statusFee == 1)
+                    {
+                        listFee = VehicleFeeSettingFactory.getAllVehicleFeeSetting();
+                    }
                     foreach (var vehicle in this._vehicleInfosTemp)
                     {
                         // Insert vehicle and Declaration to DeclarationVehicle table
@@ -656,6 +697,32 @@ namespace ECustoms
                         v.ConfirmExportBy = vehicle.ConfirmExportBy;
                         v.ConfirmImportBy = vehicle.ConfirmImportBy;
                         v.ConfirmLocalImportBy = vehicle.ConfirmLocalImportBy;
+                        v.CreatedDate = vehicle.CreatedDateVehicle;
+                        //Set Fee
+                        if (_statusFee == 1)
+                        {
+                            var currentDate = CommonFactory.GetCurrentDate();
+                            if (_declerationType.Equals(Common.DeclerationType.Export))
+                            {
+                                v.ExportReceiptNumber = "9999";
+                                var feeSetting = listFee.Where(f => f.VehicleTypeId == v.vehicleTypeId && f.GoodsTypeId == v.ExportGoodTypeId).FirstOrDefault();
+                                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                                v.feeExportAmount = amount;
+                                v.feeExportDate = currentDate;
+                                v.feeExportStatus = (int)FeeStatus.PaidFee;
+                                v.confirmFeeExportBy = _userInfo.UserID;
+                            }
+                            else
+                            {
+                                v.ImportReceiptNumber = "9999";
+                                var feeSetting = listFee.Where(f => f.VehicleTypeId == v.vehicleTypeId && f.GoodsTypeId == v.ImportGoodTypeId).FirstOrDefault();
+                                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                                v.feeImportAmount = amount;
+                                v.feeImportDate = currentDate;
+                                v.feeImportStatus = (int)FeeStatus.PaidFee;
+                                v.confirmFeeImportBy = _userInfo.UserID;
+                            }
+                        }
                         VehicleFactory.UpdateVehicle(v);
                     }
                     MessageBox.Show("Cập nhật thành công");
@@ -1081,7 +1148,18 @@ namespace ECustoms
 
         private void btnFee_Click(object sender, EventArgs e)
         {
+            if (grdVehicle.Rows.Count == 0)
+            {
+                MessageBox.Show("Bạn cần khai báo phương tiện");
+                return;
+            }
+            var message = string.Format("Bạn có chắc là muốn xác nhận thu phí {0} của tất cả các phương tiện trong tờ khai không?",
+                                        _declerationType.Equals(Common.DeclerationType.Export) ? "xuất" : "nhập");
 
+            if (MessageBox.Show(message, "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                _statusFee = 1;
+            }
         }
 
         #region Class
