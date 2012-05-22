@@ -82,6 +82,18 @@ namespace ECustoms
                 }
             }
 
+            if (cbVehicleType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bạn phải chọn loại trọng tải!");
+                cbVehicleType.Focus();
+                return false;    
+            }
+            if (cbGoodType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bạn phải chọn loại hàng hóa xuất!");
+                cbGoodType.Focus();
+                return false;      
+            }
 
             return true;
         }

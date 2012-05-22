@@ -44,7 +44,6 @@ namespace ECustoms
                 return false;
             }
 
-
             for (int i = 0; i < grdVehicle.Rows.Count; i++)
             {
                 if (grdVehicle.Rows[i].Cells["PlateNumber"].Value.Equals(txtPlateNumber.Text))
@@ -55,6 +54,18 @@ namespace ECustoms
                     pictureBoxInvalid.Visible = true;
                     return false;
                 }
+            }
+            if (cbVehicleType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bạn phải chọn loại trọng tải!");
+                cbVehicleType.Focus();
+                return false;    
+            }
+            if (cbGoodType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bạn phải chọn loại hàng hóa!");
+                cbGoodType.Focus();
+                return false;        
             }
 
             return true;

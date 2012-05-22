@@ -112,6 +112,24 @@ namespace ECustoms
                 txtPlateNumber.Focus();
                 return false;
             }
+            if (cbVehicleType.Visible && cbVehicleType.Enabled && cbVehicleType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bạn phải chọn loại trọng tải!");
+                cbVehicleType.Focus();
+                return false;    
+            }
+            if (cbExportGoodType.Visible && cbExportGoodType.Enabled && cbExportGoodType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bạn phải chọn loại hàng hóa xuất!");
+                cbExportGoodType.Focus();
+                return false;
+            }
+            if (cbImportGoodType.Visible && cbImportGoodType.Enabled && cbImportGoodType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bạn phải chọn loại hàng hóa nhập!");
+                cbImportGoodType.Focus();
+                return false;
+            }
             return true;
         }
 
