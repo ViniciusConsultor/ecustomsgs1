@@ -329,6 +329,30 @@ namespace ECustoms
                 MessageBox.Show(ConstantInfo.MESSAGE_NO_VEHICLE);
                 return false;
             }
+            //validate list vehicle
+            foreach (ViewAllVehicleHasGood vehicle in _vehicleInfosTemp)
+            {
+                if (vehicle.PlateNumber==null || String.IsNullOrEmpty(vehicle.PlateNumber.Trim()))
+                {
+                    MessageBox.Show("Tồn tại phương tiện chưa có biển số xe trong danh sách phương tiện");
+                    return false;
+                }
+                if (vehicle.vehicleTypeId == null || vehicle.vehicleTypeId <= 0)
+                {
+                    MessageBox.Show("Tồn tại phương tiện chưa có loại trọng tải trong danh sách phương tiện");
+                    return false;
+                }
+                if (_declerationType == Common.DeclerationType.Export && (vehicle.ExportGoodTypeId == null || vehicle.ExportGoodTypeId <= 0))
+                {
+                    MessageBox.Show("Tồn tại phương tiện chưa có loại hàng hóa xuất cảnh trong danh sách phương tiện");
+                    return false;
+                }
+                if (_declerationType == Common.DeclerationType.Import && (vehicle.ImportGoodTypeId == null || vehicle.ImportGoodTypeId <= 0))
+                {
+                    MessageBox.Show("Tồn tại phương tiện chưa có loại hàng hóa nhập cảnh trong danh sách phương tiện");
+                    return false;
+                }
+            }
 
             return true;
         }
@@ -418,7 +442,7 @@ namespace ECustoms
                 btnComfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
                 cbTNTX.Items.RemoveAt(3);
                 cbTNTX.Items.RemoveAt(2);
-                grdVehicle.Columns["ImportGoodType"].ReadOnly = true;
+                grdVehicle.Columns["ImportGoodType"].Visible = false;
                 // Thu phí
                 btnFee.Text = "Thu phí xuất";
                 btnFee.Image = Properties.Resources._1336316540_document_export;
@@ -444,7 +468,8 @@ namespace ECustoms
                 txtExportTotalVehicles.Visible = false;
                 cbTNTX.Items.RemoveAt(1);
 
-                grdVehicle.Columns["ExportGoodType"].ReadOnly = true;
+                grdVehicle.Columns["ExportGoodType"].Visible = false;
+                grdVehicle.Columns["VehicleType"].ReadOnly = true;
 
             }
 
