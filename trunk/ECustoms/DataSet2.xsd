@@ -169,7 +169,7 @@ FROM            ViewAllDeclarationTNTX</CommandText>
               <DbSource ConnectionRef="eCustomsConnectionString (Settings)" DbObjectName="eCustoms.dbo.ViewVehicleFreight" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        vehicleTypeId, GoodTypeName, COUNT(*) AS CountVehicle, SUM(feeExportAmount) AS SumFeeExport, SUM(feeImportAmount) AS SumFeeImport, Name
+                    <CommandText>SELECT        vehicleTypeId, GoodTypeName, COUNT(*) AS CountVehicle, SUM(FeeAmount) AS SumFeeAmount, Name
 FROM            ViewVehicleFreight
 GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
                     <Parameters />
@@ -180,10 +180,9 @@ GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
             <Mappings>
               <Mapping SourceColumn="vehicleTypeId" DataSetColumn="vehicleTypeId" />
               <Mapping SourceColumn="CountVehicle" DataSetColumn="CountVehicle" />
-              <Mapping SourceColumn="SumFeeExport" DataSetColumn="SumFeeExport" />
-              <Mapping SourceColumn="SumFeeImport" DataSetColumn="SumFeeImport" />
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
               <Mapping SourceColumn="GoodTypeName" DataSetColumn="GoodTypeName" />
+              <Mapping SourceColumn="SumFeeAmount" DataSetColumn="SumFeeAmount" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -642,8 +641,6 @@ GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
             <xs:sequence>
               <xs:element name="vehicleTypeId" msprop:Generator_ColumnVarNameInTable="columnvehicleTypeId" msprop:Generator_ColumnPropNameInRow="vehicleTypeId" msprop:Generator_ColumnPropNameInTable="vehicleTypeIdColumn" msprop:Generator_UserColumnName="vehicleTypeId" type="xs:int" minOccurs="0" />
               <xs:element name="CountVehicle" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountVehicle" msprop:Generator_ColumnPropNameInRow="CountVehicle" msprop:Generator_ColumnPropNameInTable="CountVehicleColumn" msprop:Generator_UserColumnName="CountVehicle" type="xs:int" minOccurs="0" />
-              <xs:element name="SumFeeExport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumFeeExport" msprop:Generator_ColumnPropNameInRow="SumFeeExport" msprop:Generator_ColumnPropNameInTable="SumFeeExportColumn" msprop:Generator_UserColumnName="SumFeeExport" type="xs:long" minOccurs="0" />
-              <xs:element name="SumFeeImport" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumFeeImport" msprop:Generator_ColumnPropNameInRow="SumFeeImport" msprop:Generator_ColumnPropNameInTable="SumFeeImportColumn" msprop:Generator_UserColumnName="SumFeeImport" type="xs:long" minOccurs="0" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -658,6 +655,7 @@ GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="SumFeeAmount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumFeeAmount" msprop:Generator_ColumnPropNameInRow="SumFeeAmount" msprop:Generator_ColumnPropNameInTable="SumFeeAmountColumn" msprop:Generator_UserColumnName="SumFeeAmount" type="xs:long" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

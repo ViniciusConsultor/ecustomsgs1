@@ -736,6 +736,13 @@ namespace ECustoms
                                 v.feeExportDate = currentDate;
                                 v.feeExportStatus = (int)FeeStatus.PaidFee;
                                 v.confirmFeeExportBy = _userInfo.UserID;
+
+                                //old value import
+                                v.ImportReceiptNumber = vehicle.ImportReceiptNumber;
+                                v.feeImportAmount = vehicle.feeImportAmount;
+                                v.feeImportDate = vehicle.feeImportDate;
+                                v.feeImportStatus = vehicle.feeImportStatus;
+                                v.confirmFeeImportBy = vehicle.confirmFeeImportBy;
                             }
                             else
                             {
@@ -746,7 +753,29 @@ namespace ECustoms
                                 v.feeImportDate = currentDate;
                                 v.feeImportStatus = (int)FeeStatus.PaidFee;
                                 v.confirmFeeImportBy = _userInfo.UserID;
+
+                                //old value export
+                                v.ExportReceiptNumber = vehicle.ExportReceiptNumber;
+                                v.feeExportAmount = vehicle.feeExportAmount;
+                                v.feeExportDate = vehicle.feeExportDate;
+                                v.feeExportStatus = vehicle.feeExportStatus;
+                                v.confirmFeeExportBy = vehicle.confirmFeeExportBy;
                             }
+                        }
+                        else
+                        {
+                            // Set old value to vehicle
+                            v.ExportReceiptNumber = vehicle.ExportReceiptNumber;
+                            v.feeExportAmount = vehicle.feeExportAmount;
+                            v.feeExportDate = vehicle.feeExportDate;
+                            v.feeExportStatus = vehicle.feeExportStatus;
+                            v.confirmFeeExportBy = vehicle.confirmFeeExportBy;
+
+                            v.ImportReceiptNumber = vehicle.ImportReceiptNumber;
+                            v.feeImportAmount = vehicle.feeImportAmount;
+                            v.feeImportDate = vehicle.feeImportDate;
+                            v.feeImportStatus = vehicle.feeImportStatus;
+                            v.confirmFeeImportBy = vehicle.confirmFeeImportBy;
                         }
                         VehicleFactory.UpdateVehicle(v);
                     }
