@@ -313,7 +313,7 @@ namespace ECustoms
                             dateTo.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT vehicleTypeId, GoodTypeName, COUNT(*) as CountVehicle, SUM (feeExportAmount) as SumFeeExport, SUM (feeImportAmount) as SumFeeImport, Name FROM ViewVehicleFreight ");
+                            buffer.Append(" SELECT vehicleTypeId, GoodTypeName, COUNT(*) as CountVehicle, SUM (FeeAmount) as SumFeeAmount, Name FROM ViewVehicleFreight ");
                             buffer.Append(" WHERE ");
                             buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
                             buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
