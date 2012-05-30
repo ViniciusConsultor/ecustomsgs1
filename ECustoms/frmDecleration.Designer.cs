@@ -80,6 +80,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFee = new System.Windows.Forms.Button();
             this.grbDecleration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -92,7 +93,7 @@
             this.grbDecleration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDecleration.Location = new System.Drawing.Point(12, 132);
             this.grbDecleration.Name = "grbDecleration";
-            this.grbDecleration.Size = new System.Drawing.Size(964, 290);
+            this.grbDecleration.Size = new System.Drawing.Size(1096, 290);
             this.grbDecleration.TabIndex = 0;
             this.grbDecleration.TabStop = false;
             this.grbDecleration.Text = "Danh sách tờ khai";
@@ -124,7 +125,7 @@
             this.grvDecleration.Name = "grvDecleration";
             this.grvDecleration.ReadOnly = true;
             this.grvDecleration.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvDecleration.Size = new System.Drawing.Size(945, 252);
+            this.grvDecleration.Size = new System.Drawing.Size(1084, 252);
             this.grvDecleration.TabIndex = 0;
             this.grvDecleration.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvDecleration_CellMouseClick);
             this.grvDecleration.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvDecleration_CellMouseDoubleClick_1);
@@ -287,7 +288,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(962, 123);
+            this.groupBox1.Size = new System.Drawing.Size(1096, 123);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
@@ -295,7 +296,7 @@
             // cbConfirmStatus
             // 
             this.cbConfirmStatus.AutoSize = true;
-            this.cbConfirmStatus.Location = new System.Drawing.Point(749, 92);
+            this.cbConfirmStatus.Location = new System.Drawing.Point(865, 92);
             this.cbConfirmStatus.Name = "cbConfirmStatus";
             this.cbConfirmStatus.Size = new System.Drawing.Size(200, 24);
             this.cbConfirmStatus.TabIndex = 20;
@@ -307,7 +308,7 @@
             // 
             this.dtpConfirmTo.CustomFormat = "dd/MM/yyyy";
             this.dtpConfirmTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpConfirmTo.Location = new System.Drawing.Point(553, 92);
+            this.dtpConfirmTo.Location = new System.Drawing.Point(638, 92);
             this.dtpConfirmTo.Name = "dtpConfirmTo";
             this.dtpConfirmTo.Size = new System.Drawing.Size(167, 26);
             this.dtpConfirmTo.TabIndex = 19;
@@ -315,7 +316,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(470, 92);
+            this.label4.Location = new System.Drawing.Point(555, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 18;
@@ -325,7 +326,7 @@
             // 
             this.dtpConfirmFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpConfirmFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpConfirmFrom.Location = new System.Drawing.Point(264, 92);
+            this.dtpConfirmFrom.Location = new System.Drawing.Point(321, 92);
             this.dtpConfirmFrom.Name = "dtpConfirmFrom";
             this.dtpConfirmFrom.Size = new System.Drawing.Size(122, 26);
             this.dtpConfirmFrom.TabIndex = 17;
@@ -333,7 +334,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(193, 92);
+            this.label5.Location = new System.Drawing.Point(250, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 16;
@@ -365,7 +366,7 @@
             // 
             this.dtpTo.CustomFormat = "dd/MM/yyyy";
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(553, 58);
+            this.dtpTo.Location = new System.Drawing.Point(638, 58);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(167, 26);
             this.dtpTo.TabIndex = 12;
@@ -373,7 +374,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(470, 58);
+            this.label3.Location = new System.Drawing.Point(555, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 11;
@@ -383,7 +384,7 @@
             // 
             this.dtpFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(264, 58);
+            this.dtpFrom.Location = new System.Drawing.Point(321, 58);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(122, 26);
             this.dtpFrom.TabIndex = 10;
@@ -391,7 +392,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(193, 58);
+            this.label2.Location = new System.Drawing.Point(250, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 9;
@@ -426,7 +427,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search41;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(794, 15);
+            this.btnSearch.Location = new System.Drawing.Point(910, 15);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(145, 33);
             this.btnSearch.TabIndex = 6;
@@ -436,7 +437,7 @@
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(553, 20);
+            this.txtCompanyName.Location = new System.Drawing.Point(638, 20);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(167, 26);
             this.txtCompanyName.TabIndex = 3;
@@ -444,7 +445,7 @@
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(410, 23);
+            this.lblCompanyName.Location = new System.Drawing.Point(495, 23);
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(137, 20);
             this.lblCompanyName.TabIndex = 2;
@@ -452,7 +453,7 @@
             // 
             // txtDeclaraceNumber
             // 
-            this.txtDeclaraceNumber.Location = new System.Drawing.Point(264, 20);
+            this.txtDeclaraceNumber.Location = new System.Drawing.Point(321, 20);
             this.txtDeclaraceNumber.Name = "txtDeclaraceNumber";
             this.txtDeclaraceNumber.Size = new System.Drawing.Size(122, 26);
             this.txtDeclaraceNumber.TabIndex = 1;
@@ -460,7 +461,7 @@
             // lblDeclaraceNumber
             // 
             this.lblDeclaraceNumber.AutoSize = true;
-            this.lblDeclaraceNumber.Location = new System.Drawing.Point(178, 20);
+            this.lblDeclaraceNumber.Location = new System.Drawing.Point(235, 20);
             this.lblDeclaraceNumber.Name = "lblDeclaraceNumber";
             this.lblDeclaraceNumber.Size = new System.Drawing.Size(80, 20);
             this.lblDeclaraceNumber.TabIndex = 0;
@@ -473,7 +474,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(11, 427);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(963, 199);
+            this.groupBox2.Size = new System.Drawing.Size(1097, 199);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phương tiện";
@@ -482,7 +483,7 @@
             // 
             this.listViewVehicle.Location = new System.Drawing.Point(6, 25);
             this.listViewVehicle.Name = "listViewVehicle";
-            this.listViewVehicle.Size = new System.Drawing.Size(944, 165);
+            this.listViewVehicle.Size = new System.Drawing.Size(1085, 165);
             this.listViewVehicle.TabIndex = 2;
             this.listViewVehicle.UseCompatibleStateImageBehavior = false;
             this.listViewVehicle.View = System.Windows.Forms.View.List;
@@ -534,7 +535,7 @@
             this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportExcel.Image = global::ECustoms.Properties.Resources.excel81;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(738, 632);
+            this.btnExportExcel.Location = new System.Drawing.Point(869, 632);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(147, 33);
             this.btnExportExcel.TabIndex = 4;
@@ -566,7 +567,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(891, 632);
+            this.btnClose.Location = new System.Drawing.Point(1022, 632);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 33);
             this.btnClose.TabIndex = 5;
@@ -598,7 +599,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(654, 632);
+            this.btnDelete.Location = new System.Drawing.Point(785, 632);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(78, 33);
             this.btnDelete.TabIndex = 3;
@@ -607,11 +608,28 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnFee
+            // 
+            this.btnFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFee.Image = ((System.Drawing.Image)(resources.GetObject("btnFee.Image")));
+            this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFee.Location = new System.Drawing.Point(654, 632);
+            this.btnFee.Name = "btnFee";
+            this.btnFee.Size = new System.Drawing.Size(125, 33);
+            this.btnFee.TabIndex = 10;
+            this.btnFee.Text = "XN thu phí";
+            this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFee.UseVisualStyleBackColor = true;
+            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
+            // 
             // frmDecleration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 668);
+            this.ClientSize = new System.Drawing.Size(1118, 668);
+            this.Controls.Add(this.btnFee);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnAddImport);
             this.Controls.Add(this.groupBox2);
@@ -685,5 +703,6 @@
         private System.Windows.Forms.CheckBox cbConfirmDate;
         private System.Windows.Forms.CheckBox cbRegDate;
         private System.Windows.Forms.CheckBox cbConfirmStatus;
+        private System.Windows.Forms.Button btnFee;
     }
 }

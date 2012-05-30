@@ -596,5 +596,29 @@ namespace ECustoms
                 cbConfirmDate.Enabled = true;
             }
         }
+
+        private void btnFee_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grvDecleration.SelectedRows.Count == 1)
+                {
+                    var dr = MessageBox.Show("Bạn có chắc là muốn xác nhận thu phí?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        DeclarationFactory.ConfirmGetFee(Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Convert.ToInt32(grvDecleration.SelectedRows[0].Cells["DeclarationType"].Value), _userInfo.UserID);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần chọn 1 tờ khai cần cập nhật.");
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

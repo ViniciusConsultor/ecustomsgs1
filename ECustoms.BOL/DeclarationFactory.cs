@@ -4,6 +4,7 @@ using System.Linq;
 using ECustoms.DAL;
 using ECustoms.Utilities;
 using System.Configuration;
+using ECustoms.Utilities.Enums;
 
 namespace ECustoms.BOL
 {
@@ -206,6 +207,41 @@ namespace ECustoms.BOL
             int re = db.SaveChanges();
             db.Connection.Close();
             return re;
+        }
+
+        public static void ConfirmGetFee(long declarationId, int declarationType, int userId)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var currentDate = CommonFactory.GetCurrentDate();
+            var listFee = VehicleFeeSettingFactory.getAllVehicleFeeSetting();
+            var listVehicle = VehicleFactory.GetByDeclarationID(declarationId);
+            foreach (var vehicleInfo in from item in listVehicle
+                                        where item != null
+                                        select db.tblVehicles.Where(v => v.VehicleID == item.VehicleID).FirstOrDefault())
+            {
+                if (declarationType.Equals((int)Common.DeclerationType.Export))
+                {
+                    vehicleInfo.ExportReceiptNumber = "9999";
+                    var feeSetting = listFee.Where(f => f.VehicleTypeId == vehicleInfo.vehicleTypeId && f.GoodsTypeId == vehicleInfo.ExportGoodTypeId).FirstOrDefault();
+                    var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                    vehicleInfo.feeExportAmount = amount;
+                    vehicleInfo.feeExportDate = currentDate;
+                    vehicleInfo.feeExportStatus = (int)FeeStatus.PaidFee;
+                    vehicleInfo.confirmFeeExportBy = userId;
+                }
+                else
+                {
+                    vehicleInfo.ImportReceiptNumber = "9999";
+                    var feeSetting = listFee.Where(f => f.VehicleTypeId == vehicleInfo.vehicleTypeId && f.GoodsTypeId == vehicleInfo.ImportGoodTypeId).FirstOrDefault();
+                    var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                    vehicleInfo.feeImportAmount = amount;
+                    vehicleInfo.feeImportDate = currentDate;
+                    vehicleInfo.feeImportStatus = (int)FeeStatus.PaidFee;
+                    vehicleInfo.confirmFeeImportBy = userId;
+                }
+                db.SaveChanges();
+            }
+            db.Connection.Close();
         }
     }
 }
