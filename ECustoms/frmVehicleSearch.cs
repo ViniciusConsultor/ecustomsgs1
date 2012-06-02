@@ -536,7 +536,6 @@ namespace ECustoms
                 var vehicleInfo = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
 
                 var message = new StringBuilder();
-                
                 message.AppendLine("Thời gian xuất cảnh: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
                 //Kiem tra co phai xe khong cho hang
                 var isExportNoGood = VehicleFactory.IsVehicleExportNoGood(vehicleInfo.VehicleID);
@@ -549,7 +548,9 @@ namespace ECustoms
                     GetInfoVehicleDialog(message, vehicleInfo, 0);
                 }
 
-                if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                var msgBox = new frmMessageBox(message.ToString());
+                if (msgBox.ShowDialog() == DialogResult.Yes)
                 {
                     vehicleInfo.ExportDate = CommonFactory.GetCurrentDate();
 
@@ -660,7 +661,9 @@ namespace ECustoms
                 //var vehicle = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
                 //var vehicle = VehicleFactory.GetByID(int.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
 
-                if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                var msgBox = new frmMessageBox(message.ToString());
+                if (msgBox.ShowDialog() == DialogResult.Yes)
                 {
                     vehicle.ImportDate = CommonFactory.GetCurrentDate();
                     //vehicle.ImportHour = CommonFactory.GetCurrentDate().ToString("HH:mm");
@@ -740,7 +743,9 @@ namespace ECustoms
 
                 //var vehicle = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
 
-                if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                var msgBox = new frmMessageBox(message.ToString());
+                if (msgBox.ShowDialog() == DialogResult.Yes)
                 {
                     vehicle.ImportDate = CommonFactory.GetCurrentDate();
                     vehicle.IsImport = true;
@@ -798,7 +803,9 @@ namespace ECustoms
 
                 GetInfoVehicleDialog(message, vehicle, 1);
 
-                if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                var msgBox = new frmMessageBox(message.ToString());
+                if (msgBox.ShowDialog() == DialogResult.Yes)
                 {
                     // Neu thoa man dieu kien canh bao, hoac la xe nay khong co to khai nhap, thi cung hien len canh bao
                     //neu da canh bao roi thi thoi khong canh bao nua
@@ -924,7 +931,9 @@ namespace ECustoms
                 var message = new StringBuilder();
                 message.Append("Thời gian vào nội địa: " + dateNoidia.ToString("dd/MM/yyyy HH:mm"));
 
-                if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //if (MessageBox.Show(message.ToString(), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                var msgBox = new frmMessageBox(message.ToString());
+                if (msgBox.ShowDialog() == DialogResult.Yes)
                 {
                     var vehicleInfo = VehicleFactory.GetByID(int.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
 
