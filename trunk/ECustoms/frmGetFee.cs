@@ -76,7 +76,7 @@ namespace ECustoms
             var listVehicle =  VehicleFactory.SeachFee(txtPlateNumber.Text.Trim(), txtReceiptNumber.Text.Trim(), cbCreatedVehicle.Checked, dtpCreatedDateFrom.Value, dtpCreatedDateTo.Value, cbIsParking.Checked, dtpParkingDateFrom.Value, dtpParkingDateTo.Value, cbGetFee.Checked, dtpFeeFrom.Value, dtpFeeTo.Value);
             // Bind data to the gridview
             grdVehicle.AutoGenerateColumns = false;
-            listVehicle = listVehicle.Distinct(new ViewAllVehicleHasGoodComparer()).ToList();
+            //listVehicle = listVehicle.Distinct(new ViewAllVehicleHasGoodComparer()).ToList();
             grdVehicle.DataSource = listVehicle;
             txtPlateNumber.Focus();
         }
@@ -219,23 +219,43 @@ namespace ECustoms
                 int rowIndex = 0;
                 foreach (DataGridViewRow dataRow in grdVehicle.Rows)
                 {
-                    rowIndex++;
+                    rowIndex++; 
                     excel.Cells[rowIndex + 1, 1] = dataRow.Cells["PlateNumber"].Value != null ? dataRow.Cells["PlateNumber"].Value.ToString() : "";
                     excel.Cells[rowIndex + 1, 2] = dataRow.Cells["DriverName"].Value != null ? dataRow.Cells["DriverName"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 3] = dataRow.Cells["GoodTypeName"].Value != null ? dataRow.Cells["GoodTypeName"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 4] = dataRow.Cells["VehicleTypeCapacity"].Value != null ? dataRow.Cells["VehicleTypeCapacity"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 5] = dataRow.Cells["ExportReceiptNumber"].Value != null ? dataRow.Cells["ExportReceiptNumber"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 6] = dataRow.Cells["ImportReceiptNumber"].Value != null ? dataRow.Cells["ImportReceiptNumber"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 7] = dataRow.Cells["ExportDate"].Value != null ? ((DateTime)(dataRow.Cells["ExportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 3] = dataRow.Cells["VehicleTypeName"].Value != null ? dataRow.Cells["VehicleTypeName"].Value.ToString() : "";
+
+                    excel.Cells[rowIndex + 1, 4] = dataRow.Cells["ExportReceiptNumber"].Value != null ? dataRow.Cells["ExportReceiptNumber"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 5] = dataRow.Cells["ImportReceiptNumber"].Value != null ? dataRow.Cells["ImportReceiptNumber"].Value.ToString() : "";
+    
+                    excel.Cells[rowIndex + 1, 6] = dataRow.Cells["ExportDate"].Value != null ? ((DateTime)(dataRow.Cells["ExportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 7] = dataRow.Cells["ImportDate"].Value != null ? ((DateTime)(dataRow.Cells["ImportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
                     excel.Cells[rowIndex + 1, 8] = dataRow.Cells["NumberOfContainer"].Value != null ? dataRow.Cells["NumberOfContainer"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 9] = dataRow.Cells["ImportDate"].Value != null ? ((DateTime)(dataRow.Cells["ImportDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
-                    excel.Cells[rowIndex + 1, 10] = dataRow.Cells["parking"].Value != null ? dataRow.Cells["parking"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 11] = dataRow.Cells["ParkingDate"].Value != null ? ((DateTime)(dataRow.Cells["ParkingDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
-                    excel.Cells[rowIndex + 1, 12] = dataRow.Cells["status"].Value != null ? dataRow.Cells["status"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 13] = dataRow.Cells["Note"].Value != null ? dataRow.Cells["Note"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 14] = dataRow.Cells["ImportStatus"].Value != null ? dataRow.Cells["ImportStatus"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 15] = dataRow.Cells["ConfirmExportByName"].Value != null ? dataRow.Cells["ConfirmExportByName"].Value.ToString() : "";
-                    excel.Cells[rowIndex + 1, 16] = dataRow.Cells["ConfirmImportByName"].Value != null ? dataRow.Cells["ConfirmImportByName"].Value.ToString() : "";
+                    
+                    excel.Cells[rowIndex + 1, 9] = dataRow.Cells["parking"].Value != null ? dataRow.Cells["parking"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 10] = dataRow.Cells["ParkingDate"].Value != null ? ((DateTime)(dataRow.Cells["ParkingDate"].Value)).ToString("dd/MM/yyyy hh:mm") : "";
+                    excel.Cells[rowIndex + 1, 11] = dataRow.Cells["status"].Value != null ? dataRow.Cells["status"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 12] = dataRow.Cells["Note"].Value != null ? dataRow.Cells["Note"].Value.ToString() : "";
+                    
+                    excel.Cells[rowIndex + 1, 13] = dataRow.Cells["ImportStatus"].Value != null ? dataRow.Cells["ImportStatus"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 14] = dataRow.Cells["ConfirmExportByName"].Value != null ? dataRow.Cells["ConfirmExportByName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 15] = dataRow.Cells["ConfirmImportByName"].Value != null ? dataRow.Cells["ConfirmImportByName"].Value.ToString() : "";
+
+
+                    excel.Cells[rowIndex + 1, 16] = dataRow.Cells["ConfirmFeeExportByUserName"].Value != null ? dataRow.Cells["ConfirmFeeExportByUserName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 17] = dataRow.Cells["ConfirmFeeImportByUserName"].Value != null ? dataRow.Cells["ConfirmFeeImportByUserName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 18] = dataRow.Cells["feeExportAmount"].Value != null ? dataRow.Cells["feeExportAmount"].Value.ToString() : "";
+
+
+                    excel.Cells[rowIndex + 1, 19] = dataRow.Cells["feeImportAmount"].Value != null ? dataRow.Cells["feeImportAmount"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 20] = dataRow.Cells["DeclarationExportNumber"].Value != null ? dataRow.Cells["DeclarationExportNumber"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 21] = dataRow.Cells["DeclarationExportType"].Value != null ? dataRow.Cells["DeclarationExportType"].Value.ToString() : "";
+
+
+                    excel.Cells[rowIndex + 1, 22] = dataRow.Cells["DeclarationImportNumber"].Value != null ? dataRow.Cells["DeclarationImportNumber"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 23] = dataRow.Cells["DeclarationImportType"].Value != null ? dataRow.Cells["DeclarationImportType"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 24] = dataRow.Cells["ExportGoodsTypeName"].Value != null ? dataRow.Cells["ExportGoodsTypeName"].Value.ToString() : "";
+                    excel.Cells[rowIndex + 1, 24] = dataRow.Cells["ImportGoodsTypeName"].Value != null ? dataRow.Cells["ImportGoodsTypeName"].Value.ToString() : "";
+               
                 }
 
                 excel.Visible = true;

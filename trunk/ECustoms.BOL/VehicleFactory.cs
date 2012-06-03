@@ -418,17 +418,17 @@ namespace ECustoms.BOL
             return result <= 0;           
         }
 
-        public static List<ViewAllVehicleHasGood> SeachFee(string plateNumber, string receiptNumber,bool isCreatedDateVehicle, DateTime createdFrom, DateTime createdTo, bool isParking, DateTime parkingFrom, DateTime parkingTo, bool isGetFee, DateTime feeFrom, DateTime feeTo)
+        public static List<ViewDeclarationVehicleImportExportFee> SeachFee(string plateNumber, string receiptNumber,bool isCreatedDateVehicle, DateTime createdFrom, DateTime createdTo, bool isParking, DateTime parkingFrom, DateTime parkingTo, bool isGetFee, DateTime feeFrom, DateTime feeTo)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            IQueryable<ViewAllVehicleHasGood> _viewAllVehicle = db.ViewAllVehicleHasGoods;
+            IQueryable<ViewDeclarationVehicleImportExportFee> _viewAllVehicle = db.ViewDeclarationVehicleImportExportFees;
             _viewAllVehicle = !string.IsNullOrEmpty(plateNumber) ? _viewAllVehicle.Where(g => g.PlateNumber != null && g.PlateNumber.Contains(plateNumber)) : _viewAllVehicle;
             _viewAllVehicle = !string.IsNullOrEmpty(receiptNumber) ? _viewAllVehicle.Where(g => g.ExportReceiptNumber.Contains(receiptNumber) || g.ImportReceiptNumber.Contains(receiptNumber)) : _viewAllVehicle;
             if (isCreatedDateVehicle)
             {
                 createdFrom = new DateTime(createdFrom.Year, createdFrom.Month, createdFrom.Day, 0, 0, 0);
                 createdTo = new DateTime(createdTo.Year, createdTo.Month, createdTo.Day, 0, 0, 0).AddDays(1);
-                _viewAllVehicle = _viewAllVehicle.Where(g => g.CreatedDateVehicle != null && g.CreatedDateVehicle >= createdFrom && g.CreatedDateVehicle < createdTo);
+                _viewAllVehicle = _viewAllVehicle.Where(g => g.CreatedDate != null && g.CreatedDate >= createdFrom && g.CreatedDate < createdTo);
             }
             
             if (isParking)
@@ -443,9 +443,9 @@ namespace ECustoms.BOL
                 feeFrom = new DateTime(feeFrom.Year, feeFrom.Month, feeFrom.Day, 0 ,0, 0);
                 feeTo = new DateTime(feeTo.Year, feeTo.Month, feeTo.Day, 0, 0, 0).AddDays(1);
                 _viewAllVehicle = _viewAllVehicle.Where(g => (g.feeExportDate >= feeFrom && g.feeExportDate < feeTo) || (g.feeImportDate >= feeFrom && g.feeImportDate < feeTo));
-            }  
+            }
 
-            List<ViewAllVehicleHasGood> result = (from a in _viewAllVehicle
+            List<ViewDeclarationVehicleImportExportFee> result = (from a in _viewAllVehicle
                                                orderby a.ModifiedDate descending
                                                select a).ToList();
             return result;
