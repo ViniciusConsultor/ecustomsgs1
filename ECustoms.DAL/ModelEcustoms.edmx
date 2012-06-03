@@ -290,6 +290,68 @@
       [viewDeclarationVehicle].[RegisterDate] AS [RegisterDate]
       FROM [dbo].[viewDeclarationVehicle] AS [viewDeclarationVehicle]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ViewDeclarationVehicleImportExportFee" EntityType="dbEcustomModel.Store.ViewDeclarationVehicleImportExportFee" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVehicleImportExportFee">
+            <DefiningQuery>SELECT 
+      [ViewDeclarationVehicleImportExportFee].[VehicleID] AS [VehicleID], 
+      [ViewDeclarationVehicleImportExportFee].[PlateNumber] AS [PlateNumber], 
+      [ViewDeclarationVehicleImportExportFee].[NumberOfContainer] AS [NumberOfContainer], 
+      [ViewDeclarationVehicleImportExportFee].[DriverName] AS [DriverName], 
+      [ViewDeclarationVehicleImportExportFee].[ImportDate] AS [ImportDate], 
+      [ViewDeclarationVehicleImportExportFee].[IsImport] AS [IsImport], 
+      [ViewDeclarationVehicleImportExportFee].[ExportDate] AS [ExportDate], 
+      [ViewDeclarationVehicleImportExportFee].[IsExport] AS [IsExport], 
+      [ViewDeclarationVehicleImportExportFee].[Note] AS [Note], 
+      [ViewDeclarationVehicleImportExportFee].[Status] AS [Status], 
+      [ViewDeclarationVehicleImportExportFee].[IsCompleted] AS [IsCompleted], 
+      [ViewDeclarationVehicleImportExportFee].[IsGoodsImported] AS [IsGoodsImported], 
+      [ViewDeclarationVehicleImportExportFee].[ImportStatus] AS [ImportStatus], 
+      [ViewDeclarationVehicleImportExportFee].[ImportedLocalTime] AS [ImportedLocalTime], 
+      [ViewDeclarationVehicleImportExportFee].[HasGoodsImported] AS [HasGoodsImported], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmImportBy] AS [ConfirmImportBy], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmExportBy] AS [ConfirmExportBy], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmLocalImportBy] AS [ConfirmLocalImportBy], 
+      [ViewDeclarationVehicleImportExportFee].[DeclarationType] AS [DeclarationType], 
+      [ViewDeclarationVehicleImportExportFee].[ModifiedDate] AS [ModifiedDate], 
+      [ViewDeclarationVehicleImportExportFee].[Parking] AS [Parking], 
+      [ViewDeclarationVehicleImportExportFee].[ParkingDate] AS [ParkingDate], 
+      [ViewDeclarationVehicleImportExportFee].[HasGoodsImportedTocalPrint] AS [HasGoodsImportedTocalPrint], 
+      [ViewDeclarationVehicleImportExportFee].[ParkingTotalPrint] AS [ParkingTotalPrint], 
+      [ViewDeclarationVehicleImportExportFee].[HasGoodsImportedPrintOrderNumber] AS [HasGoodsImportedPrintOrderNumber], 
+      [ViewDeclarationVehicleImportExportFee].[ParkingTotalPrintOrderNumber] AS [ParkingTotalPrintOrderNumber], 
+      [ViewDeclarationVehicleImportExportFee].[IsChineseVehicle] AS [IsChineseVehicle], 
+      [ViewDeclarationVehicleImportExportFee].[IsExportParking] AS [IsExportParking], 
+      [ViewDeclarationVehicleImportExportFee].[ExportParkingDate] AS [ExportParkingDate], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmExportParkingBy] AS [ConfirmExportParkingBy], 
+      [ViewDeclarationVehicleImportExportFee].[PlateNumberPartner] AS [PlateNumberPartner], 
+      [ViewDeclarationVehicleImportExportFee].[vehicleTypeId] AS [vehicleTypeId], 
+      [ViewDeclarationVehicleImportExportFee].[quantityExport] AS [quantityExport], 
+      [ViewDeclarationVehicleImportExportFee].[quantityImport] AS [quantityImport], 
+      [ViewDeclarationVehicleImportExportFee].[feeExportStatus] AS [feeExportStatus], 
+      [ViewDeclarationVehicleImportExportFee].[feeImportStatus] AS [feeImportStatus], 
+      [ViewDeclarationVehicleImportExportFee].[feeExportAmount] AS [feeExportAmount], 
+      [ViewDeclarationVehicleImportExportFee].[feeImportAmount] AS [feeImportAmount], 
+      [ViewDeclarationVehicleImportExportFee].[feeExportDate] AS [feeExportDate], 
+      [ViewDeclarationVehicleImportExportFee].[feeImportDate] AS [feeImportDate], 
+      [ViewDeclarationVehicleImportExportFee].[confirmFeeExportBy] AS [confirmFeeExportBy], 
+      [ViewDeclarationVehicleImportExportFee].[confirmFeeImportBy] AS [confirmFeeImportBy], 
+      [ViewDeclarationVehicleImportExportFee].[ExportReceiptNumber] AS [ExportReceiptNumber], 
+      [ViewDeclarationVehicleImportExportFee].[ImportReceiptNumber] AS [ImportReceiptNumber], 
+      [ViewDeclarationVehicleImportExportFee].[CreatedDate] AS [CreatedDate], 
+      [ViewDeclarationVehicleImportExportFee].[ExportGoodTypeId] AS [ExportGoodTypeId], 
+      [ViewDeclarationVehicleImportExportFee].[ImportGoodTypeId] AS [ImportGoodTypeId], 
+      [ViewDeclarationVehicleImportExportFee].[DeclarationExportNumber] AS [DeclarationExportNumber], 
+      [ViewDeclarationVehicleImportExportFee].[DeclarationExportType] AS [DeclarationExportType], 
+      [ViewDeclarationVehicleImportExportFee].[ExportGoodsTypeName] AS [ExportGoodsTypeName], 
+      [ViewDeclarationVehicleImportExportFee].[VehicleTypeName] AS [VehicleTypeName], 
+      [ViewDeclarationVehicleImportExportFee].[DeclarationImportNumber] AS [DeclarationImportNumber], 
+      [ViewDeclarationVehicleImportExportFee].[DeclarationImportType] AS [DeclarationImportType], 
+      [ViewDeclarationVehicleImportExportFee].[ImportGoodsTypeName] AS [ImportGoodsTypeName], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmFeeExportByUserName] AS [ConfirmFeeExportByUserName], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmFeeImportByUserName] AS [ConfirmFeeImportByUserName], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmImportByName] AS [ConfirmImportByName], 
+      [ViewDeclarationVehicleImportExportFee].[ConfirmExportByName] AS [ConfirmExportByName]
+      FROM [dbo].[ViewDeclarationVehicleImportExportFee] AS [ViewDeclarationVehicleImportExportFee]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ViewGetCurrentDate" EntityType="dbEcustomModel.Store.ViewGetCurrentDate" store:Type="Views" store:Schema="dbo" store:Name="ViewGetCurrentDate">
             <DefiningQuery>SELECT 
       [ViewGetCurrentDate].[CurrentDateTime] AS [CurrentDateTime]
@@ -300,12 +362,32 @@
       [ViewUserGroup].[UserID] AS [UserID], 
       [ViewUserGroup].[UserFullName] AS [UserFullName], 
       [ViewUserGroup].[UserName] AS [UserName], 
-      [ViewUserGroup].[GroupID] AS [GroupID], 
-      [ViewUserGroup].[GroupName] AS [GroupName], 
       [ViewUserGroup].[Address] AS [Address], 
       [ViewUserGroup].[Email] AS [Email], 
-      [ViewUserGroup].[PhoneNumber] AS [PhoneNumber]
+      [ViewUserGroup].[PhoneNumber] AS [PhoneNumber], 
+      [ViewUserGroup].[GroupID] AS [GroupID], 
+      [ViewUserGroup].[GroupName] AS [GroupName]
       FROM [dbo].[ViewUserGroup] AS [ViewUserGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewVehicleFee" EntityType="dbEcustomModel.Store.ViewVehicleFee" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFee">
+            <DefiningQuery>SELECT 
+      [ViewVehicleFee].[VehicleID] AS [VehicleID], 
+      [ViewVehicleFee].[PlateNumber] AS [PlateNumber], 
+      [ViewVehicleFee].[FeeReceiptNumber] AS [FeeReceiptNumber], 
+      [ViewVehicleFee].[FeeAmount] AS [FeeAmount], 
+      [ViewVehicleFee].[DeclarationID] AS [DeclarationID], 
+      [ViewVehicleFee].[Number] AS [Number], 
+      [ViewVehicleFee].[Type] AS [Type], 
+      [ViewVehicleFee].[ProductName] AS [ProductName], 
+      [ViewVehicleFee].[ExportDate] AS [ExportDate], 
+      [ViewVehicleFee].[ImportedLocalTime] AS [ImportedLocalTime], 
+      [ViewVehicleFee].[VehicleTypeName] AS [VehicleTypeName], 
+      [ViewVehicleFee].[FeeDate] AS [FeeDate], 
+      [ViewVehicleFee].[FeeType] AS [FeeType], 
+      [ViewVehicleFee].[FeeTypeID] AS [FeeTypeID], 
+      [ViewVehicleFee].[VehicleIdTmp] AS [VehicleIdTmp], 
+      [ViewVehicleFee].[maxDeclarationID] AS [maxDeclarationID]
+      FROM [dbo].[ViewVehicleFee] AS [ViewVehicleFee]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="viewVehicleFeeSetting" EntityType="dbEcustomModel.Store.viewVehicleFeeSetting" store:Type="Views" store:Schema="dbo" store:Name="viewVehicleFeeSetting">
             <DefiningQuery>SELECT 
@@ -326,10 +408,9 @@
       [ViewVehicleFreight].[vehicleTypeId] AS [vehicleTypeId], 
       [ViewVehicleFreight].[Code] AS [Code], 
       [ViewVehicleFreight].[Name] AS [Name], 
-      [ViewVehicleFreight].[feeExportAmount] AS [feeExportAmount], 
-      [ViewVehicleFreight].[feeImportAmount] AS [feeImportAmount], 
       [ViewVehicleFreight].[DeclarationType] AS [DeclarationType], 
-      [ViewVehicleFreight].[GoodTypeName] AS [GoodTypeName]
+      [ViewVehicleFreight].[GoodTypeName] AS [GoodTypeName], 
+      [ViewVehicleFreight].[FeeAmount] AS [FeeAmount]
       FROM [dbo].[ViewVehicleFreight] AS [ViewVehicleFreight]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_tblDeclaration_tblUser" Association="dbEcustomModel.Store.FK_tblDeclaration_tblUser">
@@ -342,7 +423,7 @@
           </AssociationSet>
         </EntityContainer>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Log">
           <Key>
@@ -425,13 +506,13 @@
           <Property Name="Money" Type="numeric" />
           <Property Name="NumberHandover" Type="int" />
           <Property Name="DateHandover" Type="datetime" />
-          <Property Name="PersonHandoverID" Type="int" />
           <Property Name="DateReturn" Type="datetime" />
           <Property Name="PersonConfirmReturnID" Type="int" />
           <Property Name="NumberTemp" Type="nvarchar" MaxLength="50" />
           <Property Name="GateExport" Type="nvarchar" MaxLength="500" />
           <Property Name="Seal" Type="nvarchar" MaxLength="100" />
           <Property Name="TypeOption" Type="smallint" />
+          <Property Name="PersonHandoverID" Type="int" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -579,7 +660,7 @@
           <Property Name="Result" Type="ntext" />
           <Property Name="CheckFrom" Type="datetime" />
           <Property Name="CheckTo" Type="datetime" />
-          <Property Name="CheckCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="CheckCode" Type="nchar" MaxLength="500" />
           <Property Name="IsImportChecked" Type="bit" />
           <Property Name="IsExportChecked" Type="bit" />
           <Property Name="IsLocalImportChecked" Type="bit" />
@@ -621,7 +702,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheck">
           <Key>
@@ -644,7 +725,7 @@
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheckResult">
           <Key>
@@ -666,12 +747,12 @@
           <Property Name="CompanyCode" Type="nvarchar" MaxLength="500" />
           <Property Name="PlateNumber" Type="varchar" MaxLength="50" />
           <Property Name="DeclarationType" Type="smallint" />
-          <Property Name="CheckCode" Type="nvarchar" MaxLength="500" />
+          <Property Name="CheckCode" Type="nchar" MaxLength="500" />
           <Property Name="ImportDate" Type="datetime" />
           <Property Name="ExportDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclaration">
           <Key>
@@ -715,7 +796,7 @@
           <Property Name="PersonHandoverName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclarationTNTX">
           <Key>
@@ -760,7 +841,7 @@
           <Property Name="PersonHandoverName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicle">
           <Key>
@@ -793,7 +874,7 @@
           <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicleHasGood">
           <Key>
@@ -870,7 +951,7 @@
           <Property Name="ImportGoodTypeId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewDeclarationVehicle">
           <Key>
@@ -909,7 +990,73 @@
           <Property Name="RegisterDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewDeclarationVehicleImportExportFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewDeclarationVehicleImportExportFee">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="bigint" Nullable="false" />
+          <Property Name="PlateNumber" Type="varchar" MaxLength="50" />
+          <Property Name="NumberOfContainer" Type="nvarchar" MaxLength="50" />
+          <Property Name="DriverName" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImportDate" Type="datetime" />
+          <Property Name="IsImport" Type="bit" />
+          <Property Name="ExportDate" Type="datetime" />
+          <Property Name="IsExport" Type="bit" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="IsGoodsImported" Type="bit" />
+          <Property Name="ImportStatus" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportedLocalTime" Type="datetime" />
+          <Property Name="HasGoodsImported" Type="bit" />
+          <Property Name="ConfirmImportBy" Type="int" />
+          <Property Name="ConfirmExportBy" Type="int" />
+          <Property Name="ConfirmLocalImportBy" Type="int" />
+          <Property Name="DeclarationType" Type="smallint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Parking" Type="nvarchar" MaxLength="250" />
+          <Property Name="ParkingDate" Type="datetime" />
+          <Property Name="HasGoodsImportedTocalPrint" Type="int" />
+          <Property Name="ParkingTotalPrint" Type="int" />
+          <Property Name="HasGoodsImportedPrintOrderNumber" Type="bigint" />
+          <Property Name="ParkingTotalPrintOrderNumber" Type="bigint" />
+          <Property Name="IsChineseVehicle" Type="bit" />
+          <Property Name="IsExportParking" Type="bit" />
+          <Property Name="ExportParkingDate" Type="datetime" />
+          <Property Name="ConfirmExportParkingBy" Type="int" />
+          <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
+          <Property Name="vehicleTypeId" Type="int" />
+          <Property Name="quantityExport" Type="bigint" />
+          <Property Name="quantityImport" Type="bigint" />
+          <Property Name="feeExportStatus" Type="int" />
+          <Property Name="feeImportStatus" Type="int" />
+          <Property Name="feeExportAmount" Type="bigint" />
+          <Property Name="feeImportAmount" Type="bigint" />
+          <Property Name="feeExportDate" Type="datetime" />
+          <Property Name="feeImportDate" Type="datetime" />
+          <Property Name="confirmFeeExportBy" Type="int" />
+          <Property Name="confirmFeeImportBy" Type="int" />
+          <Property Name="ExportReceiptNumber" Type="varchar" MaxLength="100" />
+          <Property Name="ImportReceiptNumber" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ExportGoodTypeId" Type="int" />
+          <Property Name="ImportGoodTypeId" Type="int" />
+          <Property Name="DeclarationExportNumber" Type="int" />
+          <Property Name="DeclarationExportType" Type="nvarchar" MaxLength="200" />
+          <Property Name="ExportGoodsTypeName" Type="nvarchar" MaxLength="500" />
+          <Property Name="VehicleTypeName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DeclarationImportNumber" Type="int" />
+          <Property Name="DeclarationImportType" Type="nvarchar" MaxLength="200" />
+          <Property Name="ImportGoodsTypeName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConfirmFeeExportByUserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConfirmFeeImportByUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ConfirmImportByName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ConfirmExportByName" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbECustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewGetCurrentDate">
           <Key>
@@ -918,7 +1065,7 @@
           <Property Name="CurrentDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewUserGroup">
           <Key>
@@ -929,14 +1076,42 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="UserFullName" Type="nvarchar" MaxLength="500" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
-          <Property Name="GroupID" Type="int" Nullable="false" />
-          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
           <Property Name="Address" Type="nvarchar" MaxLength="300" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewVehicleFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewVehicleFee">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+            <PropertyRef Name="DeclarationID" />
+            <PropertyRef Name="FeeType" />
+            <PropertyRef Name="FeeTypeID" />
+            <PropertyRef Name="VehicleIdTmp" />
+          </Key>
+          <Property Name="VehicleID" Type="bigint" Nullable="false" />
+          <Property Name="PlateNumber" Type="varchar" MaxLength="50" />
+          <Property Name="FeeReceiptNumber" Type="varchar" MaxLength="100" />
+          <Property Name="FeeAmount" Type="bigint" />
+          <Property Name="DeclarationID" Type="bigint" Nullable="false" />
+          <Property Name="Number" Type="int" />
+          <Property Name="Type" Type="nvarchar" MaxLength="200" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ExportDate" Type="datetime" />
+          <Property Name="ImportedLocalTime" Type="datetime" />
+          <Property Name="VehicleTypeName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FeeDate" Type="datetime" />
+          <Property Name="FeeType" Type="nvarchar" Nullable="false" MaxLength="9" />
+          <Property Name="FeeTypeID" Type="int" Nullable="false" />
+          <Property Name="VehicleIdTmp" Type="bigint" Nullable="false" />
+          <Property Name="maxDeclarationID" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbECustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewVehicleFeeSetting">
           <Key>
@@ -952,7 +1127,7 @@
           <Property Name="Capacity" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFreight">
           <Key>
@@ -964,10 +1139,9 @@
           <Property Name="vehicleTypeId" Type="int" />
           <Property Name="Code" Type="varchar" MaxLength="50" />
           <Property Name="Name" Type="nvarchar" MaxLength="1000" />
-          <Property Name="feeExportAmount" Type="bigint" />
-          <Property Name="feeImportAmount" Type="bigint" />
           <Property Name="DeclarationType" Type="smallint" />
           <Property Name="GoodTypeName" Type="nvarchar" MaxLength="500" />
+          <Property Name="FeeAmount" Type="bigint" />
         </EntityType>
         <Association Name="FK_tblDeclaration_tblUser">
           <End Role="tblUser" Type="dbEcustomModel.Store.tblUser" Multiplicity="0..1">
@@ -1109,7 +1283,9 @@
           <EntitySet Name="viewVehicleFeeSettings" EntityType="dbEcustomModel.viewVehicleFeeSetting" />
           <EntitySet Name="tblVehicles" EntityType="dbEcustomModel.tblVehicle" />
           <EntitySet Name="ViewAllVehicleHasGoods" EntityType="dbEcustomModel.ViewAllVehicleHasGood" />
+          <EntitySet Name="ViewVehicleFees" EntityType="dbEcustomModel.ViewVehicleFee" />
           <EntitySet Name="ViewVehicleFreights" EntityType="dbEcustomModel.ViewVehicleFreight" />
+          <EntitySet Name="ViewDeclarationVehicleImportExportFees" EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -1708,6 +1884,31 @@
           <Property Type="Int32" Name="ExportGoodTypeId" />
           <Property Type="Int32" Name="ImportGoodTypeId" />
         </EntityType>
+        <EntityType Name="ViewVehicleFee">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+            <PropertyRef Name="DeclarationID" />
+            <PropertyRef Name="FeeType" />
+            <PropertyRef Name="FeeTypeID" />
+            <PropertyRef Name="VehicleIdTmp" />
+          </Key>
+          <Property Type="Int64" Name="VehicleID" Nullable="false" />
+          <Property Type="String" Name="PlateNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FeeReceiptNumber" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="FeeAmount" />
+          <Property Type="Int64" Name="DeclarationID" Nullable="false" />
+          <Property Type="Int32" Name="Number" />
+          <Property Type="String" Name="Type" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ExportDate" />
+          <Property Type="DateTime" Name="ImportedLocalTime" />
+          <Property Type="String" Name="VehicleTypeName" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FeeDate" />
+          <Property Type="String" Name="FeeType" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FeeTypeID" Nullable="false" />
+          <Property Type="Int64" Name="VehicleIdTmp" Nullable="false" />
+          <Property Type="Int64" Name="maxDeclarationID" />
+        </EntityType>
         <EntityType Name="ViewVehicleFreight">
           <Key>
             <PropertyRef Name="VehicleID" />
@@ -1718,10 +1919,72 @@
           <Property Type="Int32" Name="vehicleTypeId" />
           <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Name" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="feeExportAmount" />
-          <Property Type="Int64" Name="feeImportAmount" />
           <Property Type="Int16" Name="DeclarationType" />
           <Property Type="String" Name="GoodTypeName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="FeeAmount" />
+        </EntityType>
+        <EntityType Name="ViewDeclarationVehicleImportExportFee">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Type="Int64" Name="VehicleID" Nullable="false" />
+          <Property Type="String" Name="PlateNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NumberOfContainer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DriverName" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ImportDate" />
+          <Property Type="Boolean" Name="IsImport" />
+          <Property Type="DateTime" Name="ExportDate" />
+          <Property Type="Boolean" Name="IsExport" />
+          <Property Type="String" Name="Note" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCompleted" />
+          <Property Type="Boolean" Name="IsGoodsImported" />
+          <Property Type="String" Name="ImportStatus" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ImportedLocalTime" />
+          <Property Type="Boolean" Name="HasGoodsImported" />
+          <Property Type="Int32" Name="ConfirmImportBy" />
+          <Property Type="Int32" Name="ConfirmExportBy" />
+          <Property Type="Int32" Name="ConfirmLocalImportBy" />
+          <Property Type="Int16" Name="DeclarationType" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="String" Name="Parking" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ParkingDate" />
+          <Property Type="Int32" Name="HasGoodsImportedTocalPrint" />
+          <Property Type="Int32" Name="ParkingTotalPrint" />
+          <Property Type="Int64" Name="HasGoodsImportedPrintOrderNumber" />
+          <Property Type="Int64" Name="ParkingTotalPrintOrderNumber" />
+          <Property Type="Boolean" Name="IsChineseVehicle" />
+          <Property Type="Boolean" Name="IsExportParking" />
+          <Property Type="DateTime" Name="ExportParkingDate" />
+          <Property Type="Int32" Name="ConfirmExportParkingBy" />
+          <Property Type="String" Name="PlateNumberPartner" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="vehicleTypeId" />
+          <Property Type="Int64" Name="quantityExport" />
+          <Property Type="Int64" Name="quantityImport" />
+          <Property Type="Int32" Name="feeExportStatus" />
+          <Property Type="Int32" Name="feeImportStatus" />
+          <Property Type="Int64" Name="feeExportAmount" />
+          <Property Type="Int64" Name="feeImportAmount" />
+          <Property Type="DateTime" Name="feeExportDate" />
+          <Property Type="DateTime" Name="feeImportDate" />
+          <Property Type="Int32" Name="confirmFeeExportBy" />
+          <Property Type="Int32" Name="confirmFeeImportBy" />
+          <Property Type="String" Name="ExportReceiptNumber" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ImportReceiptNumber" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="ExportGoodTypeId" />
+          <Property Type="Int32" Name="ImportGoodTypeId" />
+          <Property Type="Int32" Name="DeclarationExportNumber" />
+          <Property Type="String" Name="DeclarationExportType" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportGoodsTypeName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VehicleTypeName" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DeclarationImportNumber" />
+          <Property Type="String" Name="DeclarationImportType" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportGoodsTypeName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfirmFeeExportByUserName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfirmFeeImportByUserName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfirmImportByName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfirmExportByName" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2335,17 +2598,102 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ViewVehicleFees">
+            <EntityTypeMapping TypeName="dbEcustomModel.ViewVehicleFee">
+              <MappingFragment StoreEntitySet="ViewVehicleFee">
+                <ScalarProperty Name="maxDeclarationID" ColumnName="maxDeclarationID" />
+                <ScalarProperty Name="VehicleIdTmp" ColumnName="VehicleIdTmp" />
+                <ScalarProperty Name="FeeTypeID" ColumnName="FeeTypeID" />
+                <ScalarProperty Name="FeeType" ColumnName="FeeType" />
+                <ScalarProperty Name="FeeDate" ColumnName="FeeDate" />
+                <ScalarProperty Name="VehicleTypeName" ColumnName="VehicleTypeName" />
+                <ScalarProperty Name="ImportedLocalTime" ColumnName="ImportedLocalTime" />
+                <ScalarProperty Name="ExportDate" ColumnName="ExportDate" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
+                <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
+                <ScalarProperty Name="FeeReceiptNumber" ColumnName="FeeReceiptNumber" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ViewVehicleFreights">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewVehicleFreight">
               <MappingFragment StoreEntitySet="ViewVehicleFreight">
+                <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
                 <ScalarProperty Name="GoodTypeName" ColumnName="GoodTypeName" />
                 <ScalarProperty Name="DeclarationType" ColumnName="DeclarationType" />
-                <ScalarProperty Name="feeImportAmount" ColumnName="feeImportAmount" />
-                <ScalarProperty Name="feeExportAmount" ColumnName="feeExportAmount" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="vehicleTypeId" ColumnName="vehicleTypeId" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewDeclarationVehicleImportExportFees">
+            <EntityTypeMapping TypeName="dbEcustomModel.ViewDeclarationVehicleImportExportFee">
+              <MappingFragment StoreEntitySet="ViewDeclarationVehicleImportExportFee">
+                <ScalarProperty Name="ConfirmExportByName" ColumnName="ConfirmExportByName" />
+                <ScalarProperty Name="ConfirmImportByName" ColumnName="ConfirmImportByName" />
+                <ScalarProperty Name="ConfirmFeeImportByUserName" ColumnName="ConfirmFeeImportByUserName" />
+                <ScalarProperty Name="ConfirmFeeExportByUserName" ColumnName="ConfirmFeeExportByUserName" />
+                <ScalarProperty Name="ImportGoodsTypeName" ColumnName="ImportGoodsTypeName" />
+                <ScalarProperty Name="DeclarationImportType" ColumnName="DeclarationImportType" />
+                <ScalarProperty Name="DeclarationImportNumber" ColumnName="DeclarationImportNumber" />
+                <ScalarProperty Name="VehicleTypeName" ColumnName="VehicleTypeName" />
+                <ScalarProperty Name="ExportGoodsTypeName" ColumnName="ExportGoodsTypeName" />
+                <ScalarProperty Name="DeclarationExportType" ColumnName="DeclarationExportType" />
+                <ScalarProperty Name="DeclarationExportNumber" ColumnName="DeclarationExportNumber" />
+                <ScalarProperty Name="ImportGoodTypeId" ColumnName="ImportGoodTypeId" />
+                <ScalarProperty Name="ExportGoodTypeId" ColumnName="ExportGoodTypeId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ImportReceiptNumber" ColumnName="ImportReceiptNumber" />
+                <ScalarProperty Name="ExportReceiptNumber" ColumnName="ExportReceiptNumber" />
+                <ScalarProperty Name="confirmFeeImportBy" ColumnName="confirmFeeImportBy" />
+                <ScalarProperty Name="confirmFeeExportBy" ColumnName="confirmFeeExportBy" />
+                <ScalarProperty Name="feeImportDate" ColumnName="feeImportDate" />
+                <ScalarProperty Name="feeExportDate" ColumnName="feeExportDate" />
+                <ScalarProperty Name="feeImportAmount" ColumnName="feeImportAmount" />
+                <ScalarProperty Name="feeExportAmount" ColumnName="feeExportAmount" />
+                <ScalarProperty Name="feeImportStatus" ColumnName="feeImportStatus" />
+                <ScalarProperty Name="feeExportStatus" ColumnName="feeExportStatus" />
+                <ScalarProperty Name="quantityImport" ColumnName="quantityImport" />
+                <ScalarProperty Name="quantityExport" ColumnName="quantityExport" />
+                <ScalarProperty Name="vehicleTypeId" ColumnName="vehicleTypeId" />
+                <ScalarProperty Name="PlateNumberPartner" ColumnName="PlateNumberPartner" />
+                <ScalarProperty Name="ConfirmExportParkingBy" ColumnName="ConfirmExportParkingBy" />
+                <ScalarProperty Name="ExportParkingDate" ColumnName="ExportParkingDate" />
+                <ScalarProperty Name="IsExportParking" ColumnName="IsExportParking" />
+                <ScalarProperty Name="IsChineseVehicle" ColumnName="IsChineseVehicle" />
+                <ScalarProperty Name="ParkingTotalPrintOrderNumber" ColumnName="ParkingTotalPrintOrderNumber" />
+                <ScalarProperty Name="HasGoodsImportedPrintOrderNumber" ColumnName="HasGoodsImportedPrintOrderNumber" />
+                <ScalarProperty Name="ParkingTotalPrint" ColumnName="ParkingTotalPrint" />
+                <ScalarProperty Name="HasGoodsImportedTocalPrint" ColumnName="HasGoodsImportedTocalPrint" />
+                <ScalarProperty Name="ParkingDate" ColumnName="ParkingDate" />
+                <ScalarProperty Name="Parking" ColumnName="Parking" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="DeclarationType" ColumnName="DeclarationType" />
+                <ScalarProperty Name="ConfirmLocalImportBy" ColumnName="ConfirmLocalImportBy" />
+                <ScalarProperty Name="ConfirmExportBy" ColumnName="ConfirmExportBy" />
+                <ScalarProperty Name="ConfirmImportBy" ColumnName="ConfirmImportBy" />
+                <ScalarProperty Name="HasGoodsImported" ColumnName="HasGoodsImported" />
+                <ScalarProperty Name="ImportedLocalTime" ColumnName="ImportedLocalTime" />
+                <ScalarProperty Name="ImportStatus" ColumnName="ImportStatus" />
+                <ScalarProperty Name="IsGoodsImported" ColumnName="IsGoodsImported" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IsExport" ColumnName="IsExport" />
+                <ScalarProperty Name="ExportDate" ColumnName="ExportDate" />
+                <ScalarProperty Name="IsImport" ColumnName="IsImport" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
                 <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
                 <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
               </MappingFragment>
@@ -2408,7 +2756,9 @@
         <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="16.375" PointY="14.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="5.375" PointY="17.75" Height="10.056946614583332" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="18.375" PointY="0.75" Height="13.71067382812501" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="0.75" PointY="16.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFee" Width="1.5" PointX="0.75" PointY="16.75" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="2.75" PointY="20.75" Height="2.7494921875000102" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="14.375" PointY="18.75" Height="12.172262369791667" />
       </Diagram>
     </Diagrams>
   </Designer>
