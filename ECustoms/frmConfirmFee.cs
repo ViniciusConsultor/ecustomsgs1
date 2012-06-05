@@ -132,7 +132,7 @@ namespace ECustoms
 
         private void frmConfirmFee_Load(object sender, EventArgs e)
         {
-            this.Text = _type == 0 ? "xac nhan thu phi xuat" : "Xac nhan thu phi nhap" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = _type == 0 ? "Xac nhan thu phi xuat" : "Xac nhan thu phi nhap" + ConstantInfo.MESSAGE_TITLE;
         }
 
         private void btnConfirmFee_Click(object sender, EventArgs e)
