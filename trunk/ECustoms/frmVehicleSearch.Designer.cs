@@ -174,7 +174,6 @@
             this.txtPlateNumberChinese.Name = "txtPlateNumberChinese";
             this.txtPlateNumberChinese.Size = new System.Drawing.Size(105, 26);
             this.txtPlateNumberChinese.TabIndex = 22;
-            this.txtPlateNumberChinese.Visible = false;
             this.txtPlateNumberChinese.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlateNumberChinese_KeyPress);
             // 
             // lblPlateNumberChinese
@@ -185,7 +184,6 @@
             this.lblPlateNumberChinese.Size = new System.Drawing.Size(220, 20);
             this.lblPlateNumberChinese.TabIndex = 21;
             this.lblPlateNumberChinese.Text = "Biển kiểm soát xe Trung Quốc";
-            this.lblPlateNumberChinese.Visible = false;
             // 
             // cbIsChineseVehicle
             // 
@@ -917,7 +915,6 @@
             this.PlateNumberPartner.HeaderText = "Xe Trung Quốc";
             this.PlateNumberPartner.Name = "PlateNumberPartner";
             this.PlateNumberPartner.ReadOnly = true;
-            this.PlateNumberPartner.Visible = false;
             this.PlateNumberPartner.Width = 140;
             // 
             // DriverName

@@ -220,7 +220,6 @@
             this.addVehicleChinese.Name = "addVehicleChinese";
             this.addVehicleChinese.Size = new System.Drawing.Size(313, 26);
             this.addVehicleChinese.Text = "Thêm phương tiện xe Trung Quốc";
-            this.addVehicleChinese.Visible = false;
             this.addVehicleChinese.Click += new System.EventHandler(this.addVehicleChinese_Click);
             // 
             // mnuExportParking

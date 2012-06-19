@@ -517,7 +517,6 @@
             this.txtVehicleChinese.Name = "txtVehicleChinese";
             this.txtVehicleChinese.Size = new System.Drawing.Size(173, 20);
             this.txtVehicleChinese.TabIndex = 5;
-            this.txtVehicleChinese.Visible = false;
             // 
             // lblVehicleChinese
             // 
@@ -528,7 +527,6 @@
             this.lblVehicleChinese.Size = new System.Drawing.Size(193, 20);
             this.lblVehicleChinese.TabIndex = 21;
             this.lblVehicleChinese.Text = "Biển kiểm soát xe sang tải";
-            this.lblVehicleChinese.Visible = false;
             // 
             // label2
             // 
