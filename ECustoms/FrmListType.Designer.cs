@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListType));
             this.grbUser = new System.Windows.Forms.GroupBox();
-            this.grvVehicleType = new System.Windows.Forms.DataGridView();
+            this.grvType = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -42,12 +42,12 @@
             this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvVehicleType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvType)).BeginInit();
             this.SuspendLayout();
             // 
             // grbUser
             // 
-            this.grbUser.Controls.Add(this.grvVehicleType);
+            this.grbUser.Controls.Add(this.grvType);
             this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbUser.Location = new System.Drawing.Point(12, 12);
             this.grbUser.Name = "grbUser";
@@ -56,22 +56,22 @@
             this.grbUser.TabStop = false;
             this.grbUser.Text = "Danh sách loại hình cho tờ khai";
             // 
-            // grvVehicleType
+            // grvType
             // 
-            this.grvVehicleType.AllowUserToAddRows = false;
-            this.grvVehicleType.AllowUserToDeleteRows = false;
-            this.grvVehicleType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvVehicleType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grvType.AllowUserToAddRows = false;
+            this.grvType.AllowUserToDeleteRows = false;
+            this.grvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TypeCode,
             this.TypeName,
             this.Description});
-            this.grvVehicleType.Location = new System.Drawing.Point(6, 25);
-            this.grvVehicleType.MultiSelect = false;
-            this.grvVehicleType.Name = "grvVehicleType";
-            this.grvVehicleType.ReadOnly = true;
-            this.grvVehicleType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvVehicleType.Size = new System.Drawing.Size(758, 334);
-            this.grvVehicleType.TabIndex = 1;
+            this.grvType.Location = new System.Drawing.Point(6, 25);
+            this.grvType.MultiSelect = false;
+            this.grvType.Name = "grvType";
+            this.grvType.ReadOnly = true;
+            this.grvType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grvType.Size = new System.Drawing.Size(758, 334);
+            this.grvType.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -87,6 +87,7 @@
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -197,7 +198,7 @@
             this.Text = "FrmListType";
             this.Load += new System.EventHandler(this.FrmListType_Load);
             this.grbUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grvVehicleType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,7 +208,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox grbUser;
-        private System.Windows.Forms.DataGridView grvVehicleType;
+        private System.Windows.Forms.DataGridView grvType;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;

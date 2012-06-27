@@ -12,7 +12,7 @@ namespace ECustoms.BOL
     public class TypeFactory
     {
 
-        public static List<tblType> getAllVehicleType()
+        public static List<tblType> getAllType()
         {
             dbEcustomEntities _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             try
@@ -48,6 +48,28 @@ namespace ECustoms.BOL
                 _db.Connection.Close();
             }
 
+        }
+
+        public static int Insert(tblType type)
+        {
+            dbEcustomEntities _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            _db.Connection.Open();
+            type.CreatedDate = CommonFactory.GetCurrentDate();
+            type.ModifiedDate = CommonFactory.GetCurrentDate();
+            _db.AddTotblTypes(type);
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
+                return _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
         }
     }
 }
