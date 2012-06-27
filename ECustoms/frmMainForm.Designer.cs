@@ -60,9 +60,9 @@
             this.menuGetFee = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFeeReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFeeSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolstripLabelWelcome = new System.Windows.Forms.ToolStripLabel();
             this.tsExport = new System.Windows.Forms.ToolStripButton();
@@ -71,6 +71,8 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
+            this.mnuGeneralInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuType = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,8 +87,9 @@
             this.menuManageInformation,
             this.quảnLýHàngNTXCKToolStripMenuItem,
             this.mnuFeeManagement,
+            this.inTicketToolStripMenuItem,
             this.trợGiúpToolStripMenuItem,
-            this.inTicketToolStripMenuItem});
+            this.mnuGeneralInfo});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
             this.mnMain.Size = new System.Drawing.Size(1211, 29);
@@ -341,6 +344,13 @@
             this.mnuFeeSetting.Text = "Cấu hình tính phí phương tiện";
             this.mnuFeeSetting.Click += new System.EventHandler(this.mnuFeeSetting_Click);
             // 
+            // inTicketToolStripMenuItem
+            // 
+            this.inTicketToolStripMenuItem.Name = "inTicketToolStripMenuItem";
+            this.inTicketToolStripMenuItem.Size = new System.Drawing.Size(76, 25);
+            this.inTicketToolStripMenuItem.Text = "In ticket";
+            this.inTicketToolStripMenuItem.Click += new System.EventHandler(this.inTicketToolStripMenuItem_Click);
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -355,13 +365,6 @@
             this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
             this.hướngDẫnSửDụngToolStripMenuItem.Click += new System.EventHandler(this.hướngDẫnSửDụngToolStripMenuItem_Click);
-            // 
-            // inTicketToolStripMenuItem
-            // 
-            this.inTicketToolStripMenuItem.Name = "inTicketToolStripMenuItem";
-            this.inTicketToolStripMenuItem.Size = new System.Drawing.Size(76, 25);
-            this.inTicketToolStripMenuItem.Text = "In ticket";
-            this.inTicketToolStripMenuItem.Click += new System.EventHandler(this.inTicketToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -447,6 +450,21 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
+            // mnuGeneralInfo
+            // 
+            this.mnuGeneralInfo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuType});
+            this.mnuGeneralInfo.Name = "mnuGeneralInfo";
+            this.mnuGeneralInfo.Size = new System.Drawing.Size(190, 25);
+            this.mnuGeneralInfo.Text = "Quản lý thông tin chung";
+            // 
+            // mnuType
+            // 
+            this.mnuType.Name = "mnuType";
+            this.mnuType.Size = new System.Drawing.Size(196, 26);
+            this.mnuType.Text = "Loại hình tờ khai";
+            this.mnuType.Click += new System.EventHandler(this.mnuType_Click);
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,5 +533,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuGetFee;
         private System.Windows.Forms.ToolStripMenuItem mnuFeeReport;
         private System.Windows.Forms.ToolStripMenuItem mnuFeeSetting;
+        private System.Windows.Forms.ToolStripMenuItem mnuGeneralInfo;
+        private System.Windows.Forms.ToolStripMenuItem mnuType;
     }
 }

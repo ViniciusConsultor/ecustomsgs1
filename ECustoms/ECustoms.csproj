@@ -112,6 +112,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddType.Designer.cs">
+      <DependentUpon>FrmAddType.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddVehicleFeeSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     <Compile Include="DataSet2.cs">
       <DependentUpon>DataSet2.xsd</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmListType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListType.Designer.cs">
+      <DependentUpon>FrmListType.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMessageBox.cs">
       <SubType>Form</SubType>
@@ -428,6 +440,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FrmAddType.resx">
+      <DependentUpon>FrmAddType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddVehicleFeeSetting.resx">
       <DependentUpon>FrmAddVehicleFeeSetting.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGetFee.resx">
       <DependentUpon>frmGetFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListType.resx">
+      <DependentUpon>FrmListType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMessageBox.resx">
       <DependentUpon>frmMessageBox.cs</DependentUpon>
