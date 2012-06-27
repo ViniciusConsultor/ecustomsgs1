@@ -57,6 +57,7 @@
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpdate
             // 
@@ -89,6 +90,7 @@
             this.btnAdd.Text = "Thêm mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblUsername
             // 
@@ -110,6 +112,8 @@
             this.txtTypeCode.Name = "txtTypeCode";
             this.txtTypeCode.Size = new System.Drawing.Size(339, 26);
             this.txtTypeCode.TabIndex = 55;
+            this.txtTypeCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTypeCode_KeyDown);
+            this.txtTypeCode.Leave += new System.EventHandler(this.txtTypeCode_Leave);
             // 
             // lblPassword
             // 
@@ -127,10 +131,11 @@
             this.txtTypeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTypeName.Location = new System.Drawing.Point(152, 55);
             this.txtTypeName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTypeName.MaxLength = 1000;
+            this.txtTypeName.MaxLength = 500;
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.Size = new System.Drawing.Size(339, 26);
             this.txtTypeName.TabIndex = 56;
+            this.txtTypeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTypeName_KeyDown);
             // 
             // txtDescription
             // 
