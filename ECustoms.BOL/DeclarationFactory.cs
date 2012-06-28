@@ -243,5 +243,25 @@ namespace ECustoms.BOL
             }
             db.Connection.Close();
         }
+
+        public static List<tblDeclaration> getByType(String typeCode)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            try
+            {
+                List<tblDeclaration> list = db.tblDeclarations.Where(g => g.Type == typeCode).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+               
+
+        }
     }
 }

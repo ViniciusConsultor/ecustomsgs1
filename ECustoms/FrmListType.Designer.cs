@@ -35,6 +35,12 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.grbConditionSearch = new System.Windows.Forms.GroupBox();
+            this.txtTypeName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTypeCode = new System.Windows.Forms.TextBox();
+            this.lblPlateNumber = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,13 +49,14 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvType)).BeginInit();
+            this.grbConditionSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbUser
             // 
             this.grbUser.Controls.Add(this.grvType);
             this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbUser.Location = new System.Drawing.Point(12, 12);
+            this.grbUser.Location = new System.Drawing.Point(12, 91);
             this.grbUser.Name = "grbUser";
             this.grbUser.Size = new System.Drawing.Size(774, 370);
             this.grbUser.TabIndex = 24;
@@ -80,7 +87,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(318, 388);
+            this.btnClose.Location = new System.Drawing.Point(318, 467);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(84, 33);
             this.btnClose.TabIndex = 26;
@@ -96,13 +103,14 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(236, 388);
+            this.btnDelete.Location = new System.Drawing.Point(236, 467);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 33);
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -111,13 +119,14 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(120, 388);
+            this.btnUpdate.Location = new System.Drawing.Point(120, 467);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 33);
             this.btnUpdate.TabIndex = 23;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -126,7 +135,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(12, 388);
+            this.btnAdd.Location = new System.Drawing.Point(12, 467);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 33);
             this.btnAdd.TabIndex = 22;
@@ -134,6 +143,73 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // grbConditionSearch
+            // 
+            this.grbConditionSearch.Controls.Add(this.txtTypeName);
+            this.grbConditionSearch.Controls.Add(this.label1);
+            this.grbConditionSearch.Controls.Add(this.txtTypeCode);
+            this.grbConditionSearch.Controls.Add(this.lblPlateNumber);
+            this.grbConditionSearch.Controls.Add(this.btnSearch);
+            this.grbConditionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConditionSearch.Location = new System.Drawing.Point(18, 12);
+            this.grbConditionSearch.Name = "grbConditionSearch";
+            this.grbConditionSearch.Size = new System.Drawing.Size(768, 73);
+            this.grbConditionSearch.TabIndex = 27;
+            this.grbConditionSearch.TabStop = false;
+            this.grbConditionSearch.Text = "Điều kiện tìm kiếm";
+            this.grbConditionSearch.Enter += new System.EventHandler(this.grbConditionSearch_Enter);
+            // 
+            // txtTypeName
+            // 
+            this.txtTypeName.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.txtTypeName.Location = new System.Drawing.Point(381, 25);
+            this.txtTypeName.Name = "txtTypeName";
+            this.txtTypeName.Size = new System.Drawing.Size(217, 26);
+            this.txtTypeName.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(264, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Tên loại hình";
+            // 
+            // txtTypeCode
+            // 
+            this.txtTypeCode.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.txtTypeCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtTypeCode.Location = new System.Drawing.Point(132, 25);
+            this.txtTypeCode.Name = "txtTypeCode";
+            this.txtTypeCode.Size = new System.Drawing.Size(105, 26);
+            this.txtTypeCode.TabIndex = 1;
+            // 
+            // lblPlateNumber
+            // 
+            this.lblPlateNumber.AutoSize = true;
+            this.lblPlateNumber.Location = new System.Drawing.Point(13, 28);
+            this.lblPlateNumber.Name = "lblPlateNumber";
+            this.lblPlateNumber.Size = new System.Drawing.Size(93, 20);
+            this.lblPlateNumber.TabIndex = 11;
+            this.lblPlateNumber.Text = "Mã loại hình";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::ECustoms.Properties.Resources.search41;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(628, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(111, 33);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -187,7 +263,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 431);
+            this.ClientSize = new System.Drawing.Size(795, 510);
+            this.Controls.Add(this.grbConditionSearch);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.grbUser);
@@ -199,6 +276,8 @@
             this.Load += new System.EventHandler(this.FrmListType_Load);
             this.grbUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvType)).EndInit();
+            this.grbConditionSearch.ResumeLayout(false);
+            this.grbConditionSearch.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +296,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.GroupBox grbConditionSearch;
+        private System.Windows.Forms.TextBox txtTypeName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTypeCode;
+        private System.Windows.Forms.Label lblPlateNumber;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

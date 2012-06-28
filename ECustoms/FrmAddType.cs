@@ -39,11 +39,26 @@ namespace ECustoms
             if (_mode == 0) //add new
             {
                 this.Text = "Them moi loai hinh" + ConstantInfo.MESSAGE_TITLE;
+                btnAdd.Enabled = true; 
+                btnUpdate.Enabled = false;
             }
 
-            if (_mode == 0) //update
+            if (_mode == 1) //update
             {
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = true;
+
                 this.Text = "Cap nhat loai hinh" + ConstantInfo.MESSAGE_TITLE;
+                tblType type = TypeFactory.FindByCode(_typeCode);
+                if (type == null)
+                {
+                    MessageBox.Show("Loại hình này không còn tồn tại trong Cơ Sở Dữ Liệu. Bạn hãy kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                txtTypeCode.Enabled = false;
+                txtTypeCode.Text = type.TypeCode;
+                txtTypeName.Text = type.TypeName;
+                txtDescription.Text = type.Description;
             }
         }
 
@@ -79,6 +94,7 @@ namespace ECustoms
                     }
                 }
             }
+
             
 
         }
@@ -109,7 +125,18 @@ namespace ECustoms
             }
             if (_mode == 1) //update
             {
-                
+                tblType type = TypeFactory.FindByCode(_typeCode);
+                if (type == null)
+                {
+                    valid = false;
+                    MessageBox.Show("Loại hình này không còn tồn tại trong Cơ Sở Dữ Liệu. Bạn hãy kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (String.IsNullOrEmpty(txtTypeName.Text.Trim()))
+                {
+                    valid = false;
+                    MessageBox.Show("Tên loại hình không được để trống", "Dữ liệu không hợp lệ", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    txtTypeCode.Focus();
+                }
             }
             return valid;
         }
@@ -145,6 +172,39 @@ namespace ECustoms
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (_mode == 1)
+            {
+                if (validate())
+                {
+                    tblType type = new tblType();
+                    type.TypeCode = txtTypeCode.Text;
+                    type.TypeName = txtTypeName.Text.Trim();
+                    type.Description = txtDescription.Text.Trim();
+                    type.ModifiedBy = _userInfo.UserID;
+                    if (TypeFactory.Update(type) > 0)
+                    {
+                        try
+                        {
+                            _frmListType.search();
+                        }
+                        catch (Exception ex)
+                        {
+                            //do nothing
+                        }
+                        MessageBox.Show("Cập nhật loại hình thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật loại hình không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+            }
         }
     }
 }

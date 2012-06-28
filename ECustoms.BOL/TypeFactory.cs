@@ -71,5 +71,56 @@ namespace ECustoms.BOL
                 _db.Connection.Close();
             }
         }
+
+        public static int Update(tblType typeObj)
+        {
+            dbEcustomEntities _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            _db.Connection.Open();
+
+            tblType originType = _db.tblTypes.Where(g => g.TypeCode == typeObj.TypeCode).FirstOrDefault();
+
+            if (originType == null)
+            {
+                return -1;
+            }
+
+            originType.TypeName = typeObj.TypeName;
+            originType.Description = typeObj.Description;
+            originType.ModifiedBy = typeObj.ModifiedBy;
+            originType.ModifiedDate = CommonFactory.GetCurrentDate();
+
+            try
+            {
+                return _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
+
+        public static int DeleteType(String typeCode)
+        {
+            dbEcustomEntities _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
+                var type = _db.tblTypes.FirstOrDefault(vt => vt.TypeCode == typeCode);
+                _db.DeleteObject(type);
+                return _db.SaveChanges();
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
     }
 }
