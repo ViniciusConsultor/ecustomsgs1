@@ -112,6 +112,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDeclarationFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeclarationFee.Designer.cs">
+      <DependentUpon>frmDeclarationFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,6 +446,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmDeclarationFee.resx">
+      <DependentUpon>frmDeclarationFee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddType.resx">
       <DependentUpon>FrmAddType.cs</DependentUpon>
     </EmbeddedResource>

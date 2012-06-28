@@ -198,6 +198,32 @@ namespace ECustoms
                                 vehicleInfo.confirmFeeImportBy = _userInfo.UserID;
                             }    
                         }
+                        else
+                        {
+                            var currentDate = CommonFactory.GetCurrentDate();
+                            if (_declerationType.Equals(Common.DeclerationType.Export))
+                            {
+                                if (grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value != null)
+                                {
+                                    vehicleInfo.ExportReceiptNumber = grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value.ToString();
+                                    vehicleInfo.feeExportAmount = Convert.ToInt64(grdVehicle.Rows[i].Cells["feeExportAmount"].Value);
+                                    vehicleInfo.feeExportDate = currentDate;
+                                    vehicleInfo.feeExportStatus = (int)FeeStatus.PaidFee;
+                                    vehicleInfo.confirmFeeExportBy = _userInfo.UserID;  
+                                }
+                            }
+                            else
+                            {
+                                if (grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value != null)
+                                {
+                                    vehicleInfo.ImportReceiptNumber = grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value.ToString();
+                                    vehicleInfo.feeImportAmount = Convert.ToInt64(grdVehicle.Rows[i].Cells["feeImportAmount"].Value);
+                                    vehicleInfo.feeImportDate = currentDate;
+                                    vehicleInfo.feeImportStatus = (int)FeeStatus.PaidFee;
+                                    vehicleInfo.confirmFeeImportBy = _userInfo.UserID;
+                                }
+                            }      
+                        }
                         
 
                         if (grdVehicle.Rows[i].Cells["VehicleID"].Value != null && Convert.ToInt64(grdVehicle.Rows[i].Cells["VehicleID"].Value) > 0) // Update this vehicle only.
@@ -442,7 +468,7 @@ namespace ECustoms
                 btnComfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
                 cbTNTX.Items.RemoveAt(3);
                 cbTNTX.Items.RemoveAt(2);
-                grdVehicle.Columns["ImportGoodType"].Visible = false;
+                grdVehicle.Columns["ImportGoodType"].Visible = grdVehicle.Columns["ImportReceiptNumber"].Visible = grdVehicle.Columns["feeImportAmount"].Visible = false;
                 // Thu phí
                 btnFee.Text = "Thu phí xuất";
                 btnFee.Image = Properties.Resources._1336316540_document_export;
@@ -468,7 +494,7 @@ namespace ECustoms
                 txtExportTotalVehicles.Visible = false;
                 cbTNTX.Items.RemoveAt(1);
 
-                grdVehicle.Columns["ExportGoodType"].Visible = false;
+                grdVehicle.Columns["ExportGoodType"].Visible = grdVehicle.Columns["ExportReceiptNumber"].Visible = grdVehicle.Columns["feeExportAmount"].Visible = false;
                 grdVehicle.Columns["VehicleType"].ReadOnly = true;
 
             }
@@ -586,9 +612,12 @@ namespace ECustoms
                 // Bind count column
                 grdVehicle.AutoGenerateColumns = false;
                 grdVehicle.DataSource = vehicleInfos;
-                // Add to count Column
+
+                var listFee = VehicleFeeSettingFactory.getAllVehicleFeeSetting();
+                
                 for (int i = 0; i < grdVehicle.Rows.Count; i++)
                 {
+                    // Add to count Column
                     grdVehicle.Rows[i].Cells[0].Value = (i + 1).ToString();
                     // Trong trường hợp phương tiện đã xuất cảnh, thì disable cột biển kiểm soát, không cho cập nhật.
                     // Get vehicle ID
@@ -602,7 +631,45 @@ namespace ECustoms
                             // Disable PlateNumber
                             grdVehicle.Rows[i].Cells["PlateNumber"].ReadOnly = true;
                         }
+                        //fee
+                        if (_declerationType.Equals(Common.DeclerationType.Export))
+                        {
+                            if (vehicle.feeExportStatus == null || vehicle.feeExportStatus == (int)FeeStatus.HasNotPayFee)
+                            {
+                                var feeSetting = listFee.Where(f => f.VehicleTypeId == vehicle.vehicleTypeId && f.GoodsTypeId == vehicle.ExportGoodTypeId).FirstOrDefault();
+                                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                                grdVehicle.Rows[i].Cells["feeExportAmount"].Value = amount;
+                            }
+                        }
+                        else
+                        {
+                            if (vehicle.feeImportStatus == null || vehicle.feeImportStatus == (int)FeeStatus.HasNotPayFee)
+                            {
+                                var feeSetting = listFee.Where(f => f.VehicleTypeId == vehicle.vehicleTypeId && f.GoodsTypeId == vehicle.ImportGoodTypeId).FirstOrDefault();
+                                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                                grdVehicle.Rows[i].Cells["feeImportAmount"].Value = amount;
+                            }
+                        }
                     }
+                    else
+                    {
+                        //fee
+                        if (_declerationType.Equals(Common.DeclerationType.Export))
+                        {
+
+                            var feeSetting = listFee.Where(f => f.VehicleTypeId == Convert.ToInt32(grdVehicle.Rows[i].Cells["VehicleType"].Value) && f.GoodsTypeId == Convert.ToInt32(grdVehicle.Rows[i].Cells["ExportGoodType"].Value)).FirstOrDefault();
+                            var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                            grdVehicle.Rows[i].Cells["feeExportAmount"].Value = amount;
+                        }
+                        else
+                        {
+
+                            var feeSetting = listFee.Where(f => f.VehicleTypeId == Convert.ToInt32(grdVehicle.Rows[i].Cells["VehicleType"].Value) && f.GoodsTypeId == Convert.ToInt32(grdVehicle.Rows[i].Cells["ImportGoodType"].Value)).FirstOrDefault();
+                            var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                            grdVehicle.Rows[i].Cells["feeImportAmount"].Value = amount;
+                        }
+                    }
+                    
                 }
                 // Set first column to read only
                 grdVehicle.Columns[0].ReadOnly = true;
@@ -764,18 +831,19 @@ namespace ECustoms
                         }
                         else
                         {
+                            var dateFee = CommonFactory.GetCurrentDate();
                             // Set old value to vehicle
                             v.ExportReceiptNumber = vehicle.ExportReceiptNumber;
                             v.feeExportAmount = vehicle.feeExportAmount;
-                            v.feeExportDate = vehicle.feeExportDate;
-                            v.feeExportStatus = vehicle.feeExportStatus;
-                            v.confirmFeeExportBy = vehicle.confirmFeeExportBy;
+                            v.feeExportDate = vehicle.feeExportDate ?? dateFee ;
+                            v.feeExportStatus = vehicle.feeExportStatus ?? (int)FeeStatus.PaidFee;
+                            v.confirmFeeExportBy = vehicle.confirmFeeExportBy ?? _userInfo.UserID;
 
                             v.ImportReceiptNumber = vehicle.ImportReceiptNumber;
                             v.feeImportAmount = vehicle.feeImportAmount;
-                            v.feeImportDate = vehicle.feeImportDate;
-                            v.feeImportStatus = vehicle.feeImportStatus;
-                            v.confirmFeeImportBy = vehicle.confirmFeeImportBy;
+                            v.feeImportDate = vehicle.feeImportDate ?? dateFee;
+                            v.feeImportStatus = vehicle.feeImportStatus ?? (int)FeeStatus.PaidFee;
+                            v.confirmFeeImportBy = vehicle.confirmFeeImportBy ?? _userInfo.UserID;
                         }
                         VehicleFactory.UpdateVehicle(v);
                     }
@@ -1192,6 +1260,21 @@ namespace ECustoms
                         grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value = vehicle.vehicleTypeId;
                     }
                 }
+            }
+            //fill fee
+            var listFee = VehicleFeeSettingFactory.getAllVehicleFeeSetting();
+            //fee
+            if (_declerationType.Equals(Common.DeclerationType.Export))
+            {
+                var feeSetting = listFee.Where(f => f.VehicleTypeId == Convert.ToInt32(grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value) && f.GoodsTypeId == Convert.ToInt32(grdVehicle.Rows[e.RowIndex].Cells["ExportGoodType"].Value)).FirstOrDefault();
+                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                grdVehicle.Rows[e.RowIndex].Cells["feeExportAmount"].Value = amount;
+            }
+            else
+            {
+                var feeSetting = listFee.Where(f => f.VehicleTypeId == Convert.ToInt32(grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value) && f.GoodsTypeId == Convert.ToInt32(grdVehicle.Rows[e.RowIndex].Cells["ImportGoodType"].Value)).FirstOrDefault();
+                var amount = feeSetting != null ? (feeSetting.Fee ?? 0) : 0;
+                grdVehicle.Rows[e.RowIndex].Cells["feeImportAmount"].Value = amount;
             }
         }
 

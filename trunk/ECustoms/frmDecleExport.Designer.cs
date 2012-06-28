@@ -92,6 +92,10 @@
             this.ExportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ImportGoodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImportReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeExportAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeImportAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsExport = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -557,6 +561,10 @@
             this.ExportGoodType,
             this.ImportGoodType,
             this.DriverName,
+            this.ExportReceiptNumber,
+            this.ImportReceiptNumber,
+            this.feeExportAmount,
+            this.feeImportAmount,
             this.Status,
             this.Note,
             this.IsExport,
@@ -624,7 +632,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ECustoms.Properties.Resources.close;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(528, 584);
+            this.button1.Location = new System.Drawing.Point(380, 584);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 33);
             this.button1.TabIndex = 5;
@@ -656,13 +664,14 @@
             this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFee.Image = ((System.Drawing.Image)(resources.GetObject("btnFee.Image")));
             this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFee.Location = new System.Drawing.Point(380, 584);
+            this.btnFee.Location = new System.Drawing.Point(474, 584);
             this.btnFee.Name = "btnFee";
             this.btnFee.Size = new System.Drawing.Size(142, 33);
             this.btnFee.TabIndex = 4;
             this.btnFee.Text = "Thu phí nhập";
             this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFee.UseVisualStyleBackColor = true;
+            this.btnFee.Visible = false;
             this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
             // 
             // Count
@@ -725,6 +734,34 @@
             this.DriverName.HeaderText = "Tên lái xe";
             this.DriverName.Name = "DriverName";
             this.DriverName.Width = 150;
+            // 
+            // ExportReceiptNumber
+            // 
+            this.ExportReceiptNumber.DataPropertyName = "ExportReceiptNumber";
+            this.ExportReceiptNumber.HeaderText = "Số biên lai xuất";
+            this.ExportReceiptNumber.Name = "ExportReceiptNumber";
+            this.ExportReceiptNumber.Width = 200;
+            // 
+            // ImportReceiptNumber
+            // 
+            this.ImportReceiptNumber.DataPropertyName = "ImportReceiptNumber";
+            this.ImportReceiptNumber.HeaderText = "Số biên lai nhập";
+            this.ImportReceiptNumber.Name = "ImportReceiptNumber";
+            this.ImportReceiptNumber.Width = 200;
+            // 
+            // feeExportAmount
+            // 
+            this.feeExportAmount.DataPropertyName = "feeExportAmount";
+            this.feeExportAmount.HeaderText = "Số phí xuất";
+            this.feeExportAmount.Name = "feeExportAmount";
+            this.feeExportAmount.Width = 200;
+            // 
+            // feeImportAmount
+            // 
+            this.feeImportAmount.DataPropertyName = "feeImportAmount";
+            this.feeImportAmount.HeaderText = "Số phí nhập";
+            this.feeImportAmount.Name = "feeImportAmount";
+            this.feeImportAmount.Width = 200;
             // 
             // Status
             // 
@@ -875,6 +912,10 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn ExportGoodType;
         private System.Windows.Forms.DataGridViewComboBoxColumn ImportGoodType;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExportReceiptNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImportReceiptNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feeExportAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feeImportAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsExport;
