@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListType));
             this.grbUser = new System.Windows.Forms.GroupBox();
             this.grvType = new System.Windows.Forms.DataGridView();
+            this.TypeCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -44,9 +47,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvType)).BeginInit();
             this.grbConditionSearch.SuspendLayout();
@@ -79,6 +79,31 @@
             this.grvType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grvType.Size = new System.Drawing.Size(758, 334);
             this.grvType.TabIndex = 1;
+            this.grvType.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvType_CellMouseDoubleClick);
+            // 
+            // TypeCode
+            // 
+            this.TypeCode.DataPropertyName = "TypeCode";
+            this.TypeCode.HeaderText = "Mã loại hình";
+            this.TypeCode.Name = "TypeCode";
+            this.TypeCode.ReadOnly = true;
+            this.TypeCode.Width = 150;
+            // 
+            // TypeName
+            // 
+            this.TypeName.DataPropertyName = "TypeName";
+            this.TypeName.HeaderText = "Tên loại hình";
+            this.TypeName.Name = "TypeName";
+            this.TypeName.ReadOnly = true;
+            this.TypeName.Width = 250;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Mô tả";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 300;
             // 
             // btnClose
             // 
@@ -234,30 +259,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 300;
-            // 
-            // TypeCode
-            // 
-            this.TypeCode.DataPropertyName = "TypeCode";
-            this.TypeCode.HeaderText = "Mã loại hình";
-            this.TypeCode.Name = "TypeCode";
-            this.TypeCode.ReadOnly = true;
-            this.TypeCode.Width = 150;
-            // 
-            // TypeName
-            // 
-            this.TypeName.DataPropertyName = "TypeName";
-            this.TypeName.HeaderText = "Tên loại hình";
-            this.TypeName.Name = "TypeName";
-            this.TypeName.ReadOnly = true;
-            this.TypeName.Width = 250;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Mô tả";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 300;
             // 
             // FrmListType
             // 

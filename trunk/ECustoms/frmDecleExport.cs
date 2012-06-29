@@ -329,6 +329,7 @@ namespace ECustoms
             txtExportUnit.Text = "";
             txtExportTotalVehicles.Text = "";
             txtTypeExport.Text = string.Empty;
+            txtTypeName.Text = "";
             grdVehicle.DataSource = null;
             _vehicleInfosTemp.Clear();
             txtExportCompanyCode.Text = "";
@@ -349,6 +350,16 @@ namespace ECustoms
                 txtExportNumber.Focus();
                 return false;
             }
+
+
+            tblType type = TypeFactory.FindByCode(txtTypeExport.Text.Trim());
+            if (type == null)
+            {
+                MessageBox.Show("Loại hình không tồn tại", "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTypeExport.Focus();
+                return false;
+            }
+
             // Không lưu khi tờ khai không có phương tiện nào
             if (grdVehicle.Rows.Count < 1)
             {
@@ -483,10 +494,10 @@ namespace ECustoms
                 btnAddExisting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_NHAP_CANH);
                 bntConfirmImportCH.Visible = true;
                 bntConfirmImportCH.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
-                bntConfirmImportCH.Location = new Point(783, 25);
+                bntConfirmImportCH.Location = new Point(865, 25);
                 btnConfirmImportKH.Visible = true;
                 btnConfirmImportKH.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
-                btnConfirmImportKH.Location = new Point(783, 81);
+                btnConfirmImportKH.Location = new Point(865, 81);
                 btnComfirmExport.Enabled = false;
                 btnAdd.Enabled = false;
                 // Invisible luong xe
@@ -524,6 +535,17 @@ namespace ECustoms
                     txtProductAmount.Text = declarationInfo.ProductAmount;
                     txtExportUnit.Text = declarationInfo.Unit;
                     txtTypeExport.Text = declarationInfo.Type;
+
+                    tblType type = TypeFactory.FindByCode(declarationInfo.Type);
+                    if (type != null)
+                    {
+                        txtTypeName.Text = type.TypeName;
+                    }
+                    else
+                    {
+                        txtTypeName.Text = "";
+                    }
+
                     txtExportCompanyCode.Text = declarationInfo.CompanyCode;
                     dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
                     txtRegisterPlace.Text = declarationInfo.RegisterPlace;
@@ -1315,6 +1337,22 @@ namespace ECustoms
             }
         }
         #endregion
+
+        private void txtTypeExport_Leave(object sender, EventArgs e)
+        {
+            String typeCode = txtTypeExport.Text.Trim();
+            tblType type = TypeFactory.FindByCode(typeCode);
+            if (type != null)
+            {
+                txtTypeName.Text = type.TypeName;
+            }
+            else
+            {
+                txtTypeName.Text = "";
+            }
+        }
+
+
 
     }
 }
