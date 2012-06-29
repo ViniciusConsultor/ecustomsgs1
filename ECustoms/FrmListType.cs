@@ -171,5 +171,40 @@ namespace ECustoms
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             } 
         }
+
+        private void grvType_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (this.grvType.SelectedRows.Count > 0)
+                {
+                    int selectedIndex = grvType.SelectedRows[0].Index;
+
+                    // gets the RowID from the first column in the grid
+                    var typeCode = grvType[0, selectedIndex].Value.ToString();
+
+                    tblType type = TypeFactory.FindByCode(typeCode);
+                    if (type == null)
+                    {
+                        MessageBox.Show("Loại hình này không còn tồn tại trong Cơ Sở Dữ Liệu. Bạn hãy kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+
+                    FrmAddType frmAddType = new FrmAddType(typeCode, 1, _userInfo, this);
+                    frmAddType.MdiParent = this.MdiParent;
+                    frmAddType.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần chọn một bản ghi để cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            } 
+        }
     }
 }
