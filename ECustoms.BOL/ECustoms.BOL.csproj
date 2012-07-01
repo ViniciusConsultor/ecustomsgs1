@@ -72,6 +72,7 @@
     <Compile Include="ApplicationObjectFactory.cs" />
     <Compile Include="CheckFactory.cs" />
     <Compile Include="CommonFactory.cs" />
+    <Compile Include="CompanyFactory.cs" />
     <Compile Include="DeclarationFactory.cs" />
     <Compile Include="DeclarationVehicleFactory.cs" />
     <Compile Include="GoodTypeFactory.cs" />

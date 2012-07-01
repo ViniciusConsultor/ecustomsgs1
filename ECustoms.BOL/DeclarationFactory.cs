@@ -263,5 +263,24 @@ namespace ECustoms.BOL
                
 
         }
+
+
+        public static List<tblDeclaration> getByCompany(String companyCode)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            try
+            {
+                List<tblDeclaration> list = db.tblDeclarations.Where(g => g.CompanyCode == companyCode).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+        }
     }
 }
