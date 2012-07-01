@@ -360,6 +360,15 @@ namespace ECustoms
                 return false;
             }
 
+
+            tblCompany company = CompanyFactory.FindByCode(txtExportCompanyCode.Text.Trim());
+            if (type == null)
+            {
+                MessageBox.Show("Doanh nghiệp không tồn tại", "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtExportCompanyCode.Focus();
+                return false;
+            }
+
             // Không lưu khi tờ khai không có phương tiện nào
             if (grdVehicle.Rows.Count < 1)
             {
@@ -1349,6 +1358,20 @@ namespace ECustoms
             else
             {
                 txtTypeName.Text = "";
+            }
+        }
+
+        private void txtExportCompanyCode_Leave(object sender, EventArgs e)
+        {
+            String companyCode = txtExportCompanyCode.Text.Trim();
+            tblCompany company = CompanyFactory.FindByCode(companyCode);
+            if (company != null)
+            {
+                txtExportCompanyName.Text = company.CompanyName;
+            }
+            else
+            {
+                txtExportCompanyName.Text = "";
             }
         }
 

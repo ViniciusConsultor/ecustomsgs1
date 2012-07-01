@@ -55,7 +55,7 @@ namespace ECustoms
                     MessageBox.Show("Loại hình này không còn tồn tại trong Cơ Sở Dữ Liệu. Bạn hãy kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                txtTypeCode.Enabled = false;
+                txtTypeCode.ReadOnly = true;
                 txtTypeCode.Text = type.TypeCode;
                 txtTypeName.Text = type.TypeName;
                 txtDescription.Text = type.Description;

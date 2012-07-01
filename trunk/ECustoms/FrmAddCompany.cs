@@ -57,7 +57,7 @@ namespace ECustoms
                     MessageBox.Show("Doanh nghiệp này không còn tồn tại trong Cơ Sở Dữ Liệu. Bạn hãy kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                txtCompanyCode.Enabled = false;
+                txtCompanyCode.ReadOnly = true;
                 txtCompanyCode.Text = company.CompanyCode;
                 txtCompanyName.Text = company.CompanyName;
                 txtDescription.Text = company.Description;
