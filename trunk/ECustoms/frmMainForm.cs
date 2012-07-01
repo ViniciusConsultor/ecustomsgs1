@@ -337,5 +337,12 @@ namespace ECustoms
             form.MdiParent = this;
             form.Show();
         }
+
+        private void mnuCompany_Click(object sender, EventArgs e)
+        {
+            FrmListCompany form = new FrmListCompany(_userInfo);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

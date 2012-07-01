@@ -120,7 +120,7 @@ namespace ECustoms
                 {
                     valid = false;
                     MessageBox.Show("Tên loại hình không được để trống", "Dữ liệu không hợp lệ", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    txtTypeCode.Focus();
+                    txtTypeName.Focus();
                 }
             }
             if (_mode == 1) //update
@@ -135,7 +135,7 @@ namespace ECustoms
                 {
                     valid = false;
                     MessageBox.Show("Tên loại hình không được để trống", "Dữ liệu không hợp lệ", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    txtTypeCode.Focus();
+                    txtTypeName.Focus();
                 }
             }
             return valid;
