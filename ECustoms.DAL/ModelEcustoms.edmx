@@ -21,6 +21,7 @@
           <EntitySet Name="tblApplicationObject" EntityType="dbEcustomModel.Store.tblApplicationObject" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblCheck" EntityType="dbEcustomModel.Store.tblCheck" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblCompany" EntityType="dbEcustomModel.Store.tblCompany" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.Store.tblCustoms" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclaration" EntityType="dbEcustomModel.Store.tblDeclaration" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclarationVehicle" EntityType="dbEcustomModel.Store.tblDeclarationVehicle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblGoodsType" EntityType="dbEcustomModel.Store.tblGoodsType" store:Type="Tables" Schema="dbo" />
@@ -489,6 +490,18 @@
           </Key>
           <Property Name="CompanyCode" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCustoms">
+          <Key>
+            <PropertyRef Name="CustomsCode" />
+          </Key>
+          <Property Name="CustomsCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CustomsName" Type="nvarchar" MaxLength="500" />
           <Property Name="Description" Type="nvarchar" MaxLength="1000" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="CreatedBy" Type="int" />
@@ -1314,6 +1327,7 @@
           <EntitySet Name="ViewDeclarationVehicleImportExportFees" EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" />
           <EntitySet Name="tblTypes" EntityType="dbEcustomModel.tblType" />
           <EntitySet Name="tblCompanies" EntityType="dbEcustomModel.tblCompany" />
+          <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.tblCustom" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2032,6 +2046,18 @@
           </Key>
           <Property Type="String" Name="CompanyCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CompanyName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
+        </EntityType>
+        <EntityType Name="tblCustom">
+          <Key>
+            <PropertyRef Name="CustomsCode" />
+          </Key>
+          <Property Type="String" Name="CustomsCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomsName" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreatedDate" />
           <Property Type="Int32" Name="CreatedBy" />
@@ -2777,6 +2803,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblCustoms">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblCustom">
+              <MappingFragment StoreEntitySet="tblCustoms">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CustomsName" ColumnName="CustomsName" />
+                <ScalarProperty Name="CustomsCode" ColumnName="CustomsCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2839,6 +2878,7 @@
         <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="14.375" PointY="18.75" Height="12.172262369791667" />
         <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="18.375" PointY="15.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="16.375" PointY="19.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="18.375" PointY="19.75" Height="2.3648893229166674" />
       </Diagram>
     </Diagrams>
   </Designer>
