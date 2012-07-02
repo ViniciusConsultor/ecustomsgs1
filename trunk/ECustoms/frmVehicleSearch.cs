@@ -245,41 +245,86 @@ namespace ECustoms
 
         private void cbIsExport_CheckedChanged(object sender, EventArgs e)
         {
-            // Export
-            if (cbIsExport.Checked)
+            if (!cbIsChineseVehicle.Checked)
             {
-                EnableExport(true);
+                // Export
+                if (cbIsExport.Checked)
+                {
+                    EnableExport(true);
+                }
+                else
+                {
+                    EnableExport(false);
+                    EnabledImport(false);
+                    cbIsImport.Checked = false;
+                    cbIsNotImport.Checked = false;
+                }    
             }
-            else
+            else //xe TQ
             {
-                EnableExport(false);
-                EnabledImport(false);
-                cbIsImport.Checked = false;
-                cbIsNotImport.Checked = false;
+                if (cbIsExport.Checked && !cbIsImport.Checked)
+                {
+                    MessageBox.Show("Bạn phải nhập thời gian nhập cảnh.");
+                    cbIsExport.Checked = false;
+                    return;
+                }
+
+                if (cbIsExport.Checked && cbIsImport.Checked) // completed
+                {
+                    EnableExport(true);
+                    cbIsNotImport.Checked = false;
+                    cbIsNotImport.Enabled = false;
+                }
+                else
+                {
+                    EnableExport(false);
+                    cbIsExport.Checked = false;
+                }        
             }
+            
         }
 
         private void cbIsImport_CheckedChanged(object sender, EventArgs e)
         {
-            // Import
-            if (!cbIsExport.Checked && cbIsImport.Checked)
+            if (!cbIsChineseVehicle.Checked)
             {
-                MessageBox.Show("Bạn phải nhập thời gian xuất cảnh cảnh.");
-                cbIsImport.Checked = false;
-                return;
-            }
+                // Import
+                if (!cbIsExport.Checked && cbIsImport.Checked)
+                {
+                    MessageBox.Show("Bạn phải nhập thời gian xuất cảnh.");
+                    cbIsImport.Checked = false;
+                    return;
+                }
 
-            if (cbIsImport.Checked && cbIsExport.Checked) // completed
-            {
-                EnabledImport(true);
-                cbIsNotImport.Checked = false;
-                cbIsNotImport.Enabled = false;
+                if (cbIsImport.Checked && cbIsExport.Checked) // completed
+                {
+                    EnabledImport(true);
+                    cbIsNotImport.Checked = false;
+                    cbIsNotImport.Enabled = false;
+                }
+                else if (!cbIsCompleted.Checked)
+                {
+                    EnabledImport(false);
+                    cbIsNotImport.Enabled = true;
+                }
             }
-            else if (!cbIsCompleted.Checked)
+            else //xe TQ
             {
-                EnabledImport(false);
-                cbIsNotImport.Enabled = true;
+                if (cbIsImport.Checked)
+                {
+                    EnabledImport(true);
+                    cbIsNotImport.Checked = false;
+                    cbIsNotImport.Enabled = false;
+                }
+                else
+                {
+                    EnabledImport(false);
+                    EnableExport(false);
+                    cbIsExport.Checked = false;
+                    cbIsNotImport.Checked = false;
+                }    
             }
+            
         }
 
         /// <summary>
@@ -321,26 +366,46 @@ namespace ECustoms
 
         private void cbIsNotImport_CheckedChanged(object sender, EventArgs e)
         {
-            // Import
-            if (!cbIsExport.Checked && cbIsNotImport.Checked)
+            if (!cbIsChineseVehicle.Checked)
             {
-                MessageBox.Show("Bạn phải nhập thời gian xuất cảnh.");
-                cbIsNotImport.Checked = false;
-                return;
-            }
+                // Import
+                if (!cbIsExport.Checked && cbIsNotImport.Checked)
+                {
+                    MessageBox.Show("Bạn phải nhập thời gian xuất cảnh.");
+                    cbIsNotImport.Checked = false;
+                    return;
+                }
 
-            if (cbIsImport.Checked && cbIsNotImport.Checked)
-            {
-                EnabledImport(true);
-                cbIsImport.Checked = false;
-                cbIsImport.Enabled = false;
+                if (cbIsImport.Checked && cbIsNotImport.Checked)
+                {
+                    EnabledImport(true);
+                    cbIsImport.Checked = false;
+                    cbIsImport.Enabled = false;
 
+                }
+                else if (!cbIsImport.Checked)
+                {
+                    EnabledImport(false);
+                    cbIsImport.Enabled = true;
+                }    
             }
-            else if (!cbIsImport.Checked)
+            else //xeTQ
             {
-                EnabledImport(false);
-                cbIsImport.Enabled = true;
+                if (cbIsNotImport.Checked)
+                {
+                    EnabledImport(false);
+                    cbIsImport.Checked = false;
+                    cbIsImport.Enabled = false;
+                }
+                else
+                {
+                    EnabledImport(false);
+                    EnableExport(false);
+                    cbIsExport.Checked = false;
+                    cbIsImport.Checked = false;
+                }        
             }
+            
         }
 
         private void grdVehicle_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -1564,6 +1629,11 @@ namespace ECustoms
 
         private void cbIsChineseVehicle_CheckedChanged(object sender, EventArgs e)
         {
+            EnabledImport(true);
+            EnableExport(false);
+            cbIsExport.Checked = cbIsNotImport.Checked = cbIsNotImport.Enabled = false;
+            cbIsImport.Checked = true;
+
             txtPlateNumberChinese.Visible = lblPlateNumberChinese.Visible = grdVehicle.Columns["PlateNumberPartner"].Visible = !cbIsChineseVehicle.Checked;
             BindData();
             if (grdVehicle.Rows.Count > 0) // Set focus
