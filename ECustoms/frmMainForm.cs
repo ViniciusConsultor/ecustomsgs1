@@ -344,5 +344,12 @@ namespace ECustoms
             form.MdiParent = this;
             form.Show();
         }
+
+        private void mnuCustoms_Click(object sender, EventArgs e)
+        {
+            FrmListCustoms form = new FrmListCustoms(_userInfo);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }
