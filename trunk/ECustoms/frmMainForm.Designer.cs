@@ -65,6 +65,7 @@
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGeneralInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuType = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolstripLabelWelcome = new System.Windows.Forms.ToolStripLabel();
             this.tsExport = new System.Windows.Forms.ToolStripButton();
@@ -73,7 +74,7 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.mnuCompany = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCustoms = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -371,7 +372,8 @@
             // 
             this.mnuGeneralInfo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuType,
-            this.mnuCompany});
+            this.mnuCompany,
+            this.mnuCustoms});
             this.mnuGeneralInfo.Name = "mnuGeneralInfo";
             this.mnuGeneralInfo.Size = new System.Drawing.Size(190, 25);
             this.mnuGeneralInfo.Text = "Quản lý thông tin chung";
@@ -382,6 +384,13 @@
             this.mnuType.Size = new System.Drawing.Size(196, 26);
             this.mnuType.Text = "Loại hình tờ khai";
             this.mnuType.Click += new System.EventHandler(this.mnuType_Click);
+            // 
+            // mnuCompany
+            // 
+            this.mnuCompany.Name = "mnuCompany";
+            this.mnuCompany.Size = new System.Drawing.Size(196, 26);
+            this.mnuCompany.Text = "Doanh nghiệp";
+            this.mnuCompany.Click += new System.EventHandler(this.mnuCompany_Click);
             // 
             // toolStrip1
             // 
@@ -467,12 +476,12 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // mnuCompany
+            // mnuCustoms
             // 
-            this.mnuCompany.Name = "mnuCompany";
-            this.mnuCompany.Size = new System.Drawing.Size(196, 26);
-            this.mnuCompany.Text = "Doanh nghiệp";
-            this.mnuCompany.Click += new System.EventHandler(this.mnuCompany_Click);
+            this.mnuCustoms.Name = "mnuCustoms";
+            this.mnuCustoms.Size = new System.Drawing.Size(196, 26);
+            this.mnuCustoms.Text = "Đơn vị hải quan";
+            this.mnuCustoms.Click += new System.EventHandler(this.mnuCustoms_Click);
             // 
             // frmMainForm
             // 
@@ -545,5 +554,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuGeneralInfo;
         private System.Windows.Forms.ToolStripMenuItem mnuType;
         private System.Windows.Forms.ToolStripMenuItem mnuCompany;
+        private System.Windows.Forms.ToolStripMenuItem mnuCustoms;
     }
 }
