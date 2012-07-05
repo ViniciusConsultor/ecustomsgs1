@@ -90,6 +90,13 @@ namespace ECustoms
                             return;
                         }
 
+                        List<tblDeclaration> listDeclaration = DeclarationFactory.getByCustomsCode(customsCode);
+                        if (null != listDeclaration && listDeclaration.Count > 0)
+                        {
+                            MessageBox.Show("Tồn tại tờ khai thuộc đơn vị hải quan này, bạn không thể xóa được. Bạn hãy kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
                         if (CustomsFacory.Delete(customsCode) > 0)
                         {
                             search();

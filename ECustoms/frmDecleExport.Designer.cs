@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
             this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
             this.txtTypeName = new System.Windows.Forms.TextBox();
@@ -105,6 +105,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnFee = new System.Windows.Forms.Button();
+            this.txtCustomsCode = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCustomsName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.gbExportDeclaration.SuspendLayout();
             this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
@@ -116,6 +120,10 @@
             // 
             // gbExportDeclaration
             // 
+            this.gbExportDeclaration.Controls.Add(this.txtCustomsName);
+            this.gbExportDeclaration.Controls.Add(this.label10);
+            this.gbExportDeclaration.Controls.Add(this.txtCustomsCode);
+            this.gbExportDeclaration.Controls.Add(this.label7);
             this.gbExportDeclaration.Controls.Add(this.txtTypeName);
             this.gbExportDeclaration.Controls.Add(this.label5);
             this.gbExportDeclaration.Controls.Add(this.pnTXTN);
@@ -568,14 +576,14 @@
             // 
             this.grdVehicle.AllowUserToAddRows = false;
             this.grdVehicle.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.grdVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Count,
@@ -599,8 +607,8 @@
             this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grdVehicle.Location = new System.Drawing.Point(10, 25);
             this.grdVehicle.Name = "grdVehicle";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdVehicle.Size = new System.Drawing.Size(842, 240);
             this.grdVehicle.TabIndex = 0;
@@ -616,8 +624,8 @@
             // PlateNumber
             // 
             this.PlateNumber.DataPropertyName = "PlateNumber";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle20;
             this.PlateNumber.HeaderText = "Biển Kiểm soát";
             this.PlateNumber.Name = "PlateNumber";
             this.PlateNumber.Width = 140;
@@ -625,8 +633,8 @@
             // NumberOfContainer
             // 
             this.NumberOfContainer.DataPropertyName = "NumberOfContainer";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NumberOfContainer.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NumberOfContainer.DefaultCellStyle = dataGridViewCellStyle21;
             this.NumberOfContainer.HeaderText = "Số Container";
             this.NumberOfContainer.Name = "NumberOfContainer";
             this.NumberOfContainer.Width = 130;
@@ -735,8 +743,8 @@
             // ImportDate
             // 
             this.ImportDate.DataPropertyName = "ImportDate";
-            dataGridViewCellStyle10.Format = "dd/MM/yyyy";
-            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.Format = "dd/MM/yyyy";
+            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle22;
             this.ImportDate.HeaderText = "Ngày nhập cảnh";
             this.ImportDate.Name = "ImportDate";
             this.ImportDate.Visible = false;
@@ -759,9 +767,9 @@
             // ExportDate
             // 
             this.ExportDate.DataPropertyName = "ExportDate";
-            dataGridViewCellStyle11.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle11.NullValue = null;
-            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle23.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle23.NullValue = null;
+            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle23;
             this.ExportDate.HeaderText = "Ngày xuất cảnh";
             this.ExportDate.Name = "ExportDate";
             this.ExportDate.Visible = false;
@@ -842,6 +850,42 @@
             this.btnFee.UseVisualStyleBackColor = true;
             this.btnFee.Visible = false;
             this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
+            // 
+            // txtCustomsCode
+            // 
+            this.txtCustomsCode.Location = new System.Drawing.Point(485, 219);
+            this.txtCustomsCode.Multiline = true;
+            this.txtCustomsCode.Name = "txtCustomsCode";
+            this.txtCustomsCode.Size = new System.Drawing.Size(119, 28);
+            this.txtCustomsCode.TabIndex = 29;
+            this.txtCustomsCode.Leave += new System.EventHandler(this.txtCustomsCode_Leave);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(361, 222);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 20);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Mã ĐV hải quan";
+            // 
+            // txtCustomsName
+            // 
+            this.txtCustomsName.Enabled = false;
+            this.txtCustomsName.Location = new System.Drawing.Point(751, 217);
+            this.txtCustomsName.Multiline = true;
+            this.txtCustomsName.Name = "txtCustomsName";
+            this.txtCustomsName.Size = new System.Drawing.Size(248, 28);
+            this.txtCustomsName.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(610, 222);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(128, 20);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Tên ĐV hải quan";
             // 
             // FrmDecleExport
             // 
@@ -949,5 +993,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
         private System.Windows.Forms.TextBox txtTypeName;
         public System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtCustomsName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtCustomsCode;
+        private System.Windows.Forms.Label label7;
     }
 }
