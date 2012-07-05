@@ -244,6 +244,7 @@ namespace ECustoms
                             vehicleInfo.ConfirmImportBy = _userInfo.UserID;
                         }
 
+
                         // Add to list vehicles
                         listVehicleInfo.Add(vehicleInfo);
 
@@ -296,6 +297,7 @@ namespace ECustoms
             declarationInfo.Type = txtTypeExport.Text.Trim();
             declarationInfo.CompanyName = txtExportCompanyName.Text;
             declarationInfo.CompanyCode = txtExportCompanyCode.Text;
+            declarationInfo.CustomsCode = txtCustomsCode.Text.Trim();
             declarationInfo.RegisterDate = dtpExportRegisterDate.Value;
             declarationInfo.ProductAmount = txtProductAmount.Text.Trim();
             declarationInfo.Unit = txtExportUnit.Text.Trim();
@@ -355,17 +357,25 @@ namespace ECustoms
             tblType type = TypeFactory.FindByCode(txtTypeExport.Text.Trim());
             if (type == null)
             {
-                MessageBox.Show("Loại hình không tồn tại", "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chưa nhập hoặc loại hình không tồn tại", "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTypeExport.Focus();
                 return false;
             }
 
 
             tblCompany company = CompanyFactory.FindByCode(txtExportCompanyCode.Text.Trim());
-            if (type == null)
+            if (company == null)
             {
-                MessageBox.Show("Doanh nghiệp không tồn tại", "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chưa nhập hoặc doanh nghiệp không tồn tại", "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtExportCompanyCode.Focus();
+                return false;
+            }
+
+            tblCustom customs = CustomsFacory.FindByCode(txtCustomsCode.Text.Trim());
+            if (customs == null)
+            {
+                MessageBox.Show("Chưa nhập hoặc đơn vị hải quan không tồn tại", "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCustomsCode.Focus();
                 return false;
             }
 
@@ -540,6 +550,7 @@ namespace ECustoms
                 {
                     txtExportNumber.Text = declarationInfo.Number.ToString();
                     txtExportProductName.Text = declarationInfo.ProductName;
+                    txtExportCompanyCode.Text = declarationInfo.CompanyCode;
                     txtExportCompanyName.Text = declarationInfo.CompanyName;
                     txtProductAmount.Text = declarationInfo.ProductAmount;
                     txtExportUnit.Text = declarationInfo.Unit;
@@ -555,7 +566,18 @@ namespace ECustoms
                         txtTypeName.Text = "";
                     }
 
-                    txtExportCompanyCode.Text = declarationInfo.CompanyCode;
+                    
+                    txtCustomsCode.Text = declarationInfo.CustomsCode;
+                    tblCustom customs = CustomsFacory.FindByCode(declarationInfo.CustomsCode);
+                    if (customs != null)
+                    {
+                        txtCustomsName.Text = customs.CustomsName;
+                    }
+                    else
+                    {
+                        txtCustomsName.Text = "";
+                    }
+
                     dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
                     txtRegisterPlace.Text = declarationInfo.RegisterPlace;
                     txtMoney.Text = declarationInfo.Money.ToString();
@@ -1372,6 +1394,19 @@ namespace ECustoms
             else
             {
                 txtExportCompanyName.Text = "";
+            }
+        }
+
+        private void txtCustomsCode_Leave(object sender, EventArgs e)
+        {
+            tblCustom customs = CustomsFacory.FindByCode(txtCustomsCode.Text.Trim());
+            if (customs != null)
+            {
+                txtCustomsName.Text = customs.CustomsName;
+            }
+            else
+            {
+                txtCustomsName.Text = "";
             }
         }
 

@@ -540,6 +540,7 @@
           <Property Name="Seal" Type="nvarchar" MaxLength="100" />
           <Property Name="TypeOption" Type="smallint" />
           <Property Name="PersonHandoverID" Type="int" />
+          <Property Name="CustomsCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -1313,11 +1314,6 @@
             <End Role="tlbRole" EntitySet="tlbRoles" />
             <End Role="tblRoleInGroup" EntitySet="tblRoleInGroups" />
           </AssociationSet>
-          <EntitySet Name="tblDeclarations" EntityType="dbEcustomModel.tblDeclaration" />
-          <AssociationSet Name="FK_tblDeclaration_tblUser" Association="dbEcustomModel.FK_tblDeclaration_tblUser">
-            <End Role="tblUser" EntitySet="tblUsers" />
-            <End Role="tblDeclaration" EntitySet="tblDeclarations" />
-          </AssociationSet>
           <EntitySet Name="tblVehicleFeeSettings" EntityType="dbEcustomModel.tblVehicleFeeSetting" />
           <EntitySet Name="viewVehicleFeeSettings" EntityType="dbEcustomModel.viewVehicleFeeSetting" />
           <EntitySet Name="tblVehicles" EntityType="dbEcustomModel.tblVehicle" />
@@ -1328,6 +1324,11 @@
           <EntitySet Name="tblTypes" EntityType="dbEcustomModel.tblType" />
           <EntitySet Name="tblCompanies" EntityType="dbEcustomModel.tblCompany" />
           <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.tblCustom" />
+          <EntitySet Name="tblDeclarations" EntityType="dbEcustomModel.tblDeclaration" />
+          <AssociationSet Name="FK_tblDeclaration_tblUser" Association="dbEcustomModel.FK_tblDeclaration_tblUser">
+            <End Role="tblUser" EntitySet="tblUsers" />
+            <End Role="tblDeclaration" EntitySet="tblDeclarations" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -1736,43 +1737,6 @@
           </ReferentialConstraint>
           
         </Association>
-        <EntityType Name="tblDeclaration">
-          <Key>
-            <PropertyRef Name="DeclarationID" />
-          </Key>
-          <Property Type="Int64" Name="DeclarationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="Number" />
-          <Property Type="String" Name="ProductName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="CompanyName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="ProductAmount" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Unit" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="ModifiedByID" />
-          <Property Type="DateTime" Name="ModifiedDate" />
-          <Property Type="DateTime" Name="CreatedDate" />
-          <Property Type="Boolean" Name="HasDeclaration" />
-          <Property Type="String" Name="Type" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="CompanyCode" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="RegisterDate" />
-          <Property Type="Int16" Name="DeclarationType" />
-          <Property Type="String" Name="ConfirmStatus" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="ConfirmDate" />
-          <Property Type="String" Name="RegisterPlace" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="Decimal" Name="Money" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="NumberHandover" />
-          <Property Type="DateTime" Name="DateHandover" />
-          <Property Type="Int32" Name="PersonHandoverID" />
-          <Property Type="DateTime" Name="DateReturn" />
-          <Property Type="Int32" Name="PersonConfirmReturnID" />
-          <Property Type="String" Name="NumberTemp" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="GateExport" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Seal" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Int16" Name="TypeOption" />
-          <NavigationProperty Name="tblUser" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblDeclaration" ToRole="tblUser" />
-        </EntityType>
-        <Association Name="FK_tblDeclaration_tblUser">
-          <End Type="dbEcustomModel.tblUser" Role="tblUser" Multiplicity="0..1" />
-          <End Type="dbEcustomModel.tblDeclaration" Role="tblDeclaration" Multiplicity="*" />
-        </Association>
         <EntityType Name="tblVehicleFeeSetting">
           <Key>
             <PropertyRef Name="VehicleTypeId" />
@@ -2064,6 +2028,44 @@
           <Property Type="DateTime" Name="ModifiedDate" />
           <Property Type="Int32" Name="ModifiedBy" />
         </EntityType>
+        <EntityType Name="tblDeclaration">
+          <Key>
+            <PropertyRef Name="DeclarationID" />
+          </Key>
+          <Property Type="Int64" Name="DeclarationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Number" />
+          <Property Type="String" Name="ProductName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductAmount" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ModifiedByID" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Boolean" Name="HasDeclaration" />
+          <Property Type="String" Name="Type" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyCode" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="RegisterDate" />
+          <Property Type="Int16" Name="DeclarationType" />
+          <Property Type="String" Name="ConfirmStatus" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ConfirmDate" />
+          <Property Type="String" Name="RegisterPlace" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Money" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="NumberHandover" />
+          <Property Type="DateTime" Name="DateHandover" />
+          <Property Type="DateTime" Name="DateReturn" />
+          <Property Type="Int32" Name="PersonConfirmReturnID" />
+          <Property Type="String" Name="NumberTemp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GateExport" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Seal" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="TypeOption" />
+          <Property Type="Int32" Name="PersonHandoverID" />
+          <Property Type="String" Name="CustomsCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblUser" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblDeclaration" ToRole="tblUser" />
+        </EntityType>
+        <Association Name="FK_tblDeclaration_tblUser">
+          <End Type="dbEcustomModel.tblUser" Role="tblUser" Multiplicity="0..1" />
+          <End Type="dbEcustomModel.tblDeclaration" Role="tblDeclaration" Multiplicity="*" />
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2480,48 +2482,6 @@
               <ScalarProperty Name="RoleID" ColumnName="RoleID" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="tblDeclarations">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblDeclaration">
-              <MappingFragment StoreEntitySet="tblDeclaration">
-                <ScalarProperty Name="TypeOption" ColumnName="TypeOption" />
-                <ScalarProperty Name="Seal" ColumnName="Seal" />
-                <ScalarProperty Name="GateExport" ColumnName="GateExport" />
-                <ScalarProperty Name="NumberTemp" ColumnName="NumberTemp" />
-                <ScalarProperty Name="PersonConfirmReturnID" ColumnName="PersonConfirmReturnID" />
-                <ScalarProperty Name="DateReturn" ColumnName="DateReturn" />
-                <ScalarProperty Name="PersonHandoverID" ColumnName="PersonHandoverID" />
-                <ScalarProperty Name="DateHandover" ColumnName="DateHandover" />
-                <ScalarProperty Name="NumberHandover" ColumnName="NumberHandover" />
-                <ScalarProperty Name="Money" ColumnName="Money" />
-                <ScalarProperty Name="RegisterPlace" ColumnName="RegisterPlace" />
-                <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
-                <ScalarProperty Name="ConfirmStatus" ColumnName="ConfirmStatus" />
-                <ScalarProperty Name="DeclarationType" ColumnName="DeclarationType" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="HasDeclaration" ColumnName="HasDeclaration" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
-                <ScalarProperty Name="Unit" ColumnName="Unit" />
-                <ScalarProperty Name="ProductAmount" ColumnName="ProductAmount" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-                <ScalarProperty Name="Number" ColumnName="Number" />
-                <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="FK_tblDeclaration_tblUser" TypeName="dbEcustomModel.FK_tblDeclaration_tblUser" StoreEntitySet="tblDeclaration">
-            <EndProperty Name="tblDeclaration">
-              <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
-            </EndProperty>
-            <EndProperty Name="tblUser">
-              <ScalarProperty Name="UserID" ColumnName="CreatedByID" />
-            </EndProperty>
-            <Condition ColumnName="CreatedByID" IsNull="false" />
-          </AssociationSetMapping>
           <EntitySetMapping Name="tblVehicleFeeSettings">
             <EntityTypeMapping TypeName="dbEcustomModel.tblVehicleFeeSetting">
               <MappingFragment StoreEntitySet="tblVehicleFeeSetting">
@@ -2816,6 +2776,49 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblDeclarations">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblDeclaration">
+              <MappingFragment StoreEntitySet="tblDeclaration">
+                <ScalarProperty Name="CustomsCode" ColumnName="CustomsCode" />
+                <ScalarProperty Name="PersonHandoverID" ColumnName="PersonHandoverID" />
+                <ScalarProperty Name="TypeOption" ColumnName="TypeOption" />
+                <ScalarProperty Name="Seal" ColumnName="Seal" />
+                <ScalarProperty Name="GateExport" ColumnName="GateExport" />
+                <ScalarProperty Name="NumberTemp" ColumnName="NumberTemp" />
+                <ScalarProperty Name="PersonConfirmReturnID" ColumnName="PersonConfirmReturnID" />
+                <ScalarProperty Name="DateReturn" ColumnName="DateReturn" />
+                <ScalarProperty Name="DateHandover" ColumnName="DateHandover" />
+                <ScalarProperty Name="NumberHandover" ColumnName="NumberHandover" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="RegisterPlace" ColumnName="RegisterPlace" />
+                <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+                <ScalarProperty Name="ConfirmStatus" ColumnName="ConfirmStatus" />
+                <ScalarProperty Name="DeclarationType" ColumnName="DeclarationType" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="HasDeclaration" ColumnName="HasDeclaration" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedByID" ColumnName="ModifiedByID" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="ProductAmount" ColumnName="ProductAmount" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_tblDeclaration_tblUser" TypeName="dbEcustomModel.FK_tblDeclaration_tblUser" StoreEntitySet="tblDeclaration">
+            <EndProperty Name="tblDeclaration">
+              <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
+            </EndProperty>
+            <EndProperty Name="tblUser">
+              <ScalarProperty Name="UserID" ColumnName="CreatedByID" />
+            </EndProperty>
+            <Condition ColumnName="CreatedByID" IsNull="false" />
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2864,11 +2867,6 @@
           <ConnectorPoint PointX="2.25" PointY="1.797841796874998" />
           <ConnectorPoint PointX="3" PointY="1.797841796874998" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.25" Height="6.4032194010416674" />
-        <AssociationConnector Association="dbEcustomModel.FK_tblDeclaration_tblUser" >
-          <ConnectorPoint PointX="2.25" PointY="7.4131982421875" />
-          <ConnectorPoint PointX="3" PointY="7.4131982421875" />
-        </AssociationConnector>
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="3.375" PointY="16.75" Height="2.5571907552083246" />
         <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="16.375" PointY="14.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="5.375" PointY="17.75" Height="10.056946614583332" />
@@ -2879,6 +2877,11 @@
         <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="18.375" PointY="15.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="16.375" PointY="19.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="18.375" PointY="19.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.125" Height="6.5955208333333246" />
+        <AssociationConnector Association="dbEcustomModel.FK_tblDeclaration_tblUser" >
+          <ConnectorPoint PointX="2.25" PointY="7.4131982421875" />
+          <ConnectorPoint PointX="3" PointY="7.4131982421875" />
+        </AssociationConnector>
       </Diagram>
     </Diagrams>
   </Designer>

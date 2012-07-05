@@ -260,7 +260,27 @@ namespace ECustoms.BOL
             {
                 db.Connection.Close();
             }
-               
+             
+        }
+
+
+        public static List<tblDeclaration> getByCustomsCode(String customsCode)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            try
+            {
+                List<tblDeclaration> list = db.tblDeclarations.Where(g => g.CustomsCode == customsCode).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+
 
         }
 
