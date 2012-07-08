@@ -76,6 +76,7 @@
     <Compile Include="CustomsFacory.cs" />
     <Compile Include="DeclarationFactory.cs" />
     <Compile Include="DeclarationVehicleFactory.cs" />
+    <Compile Include="GateFactory.cs" />
     <Compile Include="GoodTypeFactory.cs" />
     <Compile Include="GroupFactory.cs" />
     <Compile Include="PermissionFactory.cs" />
