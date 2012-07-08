@@ -24,6 +24,7 @@
           <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.Store.tblCustoms" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclaration" EntityType="dbEcustomModel.Store.tblDeclaration" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclarationVehicle" EntityType="dbEcustomModel.Store.tblDeclarationVehicle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblGate" EntityType="dbEcustomModel.Store.tblGate" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblGoodsType" EntityType="dbEcustomModel.Store.tblGoodsType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblGroup" EntityType="dbEcustomModel.Store.tblGroup" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblPermission" EntityType="dbEcustomModel.Store.tblPermission" store:Type="Tables" Schema="dbo" />
@@ -549,6 +550,19 @@
           </Key>
           <Property Name="DeclarationID" Type="bigint" Nullable="false" />
           <Property Name="VehicleID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblGate">
+          <Key>
+            <PropertyRef Name="GateCode" />
+          </Key>
+          <Property Name="GateCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="GateName" Type="nvarchar" MaxLength="500" />
+          <Property Name="GateType" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="tblGoodsType">
           <Key>
@@ -1329,6 +1343,7 @@
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblDeclaration" EntitySet="tblDeclarations" />
           </AssociationSet>
+          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2066,6 +2081,19 @@
           <End Type="dbEcustomModel.tblUser" Role="tblUser" Multiplicity="0..1" />
           <End Type="dbEcustomModel.tblDeclaration" Role="tblDeclaration" Multiplicity="*" />
         </Association>
+        <EntityType Name="tblGate">
+          <Key>
+            <PropertyRef Name="GateCode" />
+          </Key>
+          <Property Type="String" Name="GateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GateName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GateType" />
+          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2819,6 +2847,20 @@
             </EndProperty>
             <Condition ColumnName="CreatedByID" IsNull="false" />
           </AssociationSetMapping>
+          <EntitySetMapping Name="tblGates">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
+              <MappingFragment StoreEntitySet="tblGate">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GateType" ColumnName="GateType" />
+                <ScalarProperty Name="GateName" ColumnName="GateName" />
+                <ScalarProperty Name="GateCode" ColumnName="GateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2882,6 +2924,7 @@
           <ConnectorPoint PointX="2.25" PointY="7.4131982421875" />
           <ConnectorPoint PointX="3" PointY="7.4131982421875" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="20.375" PointY="0.75" Height="2.5571907552083246" />
       </Diagram>
     </Diagrams>
   </Designer>
