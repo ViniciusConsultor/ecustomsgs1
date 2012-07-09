@@ -659,6 +659,14 @@ GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tblGateType" msprop:Generator_TableClassName="tblGateTypeDataTable" msprop:Generator_TableVarName="tabletblGateType" msprop:Generator_TablePropName="tblGateType" msprop:Generator_RowDeletingName="tblGateTypeRowDeleting" msprop:Generator_UserTableName="tblGateType" msprop:Generator_RowChangingName="tblGateTypeRowChanging" msprop:Generator_RowEvHandlerName="tblGateTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="tblGateTypeRowDeleted" msprop:Generator_RowEvArgName="tblGateTypeRowChangeEvent" msprop:Generator_RowChangedName="tblGateTypeRowChanged" msprop:Generator_RowClassName="tblGateTypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TypeId" msprop:Generator_ColumnVarNameInTable="columnTypeId" msprop:Generator_ColumnPropNameInRow="TypeId" msprop:Generator_ColumnPropNameInTable="TypeIdColumn" msprop:Generator_UserColumnName="TypeId" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_UserColumnName="TypeName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

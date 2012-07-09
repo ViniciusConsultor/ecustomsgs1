@@ -73,7 +73,7 @@ namespace ECustoms
                 if (validate())
                 {
                     tblCompany company = new tblCompany();
-                    company.CompanyCode = txtCompanyCode.Text;
+                    company.CompanyCode = txtCompanyCode.Text.Trim();
                     company.CompanyName = txtCompanyName.Text.Trim();
                     company.Description = txtDescription.Text.Trim();
                     company.CreatedBy = _userInfo.UserID;

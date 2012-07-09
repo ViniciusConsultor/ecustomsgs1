@@ -351,5 +351,12 @@ namespace ECustoms
             form.MdiParent = this;
             form.Show();
         }
+
+        private void mnuGate_Click(object sender, EventArgs e)
+        {
+            FrmListGate form = new FrmListGate(_userInfo);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }
