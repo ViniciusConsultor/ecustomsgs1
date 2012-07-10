@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using ECustoms.DAL;
 using ECustoms.Utilities;
 using ECustoms.Utilities.Enums;
 using log4net;
@@ -126,19 +119,51 @@ namespace ECustoms
                     var vehicleInfo = VehicleFactory.GetByID(Convert.ToInt64(vehicleId));
                     if (_type == 0)
                     {
-                        vehicleInfo.ExportReceiptNumber = grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value.ToString().Trim();
-                        vehicleInfo.feeExportAmount = long.Parse(grdVehicle.Rows[i].Cells["feeExportAmount"].Value.ToString());
-                        vehicleInfo.feeExportDate = dateFee;
-                        vehicleInfo.feeExportStatus = (int)FeeStatus.PaidFee;
-                        vehicleInfo.confirmFeeExportBy = _userinfo.UserID;
+                        if ((grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value == null) || string.IsNullOrEmpty(grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value.ToString().Trim()) || (grdVehicle.Rows[i].Cells["feeExportAmount"].Value == null))
+                        {
+                            if (vehicleInfo.feeExportStatus == (int) FeeStatus.PaidFee)
+                            {
+                                vehicleInfo.ExportReceiptNumber = null;
+                                vehicleInfo.feeExportAmount = null;
+                                vehicleInfo.feeExportDate = null;
+                                vehicleInfo.feeExportStatus = (int) FeeStatus.HasNotPayFee;
+                                vehicleInfo.confirmFeeExportBy = _userinfo.UserID;
+                            }
+                            else
+                                continue;
+                        }
+                        else
+                        {
+                            vehicleInfo.ExportReceiptNumber = grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value.ToString().Trim();
+                            vehicleInfo.feeExportAmount = Convert.ToInt64(grdVehicle.Rows[i].Cells["feeExportAmount"].Value);
+                            vehicleInfo.feeExportDate = dateFee;
+                            vehicleInfo.feeExportStatus = (int)FeeStatus.PaidFee;
+                            vehicleInfo.confirmFeeExportBy = _userinfo.UserID;    
+                        }                      
                     }
                     else
                     {
-                        vehicleInfo.ImportReceiptNumber = grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value.ToString().Trim();
-                        vehicleInfo.feeImportAmount = long.Parse(grdVehicle.Rows[i].Cells["feeImportAmount"].Value.ToString());
-                        vehicleInfo.feeImportDate = dateFee;
-                        vehicleInfo.feeImportStatus = (int)FeeStatus.PaidFee;
-                        vehicleInfo.confirmFeeImportBy = _userinfo.UserID;
+                        if ((grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value == null) || string.IsNullOrEmpty(grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value.ToString().Trim()) || (grdVehicle.Rows[i].Cells["feeImportAmount"].Value == null))
+                        {
+                            if (vehicleInfo.feeImportStatus == (int)FeeStatus.PaidFee)
+                            {
+                                vehicleInfo.ImportReceiptNumber = null;
+                                vehicleInfo.feeImportAmount = null;
+                                vehicleInfo.feeImportDate = null;
+                                vehicleInfo.feeImportStatus = (int)FeeStatus.HasNotPayFee;
+                                vehicleInfo.confirmFeeExportBy = _userinfo.UserID;
+                            }
+                            else
+                                continue;
+                        }
+                        else
+                        {
+                            vehicleInfo.ImportReceiptNumber = grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value.ToString().Trim();
+                            vehicleInfo.feeImportAmount = Convert.ToInt64(grdVehicle.Rows[i].Cells["feeImportAmount"].Value);
+                            vehicleInfo.feeImportDate = dateFee;
+                            vehicleInfo.feeImportStatus = (int)FeeStatus.PaidFee;
+                            vehicleInfo.confirmFeeImportBy = _userinfo.UserID;
+                        }
                     }
                     VehicleFactory.UpdateVehicle(vehicleInfo);
                 }

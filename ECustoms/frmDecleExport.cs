@@ -203,20 +203,42 @@ namespace ECustoms
                             var currentDate = CommonFactory.GetCurrentDate();
                             if (_declerationType.Equals(Common.DeclerationType.Export))
                             {
-                                if (grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value != null)
+                                if ((grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value == null) || string.IsNullOrEmpty(grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value.ToString().Trim()) || (grdVehicle.Rows[i].Cells["feeExportAmount"].Value == null))
                                 {
-                                    vehicleInfo.ExportReceiptNumber = grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value.ToString();
+                                    if (vehicleInfo.feeExportStatus == (int)FeeStatus.PaidFee)
+                                    {
+                                        vehicleInfo.ExportReceiptNumber = null;
+                                        vehicleInfo.feeExportAmount = null;
+                                        vehicleInfo.feeExportDate = null;
+                                        vehicleInfo.feeExportStatus = (int)FeeStatus.HasNotPayFee;
+                                        vehicleInfo.confirmFeeExportBy = _userInfo.UserID;
+                                    }
+                                }
+                                else
+                                {
+                                    vehicleInfo.ExportReceiptNumber = grdVehicle.Rows[i].Cells["ExportReceiptNumber"].Value.ToString().Trim();
                                     vehicleInfo.feeExportAmount = Convert.ToInt64(grdVehicle.Rows[i].Cells["feeExportAmount"].Value);
                                     vehicleInfo.feeExportDate = currentDate;
                                     vehicleInfo.feeExportStatus = (int)FeeStatus.PaidFee;
-                                    vehicleInfo.confirmFeeExportBy = _userInfo.UserID;  
+                                    vehicleInfo.confirmFeeExportBy = _userInfo.UserID;
                                 }
                             }
                             else
                             {
-                                if (grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value != null)
+                                if ((grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value == null) || string.IsNullOrEmpty(grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value.ToString().Trim()) || (grdVehicle.Rows[i].Cells["feeImportAmount"].Value == null))
                                 {
-                                    vehicleInfo.ImportReceiptNumber = grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value.ToString();
+                                    if (vehicleInfo.feeImportStatus == (int)FeeStatus.PaidFee)
+                                    {
+                                        vehicleInfo.ImportReceiptNumber = null;
+                                        vehicleInfo.feeImportAmount = null;
+                                        vehicleInfo.feeImportDate = null;
+                                        vehicleInfo.feeImportStatus = (int)FeeStatus.HasNotPayFee;
+                                        vehicleInfo.confirmFeeExportBy = _userInfo.UserID;
+                                    }
+                                }
+                                else
+                                {
+                                    vehicleInfo.ImportReceiptNumber = grdVehicle.Rows[i].Cells["ImportReceiptNumber"].Value.ToString().Trim();
                                     vehicleInfo.feeImportAmount = Convert.ToInt64(grdVehicle.Rows[i].Cells["feeImportAmount"].Value);
                                     vehicleInfo.feeImportDate = currentDate;
                                     vehicleInfo.feeImportStatus = (int)FeeStatus.PaidFee;
@@ -886,17 +908,39 @@ namespace ECustoms
                         {
                             var dateFee = CommonFactory.GetCurrentDate();
                             // Set old value to vehicle
-                            v.ExportReceiptNumber = vehicle.ExportReceiptNumber;
-                            v.feeExportAmount = vehicle.feeExportAmount;
-                            v.feeExportDate = vehicle.feeExportDate ?? dateFee ;
-                            v.feeExportStatus = vehicle.feeExportStatus ?? (int)FeeStatus.PaidFee;
-                            v.confirmFeeExportBy = vehicle.confirmFeeExportBy ?? _userInfo.UserID;
+                            if ((vehicle.ExportReceiptNumber == null) || string.IsNullOrEmpty(vehicle.ExportReceiptNumber.Trim()) || (vehicle.feeExportAmount == null))
+                            {
+                                if (vehicle.feeExportStatus == (int)FeeStatus.PaidFee)
+                                {
+                                    v.feeExportStatus = (int)FeeStatus.HasNotPayFee;
+                                    v.confirmFeeExportBy = _userInfo.UserID;
+                                }
+                            }
+                            else
+                            {
+                                v.ExportReceiptNumber = vehicle.ExportReceiptNumber.Trim();
+                                v.feeExportAmount = vehicle.feeExportAmount;
+                                v.feeExportDate = vehicle.feeExportDate ?? dateFee;
+                                v.feeExportStatus = (int)FeeStatus.PaidFee;
+                                v.confirmFeeExportBy = _userInfo.UserID;
+                            }
 
-                            v.ImportReceiptNumber = vehicle.ImportReceiptNumber;
-                            v.feeImportAmount = vehicle.feeImportAmount;
-                            v.feeImportDate = vehicle.feeImportDate ?? dateFee;
-                            v.feeImportStatus = vehicle.feeImportStatus ?? (int)FeeStatus.PaidFee;
-                            v.confirmFeeImportBy = vehicle.confirmFeeImportBy ?? _userInfo.UserID;
+                            if ((vehicle.ImportReceiptNumber == null) || string.IsNullOrEmpty(vehicle.ImportReceiptNumber.Trim()) || (vehicle.feeImportAmount == null))
+                            {
+                                if (vehicle.feeImportStatus == (int)FeeStatus.PaidFee)
+                                {
+                                    v.feeImportStatus = (int)FeeStatus.HasNotPayFee;
+                                    v.confirmFeeImportBy = _userInfo.UserID;
+                                }
+                            }
+                            else
+                            {
+                                v.ImportReceiptNumber = vehicle.ImportReceiptNumber.Trim();
+                                v.feeImportAmount = vehicle.feeImportAmount;
+                                v.feeImportDate = vehicle.feeImportDate ?? dateFee;
+                                v.feeImportStatus = (int)FeeStatus.PaidFee;
+                                v.confirmFeeImportBy = _userInfo.UserID;
+                            }
                         }
                         VehicleFactory.UpdateVehicle(v);
                     }

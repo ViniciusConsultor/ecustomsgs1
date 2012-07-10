@@ -604,7 +604,7 @@ namespace ECustoms
                 if (grvDecleration.SelectedRows.Count == 1)
                 {
                     var frmDeclarationFee = new frmDeclarationFee(_userInfo, Convert.ToInt32(grvDecleration.SelectedRows[0].Cells["DeclarationType"].Value), Convert.ToInt64(grvDecleration.SelectedRows[0].Cells[0].Value), Convert.ToInt32(grvDecleration.SelectedRows[0].Cells["Number"].Value));
-                    frmDeclarationFee.Show(this);
+                    frmDeclarationFee.ShowDialog(this);
                     return;
                     var dr = MessageBox.Show("Bạn có chắc là muốn xác nhận thu phí?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
