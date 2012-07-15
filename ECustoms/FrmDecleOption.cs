@@ -60,8 +60,17 @@ namespace ECustoms
             {
                 declarationInfo.NumberTemp = !string.IsNullOrEmpty(txtNumberTemp.Text) ? txtNumberTemp.Text.Trim() : "";
                 declarationInfo.Seal = txtSeal.Text.Trim();
-                declarationInfo.GateExport = txtGateExport.Text.Trim();
+               
 
+            }
+            if (_declerationOptionType == Common.DeclerationOptionType.TNTX || _declerationOptionType == Common.DeclerationOptionType.XKCK)
+            {
+                declarationInfo.GateExport = txtExportGateCode.Text.Trim();
+            }
+
+            if (_declerationOptionType == Common.DeclerationOptionType.NKCK)
+            {
+                declarationInfo.GateImport = txtImportGateCode.Text.Trim();
             }
             return declarationInfo;
         }
@@ -75,6 +84,37 @@ namespace ECustoms
                 MessageBox.Show(ConstantInfo.MESSAGE_BLANK_DECLARATION_NUMBER);
                 txtExportNumber.Focus();
                 return false;
+            }
+
+            if (pnImportGate.Visible == true)
+            {
+                String gateCode = txtImportGateCode.Text.Trim();
+                if (string.IsNullOrEmpty(gateCode) == false)
+                {
+                    tblGate gate = GateFactory.FindByCode(gateCode);
+                    if (gate == null)
+                    {
+                        MessageBox.Show("Không tồn tại cửa khẩu này");
+                        txtExportGateCode.Focus();
+                        return false;
+                    }
+
+                }
+            }
+            if (pnExportGate.Visible == true)
+            {
+                String gateCode = txtExportGateCode.Text.Trim();
+                if (string.IsNullOrEmpty(gateCode) == false)
+                {
+                    tblGate gate = GateFactory.FindByCode(gateCode);
+                    if (gate == null)
+                    {
+                        MessageBox.Show("Không tồn tại cửa khẩu này");
+                        txtImportGateCode.Focus();
+                        return false;
+                    }
+
+                }
             }
             return true;
         }
@@ -93,6 +133,7 @@ namespace ECustoms
                     gbExportDeclaration.Text = "Thông tin tờ khai xuất khẩu";
                     pnTNTX.Visible = false;
                     pnXKCK.Visible = true;
+                    pnExportGate.Visible = true;
                     break;
                 case Common.DeclerationOptionType.NKCK:
                     //System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#c1ffc0");
@@ -100,6 +141,7 @@ namespace ECustoms
                     lblHeader.Text = "Nhập khẩu chuyển cửa khẩu";
                     gbExportDeclaration.Text = "Thông tin tờ khai nhập khẩu";
                     pnTNTX.Visible = false;
+                    pnImportGate.Visible = true;
                     break;
                 case Common.DeclerationOptionType.TNTX:
                     lblHeader.Text = "Tạm nhập tái xuất";
@@ -108,9 +150,10 @@ namespace ECustoms
                     var auto = new AutoCompleteStringCollection();
                     var lstAuto = DeclarationFactory.GetAllGateExport();
                     auto.AddRange(lstAuto.ToArray());
-                    txtGateExport.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                    txtGateExport.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    txtGateExport.AutoCompleteCustomSource = auto;
+                    txtExportGateCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txtExportGateCode.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    txtExportGateCode.AutoCompleteCustomSource = auto;
+                    pnExportGate.Visible = true;
                     break;
                 default:
                     break;
@@ -126,7 +169,7 @@ namespace ECustoms
                 dtpReturn.Enabled=false;
                 txtNumberTemp.Enabled=false;
                 txtSeal.Enabled=false;
-                txtGateExport.Enabled = false;
+                txtExportGateCode.Enabled = false;
             }
 
             // Get Decleration information
@@ -144,6 +187,8 @@ namespace ECustoms
                 dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
                 txtRegisterPlace.Text = declarationInfo.RegisterPlace;
                 txtMoney.Text = declarationInfo.Money.ToString();
+                txtImportGateCode.Text = declarationInfo.GateImport;
+                txtExportGateCode.Text = declarationInfo.GateExport;
                 //Option infomation
                 txtNumberHandover.Text = declarationInfo.NumberHandover != null ? declarationInfo.NumberHandover.ToString() : "";
                 dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : CommonFactory.GetCurrentDate();
@@ -171,7 +216,7 @@ namespace ECustoms
                 {
                     txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
                     txtSeal.Text = declarationInfo.Seal ?? "";
-                    txtGateExport.Text = declarationInfo.GateExport ?? "";
+                    txtExportGateCode.Text = declarationInfo.GateExport ?? "";
                     if (declarationInfo.DeclarationType == (short)Common.DeclerationType.Export)
                     {
                         gbExportDeclaration.Text = "Thông tin tờ khai xuất";
@@ -212,6 +257,30 @@ namespace ECustoms
                     {
                         lblStatus.Text = string.Format("Chưa xuất khẩu hết, còn tồn {0} xe", (grvVehicle.Rows.Count - status)); 
                     }
+                }
+
+
+
+                String exportGateCode = txtExportGateCode.Text.Trim();
+                if (string.IsNullOrEmpty(exportGateCode) == false)
+                {
+                    tblGate gate = GateFactory.FindByCode(exportGateCode);
+                    if (gate != null)
+                    {
+                        txtExportGateName.Text = gate.GateName;
+                    }
+
+                }
+
+                String importGateCode = txtImportGateCode.Text.Trim();
+                if (string.IsNullOrEmpty(importGateCode) == false)
+                {
+                    tblGate gate = GateFactory.FindByCode(importGateCode);
+                    if (gate != null)
+                    {
+                        txtImportGateName.Text = gate.GateName;
+                    }
+
                 }
 
             }
@@ -283,6 +352,37 @@ namespace ECustoms
             {
                 logger.Error(ex.ToString());
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+        private void txtImportGateCode_Leave(object sender, EventArgs e)
+        {
+            txtImportGateName.Text = "";
+            String gateCode = txtImportGateCode.Text.Trim();
+            if (string.IsNullOrEmpty(gateCode) == false)
+            {
+                tblGate gate = GateFactory.FindByCode(gateCode);
+                if (gate != null)
+                {
+                    txtImportGateName.Text = gate.GateName;
+                }
+
+            }
+        }
+
+        private void txtExportGateCode_Leave_1(object sender, EventArgs e)
+        {
+            txtExportGateName.Text = "";
+            String gateCode = txtExportGateCode.Text.Trim();
+            if (string.IsNullOrEmpty(gateCode) == false)
+            {
+                tblGate gate = GateFactory.FindByCode(gateCode);
+                if (gate != null)
+                {
+                    txtExportGateName.Text = gate.GateName;
+                }
+
             }
         }
 

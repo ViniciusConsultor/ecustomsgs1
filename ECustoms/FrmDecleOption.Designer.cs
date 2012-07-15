@@ -61,6 +61,16 @@
             this.txtExportUnit = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
+            this.pnExportGate = new System.Windows.Forms.Panel();
+            this.txtExportGateName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtExportGateCode = new System.Windows.Forms.TextBox();
+            this.lblGateEx = new System.Windows.Forms.Label();
+            this.pnImportGate = new System.Windows.Forms.Panel();
+            this.txtImportGateName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtImportGateCode = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtPersonConfirmReturn = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPersonHandover = new System.Windows.Forms.TextBox();
@@ -76,8 +86,6 @@
             this.lblNumberTemp = new System.Windows.Forms.Label();
             this.lblSeal = new System.Windows.Forms.Label();
             this.txtSeal = new System.Windows.Forms.TextBox();
-            this.txtGateExport = new System.Windows.Forms.TextBox();
-            this.lblGateEx = new System.Windows.Forms.Label();
             this.pnXKCK = new System.Windows.Forms.Panel();
             this.grvVehicle = new System.Windows.Forms.DataGridView();
             this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +111,8 @@
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.gbExportDeclaration.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
+            this.pnExportGate.SuspendLayout();
+            this.pnImportGate.SuspendLayout();
             this.pnTNTX.SuspendLayout();
             this.pnXKCK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).BeginInit();
@@ -341,6 +351,8 @@
             // 
             // groupBoxVehicle
             // 
+            this.groupBoxVehicle.Controls.Add(this.pnExportGate);
+            this.groupBoxVehicle.Controls.Add(this.pnImportGate);
             this.groupBoxVehicle.Controls.Add(this.txtPersonConfirmReturn);
             this.groupBoxVehicle.Controls.Add(this.label7);
             this.groupBoxVehicle.Controls.Add(this.txtPersonHandover);
@@ -356,10 +368,102 @@
             this.groupBoxVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxVehicle.Location = new System.Drawing.Point(12, 198);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
-            this.groupBoxVehicle.Size = new System.Drawing.Size(927, 212);
+            this.groupBoxVehicle.Size = new System.Drawing.Size(927, 277);
             this.groupBoxVehicle.TabIndex = 1;
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Thông tin bổ sung";
+            // 
+            // pnExportGate
+            // 
+            this.pnExportGate.Controls.Add(this.txtExportGateName);
+            this.pnExportGate.Controls.Add(this.label12);
+            this.pnExportGate.Controls.Add(this.txtExportGateCode);
+            this.pnExportGate.Controls.Add(this.lblGateEx);
+            this.pnExportGate.Location = new System.Drawing.Point(10, 202);
+            this.pnExportGate.Name = "pnExportGate";
+            this.pnExportGate.Size = new System.Drawing.Size(475, 72);
+            this.pnExportGate.TabIndex = 31;
+            this.pnExportGate.Visible = false;
+            // 
+            // txtExportGateName
+            // 
+            this.txtExportGateName.Location = new System.Drawing.Point(190, 44);
+            this.txtExportGateName.Name = "txtExportGateName";
+            this.txtExportGateName.ReadOnly = true;
+            this.txtExportGateName.Size = new System.Drawing.Size(279, 26);
+            this.txtExportGateName.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 47);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(142, 20);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Tên Cửa khẩu xuất";
+            // 
+            // txtExportGateCode
+            // 
+            this.txtExportGateCode.Location = new System.Drawing.Point(190, 8);
+            this.txtExportGateCode.Name = "txtExportGateCode";
+            this.txtExportGateCode.Size = new System.Drawing.Size(162, 26);
+            this.txtExportGateCode.TabIndex = 29;
+            this.txtExportGateCode.Leave += new System.EventHandler(this.txtExportGateCode_Leave_1);
+            // 
+            // lblGateEx
+            // 
+            this.lblGateEx.AutoSize = true;
+            this.lblGateEx.Location = new System.Drawing.Point(7, 11);
+            this.lblGateEx.Name = "lblGateEx";
+            this.lblGateEx.Size = new System.Drawing.Size(137, 20);
+            this.lblGateEx.TabIndex = 30;
+            this.lblGateEx.Text = "Mã Cửa khẩu xuất";
+            // 
+            // pnImportGate
+            // 
+            this.pnImportGate.Controls.Add(this.txtImportGateName);
+            this.pnImportGate.Controls.Add(this.label13);
+            this.pnImportGate.Controls.Add(this.txtImportGateCode);
+            this.pnImportGate.Controls.Add(this.label14);
+            this.pnImportGate.Location = new System.Drawing.Point(9, 206);
+            this.pnImportGate.Name = "pnImportGate";
+            this.pnImportGate.Size = new System.Drawing.Size(476, 70);
+            this.pnImportGate.TabIndex = 30;
+            this.pnImportGate.Visible = false;
+            // 
+            // txtImportGateName
+            // 
+            this.txtImportGateName.Location = new System.Drawing.Point(191, 40);
+            this.txtImportGateName.Name = "txtImportGateName";
+            this.txtImportGateName.ReadOnly = true;
+            this.txtImportGateName.Size = new System.Drawing.Size(279, 26);
+            this.txtImportGateName.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 43);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(148, 20);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Tên Cửa khẩu nhập";
+            // 
+            // txtImportGateCode
+            // 
+            this.txtImportGateCode.Location = new System.Drawing.Point(191, 4);
+            this.txtImportGateCode.Name = "txtImportGateCode";
+            this.txtImportGateCode.Size = new System.Drawing.Size(162, 26);
+            this.txtImportGateCode.TabIndex = 29;
+            this.txtImportGateCode.Leave += new System.EventHandler(this.txtImportGateCode_Leave);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(143, 20);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Mã Cửa khẩu nhập";
             // 
             // txtPersonConfirmReturn
             // 
@@ -455,11 +559,9 @@
             this.pnTNTX.Controls.Add(this.lblNumberTemp);
             this.pnTNTX.Controls.Add(this.lblSeal);
             this.pnTNTX.Controls.Add(this.txtSeal);
-            this.pnTNTX.Controls.Add(this.txtGateExport);
-            this.pnTNTX.Controls.Add(this.lblGateEx);
-            this.pnTNTX.Location = new System.Drawing.Point(512, 12);
+            this.pnTNTX.Location = new System.Drawing.Point(450, 12);
             this.pnTNTX.Name = "pnTNTX";
-            this.pnTNTX.Size = new System.Drawing.Size(416, 124);
+            this.pnTNTX.Size = new System.Drawing.Size(416, 82);
             this.pnTNTX.TabIndex = 6;
             // 
             // txtNumberTemp
@@ -473,7 +575,7 @@
             // lblNumberTemp
             // 
             this.lblNumberTemp.AutoSize = true;
-            this.lblNumberTemp.Location = new System.Drawing.Point(16, 15);
+            this.lblNumberTemp.Location = new System.Drawing.Point(10, 15);
             this.lblNumberTemp.Name = "lblNumberTemp";
             this.lblNumberTemp.Size = new System.Drawing.Size(114, 20);
             this.lblNumberTemp.TabIndex = 21;
@@ -482,7 +584,7 @@
             // lblSeal
             // 
             this.lblSeal.AutoSize = true;
-            this.lblSeal.Location = new System.Drawing.Point(16, 55);
+            this.lblSeal.Location = new System.Drawing.Point(10, 55);
             this.lblSeal.Name = "lblSeal";
             this.lblSeal.Size = new System.Drawing.Size(118, 20);
             this.lblSeal.TabIndex = 22;
@@ -494,22 +596,6 @@
             this.txtSeal.Name = "txtSeal";
             this.txtSeal.Size = new System.Drawing.Size(257, 26);
             this.txtSeal.TabIndex = 1;
-            // 
-            // txtGateExport
-            // 
-            this.txtGateExport.Location = new System.Drawing.Point(151, 88);
-            this.txtGateExport.Name = "txtGateExport";
-            this.txtGateExport.Size = new System.Drawing.Size(257, 26);
-            this.txtGateExport.TabIndex = 2;
-            // 
-            // lblGateEx
-            // 
-            this.lblGateEx.AutoSize = true;
-            this.lblGateEx.Location = new System.Drawing.Point(16, 91);
-            this.lblGateEx.Name = "lblGateEx";
-            this.lblGateEx.Size = new System.Drawing.Size(111, 20);
-            this.lblGateEx.TabIndex = 26;
-            this.lblGateEx.Text = "Cửa khẩu xuất";
             // 
             // pnXKCK
             // 
@@ -644,7 +730,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(12, 419);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 481);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(157, 33);
             this.btnUpdate.TabIndex = 2;
@@ -661,7 +747,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ECustoms.Properties.Resources.close;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(309, 419);
+            this.button1.Location = new System.Drawing.Point(309, 481);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 33);
             this.button1.TabIndex = 4;
@@ -677,7 +763,7 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.confirm;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(175, 419);
+            this.btConfirmReturn.Location = new System.Drawing.Point(175, 481);
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(128, 33);
             this.btConfirmReturn.TabIndex = 3;
@@ -777,7 +863,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(951, 462);
+            this.ClientSize = new System.Drawing.Size(951, 521);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);
@@ -793,6 +879,10 @@
             this.gbExportDeclaration.PerformLayout();
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
+            this.pnExportGate.ResumeLayout(false);
+            this.pnExportGate.PerformLayout();
+            this.pnImportGate.ResumeLayout(false);
+            this.pnImportGate.PerformLayout();
             this.pnTNTX.ResumeLayout(false);
             this.pnTNTX.PerformLayout();
             this.pnXKCK.ResumeLayout(false);
@@ -831,8 +921,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRegisterPlace;
         private System.Windows.Forms.Label lblRegisterPlace;
-        private System.Windows.Forms.TextBox txtGateExport;
-        public System.Windows.Forms.Label lblGateEx;
         private System.Windows.Forms.TextBox txtSeal;
         private System.Windows.Forms.DateTimePicker dtpReturn;
         public System.Windows.Forms.Label lblSeal;
@@ -868,5 +956,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn PersonConfirm;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsExport;
+        private System.Windows.Forms.Panel pnImportGate;
+        private System.Windows.Forms.TextBox txtImportGateName;
+        public System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtImportGateCode;
+        public System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel pnExportGate;
+        private System.Windows.Forms.TextBox txtExportGateName;
+        public System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtExportGateCode;
+        public System.Windows.Forms.Label lblGateEx;
     }
 }
