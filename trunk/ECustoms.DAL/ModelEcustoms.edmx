@@ -542,6 +542,7 @@
           <Property Name="TypeOption" Type="smallint" />
           <Property Name="PersonHandoverID" Type="int" />
           <Property Name="CustomsCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="GateImport" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -1338,12 +1339,12 @@
           <EntitySet Name="tblTypes" EntityType="dbEcustomModel.tblType" />
           <EntitySet Name="tblCompanies" EntityType="dbEcustomModel.tblCompany" />
           <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.tblCustom" />
+          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
           <EntitySet Name="tblDeclarations" EntityType="dbEcustomModel.tblDeclaration" />
           <AssociationSet Name="FK_tblDeclaration_tblUser" Association="dbEcustomModel.FK_tblDeclaration_tblUser">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblDeclaration" EntitySet="tblDeclarations" />
           </AssociationSet>
-          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2043,6 +2044,19 @@
           <Property Type="DateTime" Name="ModifiedDate" />
           <Property Type="Int32" Name="ModifiedBy" />
         </EntityType>
+        <EntityType Name="tblGate">
+          <Key>
+            <PropertyRef Name="GateCode" />
+          </Key>
+          <Property Type="String" Name="GateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GateName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GateType" />
+          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
+        </EntityType>
         <EntityType Name="tblDeclaration">
           <Key>
             <PropertyRef Name="DeclarationID" />
@@ -2075,25 +2089,13 @@
           <Property Type="Int16" Name="TypeOption" />
           <Property Type="Int32" Name="PersonHandoverID" />
           <Property Type="String" Name="CustomsCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GateImport" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tblUser" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblDeclaration" ToRole="tblUser" />
         </EntityType>
         <Association Name="FK_tblDeclaration_tblUser">
           <End Type="dbEcustomModel.tblUser" Role="tblUser" Multiplicity="0..1" />
           <End Type="dbEcustomModel.tblDeclaration" Role="tblDeclaration" Multiplicity="*" />
         </Association>
-        <EntityType Name="tblGate">
-          <Key>
-            <PropertyRef Name="GateCode" />
-          </Key>
-          <Property Type="String" Name="GateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="GateName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="GateType" />
-          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="CreatedDate" />
-          <Property Type="Int32" Name="CreatedBy" />
-          <Property Type="DateTime" Name="ModifiedDate" />
-          <Property Type="Int32" Name="ModifiedBy" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2804,9 +2806,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblGates">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
+              <MappingFragment StoreEntitySet="tblGate">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GateType" ColumnName="GateType" />
+                <ScalarProperty Name="GateName" ColumnName="GateName" />
+                <ScalarProperty Name="GateCode" ColumnName="GateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblDeclarations">
             <EntityTypeMapping TypeName="dbEcustomModel.tblDeclaration">
               <MappingFragment StoreEntitySet="tblDeclaration">
+                <ScalarProperty Name="GateImport" ColumnName="GateImport" />
                 <ScalarProperty Name="CustomsCode" ColumnName="CustomsCode" />
                 <ScalarProperty Name="PersonHandoverID" ColumnName="PersonHandoverID" />
                 <ScalarProperty Name="TypeOption" ColumnName="TypeOption" />
@@ -2847,20 +2864,6 @@
             </EndProperty>
             <Condition ColumnName="CreatedByID" IsNull="false" />
           </AssociationSetMapping>
-          <EntitySetMapping Name="tblGates">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
-              <MappingFragment StoreEntitySet="tblGate">
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="GateType" ColumnName="GateType" />
-                <ScalarProperty Name="GateName" ColumnName="GateName" />
-                <ScalarProperty Name="GateCode" ColumnName="GateCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2919,12 +2922,12 @@
         <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="18.375" PointY="15.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="16.375" PointY="19.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="18.375" PointY="19.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.125" Height="6.5955208333333246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="20.375" PointY="0.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4" Height="6.787822265624996" />
         <AssociationConnector Association="dbEcustomModel.FK_tblDeclaration_tblUser" >
           <ConnectorPoint PointX="2.25" PointY="7.4131982421875" />
           <ConnectorPoint PointX="3" PointY="7.4131982421875" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="20.375" PointY="0.75" Height="2.5571907552083246" />
       </Diagram>
     </Diagrams>
   </Designer>
