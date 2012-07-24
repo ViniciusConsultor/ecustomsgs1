@@ -15,6 +15,8 @@ namespace ECustoms
     public partial class FrmDecleExport : Form
     {
         #region Private variables
+
+        private Validation _validation;
         private int _mode;
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger("Ecustoms.FrmDecleExport");
         private List<ViewAllVehicleHasGood> _vehicleInfosTemp = new List<ViewAllVehicleHasGood>(); // This variable is used to store data in the gridview
@@ -32,6 +34,7 @@ namespace ECustoms
             _mode = mode;
             _mainForm = mainForm;
             _declerationType = declerationType;
+            
         }
 
         public FrmDecleExport(Form mainForm, UserInfo userInfo, int mode, long declerationID, Common.DeclerationType declerationType)
@@ -367,6 +370,7 @@ namespace ECustoms
 
         private bool Validate()
         {
+            if (!_validation.Validate()) return false;
             // Validate export declaration
             if (string.IsNullOrEmpty(txtExportNumber.Text.Trim()))
             {
@@ -558,6 +562,25 @@ namespace ECustoms
                 btnUpdate.Enabled = false;
                 btnAdd.Enabled = true;
                 btnAdd.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TAO_TO_KHAI);
+
+                //fill default value
+                var profileConfig = UserFactory.GetProfileConfigByUserId(_userInfo.UserID);
+                foreach (var config in profileConfig)
+                {
+                    if (config.Type == (int)ProfileConfig.TypeCode)
+                    {
+                        txtTypeExport.Text = config.Value;
+                        var type = TypeFactory.FindByCode(config.Value);
+                        txtTypeName.Text = type != null ? type.TypeName : "";
+                        continue;
+                    }
+                    if (config.Type == (int)ProfileConfig.CustomUnit)
+                    {
+                        txtCustomsCode.Text = config.Value;
+                        var custom  = CustomsFacory.FindByCode(config.Value);
+                        txtCustomsName.Text = custom != null ? custom.CustomsName : "";
+                    }
+                }
             }
             else // Edit mode
             {
@@ -1090,6 +1113,7 @@ namespace ECustoms
         {
             txtExportTotalVehicles.Focus();
             this.Text = "Khai bao xuat nhap canh" + ConstantInfo.MESSAGE_TITLE;
+            _validation = new Validation(this);
             // Show form to the center            
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
 
