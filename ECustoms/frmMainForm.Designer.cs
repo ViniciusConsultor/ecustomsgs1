@@ -67,6 +67,7 @@
             this.mnuType = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustoms = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolstripLabelWelcome = new System.Windows.Forms.ToolStripLabel();
             this.tsExport = new System.Windows.Forms.ToolStripButton();
@@ -75,7 +76,7 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.mnuGate = new System.Windows.Forms.ToolStripMenuItem();
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -375,7 +376,8 @@
             this.mnuType,
             this.mnuCompany,
             this.mnuCustoms,
-            this.mnuGate});
+            this.mnuGate,
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem});
             this.mnuGeneralInfo.Name = "mnuGeneralInfo";
             this.mnuGeneralInfo.Size = new System.Drawing.Size(190, 25);
             this.mnuGeneralInfo.Text = "Quản lý thông tin chung";
@@ -383,23 +385,30 @@
             // mnuType
             // 
             this.mnuType.Name = "mnuType";
-            this.mnuType.Size = new System.Drawing.Size(217, 26);
+            this.mnuType.Size = new System.Drawing.Size(254, 26);
             this.mnuType.Text = "Loại hình tờ khai";
             this.mnuType.Click += new System.EventHandler(this.mnuType_Click);
             // 
             // mnuCompany
             // 
             this.mnuCompany.Name = "mnuCompany";
-            this.mnuCompany.Size = new System.Drawing.Size(217, 26);
+            this.mnuCompany.Size = new System.Drawing.Size(254, 26);
             this.mnuCompany.Text = "Doanh nghiệp";
             this.mnuCompany.Click += new System.EventHandler(this.mnuCompany_Click);
             // 
             // mnuCustoms
             // 
             this.mnuCustoms.Name = "mnuCustoms";
-            this.mnuCustoms.Size = new System.Drawing.Size(217, 26);
+            this.mnuCustoms.Size = new System.Drawing.Size(254, 26);
             this.mnuCustoms.Text = "Đơn vị hải quan";
             this.mnuCustoms.Click += new System.EventHandler(this.mnuCustoms_Click);
+            // 
+            // mnuGate
+            // 
+            this.mnuGate.Name = "mnuGate";
+            this.mnuGate.Size = new System.Drawing.Size(254, 26);
+            this.mnuGate.Text = "Danh mục cửa khẩu";
+            this.mnuGate.Click += new System.EventHandler(this.mnuGate_Click);
             // 
             // toolStrip1
             // 
@@ -485,12 +494,12 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // mnuGate
+            // cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem
             // 
-            this.mnuGate.Name = "mnuGate";
-            this.mnuGate.Size = new System.Drawing.Size(217, 26);
-            this.mnuGate.Text = "Danh mục cửa khẩu";
-            this.mnuGate.Click += new System.EventHandler(this.mnuGate_Click);
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Name = "cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem";
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Text = "Cấu hình giá trị mặc định";
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Click += new System.EventHandler(this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem_Click);
             // 
             // frmMainForm
             // 
@@ -565,5 +574,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCompany;
         private System.Windows.Forms.ToolStripMenuItem mnuCustoms;
         private System.Windows.Forms.ToolStripMenuItem mnuGate;
+        private System.Windows.Forms.ToolStripMenuItem cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem;
     }
 }

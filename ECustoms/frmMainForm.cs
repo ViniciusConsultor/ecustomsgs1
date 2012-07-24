@@ -358,5 +358,12 @@ namespace ECustoms
             form.MdiParent = this;
             form.Show();
         }
+
+        private void cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new frmProfileConfig(_userInfo);
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

@@ -112,6 +112,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmProfileConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfileConfig.Designer.cs">
+      <DependentUpon>frmProfileConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,7 @@
     <Compile Include="FrmVehicleFeeSetting.Designer.cs">
       <DependentUpon>FrmVehicleFeeSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation.cs" />
     <Compile Include="VehicleFeeReport1.cs">
       <DependentUpon>VehicleFeeReport.rpt</DependentUpon>
       <SubType>Component</SubType>
@@ -482,6 +489,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmProfileConfig.resx">
+      <DependentUpon>frmProfileConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddCompany.resx">
       <DependentUpon>FrmAddCompany.cs</DependentUpon>
     </EmbeddedResource>

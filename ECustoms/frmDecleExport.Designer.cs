@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
             this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
+            this.txtCustomsName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCustomsCode = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtTypeName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pnTXTN = new System.Windows.Forms.Panel();
@@ -105,10 +109,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnFee = new System.Windows.Forms.Button();
-            this.txtCustomsCode = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCustomsName = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.gbExportDeclaration.SuspendLayout();
             this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
@@ -160,6 +160,43 @@
             this.gbExportDeclaration.TabIndex = 0;
             this.gbExportDeclaration.TabStop = false;
             this.gbExportDeclaration.Text = "Thông tin tờ khai xuất cảnh";
+            // 
+            // txtCustomsName
+            // 
+            this.txtCustomsName.Enabled = false;
+            this.txtCustomsName.Location = new System.Drawing.Point(751, 217);
+            this.txtCustomsName.Multiline = true;
+            this.txtCustomsName.Name = "txtCustomsName";
+            this.txtCustomsName.Size = new System.Drawing.Size(248, 28);
+            this.txtCustomsName.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(610, 222);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(128, 20);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Tên ĐV hải quan";
+            // 
+            // txtCustomsCode
+            // 
+            this.txtCustomsCode.Location = new System.Drawing.Point(485, 219);
+            this.txtCustomsCode.Multiline = true;
+            this.txtCustomsCode.Name = "txtCustomsCode";
+            this.txtCustomsCode.Size = new System.Drawing.Size(119, 28);
+            this.txtCustomsCode.TabIndex = 29;
+            this.txtCustomsCode.Tag = "CustomCode";
+            this.txtCustomsCode.Leave += new System.EventHandler(this.txtCustomsCode_Leave);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(361, 222);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 20);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Mã ĐV hải quan";
             // 
             // txtTypeName
             // 
@@ -350,6 +387,7 @@
             this.txtExportCompanyCode.Name = "txtExportCompanyCode";
             this.txtExportCompanyCode.Size = new System.Drawing.Size(236, 28);
             this.txtExportCompanyCode.TabIndex = 7;
+            this.txtExportCompanyCode.Tag = "CompanyCode";
             this.txtExportCompanyCode.Leave += new System.EventHandler(this.txtExportCompanyCode_Leave);
             // 
             // label8
@@ -368,6 +406,7 @@
             this.txtTypeExport.Name = "txtTypeExport";
             this.txtTypeExport.Size = new System.Drawing.Size(135, 26);
             this.txtTypeExport.TabIndex = 1;
+            this.txtTypeExport.Tag = "TypeCode";
             this.txtTypeExport.Leave += new System.EventHandler(this.txtTypeExport_Leave);
             // 
             // label1
@@ -576,14 +615,14 @@
             // 
             this.grdVehicle.AllowUserToAddRows = false;
             this.grdVehicle.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Count,
@@ -607,8 +646,8 @@
             this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grdVehicle.Location = new System.Drawing.Point(10, 25);
             this.grdVehicle.Name = "grdVehicle";
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdVehicle.Size = new System.Drawing.Size(842, 240);
             this.grdVehicle.TabIndex = 0;
@@ -624,8 +663,8 @@
             // PlateNumber
             // 
             this.PlateNumber.DataPropertyName = "PlateNumber";
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle2;
             this.PlateNumber.HeaderText = "Biển Kiểm soát";
             this.PlateNumber.Name = "PlateNumber";
             this.PlateNumber.Width = 140;
@@ -633,8 +672,8 @@
             // NumberOfContainer
             // 
             this.NumberOfContainer.DataPropertyName = "NumberOfContainer";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NumberOfContainer.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NumberOfContainer.DefaultCellStyle = dataGridViewCellStyle3;
             this.NumberOfContainer.HeaderText = "Số Container";
             this.NumberOfContainer.Name = "NumberOfContainer";
             this.NumberOfContainer.Width = 130;
@@ -743,8 +782,8 @@
             // ImportDate
             // 
             this.ImportDate.DataPropertyName = "ImportDate";
-            dataGridViewCellStyle22.Format = "dd/MM/yyyy";
-            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.ImportDate.HeaderText = "Ngày nhập cảnh";
             this.ImportDate.Name = "ImportDate";
             this.ImportDate.Visible = false;
@@ -767,9 +806,9 @@
             // ExportDate
             // 
             this.ExportDate.DataPropertyName = "ExportDate";
-            dataGridViewCellStyle23.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle23.NullValue = null;
-            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle5.NullValue = null;
+            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle5;
             this.ExportDate.HeaderText = "Ngày xuất cảnh";
             this.ExportDate.Name = "ExportDate";
             this.ExportDate.Visible = false;
@@ -850,42 +889,6 @@
             this.btnFee.UseVisualStyleBackColor = true;
             this.btnFee.Visible = false;
             this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
-            // 
-            // txtCustomsCode
-            // 
-            this.txtCustomsCode.Location = new System.Drawing.Point(485, 219);
-            this.txtCustomsCode.Multiline = true;
-            this.txtCustomsCode.Name = "txtCustomsCode";
-            this.txtCustomsCode.Size = new System.Drawing.Size(119, 28);
-            this.txtCustomsCode.TabIndex = 29;
-            this.txtCustomsCode.Leave += new System.EventHandler(this.txtCustomsCode_Leave);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(361, 222);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 20);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Mã ĐV hải quan";
-            // 
-            // txtCustomsName
-            // 
-            this.txtCustomsName.Enabled = false;
-            this.txtCustomsName.Location = new System.Drawing.Point(751, 217);
-            this.txtCustomsName.Multiline = true;
-            this.txtCustomsName.Name = "txtCustomsName";
-            this.txtCustomsName.Size = new System.Drawing.Size(248, 28);
-            this.txtCustomsName.TabIndex = 31;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(610, 222);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 20);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Tên ĐV hải quan";
             // 
             // FrmDecleExport
             // 
