@@ -54,7 +54,7 @@ namespace ECustoms
 
                     var ts = FDHelper.RgGetTimeStamp().ToString();
 
-                    if(ts == sss[1] && sss[0]== xray1)
+                    if(sss.Length > 1 && ts == sss[1] && sss[0]== xray1)
                     {
                         Coccyx.IsAtTheEndOfCoccyx = true;
                     }
