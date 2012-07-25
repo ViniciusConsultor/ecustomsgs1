@@ -42,7 +42,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;FORCE_REG, ALLOW_CANCEL</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -135,6 +135,12 @@
     </Compile>
     <Compile Include="FrmAddGate.Designer.cs">
       <DependentUpon>FrmAddGate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckDigestInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckDigestInfo.Designer.cs">
+      <DependentUpon>frmCheckDigestInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDeclarationFee.cs">
       <SubType>Form</SubType>
@@ -501,6 +507,9 @@
     <EmbeddedResource Include="FrmAddGate.resx">
       <DependentUpon>FrmAddGate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckDigestInfo.resx">
+      <DependentUpon>frmCheckDigestInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDeclarationFee.resx">
       <DependentUpon>frmDeclarationFee.cs</DependentUpon>
     </EmbeddedResource>
@@ -737,6 +746,10 @@
     <ProjectReference Include="..\ECustoms.Utilities\ECustoms.Utilities.csproj">
       <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
       <Name>ECustoms.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\techlink.Digest\techlink.Digest.csproj">
+      <Project>{ACD706C7-4946-4D64-B590-8389B861F825}</Project>
+      <Name>techlink.Digest</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

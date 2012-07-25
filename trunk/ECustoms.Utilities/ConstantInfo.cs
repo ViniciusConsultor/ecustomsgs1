@@ -118,7 +118,10 @@
         #region System
 
         public const string HashString = "dfkjdk234fda23fdfssf";
-
+        public const string RgKeyApp = "SOFTWARE\\TechLink";
+        public const string RgKeyAppDataPath = "AppData";
+        public const string RgKeyAppUserProfilePath = "Profile";
+        public const string RgKeyAppUserTimeStampPath = "TimeStamp";
         #endregion
     }
 }
