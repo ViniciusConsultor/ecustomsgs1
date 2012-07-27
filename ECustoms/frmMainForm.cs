@@ -4,18 +4,41 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class frmMainForm : Form
+    public partial class frmMainForm : MDIFormBase
     {
         private readonly UserInfo _userInfo;
         public frmMainForm()
         {
             InitializeComponent();
+
+#if WINDOWS7
+            ToolStripManager.Renderer = new TechLink.Windows.Windows7Rerenderer.Windows7Rerenderer();
+#else
+#if O2007D
+            ToolStripManager.Renderer = new TechLink.Windows.Office2007DarkRenderer.Office2007DarkRenderer();
+#else
+#if O2007L
+            ToolStripManager.Renderer = new TechLink.Windows.Office2007LightRenderer.Office2007LightRenderer();
+#endif
+#endif
+#endif
         }
 
         public frmMainForm(UserInfo userInfo)
         {
             InitializeComponent();
             _userInfo = userInfo;
+#if WINDOWS7
+            ToolStripManager.Renderer = new TechLink.Windows.Windows7Rerenderer.Windows7Rerenderer();
+#else
+#if O2007D
+            ToolStripManager.Renderer = new TechLink.Windows.Office2007DarkRenderer.Office2007DarkRenderer();
+#else
+#if O2007L
+            ToolStripManager.Renderer = new TechLink.Windows.Office2007LightRenderer.Office2007LightRenderer();
+#endif
+#endif
+#endif
         }
 
         private void frmMainForm_Load(object sender, EventArgs e)

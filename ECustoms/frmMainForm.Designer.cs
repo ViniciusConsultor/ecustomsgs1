@@ -68,6 +68,7 @@
             this.mnuCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustoms = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGate = new System.Windows.Forms.ToolStripMenuItem();
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolstripLabelWelcome = new System.Windows.Forms.ToolStripLabel();
             this.tsExport = new System.Windows.Forms.ToolStripButton();
@@ -76,7 +77,6 @@
             this.toolStripButtonListdeclarace = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +96,7 @@
             this.mnuGeneralInfo});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
-            this.mnMain.Size = new System.Drawing.Size(1211, 29);
+            this.mnMain.Size = new System.Drawing.Size(899, 29);
             this.mnMain.TabIndex = 0;
             this.mnMain.Tag = "";
             this.mnMain.Text = "menuStrip1";
@@ -410,6 +410,13 @@
             this.mnuGate.Text = "Danh mục cửa khẩu";
             this.mnuGate.Click += new System.EventHandler(this.mnuGate_Click);
             // 
+            // cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem
+            // 
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Name = "cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem";
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Text = "Cấu hình giá trị mặc định";
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Click += new System.EventHandler(this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem_Click);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -422,7 +429,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 29);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 30);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1211, 30);
+            this.toolStrip1.Size = new System.Drawing.Size(899, 30);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -494,28 +501,22 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem
-            // 
-            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Name = "cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem";
-            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
-            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Text = "Cấu hình giá trị mặc định";
-            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem.Click += new System.EventHandler(this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem_Click);
-            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1211, 723);
+            this.ClientSize = new System.Drawing.Size(899, 351);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnMain;
             this.Name = "frmMainForm";
             this.Text = "Quản lý phương tiện xuất nhập biên";
             this.Load += new System.EventHandler(this.frmMainForm_Load);
+            this.Controls.SetChildIndex(this.mnMain, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.mnMain.ResumeLayout(false);
             this.mnMain.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

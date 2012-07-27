@@ -18,7 +18,11 @@ namespace ECustoms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (FDHelper.RgGetTechlinkAppDataPath() == string.Empty || FDHelper.RgGetUserProfilePath() == string.Empty)
+            string strd = System.IO.Path.Combine(FDHelper.RunningDir(),
+                                                 System.IO.Path.GetFileName(
+                                                     FDHelper.RgGetUserProfilePath()));
+
+            if (FDHelper.RgGetTechlinkAppDataPath() == string.Empty || FDHelper.RgGetUserProfilePath() == string.Empty || !System.IO.File.Exists(strd))
             {
                 Application.Run(new frmCheckDigestInfo());
             }
@@ -26,9 +30,7 @@ namespace ECustoms
             {
                 var bone = BoneReader.GetBoneInfo(FDHelper.RgGetUserProfilePath());
                 var coccyx =
-                    BoneReader.GetBoneInfo(System.IO.Path.Combine(FDHelper.RunningDir(),
-                                                                  System.IO.Path.GetFileName(
-                                                                      FDHelper.RgGetUserProfilePath())));
+                    BoneReader.GetBoneInfo(strd);
                 
                 if(bone.Length==0)
                 {

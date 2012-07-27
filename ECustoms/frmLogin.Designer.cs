@@ -146,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(456, 333);
+            this.ClientSize = new System.Drawing.Size(448, 324);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblValidatePassword);
             this.Controls.Add(this.lblValidateUserName);
@@ -156,8 +156,12 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.pbLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();

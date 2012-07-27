@@ -42,7 +42,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;FORCE_REG, ALLOW_CANCEL</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;FORCE_REG, ALLOW_CANCEL, O2007L</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -217,6 +217,18 @@
     </Compile>
     <Compile Include="FrmVehicleFeeSetting.Designer.cs">
       <DependentUpon>FrmVehicleFeeSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIFormBase.Designer.cs">
+      <DependentUpon>MDIFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFormBase.Designer.cs">
+      <DependentUpon>SubFormBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
     <Compile Include="VehicleFeeReport1.cs">
@@ -546,6 +558,9 @@
     <EmbeddedResource Include="FrmVehicleFeeSetting.resx">
       <DependentUpon>FrmVehicleFeeSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDIFormBase.resx">
+      <DependentUpon>MDIFormBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VehicleFeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VehicleFeeReport1.cs</LastGenOutput>
@@ -747,9 +762,21 @@
       <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
       <Name>ECustoms.Utilities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.RCM\System.Windows.Forms.RCM.csproj">
+      <Project>{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}</Project>
+      <Name>System.Windows.Forms.RCM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.ResourcesManager\System.Windows.Forms.ResourcesManager.csproj">
+      <Project>{2086B386-76E0-4AC3-9090-9CCDA0D8A606}</Project>
+      <Name>System.Windows.Forms.ResourcesManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\techlink.Digest\techlink.Digest.csproj">
       <Project>{ACD706C7-4946-4D64-B590-8389B861F825}</Project>
       <Name>techlink.Digest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechLink.Windows.Rerenderer\TechLink.Windows.Rerenderer.csproj">
+      <Project>{194954AB-38F9-4805-9A59-F9EF8AACA7CD}</Project>
+      <Name>TechLink.Windows.Rerenderer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

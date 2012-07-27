@@ -1,5 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
+using System.Windows.Forms.RCM;
+using System.Windows.Forms.ResourcesManager;
 using ECustoms.BOL;
 using ECustoms.Utilities;
 using log4net;
@@ -7,14 +10,14 @@ using ECustoms.DAL;
 
 namespace ECustoms
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : SubFormBase
     {
         //private readonly ILog logger;
         private static log4net.ILog logger =  LogManager.GetLogger("Ecustoms.frmLogin");
-
+        
         public frmLogin()
         {            
-            InitializeComponent();                        
+            InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

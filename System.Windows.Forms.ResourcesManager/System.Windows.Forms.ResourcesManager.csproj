@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2086B386-76E0-4AC3-9090-9CCDA0D8A606}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Windows.Forms.ResourcesManager</RootNamespace>
+    <AssemblyName>System.Windows.Forms.ResourcesManager</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum.cs" />
+    <Compile Include="LoadRes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtk-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout_select_footer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\safe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-closebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-combo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-FrameBottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-FrameLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-FrameRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-FrameTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-header.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-helpbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-maxbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-minbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-Progress.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-radiobutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-restorebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-ScrollHorzArrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-ScrollHorzShaft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-ScrollHorzThumb.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-ScrollVertArrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-ScrollVertShaft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-ScrollVertThumb.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-spin.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-Tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vienna-Track.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-closebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-combo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-FrameBottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-FrameLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-FrameRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-FrameTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-header.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-helpbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-maxbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-minbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-Progress.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-radiobutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-restorebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-ScrollHorzArrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-ScrollHorzShaft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-ScrollHorzThumb.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-ScrollVertArrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-ScrollVertShaft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-ScrollVertThumb.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-spin.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-Tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista-Track.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vportal package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vPortal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drive_disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PSD\vista-blue-FrameRight.png" />
+    <None Include="Resources\PSD\vista-blue-FrameTop.png" />
+    <None Include="Resources\PSD\vista-blue-FrameLeft.png" />
+    <None Include="Resources\PSD\vista-blue-FrameBottom.png" />
+    <None Include="Resources\PSD\vista-blue-closebutton.png" />
+    <None Include="Resources\PSD\vista-blue-minbutton.png" />
+    <None Include="Resources\PSD\vista-blue-restorebutton.png" />
+    <None Include="Resources\PSD\vista-blue-maxbutton.png" />
+    <None Include="Resources\PSD\vista-blue-helpbutton.png" />
+    <None Include="Resources\PSD\vista-blue-Tab.png" />
+    <Content Include="Resources\vista-blue-FrameTop.png" />
+    <None Include="Resources\vista-blue-minbutton.png" />
+    <None Include="Resources\vista-blue-maxbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\System.Windows.Forms.RCM\System.Windows.Forms.RCM.csproj">
+      <Project>{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}</Project>
+      <Name>System.Windows.Forms.RCM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
