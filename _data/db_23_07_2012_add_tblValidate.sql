@@ -25,8 +25,10 @@ CREATE TABLE [dbo].[tblValidate](
 
 GO
 
-INSERT [dbo].[tblValidate] ([ID], [TagName]) VALUES (1, N'TypeCode')
-INSERT [dbo].[tblValidate] ([ID], [TagName]) VALUES (2, N'CustomCode')
-INSERT [dbo].[tblValidate] ([ID], [TagName]) VALUES (3, N'CompanyCode')
+INSERT [dbo].[tblValidate] ([TagName]) VALUES (N'TypeCode')
+INSERT [dbo].[tblValidate] ([TagName]) VALUES (N'CustomCode')
+INSERT [dbo].[tblValidate] ([TagName]) VALUES (N'CompanyCode')
+INSERT [dbo].[tblValidate] ([TagName]) VALUES (N'UserName')
+INSERT [dbo].[tblValidate] ([TagName]) VALUES (N'Password')
 
 
