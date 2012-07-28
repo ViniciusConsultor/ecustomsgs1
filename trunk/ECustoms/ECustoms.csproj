@@ -873,6 +873,7 @@
     <None Include="Resources\GS1_icon.ico" />
     <Content Include="ListPrint.xml" />
     <None Include="Resources\1336316540_document-export.png" />
+    <None Include="Resources\gear.png" />
     <Content Include="Resources\imageGS1.jpg" />
     <None Include="Resources\user.png" />
     <None Include="Resources\4469.png" />

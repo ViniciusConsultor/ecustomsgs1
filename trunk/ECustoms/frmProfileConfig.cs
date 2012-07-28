@@ -14,7 +14,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class frmProfileConfig : Form
+    public partial class frmProfileConfig : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("ECustoms.frmProfileConfig");
         private UserInfo _userInfo;

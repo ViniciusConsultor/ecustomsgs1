@@ -67,6 +67,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(187, 20);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.Tag = "UserName";
             this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // txtPassword
@@ -76,6 +77,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(187, 20);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.Tag = "Password";
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // lblValidateUserName
@@ -146,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(448, 324);
+            this.ClientSize = new System.Drawing.Size(448, 326);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblValidatePassword);
             this.Controls.Add(this.lblValidateUserName);
