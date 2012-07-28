@@ -14,10 +14,12 @@ namespace ECustoms
     {
         //private readonly ILog logger;
         private static log4net.ILog logger =  LogManager.GetLogger("Ecustoms.frmLogin");
+        private Validation _validation;
         
         public frmLogin()
         {            
             InitializeComponent();
+            _validation = new Validation((this));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -77,6 +79,7 @@ namespace ECustoms
 
         private bool  Validate()
         {
+            _validation.Validate();
             if (string.IsNullOrEmpty(txtUsername.Text.Trim()))
             {
                 lblValidateUserName.Visible = true;
