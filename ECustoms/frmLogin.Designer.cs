@@ -122,7 +122,7 @@
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(364, 223);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(73, 28);
+            this.btnClose.Size = new System.Drawing.Size(74, 28);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -134,11 +134,11 @@
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Image = global::ECustoms.Properties.Resources.Login1;
+            this.btnLogin.Image = global::ECustoms.Properties.Resources.Login2;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(235, 223);
+            this.btnLogin.Location = new System.Drawing.Point(244, 223);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(123, 28);
+            this.btnLogin.Size = new System.Drawing.Size(114, 28);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(448, 265);
+            this.ClientSize = new System.Drawing.Size(448, 267);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblValidatePassword);

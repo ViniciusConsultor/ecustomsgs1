@@ -214,13 +214,6 @@ namespace ECustoms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap exit {
-            get {
-                object obj = ResourceManager.GetObject("exit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap export {
             get {
                 object obj = ResourceManager.GetObject("export", resourceCulture);
@@ -305,9 +298,9 @@ namespace ECustoms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Login1 {
+        internal static System.Drawing.Bitmap Login2 {
             get {
-                object obj = ResourceManager.GetObject("Login1", resourceCulture);
+                object obj = ResourceManager.GetObject("Login2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
