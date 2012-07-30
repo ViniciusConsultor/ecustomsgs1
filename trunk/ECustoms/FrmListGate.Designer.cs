@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListGate));
             this.grbConditionSearch = new System.Windows.Forms.GroupBox();
             this.cbGateType = new System.Windows.Forms.ComboBox();
+            this.tblGateTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new ECustoms.DataSet2();
             this.label3 = new System.Windows.Forms.Label();
             this.txtGateName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,17 +48,15 @@
             this.GateName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GateType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tblGateTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet2 = new ECustoms.DataSet2();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.tblGateTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grbConditionSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.grbUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvGate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbConditionSearch
@@ -88,6 +88,16 @@
             this.cbGateType.Size = new System.Drawing.Size(187, 26);
             this.cbGateType.TabIndex = 82;
             this.cbGateType.ValueMember = "TypeId";
+            // 
+            // tblGateTypeBindingSource1
+            // 
+            this.tblGateTypeBindingSource1.DataMember = "tblGateType";
+            this.tblGateTypeBindingSource1.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -158,7 +168,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(315, 467);
+            this.btnClose.Location = new System.Drawing.Point(926, 467);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(84, 33);
             this.btnClose.TabIndex = 38;
@@ -174,7 +184,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(233, 467);
+            this.btnDelete.Location = new System.Drawing.Point(844, 467);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 33);
             this.btnDelete.TabIndex = 37;
@@ -245,11 +255,6 @@
             this.tblGateTypeBindingSource.DataMember = "tblGateType";
             this.tblGateTypeBindingSource.DataSource = this.dataSet2;
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Description
             // 
             this.Description.DataPropertyName = "Description";
@@ -265,7 +270,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(117, 467);
+            this.btnUpdate.Location = new System.Drawing.Point(728, 467);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 33);
             this.btnUpdate.TabIndex = 35;
@@ -281,7 +286,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(9, 467);
+            this.btnAdd.Location = new System.Drawing.Point(620, 467);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 33);
             this.btnAdd.TabIndex = 34;
@@ -289,11 +294,6 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // tblGateTypeBindingSource1
-            // 
-            this.tblGateTypeBindingSource1.DataMember = "tblGateType";
-            this.tblGateTypeBindingSource1.DataSource = this.dataSet2;
             // 
             // FrmListGate
             // 
@@ -312,11 +312,11 @@
             this.Load += new System.EventHandler(this.FrmListGate_Load);
             this.grbConditionSearch.ResumeLayout(false);
             this.grbConditionSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.grbUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvGate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -13,7 +13,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class FrmAddGate : Form
+    public partial class FrmAddGate : SubFormBase
     {
         private int _mode;  //_mode=0 : add new; _mode=1 : edit
         private string _gateCode;

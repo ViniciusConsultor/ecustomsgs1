@@ -238,7 +238,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(256, 438);
+            this.btnClose.Location = new System.Drawing.Point(526, 438);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
@@ -255,7 +255,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(134, 438);
+            this.btnUpdate.Location = new System.Drawing.Point(404, 438);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(114, 33);
@@ -272,7 +272,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(8, 438);
+            this.btnAdd.Location = new System.Drawing.Point(278, 438);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(118, 33);
@@ -354,7 +354,7 @@
             this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateListGroup.Location = new System.Drawing.Point(6, 431);
+            this.btnUpdateListGroup.Location = new System.Drawing.Point(352, 432);
             this.btnUpdateListGroup.Name = "btnUpdateListGroup";
             this.btnUpdateListGroup.Size = new System.Drawing.Size(161, 33);
             this.btnUpdateListGroup.TabIndex = 17;
@@ -370,7 +370,7 @@
             this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources._001_39;
             this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbnResetListGroup.Location = new System.Drawing.Point(173, 431);
+            this.tbnResetListGroup.Location = new System.Drawing.Point(519, 432);
             this.tbnResetListGroup.Name = "tbnResetListGroup";
             this.tbnResetListGroup.Size = new System.Drawing.Size(102, 33);
             this.tbnResetListGroup.TabIndex = 16;
@@ -445,7 +445,7 @@
             this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPermission.Image = global::ECustoms.Properties.Resources._001_39;
             this.btnResetPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResetPermission.Location = new System.Drawing.Point(175, 431);
+            this.btnResetPermission.Location = new System.Drawing.Point(519, 433);
             this.btnResetPermission.Name = "btnResetPermission";
             this.btnResetPermission.Size = new System.Drawing.Size(102, 33);
             this.btnResetPermission.TabIndex = 15;
@@ -461,7 +461,7 @@
             this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePermission.Location = new System.Drawing.Point(6, 431);
+            this.btnUpdatePermission.Location = new System.Drawing.Point(350, 433);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
             this.btnUpdatePermission.Size = new System.Drawing.Size(163, 33);
             this.btnUpdatePermission.TabIndex = 14;

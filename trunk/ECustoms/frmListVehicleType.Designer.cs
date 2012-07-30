@@ -51,7 +51,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(320, 398);
+            this.btnClose.Location = new System.Drawing.Point(702, 398);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(84, 33);
             this.btnClose.TabIndex = 21;
@@ -67,7 +67,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(238, 398);
+            this.btnDelete.Location = new System.Drawing.Point(620, 398);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 33);
             this.btnDelete.TabIndex = 20;
@@ -82,7 +82,7 @@
             this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbUser.Location = new System.Drawing.Point(14, 22);
             this.grbUser.Name = "grbUser";
-            this.grbUser.Size = new System.Drawing.Size(921, 370);
+            this.grbUser.Size = new System.Drawing.Size(778, 370);
             this.grbUser.TabIndex = 19;
             this.grbUser.TabStop = false;
             this.grbUser.Text = "Danh sách nhóm phương tiện";
@@ -103,7 +103,7 @@
             this.grvVehicleType.Name = "grvVehicleType";
             this.grvVehicleType.ReadOnly = true;
             this.grvVehicleType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvVehicleType.Size = new System.Drawing.Size(909, 334);
+            this.grvVehicleType.Size = new System.Drawing.Size(766, 334);
             this.grvVehicleType.TabIndex = 1;
             this.grvVehicleType.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvVehicleType_CellMouseDoubleClick);
             // 
@@ -153,7 +153,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(14, 398);
+            this.btnAdd.Location = new System.Drawing.Point(396, 398);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 33);
             this.btnAdd.TabIndex = 17;
@@ -169,7 +169,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(122, 398);
+            this.btnUpdate.Location = new System.Drawing.Point(504, 398);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 33);
             this.btnUpdate.TabIndex = 18;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnUpdate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            //this.Name = "frmListVehicleType";
+            this.Text = "frmListVehicleType";
             this.Load += new System.EventHandler(this.frmListVehicleType_Load);
             this.grbUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicleType)).EndInit();

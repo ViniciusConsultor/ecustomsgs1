@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ECustoms.BOL;
-using ECustoms.DAL;
 using ECustoms.Utilities;
 using System.Data.SqlClient;
 using CrystalDecisions.CrystalReports.Engine;
 
 namespace ECustoms
 {
-    public partial class FrmVehicleFeeReport : Form
+    public partial class FrmVehicleFeeReport : SubFormBase
     {
         private UserInfo _userInfo;
         public FrmVehicleFeeReport()

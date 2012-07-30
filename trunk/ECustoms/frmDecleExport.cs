@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace ECustoms
 {
-    public partial class FrmDecleExport : Form
+    public partial class FrmDecleExport : SubFormBase
     {
         #region Private variables
 

@@ -13,7 +13,7 @@ using ECustoms.DAL;
 
 namespace ECustoms
 {
-    public partial class FrmAddSelectVehichleFromExportPark : Form
+    public partial class FrmAddSelectVehichleFromExportPark : SubFormBase
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.FrmAddSelectVehichleFromExportPark");
         public event OnSelectedVehicleHandler OnSelectedVehichle;

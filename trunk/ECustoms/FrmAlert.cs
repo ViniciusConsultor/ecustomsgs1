@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace ECustoms
 {
-  public partial class FrmAlert : Form
+  public partial class FrmAlert : SubFormBase
   {
     private UserInfo _userInfo;
     private long _vehicleID;

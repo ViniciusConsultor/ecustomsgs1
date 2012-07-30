@@ -516,9 +516,9 @@
             // btnConfirmImportKH
             // 
             this.btnConfirmImportKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmImportKH.Location = new System.Drawing.Point(863, 137);
+            this.btnConfirmImportKH.Location = new System.Drawing.Point(862, 173);
             this.btnConfirmImportKH.Name = "btnConfirmImportKH";
-            this.btnConfirmImportKH.Size = new System.Drawing.Size(138, 50);
+            this.btnConfirmImportKH.Size = new System.Drawing.Size(138, 61);
             this.btnConfirmImportKH.TabIndex = 3;
             this.btnConfirmImportKH.Text = "Xác nhận nhập cảnh không hàng";
             this.btnConfirmImportKH.UseVisualStyleBackColor = true;
@@ -527,9 +527,9 @@
             // bntConfirmImportCH
             // 
             this.bntConfirmImportCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntConfirmImportCH.Location = new System.Drawing.Point(863, 81);
+            this.bntConfirmImportCH.Location = new System.Drawing.Point(863, 101);
             this.bntConfirmImportCH.Name = "bntConfirmImportCH";
-            this.bntConfirmImportCH.Size = new System.Drawing.Size(138, 50);
+            this.bntConfirmImportCH.Size = new System.Drawing.Size(138, 66);
             this.bntConfirmImportCH.TabIndex = 2;
             this.bntConfirmImportCH.Text = "Xác nhận nhập cảnh có hàng";
             this.bntConfirmImportCH.UseVisualStyleBackColor = true;
@@ -543,7 +543,7 @@
             this.btnAddExisting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddExisting.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAddExisting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExisting.Location = new System.Drawing.Point(391, 273);
+            this.btnAddExisting.Location = new System.Drawing.Point(393, 271);
             this.btnAddExisting.Name = "btnAddExisting";
             this.btnAddExisting.Size = new System.Drawing.Size(235, 33);
             this.btnAddExisting.TabIndex = 6;
@@ -557,7 +557,7 @@
             this.btnComfirmExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComfirmExport.Location = new System.Drawing.Point(863, 25);
             this.btnComfirmExport.Name = "btnComfirmExport";
-            this.btnComfirmExport.Size = new System.Drawing.Size(138, 50);
+            this.btnComfirmExport.Size = new System.Drawing.Size(138, 70);
             this.btnComfirmExport.TabIndex = 1;
             this.btnComfirmExport.Text = "Xác nhận xuất cảnh";
             this.btnComfirmExport.UseVisualStyleBackColor = true;
@@ -570,7 +570,7 @@
             this.btnDeleteVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteVehicle.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDeleteVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteVehicle.Location = new System.Drawing.Point(632, 273);
+            this.btnDeleteVehicle.Location = new System.Drawing.Point(634, 271);
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
             this.btnDeleteVehicle.Size = new System.Drawing.Size(73, 33);
             this.btnDeleteVehicle.TabIndex = 7;
@@ -586,7 +586,7 @@
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(185, 273);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(187, 271);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(200, 33);
             this.btnUpdateVehicle.TabIndex = 5;
@@ -602,7 +602,7 @@
             this.btnAddVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVehicle.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAddVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehicle.Location = new System.Drawing.Point(8, 273);
+            this.btnAddVehicle.Location = new System.Drawing.Point(10, 271);
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.Size = new System.Drawing.Size(171, 33);
             this.btnAddVehicle.TabIndex = 4;
@@ -831,7 +831,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(214, 638);
+            this.btnUpdate.Location = new System.Drawing.Point(217, 641);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(160, 33);
             this.btnUpdate.TabIndex = 3;
@@ -848,7 +848,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ECustoms.Properties.Resources.close;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(380, 638);
+            this.button1.Location = new System.Drawing.Point(383, 641);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 33);
             this.button1.TabIndex = 5;
@@ -864,7 +864,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources.save_icon;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(19, 638);
+            this.btnAdd.Location = new System.Drawing.Point(22, 641);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(189, 33);
             this.btnAdd.TabIndex = 2;
@@ -880,7 +880,7 @@
             this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFee.Image = ((System.Drawing.Image)(resources.GetObject("btnFee.Image")));
             this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFee.Location = new System.Drawing.Point(474, 638);
+            this.btnFee.Location = new System.Drawing.Point(477, 641);
             this.btnFee.Name = "btnFee";
             this.btnFee.Size = new System.Drawing.Size(142, 33);
             this.btnFee.TabIndex = 4;
@@ -896,7 +896,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(1037, 682);
+            this.ClientSize = new System.Drawing.Size(1037, 690);
             this.Controls.Add(this.btnFee);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);

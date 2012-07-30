@@ -12,7 +12,7 @@ using log4net;
 using ECustoms.Utilities;
 namespace ECustoms
 {
-    public partial class frmAddVehicleType : Form
+    public partial class frmAddVehicleType : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("ECustoms.frmAddVehicleType");
         private int _type = 0; //0:add new, 1: edit

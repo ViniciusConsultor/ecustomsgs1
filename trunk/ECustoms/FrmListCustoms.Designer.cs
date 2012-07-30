@@ -37,6 +37,9 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.grbUser = new System.Windows.Forms.GroupBox();
             this.grvCustoms = new System.Windows.Forms.DataGridView();
+            this.CompanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -44,9 +47,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbConditionSearch.SuspendLayout();
             this.grbUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustoms)).BeginInit();
@@ -147,6 +147,30 @@
             this.grvCustoms.TabIndex = 38;
             this.grvCustoms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvCustoms_CellDoubleClick);
             // 
+            // CompanyCode
+            // 
+            this.CompanyCode.DataPropertyName = "CustomsCode";
+            this.CompanyCode.HeaderText = "Mã ĐV hải quan";
+            this.CompanyCode.Name = "CompanyCode";
+            this.CompanyCode.ReadOnly = true;
+            this.CompanyCode.Width = 150;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.DataPropertyName = "CustomsName";
+            this.CompanyName.HeaderText = "Tên ĐV hải quan";
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.ReadOnly = true;
+            this.CompanyName.Width = 400;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Mô tả";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 300;
+            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -154,7 +178,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(311, 462);
+            this.btnClose.Location = new System.Drawing.Point(824, 462);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(84, 33);
             this.btnClose.TabIndex = 37;
@@ -170,7 +194,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(229, 462);
+            this.btnDelete.Location = new System.Drawing.Point(742, 462);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 33);
             this.btnDelete.TabIndex = 36;
@@ -186,7 +210,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(113, 462);
+            this.btnUpdate.Location = new System.Drawing.Point(626, 462);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 33);
             this.btnUpdate.TabIndex = 35;
@@ -202,7 +226,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(5, 462);
+            this.btnAdd.Location = new System.Drawing.Point(518, 462);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 33);
             this.btnAdd.TabIndex = 34;
@@ -234,30 +258,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 300;
-            // 
-            // CompanyCode
-            // 
-            this.CompanyCode.DataPropertyName = "CustomsCode";
-            this.CompanyCode.HeaderText = "Mã ĐV hải quan";
-            this.CompanyCode.Name = "CompanyCode";
-            this.CompanyCode.ReadOnly = true;
-            this.CompanyCode.Width = 150;
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.DataPropertyName = "CustomsName";
-            this.CompanyName.HeaderText = "Tên ĐV hải quan";
-            this.CompanyName.Name = "CompanyName";
-            this.CompanyName.ReadOnly = true;
-            this.CompanyName.Width = 400;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Mô tả";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 300;
             // 
             // FrmListCustoms
             // 

@@ -17,7 +17,7 @@ using System.Configuration;
 
 namespace ECustoms
 {
-    public partial class frmDecleration : Form
+    public partial class frmDecleration : SubFormBase
     {
         private readonly ILog logger = LogManager.GetLogger("Ecustoms.frmDecleration");
 

@@ -10,7 +10,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class frmAddGroup : Form
+    public partial class frmAddGroup : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("Ecustoms.frmAddGroup");
 

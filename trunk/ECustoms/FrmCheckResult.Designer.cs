@@ -75,15 +75,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.grdVehicleCheck);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1079, 349);
+            this.groupBox1.Size = new System.Drawing.Size(1079, 351);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tổng hợp thông tin kiểm tra";
@@ -113,7 +113,7 @@
             this.grdVehicleCheck.MultiSelect = false;
             this.grdVehicleCheck.Name = "grdVehicleCheck";
             this.grdVehicleCheck.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleCheck.Size = new System.Drawing.Size(1073, 324);
+            this.grdVehicleCheck.Size = new System.Drawing.Size(1073, 326);
             this.grdVehicleCheck.TabIndex = 19;
             this.grdVehicleCheck.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicleCheck_CellMouseDoubleClick);
             // 
@@ -402,7 +402,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(128, 470);
+            this.btnDelete.Location = new System.Drawing.Point(915, 470);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(78, 33);
             this.btnDelete.TabIndex = 25;
@@ -418,7 +418,7 @@
             this.bntUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.bntUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntUpdate.Location = new System.Drawing.Point(12, 471);
+            this.bntUpdate.Location = new System.Drawing.Point(799, 471);
             this.bntUpdate.Name = "bntUpdate";
             this.bntUpdate.Size = new System.Drawing.Size(109, 33);
             this.bntUpdate.TabIndex = 23;
@@ -434,7 +434,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(212, 471);
+            this.btnClose.Location = new System.Drawing.Point(999, 471);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
             this.btnClose.TabIndex = 24;
@@ -447,7 +447,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 516);
+            this.ClientSize = new System.Drawing.Size(1103, 518);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.bntUpdate);
             this.Controls.Add(this.btnClose);

@@ -14,7 +14,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class FrmAddVehicleFeeSetting : Form
+    public partial class FrmAddVehicleFeeSetting : SubFormBase
     {
         private UserInfo _userInfo;
         private int _type;

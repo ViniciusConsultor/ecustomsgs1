@@ -12,7 +12,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class FrmListCheck : Form
+    public partial class FrmListCheck : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("Ecustoms.FrmListCheck");
 

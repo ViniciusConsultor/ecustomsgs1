@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ECustoms
 {
-    public partial class FrmCheckResult : Form
+    public partial class FrmCheckResult : SubFormBase
     {
         private readonly ILog logger = LogManager.GetLogger("Ecustoms.FrmCheckResult");
         private UserInfo _userInfo;

@@ -43,10 +43,10 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbGateType = new System.Windows.Forms.ComboBox();
-            this.dataSet2 = new ECustoms.DataSet2();
             this.tblGateTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            this.dataSet2 = new ECustoms.DataSet2();
             ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -80,7 +80,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(297, 259);
+            this.btnClose.Location = new System.Drawing.Point(422, 264);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(82, 33);
@@ -97,7 +97,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(175, 259);
+            this.btnUpdate.Location = new System.Drawing.Point(300, 264);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(114, 33);
@@ -114,7 +114,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(49, 259);
+            this.btnAdd.Location = new System.Drawing.Point(174, 264);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(118, 33);
@@ -215,21 +215,21 @@
             this.cbGateType.ValueMember = "TypeId";
             this.cbGateType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbGateType_KeyDown);
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tblGateTypeBindingSource
             // 
             this.tblGateTypeBindingSource.DataMember = "tblGateType";
             this.tblGateTypeBindingSource.DataSource = this.dataSet2;
             // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FrmAddGate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 307);
+            this.ClientSize = new System.Drawing.Size(590, 311);
             this.Controls.Add(this.cbGateType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -247,8 +247,8 @@
             this.Name = "FrmAddGate";
             this.Text = "FrmAddGate";
             this.Load += new System.EventHandler(this.FrmAddGate_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGateTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

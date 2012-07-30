@@ -18,7 +18,7 @@ using System.Configuration;
 
 namespace ECustoms
 {
-    public partial class frmGetFee : Form
+    public partial class frmGetFee : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("ECustoms.frmGetFee");
         private UserInfo _userinfo;

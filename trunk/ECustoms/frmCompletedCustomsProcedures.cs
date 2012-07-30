@@ -13,7 +13,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class frmCompletedCustomsProcedures : Form
+    public partial class frmCompletedCustomsProcedures : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("Ecustoms.frmVehicleSearch");
         private UserInfo _userInfo;

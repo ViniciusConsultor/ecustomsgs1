@@ -15,7 +15,7 @@ using CrystalDecisions.Shared;
 
 namespace ECustoms
 {
-    public partial class FrmAddVehicleExportParking : Form
+    public partial class FrmAddVehicleExportParking : SubFormBase
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.FrmAddVehicleExportParking");
         private List<ViewAllVehicleHasGood> _vehicleInfosTemp = new List<ViewAllVehicleHasGood>();
