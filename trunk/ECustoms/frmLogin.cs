@@ -82,24 +82,14 @@ namespace ECustoms
             _validation.Validate();
             if (string.IsNullOrEmpty(txtUsername.Text.Trim()))
             {
-                lblValidateUserName.Visible = true;
                 txtUsername.Focus();
                 return false;
-            }
-            else
-            {
-                lblValidateUserName.Visible = false;
             }
 
             if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
             {
-                lblValidatePassword.Visible = true;
                 txtPassword.Focus();
                 return false;
-            }
-            else
-            {
-                lblValidatePassword.Visible = false;
             }
             return true;
         }
