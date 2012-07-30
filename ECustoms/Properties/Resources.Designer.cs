@@ -116,6 +116,13 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
@@ -151,20 +158,6 @@ namespace ECustoms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Daukeo {
-            get {
-                object obj = ResourceManager.GetObject("Daukeo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap daukeoText {
-            get {
-                object obj = ResourceManager.GetObject("daukeoText", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Declaration {
             get {
                 object obj = ResourceManager.GetObject("Declaration", resourceCulture);
@@ -175,6 +168,20 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap Declaration1 {
             get {
                 object obj = ResourceManager.GetObject("Declaration1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -210,6 +217,13 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap excel81 {
             get {
                 object obj = ResourceManager.GetObject("excel81", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Exit {
+            get {
+                object obj = ResourceManager.GetObject("Exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
