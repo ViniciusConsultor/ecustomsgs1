@@ -867,6 +867,8 @@
     <None Include="Resources\excel82.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\delete.png" />
     <None Include="Resources\Login2.png" />
     <None Include="Resources\imageGS1.png" />
     <None Include="Resources\KeyLock1.png" />
@@ -876,15 +878,14 @@
     <Content Include="ListPrint.xml" />
     <None Include="Resources\1336316540_document-export.png" />
     <None Include="Resources\gear.png" />
-    <Content Include="Resources\imageGS1.jpg" />
+    <None Include="Resources\Exit.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\4469.png" />
     <None Include="Resources\10811.png" />
     <None Include="Resources\5373.png" />
+    <None Include="Resources\add.png" />
     <Content Include="Resources\change-password-icon.png" />
     <Content Include="Resources\checkIcon.png" />
-    <None Include="Resources\daukeoText.png" />
-    <None Include="Resources\Daukeo.png" />
     <None Include="Resources\confirm.png" />
     <None Include="Resources\report224x24 24-bit.png" />
     <None Include="Resources\import.png" />
