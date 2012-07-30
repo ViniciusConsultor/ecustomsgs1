@@ -35,9 +35,11 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblValidateUserName = new System.Windows.Forms.Label();
             this.lblValidatePassword = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pbLogin = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,37 +47,37 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(59, 198);
+            this.lblUsername.Location = new System.Drawing.Point(86, 157);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(124, 20);
+            this.lblUsername.Size = new System.Drawing.Size(106, 20);
             this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Tên đăng nhập: ";
+            this.lblUsername.Text = "Tên truy nhập";
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.Location = new System.Drawing.Point(59, 232);
+            this.lbPassword.Location = new System.Drawing.Point(91, 182);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(79, 20);
+            this.lbPassword.Size = new System.Drawing.Size(101, 20);
             this.lbPassword.TabIndex = 2;
-            this.lbPassword.Text = "Mật khẩu:";
+            this.lbPassword.Text = "Mã truy nhập";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(191, 203);
+            this.txtUsername.Location = new System.Drawing.Point(208, 155);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(187, 20);
+            this.txtUsername.Size = new System.Drawing.Size(154, 20);
             this.txtUsername.TabIndex = 3;
             this.txtUsername.Tag = "UserName";
             this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(191, 232);
+            this.txtPassword.Location = new System.Drawing.Point(208, 184);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(187, 20);
+            this.txtPassword.Size = new System.Drawing.Size(154, 20);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Tag = "Password";
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
@@ -84,7 +86,7 @@
             // 
             this.lblValidateUserName.AutoSize = true;
             this.lblValidateUserName.ForeColor = System.Drawing.Color.Red;
-            this.lblValidateUserName.Location = new System.Drawing.Point(394, 210);
+            this.lblValidateUserName.Location = new System.Drawing.Point(368, 162);
             this.lblValidateUserName.Name = "lblValidateUserName";
             this.lblValidateUserName.Size = new System.Drawing.Size(11, 13);
             this.lblValidateUserName.TabIndex = 7;
@@ -95,23 +97,32 @@
             // 
             this.lblValidatePassword.AutoSize = true;
             this.lblValidatePassword.ForeColor = System.Drawing.Color.Red;
-            this.lblValidatePassword.Location = new System.Drawing.Point(394, 232);
+            this.lblValidatePassword.Location = new System.Drawing.Point(368, 184);
             this.lblValidatePassword.Name = "lblValidatePassword";
             this.lblValidatePassword.Size = new System.Drawing.Size(11, 13);
             this.lblValidatePassword.TabIndex = 8;
             this.lblValidatePassword.Text = "*";
             this.lblValidatePassword.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ECustoms.Properties.Resources.KeyLock1;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 142);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 75);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.close;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(246, 271);
+            this.btnClose.Location = new System.Drawing.Point(364, 223);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(86, 33);
+            this.btnClose.Size = new System.Drawing.Size(73, 28);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -123,11 +134,11 @@
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Image = global::ECustoms.Properties.Resources.enter;
+            this.btnLogin.Image = global::ECustoms.Properties.Resources.Login1;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(117, 271);
+            this.btnLogin.Location = new System.Drawing.Point(235, 223);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(123, 33);
+            this.btnLogin.Size = new System.Drawing.Size(123, 28);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,10 +147,10 @@
             // 
             // pbLogin
             // 
-            this.pbLogin.Image = ((System.Drawing.Image)(resources.GetObject("pbLogin.Image")));
-            this.pbLogin.Location = new System.Drawing.Point(172, 25);
+            this.pbLogin.Image = global::ECustoms.Properties.Resources.imageGS1;
+            this.pbLogin.Location = new System.Drawing.Point(172, 7);
             this.pbLogin.Name = "pbLogin";
-            this.pbLogin.Size = new System.Drawing.Size(143, 174);
+            this.pbLogin.Size = new System.Drawing.Size(128, 125);
             this.pbLogin.TabIndex = 0;
             this.pbLogin.TabStop = false;
             // 
@@ -148,7 +159,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(448, 326);
+            this.ClientSize = new System.Drawing.Size(448, 265);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblValidatePassword);
             this.Controls.Add(this.lblValidateUserName);
@@ -166,6 +178,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,5 +196,6 @@
         private System.Windows.Forms.Label lblValidateUserName;
         private System.Windows.Forms.Label lblValidatePassword;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
