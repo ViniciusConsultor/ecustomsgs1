@@ -270,6 +270,13 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap imageGS1 {
+            get {
+                object obj = ResourceManager.GetObject("imageGS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap import {
             get {
                 object obj = ResourceManager.GetObject("import", resourceCulture);
@@ -277,9 +284,30 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap KeyLock {
+            get {
+                object obj = ResourceManager.GetObject("KeyLock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap KeyLock1 {
+            get {
+                object obj = ResourceManager.GetObject("KeyLock1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap list {
             get {
                 object obj = ResourceManager.GetObject("list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Login1 {
+            get {
+                object obj = ResourceManager.GetObject("Login1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -371,6 +399,13 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap SearchVehicle1 {
             get {
                 object obj = ResourceManager.GetObject("SearchVehicle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Signin {
+            get {
+                object obj = ResourceManager.GetObject("Signin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

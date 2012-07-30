@@ -870,6 +870,11 @@
     <None Include="Resources\excel82.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\imageGS1.png" />
+    <None Include="Resources\KeyLock1.png" />
+    <None Include="Resources\KeyLock.png" />
+    <None Include="Resources\Login1.png" />
+    <None Include="Resources\Signin.png" />
     <None Include="Resources\GS1_icon.ico" />
     <Content Include="ListPrint.xml" />
     <None Include="Resources\1336316540_document-export.png" />
