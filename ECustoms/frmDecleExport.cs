@@ -1112,7 +1112,7 @@ namespace ECustoms
         private void FrmDecleExport_Load(object sender, EventArgs e)
         {
             txtExportTotalVehicles.Focus();
-            this.Text = "Khai bao xuat nhap canh" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Khai bao xuat nhap canh" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             _validation = new Validation(this);
             // Show form to the center            
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);

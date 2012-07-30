@@ -36,7 +36,7 @@ namespace ECustoms
 
         private void FrmListGate_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sach cua khau" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach cua khau" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             init();
         }
 

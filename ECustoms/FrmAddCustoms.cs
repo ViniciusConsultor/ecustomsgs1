@@ -39,7 +39,7 @@ namespace ECustoms
         {
             if (_mode == 0) //add new
             {
-                this.Text = "Them moi don vi hai quan" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Them moi don vi hai quan" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 btnAdd.Enabled = true;
                 btnUpdate.Enabled = false;
             }
@@ -49,7 +49,7 @@ namespace ECustoms
                 btnAdd.Enabled = false;
                 btnUpdate.Enabled = true;
 
-                this.Text = "Cap nhat don vi hai quan" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Cap nhat don vi hai quan" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 tblCustom customs = CustomsFacory.FindByCode(_customsCode);
                 if (customs == null)
                 {

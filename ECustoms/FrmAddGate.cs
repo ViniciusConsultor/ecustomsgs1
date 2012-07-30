@@ -43,7 +43,7 @@ namespace ECustoms
         {
             if (_mode == 0) //add new
             {
-                this.Text = "Them moi cua khau" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Them moi cua khau" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 btnAdd.Enabled = true;
                 btnUpdate.Enabled = false;
             }
@@ -53,7 +53,7 @@ namespace ECustoms
                 btnAdd.Enabled = false;
                 btnUpdate.Enabled = true;
 
-                this.Text = "Cap nhat cua khau" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Cap nhat cua khau" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 tblGate gate = GateFactory.FindByCode(_gateCode);
                 if (gate == null)
                 {

@@ -38,7 +38,7 @@ namespace ECustoms
         {
             if (_mode == 0) //add new
             {
-                this.Text = "Them moi loai hinh" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Them moi loai hinh" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 btnAdd.Enabled = true; 
                 btnUpdate.Enabled = false;
             }
@@ -48,7 +48,7 @@ namespace ECustoms
                 btnAdd.Enabled = false;
                 btnUpdate.Enabled = true;
 
-                this.Text = "Cap nhat loai hinh" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Cap nhat loai hinh" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 tblType type = TypeFactory.FindByCode(_typeCode);
                 if (type == null)
                 {

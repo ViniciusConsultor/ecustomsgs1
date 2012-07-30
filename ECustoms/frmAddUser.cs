@@ -56,7 +56,7 @@ namespace ECustoms
 
     private void frmAddUser_Load(object sender, EventArgs e)
     {
-      this.Text = "Thong tin nguoi dung" + ConstantInfo.MESSAGE_TITLE;
+      this.Text = "Thong tin nguoi dung" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
       // Show form to the center
       this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);      
       grvGroup.AutoGenerateColumns = false;

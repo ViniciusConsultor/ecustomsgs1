@@ -104,7 +104,7 @@ namespace ECustoms
 
         private void FrmAddSelectVehichleFromExportPark_Load(object sender, EventArgs e)
         {
-            this.Text = "Them tu phuong tien trong bai xuat" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Them tu phuong tien trong bai xuat" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             this.Location = new Point((this.Owner.Width - this.Width) / 2 + 400, (this.Owner.Height - this.Height) / 2);
             // Set focus
             txtPlate.Focus();

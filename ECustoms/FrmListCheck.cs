@@ -30,7 +30,7 @@ namespace ECustoms
 
         private void FrmCheck_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sach thong tin de nghi kiem tra" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach thong tin de nghi kiem tra" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             this.Location = new Point((this.Owner.Width - this.Width) / 2, (this.Owner.Height - this.Height) / 2);
             InitData();
 

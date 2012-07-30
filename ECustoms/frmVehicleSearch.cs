@@ -70,7 +70,7 @@ namespace ECustoms
         private void frmVehicleSearch_Load(object sender, EventArgs e)
         {
             LoadPrintSetting();
-            this.Text = "Tim kiem" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Tim kiem" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             // Show form to the center
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
             //Init data

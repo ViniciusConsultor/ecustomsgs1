@@ -104,7 +104,7 @@ namespace ECustoms
 
         private void frmDeclarationFee_Load(object sender, EventArgs e)
         {
-            this.Text = _type == 0 ? "Xac nhan thu phi xuat" : "Xac nhan thu phi nhap" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = _type == 0 ? "Xac nhan thu phi xuat" : "Xac nhan thu phi nhap" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             InitData();
         }
 

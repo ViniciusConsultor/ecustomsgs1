@@ -39,7 +39,7 @@ namespace ECustoms
 
         private void frmAddVehicleType_Load(object sender, EventArgs e)
         {
-            this.Text = "Them moi loai phuong tien" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Them moi loai phuong tien" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             init();
         }
 

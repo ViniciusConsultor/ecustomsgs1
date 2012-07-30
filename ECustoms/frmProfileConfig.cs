@@ -33,7 +33,7 @@ namespace ECustoms
 
         private void frmProfileConfig_Load(object sender, EventArgs e)
         {
-            this.Text = "Cau hinh gia tri mac dinh" + ConstantInfo.MESSAGE_TITLE; 
+            this.Text = "Cau hinh gia tri mac dinh" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName; 
             init();
         }
 

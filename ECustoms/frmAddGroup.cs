@@ -69,7 +69,7 @@ namespace ECustoms
 
         private void frmAddGroup_Load(object sender, EventArgs e)
         {
-            this.Text = "Quan ly nhom" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Quan ly nhom" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             // Show form to the center
             this.Location = new Point((this.Owner.Width - this.Width) / 2, (this.Owner.Height - this.Height) / 2);
             InitData();

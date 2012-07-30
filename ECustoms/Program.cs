@@ -51,6 +51,12 @@ namespace ECustoms
                         sb.AppendLine(ss[i]);
                     }
 
+                    // Set company name
+                    if (ss[1] != null)
+                    {
+                        GlobalInfo.CompanyName = ss[1].ToString();
+                    }                    
+
                     var xray = XRayController.CreateFeatureOfHuman(sb.ToString());
                     var xray1 = XRayController.CreateFeatureOfHuman(xray);
 
