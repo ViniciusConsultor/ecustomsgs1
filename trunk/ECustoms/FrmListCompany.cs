@@ -32,7 +32,7 @@ namespace ECustoms
 
         private void FrmListCompany_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sach doanh nghiep" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach doanh nghiep" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             init();
         }
 

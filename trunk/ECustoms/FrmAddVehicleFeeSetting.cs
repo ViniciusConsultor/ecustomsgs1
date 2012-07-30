@@ -69,13 +69,13 @@ namespace ECustoms
 
             if (_type == 0) //add new
             {
-                this.Text = "Thêm mới cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Thêm mới cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 btnUpdate.Enabled = false;
                 btnAdd.Enabled = true;
             }
             else if (_type == 1) //edit
             {
-                this.Text = "Cập nhật cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Cập nhật cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
                 btnUpdate.Enabled = true;
                 btnAdd.Enabled = false;
                 cbGoodType.Enabled = false;

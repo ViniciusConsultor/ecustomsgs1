@@ -31,7 +31,7 @@ namespace ECustoms
 
         private void FrmListType_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sach loai hinh" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach loai hinh" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             init();
         }
 

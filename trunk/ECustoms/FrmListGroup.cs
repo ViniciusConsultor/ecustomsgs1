@@ -33,7 +33,7 @@ namespace ECustoms
 
         private void FrmListGroup_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sach nhom" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach nhom" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             // Show form to the center
             this.Location = new Point((this.Owner.Width - this.Width) / 2, (this.Owner.Height - this.Height) / 2);
             InitData();

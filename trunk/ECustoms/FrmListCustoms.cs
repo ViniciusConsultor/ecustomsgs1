@@ -32,7 +32,7 @@ namespace ECustoms
 
         private void FrmListCustoms_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sach don vi hai quan" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach don vi hai quan" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             init();
         }
 

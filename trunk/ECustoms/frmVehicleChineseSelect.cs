@@ -49,7 +49,7 @@ namespace ECustoms
 
         private void frmVehicleChineseSelect_Load(object sender, EventArgs e)
         {
-            this.Text = "Tim kiem phuong tien xe Trung Quoc" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Tim kiem phuong tien xe Trung Quoc" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             // Set focus
             txtPlate.Focus();
             BindData();

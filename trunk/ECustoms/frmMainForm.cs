@@ -43,7 +43,7 @@ namespace ECustoms
 
         private void frmMainForm_Load(object sender, EventArgs e)
         {
-            this.Text = "Khai bao xuat nhap canh" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Khai bao xuat nhap canh" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             InitData();
             this.FormClosed += new FormClosedEventHandler(frmMainForm_FormClosed);
         }

@@ -31,7 +31,7 @@ namespace ECustoms
         private void FrmVehicleFeeSetting_Load(object sender, EventArgs e)
         {
 
-            this.Text = "Cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Cấu hình tính phí phương tiện " + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             grdVehicleFee.AutoGenerateColumns = false;
 
             //check permission

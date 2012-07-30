@@ -106,7 +106,7 @@ namespace ECustoms
 
         private void frmLogin_Load(object sender, EventArgs e)
         {                  
-            this.Text = "Dang nhap" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Dang nhap" +  ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

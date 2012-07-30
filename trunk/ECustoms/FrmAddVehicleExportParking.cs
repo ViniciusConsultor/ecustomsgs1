@@ -160,7 +160,7 @@ namespace ECustoms
         {
             try
             {
-                this.Text = "Khai bao phuong tien nhap bai xuat" + ConstantInfo.MESSAGE_TITLE;
+                this.Text = "Khai bao phuong tien nhap bai xuat" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
 
                 //init vehicleType
                 var listVehicleType = VehicleTypeFactory.getAllVehicleType();

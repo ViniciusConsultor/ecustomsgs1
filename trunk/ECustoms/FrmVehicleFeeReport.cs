@@ -42,7 +42,7 @@ namespace ECustoms
 
         private void FrmVehicleFeeReport_Load(object sender, EventArgs e)
         {
-            this.Text = "Bao cao thu phi" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Bao cao thu phi" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             cbFeeExport.Checked = true;
             cbFeeImport.Checked = true;
         }

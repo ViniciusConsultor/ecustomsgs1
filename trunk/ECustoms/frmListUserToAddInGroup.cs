@@ -34,7 +34,7 @@ namespace ECustoms
 
     private void frmListUserToAddInGroup_Load(object sender, EventArgs e)
     {
-      this.Text = "Cap nhat danh sach nguoi dung cho nhom" + ConstantInfo.MESSAGE_TITLE;
+      this.Text = "Cap nhat danh sach nguoi dung cho nhom" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
       // Show form to the center
       this.Location = new Point((this.Owner.Width - this.Width) / 2, (this.Owner.Height - this.Height) / 2);
       InitData();

@@ -37,7 +37,7 @@ namespace ECustoms
 
         private void frmGetFee_Load(object sender, EventArgs e)
         {
-            this.Text = "Thu phi" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Thu phi" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
 
             //check permission
             btnFeeExport.Enabled = _userinfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_THU_PHI_PHUONG_TIEN_XUAT_CANH);

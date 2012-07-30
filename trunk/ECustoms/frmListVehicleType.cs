@@ -26,7 +26,7 @@ namespace ECustoms
 
         private void frmListVehicleType_Load(object sender, EventArgs e)
         {
-            this.Text = "Danh sach loai phuong tien va bieu phi" + ConstantInfo.MESSAGE_TITLE;
+            this.Text = "Danh sach loai phuong tien va bieu phi" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             //check permission
             btnAdd.Enabled = _userinfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_MOI_THONG_TIN_LOAI_PHUONG_TIEN);
             btnUpdate.Enabled = _userinfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LOAI_PHUONG_TIEN);
