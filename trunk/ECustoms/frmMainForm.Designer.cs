@@ -163,7 +163,7 @@
             // 
             // menuitemExit
             // 
-            this.menuitemExit.Image = global::ECustoms.Properties.Resources.exit;
+            
             this.menuitemExit.Name = "menuitemExit";
             this.menuitemExit.Size = new System.Drawing.Size(254, 26);
             this.menuitemExit.Text = "Thoát Khỏi chương trình";

@@ -855,9 +855,6 @@
     <None Include="Resources\list.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logout.png" />
   </ItemGroup>
   <ItemGroup>
@@ -870,10 +867,10 @@
     <None Include="Resources\excel82.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Login2.png" />
     <None Include="Resources\imageGS1.png" />
     <None Include="Resources\KeyLock1.png" />
     <None Include="Resources\KeyLock.png" />
-    <None Include="Resources\Login1.png" />
     <None Include="Resources\Signin.png" />
     <None Include="Resources\GS1_icon.ico" />
     <Content Include="ListPrint.xml" />
