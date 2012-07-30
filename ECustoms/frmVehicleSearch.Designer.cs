@@ -858,7 +858,7 @@
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(161, 712);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(701, 728);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(196, 33);
             this.btnUpdateVehicle.TabIndex = 12;
@@ -874,7 +874,7 @@
             this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportExcel.Image = global::ECustoms.Properties.Resources.excel81;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(12, 712);
+            this.btnExportExcel.Location = new System.Drawing.Point(552, 728);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(143, 33);
             this.btnExportExcel.TabIndex = 10;
@@ -890,7 +890,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(447, 712);
+            this.btnClose.Location = new System.Drawing.Point(987, 728);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
             this.btnClose.TabIndex = 13;
@@ -906,7 +906,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(363, 711);
+            this.btnDelete.Location = new System.Drawing.Point(903, 727);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(78, 33);
             this.btnDelete.TabIndex = 18;
@@ -1041,7 +1041,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 756);
+            this.ClientSize = new System.Drawing.Size(1092, 770);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdateVehicle);
             this.Controls.Add(this.btnExportExcel);

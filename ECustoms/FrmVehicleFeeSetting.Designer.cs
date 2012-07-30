@@ -113,7 +113,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(375, 423);
+            this.btnDelete.Location = new System.Drawing.Point(632, 407);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(73, 33);
             this.btnDelete.TabIndex = 36;
@@ -129,7 +129,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(195, 423);
+            this.btnUpdate.Location = new System.Drawing.Point(452, 407);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(174, 33);
             this.btnUpdate.TabIndex = 35;
@@ -145,7 +145,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(454, 423);
+            this.btnClose.Location = new System.Drawing.Point(711, 407);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
             this.btnClose.TabIndex = 38;
@@ -161,7 +161,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(15, 423);
+            this.btnAdd.Location = new System.Drawing.Point(272, 407);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(174, 33);
             this.btnAdd.TabIndex = 34;
@@ -185,7 +185,7 @@
             this.grdVehicleFee.MultiSelect = false;
             this.grdVehicleFee.Name = "grdVehicleFee";
             this.grdVehicleFee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleFee.Size = new System.Drawing.Size(782, 271);
+            this.grdVehicleFee.Size = new System.Drawing.Size(782, 259);
             this.grdVehicleFee.TabIndex = 20;
             this.grdVehicleFee.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicleFee_CellDoubleClick);
             // 
@@ -231,14 +231,14 @@
             this.Fee.DataPropertyName = "Fee";
             this.Fee.HeaderText = "Biểu phí";
             this.Fee.Name = "Fee";
-            this.Fee.Width = 150;
+            this.Fee.Width = 130;
             // 
             // Description
             // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Description.DataPropertyName = "Description";
             this.Description.HeaderText = "Mô tả";
             this.Description.Name = "Description";
-            this.Description.Width = 200;
             // 
             // groupBox1
             // 
@@ -250,7 +250,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 105);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(788, 296);
+            this.groupBox1.Size = new System.Drawing.Size(788, 284);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách biểu phí";
@@ -323,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 469);
+            this.ClientSize = new System.Drawing.Size(812, 457);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

@@ -13,7 +13,7 @@ using System.Data.Objects.DataClasses;
 
 namespace ECustoms
 {
-    public partial class frmExport : Form
+    public partial class frmExport : SubFormBase
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger("Ecustoms.frmExport");                
         private UserInfo _userInfo;

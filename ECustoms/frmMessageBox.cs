@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ECustoms
 {
-    public partial class frmMessageBox : Form
+    public partial class frmMessageBox : SubFormBase
     {
         public frmMessageBox()
         {

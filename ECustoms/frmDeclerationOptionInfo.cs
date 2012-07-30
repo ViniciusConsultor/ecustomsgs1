@@ -12,7 +12,7 @@ using ECustoms.DAL;
 
 namespace ECustoms
 {
-    public partial class frmDeclerationOptionInfo : Form
+    public partial class frmDeclerationOptionInfo : SubFormBase
     {
         private readonly ILog logger = LogManager.GetLogger("Ecustoms.frmDeclerationOptionInfo");
 

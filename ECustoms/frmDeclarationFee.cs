@@ -8,7 +8,7 @@ using ECustoms.BOL;
 
 namespace ECustoms
 {
-    public partial class frmDeclarationFee : Form
+    public partial class frmDeclarationFee : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("ECustoms.frmDeclarationFee");
         private UserInfo _userinfo;

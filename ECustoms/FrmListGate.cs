@@ -14,7 +14,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class FrmListGate : Form
+    public partial class FrmListGate : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("ECustoms.FrmListGate");
         private UserInfo _userInfo;

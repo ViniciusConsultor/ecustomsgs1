@@ -730,7 +730,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(12, 481);
+            this.btnUpdate.Location = new System.Drawing.Point(550, 481);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(157, 33);
             this.btnUpdate.TabIndex = 2;
@@ -747,7 +747,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ECustoms.Properties.Resources.close;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(309, 481);
+            this.button1.Location = new System.Drawing.Point(847, 481);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 33);
             this.button1.TabIndex = 4;
@@ -763,7 +763,7 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.confirm;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(175, 481);
+            this.btConfirmReturn.Location = new System.Drawing.Point(713, 481);
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(128, 33);
             this.btConfirmReturn.TabIndex = 3;

@@ -97,7 +97,7 @@
             this.btnAddVehichle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVehichle.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAddVehichle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehichle.Location = new System.Drawing.Point(7, 448);
+            this.btnAddVehichle.Location = new System.Drawing.Point(630, 450);
             this.btnAddVehichle.Name = "btnAddVehichle";
             this.btnAddVehichle.Size = new System.Drawing.Size(173, 33);
             this.btnAddVehichle.TabIndex = 21;
@@ -113,7 +113,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(186, 448);
+            this.btnClose.Location = new System.Drawing.Point(809, 450);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(88, 33);
             this.btnClose.TabIndex = 20;

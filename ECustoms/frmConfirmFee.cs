@@ -15,7 +15,7 @@ using ECustoms.BOL;
 
 namespace ECustoms
 {
-    public partial class frmConfirmFee : Form
+    public partial class frmConfirmFee : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("ECustoms.frmConfirmFee");
         private UserInfo _userinfo;

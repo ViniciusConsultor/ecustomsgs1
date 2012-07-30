@@ -10,7 +10,7 @@ using log4net;
 
 namespace ECustoms
 {
-  public partial class frmAddUser : Form
+  public partial class frmAddUser : SubFormBase
   {
     private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmLogin");
     private frmUser _parrent;

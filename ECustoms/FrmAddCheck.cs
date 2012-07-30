@@ -8,7 +8,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class FrmAddCheck : Form
+    public partial class FrmAddCheck : SubFormBase
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.FrmAddCheck");
         private UserInfo _userInfo;

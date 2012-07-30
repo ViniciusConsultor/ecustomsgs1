@@ -8,7 +8,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class FrmDecleExportOption : Form
+    public partial class FrmDecleExportOption : SubFormBase
     {
         #region Private variables
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger("Ecustoms.FrmDecleExport");

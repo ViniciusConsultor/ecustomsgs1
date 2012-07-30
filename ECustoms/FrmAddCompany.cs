@@ -13,7 +13,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class FrmAddCompany : Form
+    public partial class FrmAddCompany : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("Ecustoms.FrmAddCompany");
 

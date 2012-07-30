@@ -76,16 +76,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.grdVehicle = new System.Windows.Forms.DataGridView();
-            this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet2 = new ECustoms.DataSet2();
-            this.tblGoodsTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new ECustoms.DataSet2();
             this.GoodsType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tblGoodsTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +94,8 @@
             this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInvalid)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -218,7 +218,7 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Image = global::ECustoms.Properties.Resources._001_39;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(493, 228);
+            this.btnReset.Location = new System.Drawing.Point(502, 228);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(123, 33);
             this.btnReset.TabIndex = 17;
@@ -234,7 +234,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(414, 228);
+            this.btnDelete.Location = new System.Drawing.Point(423, 228);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(73, 33);
             this.btnDelete.TabIndex = 10;
@@ -250,7 +250,7 @@
             this.btnSaveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveAll.Image = global::ECustoms.Properties.Resources.save_icon;
             this.btnSaveAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveAll.Location = new System.Drawing.Point(183, 228);
+            this.btnSaveAll.Location = new System.Drawing.Point(192, 228);
             this.btnSaveAll.Name = "btnSaveAll";
             this.btnSaveAll.Size = new System.Drawing.Size(225, 33);
             this.btnSaveAll.TabIndex = 9;
@@ -266,7 +266,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(6, 228);
+            this.btnAdd.Location = new System.Drawing.Point(15, 228);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(171, 33);
             this.btnAdd.TabIndex = 8;
@@ -282,7 +282,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(622, 228);
+            this.btnClose.Location = new System.Drawing.Point(631, 228);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
             this.btnClose.TabIndex = 11;
@@ -517,41 +517,6 @@
             this.grdVehicle.TabIndex = 12;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             // 
-            // tblVehicleTypeBindingSource
-            // 
-            this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
-            this.tblVehicleTypeBindingSource.DataSource = this.dataSet2;
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblGoodsTypeBindingSource1
-            // 
-            this.tblGoodsTypeBindingSource1.DataMember = "tblGoodsType";
-            this.tblGoodsTypeBindingSource1.DataSource = this.dataSet2;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.grdVehicle);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 293);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(837, 275);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Các xe vừa nhập";
-            // 
-            // tblGoodsTypeBindingSource
-            // 
-            this.tblGoodsTypeBindingSource.DataMember = "tblGoodsType";
-            this.tblGoodsTypeBindingSource.DataSource = this.dataSet2;
-            // 
             // Count
             // 
             this.Count.DataPropertyName = "Count";
@@ -586,6 +551,16 @@
             this.VehicleType.ValueMember = "VehicleTypeID";
             this.VehicleType.Width = 200;
             // 
+            // tblVehicleTypeBindingSource
+            // 
+            this.tblVehicleTypeBindingSource.DataMember = "tblVehicleType";
+            this.tblVehicleTypeBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // GoodsType
             // 
             this.GoodsType.DataPropertyName = "ExportGoodTypeId";
@@ -595,6 +570,11 @@
             this.GoodsType.Name = "GoodsType";
             this.GoodsType.ValueMember = "TypeId";
             this.GoodsType.Width = 200;
+            // 
+            // tblGoodsTypeBindingSource1
+            // 
+            this.tblGoodsTypeBindingSource1.DataMember = "tblGoodsType";
+            this.tblGoodsTypeBindingSource1.DataSource = this.dataSet2;
             // 
             // Status
             // 
@@ -676,11 +656,31 @@
             this.ExportDate.Visible = false;
             this.ExportDate.Width = 110;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.grdVehicle);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 293);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(837, 277);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Các xe vừa nhập";
+            // 
+            // tblGoodsTypeBindingSource
+            // 
+            this.tblGoodsTypeBindingSource.DataMember = "tblGoodsType";
+            this.tblGoodsTypeBindingSource.DataSource = this.dataSet2;
+            // 
             // FrmAddVehicleExportParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 579);
+            this.ClientSize = new System.Drawing.Size(859, 581);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

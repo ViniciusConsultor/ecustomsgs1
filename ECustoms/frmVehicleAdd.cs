@@ -9,7 +9,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class frmVehicleAdd : Form
+    public partial class frmVehicleAdd : SubFormBase
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmVehicleAdd");
         #region Priority

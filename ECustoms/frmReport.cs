@@ -7,7 +7,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class frmReport : Form
+    public partial class frmReport : SubFormBase
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmReport");
         private Form _mainForm;

@@ -12,7 +12,7 @@ using techlink.Digest;
 
 namespace ECustoms
 {
-    public partial class frmCheckDigestInfo : Form
+    public partial class frmCheckDigestInfo : SubFormBase
     {
         private string str = "abcdefghikmnlopqrstuv";
         private bool force_close = false;

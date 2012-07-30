@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ECustoms
 {
-    public partial class FrmCheck : Form
+    public partial class FrmCheck : SubFormBase
     {
         private int _mode;
         private UserInfo _userInfo;

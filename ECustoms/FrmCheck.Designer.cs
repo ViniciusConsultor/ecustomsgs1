@@ -110,7 +110,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(253, 353);
+            this.btnClose.Location = new System.Drawing.Point(412, 353);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 33);
             this.btnClose.TabIndex = 35;
@@ -168,7 +168,7 @@
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(135, 353);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(294, 353);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(112, 33);
             this.btnUpdateVehicle.TabIndex = 38;
@@ -184,7 +184,7 @@
             this.btnAddVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVehicle.Image = global::ECustoms.Properties.Resources._001_01;
             this.btnAddVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehicle.Location = new System.Drawing.Point(12, 353);
+            this.btnAddVehicle.Location = new System.Drawing.Point(171, 353);
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.Size = new System.Drawing.Size(117, 33);
             this.btnAddVehicle.TabIndex = 37;

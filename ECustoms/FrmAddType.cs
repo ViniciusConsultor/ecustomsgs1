@@ -13,7 +13,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class FrmAddType : Form
+    public partial class FrmAddType : SubFormBase
     {
         private int _mode;  //_mode=0 : add new; _mode=1 : edit
         private string _typeCode;

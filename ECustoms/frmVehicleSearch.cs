@@ -17,7 +17,7 @@ using CrystalDecisions.Shared;
 
 namespace ECustoms
 {
-    public partial class frmVehicleSearch : Form
+    public partial class frmVehicleSearch : SubFormBase
     {
         private static ILog logger = LogManager.GetLogger("Ecustoms.frmVehicleSearch");
         private UserInfo _userInfo;

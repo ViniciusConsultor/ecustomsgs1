@@ -11,7 +11,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class frmVehicle : Form
+    public partial class frmVehicle : SubFormBase
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmVehicle");
         private List<ViewAllVehicleHasGood> _vehicleInfosTemp;

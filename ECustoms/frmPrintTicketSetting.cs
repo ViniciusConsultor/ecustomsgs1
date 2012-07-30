@@ -9,7 +9,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-  public partial class frmPrintTicketSetting : Form
+  public partial class frmPrintTicketSetting : SubFormBase
   {
     private UserInfo _userInfo;
     private static ILog logger = LogManager.GetLogger("Ecustoms.frmPrintTicketSetting");

@@ -9,7 +9,7 @@ using ECustoms.Utilities;
 
 namespace ECustoms
 {
-    public partial class FrmCrystalReport : Form
+    public partial class FrmCrystalReport : SubFormBase
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger("Ecustoms.FrmDecleExport");
         private ReportType _type;
