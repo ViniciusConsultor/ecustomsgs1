@@ -23,7 +23,7 @@ namespace ECustoms.BOL
 
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             //var data = db.ViewAllVehicleHasGoods.Where(g => g.ConfirmStatus != null && g.IsGoodsImported == true && g.IsCompleted == true && g.ConfirmDate >= startToday && g.ConfirmDate <= endToday).OrderByDescending(g => g.ImportDate).ToList();
-            
+
             //tim cac xe da nhap canh co hang, nhung chua vao noi dia, va co to khai da xac nhan tra ho so, chi hien thi theo ngay tra so so = ngay hien tai
             List<ViewAllVehicleHasGood> data = db.ViewAllVehicleHasGoods.Where(g => g.HasGoodsImported == true && g.IsCompleted != true && g.ConfirmStatus != null && g.ConfirmDate >= startToday && g.ConfirmDate <= endToday).OrderByDescending(g => g.ConfirmDate).ToList();
             db.Connection.Close();
@@ -73,79 +73,163 @@ namespace ECustoms.BOL
             if (isChineseVehicle)
             {
                 _viewAllVehicle = _viewAllVehicle.Where(g => g.IsChineseVehicle == true);
+
+                // Da hoan thanh: la xe co IsCompleted==true (nhap canh co hang va da vao noi dia)
+                if (isCompleted)
+                {
+                    // Da nhap
+                    if (isImport)
+                    {
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsGoodsImported == true || g.DeclarationID == 0));
+                        // da xuat theo thoi gian
+                        if (isExport)
+                        {
+                            // Lay nhung ban ghi da hoan thanh theo export va import
+                            _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true && g.IsExport == true && g.ImportDate >= importFrom &&
+                                     g.ImportDate <= importTo) && (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo));
+                            
+                        }
+                        // Khong quan tam toi thoi gian nhap
+                        else
+                        {
+                            // Chi lay nhung ban ghi da nhap va isExprot = true
+                            _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true) && (g.IsImport == true) && (g.IsExport == true) &&
+                                    (g.ImportDate >= importFrom) && (g.ImportDate <= importTo));
+                        }
+                    }
+                    // da nhap = uncheck
+                    else
+                    {
+                        // Lay tat ca ban ghi ma da hoan tat, khong quan tam toi thoi gian
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true));
+                    }
+                }
+                // Chua hoanthanh
+                else
+                {
+                    // Da nhap
+                    if (isImport)
+                    {
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsGoodsImported == null || g.IsGoodsImported == false));
+                        if (isExport)
+                        {
+                            _viewAllVehicle = _viewAllVehicle.Where(g =>(g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) &&
+                                    (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo));
+                        }
+                        else
+                        {
+                            // chi lay ban ghi da nhap canh, khong quan tam da xuat  hay chua                         
+                            _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsImport != null && g.IsImport == true) && (g.ImportDate >= importFrom) && (g.ImportDate <= importTo));
+                        }
+                    }
+                    else
+                    {
+                        // lay tat ban ghi chua xuat, chua nhap
+                        _viewAllVehicle = _viewAllVehicle.Where(g =>(g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false));
+                    }
+                }
+
             }
             else
             {
                 _viewAllVehicle = _viewAllVehicle.Where(g => g.IsChineseVehicle == null || g.IsChineseVehicle == false);
                 _viewAllVehicle = !string.IsNullOrEmpty(plateNumberPartner) ? _viewAllVehicle.Where(g => g.PlateNumberPartner != null && g.PlateNumberPartner.Contains(plateNumberPartner)) : _viewAllVehicle;
+
+                // Da hoan thanh: la xe co IsCompleted==true (nhap canh co hang va da vao noi dia)
+                if (isCompleted)
+                {
+                    // Da xuat
+                    if (isExport)
+                    {
+                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsGoodsImported == true || g.DeclarationID == 0));
+                        // da nhap theo thoi gian
+                        if (isImport)
+                        {
+                            // Lay nhung ban ghi da hoan thanh theo export va import
+                            _viewAllVehicle =
+                                _viewAllVehicle.Where(
+                                    g =>
+                                    (g.IsCompleted == true && g.IsExport == true && g.ExportDate >= exportFrom &&
+                                     g.ExportDate <= exportTo) &&
+                                    (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo));
+                            //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true && g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
+                        }
+                            // Khong quan tam toi thoi gian nhap
+                        else
+                        {
+                            // Chi lay nhung ban ghi da xuat va isImprot = true
+                            _viewAllVehicle =
+                                _viewAllVehicle.Where(
+                                    g =>
+                                    (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) &&
+                                    (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
+                            //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
+                        }
+                    }
+                        // da xuat = uncheck
+                    else
+                    {
+                        // Lay tat ca ban ghi ma da hoan tat, khong quan tam toi thoi gian
+                        _viewAllVehicle =
+                            _viewAllVehicle.Where(
+                                g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true));
+                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
+                    }
+                }
+                    // Chua hoanthanh
+                else
+                {
+                    // Da xuat
+                    if (isExport)
+                    {
+                        _viewAllVehicle =
+                            _viewAllVehicle.Where(g => (g.IsGoodsImported == null || g.IsGoodsImported == false));
+                        // chua nhap canh
+                        if (isNotImport)
+                        {
+                            // chi lay nhung ban ghi da xuat, ma chua nhap      
+                            _viewAllVehicle =
+                                _viewAllVehicle.Where(
+                                    g =>
+                                    g.IsExport == true && (g.IsImport == null || g.IsImport == false) &&
+                                    (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
+                            //result = db.ViewAllVehicleHasGoods.Where(g => g.IsExport == true && (g.IsImport == null || g.IsImport == false) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
+                        }
+                        else if (isImport)
+                        {
+                            _viewAllVehicle =
+                                _viewAllVehicle.Where(
+                                    g =>
+                                    (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) &&
+                                    (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo));
+                            //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
+                        }
+                        else
+                        {
+                            // chi lay ban ghi da xuat canh, khong quan tam da nhap  hay chua
+                            // chi lay nhung ban ghi da xuat, ma chua nhap                            
+                            // order by exported date
+                            _viewAllVehicle =
+                                _viewAllVehicle.Where(
+                                    g =>
+                                    (g.IsExport != null && g.IsExport == true) && (g.ExportDate >= exportFrom) &&
+                                    (g.ExportDate <= exportTo));
+                            //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport != null && g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
+                        }
+                    }
+                    else
+                    {
+                        // lay tat ban ghi chua xuat, chua nhap
+                        _viewAllVehicle =
+                            _viewAllVehicle.Where(
+                                g =>
+                                (g.IsExport == null || g.IsExport == false) &&
+                                (g.IsImport == null || g.IsImport == false));
+                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false)).ToList();
+                    }
+                }
             }
 
-            // Da hoan thanh: la xe co IsCompleted==true (nhap canh co hang va da vao noi dia)
-            if (isCompleted)
-            {
-                // Da xuat
-                if (isExport)
-                {
-                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsGoodsImported == true || g.DeclarationID == 0));
-                    // da nhap theo thoi gian
-                    if (isImport)
-                    {
-                        // Lay nhung ban ghi da hoan thanh theo export va import
-                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true && g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo));
-                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true && g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
-                    }
-                    // Khong quan tam toi thoi gian nhap
-                    else
-                    {
-                        // Chi lay nhung ban ghi da xuat va isImprot = true
-                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
-                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
-                    }
-                }
-                // da xuat = uncheck
-                else
-                {
-                    // Lay tat ca ban ghi ma da hoan tat, khong quan tam toi thoi gian
-                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true));
-                    //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsCompleted == true) && (g.IsExport == true) && (g.IsImport == true) && (g.IsGoodsImported == true || (g.DeclarationID == 0))).ToList();
-                }
-            }
-            // Chua hoanthanh
-            else
-            {
-                // Da xuat
-                if (isExport)
-                {
-                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsGoodsImported == null || g.IsGoodsImported == false));
-                    // chua nhap canh
-                    if (isNotImport)
-                    {
-                        // chi lay nhung ban ghi da xuat, ma chua nhap      
-                        _viewAllVehicle = _viewAllVehicle.Where(g => g.IsExport == true && (g.IsImport == null || g.IsImport == false) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
-                        //result = db.ViewAllVehicleHasGoods.Where(g => g.IsExport == true && (g.IsImport == null || g.IsImport == false) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
-                    }
-                    else if (isImport)
-                    {
-                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo));
-                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == true && g.ExportDate >= exportFrom && g.ExportDate <= exportTo) && (g.IsImport == true && g.ImportDate >= importFrom && g.ImportDate <= importTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
-                    }
-                    else
-                    {
-                        // chi lay ban ghi da xuat canh, khong quan tam da nhap  hay chua
-                        // chi lay nhung ban ghi da xuat, ma chua nhap                            
-                        // order by exported date
-                        _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsExport != null && g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo));
-                        //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport != null && g.IsExport == true) && (g.ExportDate >= exportFrom) && (g.ExportDate <= exportTo) && (g.IsGoodsImported == null || g.IsGoodsImported == false)).ToList();
-                    }
-                }
-                else
-                {
-                    // lay tat ban ghi chua xuat, chua nhap
-                    _viewAllVehicle = _viewAllVehicle.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false));
-                    //result = db.ViewAllVehicleHasGoods.Where(g => (g.IsExport == null || g.IsExport == false) && (g.IsImport == null || g.IsImport == false)).ToList();
-                }
-            }
-            
             List<ViewAllVehicleHasGood> rsl = (from a in _viewAllVehicle
                                                orderby a.ModifiedDate descending
                                                select a).ToList();
@@ -381,18 +465,18 @@ namespace ECustoms.BOL
         //c ap nhat so lan in ticket cua vehicle
         public static int UpdateTicketTotalPrint(tblVehicle vehicle)
         {
-          var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-          tblVehicle vehicleObj = db.tblVehicles.Where(g => g.VehicleID == vehicle.VehicleID).FirstOrDefault();
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            tblVehicle vehicleObj = db.tblVehicles.Where(g => g.VehicleID == vehicle.VehicleID).FirstOrDefault();
 
-          vehicleObj.HasGoodsImportedTocalPrint = vehicle.HasGoodsImportedTocalPrint;
-          vehicleObj.ParkingTotalPrint = vehicle.ParkingTotalPrint;
+            vehicleObj.HasGoodsImportedTocalPrint = vehicle.HasGoodsImportedTocalPrint;
+            vehicleObj.ParkingTotalPrint = vehicle.ParkingTotalPrint;
 
-          vehicleObj.HasGoodsImportedPrintOrderNumber = vehicle.HasGoodsImportedPrintOrderNumber;
-          vehicleObj.ParkingTotalPrintOrderNumber = vehicle.ParkingTotalPrintOrderNumber;
+            vehicleObj.HasGoodsImportedPrintOrderNumber = vehicle.HasGoodsImportedPrintOrderNumber;
+            vehicleObj.ParkingTotalPrintOrderNumber = vehicle.ParkingTotalPrintOrderNumber;
 
-          int re = db.SaveChanges();
-          db.Connection.Close();
-          return re;
+            int re = db.SaveChanges();
+            db.Connection.Close();
+            return re;
         }
 
         public static List<tblVehicle> GetChineseVehicle()
@@ -415,10 +499,10 @@ namespace ECustoms.BOL
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             var result = db.viewDeclarationVehicles.Where(g => g.DeclarationID != 0 && g.VehicleID == vehicleID && g.DeclarationType == (int)DeclarationType.DeclarationTypeExport).OrderByDescending(g => g.ExportDate).Count();
             db.Connection.Close();
-            return result <= 0;           
+            return result <= 0;
         }
 
-        public static List<ViewDeclarationVehicleImportExportFee> SeachFee(string plateNumber, string receiptNumber,bool isCreatedDateVehicle, DateTime createdFrom, DateTime createdTo, bool isParking, DateTime parkingFrom, DateTime parkingTo, bool isGetFee, DateTime feeFrom, DateTime feeTo)
+        public static List<ViewDeclarationVehicleImportExportFee> SeachFee(string plateNumber, string receiptNumber, bool isCreatedDateVehicle, DateTime createdFrom, DateTime createdTo, bool isParking, DateTime parkingFrom, DateTime parkingTo, bool isGetFee, DateTime feeFrom, DateTime feeTo)
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             IQueryable<ViewDeclarationVehicleImportExportFee> _viewAllVehicle = db.ViewDeclarationVehicleImportExportFees;
@@ -430,24 +514,24 @@ namespace ECustoms.BOL
                 createdTo = new DateTime(createdTo.Year, createdTo.Month, createdTo.Day, 0, 0, 0).AddDays(1);
                 _viewAllVehicle = _viewAllVehicle.Where(g => g.CreatedDate != null && g.CreatedDate >= createdFrom && g.CreatedDate < createdTo);
             }
-            
+
             if (isParking)
             {
                 parkingFrom = new DateTime(parkingFrom.Year, parkingFrom.Month, parkingFrom.Day, 0, 0, 0);
                 parkingTo = new DateTime(parkingTo.Year, parkingTo.Month, parkingTo.Day, 0, 0, 0).AddDays(1);
                 _viewAllVehicle = _viewAllVehicle.Where(g => g.Parking != null && g.ParkingDate >= parkingFrom && g.ParkingDate < parkingTo);
             }
-            
+
             if (isGetFee)
             {
-                feeFrom = new DateTime(feeFrom.Year, feeFrom.Month, feeFrom.Day, 0 ,0, 0);
+                feeFrom = new DateTime(feeFrom.Year, feeFrom.Month, feeFrom.Day, 0, 0, 0);
                 feeTo = new DateTime(feeTo.Year, feeTo.Month, feeTo.Day, 0, 0, 0).AddDays(1);
                 _viewAllVehicle = _viewAllVehicle.Where(g => (g.feeExportDate >= feeFrom && g.feeExportDate < feeTo) || (g.feeImportDate >= feeFrom && g.feeImportDate < feeTo));
             }
 
             List<ViewDeclarationVehicleImportExportFee> result = (from a in _viewAllVehicle
-                                               orderby a.ModifiedDate descending
-                                               select a).ToList();
+                                                                  orderby a.ModifiedDate descending
+                                                                  select a).ToList();
             return result;
 
         }

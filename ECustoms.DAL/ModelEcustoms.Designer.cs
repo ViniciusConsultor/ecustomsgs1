@@ -13,7 +13,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("dbEcustomModel", "FK_tblRoleInGroup_tlbRole", "tlbRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ECustoms.DAL.tlbRole), "tblRoleInGroup", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ECustoms.DAL.tblRoleInGroup))]
 
 // Original file name:
-// Generation date: 07/25/2012 8:07:41 AM
+// Generation date: 7/30/2012 9:43:01 PM
 namespace ECustoms.DAL
 {
     
@@ -2958,32 +2958,32 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnDateHandoverChanged();
         /// <summary>
-        /// There are no comments for property PersonHandover in the schema.
+        /// There are no comments for property PersonHandoverID in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string PersonHandover
+        public global::System.Nullable<int> PersonHandoverID
         {
             get
             {
-                return this._PersonHandover;
+                return this._PersonHandoverID;
             }
             set
             {
-                this.OnPersonHandoverChanging(value);
-                this.ReportPropertyChanging("PersonHandover");
-                this._PersonHandover = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("PersonHandover");
-                this.OnPersonHandoverChanged();
+                this.OnPersonHandoverIDChanging(value);
+                this.ReportPropertyChanging("PersonHandoverID");
+                this._PersonHandoverID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("PersonHandoverID");
+                this.OnPersonHandoverIDChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _PersonHandover;
+        private global::System.Nullable<int> _PersonHandoverID;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnPersonHandoverChanging(string value);
+        partial void OnPersonHandoverIDChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnPersonHandoverChanged();
+        partial void OnPersonHandoverIDChanged();
         /// <summary>
         /// There are no comments for property DateReturn in the schema.
         /// </summary>
@@ -3147,32 +3147,32 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnTypeOptionChanged();
         /// <summary>
-        /// There are no comments for property PersonHandoverID in the schema.
+        /// There are no comments for property CustomsCode in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> PersonHandoverID
+        public string CustomsCode
         {
             get
             {
-                return this._PersonHandoverID;
+                return this._CustomsCode;
             }
             set
             {
-                this.OnPersonHandoverIDChanging(value);
-                this.ReportPropertyChanging("PersonHandoverID");
-                this._PersonHandoverID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("PersonHandoverID");
-                this.OnPersonHandoverIDChanged();
+                this.OnCustomsCodeChanging(value);
+                this.ReportPropertyChanging("CustomsCode");
+                this._CustomsCode = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("CustomsCode");
+                this.OnCustomsCodeChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _PersonHandoverID;
+        private string _CustomsCode;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnPersonHandoverIDChanging(global::System.Nullable<int> value);
+        partial void OnCustomsCodeChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnPersonHandoverIDChanged();
+        partial void OnCustomsCodeChanged();
         /// <summary>
         /// There are no comments for property GateImport in the schema.
         /// </summary>
@@ -3200,33 +3200,6 @@ namespace ECustoms.DAL
         partial void OnGateImportChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnGateImportChanged();
-        /// <summary>
-        /// There are no comments for property CustomsCode in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string CustomsCode
-        {
-            get
-            {
-                return this._CustomsCode;
-            }
-            set
-            {
-                this.OnCustomsCodeChanging(value);
-                this.ReportPropertyChanging("CustomsCode");
-                this._CustomsCode = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("CustomsCode");
-                this.OnCustomsCodeChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _CustomsCode;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnCustomsCodeChanging(string value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnCustomsCodeChanged();
         /// <summary>
         /// There are no comments for tblUser in the schema.
         /// </summary>
@@ -5939,33 +5912,6 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnIsChineseVehicleChanged();
         /// <summary>
-        /// There are no comments for property PlateNumberPartner in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string PlateNumberPartner
-        {
-            get
-            {
-                return this._PlateNumberPartner;
-            }
-            set
-            {
-                this.OnPlateNumberPartnerChanging(value);
-                this.ReportPropertyChanging("PlateNumberPartner");
-                this._PlateNumberPartner = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("PlateNumberPartner");
-                this.OnPlateNumberPartnerChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _PlateNumberPartner;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnPlateNumberPartnerChanging(string value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnPlateNumberPartnerChanged();
-        /// <summary>
         /// There are no comments for property IsExportParking in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -6047,59 +5993,32 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnConfirmExportParkingByChanged();
         /// <summary>
-        /// There are no comments for property ExportReceiptNumber in the schema.
+        /// There are no comments for property PlateNumberPartner in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string ExportReceiptNumber
+        public string PlateNumberPartner
         {
             get
             {
-                return this._ExportReceiptNumber;
+                return this._PlateNumberPartner;
             }
             set
             {
-                this.OnExportReceiptNumberChanging(value);
-                this.ReportPropertyChanging("ExportReceiptNumber");
-                this._ExportReceiptNumber = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("ExportReceiptNumber");
-                this.OnExportReceiptNumberChanged();
+                this.OnPlateNumberPartnerChanging(value);
+                this.ReportPropertyChanging("PlateNumberPartner");
+                this._PlateNumberPartner = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("PlateNumberPartner");
+                this.OnPlateNumberPartnerChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _ExportReceiptNumber;
+        private string _PlateNumberPartner;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnExportReceiptNumberChanging(string value);
+        partial void OnPlateNumberPartnerChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnExportReceiptNumberChanged();
-        /// <summary>
-        /// There are no comments for property ImportReceiptNumber in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string ImportReceiptNumber
-        {
-            get
-            {
-                return this._ImportReceiptNumber;
-            }
-            set
-            {
-                this.OnImportReceiptNumberChanging(value);
-                this.ReportPropertyChanging("ImportReceiptNumber");
-                this._ImportReceiptNumber = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("ImportReceiptNumber");
-                this.OnImportReceiptNumberChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _ImportReceiptNumber;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnImportReceiptNumberChanging(string value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnImportReceiptNumberChanged();
+        partial void OnPlateNumberPartnerChanged();
         /// <summary>
         /// There are no comments for property vehicleTypeId in the schema.
         /// </summary>
@@ -6397,6 +6316,60 @@ namespace ECustoms.DAL
         partial void OnconfirmFeeImportByChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnconfirmFeeImportByChanged();
+        /// <summary>
+        /// There are no comments for property ExportReceiptNumber in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string ExportReceiptNumber
+        {
+            get
+            {
+                return this._ExportReceiptNumber;
+            }
+            set
+            {
+                this.OnExportReceiptNumberChanging(value);
+                this.ReportPropertyChanging("ExportReceiptNumber");
+                this._ExportReceiptNumber = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("ExportReceiptNumber");
+                this.OnExportReceiptNumberChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _ExportReceiptNumber;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnExportReceiptNumberChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnExportReceiptNumberChanged();
+        /// <summary>
+        /// There are no comments for property ImportReceiptNumber in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string ImportReceiptNumber
+        {
+            get
+            {
+                return this._ImportReceiptNumber;
+            }
+            set
+            {
+                this.OnImportReceiptNumberChanging(value);
+                this.ReportPropertyChanging("ImportReceiptNumber");
+                this._ImportReceiptNumber = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("ImportReceiptNumber");
+                this.OnImportReceiptNumberChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _ImportReceiptNumber;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnImportReceiptNumberChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnImportReceiptNumberChanged();
         /// <summary>
         /// There are no comments for property CreatedDate in the schema.
         /// </summary>
@@ -18607,6 +18580,87 @@ namespace ECustoms.DAL
         partial void OnGroupNameChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnGroupNameChanged();
+        /// <summary>
+        /// There are no comments for property Address in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string Address
+        {
+            get
+            {
+                return this._Address;
+            }
+            set
+            {
+                this.OnAddressChanging(value);
+                this.ReportPropertyChanging("Address");
+                this._Address = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Address");
+                this.OnAddressChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _Address;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnAddressChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnAddressChanged();
+        /// <summary>
+        /// There are no comments for property Email in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string Email
+        {
+            get
+            {
+                return this._Email;
+            }
+            set
+            {
+                this.OnEmailChanging(value);
+                this.ReportPropertyChanging("Email");
+                this._Email = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Email");
+                this.OnEmailChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _Email;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnEmailChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnEmailChanged();
+        /// <summary>
+        /// There are no comments for property PhoneNumber in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string PhoneNumber
+        {
+            get
+            {
+                return this._PhoneNumber;
+            }
+            set
+            {
+                this.OnPhoneNumberChanging(value);
+                this.ReportPropertyChanging("PhoneNumber");
+                this._PhoneNumber = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("PhoneNumber");
+                this.OnPhoneNumberChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _PhoneNumber;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnPhoneNumberChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnPhoneNumberChanged();
     }
     /// <summary>
     /// There are no comments for dbEcustomModel.ViewVehicleFee in the schema.
