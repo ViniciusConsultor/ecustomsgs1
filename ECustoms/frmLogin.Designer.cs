@@ -33,8 +33,6 @@
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblValidateUserName = new System.Windows.Forms.Label();
-            this.lblValidatePassword = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -81,28 +79,6 @@
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Tag = "Password";
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
-            // 
-            // lblValidateUserName
-            // 
-            this.lblValidateUserName.AutoSize = true;
-            this.lblValidateUserName.ForeColor = System.Drawing.Color.Red;
-            this.lblValidateUserName.Location = new System.Drawing.Point(368, 162);
-            this.lblValidateUserName.Name = "lblValidateUserName";
-            this.lblValidateUserName.Size = new System.Drawing.Size(11, 13);
-            this.lblValidateUserName.TabIndex = 7;
-            this.lblValidateUserName.Text = "*";
-            this.lblValidateUserName.Visible = false;
-            // 
-            // lblValidatePassword
-            // 
-            this.lblValidatePassword.AutoSize = true;
-            this.lblValidatePassword.ForeColor = System.Drawing.Color.Red;
-            this.lblValidatePassword.Location = new System.Drawing.Point(368, 184);
-            this.lblValidatePassword.Name = "lblValidatePassword";
-            this.lblValidatePassword.Size = new System.Drawing.Size(11, 13);
-            this.lblValidatePassword.TabIndex = 8;
-            this.lblValidatePassword.Text = "*";
-            this.lblValidatePassword.Visible = false;
             // 
             // pictureBox1
             // 
@@ -159,11 +135,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(448, 269);
+            this.ClientSize = new System.Drawing.Size(448, 271);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.lblValidatePassword);
-            this.Controls.Add(this.lblValidateUserName);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -193,8 +167,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lblValidateUserName;
-        private System.Windows.Forms.Label lblValidatePassword;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

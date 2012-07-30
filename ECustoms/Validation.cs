@@ -4,7 +4,7 @@ using ECustoms.BOL;
 
 namespace ECustoms
 {
-    public class Validation
+    public class Validation: ErrorProvider
     {
         private Form _owner;
         private string[] _listTagName;
@@ -16,38 +16,41 @@ namespace ECustoms
         }
         public bool Validate()
         {
-            var isValid = true;
-            foreach (Control c in _owner.Controls)
+            var hasError = false;
+            _validate(_owner, ref hasError);
+            return !hasError;
+        }
+
+        private void _validate(Control ctl, ref bool hasError)
+        {
+            if (ctl.Controls.Count <= 0) return;
+            foreach (var control in ctl.Controls)
             {
-                if (c is GroupBox)
+                if (control is Control)
                 {
-                    foreach (Control c1 in c.Controls)
+                    if ((control as Control).Tag != null && _listTagName.Any((control as Control).Tag.Equals))
                     {
-                        if (!(c1 is TextBox) || c1.Tag == null) continue;
-                        var tbxTag1 = c1.Tag.ToString();
-                        if (!_listTagName.Any(tbxTag1.Equals)) continue;
-                        if (string.IsNullOrEmpty(c1.Text))
+                        if (control is TextBox)
                         {
-                            c1.BackColor = System.Drawing.Color.Yellow;
-                            isValid = false;
+                            if ((control as TextBox).Text.Trim().Length == 0)
+                            {
+                                this.SetError(control as Control, "Trường cần phải nhập thông tin!");
+                                (control as Control).BackColor = System.Drawing.Color.Yellow;
+                                hasError = true;
+                            }
+                            else
+                            {
+                                this.SetError(control as Control, string.Empty);
+                                (control as Control).BackColor = System.Drawing.Color.White;
+                            }
                         }
-                        else
-                            c1.BackColor = System.Drawing.Color.White;                    
                     }
-                    continue;
+                    else
+                    {
+                        _validate(control as Control, ref hasError);
+                    }
                 }
-                if (!(c is TextBox) || c.Tag == null) continue;
-                var tbxTag = c.Tag.ToString();
-                if (!_listTagName.Any(tbxTag.Equals)) continue;
-                if (string.IsNullOrEmpty(c.Text))
-                {
-                    c.BackColor = System.Drawing.Color.Yellow;
-                    isValid = false;
-                }
-                else
-                    c.BackColor = System.Drawing.Color.White;
             }
-            return isValid;
         }
     }
 }
