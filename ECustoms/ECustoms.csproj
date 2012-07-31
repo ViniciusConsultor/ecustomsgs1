@@ -883,6 +883,10 @@
     <None Include="Resources\excel82.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\clipboard_next_down.png" />
+    <None Include="Resources\clipboard_next.png" />
+    <None Include="Resources\clipboard_empty.png" />
     <None Include="Resources\scroll.png" />
     <None Include="Resources\preferences.png" />
     <None Include="Resources\help.png" />

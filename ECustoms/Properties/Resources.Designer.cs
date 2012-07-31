@@ -158,6 +158,34 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap clipboard {
+            get {
+                object obj = ResourceManager.GetObject("clipboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap clipboard_empty {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_empty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap clipboard_next {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap clipboard_next_down {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_next_down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
