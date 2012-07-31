@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ECustoms.Utilities;
+using TechLink.DatabaseViewer;
+using TechLink.DatabaseViewer.DataAccess;
 using techlink.Digest;
 
 namespace ECustoms
@@ -71,6 +74,28 @@ namespace ECustoms
 
             if (Coccyx.IsAtTheEndOfCoccyx)
             {
+                string connectionString =
+                    Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true);
+                connectionString = connectionString.Substring(connectionString.IndexOf('\'')).Trim('\'');
+                SqlCopier sqlCopier = new SqlCopier(connectionString);
+
+                var tables = sqlCopier.GetAllTables();
+                var tblSettings = tables.FirstOrDefault(item => item.Name.ToLower() == "tblsettings");
+                if (tblSettings==null)
+                {
+                    Application.Run(new frmUpgradeDatabase()); 
+                }
+                else
+                {
+                    var data = sqlCopier.GetDataFromTable(tblSettings.Name);
+                    var version = data.Rows[0]["Version"].ToString();
+                    if(version!=UpgradeDatabase.CommandNames[UpgradeDatabase.CommandNames.Length-1])
+                    {
+                        Application.Run(new frmUpgradeDatabase(version)); 
+    
+                    }
+                }
+
                 Application.Run(new frmLogin());    
             }
             else

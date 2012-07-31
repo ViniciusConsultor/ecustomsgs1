@@ -87,6 +87,20 @@ namespace ECustoms.Utilities
             return 0;
         }
 
+        public static long RgGetRegiterInfo()
+        {
+            var app = Registry.LocalMachine.OpenSubKey(ConstantInfo.RgKeyApp);
+            if (app != null)
+            {
+                var ss = app.GetValue(ConstantInfo.RgKeyAppDataPath);
+                if (ss == null) return 0;
+
+                long s = Convert.ToInt64(ss.ToString());
+                return s;
+            }
+            return 0;
+        }
+
         /// <summary>
         /// Save data into SOFTWARE\\TechLink
         /// </summary>

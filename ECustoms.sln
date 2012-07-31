@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Windows.Forms.Resour
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Windows.Forms.RCM", "System.Windows.Forms.RCM\System.Windows.Forms.RCM.csproj", "{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechLink.DatabaseViewer", "TechLink.Tools\TechLink.DatabaseViewer\TechLink.DatabaseViewer.csproj", "{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,16 @@ Global
 		{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}.Release|x86.ActiveCfg = Release|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
