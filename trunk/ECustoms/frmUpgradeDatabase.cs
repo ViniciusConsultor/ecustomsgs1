@@ -20,17 +20,19 @@ namespace ECustoms
             Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true);
 
         private string _version = string.Empty;
+        private string _connection = string.Empty;
 
-        public frmUpgradeDatabase(string version)
+        public frmUpgradeDatabase(string version, string connection)
         {
             InitializeComponent();
             _version = version;
+            _connection = connection;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            SqlCopier sqlCopier = new SqlCopier(connectionString);
+            SqlCopier sqlCopier = new SqlCopier(_connection);
             UpgradeDatabase upgradeDatabase = new UpgradeDatabase();
 
             var currentVersions = _version.Split('.');
