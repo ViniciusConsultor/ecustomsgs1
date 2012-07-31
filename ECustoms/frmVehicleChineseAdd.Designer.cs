@@ -171,6 +171,8 @@
             // 
             // txtStatus
             // 
+            this.txtStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStatus.Location = new System.Drawing.Point(130, 182);
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
@@ -179,6 +181,8 @@
             // 
             // txtNote
             // 
+            this.txtNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNote.Location = new System.Drawing.Point(130, 238);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
@@ -203,9 +207,9 @@
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.grdVehicle);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 383);
+            this.groupBox1.Location = new System.Drawing.Point(7, 370);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(833, 290);
+            this.groupBox1.Size = new System.Drawing.Size(756, 259);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các xe vừa nhập";
@@ -214,6 +218,7 @@
             // 
             this.grdVehicle.AllowUserToAddRows = false;
             this.grdVehicle.AllowUserToDeleteRows = false;
+            this.grdVehicle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,13 +244,14 @@
             this.VehicleID,
             this.NumberOfContainer,
             this.ExportDate});
+            this.grdVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.grdVehicle.Location = new System.Drawing.Point(11, 25);
+            this.grdVehicle.Location = new System.Drawing.Point(3, 22);
             this.grdVehicle.Name = "grdVehicle";
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(816, 232);
+            this.grdVehicle.Size = new System.Drawing.Size(750, 234);
             this.grdVehicle.TabIndex = 10;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             // 
@@ -255,7 +261,6 @@
             this.Count.HeaderText = "STT";
             this.Count.Name = "Count";
             this.Count.ReadOnly = true;
-            this.Count.Width = 50;
             // 
             // PlateNumber
             // 
@@ -264,14 +269,12 @@
             this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle2;
             this.PlateNumber.HeaderText = "Biển Kiểm soát";
             this.PlateNumber.Name = "PlateNumber";
-            this.PlateNumber.Width = 155;
             // 
             // DriverName
             // 
             this.DriverName.DataPropertyName = "DriverName";
             this.DriverName.HeaderText = "Tên lái xe";
             this.DriverName.Name = "DriverName";
-            this.DriverName.Width = 200;
             // 
             // Vehicletype
             // 
@@ -281,7 +284,6 @@
             this.Vehicletype.HeaderText = "Loại trọng tải";
             this.Vehicletype.Name = "Vehicletype";
             this.Vehicletype.ValueMember = "VehicleTypeID";
-            this.Vehicletype.Width = 200;
             // 
             // tblVehicleTypeBindingSource
             // 
@@ -301,7 +303,6 @@
             this.GoodsType.HeaderText = "Loại hàng hóa";
             this.GoodsType.Name = "GoodsType";
             this.GoodsType.ValueMember = "TypeId";
-            this.GoodsType.Width = 200;
             // 
             // tblGoodsTypeBindingSource
             // 
@@ -313,14 +314,12 @@
             this.Status.DataPropertyName = "Status";
             this.Status.HeaderText = "Diễn giải";
             this.Status.Name = "Status";
-            this.Status.Width = 250;
             // 
             // Note
             // 
             this.Note.DataPropertyName = "Note";
             this.Note.HeaderText = "Ghi chú";
             this.Note.Name = "Note";
-            this.Note.Width = 117;
             // 
             // ExportHour
             // 
@@ -346,7 +345,6 @@
             this.ImportDate.HeaderText = "Ngày nhập cảnh";
             this.ImportDate.Name = "ImportDate";
             this.ImportDate.Visible = false;
-            this.ImportDate.Width = 115;
             // 
             // ImportHour
             // 
@@ -354,7 +352,6 @@
             this.ImportHour.HeaderText = "Giờ nhập cảnh";
             this.ImportHour.Name = "ImportHour";
             this.ImportHour.Visible = false;
-            this.ImportHour.Width = 110;
             // 
             // IsImport
             // 
@@ -386,7 +383,6 @@
             this.ExportDate.HeaderText = "Ngày xuất cảnh";
             this.ExportDate.Name = "ExportDate";
             this.ExportDate.Visible = false;
-            this.ExportDate.Width = 110;
             // 
             // cbConfirmExport
             // 
@@ -492,14 +488,15 @@
             // 
             // btnSaveAll
             // 
+            this.btnSaveAll.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSaveAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSaveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAll.Image = global::ECustoms.Properties.Resources.save_icon;
+            this.btnSaveAll.Image = global::ECustoms.Properties.Resources.save;
             this.btnSaveAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveAll.Location = new System.Drawing.Point(183, 315);
+            this.btnSaveAll.Location = new System.Drawing.Point(209, 314);
             this.btnSaveAll.Name = "btnSaveAll";
-            this.btnSaveAll.Size = new System.Drawing.Size(225, 33);
+            this.btnSaveAll.Size = new System.Drawing.Size(225, 32);
             this.btnSaveAll.TabIndex = 15;
             this.btnSaveAll.Text = "Lưu toàn bộ phương tiện";
             this.btnSaveAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -508,14 +505,15 @@
             // 
             // btnReset
             // 
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Image = global::ECustoms.Properties.Resources._001_39;
+            this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(493, 315);
+            this.btnReset.Location = new System.Drawing.Point(519, 314);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(123, 33);
+            this.btnReset.Size = new System.Drawing.Size(123, 32);
             this.btnReset.TabIndex = 17;
             this.btnReset.Text = "Thiết lập lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -524,14 +522,15 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
+            this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(414, 315);
+            this.btnDelete.Location = new System.Drawing.Point(440, 314);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(73, 33);
+            this.btnDelete.Size = new System.Drawing.Size(73, 32);
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -540,14 +539,15 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
+            this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(6, 315);
+            this.btnAdd.Location = new System.Drawing.Point(32, 314);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(171, 33);
+            this.btnAdd.Size = new System.Drawing.Size(171, 32);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Thêm phương tiện";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -556,14 +556,15 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.close;
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(622, 315);
+            this.btnClose.Location = new System.Drawing.Point(648, 314);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 33);
+            this.btnClose.Size = new System.Drawing.Size(89, 32);
             this.btnClose.TabIndex = 18;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -592,6 +593,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.cbGoodType);
             this.groupBox2.Controls.Add(this.cbVehicleType);
             this.groupBox2.Controls.Add(this.label4);
@@ -627,7 +630,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(7, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(833, 365);
+            this.groupBox2.Size = new System.Drawing.Size(752, 352);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phương tiện";
@@ -722,10 +725,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 676);
+            this.ClientSize = new System.Drawing.Size(771, 637);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(779, 664);
             this.Name = "frmVehicleChineseAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khai báo phương tiện xe Trung Quốc nhập cảnh";

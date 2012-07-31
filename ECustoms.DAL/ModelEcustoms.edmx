@@ -673,7 +673,6 @@
           </Key>
           <Property Name="GateCode" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="GateName" Type="nvarchar" MaxLength="500" />
-          <Property Name="GateType" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="1000" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="CreatedBy" Type="int" />
@@ -1579,7 +1578,6 @@
           <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.tblCustom" />
           <EntitySet Name="tblDeclarations" EntityType="dbEcustomModel.tblDeclaration" />
           <EntitySet Name="tblDeclarationVehicles" EntityType="dbEcustomModel.tblDeclarationVehicle" />
-          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
           <EntitySet Name="tblGoodsTypes" EntityType="dbEcustomModel.tblGoodsType" />
           <EntitySet Name="tblGroups" EntityType="dbEcustomModel.tblGroup" />
           <EntitySet Name="tblPermissions" EntityType="dbEcustomModel.tblPermission" />
@@ -1618,6 +1616,7 @@
             <End Role="tlbRole" EntitySet="tlbRoles" />
             <End Role="tblRoleInGroup" EntitySet="tblRoleInGroups" />
           </AssociationSet>
+          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -1741,19 +1740,6 @@
           </Key>
           <Property Type="Int64" Name="DeclarationID" Nullable="false" />
           <Property Type="Int64" Name="VehicleID" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblGate">
-          <Key>
-            <PropertyRef Name="GateCode" />
-          </Key>
-          <Property Type="String" Name="GateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="GateName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="GateType" />
-          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="CreatedDate" />
-          <Property Type="Int32" Name="CreatedBy" />
-          <Property Type="DateTime" Name="ModifiedDate" />
-          <Property Type="Int32" Name="ModifiedBy" />
         </EntityType>
         <EntityType Name="tblGoodsType">
           <Key>
@@ -2500,6 +2486,18 @@
           </ReferentialConstraint>
           
         </Association>
+        <EntityType Name="tblGate">
+          <Key>
+            <PropertyRef Name="GateCode" />
+          </Key>
+          <Property Type="String" Name="GateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GateName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2627,20 +2625,6 @@
               <MappingFragment StoreEntitySet="tblDeclarationVehicle">
                 <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
                 <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblGates">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
-              <MappingFragment StoreEntitySet="tblGate">
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="GateType" ColumnName="GateType" />
-                <ScalarProperty Name="GateName" ColumnName="GateName" />
-                <ScalarProperty Name="GateCode" ColumnName="GateCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3403,6 +3387,19 @@
               <ScalarProperty Name="RoleID" ColumnName="RoleID" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="tblGates">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
+              <MappingFragment StoreEntitySet="tblGate">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GateName" ColumnName="GateName" />
+                <ScalarProperty Name="GateCode" ColumnName="GateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3432,7 +3429,6 @@
         <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="7.75" PointY="8.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.125" Height="6.7878222656249818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationVehicle" Width="1.5" PointX="9.75" PointY="0.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="9.75" PointY="3.75" Height="2.5571907552083246" />
         <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="9.75" PointY="7.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblGroup" Width="1.5" PointX="9.75" PointY="10.75" Height="2.1725878906249818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblPermission" Width="1.5" PointX="11.75" PointY="0.75" Height="1.4033821614583246" />
@@ -3471,6 +3467,7 @@
           <ConnectorPoint PointX="2.25" PointY="1.7978417968749909" />
           <ConnectorPoint PointX="3" PointY="1.7978417968749909" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="15.375" PointY="20.75" Height="2.0853483072916674" />
       </Diagram>
     </Diagrams>
   </Designer>

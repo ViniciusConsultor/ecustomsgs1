@@ -34,13 +34,13 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.txtCompanyCode = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtCompanyCode = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +125,17 @@
             this.label2.TabIndex = 86;
             this.label2.Text = "*";
             // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(6, 25);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(132, 20);
+            this.lblUsername.TabIndex = 79;
+            this.lblUsername.Text = "Mã doanh nghiệp";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -137,48 +148,16 @@
             this.label1.TabIndex = 85;
             this.label1.Text = "*";
             // 
-            // lblUsername
+            // lblAddress
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(6, 25);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(132, 20);
-            this.lblUsername.TabIndex = 79;
-            this.lblUsername.Text = "Mã doanh nghiệp";
-            // 
-            // txtCompanyCode
-            // 
-            this.txtCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanyCode.Location = new System.Drawing.Point(148, 25);
-            this.txtCompanyCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCompanyCode.MaxLength = 50;
-            this.txtCompanyCode.Name = "txtCompanyCode";
-            this.txtCompanyCode.Size = new System.Drawing.Size(339, 26);
-            this.txtCompanyCode.TabIndex = 80;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(6, 65);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(137, 20);
-            this.lblPassword.TabIndex = 82;
-            this.lblPassword.Text = "Tên doanh nghiệp";
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanyName.Location = new System.Drawing.Point(148, 65);
-            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCompanyName.MaxLength = 500;
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(339, 26);
-            this.txtCompanyName.TabIndex = 81;
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(7, 105);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(49, 20);
+            this.lblAddress.TabIndex = 84;
+            this.lblAddress.Text = "Mô tả";
             // 
             // txtDescription
             // 
@@ -191,26 +170,48 @@
             this.txtDescription.Size = new System.Drawing.Size(339, 96);
             this.txtDescription.TabIndex = 83;
             // 
-            // lblAddress
+            // txtCompanyCode
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(7, 105);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(49, 20);
-            this.lblAddress.TabIndex = 84;
-            this.lblAddress.Text = "Mô tả";
+            this.txtCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanyCode.Location = new System.Drawing.Point(148, 25);
+            this.txtCompanyCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCompanyCode.MaxLength = 50;
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            this.txtCompanyCode.Size = new System.Drawing.Size(339, 26);
+            this.txtCompanyCode.TabIndex = 80;
+            // 
+            // txtCompanyName
+            // 
+            this.txtCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanyName.Location = new System.Drawing.Point(148, 65);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCompanyName.MaxLength = 500;
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(339, 26);
+            this.txtCompanyName.TabIndex = 81;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(6, 65);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(137, 20);
+            this.lblPassword.TabIndex = 82;
+            this.lblPassword.Text = "Tên doanh nghiệp";
             // 
             // FrmAddCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 277);
+            this.ClientSize = new System.Drawing.Size(539, 280);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddCompany";
             this.Text = "FrmAddCompany";

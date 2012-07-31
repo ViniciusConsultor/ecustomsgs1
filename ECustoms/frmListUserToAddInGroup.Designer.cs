@@ -50,6 +50,9 @@
         // 
         // groupBox1
         // 
+        this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
         this.groupBox1.Controls.Add(this.btnSearch);
         this.groupBox1.Controls.Add(this.btnSave);
         this.groupBox1.Controls.Add(this.btnClose);
@@ -60,7 +63,7 @@
         this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.groupBox1.Location = new System.Drawing.Point(14, 12);
         this.groupBox1.Name = "groupBox1";
-        this.groupBox1.Size = new System.Drawing.Size(858, 503);
+        this.groupBox1.Size = new System.Drawing.Size(919, 419);
         this.groupBox1.TabIndex = 0;
         this.groupBox1.TabStop = false;
         this.groupBox1.Text = "Danh sách người dùng";
@@ -70,11 +73,11 @@
         this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
         this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.btnSearch.Image = global::ECustoms.Properties.Resources.search41;
+        this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
         this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnSearch.Location = new System.Drawing.Point(493, 23);
+        this.btnSearch.Location = new System.Drawing.Point(490, 26);
         this.btnSearch.Name = "btnSearch";
-        this.btnSearch.Size = new System.Drawing.Size(111, 33);
+        this.btnSearch.Size = new System.Drawing.Size(111, 28);
         this.btnSearch.TabIndex = 15;
         this.btnSearch.Text = "Tìm kiếm";
         this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -83,14 +86,15 @@
         // 
         // btnSave
         // 
+        this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
         this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
         this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.btnSave.Image = global::ECustoms.Properties.Resources.save_icon;
+        this.btnSave.Image = global::ECustoms.Properties.Resources.save;
         this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnSave.Location = new System.Drawing.Point(566, 459);
+        this.btnSave.Location = new System.Drawing.Point(627, 375);
         this.btnSave.Name = "btnSave";
-        this.btnSave.Size = new System.Drawing.Size(82, 33);
+        this.btnSave.Size = new System.Drawing.Size(82, 28);
         this.btnSave.TabIndex = 13;
         this.btnSave.Text = "Lưu";
         this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -99,14 +103,15 @@
         // 
         // btnClose
         // 
+        this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
         this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
         this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.btnClose.Image = global::ECustoms.Properties.Resources.close;
+        this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
         this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnClose.Location = new System.Drawing.Point(761, 459);
+        this.btnClose.Location = new System.Drawing.Point(822, 375);
         this.btnClose.Name = "btnClose";
-        this.btnClose.Size = new System.Drawing.Size(86, 33);
+        this.btnClose.Size = new System.Drawing.Size(86, 28);
         this.btnClose.TabIndex = 12;
         this.btnClose.Text = "Thoát";
         this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,14 +120,15 @@
         // 
         // btnReset
         // 
+        this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
         this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
         this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.btnReset.Image = global::ECustoms.Properties.Resources._001_39;
+        this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
         this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnReset.Location = new System.Drawing.Point(654, 459);
+        this.btnReset.Location = new System.Drawing.Point(715, 375);
         this.btnReset.Name = "btnReset";
-        this.btnReset.Size = new System.Drawing.Size(102, 33);
+        this.btnReset.Size = new System.Drawing.Size(102, 28);
         this.btnReset.TabIndex = 11;
         this.btnReset.Text = "Làm lại";
         this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -134,6 +140,10 @@
         this.grvUser.AllowUserToAddRows = false;
         this.grvUser.AllowUserToDeleteRows = false;
         this.grvUser.AllowUserToOrderColumns = true;
+        this.grvUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
+        this.grvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
         this.grvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         this.grvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IsSelected,
@@ -143,11 +153,11 @@
             this.Email,
             this.Address,
             this.PhoneNumber});
-        this.grvUser.Location = new System.Drawing.Point(11, 86);
+        this.grvUser.Location = new System.Drawing.Point(6, 86);
         this.grvUser.MultiSelect = false;
         this.grvUser.Name = "grvUser";
         this.grvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-        this.grvUser.Size = new System.Drawing.Size(836, 365);
+        this.grvUser.Size = new System.Drawing.Size(907, 281);
         this.grvUser.TabIndex = 7;
         // 
         // IsSelected
@@ -156,7 +166,6 @@
         this.IsSelected.Name = "IsSelected";
         this.IsSelected.Resizable = System.Windows.Forms.DataGridViewTriState.False;
         this.IsSelected.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-        this.IsSelected.Width = 50;
         // 
         // UserID
         // 
@@ -172,7 +181,6 @@
         this.UserName.Name = "UserName";
         this.UserName.ReadOnly = true;
         this.UserName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-        this.UserName.Width = 150;
         // 
         // FirstName
         // 
@@ -181,7 +189,6 @@
         this.FirstName.Name = "FirstName";
         this.FirstName.ReadOnly = true;
         this.FirstName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-        this.FirstName.Width = 150;
         // 
         // Email
         // 
@@ -198,7 +205,6 @@
         this.Address.Name = "Address";
         this.Address.ReadOnly = true;
         this.Address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-        this.Address.Width = 150;
         // 
         // PhoneNumber
         // 
@@ -207,7 +213,6 @@
         this.PhoneNumber.Name = "PhoneNumber";
         this.PhoneNumber.ReadOnly = true;
         this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-        this.PhoneNumber.Width = 150;
         // 
         // label1
         // 
@@ -229,9 +234,10 @@
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(879, 527);
+        this.ClientSize = new System.Drawing.Size(939, 436);
         this.Controls.Add(this.groupBox1);
         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+        this.MinimumSize = new System.Drawing.Size(955, 472);
         this.Name = "frmListUserToAddInGroup";
         this.Text = "Chọn người dùng cho nhóm";
         this.Load += new System.EventHandler(this.frmListUserToAddInGroup_Load);

@@ -47,8 +47,13 @@
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabUser = new System.Windows.Forms.TabPage();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.tabGroup = new System.Windows.Forms.TabPage();
             this.chbCheckAllGroup = new System.Windows.Forms.CheckBox();
+            this.btnUpdateListGroup = new System.Windows.Forms.Button();
+            this.tbnResetListGroup = new System.Windows.Forms.Button();
             this.grvGroup = new System.Windows.Forms.DataGridView();
             this.checkGroup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,11 +64,6 @@
             this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdateListGroup = new System.Windows.Forms.Button();
-            this.tbnResetListGroup = new System.Windows.Forms.Button();
             this.btnResetPermission = new System.Windows.Forms.Button();
             this.btnUpdatePermission = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -87,18 +87,22 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUserName.Location = new System.Drawing.Point(185, 11);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(430, 26);
+            this.txtUserName.Size = new System.Drawing.Size(381, 26);
             this.txtUserName.TabIndex = 1;
             // 
             // txtName
             // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(185, 171);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(430, 26);
+            this.txtName.Size = new System.Drawing.Size(381, 26);
             this.txtName.TabIndex = 5;
             // 
             // lblName
@@ -114,11 +118,13 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(185, 51);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(430, 26);
+            this.txtPassword.Size = new System.Drawing.Size(381, 26);
             this.txtPassword.TabIndex = 2;
             // 
             // lblPassword
@@ -134,11 +140,13 @@
             // 
             // txtRetypePassword
             // 
+            this.txtRetypePassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRetypePassword.Location = new System.Drawing.Point(185, 91);
             this.txtRetypePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.PasswordChar = '*';
-            this.txtRetypePassword.Size = new System.Drawing.Size(430, 26);
+            this.txtRetypePassword.Size = new System.Drawing.Size(381, 26);
             this.txtRetypePassword.TabIndex = 3;
             // 
             // lblRetypePassword
@@ -154,10 +162,12 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(185, 131);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(430, 26);
+            this.txtEmail.Size = new System.Drawing.Size(381, 26);
             this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
@@ -173,11 +183,13 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.Location = new System.Drawing.Point(185, 211);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(430, 65);
+            this.txtAddress.Size = new System.Drawing.Size(381, 65);
             this.txtAddress.TabIndex = 6;
             // 
             // lblAddress
@@ -193,10 +205,12 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.Location = new System.Drawing.Point(185, 291);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(430, 26);
+            this.txtPhone.Size = new System.Drawing.Size(381, 26);
             this.txtPhone.TabIndex = 7;
             // 
             // lblPhone
@@ -236,10 +250,11 @@
             this.tabControl1.Controls.Add(this.tabUser);
             this.tabControl1.Controls.Add(this.tabGroup);
             this.tabControl1.Controls.Add(this.tabPermission);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(635, 512);
+            this.tabControl1.Size = new System.Drawing.Size(593, 430);
             this.tabControl1.TabIndex = 19;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -267,10 +282,64 @@
             this.tabUser.Location = new System.Drawing.Point(4, 29);
             this.tabUser.Name = "tabUser";
             this.tabUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUser.Size = new System.Drawing.Size(627, 479);
+            this.tabUser.Size = new System.Drawing.Size(585, 397);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "Thông tin người dùng";
             this.tabUser.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(489, 359);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(77, 28);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(379, 359);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(102, 28);
+            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(264, 359);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(107, 28);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tabGroup
             // 
@@ -281,7 +350,7 @@
             this.tabGroup.Location = new System.Drawing.Point(4, 29);
             this.tabGroup.Name = "tabGroup";
             this.tabGroup.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGroup.Size = new System.Drawing.Size(627, 479);
+            this.tabGroup.Size = new System.Drawing.Size(585, 397);
             this.tabGroup.TabIndex = 1;
             this.tabGroup.Text = "Nhóm của người dùng";
             this.tabGroup.UseVisualStyleBackColor = true;
@@ -296,10 +365,48 @@
             this.chbCheckAllGroup.UseVisualStyleBackColor = true;
             this.chbCheckAllGroup.CheckedChanged += new System.EventHandler(this.chbCheckAllGroup_CheckedChanged);
             // 
+            // btnUpdateListGroup
+            // 
+            this.btnUpdateListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdateListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateListGroup.Location = new System.Drawing.Point(337, 361);
+            this.btnUpdateListGroup.Name = "btnUpdateListGroup";
+            this.btnUpdateListGroup.Size = new System.Drawing.Size(147, 28);
+            this.btnUpdateListGroup.TabIndex = 17;
+            this.btnUpdateListGroup.Text = "Cập nhật nhóm";
+            this.btnUpdateListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateListGroup.UseVisualStyleBackColor = true;
+            this.btnUpdateListGroup.Click += new System.EventHandler(this.btnUpdateListGroup_Click);
+            // 
+            // tbnResetListGroup
+            // 
+            this.tbnResetListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbnResetListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tbnResetListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources.undo;
+            this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbnResetListGroup.Location = new System.Drawing.Point(490, 361);
+            this.tbnResetListGroup.Name = "tbnResetListGroup";
+            this.tbnResetListGroup.Size = new System.Drawing.Size(89, 28);
+            this.tbnResetListGroup.TabIndex = 16;
+            this.tbnResetListGroup.Text = "Làm lại";
+            this.tbnResetListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbnResetListGroup.UseVisualStyleBackColor = true;
+            this.tbnResetListGroup.Click += new System.EventHandler(this.tbnResetListGroup_Click);
+            // 
             // grvGroup
             // 
             this.grvGroup.AllowUserToAddRows = false;
             this.grvGroup.AllowUserToDeleteRows = false;
+            this.grvGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.grvGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvGroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.checkGroup,
@@ -308,7 +415,7 @@
             this.grvGroup.Location = new System.Drawing.Point(4, 6);
             this.grvGroup.Name = "grvGroup";
             this.grvGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvGroup.Size = new System.Drawing.Size(617, 412);
+            this.grvGroup.Size = new System.Drawing.Size(581, 349);
             this.grvGroup.TabIndex = 2;
             // 
             // checkGroup
@@ -330,7 +437,6 @@
             this.GroupName.HeaderText = "Tên nhóm";
             this.GroupName.Name = "GroupName";
             this.GroupName.ReadOnly = true;
-            this.GroupName.Width = 475;
             // 
             // tabPermission
             // 
@@ -340,7 +446,7 @@
             this.tabPermission.Controls.Add(this.btnUpdatePermission);
             this.tabPermission.Location = new System.Drawing.Point(4, 29);
             this.tabPermission.Name = "tabPermission";
-            this.tabPermission.Size = new System.Drawing.Size(627, 479);
+            this.tabPermission.Size = new System.Drawing.Size(585, 397);
             this.tabPermission.TabIndex = 2;
             this.tabPermission.Text = "Quyền truy cập";
             this.tabPermission.UseVisualStyleBackColor = true;
@@ -359,6 +465,10 @@
             // 
             this.grvPermission.AllowUserToAddRows = false;
             this.grvPermission.AllowUserToDeleteRows = false;
+            this.grvPermission.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.grvPermission.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvPermission.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPermission.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Check,
@@ -367,7 +477,7 @@
             this.grvPermission.Location = new System.Drawing.Point(4, 6);
             this.grvPermission.Name = "grvPermission";
             this.grvPermission.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvPermission.Size = new System.Drawing.Size(620, 412);
+            this.grvPermission.Size = new System.Drawing.Size(581, 349);
             this.grvPermission.TabIndex = 13;
             // 
             // Check
@@ -390,99 +500,16 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Quyền truy cập";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 475;
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(526, 438);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(77, 28);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.Text = "Thoát";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(416, 438);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(102, 28);
-            this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(301, 438);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(107, 28);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnUpdateListGroup
-            // 
-            this.btnUpdateListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdateListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources.edit;
-            this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateListGroup.Location = new System.Drawing.Point(366, 432);
-            this.btnUpdateListGroup.Name = "btnUpdateListGroup";
-            this.btnUpdateListGroup.Size = new System.Drawing.Size(147, 28);
-            this.btnUpdateListGroup.TabIndex = 17;
-            this.btnUpdateListGroup.Text = "Cập nhật nhóm";
-            this.btnUpdateListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateListGroup.UseVisualStyleBackColor = true;
-            this.btnUpdateListGroup.Click += new System.EventHandler(this.btnUpdateListGroup_Click);
-            // 
-            // tbnResetListGroup
-            // 
-            this.tbnResetListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tbnResetListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources.undo;
-            this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbnResetListGroup.Location = new System.Drawing.Point(519, 432);
-            this.tbnResetListGroup.Name = "tbnResetListGroup";
-            this.tbnResetListGroup.Size = new System.Drawing.Size(89, 28);
-            this.tbnResetListGroup.TabIndex = 16;
-            this.tbnResetListGroup.Text = "Làm lại";
-            this.tbnResetListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tbnResetListGroup.UseVisualStyleBackColor = true;
-            this.tbnResetListGroup.Click += new System.EventHandler(this.tbnResetListGroup_Click);
             // 
             // btnResetPermission
             // 
+            this.btnResetPermission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResetPermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnResetPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPermission.Image = global::ECustoms.Properties.Resources.undo;
             this.btnResetPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResetPermission.Location = new System.Drawing.Point(519, 433);
+            this.btnResetPermission.Location = new System.Drawing.Point(485, 361);
             this.btnResetPermission.Name = "btnResetPermission";
             this.btnResetPermission.Size = new System.Drawing.Size(92, 28);
             this.btnResetPermission.TabIndex = 15;
@@ -493,12 +520,13 @@
             // 
             // btnUpdatePermission
             // 
+            this.btnUpdatePermission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdatePermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdatePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePermission.Location = new System.Drawing.Point(364, 433);
+            this.btnUpdatePermission.Location = new System.Drawing.Point(330, 361);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
             this.btnUpdatePermission.Size = new System.Drawing.Size(149, 28);
             this.btnUpdatePermission.TabIndex = 14;
@@ -511,11 +539,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 539);
+            this.ClientSize = new System.Drawing.Size(593, 430);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(609, 466);
             this.Name = "frmAddUser";
             this.Text = "Thông tin người dùng";
             this.Load += new System.EventHandler(this.frmAddUser_Load);

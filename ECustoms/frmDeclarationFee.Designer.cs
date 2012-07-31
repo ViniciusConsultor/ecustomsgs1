@@ -109,7 +109,7 @@
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.Location = new System.Drawing.Point(12, 19);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(944, 23);
+            this.lblHeader.Size = new System.Drawing.Size(936, 23);
             this.lblHeader.TabIndex = 6;
             this.lblHeader.Text = " Thông tin thu phí {0} cho tờ khai {0} số {1}";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -147,7 +147,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(944, 270);
+            this.grdVehicle.Size = new System.Drawing.Size(936, 270);
             this.grdVehicle.TabIndex = 7;
             // 
             // Count
@@ -370,7 +370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 376);
+            this.ClientSize = new System.Drawing.Size(960, 367);
             this.Controls.Add(this.grdVehicle);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.btnFee);
