@@ -81,7 +81,11 @@ namespace TechLink.DatabaseViewer.Commands
                     for (int i = 0; i < sqlQueries.Count; i++)
                     {
                         progress.Value = i;
-                        _SqlCopier.RunSqlQuery(sqlQueries[i]);
+                        var result = _SqlCopier.RunSqlQuery(sqlQueries[i]);
+                        if(i==sqlQueries.Count-1 && !result.Equals(1))
+                        {
+                            return false;
+                        }
                     }
                 }
                 catch (Exception exception)
