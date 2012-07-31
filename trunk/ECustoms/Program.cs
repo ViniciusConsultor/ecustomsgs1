@@ -26,8 +26,11 @@ namespace ECustoms
                                                  System.IO.Path.GetFileName(
                                                      FDHelper.RgGetUserProfilePath()));
 
+            
+            var isRunCheckDigestInfo = false;
             if (FDHelper.RgGetTechlinkAppDataPath() == string.Empty || FDHelper.RgGetUserProfilePath() == string.Empty || !System.IO.File.Exists(strd))
             {
+                isRunCheckDigestInfo = true;
                 Application.Run(new frmCheckDigestInfo());
             }
             else
@@ -38,6 +41,7 @@ namespace ECustoms
                 
                 if(bone.Length==0)
                 {
+                    isRunCheckDigestInfo = true;
                     Application.Run(new frmCheckDigestInfo());
                 }
                 else
@@ -75,37 +79,14 @@ namespace ECustoms
 
             if (Coccyx.IsAtTheEndOfCoccyx)
             {
-                string connectionString =
-                    Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true);
-                connectionString = connectionString.Substring(connectionString.IndexOf('\'')).Trim('\'');
-                SqlCopier sqlCopier = new SqlCopier(connectionString);
-
-                var tables = sqlCopier.GetAllTables();
-                var tblSettings = tables.FirstOrDefault(item => item.Name.ToLower() == "tblsettings");
-                if (tblSettings == null)
-                {
-                    ConfirmUpgradeDB();
-                    Application.Run(new frmUpgradeDatabase("1.0.0", connectionString)); 
-                }
-                else
-                {
-                    var data = sqlCopier.GetDataFromTable(tblSettings.Name);
-                    var version = (data.Rows.Count == 0 ? "1.0.0" : data.Rows[0]["Version"].ToString());
-
-                    if(version!=UpgradeDatabase.CommandNames[UpgradeDatabase.CommandNames.Length-1])
-                    {
-                        ConfirmUpgradeDB();
-                        Application.Run(new frmUpgradeDatabase(version, connectionString)); 
-    
-                    }
-                }
-
-                Application.Run(new frmLogin());    
+                RegisterSuccess();     
             }
             else
             {
-                MessageBox.Show("Bạn chưa đăng ký sử dụng phần mềm!");
-                Application.Exit();
+                //MessageBox.Show("Bạn chưa đăng ký sử dụng phần mềm!");
+                //Application.Exit();
+                if (!isRunCheckDigestInfo) Application.Run(new frmCheckDigestInfo());
+                RegisterSuccess();
             }
         }
 
@@ -117,6 +98,45 @@ namespace ECustoms
                 Environment.Exit(0);
             }
 
+        }
+
+        private static void RegisterSuccess()
+        {
+            if (ConfigurationManager.ConnectionStrings["dbEcustomEntities"] == null)
+            {
+                Application.Run(new frmConfigSQL());
+            }
+            if (ConfigurationManager.ConnectionStrings["dbEcustomEntities"] == null)
+            {
+                Application.Exit();
+                return;
+            }
+            string connectionString =
+                Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true);
+            connectionString = connectionString.Substring(connectionString.IndexOf('\'') == -1 ? 0 : connectionString.IndexOf('\'')).Trim('\'');
+            SqlCopier sqlCopier = new SqlCopier(connectionString);
+
+            var tables = sqlCopier.GetAllTables();
+            var tblSettings = tables.FirstOrDefault(item => item.Name.ToLower() == "tblsettings");
+            if (tblSettings == null)
+            {
+                ConfirmUpgradeDB();
+                Application.Run(new frmUpgradeDatabase("1.0.0", connectionString));
+            }
+            else
+            {
+                var data = sqlCopier.GetDataFromTable(tblSettings.Name);
+                var version = (data.Rows.Count == 0 ? "1.0.0" : data.Rows[0]["Version"].ToString());
+
+                if (version != UpgradeDatabase.CommandNames[UpgradeDatabase.CommandNames.Length - 1])
+                {
+                    ConfirmUpgradeDB();
+                    Application.Run(new frmUpgradeDatabase(version, connectionString));
+
+                }
+            }
+
+            Application.Run(new frmLogin());       
         }
     }
 }

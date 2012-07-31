@@ -51,7 +51,7 @@ namespace techlink.Digest
             }
             catch (Exception e)
             {
-                throw e;
+                //throw e;
             }
 
             return false;
