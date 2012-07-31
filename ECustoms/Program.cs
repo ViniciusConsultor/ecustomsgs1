@@ -83,7 +83,7 @@ namespace ECustoms
                 var tblSettings = tables.FirstOrDefault(item => item.Name.ToLower() == "tblsettings");
                 if (tblSettings==null)
                 {
-                    Application.Run(new frmUpgradeDatabase()); 
+                    Application.Run(new frmUpgradeDatabase("1.0.0", connectionString)); 
                 }
                 else
                 {
@@ -91,7 +91,7 @@ namespace ECustoms
                     var version = data.Rows[0]["Version"].ToString();
                     if(version!=UpgradeDatabase.CommandNames[UpgradeDatabase.CommandNames.Length-1])
                     {
-                        Application.Run(new frmUpgradeDatabase(version)); 
+                        Application.Run(new frmUpgradeDatabase(version, connectionString)); 
     
                     }
                 }
