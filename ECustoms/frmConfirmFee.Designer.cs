@@ -141,11 +141,11 @@
             this.btnConfirmFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnConfirmFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmFee.Image = global::ECustoms.Properties.Resources.confirm;
+            this.btnConfirmFee.Image = global::ECustoms.Properties.Resources.accept;
             this.btnConfirmFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmFee.Location = new System.Drawing.Point(121, 152);
+            this.btnConfirmFee.Location = new System.Drawing.Point(158, 152);
             this.btnConfirmFee.Name = "btnConfirmFee";
-            this.btnConfirmFee.Size = new System.Drawing.Size(119, 33);
+            this.btnConfirmFee.Size = new System.Drawing.Size(104, 28);
             this.btnConfirmFee.TabIndex = 0;
             this.btnConfirmFee.Text = "Xác nhận";
             this.btnConfirmFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,11 +157,11 @@
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.close;
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(255, 152);
+            this.btnClose.Location = new System.Drawing.Point(268, 152);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 33);
+            this.btnClose.Size = new System.Drawing.Size(76, 28);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 201);
+            this.ClientSize = new System.Drawing.Size(357, 191);
             this.Controls.Add(this.btnConfirmFee);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grbResult);

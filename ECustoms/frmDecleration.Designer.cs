@@ -65,7 +65,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.txtDeclaraceNumber = new System.Windows.Forms.TextBox();
@@ -73,14 +72,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listViewVehicle = new System.Windows.Forms.ListView();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.btnFee = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnAddImport = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnExportExcel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnFee = new System.Windows.Forms.Button();
             this.grbDecleration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -420,21 +420,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Loại";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Image = global::ECustoms.Properties.Resources.search41;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(910, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(145, 33);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Tìm tờ khai";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // txtCompanyName
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(638, 20);
@@ -496,16 +481,32 @@
             this.lblHeader.Size = new System.Drawing.Size(0, 20);
             this.lblHeader.TabIndex = 1;
             // 
+            // btnFee
+            // 
+            this.btnFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFee.Image = global::ECustoms.Properties.Resources.money;
+            this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFee.Location = new System.Drawing.Point(698, 630);
+            this.btnFee.Name = "btnFee";
+            this.btnFee.Size = new System.Drawing.Size(109, 28);
+            this.btnFee.TabIndex = 10;
+            this.btnFee.Text = "XN thu phí";
+            this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFee.UseVisualStyleBackColor = true;
+            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
+            // 
             // btnConfirm
             // 
             this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Image = global::ECustoms.Properties.Resources.confirm;
+            this.btnConfirm.Image = global::ECustoms.Properties.Resources.accept;
             this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirm.Location = new System.Drawing.Point(509, 632);
+            this.btnConfirm.Location = new System.Drawing.Point(557, 630);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(139, 33);
+            this.btnConfirm.Size = new System.Drawing.Size(135, 28);
             this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "XN trả hồ  sơ";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -517,27 +518,42 @@
             this.btnAddImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddImport.Image = global::ECustoms.Properties.Resources._001_01;
+            this.btnAddImport.Image = global::ECustoms.Properties.Resources.add;
             this.btnAddImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddImport.Location = new System.Drawing.Point(173, 632);
+            this.btnAddImport.Location = new System.Drawing.Point(241, 630);
             this.btnAddImport.Name = "btnAddImport";
-            this.btnAddImport.Size = new System.Drawing.Size(163, 33);
+            this.btnAddImport.Size = new System.Drawing.Size(154, 28);
             this.btnAddImport.TabIndex = 8;
             this.btnAddImport.Text = "Tạo tờ khai nhập";
             this.btnAddImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddImport.UseVisualStyleBackColor = true;
             this.btnAddImport.Click += new System.EventHandler(this.btnAddImport_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(910, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(128, 28);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Tìm tờ khai";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // btnExportExcel
             // 
             this.btnExportExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExcel.Image = global::ECustoms.Properties.Resources.excel81;
+            this.btnExportExcel.Image = global::ECustoms.Properties.Resources.exce;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(869, 632);
+            this.btnExportExcel.Location = new System.Drawing.Point(882, 632);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(147, 33);
+            this.btnExportExcel.Size = new System.Drawing.Size(134, 28);
             this.btnExportExcel.TabIndex = 4;
             this.btnExportExcel.Text = "Export tờ khai";
             this.btnExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -549,11 +565,11 @@
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
+            this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(16, 632);
+            this.btnAdd.Location = new System.Drawing.Point(84, 630);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(151, 33);
+            this.btnAdd.Size = new System.Drawing.Size(151, 28);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Tạo tờ khai xuất";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -565,11 +581,11 @@
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.close;
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(1022, 632);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(86, 33);
+            this.btnClose.Size = new System.Drawing.Size(80, 28);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -581,11 +597,11 @@
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
+            this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(342, 632);
+            this.btnUpdate.Location = new System.Drawing.Point(401, 630);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(161, 33);
+            this.btnUpdate.Size = new System.Drawing.Size(150, 28);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Cập nhật tờ khai";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -597,38 +613,22 @@
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
+            this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(785, 632);
+            this.btnDelete.Location = new System.Drawing.Point(813, 632);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(78, 33);
+            this.btnDelete.Size = new System.Drawing.Size(63, 28);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnFee
-            // 
-            this.btnFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFee.Image = ((System.Drawing.Image)(resources.GetObject("btnFee.Image")));
-            this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFee.Location = new System.Drawing.Point(654, 632);
-            this.btnFee.Name = "btnFee";
-            this.btnFee.Size = new System.Drawing.Size(125, 33);
-            this.btnFee.TabIndex = 10;
-            this.btnFee.Text = "XN thu phí";
-            this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFee.UseVisualStyleBackColor = true;
-            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
-            // 
             // frmDecleration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 668);
+            this.ClientSize = new System.Drawing.Size(1118, 665);
             this.Controls.Add(this.btnFee);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnAddImport);

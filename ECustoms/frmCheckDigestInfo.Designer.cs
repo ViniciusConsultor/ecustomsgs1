@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckDigestInfo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkUserOnlineErrorChecker = new System.Windows.Forms.CheckBox();
             this.txtSerial = new System.Windows.Forms.TextBox();
@@ -42,9 +43,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUnitName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.btnLater = new System.Windows.Forms.Button();
             this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
+            this.btnAccept = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -184,39 +185,54 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đơn vị:";
             // 
-            // btnOk
-            // 
-            this.btnOk.Location = new System.Drawing.Point(392, 259);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 1;
-            this.btnOk.Text = "Đồng ý";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // btnLater
-            // 
-            this.btnLater.Location = new System.Drawing.Point(289, 259);
-            this.btnLater.Name = "btnLater";
-            this.btnLater.Size = new System.Drawing.Size(86, 23);
-            this.btnLater.TabIndex = 2;
-            this.btnLater.Text = "Đăng ký sau";
-            this.btnLater.UseVisualStyleBackColor = true;
-            this.btnLater.Click += new System.EventHandler(this.btnLater_Click);
-            // 
             // techlinkErrorProvider1
             // 
             this.techlinkErrorProvider1.ContainerControl = this;
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccept.Image = global::ECustoms.Properties.Resources.accept;
+            this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccept.Location = new System.Drawing.Point(244, 263);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(88, 28);
+            this.btnAccept.TabIndex = 7;
+            this.btnAccept.Text = "Đồng ý";
+            this.btnAccept.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(340, 263);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(127, 28);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "Đăng ký sau";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmCheckDigestInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 294);
-            this.Controls.Add(this.btnLater);
-            this.Controls.Add(this.btnOk);
+            this.ClientSize = new System.Drawing.Size(479, 300);
+            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCheckDigestInfo";
@@ -233,7 +249,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.TextBox txtDomain;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUnitName;
@@ -247,7 +262,8 @@
         private System.Windows.Forms.TextBox txtSerial;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkUserOnlineErrorChecker;
-        private System.Windows.Forms.Button btnLater;
         private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnAccept;
     }
 }

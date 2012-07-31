@@ -27,6 +27,36 @@ namespace ECustoms
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private bool ValidateInfoRequired()
+        {
+            bool hasError = false;
+            techlinkErrorProvider1.ValidateRequiredFields(this, ref hasError);
+            return !hasError;
+        }
+
+        private void frmCheckDigestInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!force_close) e.Cancel = true;
+            e.Cancel = false;
+        }
+
+        private void btnLater_Click(object sender, EventArgs e)
+        {
+            force_close = true;
+            this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            force_close = true;
+            this.Close();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
             if (ValidateInfoRequired())
             {
                 var cpRight = AssemblyHelper.GetCopyright();
@@ -52,10 +82,10 @@ namespace ECustoms
                 }
                 ss += ".dat";
 
-                if(FDHelper.CreateFolderIfDoesnotExisted(appData))
+                if (FDHelper.CreateFolderIfDoesnotExisted(appData))
                 {
                     FDHelper.DeleteAllFilesInFolder(appData);
-                    
+
                     FDHelper.SaveTechLinkAppDataPath(appData);
                     FDHelper.SaveTechLinkUserProfile(ss);
 
@@ -68,15 +98,15 @@ namespace ECustoms
                     {
                         sb.AppendLine(featureHuman);
                         sb.AppendLine(txtSerial.Text);
-                        
+
                         long time = DateTime.Now.Ticks;
                         FDHelper.SaveTechLinkTimeStamp(time);
                         var bone = XRayController.TranslateBoneInformation(sb.ToString());
-                        
+
                         k += "\r\n" + time.ToString();
 
                         var coccyx = XRayController.TranslateBoneInformation(k);
-                        
+
                         appData = System.IO.Path.Combine(appData, ss);
                         currentdir = System.IO.Path.Combine(currentdir, ss);
 
@@ -98,25 +128,6 @@ namespace ECustoms
             {
 
             }
-        }
-
-        private bool ValidateInfoRequired()
-        {
-            bool hasError = false;
-            techlinkErrorProvider1.ValidateRequiredFields(this, ref hasError);
-            return !hasError;
-        }
-
-        private void frmCheckDigestInfo_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!force_close) e.Cancel = true;
-            e.Cancel = false;
-        }
-
-        private void btnLater_Click(object sender, EventArgs e)
-        {
-            force_close = true;
-            this.Close();
         }
     }
 }

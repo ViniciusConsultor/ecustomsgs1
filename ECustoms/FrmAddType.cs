@@ -206,5 +206,10 @@ namespace ECustoms
                 }
             }
         }
+
+        private void txtTypeCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
