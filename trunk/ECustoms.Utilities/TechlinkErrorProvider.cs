@@ -25,7 +25,13 @@ namespace ECustoms.Utilities
                                 if ((control as TextBox).Text.Trim().Length == 0)
                                 {
                                     this.SetError(control as Control, "Trường cần phải nhập thông tin!");
+                                    (control as Control).BackColor = System.Drawing.Color.Yellow;
                                     hasError = true;
+                                }
+                                else
+                                {
+                                    this.SetError(control as Control, string.Empty);
+                                    (control as Control).BackColor = System.Drawing.Color.White;
                                 }
                             }    
                         }
@@ -36,6 +42,13 @@ namespace ECustoms.Utilities
                     }
                 }
             }
+        }
+
+        public bool Validate(Control ctl)
+        {
+            var hasError = false;
+            ValidateRequiredFields(ctl, ref hasError);
+            return !hasError;
         }
     }
 }

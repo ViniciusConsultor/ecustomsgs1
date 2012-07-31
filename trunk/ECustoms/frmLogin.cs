@@ -14,12 +14,10 @@ namespace ECustoms
     {
         //private readonly ILog logger;
         private static log4net.ILog logger =  LogManager.GetLogger("Ecustoms.frmLogin");
-        private Validation _validation;
         
         public frmLogin()
         {            
             InitializeComponent();
-            _validation = new Validation((this));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -79,7 +77,7 @@ namespace ECustoms
 
         private bool  Validate()
         {
-            _validation.Validate();
+            techlinkErrorProvider1.Validate(this);
             if (string.IsNullOrEmpty(txtUsername.Text.Trim()))
             {
                 txtUsername.Focus();
@@ -97,6 +95,7 @@ namespace ECustoms
         private void frmLogin_Load(object sender, EventArgs e)
         {                  
             this.Text = "Dang nhap" +  ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
+            txtUsername.Focus();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

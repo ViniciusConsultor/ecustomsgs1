@@ -164,16 +164,16 @@
             // txtCustomsName
             // 
             this.txtCustomsName.Enabled = false;
-            this.txtCustomsName.Location = new System.Drawing.Point(751, 217);
+            this.txtCustomsName.Location = new System.Drawing.Point(753, 219);
             this.txtCustomsName.Multiline = true;
             this.txtCustomsName.Name = "txtCustomsName";
-            this.txtCustomsName.Size = new System.Drawing.Size(248, 28);
+            this.txtCustomsName.Size = new System.Drawing.Size(247, 28);
             this.txtCustomsName.TabIndex = 31;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(610, 222);
+            this.label10.Location = new System.Drawing.Point(619, 222);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(128, 20);
             this.label10.TabIndex = 32;
@@ -181,10 +181,10 @@
             // 
             // txtCustomsCode
             // 
-            this.txtCustomsCode.Location = new System.Drawing.Point(485, 219);
+            this.txtCustomsCode.Location = new System.Drawing.Point(507, 219);
             this.txtCustomsCode.Multiline = true;
             this.txtCustomsCode.Name = "txtCustomsCode";
-            this.txtCustomsCode.Size = new System.Drawing.Size(119, 28);
+            this.txtCustomsCode.Size = new System.Drawing.Size(97, 28);
             this.txtCustomsCode.TabIndex = 29;
             this.txtCustomsCode.Tag = "CustomCode";
             this.txtCustomsCode.Leave += new System.EventHandler(this.txtCustomsCode_Leave);
@@ -229,7 +229,7 @@
             // 
             // txtNumberHandover
             // 
-            this.txtNumberHandover.Location = new System.Drawing.Point(220, 0);
+            this.txtNumberHandover.Location = new System.Drawing.Point(142, 0);
             this.txtNumberHandover.Mask = "0000000000";
             this.txtNumberHandover.Name = "txtNumberHandover";
             this.txtNumberHandover.Size = new System.Drawing.Size(136, 26);
@@ -238,7 +238,7 @@
             // lblNumberHandover
             // 
             this.lblNumberHandover.AutoSize = true;
-            this.lblNumberHandover.Location = new System.Drawing.Point(74, 3);
+            this.lblNumberHandover.Location = new System.Drawing.Point(-4, 3);
             this.lblNumberHandover.Name = "lblNumberHandover";
             this.lblNumberHandover.Size = new System.Drawing.Size(79, 20);
             this.lblNumberHandover.TabIndex = 31;
@@ -247,7 +247,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(74, 35);
+            this.label6.Location = new System.Drawing.Point(-4, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 20);
             this.label6.TabIndex = 30;
@@ -257,7 +257,7 @@
             // 
             this.dtpHandover.CustomFormat = "dd/MM/yyyy";
             this.dtpHandover.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHandover.Location = new System.Drawing.Point(220, 32);
+            this.dtpHandover.Location = new System.Drawing.Point(142, 32);
             this.dtpHandover.Name = "dtpHandover";
             this.dtpHandover.Size = new System.Drawing.Size(136, 26);
             this.dtpHandover.TabIndex = 1;
@@ -320,7 +320,7 @@
             this.txtMoney.Location = new System.Drawing.Point(871, 85);
             this.txtMoney.Mask = "000000000000";
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(128, 26);
+            this.txtMoney.Size = new System.Drawing.Size(130, 26);
             this.txtMoney.TabIndex = 11;
             // 
             // label2
@@ -346,7 +346,7 @@
             this.txtExportTotalVehicles.Location = new System.Drawing.Point(872, 117);
             this.txtExportTotalVehicles.Mask = "00000";
             this.txtExportTotalVehicles.Name = "txtExportTotalVehicles";
-            this.txtExportTotalVehicles.Size = new System.Drawing.Size(127, 26);
+            this.txtExportTotalVehicles.Size = new System.Drawing.Size(129, 26);
             this.txtExportTotalVehicles.TabIndex = 12;
             this.txtExportTotalVehicles.ValidatingType = typeof(int);
             this.txtExportTotalVehicles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExportTotalVehicles_KeyDown);
@@ -516,22 +516,22 @@
             // btnConfirmImportKH
             // 
             this.btnConfirmImportKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmImportKH.Location = new System.Drawing.Point(862, 173);
+            this.btnConfirmImportKH.Location = new System.Drawing.Point(826, 195);
             this.btnConfirmImportKH.Name = "btnConfirmImportKH";
-            this.btnConfirmImportKH.Size = new System.Drawing.Size(138, 61);
+            this.btnConfirmImportKH.Size = new System.Drawing.Size(180, 70);
             this.btnConfirmImportKH.TabIndex = 3;
-            this.btnConfirmImportKH.Text = "Xác nhận nhập cảnh không hàng";
+            this.btnConfirmImportKH.Text = "XN nhập cảnh không hàng";
             this.btnConfirmImportKH.UseVisualStyleBackColor = true;
             this.btnConfirmImportKH.Click += new System.EventHandler(this.btnConfirmImportKH_Click);
             // 
             // bntConfirmImportCH
             // 
             this.bntConfirmImportCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntConfirmImportCH.Location = new System.Drawing.Point(863, 101);
+            this.bntConfirmImportCH.Location = new System.Drawing.Point(826, 110);
             this.bntConfirmImportCH.Name = "bntConfirmImportCH";
-            this.bntConfirmImportCH.Size = new System.Drawing.Size(138, 66);
+            this.bntConfirmImportCH.Size = new System.Drawing.Size(180, 70);
             this.bntConfirmImportCH.TabIndex = 2;
-            this.bntConfirmImportCH.Text = "Xác nhận nhập cảnh có hàng";
+            this.bntConfirmImportCH.Text = "XN nhập cảnh có hàng";
             this.bntConfirmImportCH.UseVisualStyleBackColor = true;
             this.bntConfirmImportCH.Click += new System.EventHandler(this.bntConfirmImportCH_Click);
             // 
@@ -555,9 +555,9 @@
             // btnComfirmExport
             // 
             this.btnComfirmExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComfirmExport.Location = new System.Drawing.Point(863, 25);
+            this.btnComfirmExport.Location = new System.Drawing.Point(826, 25);
             this.btnComfirmExport.Name = "btnComfirmExport";
-            this.btnComfirmExport.Size = new System.Drawing.Size(138, 70);
+            this.btnComfirmExport.Size = new System.Drawing.Size(180, 70);
             this.btnComfirmExport.TabIndex = 1;
             this.btnComfirmExport.Text = "Xác nhận xuất cảnh";
             this.btnComfirmExport.UseVisualStyleBackColor = true;
@@ -649,7 +649,7 @@
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(842, 240);
+            this.grdVehicle.Size = new System.Drawing.Size(810, 240);
             this.grdVehicle.TabIndex = 0;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
@@ -896,7 +896,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(1037, 671);
+            this.ClientSize = new System.Drawing.Size(1037, 687);
             this.Controls.Add(this.btnFee);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);

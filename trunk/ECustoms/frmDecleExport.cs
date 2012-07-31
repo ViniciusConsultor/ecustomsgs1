@@ -539,10 +539,10 @@ namespace ECustoms
                 btnAddExisting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_NHAP_CANH);
                 bntConfirmImportCH.Visible = true;
                 bntConfirmImportCH.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
-                bntConfirmImportCH.Location = new Point(865, 25);
+                //bntConfirmImportCH.Location = new Point(865, 25);
                 btnConfirmImportKH.Visible = true;
                 btnConfirmImportKH.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
-                btnConfirmImportKH.Location = new Point(865, 81);
+                //btnConfirmImportKH.Location = new Point(865, 81);
                 btnComfirmExport.Enabled = false;
                 btnAdd.Enabled = false;
                 // Invisible luong xe
