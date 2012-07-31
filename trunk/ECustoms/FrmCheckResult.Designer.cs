@@ -83,7 +83,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1079, 331);
+            this.groupBox1.Size = new System.Drawing.Size(1071, 322);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tổng hợp thông tin kiểm tra";
@@ -113,7 +113,7 @@
             this.grdVehicleCheck.MultiSelect = false;
             this.grdVehicleCheck.Name = "grdVehicleCheck";
             this.grdVehicleCheck.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleCheck.Size = new System.Drawing.Size(1073, 306);
+            this.grdVehicleCheck.Size = new System.Drawing.Size(1065, 297);
             this.grdVehicleCheck.TabIndex = 19;
             this.grdVehicleCheck.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicleCheck_CellMouseDoubleClick);
             // 
@@ -447,7 +447,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 498);
+            this.ClientSize = new System.Drawing.Size(1095, 489);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.bntUpdate);
             this.Controls.Add(this.btnClose);

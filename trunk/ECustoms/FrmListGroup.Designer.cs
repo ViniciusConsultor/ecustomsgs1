@@ -43,11 +43,14 @@
             // 
             // grbUser
             // 
+            this.grbUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grbUser.Controls.Add(this.grvGroup);
             this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbUser.Location = new System.Drawing.Point(12, 12);
             this.grbUser.Name = "grbUser";
-            this.grbUser.Size = new System.Drawing.Size(557, 317);
+            this.grbUser.Size = new System.Drawing.Size(496, 304);
             this.grbUser.TabIndex = 1;
             this.grbUser.TabStop = false;
             this.grbUser.Text = "Danh sách nhóm";
@@ -56,15 +59,17 @@
             // 
             this.grvGroup.AllowUserToAddRows = false;
             this.grvGroup.AllowUserToDeleteRows = false;
+            this.grvGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvGroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
             this.GroupID});
-            this.grvGroup.Location = new System.Drawing.Point(6, 25);
+            this.grvGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvGroup.Location = new System.Drawing.Point(3, 22);
             this.grvGroup.Name = "grvGroup";
             this.grvGroup.ReadOnly = true;
             this.grvGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvGroup.Size = new System.Drawing.Size(543, 292);
+            this.grvGroup.Size = new System.Drawing.Size(490, 279);
             this.grvGroup.TabIndex = 1;
             this.grvGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvGroup_CellClick);
             this.grvGroup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvGroup_CellDoubleClick);
@@ -75,7 +80,6 @@
             this.GroupName.HeaderText = "Tên nhóm";
             this.GroupName.Name = "GroupName";
             this.GroupName.ReadOnly = true;
-            this.GroupName.Width = 500;
             // 
             // GroupID
             // 
@@ -87,14 +91,15 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
+            this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(394, 335);
+            this.btnDelete.Location = new System.Drawing.Point(333, 322);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(76, 33);
+            this.btnDelete.Size = new System.Drawing.Size(76, 28);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -103,14 +108,15 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.close;
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(476, 335);
+            this.btnClose.Location = new System.Drawing.Point(415, 322);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(84, 33);
+            this.btnClose.Size = new System.Drawing.Size(84, 28);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,14 +125,15 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
+            this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(89, 335);
+            this.btnAdd.Location = new System.Drawing.Point(28, 322);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(141, 33);
+            this.btnAdd.Size = new System.Drawing.Size(141, 28);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Tạo mới nhóm";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -135,14 +142,15 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
+            this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(236, 335);
+            this.btnUpdate.Location = new System.Drawing.Point(175, 322);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(152, 33);
+            this.btnUpdate.Size = new System.Drawing.Size(152, 28);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Cập nhật nhóm";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -153,13 +161,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 377);
+            this.ClientSize = new System.Drawing.Size(513, 355);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.grbUser);
             this.Controls.Add(this.btnUpdate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(529, 391);
             this.Name = "FrmListGroup";
             this.Text = "FrmGroup";
             this.Load += new System.EventHandler(this.FrmListGroup_Load);

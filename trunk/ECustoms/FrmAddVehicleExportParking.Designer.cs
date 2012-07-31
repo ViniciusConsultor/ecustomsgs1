@@ -429,7 +429,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(837, 275);
+            this.groupBox2.Size = new System.Drawing.Size(745, 275);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phương tiện";
@@ -507,13 +507,14 @@
             this.VehicleID,
             this.NumberOfContainer,
             this.ExportDate});
+            this.grdVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.grdVehicle.Location = new System.Drawing.Point(11, 31);
+            this.grdVehicle.Location = new System.Drawing.Point(3, 22);
             this.grdVehicle.Name = "grdVehicle";
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(816, 219);
+            this.grdVehicle.Size = new System.Drawing.Size(739, 246);
             this.grdVehicle.TabIndex = 12;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             // 
@@ -661,12 +662,11 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.grdVehicle);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 293);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(837, 281);
+            this.groupBox1.Size = new System.Drawing.Size(745, 271);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các xe vừa nhập";
@@ -680,10 +680,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 585);
+            this.ClientSize = new System.Drawing.Size(761, 568);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(777, 604);
             this.Name = "FrmAddVehicleExportParking";
             this.Text = "FrmAddVehicleExportParking";
             this.Load += new System.EventHandler(this.FrmAddVehicleExportParking_Load);
@@ -698,7 +699,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblGoodsTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -736,7 +736,6 @@
         private System.Windows.Forms.PictureBox pictureBoxInvalid;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.DataGridView grdVehicle;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbGoodType;
         private System.Windows.Forms.ComboBox cbVehicleType;
         private System.Windows.Forms.Label label4;
@@ -760,5 +759,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfContainer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

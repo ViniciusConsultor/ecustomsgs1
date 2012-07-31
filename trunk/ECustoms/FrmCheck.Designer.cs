@@ -197,12 +197,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 390);
+            this.ClientSize = new System.Drawing.Size(521, 381);
             this.Controls.Add(this.btnUpdateVehicle);
             this.Controls.Add(this.btnAddVehicle);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCheck";
             this.Text = "FrmCheck";

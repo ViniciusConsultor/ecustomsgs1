@@ -84,7 +84,6 @@ namespace ECustoms.BOL
                 return -1;
             }
 
-            originGate.GateType = gateObj.GateType;
             originGate.GateName = gateObj.GateName;
             originGate.Description = gateObj.Description;
             originGate.ModifiedBy = gateObj.ModifiedBy;
