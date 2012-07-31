@@ -67,6 +67,7 @@ namespace ECustoms
                 var vehicleFeeReport = new VehicleFeeReport();
 
                 var connection = new SqlConnection(Common.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["connectionString"], true));
+                ((TextObject)vehicleFeeReport.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
 
                 var createdBy = (TextObject)vehicleFeeReport.Section1.ReportObjects["CreatedBy"];
                 createdBy.Text = _userInfo.Name;
