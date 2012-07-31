@@ -63,7 +63,10 @@ namespace TechLink.DatabaseViewer.Commands
             sqlQueries.Add("ALTER TABLE [dbo].[tblVehicle] ADD [IsSynced] bit NULL");
             sqlQueries.Add("UPDATE [dbo].[tblVehicle] SET [IsSynced]=0");
 
-            sqlQueries.Add("CREATE TABLE [dbo].[tblSettings]([Version] [nvarchar](50) NOT NULL,[LastSync] [datetime] NOT NULL) ON [PRIMARY]");
+            sqlQueries.Add(
+                "CREATE TABLE [dbo].[tblBranchDatabases]([Id] [uniqueidentifier] NOT NULL,[DatabaseName] [nvarchar](120) NOT NULL,[RegisterSerial] [nvarchar](128) NOT NULL,[BranchName] [nvarchar](300) NOT NULL,[LastSync] [datetime] NOT NULL,CONSTRAINT [PK_tblBranchDatabases] PRIMARY KEY CLUSTERED ([Id] ASC)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]) ON [PRIMARY]");
+
+            sqlQueries.Add("CREATE TABLE [dbo].[tblSettings]([Version] [nvarchar](50) NOT NULL,[LastSync] [datetime] NOT NULL,[SyncInterval] [int] NULL,[SyncTime] [nvarchar](6) NULL) ON [PRIMARY]");
             sqlQueries.Add("INSERT INTO [dbo].[tblSettings]([Version],[LastSync]) VALUES('1.0.1', '08/01/2012')");
         }
 

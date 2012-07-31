@@ -220,6 +220,12 @@
     <Compile Include="frmMessageBox.Designer.cs">
       <DependentUpon>frmMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUpgradeDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -574,6 +580,9 @@
     <EmbeddedResource Include="frmMessageBox.resx">
       <DependentUpon>frmMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUpgradeDatabase.resx">
       <DependentUpon>frmUpgradeDatabase.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIFormBase.resx">
       <DependentUpon>MDIFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFormBase.resx">
+      <DependentUpon>SubFormBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleFeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
