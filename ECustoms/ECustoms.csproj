@@ -126,6 +126,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConfigSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigSQL.Designer.cs">
+      <DependentUpon>frmConfigSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProfileConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -535,6 +541,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmConfigSQL.resx">
+      <DependentUpon>frmConfigSQL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProfileConfig.resx">
       <DependentUpon>frmProfileConfig.cs</DependentUpon>
     </EmbeddedResource>

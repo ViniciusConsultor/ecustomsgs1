@@ -100,7 +100,7 @@ namespace TechLink.DatabaseViewer.DataAccess
 				{
 					sqlConnectionStr.Append("Integrated Security=SSPI;");
 				}
-			
+			    ConnectionString = sqlConnectionStr.ToString();
 				connection = new SqlConnection(sqlConnectionStr.ToString());
 				command = new SqlCommand();
 			}
@@ -324,6 +324,7 @@ namespace TechLink.DatabaseViewer.DataAccess
         public string Server { get { return _server; } }
         public string Username { get { return _user; } }
         public string Password { get { return _pass; } }
+        public string ConnectionString { get; set; }
 		#region IDisposable Members.
 		/// <summary>
 		/// Disposes from DBViewerDal
