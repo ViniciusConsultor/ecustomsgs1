@@ -61,10 +61,11 @@ namespace ECustoms
                 {
                     case ReportType.ExportAndNoItem: // Type 1
                         {
+                            ((TextObject)xuatCanhXeKhong.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             // Created by
                             var createdByxuatCanhXeKhong = (TextObject)xuatCanhXeKhong.Section1.ReportObjects["CreatedBy"];
                             createdByxuatCanhXeKhong.Text = _userInfo.Name;
-                            createdByxuatCanhXeKhong.Text = _userInfo.Name;
+                            
                             // Date From
                             var dateFromxuatCanhXeKhong = (TextObject)xuatCanhXeKhong.Section1.ReportObjects["dateFrom"];
                             dateFromxuatCanhXeKhong.Text = _from.ToString("dd/MM/yyy HH:mm");
@@ -94,8 +95,8 @@ namespace ECustoms
                         break;
                     case ReportType.ImportAndNoItem: // Type 2
                         {
+                            ((TextObject)nhapCanhXeKhong1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdByxuatCanhXeKhong = (TextObject)nhapCanhXeKhong1.Section1.ReportObjects["CreatedBy"];
-                            createdByxuatCanhXeKhong.Text = _userInfo.Name;
                             createdByxuatCanhXeKhong.Text = _userInfo.Name;
 
                             var dateFromxuatCanhXeKhong = (TextObject)nhapCanhXeKhong1.Section1.ReportObjects["dateFrom"];
@@ -125,8 +126,8 @@ namespace ECustoms
                         break;
                     case ReportType.ExportAndHasItem: // type 3
                         {
+                            ((TextObject)exportAndHasItem1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdByexportAndHasItem = (TextObject)exportAndHasItem1.Section1.ReportObjects["CreatedBy"];
-                            createdByexportAndHasItem.Text = _userInfo.Name;
                             createdByexportAndHasItem.Text = _userInfo.Name;
 
                             var dateexportAndHasItem = (TextObject)exportAndHasItem1.Section1.ReportObjects["dateFrom"];
@@ -157,8 +158,8 @@ namespace ECustoms
                         break;
                     case ReportType.ImportAndHasItem: // Type 4
                         {
+                            ((TextObject)importAndHasItem1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdimportAndHasItem = (TextObject)importAndHasItem1.Section1.ReportObjects["CreatedBy"];
-                            createdimportAndHasItem.Text = _userInfo.Name;
                             createdimportAndHasItem.Text = _userInfo.Name;
 
                             var dateFromimportAndHasItem = (TextObject)importAndHasItem1.Section1.ReportObjects["dateFrom"];
@@ -207,10 +208,9 @@ namespace ECustoms
                         break;
                     case ReportType.LocalImportAndHasItem:
                         {
+                            ((TextObject)localImportAndHasItem1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdlocalImportAndHasItem = (TextObject)localImportAndHasItem1.Section1.ReportObjects["CreatedBy"];
                             createdlocalImportAndHasItem.Text = _userInfo.Name;
-                            createdlocalImportAndHasItem.Text = _userInfo.Name;
-
 
                             var dateFromlocalImportAndHasItem = (TextObject)localImportAndHasItem1.Section1.ReportObjects["dateFrom"];
                             dateFromlocalImportAndHasItem.Text = _from.ToString("dd/MM/yyy HH:mm");
@@ -237,6 +237,7 @@ namespace ECustoms
                         break;
                     case ReportType.ExportGateTransfer:
                         {
+                            ((TextObject)exportGate1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var dateFrom = (TextObject)exportGate1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
 
@@ -260,6 +261,7 @@ namespace ECustoms
                         break;
                     case ReportType.ImportGateTransfer:
                         {
+                            ((TextObject)importGate1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var dateFrom = (TextObject)importGate1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
 
@@ -283,6 +285,7 @@ namespace ECustoms
                         break;
                     case ReportType.TempImportedReExport:
                         {
+                            ((TextObject)tempImportReExport1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var dateFrom = (TextObject)tempImportReExport1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
 
@@ -306,6 +309,7 @@ namespace ECustoms
                         break;
                     case ReportType.VehicleTransportGoods:
                         {
+                            ((TextObject)vehicleFreight1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName;
                             var dateFrom = (TextObject)vehicleFreight1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
 

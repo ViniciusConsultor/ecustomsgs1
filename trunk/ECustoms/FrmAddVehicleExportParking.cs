@@ -392,7 +392,7 @@ namespace ECustoms
         private void PrintTicket(ViewAllVehicleHasGood vehicleInfo)
         {
             var vehicleTicket = new ECustoms.VehicleExportParkTicket();
-
+            ((TextObject)vehicleTicket.Section3.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
             var txtPrintUser = (TextObject)vehicleTicket.Section3.ReportObjects["txtPrintUser"];
             var txtPrintType = (TextObject)vehicleTicket.Section3.ReportObjects["txtPrintType"];
 

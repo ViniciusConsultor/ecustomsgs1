@@ -1442,6 +1442,7 @@ namespace ECustoms
             //print ticket report
             List<viewDeclarationVehicle> listViewDeclarationVehicle = VehicleFactory.GetImportDeclarationVehicleByVehicleID(vehicleInfo.VehicleID);
             vehicleTicket = new ECustoms.vehicleTicket();
+            ((TextObject)vehicleTicket.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
             var txtPrintUser = (TextObject)vehicleTicket.Section1.ReportObjects["txtPrintUser"];
             var txtPrintType = (TextObject)vehicleTicket.Section1.ReportObjects["txtPrintType"];
             var txtVehicleNumber = (TextObject)vehicleTicket.Section1.ReportObjects["txtVehicleNumber"];
