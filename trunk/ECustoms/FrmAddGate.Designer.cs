@@ -41,8 +41,6 @@
             this.txtGateName = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbGateType = new System.Windows.Forms.ComboBox();
             this.tblGateTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new ECustoms.DataSet2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -174,7 +172,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(127, 149);
+            this.txtDescription.Location = new System.Drawing.Point(127, 111);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescription.MaxLength = 1000;
             this.txtDescription.Multiline = true;
@@ -186,36 +184,12 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(7, 147);
+            this.lblAddress.Location = new System.Drawing.Point(7, 109);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(49, 20);
             this.lblAddress.TabIndex = 72;
             this.lblAddress.Text = "Mô tả";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 111);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
-            this.label3.TabIndex = 79;
-            this.label3.Text = "Loại";
-            // 
-            // cbGateType
-            // 
-            this.cbGateType.DataSource = this.tblGateTypeBindingSource;
-            this.cbGateType.DisplayMember = "TypeName";
-            this.cbGateType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGateType.FormattingEnabled = true;
-            this.cbGateType.Location = new System.Drawing.Point(127, 112);
-            this.cbGateType.Name = "cbGateType";
-            this.cbGateType.Size = new System.Drawing.Size(339, 26);
-            this.cbGateType.TabIndex = 70;
-            this.cbGateType.ValueMember = "TypeId";
-            this.cbGateType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbGateType_KeyDown);
             // 
             // tblGateTypeBindingSource
             // 
@@ -230,9 +204,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblUsername);
-            this.groupBox1.Controls.Add(this.cbGateType);
             this.groupBox1.Controls.Add(this.lblAddress);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtGateName);
@@ -251,11 +223,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 315);
+            this.ClientSize = new System.Drawing.Size(506, 307);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddGate";
             this.Text = "FrmAddGate";
@@ -281,8 +254,6 @@
         private System.Windows.Forms.TextBox txtGateName;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbGateType;
         private System.Windows.Forms.BindingSource tblGateTypeBindingSource;
         private DataSet2 dataSet2;
         private System.Windows.Forms.GroupBox groupBox1;

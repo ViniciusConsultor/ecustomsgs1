@@ -31,7 +31,6 @@ namespace ECustoms
             dataSet2.tblGateType.Rows.Add(-1, "Tất cả");
             dataSet2.tblGateType.Rows.Add(0, "CK xuất");
             dataSet2.tblGateType.Rows.Add(1, "CK nhập");
-            cbGateType.DataSource = dataSet2.tblGateType;
         }
 
         private void FrmListGate_Load(object sender, EventArgs e)
@@ -58,11 +57,6 @@ namespace ECustoms
             if (txtGateName.Text.Trim().Length > 0)
             {
                 list = list.Where(g => g.GateName.Contains(txtGateName.Text.Trim())).ToList();
-            }
-            if (cbGateType.SelectedValue.ToString() != "-1")
-            {
-                int gateType = int.Parse(cbGateType.SelectedValue.ToString());
-                list = list.Where(g => g.GateType.Equals(gateType)).ToList();
             }
             grvGate.AutoGenerateColumns = false;
             grvGate.DataSource = list;
