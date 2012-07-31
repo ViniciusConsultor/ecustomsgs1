@@ -253,8 +253,16 @@ namespace ECustoms
 
         private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var filePath = Application.StartupPath + @"\Docs\GS1_UserManual.pdf";
-            Help.ShowHelp(this, filePath);
+            try
+            {
+                var filePath = Application.StartupPath + @"\Docs\GS1_UserManual.pdf";
+                Help.ShowHelp(this, filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("File not found");
+                if (GlobalInfo.IsDebug) throw ex;
+            }
         }
 
         private void mnReview_Click(object sender, EventArgs e)

@@ -735,7 +735,7 @@
             this.btnLocalConfirm.Name = "btnLocalConfirm";
             this.btnLocalConfirm.Size = new System.Drawing.Size(162, 52);
             this.btnLocalConfirm.TabIndex = 17;
-            this.btnLocalConfirm.Text = "Xác nhận hàng vào nội địa";
+            this.btnLocalConfirm.Text = "XN hàng vào nội địa";
             this.btnLocalConfirm.UseVisualStyleBackColor = true;
             this.btnLocalConfirm.Click += new System.EventHandler(this.btnLocalConfirm_Click);
             // 
@@ -757,7 +757,7 @@
             this.btnXacNhanXuatCanhKhongCoHang.Name = "btnXacNhanXuatCanhKhongCoHang";
             this.btnXacNhanXuatCanhKhongCoHang.Size = new System.Drawing.Size(162, 52);
             this.btnXacNhanXuatCanhKhongCoHang.TabIndex = 16;
-            this.btnXacNhanXuatCanhKhongCoHang.Text = "Xác nhận nhập cảnh không có hàng";
+            this.btnXacNhanXuatCanhKhongCoHang.Text = "XN nhập cảnh không có hàng";
             this.btnXacNhanXuatCanhKhongCoHang.UseVisualStyleBackColor = true;
             this.btnXacNhanXuatCanhKhongCoHang.Click += new System.EventHandler(this.btnXacNhanXuatCanhKhongCoHang_Click);
             // 
@@ -769,7 +769,7 @@
             this.btnXacNhanNhapCanhCoHang.Name = "btnXacNhanNhapCanhCoHang";
             this.btnXacNhanNhapCanhCoHang.Size = new System.Drawing.Size(162, 52);
             this.btnXacNhanNhapCanhCoHang.TabIndex = 15;
-            this.btnXacNhanNhapCanhCoHang.Text = "Xác nhận nhập cảnh có hàng";
+            this.btnXacNhanNhapCanhCoHang.Text = "XN nhập cảnh có hàng";
             this.btnXacNhanNhapCanhCoHang.UseVisualStyleBackColor = true;
             this.btnXacNhanNhapCanhCoHang.Click += new System.EventHandler(this.btnXacNhanNhapCanhCoHang_Click);
             // 
@@ -858,7 +858,7 @@
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources._001_45;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(701, 728);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(707, 727);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(196, 33);
             this.btnUpdateVehicle.TabIndex = 12;
@@ -874,7 +874,7 @@
             this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportExcel.Image = global::ECustoms.Properties.Resources.excel81;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(552, 728);
+            this.btnExportExcel.Location = new System.Drawing.Point(558, 727);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(143, 33);
             this.btnExportExcel.TabIndex = 10;
@@ -888,11 +888,11 @@
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.close;
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(987, 728);
+            this.btnClose.Location = new System.Drawing.Point(993, 727);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 33);
+            this.btnClose.Size = new System.Drawing.Size(83, 33);
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Thoát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -906,7 +906,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(903, 727);
+            this.btnDelete.Location = new System.Drawing.Point(909, 727);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(78, 33);
             this.btnDelete.TabIndex = 18;
@@ -1041,7 +1041,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 770);
+            this.ClientSize = new System.Drawing.Size(1092, 778);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdateVehicle);
             this.Controls.Add(this.btnExportExcel);
