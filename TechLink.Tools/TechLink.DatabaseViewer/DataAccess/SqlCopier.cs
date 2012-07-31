@@ -127,10 +127,10 @@ namespace TechLink.DatabaseViewer.DataAccess
             }
         }
 
-        public bool RunSqlQuery(string sqlQuery)
+        public object RunSqlQuery(string sqlQuery)
         {
             var result = InvokeCommand(sqlQuery, false);
-            return result != null;
+            return result;
         }
     }
 }

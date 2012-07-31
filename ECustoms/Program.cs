@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Linq;
 using System.Text;
@@ -113,8 +114,9 @@ namespace ECustoms
             if(MessageBox.Show("Cơ sở dữ liệu cần phải được nâng cấp để tương thích với phiên bản mới.\r\n Bạn có chắc chắn muốn tiếp tục?","Warning",
                 MessageBoxButtons.YesNo,MessageBoxIcon.Warning)== DialogResult.No)
             {
-                Application.Exit();
+                Environment.Exit(0);
             }
+
         }
     }
 }

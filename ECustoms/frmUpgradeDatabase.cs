@@ -59,7 +59,7 @@ namespace ECustoms
                     MessageBox.Show(
                         "Nâng cấp cơ sở dữ liệu không thành công. Ứng dụng không thể tiếp tục chạy.\r\nVui lòng liên hệ với TechLink để được trợ giúp!",
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Application.Exit();
+                    Environment.Exit(0);
                 }
 
             }
