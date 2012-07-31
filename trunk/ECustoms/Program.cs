@@ -81,14 +81,15 @@ namespace ECustoms
 
                 var tables = sqlCopier.GetAllTables();
                 var tblSettings = tables.FirstOrDefault(item => item.Name.ToLower() == "tblsettings");
-                if (tblSettings==null)
+                if (tblSettings == null)
                 {
                     Application.Run(new frmUpgradeDatabase("1.0.0", connectionString)); 
                 }
                 else
                 {
                     var data = sqlCopier.GetDataFromTable(tblSettings.Name);
-                    var version = data.Rows[0]["Version"].ToString();
+                    var version = (data.Rows.Count == 0 ? "1.0.0" : data.Rows[0]["Version"].ToString());
+
                     if(version!=UpgradeDatabase.CommandNames[UpgradeDatabase.CommandNames.Length-1])
                     {
                         Application.Run(new frmUpgradeDatabase(version, connectionString)); 
