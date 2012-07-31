@@ -220,6 +220,12 @@
     <Compile Include="frmMessageBox.Designer.cs">
       <DependentUpon>frmMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUpgradeDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpgradeDatabase.Designer.cs">
+      <DependentUpon>frmUpgradeDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVehicleFeeReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -568,6 +574,9 @@
     <EmbeddedResource Include="frmMessageBox.resx">
       <DependentUpon>frmMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUpgradeDatabase.resx">
+      <DependentUpon>frmUpgradeDatabase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVehicleFeeReport.resx">
       <DependentUpon>FrmVehicleFeeReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -789,6 +798,10 @@
     <ProjectReference Include="..\techlink.Digest\techlink.Digest.csproj">
       <Project>{ACD706C7-4946-4D64-B590-8389B861F825}</Project>
       <Name>techlink.Digest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechLink.Tools\TechLink.DatabaseViewer\TechLink.DatabaseViewer.csproj">
+      <Project>{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}</Project>
+      <Name>TechLink.DatabaseViewer</Name>
     </ProjectReference>
     <ProjectReference Include="..\TechLink.Windows.Rerenderer\TechLink.Windows.Rerenderer.csproj">
       <Project>{194954AB-38F9-4805-9A59-F9EF8AACA7CD}</Project>
