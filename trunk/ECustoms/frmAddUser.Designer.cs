@@ -45,27 +45,27 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblActive = new System.Windows.Forms.Label();
             this.cbActive = new System.Windows.Forms.CheckBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabUser = new System.Windows.Forms.TabPage();
             this.tabGroup = new System.Windows.Forms.TabPage();
             this.chbCheckAllGroup = new System.Windows.Forms.CheckBox();
-            this.btnUpdateListGroup = new System.Windows.Forms.Button();
-            this.tbnResetListGroup = new System.Windows.Forms.Button();
             this.grvGroup = new System.Windows.Forms.DataGridView();
             this.checkGroup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPermission = new System.Windows.Forms.TabPage();
             this.chbCheckAllPermission = new System.Windows.Forms.CheckBox();
-            this.btnResetPermission = new System.Windows.Forms.Button();
-            this.btnUpdatePermission = new System.Windows.Forms.Button();
             this.grvPermission = new System.Windows.Forms.DataGridView();
             this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdateListGroup = new System.Windows.Forms.Button();
+            this.tbnResetListGroup = new System.Windows.Forms.Button();
+            this.btnResetPermission = new System.Windows.Forms.Button();
+            this.btnUpdatePermission = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabGroup.SuspendLayout();
@@ -231,57 +231,6 @@
             this.cbActive.TabIndex = 9;
             this.cbActive.UseVisualStyleBackColor = true;
             // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.close;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(526, 438);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 33);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.Text = "Thoát";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Image = global::ECustoms.Properties.Resources._001_45;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(404, 438);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(114, 33);
-            this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(278, 438);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(118, 33);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabUser);
@@ -347,38 +296,6 @@
             this.chbCheckAllGroup.UseVisualStyleBackColor = true;
             this.chbCheckAllGroup.CheckedChanged += new System.EventHandler(this.chbCheckAllGroup_CheckedChanged);
             // 
-            // btnUpdateListGroup
-            // 
-            this.btnUpdateListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdateListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources._001_01;
-            this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateListGroup.Location = new System.Drawing.Point(352, 432);
-            this.btnUpdateListGroup.Name = "btnUpdateListGroup";
-            this.btnUpdateListGroup.Size = new System.Drawing.Size(161, 33);
-            this.btnUpdateListGroup.TabIndex = 17;
-            this.btnUpdateListGroup.Text = "Cập nhật nhóm";
-            this.btnUpdateListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateListGroup.UseVisualStyleBackColor = true;
-            this.btnUpdateListGroup.Click += new System.EventHandler(this.btnUpdateListGroup_Click);
-            // 
-            // tbnResetListGroup
-            // 
-            this.tbnResetListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tbnResetListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources._001_39;
-            this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbnResetListGroup.Location = new System.Drawing.Point(519, 432);
-            this.tbnResetListGroup.Name = "tbnResetListGroup";
-            this.tbnResetListGroup.Size = new System.Drawing.Size(102, 33);
-            this.tbnResetListGroup.TabIndex = 16;
-            this.tbnResetListGroup.Text = "Làm lại";
-            this.tbnResetListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tbnResetListGroup.UseVisualStyleBackColor = true;
-            this.tbnResetListGroup.Click += new System.EventHandler(this.tbnResetListGroup_Click);
-            // 
             // grvGroup
             // 
             this.grvGroup.AllowUserToAddRows = false;
@@ -418,9 +335,9 @@
             // tabPermission
             // 
             this.tabPermission.Controls.Add(this.chbCheckAllPermission);
+            this.tabPermission.Controls.Add(this.grvPermission);
             this.tabPermission.Controls.Add(this.btnResetPermission);
             this.tabPermission.Controls.Add(this.btnUpdatePermission);
-            this.tabPermission.Controls.Add(this.grvPermission);
             this.tabPermission.Location = new System.Drawing.Point(4, 29);
             this.tabPermission.Name = "tabPermission";
             this.tabPermission.Size = new System.Drawing.Size(627, 479);
@@ -437,38 +354,6 @@
             this.chbCheckAllPermission.TabIndex = 19;
             this.chbCheckAllPermission.UseVisualStyleBackColor = true;
             this.chbCheckAllPermission.CheckedChanged += new System.EventHandler(this.chbCheckAllPermission_CheckedChanged);
-            // 
-            // btnResetPermission
-            // 
-            this.btnResetPermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnResetPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPermission.Image = global::ECustoms.Properties.Resources._001_39;
-            this.btnResetPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResetPermission.Location = new System.Drawing.Point(519, 433);
-            this.btnResetPermission.Name = "btnResetPermission";
-            this.btnResetPermission.Size = new System.Drawing.Size(102, 33);
-            this.btnResetPermission.TabIndex = 15;
-            this.btnResetPermission.Text = "Làm lại";
-            this.btnResetPermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnResetPermission.UseVisualStyleBackColor = true;
-            this.btnResetPermission.Click += new System.EventHandler(this.btnResetPermission_Click);
-            // 
-            // btnUpdatePermission
-            // 
-            this.btnUpdatePermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdatePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources._001_01;
-            this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePermission.Location = new System.Drawing.Point(350, 433);
-            this.btnUpdatePermission.Name = "btnUpdatePermission";
-            this.btnUpdatePermission.Size = new System.Drawing.Size(163, 33);
-            this.btnUpdatePermission.TabIndex = 14;
-            this.btnUpdatePermission.Text = "Cập nhật quyền";
-            this.btnUpdatePermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdatePermission.UseVisualStyleBackColor = true;
-            this.btnUpdatePermission.Click += new System.EventHandler(this.btnUpdatePermission_Click_1);
             // 
             // grvPermission
             // 
@@ -507,11 +392,126 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 475;
             // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(526, 438);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(77, 28);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(416, 438);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(102, 28);
+            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(301, 438);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(107, 28);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdateListGroup
+            // 
+            this.btnUpdateListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdateListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateListGroup.Location = new System.Drawing.Point(366, 432);
+            this.btnUpdateListGroup.Name = "btnUpdateListGroup";
+            this.btnUpdateListGroup.Size = new System.Drawing.Size(147, 28);
+            this.btnUpdateListGroup.TabIndex = 17;
+            this.btnUpdateListGroup.Text = "Cập nhật nhóm";
+            this.btnUpdateListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateListGroup.UseVisualStyleBackColor = true;
+            this.btnUpdateListGroup.Click += new System.EventHandler(this.btnUpdateListGroup_Click);
+            // 
+            // tbnResetListGroup
+            // 
+            this.tbnResetListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tbnResetListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources.undo;
+            this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbnResetListGroup.Location = new System.Drawing.Point(519, 432);
+            this.tbnResetListGroup.Name = "tbnResetListGroup";
+            this.tbnResetListGroup.Size = new System.Drawing.Size(89, 28);
+            this.tbnResetListGroup.TabIndex = 16;
+            this.tbnResetListGroup.Text = "Làm lại";
+            this.tbnResetListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbnResetListGroup.UseVisualStyleBackColor = true;
+            this.tbnResetListGroup.Click += new System.EventHandler(this.tbnResetListGroup_Click);
+            // 
+            // btnResetPermission
+            // 
+            this.btnResetPermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnResetPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPermission.Image = global::ECustoms.Properties.Resources.undo;
+            this.btnResetPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnResetPermission.Location = new System.Drawing.Point(519, 433);
+            this.btnResetPermission.Name = "btnResetPermission";
+            this.btnResetPermission.Size = new System.Drawing.Size(92, 28);
+            this.btnResetPermission.TabIndex = 15;
+            this.btnResetPermission.Text = "Làm lại";
+            this.btnResetPermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnResetPermission.UseVisualStyleBackColor = true;
+            this.btnResetPermission.Click += new System.EventHandler(this.btnResetPermission_Click);
+            // 
+            // btnUpdatePermission
+            // 
+            this.btnUpdatePermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdatePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdatePermission.Location = new System.Drawing.Point(364, 433);
+            this.btnUpdatePermission.Name = "btnUpdatePermission";
+            this.btnUpdatePermission.Size = new System.Drawing.Size(149, 28);
+            this.btnUpdatePermission.TabIndex = 14;
+            this.btnUpdatePermission.Text = "Cập nhật quyền";
+            this.btnUpdatePermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdatePermission.UseVisualStyleBackColor = true;
+            this.btnUpdatePermission.Click += new System.EventHandler(this.btnUpdatePermission_Click_1);
+            // 
             // frmAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 533);
+            this.ClientSize = new System.Drawing.Size(654, 539);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
