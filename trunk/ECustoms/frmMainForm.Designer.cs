@@ -363,6 +363,7 @@
             // 
             // mnuType
             // 
+            this.mnuType.Image = global::ECustoms.Properties.Resources.clipboard_empty;
             this.mnuType.Name = "mnuType";
             this.mnuType.Size = new System.Drawing.Size(217, 26);
             this.mnuType.Text = "Loại hình tờ khai";
@@ -370,6 +371,7 @@
             // 
             // mnuCompany
             // 
+            this.mnuCompany.Image = global::ECustoms.Properties.Resources.clipboard_next;
             this.mnuCompany.Name = "mnuCompany";
             this.mnuCompany.Size = new System.Drawing.Size(217, 26);
             this.mnuCompany.Text = "Doanh nghiệp";
@@ -377,6 +379,7 @@
             // 
             // mnuCustoms
             // 
+            this.mnuCustoms.Image = global::ECustoms.Properties.Resources.clipboard_next_down;
             this.mnuCustoms.Name = "mnuCustoms";
             this.mnuCustoms.Size = new System.Drawing.Size(217, 26);
             this.mnuCustoms.Text = "Đơn vị hải quan";
@@ -384,6 +387,7 @@
             // 
             // mnuGate
             // 
+            this.mnuGate.Image = global::ECustoms.Properties.Resources.clipboard;
             this.mnuGate.Name = "mnuGate";
             this.mnuGate.Size = new System.Drawing.Size(217, 26);
             this.mnuGate.Text = "Danh mục cửa khẩu";
@@ -536,7 +540,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1276, 802);
+            this.ClientSize = new System.Drawing.Size(1276, 812);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
