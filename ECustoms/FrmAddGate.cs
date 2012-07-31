@@ -33,10 +33,6 @@ namespace ECustoms
             _frmListGate = frmListGate;
 
             InitializeComponent();
-
-            dataSet2.tblGateType.Rows.Add(0, "CK xuất");
-            dataSet2.tblGateType.Rows.Add(1, "CK nhập");
-            cbGateType.DataSource = dataSet2.tblGateType;
         }
 
         private void FrmAddGate_Load(object sender, EventArgs e)
@@ -64,7 +60,6 @@ namespace ECustoms
                 txtGateCode.Text = gate.GateCode;
                 txtGateName.Text = gate.GateName;
                 txtDescription.Text = gate.Description;
-                cbGateType.SelectedValue = gate.GateType;
             }
         }
 
@@ -127,7 +122,6 @@ namespace ECustoms
                     tblGate gate = new tblGate();
                     gate.GateCode = txtGateCode.Text.Trim();
                     gate.GateName = txtGateName.Text.Trim();
-                    gate.GateType = int.Parse(cbGateType.SelectedValue.ToString());
                     gate.Description = txtDescription.Text.Trim();
                     gate.CreatedBy = _userInfo.UserID;
                     gate.ModifiedBy = _userInfo.UserID;
@@ -161,7 +155,6 @@ namespace ECustoms
                     tblGate gate = new tblGate();
                     gate.GateCode = txtGateCode.Text.Trim();
                     gate.GateName = txtGateName.Text.Trim();
-                    gate.GateType = int.Parse(cbGateType.SelectedValue.ToString());
                     gate.Description = txtDescription.Text.Trim();
                     gate.ModifiedBy = _userInfo.UserID;
                     if (GateFactory.Update(gate) > 0)
@@ -200,14 +193,6 @@ namespace ECustoms
         }
 
         private void txtGateName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == 13) // Enter key
-            {
-                cbGateType.Focus();
-            }
-        }
-
-        private void cbGateType_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13) // Enter key
             {

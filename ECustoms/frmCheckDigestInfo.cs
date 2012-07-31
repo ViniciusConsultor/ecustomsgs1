@@ -21,7 +21,7 @@ namespace ECustoms
         {
             InitializeComponent();
 #if FORCE_REG
-            btnLater.Visible = false;
+    //        btnLater.Visible = false;
 #endif
         }
 
