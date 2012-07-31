@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using TechLink.DatabaseViewer.DataTransferObjects;
 
 namespace TechLink.DatabaseViewer.DataAccess
@@ -80,12 +81,14 @@ namespace TechLink.DatabaseViewer.DataAccess
             }
             catch (Exception exception)
             {
-                
-                throw exception;
+                MessageBox.Show("Lỗi thực thi lệnh: " + commandText,"Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
             
-            if (connection.State == ConnectionState.Open)
-                connection.Close();
 
             return returnValue;
         }

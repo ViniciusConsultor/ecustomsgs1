@@ -62,6 +62,9 @@ namespace TechLink.DatabaseViewer.Commands
 
             sqlQueries.Add("ALTER TABLE [dbo].[tblVehicle] ADD [IsSynced] bit NULL");
             sqlQueries.Add("UPDATE [dbo].[tblVehicle] SET [IsSynced]=0");
+
+            sqlQueries.Add("CREATE TABLE [dbo].[tblSettings]([Version] [nvarchar](50) NOT NULL,[LastSync] [datetime] NOT NULL) ON [PRIMARY]");
+            sqlQueries.Add("INSERT INTO [dbo].[tblSettings]([Version],[LastSync]) VALUES('1.0.1', '08/01/2012')");
         }
 
         public override bool DoUpgrade(object parameters)
