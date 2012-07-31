@@ -83,6 +83,7 @@ namespace ECustoms
                 var tblSettings = tables.FirstOrDefault(item => item.Name.ToLower() == "tblsettings");
                 if (tblSettings == null)
                 {
+                    ConfirmUpgradeDB();
                     Application.Run(new frmUpgradeDatabase("1.0.0", connectionString)); 
                 }
                 else
@@ -92,6 +93,7 @@ namespace ECustoms
 
                     if(version!=UpgradeDatabase.CommandNames[UpgradeDatabase.CommandNames.Length-1])
                     {
+                        ConfirmUpgradeDB();
                         Application.Run(new frmUpgradeDatabase(version, connectionString)); 
     
                     }
@@ -102,6 +104,15 @@ namespace ECustoms
             else
             {
                 MessageBox.Show("Bạn chưa đăng ký sử dụng phần mềm!");
+                Application.Exit();
+            }
+        }
+
+        private static void ConfirmUpgradeDB()
+        {
+            if(MessageBox.Show("Cơ sở dữ liệu cần phải được nâng cấp để tương thích với phiên bản mới.\r\n Bạn có chắc chắn muốn tiếp tục?","Warning",
+                MessageBoxButtons.YesNo,MessageBoxIcon.Warning)== DialogResult.No)
+            {
                 Application.Exit();
             }
         }
