@@ -883,6 +883,25 @@
     <None Include="Resources\excel82.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\scroll.png" />
+    <None Include="Resources\preferences.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\column-chart.png" />
+    <None Include="Resources\recycle.png" />
+    <None Include="Resources\column_preferences.png" />
+    <None Include="Resources\importSmall.png" />
+    <None Include="Resources\exportSmall.png" />
+    <None Include="Resources\form_red.png" />
+    <None Include="Resources\key1.png" />
+    <None Include="Resources\signout.png" />
+    <None Include="Resources\goup.png" />
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\HelpBig.png" />
+    <None Include="Resources\text_ok.png" />
+    <None Include="Resources\DeclaBig.png" />
+    <None Include="Resources\viewBig.png" />
+    <None Include="Resources\importBig.png" />
+    <None Include="Resources\exportBig.png" />
     <None Include="Resources\view.png" />
     <None Include="Resources\money.png" />
     <None Include="Resources\KeyLock2.png" />
@@ -907,6 +926,7 @@
     <None Include="Resources\5373.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\accept.png" />
+    <None Include="Resources\about.png" />
     <Content Include="Resources\change-password-icon.png" />
     <Content Include="Resources\checkIcon.png" />
     <None Include="Resources\confirm.png" />

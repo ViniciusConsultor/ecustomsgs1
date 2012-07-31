@@ -116,6 +116,13 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap about {
+            get {
+                object obj = ResourceManager.GetObject("about", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap accept {
             get {
                 object obj = ResourceManager.GetObject("accept", resourceCulture);
@@ -158,9 +165,30 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap column_chart {
+            get {
+                object obj = ResourceManager.GetObject("column-chart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap column_preferences {
+            get {
+                object obj = ResourceManager.GetObject("column_preferences", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap confirm {
             get {
                 object obj = ResourceManager.GetObject("confirm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap DeclaBig {
+            get {
+                object obj = ResourceManager.GetObject("DeclaBig", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -249,6 +277,20 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap exportBig {
+            get {
+                object obj = ResourceManager.GetObject("exportBig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap exportSmall {
+            get {
+                object obj = ResourceManager.GetObject("exportSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap file_import {
             get {
                 object obj = ResourceManager.GetObject("file import", resourceCulture);
@@ -263,9 +305,37 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap form_red {
+            get {
+                object obj = ResourceManager.GetObject("form_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap gear {
             get {
                 object obj = ResourceManager.GetObject("gear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap goup {
+            get {
+                object obj = ResourceManager.GetObject("goup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap help {
+            get {
+                object obj = ResourceManager.GetObject("help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HelpBig {
+            get {
+                object obj = ResourceManager.GetObject("HelpBig", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -294,6 +364,27 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap import {
             get {
                 object obj = ResourceManager.GetObject("import", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap importBig {
+            get {
+                object obj = ResourceManager.GetObject("importBig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap importSmall {
+            get {
+                object obj = ResourceManager.GetObject("importSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap key1 {
+            get {
+                object obj = ResourceManager.GetObject("key1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -368,9 +459,23 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap preferences {
+            get {
+                object obj = ResourceManager.GetObject("preferences", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap print_icon {
             get {
                 object obj = ResourceManager.GetObject("print-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap recycle {
+            get {
+                object obj = ResourceManager.GetObject("recycle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -399,6 +504,13 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap save_icon {
             get {
                 object obj = ResourceManager.GetObject("save_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap scroll {
+            get {
+                object obj = ResourceManager.GetObject("scroll", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -452,6 +564,20 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap signout {
+            get {
+                object obj = ResourceManager.GetObject("signout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap text_ok {
+            get {
+                object obj = ResourceManager.GetObject("text_ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap undo {
             get {
                 object obj = ResourceManager.GetObject("undo", resourceCulture);
@@ -462,6 +588,13 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap user1 {
+            get {
+                object obj = ResourceManager.GetObject("user1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -490,6 +623,13 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap view {
             get {
                 object obj = ResourceManager.GetObject("view", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap viewBig {
+            get {
+                object obj = ResourceManager.GetObject("viewBig", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

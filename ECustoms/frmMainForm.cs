@@ -388,5 +388,11 @@ namespace ECustoms
             form.MdiParent = this;
             form.Show();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var filePath = Application.StartupPath + @"\Docs\GS1_UserManual.pdf";
+            Help.ShowHelp(this, filePath);
+        }
     }
 }
