@@ -351,7 +351,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(118, 33);
             this.btnSearch.TabIndex = 10;
-            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.Text = "Tìm ki&ếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -735,7 +735,7 @@
             this.btnLocalConfirm.Name = "btnLocalConfirm";
             this.btnLocalConfirm.Size = new System.Drawing.Size(162, 52);
             this.btnLocalConfirm.TabIndex = 17;
-            this.btnLocalConfirm.Text = "Xác nhận hàng vào nội địa";
+            this.btnLocalConfirm.Text = "XN hàng vào nội địa";
             this.btnLocalConfirm.UseVisualStyleBackColor = true;
             this.btnLocalConfirm.Click += new System.EventHandler(this.btnLocalConfirm_Click);
             // 
@@ -757,7 +757,7 @@
             this.btnXacNhanXuatCanhKhongCoHang.Name = "btnXacNhanXuatCanhKhongCoHang";
             this.btnXacNhanXuatCanhKhongCoHang.Size = new System.Drawing.Size(162, 52);
             this.btnXacNhanXuatCanhKhongCoHang.TabIndex = 16;
-            this.btnXacNhanXuatCanhKhongCoHang.Text = "Xác nhận nhập cảnh không hàng";
+            this.btnXacNhanXuatCanhKhongCoHang.Text = "XN nhập cảnh không có hàng";
             this.btnXacNhanXuatCanhKhongCoHang.UseVisualStyleBackColor = true;
             this.btnXacNhanXuatCanhKhongCoHang.Click += new System.EventHandler(this.btnXacNhanXuatCanhKhongCoHang_Click);
             // 
@@ -769,7 +769,7 @@
             this.btnXacNhanNhapCanhCoHang.Name = "btnXacNhanNhapCanhCoHang";
             this.btnXacNhanNhapCanhCoHang.Size = new System.Drawing.Size(162, 52);
             this.btnXacNhanNhapCanhCoHang.TabIndex = 15;
-            this.btnXacNhanNhapCanhCoHang.Text = "Xác nhận nhập cảnh có hàng";
+            this.btnXacNhanNhapCanhCoHang.Text = "XN nhập cảnh có hàng";
             this.btnXacNhanNhapCanhCoHang.UseVisualStyleBackColor = true;
             this.btnXacNhanNhapCanhCoHang.Click += new System.EventHandler(this.btnXacNhanNhapCanhCoHang_Click);
             // 
@@ -856,13 +856,13 @@
             this.btnUpdateVehicle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdateVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources._001_45;
+            this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(707, 727);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(702, 724);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
-            this.btnUpdateVehicle.Size = new System.Drawing.Size(196, 33);
+            this.btnUpdateVehicle.Size = new System.Drawing.Size(196, 28);
             this.btnUpdateVehicle.TabIndex = 12;
-            this.btnUpdateVehicle.Text = "Cập nhật phương tiện";
+            this.btnUpdateVehicle.Text = "&Cập nhật phương tiện";
             this.btnUpdateVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateVehicle.UseVisualStyleBackColor = true;
             this.btnUpdateVehicle.Click += new System.EventHandler(this.btnUpdateVehicle_Click);
@@ -872,13 +872,13 @@
             this.btnExportExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExcel.Image = global::ECustoms.Properties.Resources.excel81;
+            this.btnExportExcel.Image = global::ECustoms.Properties.Resources.exce;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(558, 727);
+            this.btnExportExcel.Location = new System.Drawing.Point(553, 724);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(143, 33);
+            this.btnExportExcel.Size = new System.Drawing.Size(143, 28);
             this.btnExportExcel.TabIndex = 10;
-            this.btnExportExcel.Text = "Export tờ khai";
+            this.btnExportExcel.Text = "Expo&rt tờ khai";
             this.btnExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportExcel.UseVisualStyleBackColor = true;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
@@ -890,11 +890,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(993, 727);
+            this.btnClose.Location = new System.Drawing.Point(988, 724);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(83, 33);
+            this.btnClose.Size = new System.Drawing.Size(83, 28);
             this.btnClose.TabIndex = 13;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -904,13 +904,13 @@
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
+            this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(909, 727);
+            this.btnDelete.Location = new System.Drawing.Point(904, 724);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(78, 33);
+            this.btnDelete.Size = new System.Drawing.Size(78, 28);
             this.btnDelete.TabIndex = 18;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -1041,7 +1041,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 782);
+            this.ClientSize = new System.Drawing.Size(1068, 751);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdateVehicle);
             this.Controls.Add(this.btnExportExcel);
@@ -1050,6 +1050,7 @@
             this.Controls.Add(this.grbConditionSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVehicleSearch";
+            this.ShowInTaskbar = false;
             this.Text = "Tìm kếm thông tin xe";
             this.Load += new System.EventHandler(this.frmVehicleSearch_Load);
             this.grbConditionSearch.ResumeLayout(false);

@@ -199,5 +199,17 @@ namespace ECustoms
                 txtDescription.Focus();
             }
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Alt | Keys.D1))
+                btnAdd.PerformClick();
+            if (keyData == (Keys.Alt | Keys.D2))
+                btnUpdate.PerformClick();
+            if (keyData == (Keys.Alt | Keys.D3))
+                btnClose.PerformClick();
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
     }
 }

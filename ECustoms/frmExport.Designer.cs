@@ -208,7 +208,7 @@
             this.btnAddExisting.Name = "btnAddExisting";
             this.btnAddExisting.Size = new System.Drawing.Size(229, 28);
             this.btnAddExisting.TabIndex = 24;
-            this.btnAddExisting.Text = "Thêm từ phương tiện đã XK";
+            this.btnAddExisting.Text = "Thêm từ phương tiện &đã XK";
             this.btnAddExisting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddExisting.UseVisualStyleBackColor = true;
             this.btnAddExisting.Click += new System.EventHandler(this.btnAddExisting_Click);
@@ -224,7 +224,7 @@
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
             this.btnDeleteVehicle.Size = new System.Drawing.Size(159, 28);
             this.btnDeleteVehicle.TabIndex = 25;
-            this.btnDeleteVehicle.Text = "Xóa phương tiện";
+            this.btnDeleteVehicle.Text = "&Xóa phương tiện";
             this.btnDeleteVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteVehicle.UseVisualStyleBackColor = true;
             this.btnDeleteVehicle.Click += new System.EventHandler(this.btnDeleteVehicle_Click_1);
@@ -240,7 +240,7 @@
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(187, 28);
             this.btnUpdateVehicle.TabIndex = 23;
-            this.btnUpdateVehicle.Text = "Cập nhật phương tiện";
+            this.btnUpdateVehicle.Text = "&Cập nhật phương tiện";
             this.btnUpdateVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateVehicle.UseVisualStyleBackColor = true;
             this.btnUpdateVehicle.Click += new System.EventHandler(this.btnUpdateVehicle_Click);
@@ -256,7 +256,7 @@
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.Size = new System.Drawing.Size(160, 28);
             this.btnAddVehicle.TabIndex = 22;
-            this.btnAddVehicle.Text = "Thêm phương tiện";
+            this.btnAddVehicle.Text = "Thê&m phương tiện";
             this.btnAddVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddVehicle.UseVisualStyleBackColor = true;
             this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
@@ -711,7 +711,7 @@
             // btnComfirmExport
             // 
             this.btnComfirmExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComfirmExport.Location = new System.Drawing.Point(860, 295);
+            this.btnComfirmExport.Location = new System.Drawing.Point(860, 316);
             this.btnComfirmExport.Name = "btnComfirmExport";
             this.btnComfirmExport.Size = new System.Drawing.Size(158, 50);
             this.btnComfirmExport.TabIndex = 30;
@@ -722,7 +722,7 @@
             // bntConfirmImportCH
             // 
             this.bntConfirmImportCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntConfirmImportCH.Location = new System.Drawing.Point(860, 351);
+            this.bntConfirmImportCH.Location = new System.Drawing.Point(860, 372);
             this.bntConfirmImportCH.Name = "bntConfirmImportCH";
             this.bntConfirmImportCH.Size = new System.Drawing.Size(158, 50);
             this.bntConfirmImportCH.TabIndex = 31;
@@ -733,7 +733,7 @@
             // btnConfirmImportKH
             // 
             this.btnConfirmImportKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmImportKH.Location = new System.Drawing.Point(860, 407);
+            this.btnConfirmImportKH.Location = new System.Drawing.Point(860, 428);
             this.btnConfirmImportKH.Name = "btnConfirmImportKH";
             this.btnConfirmImportKH.Size = new System.Drawing.Size(158, 50);
             this.btnConfirmImportKH.TabIndex = 32;
@@ -752,7 +752,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(131, 28);
             this.btnReset.TabIndex = 28;
-            this.btnReset.Text = "Thiết lập lại";
+            this.btnReset.Text = "Thiết &lập lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -768,7 +768,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(148, 28);
             this.btnUpdate.TabIndex = 27;
-            this.btnUpdate.Text = "Cập nhật tờ khai";
+            this.btnUpdate.Text = "C&ập nhật tờ khai";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
@@ -780,11 +780,11 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ECustoms.Properties.Resources.Exit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(481, 604);
+            this.button1.Location = new System.Drawing.Point(481, 606);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 28);
             this.button1.TabIndex = 29;
-            this.button1.Text = "Thoát";
+            this.button1.Text = "Th&oát";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -800,7 +800,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(170, 28);
             this.btnAdd.TabIndex = 26;
-            this.btnAdd.Text = "Tạo mới/lưu tờ khai";
+            this.btnAdd.Text = "Tạo mới/lư&u tờ khai";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -809,7 +809,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 638);
+            this.ClientSize = new System.Drawing.Size(1023, 639);
             this.Controls.Add(this.btnConfirmImportKH);
             this.Controls.Add(this.bntConfirmImportCH);
             this.Controls.Add(this.btnComfirmExport);
@@ -828,6 +828,7 @@
             this.Controls.Add(this.groupBoxVehicle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmExport";
+            this.ShowInTaskbar = false;
             this.Text = "Khai xuất khẩu - mới nhập ";
             this.Load += new System.EventHandler(this.frmExport_Load);
             this.groupBoxVehicle.ResumeLayout(false);

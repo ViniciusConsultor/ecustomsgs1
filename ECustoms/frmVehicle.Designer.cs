@@ -301,7 +301,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(123, 28);
             this.btnReset.TabIndex = 17;
-            this.btnReset.Text = "Thiết lập lại";
+            this.btnReset.Text = "Thiết &lập lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -317,7 +317,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(73, 28);
             this.btnDelete.TabIndex = 16;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -333,7 +333,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(201, 28);
             this.btnUpdate.TabIndex = 15;
-            this.btnUpdate.Text = "Cập nhật phương tiện";
+            this.btnUpdate.Text = "&Cập nhật phương tiện";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
@@ -349,7 +349,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(186, 28);
             this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Lưu trữ phương tiện";
+            this.btnAdd.Text = "Lư&u trữ phương tiện";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -365,7 +365,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 28);
             this.btnClose.TabIndex = 18;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
@@ -380,7 +380,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(5, 307);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(993, 254);
+            this.groupBox1.Size = new System.Drawing.Size(1001, 263);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các xe vừa nhập";
@@ -406,7 +406,7 @@
             this.grdVehicle.MultiSelect = false;
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(987, 229);
+            this.grdVehicle.Size = new System.Drawing.Size(995, 238);
             this.grdVehicle.TabIndex = 19;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
@@ -648,7 +648,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 578);
+            this.ClientSize = new System.Drawing.Size(1013, 587);
             this.Controls.Add(this.cbImportGoodType);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbExportGoodType);
@@ -687,6 +687,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1021, 614);
             this.Name = "frmVehicle";
+            this.ShowInTaskbar = false;
             this.Text = "Khai báo phương tiện";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVehicle_FormClosing);
             this.Load += new System.EventHandler(this.frmVehicle_Load);

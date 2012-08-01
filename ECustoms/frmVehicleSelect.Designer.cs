@@ -126,7 +126,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(77, 28);
             this.btnClose.TabIndex = 14;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -143,7 +143,7 @@
             this.btnAddVehichle.Name = "btnAddVehichle";
             this.btnAddVehichle.Size = new System.Drawing.Size(162, 28);
             this.btnAddVehichle.TabIndex = 15;
-            this.btnAddVehichle.Text = "Thêm phương tiện";
+            this.btnAddVehichle.Text = "Thê&m phương tiện";
             this.btnAddVehichle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddVehichle.UseVisualStyleBackColor = true;
             this.btnAddVehichle.Click += new System.EventHandler(this.btnAddVehichle_Click);
@@ -173,7 +173,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(96, 28);
             this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.Text = "Tìm ki&ếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -212,6 +212,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(848, 439);
             this.Name = "frmVehicleSelect";
+            this.ShowInTaskbar = false;
             this.Text = "Thêm từ phương tiện đã xuất khẩu";
             this.Load += new System.EventHandler(this.frmVehicleSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).EndInit();

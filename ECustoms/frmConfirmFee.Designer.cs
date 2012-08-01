@@ -147,7 +147,7 @@
             this.btnConfirmFee.Name = "btnConfirmFee";
             this.btnConfirmFee.Size = new System.Drawing.Size(104, 28);
             this.btnConfirmFee.TabIndex = 0;
-            this.btnConfirmFee.Text = "Xác nhận";
+            this.btnConfirmFee.Text = "X&ác nhận";
             this.btnConfirmFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmFee.UseVisualStyleBackColor = true;
             this.btnConfirmFee.Click += new System.EventHandler(this.btnConfirmFee_Click);
@@ -163,7 +163,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(76, 28);
             this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -282,13 +282,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 191);
+            this.ClientSize = new System.Drawing.Size(352, 190);
             this.Controls.Add(this.btnConfirmFee);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grbResult);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmConfirmFee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowInTaskbar = false;
             this.Text = "frmGetFee";
             this.Load += new System.EventHandler(this.frmConfirmFee_Load);
             this.grbResult.ResumeLayout(false);

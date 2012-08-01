@@ -525,7 +525,7 @@
             this.btnAddExisting.Name = "btnAddExisting";
             this.btnAddExisting.Size = new System.Drawing.Size(235, 28);
             this.btnAddExisting.TabIndex = 6;
-            this.btnAddExisting.Text = "Thêm từ phương tiện đã XK";
+            this.btnAddExisting.Text = "Thêm từ phương tiện &đã XK";
             this.btnAddExisting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddExisting.UseVisualStyleBackColor = true;
             this.btnAddExisting.Click += new System.EventHandler(this.btnAddExisting_Click);
@@ -552,7 +552,7 @@
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
             this.btnDeleteVehicle.Size = new System.Drawing.Size(68, 28);
             this.btnDeleteVehicle.TabIndex = 7;
-            this.btnDeleteVehicle.Text = "Xóa";
+            this.btnDeleteVehicle.Text = "&Xóa";
             this.btnDeleteVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteVehicle.UseVisualStyleBackColor = true;
             this.btnDeleteVehicle.Click += new System.EventHandler(this.btnDeleteVehicle_Click);
@@ -568,7 +568,7 @@
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(189, 28);
             this.btnUpdateVehicle.TabIndex = 5;
-            this.btnUpdateVehicle.Text = "Cập nhật phương tiện";
+            this.btnUpdateVehicle.Text = "&Cập nhật phương tiện";
             this.btnUpdateVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateVehicle.UseVisualStyleBackColor = true;
             this.btnUpdateVehicle.Click += new System.EventHandler(this.btnUpdateVehicle_Click);
@@ -584,7 +584,7 @@
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.Size = new System.Drawing.Size(171, 28);
             this.btnAddVehicle.TabIndex = 4;
-            this.btnAddVehicle.Text = "Thêm phương tiện";
+            this.btnAddVehicle.Text = "Thê&m phương tiện";
             this.btnAddVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddVehicle.UseVisualStyleBackColor = true;
             this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
@@ -813,7 +813,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(152, 28);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Cập nhật tờ khai";
+            this.btnUpdate.Text = "Cập nh&ật tờ khai";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -830,7 +830,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Thoát";
+            this.button1.Text = "Th&oát";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -846,7 +846,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(171, 28);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Tạo mới/lưu tờ khai";
+            this.btnAdd.Text = "Tạo mới/lư&u tờ khai";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -862,7 +862,7 @@
             this.btnFee.Name = "btnFee";
             this.btnFee.Size = new System.Drawing.Size(131, 28);
             this.btnFee.TabIndex = 4;
-            this.btnFee.Text = "Thu phí nhập";
+            this.btnFee.Text = "Thu &phí nhập";
             this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFee.UseVisualStyleBackColor = true;
             this.btnFee.Visible = false;
@@ -882,6 +882,7 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBoxVehicle);
             this.Controls.Add(this.gbExportDeclaration);
+            this.FormStyle = System.Windows.Forms.RCMFormStyles.VistaForm;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmDecleExport";

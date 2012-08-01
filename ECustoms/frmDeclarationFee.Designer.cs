@@ -72,32 +72,34 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(875, 339);
+            this.btnClose.Location = new System.Drawing.Point(896, 451);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(81, 28);
             this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnFee
             // 
+            this.btnFee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFee.Image = global::ECustoms.Properties.Resources.money;
             this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFee.Location = new System.Drawing.Point(742, 339);
+            this.btnFee.Location = new System.Drawing.Point(763, 451);
             this.btnFee.Name = "btnFee";
             this.btnFee.Size = new System.Drawing.Size(127, 28);
             this.btnFee.TabIndex = 5;
-            this.btnFee.Text = "Thu phí nhập";
+            this.btnFee.Text = "Th&u phí nhập";
             this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFee.UseVisualStyleBackColor = true;
             this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
@@ -109,7 +111,7 @@
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.Location = new System.Drawing.Point(12, 19);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(936, 23);
+            this.lblHeader.Size = new System.Drawing.Size(971, 23);
             this.lblHeader.TabIndex = 6;
             this.lblHeader.Text = " Thông tin thu phí {0} cho tờ khai {0} số {1}";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -118,8 +120,10 @@
             // 
             this.grdVehicle.AllowUserToAddRows = false;
             this.grdVehicle.AllowUserToDeleteRows = false;
-            this.grdVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.grdVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdVehicle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,7 +151,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(936, 270);
+            this.grdVehicle.Size = new System.Drawing.Size(971, 382);
             this.grdVehicle.TabIndex = 7;
             // 
             // Count
@@ -156,7 +160,6 @@
             this.Count.DefaultCellStyle = dataGridViewCellStyle2;
             this.Count.HeaderText = "STT";
             this.Count.Name = "Count";
-            this.Count.Width = 50;
             // 
             // PlateNumber
             // 
@@ -166,7 +169,6 @@
             this.PlateNumber.HeaderText = "Biển Kiểm soát";
             this.PlateNumber.Name = "PlateNumber";
             this.PlateNumber.ReadOnly = true;
-            this.PlateNumber.Width = 140;
             // 
             // VehicleType
             // 
@@ -176,7 +178,6 @@
             this.VehicleType.ReadOnly = true;
             this.VehicleType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.VehicleType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.VehicleType.Width = 200;
             // 
             // ExportGoodType
             // 
@@ -187,7 +188,6 @@
             this.ExportGoodType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ExportGoodType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ExportGoodType.Visible = false;
-            this.ExportGoodType.Width = 200;
             // 
             // ImportGoodType
             // 
@@ -197,7 +197,6 @@
             this.ImportGoodType.ReadOnly = true;
             this.ImportGoodType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ImportGoodType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ImportGoodType.Width = 200;
             // 
             // ExportReceiptNumber
             // 
@@ -205,14 +204,12 @@
             this.ExportReceiptNumber.HeaderText = "Số biên lai xuất";
             this.ExportReceiptNumber.Name = "ExportReceiptNumber";
             this.ExportReceiptNumber.Visible = false;
-            this.ExportReceiptNumber.Width = 200;
             // 
             // ImportReceiptNumber
             // 
             this.ImportReceiptNumber.DataPropertyName = "ImportReceiptNumber";
             this.ImportReceiptNumber.HeaderText = "Số biên lai nhập";
             this.ImportReceiptNumber.Name = "ImportReceiptNumber";
-            this.ImportReceiptNumber.Width = 200;
             // 
             // feeExportAmount
             // 
@@ -220,14 +217,12 @@
             this.feeExportAmount.HeaderText = "Số phí xuất";
             this.feeExportAmount.Name = "feeExportAmount";
             this.feeExportAmount.Visible = false;
-            this.feeExportAmount.Width = 150;
             // 
             // feeImportAmount
             // 
             this.feeImportAmount.DataPropertyName = "feeImportAmount";
             this.feeImportAmount.HeaderText = "Số phí nhập";
             this.feeImportAmount.Name = "feeImportAmount";
-            this.feeImportAmount.Width = 150;
             // 
             // VehicleID
             // 
@@ -370,14 +365,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 367);
+            this.ClientSize = new System.Drawing.Size(992, 489);
             this.Controls.Add(this.grdVehicle);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.btnFee);
             this.Controls.Add(this.btnClose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1000, 516);
             this.Name = "frmDeclarationFee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowInTaskbar = false;
             this.Text = "frmDeclarationFee";
             this.Load += new System.EventHandler(this.frmDeclarationFee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).EndInit();

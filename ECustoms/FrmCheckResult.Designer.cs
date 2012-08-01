@@ -83,7 +83,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1071, 322);
+            this.groupBox1.Size = new System.Drawing.Size(1063, 313);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tổng hợp thông tin kiểm tra";
@@ -113,7 +113,7 @@
             this.grdVehicleCheck.MultiSelect = false;
             this.grdVehicleCheck.Name = "grdVehicleCheck";
             this.grdVehicleCheck.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleCheck.Size = new System.Drawing.Size(1065, 297);
+            this.grdVehicleCheck.Size = new System.Drawing.Size(1057, 288);
             this.grdVehicleCheck.TabIndex = 19;
             this.grdVehicleCheck.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicleCheck_CellMouseDoubleClick);
             // 
@@ -248,7 +248,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1076, 97);
+            this.groupBox2.Size = new System.Drawing.Size(1063, 97);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Điều kiện tìm kiếm";
@@ -373,7 +373,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(128, 28);
             this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.Text = "Tìm ki&ếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -402,11 +402,11 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(939, 449);
+            this.btnDelete.Location = new System.Drawing.Point(923, 440);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(67, 28);
             this.btnDelete.TabIndex = 25;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -418,11 +418,11 @@
             this.bntUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.bntUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntUpdate.Location = new System.Drawing.Point(834, 449);
+            this.bntUpdate.Location = new System.Drawing.Point(818, 440);
             this.bntUpdate.Name = "bntUpdate";
             this.bntUpdate.Size = new System.Drawing.Size(99, 28);
             this.bntUpdate.TabIndex = 23;
-            this.bntUpdate.Text = "Cập nhật";
+            this.bntUpdate.Text = "&Cập nhật";
             this.bntUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bntUpdate.UseVisualStyleBackColor = true;
             this.bntUpdate.Click += new System.EventHandler(this.bntUpdate_Click);
@@ -434,11 +434,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1009, 449);
+            this.btnClose.Location = new System.Drawing.Point(993, 440);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 28);
             this.btnClose.TabIndex = 24;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -447,7 +447,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 489);
+            this.ClientSize = new System.Drawing.Size(1087, 480);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.bntUpdate);
             this.Controls.Add(this.btnClose);
@@ -455,6 +455,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCheckResult";
+            this.ShowInTaskbar = false;
             this.Text = "FrmCheckResult";
             this.Load += new System.EventHandler(this.FrmCheckResult_Load);
             this.groupBox1.ResumeLayout(false);

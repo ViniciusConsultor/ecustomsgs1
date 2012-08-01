@@ -83,7 +83,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(7, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(900, 207);
+            this.groupBox1.Size = new System.Drawing.Size(892, 198);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm từ phương tiện đã xuất khẩu";
@@ -106,7 +106,7 @@
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.ReadOnly = true;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(894, 182);
+            this.grdVehicle.Size = new System.Drawing.Size(886, 173);
             this.grdVehicle.TabIndex = 1;
             this.grdVehicle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellDoubleClick);
             this.grdVehicle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdVehicle_KeyDown);
@@ -224,11 +224,11 @@
             this.btnAddVehichle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVehichle.Image = global::ECustoms.Properties.Resources.add;
             this.btnAddVehichle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehichle.Location = new System.Drawing.Point(651, 276);
+            this.btnAddVehichle.Location = new System.Drawing.Point(643, 267);
             this.btnAddVehichle.Name = "btnAddVehichle";
             this.btnAddVehichle.Size = new System.Drawing.Size(164, 28);
             this.btnAddVehichle.TabIndex = 21;
-            this.btnAddVehichle.Text = "Thêm phương tiện";
+            this.btnAddVehichle.Text = "Thê&m phương tiện";
             this.btnAddVehichle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddVehichle.UseVisualStyleBackColor = true;
             this.btnAddVehichle.Click += new System.EventHandler(this.btnAddVehichle_Click);
@@ -241,11 +241,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(821, 276);
+            this.btnClose.Location = new System.Drawing.Point(813, 267);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(83, 28);
             this.btnClose.TabIndex = 20;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -254,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 307);
+            this.ClientSize = new System.Drawing.Size(902, 298);
             this.Controls.Add(this.txtPlate);
             this.Controls.Add(this.lbOldPass);
             this.Controls.Add(this.btnSearch);
@@ -263,6 +263,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddSelectVehichleFromExportPark";
+            this.ShowInTaskbar = false;
             this.Text = "FrmAddSelectVehichleFromExportPark";
             this.Load += new System.EventHandler(this.FrmAddSelectVehichleFromExportPark_Load);
             this.groupBox1.ResumeLayout(false);

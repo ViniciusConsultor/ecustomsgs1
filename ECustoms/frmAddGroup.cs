@@ -364,6 +364,29 @@ namespace ECustoms
           grvPermission.EndEdit();
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Alt | Keys.D1))
+            {
+                if (tabControlGroup.SelectedTab == tabPageUser)
+                    btnAdd.PerformClick();
+                if (tabControlGroup.SelectedTab == tabPageRights)
+                    btnUpdatePermission.PerformClick();
+            }
+            if (keyData == (Keys.Alt | Keys.D2))
+            {
+                if (tabControlGroup.SelectedTab == tabPageUser)
+                    btnDelete.PerformClick();
+                if (tabControlGroup.SelectedTab == tabPageRights)
+                    btnReset.PerformClick();
+            }
+            if (keyData == (Keys.Alt | Keys.D3))
+                btnSave.PerformClick();
+            if (keyData == (Keys.Alt | Keys.D4))
+                btnClose.PerformClick();
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
  
 
     }

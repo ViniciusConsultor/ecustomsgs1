@@ -115,7 +115,7 @@
         this.btnClose.Name = "btnClose";
         this.btnClose.Size = new System.Drawing.Size(84, 28);
         this.btnClose.TabIndex = 8;
-        this.btnClose.Text = "Thoát";
+        this.btnClose.Text = "Th&oát";
         this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         this.btnClose.UseVisualStyleBackColor = true;
         this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -131,7 +131,7 @@
         this.btnSave.Name = "btnSave";
         this.btnSave.Size = new System.Drawing.Size(79, 28);
         this.btnSave.TabIndex = 7;
-        this.btnSave.Text = "Lưu";
+        this.btnSave.Text = "Lư&u";
         this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         this.btnSave.UseVisualStyleBackColor = true;
         this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -140,13 +140,15 @@
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(387, 326);
+        this.ClientSize = new System.Drawing.Size(378, 329);
         this.Controls.Add(this.btnClose);
         this.Controls.Add(this.btnSave);
         this.Controls.Add(this.groupBox1);
         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+        this.MaximizeBox = false;
         this.Name = "frmPrintTicketSetting";
+        this.ShowInTaskbar = false;
         this.Text = "frmPrintTicketSetting";
         this.Load += new System.EventHandler(this.frmPrintTicketSetting_Load);
         this.groupBox1.ResumeLayout(false);

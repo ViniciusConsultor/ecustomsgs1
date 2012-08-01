@@ -63,7 +63,7 @@
         this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.groupBox1.Location = new System.Drawing.Point(14, 12);
         this.groupBox1.Name = "groupBox1";
-        this.groupBox1.Size = new System.Drawing.Size(919, 419);
+        this.groupBox1.Size = new System.Drawing.Size(927, 428);
         this.groupBox1.TabIndex = 0;
         this.groupBox1.TabStop = false;
         this.groupBox1.Text = "Danh sách người dùng";
@@ -79,7 +79,7 @@
         this.btnSearch.Name = "btnSearch";
         this.btnSearch.Size = new System.Drawing.Size(111, 28);
         this.btnSearch.TabIndex = 15;
-        this.btnSearch.Text = "Tìm kiếm";
+        this.btnSearch.Text = "Tìm ki&ếm";
         this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         this.btnSearch.UseVisualStyleBackColor = true;
         this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -92,11 +92,11 @@
         this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.btnSave.Image = global::ECustoms.Properties.Resources.save;
         this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnSave.Location = new System.Drawing.Point(627, 375);
+        this.btnSave.Location = new System.Drawing.Point(635, 384);
         this.btnSave.Name = "btnSave";
         this.btnSave.Size = new System.Drawing.Size(82, 28);
         this.btnSave.TabIndex = 13;
-        this.btnSave.Text = "Lưu";
+        this.btnSave.Text = "Lư&u";
         this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         this.btnSave.UseVisualStyleBackColor = true;
         this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -109,11 +109,11 @@
         this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
         this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnClose.Location = new System.Drawing.Point(822, 375);
+        this.btnClose.Location = new System.Drawing.Point(830, 384);
         this.btnClose.Name = "btnClose";
         this.btnClose.Size = new System.Drawing.Size(86, 28);
         this.btnClose.TabIndex = 12;
-        this.btnClose.Text = "Thoát";
+        this.btnClose.Text = "Th&oát";
         this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         this.btnClose.UseVisualStyleBackColor = true;
         this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -126,11 +126,11 @@
         this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
         this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnReset.Location = new System.Drawing.Point(715, 375);
+        this.btnReset.Location = new System.Drawing.Point(723, 384);
         this.btnReset.Name = "btnReset";
         this.btnReset.Size = new System.Drawing.Size(102, 28);
         this.btnReset.TabIndex = 11;
-        this.btnReset.Text = "Làm lại";
+        this.btnReset.Text = "&Làm lại";
         this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         this.btnReset.UseVisualStyleBackColor = true;
         this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -157,7 +157,7 @@
         this.grvUser.MultiSelect = false;
         this.grvUser.Name = "grvUser";
         this.grvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-        this.grvUser.Size = new System.Drawing.Size(907, 281);
+        this.grvUser.Size = new System.Drawing.Size(915, 290);
         this.grvUser.TabIndex = 7;
         // 
         // IsSelected
@@ -234,11 +234,12 @@
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(939, 436);
+        this.ClientSize = new System.Drawing.Size(947, 445);
         this.Controls.Add(this.groupBox1);
         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         this.MinimumSize = new System.Drawing.Size(955, 472);
         this.Name = "frmListUserToAddInGroup";
+        this.ShowInTaskbar = false;
         this.Text = "Chọn người dùng cho nhóm";
         this.Load += new System.EventHandler(this.frmListUserToAddInGroup_Load);
         this.groupBox1.ResumeLayout(false);

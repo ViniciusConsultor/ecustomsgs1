@@ -119,7 +119,7 @@
             this.grbDecleration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDecleration.Location = new System.Drawing.Point(10, 226);
             this.grbDecleration.Name = "grbDecleration";
-            this.grbDecleration.Size = new System.Drawing.Size(909, 347);
+            this.grbDecleration.Size = new System.Drawing.Size(917, 356);
             this.grbDecleration.TabIndex = 1;
             this.grbDecleration.TabStop = false;
             this.grbDecleration.Text = "Danh sách tờ khai";
@@ -153,7 +153,7 @@
             this.grvDecleration.Location = new System.Drawing.Point(3, 22);
             this.grvDecleration.Name = "grvDecleration";
             this.grvDecleration.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvDecleration.Size = new System.Drawing.Size(903, 322);
+            this.grvDecleration.Size = new System.Drawing.Size(911, 331);
             this.grvDecleration.TabIndex = 0;
             this.grvDecleration.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grvDecleration_CellFormatting);
             this.grvDecleration.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvDecleration_CellMouseClick);
@@ -322,7 +322,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(907, 179);
+            this.groupBox1.Size = new System.Drawing.Size(915, 179);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
@@ -485,11 +485,11 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(779, 100);
+            this.btnSearch.Location = new System.Drawing.Point(787, 100);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(122, 28);
             this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Tìm tờ khai";
+            this.btnSearch.Text = "Tìm tờ kha&i";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -685,11 +685,11 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.accept;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(725, 579);
+            this.btConfirmReturn.Location = new System.Drawing.Point(733, 588);
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(112, 28);
             this.btConfirmReturn.TabIndex = 23;
-            this.btConfirmReturn.Text = "Đã hồi báo";
+            this.btConfirmReturn.Text = "Đ&ã hồi báo";
             this.btConfirmReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btConfirmReturn.UseVisualStyleBackColor = true;
             this.btConfirmReturn.Click += new System.EventHandler(this.btConfirmReturn_Click);
@@ -702,11 +702,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(843, 579);
+            this.btnClose.Location = new System.Drawing.Point(851, 588);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(76, 28);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -719,11 +719,11 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.view;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(651, 579);
+            this.btnUpdate.Location = new System.Drawing.Point(659, 588);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(68, 28);
             this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Xem";
+            this.btnUpdate.Text = "X&em";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -732,7 +732,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 614);
+            this.ClientSize = new System.Drawing.Size(932, 623);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBox1);
@@ -742,6 +742,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(940, 650);
             this.Name = "frmDeclerationOptionInfo";
+            this.ShowInTaskbar = false;
             this.Text = "Danh sách tờ khai";
             this.Load += new System.EventHandler(this.frmDeclerationOptionInfo_Load);
             this.grbDecleration.ResumeLayout(false);

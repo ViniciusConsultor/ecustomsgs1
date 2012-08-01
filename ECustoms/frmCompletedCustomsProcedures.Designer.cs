@@ -30,14 +30,20 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompletedCustomsProcedures));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grdVehicleCompleted = new System.Windows.Forms.DataGridView();
+            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConfirmStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parking = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,23 +51,20 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConfirmStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Parking = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicleCompleted)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.grdVehicleCompleted);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 584);
+            this.groupBox1.Size = new System.Drawing.Size(979, 476);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đã hoàn thành thủ tục hải quan";
@@ -70,6 +73,7 @@
             // 
             this.grdVehicleCompleted.AllowUserToAddRows = false;
             this.grdVehicleCompleted.AllowUserToDeleteRows = false;
+            this.grdVehicleCompleted.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,14 +100,61 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grdVehicleCompleted.DefaultCellStyle = dataGridViewCellStyle4;
-            this.grdVehicleCompleted.Location = new System.Drawing.Point(6, 19);
+            this.grdVehicleCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdVehicleCompleted.Location = new System.Drawing.Point(3, 22);
             this.grdVehicleCompleted.MultiSelect = false;
             this.grdVehicleCompleted.Name = "grdVehicleCompleted";
             this.grdVehicleCompleted.ReadOnly = true;
             this.grdVehicleCompleted.RowHeadersVisible = false;
             this.grdVehicleCompleted.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleCompleted.Size = new System.Drawing.Size(937, 558);
+            this.grdVehicleCompleted.Size = new System.Drawing.Size(973, 451);
             this.grdVehicleCompleted.TabIndex = 0;
+            // 
+            // PlateNumber
+            // 
+            this.PlateNumber.DataPropertyName = "PlateNumber";
+            this.PlateNumber.HeaderText = "Biển kiểm soát";
+            this.PlateNumber.Name = "PlateNumber";
+            this.PlateNumber.ReadOnly = true;
+            // 
+            // DriverName
+            // 
+            this.DriverName.DataPropertyName = "DriverName";
+            this.DriverName.HeaderText = "Tên lái xe";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.ReadOnly = true;
+            // 
+            // ExportDate
+            // 
+            this.ExportDate.DataPropertyName = "ExportDate";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
+            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ExportDate.HeaderText = "Ngày xuất cảnh";
+            this.ExportDate.Name = "ExportDate";
+            this.ExportDate.ReadOnly = true;
+            // 
+            // ImportDate
+            // 
+            this.ImportDate.DataPropertyName = "ImportDate";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
+            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ImportDate.HeaderText = "Ngày nhập cảnh";
+            this.ImportDate.Name = "ImportDate";
+            this.ImportDate.ReadOnly = true;
+            // 
+            // ConfirmStatus
+            // 
+            this.ConfirmStatus.DataPropertyName = "ConfirmStatus";
+            this.ConfirmStatus.HeaderText = "Trạng thái hồ sơ";
+            this.ConfirmStatus.Name = "ConfirmStatus";
+            this.ConfirmStatus.ReadOnly = true;
+            // 
+            // Parking
+            // 
+            this.Parking.DataPropertyName = "Parking";
+            this.Parking.HeaderText = "Hàng vào bãi";
+            this.Parking.Name = "Parking";
+            this.Parking.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -167,66 +218,16 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 125;
             // 
-            // PlateNumber
-            // 
-            this.PlateNumber.DataPropertyName = "PlateNumber";
-            this.PlateNumber.HeaderText = "Biển kiểm soát";
-            this.PlateNumber.Name = "PlateNumber";
-            this.PlateNumber.ReadOnly = true;
-            this.PlateNumber.Width = 150;
-            // 
-            // DriverName
-            // 
-            this.DriverName.DataPropertyName = "DriverName";
-            this.DriverName.HeaderText = "Tên lái xe";
-            this.DriverName.Name = "DriverName";
-            this.DriverName.ReadOnly = true;
-            this.DriverName.Width = 190;
-            // 
-            // ExportDate
-            // 
-            this.ExportDate.DataPropertyName = "ExportDate";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
-            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ExportDate.HeaderText = "Ngày xuất cảnh";
-            this.ExportDate.Name = "ExportDate";
-            this.ExportDate.ReadOnly = true;
-            this.ExportDate.Width = 150;
-            // 
-            // ImportDate
-            // 
-            this.ImportDate.DataPropertyName = "ImportDate";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
-            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ImportDate.HeaderText = "Ngày nhập cảnh";
-            this.ImportDate.Name = "ImportDate";
-            this.ImportDate.ReadOnly = true;
-            this.ImportDate.Width = 150;
-            // 
-            // ConfirmStatus
-            // 
-            this.ConfirmStatus.DataPropertyName = "ConfirmStatus";
-            this.ConfirmStatus.HeaderText = "Trạng thái hồ sơ";
-            this.ConfirmStatus.Name = "ConfirmStatus";
-            this.ConfirmStatus.ReadOnly = true;
-            this.ConfirmStatus.Width = 160;
-            // 
-            // Parking
-            // 
-            this.Parking.DataPropertyName = "Parking";
-            this.Parking.HeaderText = "Hàng vào bãi";
-            this.Parking.Name = "Parking";
-            this.Parking.ReadOnly = true;
-            this.Parking.Width = 125;
-            // 
             // frmCompletedCustomsProcedures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 601);
+            this.ClientSize = new System.Drawing.Size(992, 491);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1000, 518);
             this.Name = "frmCompletedCustomsProcedures";
+            this.ShowInTaskbar = false;
             this.Text = "frmCompletedCustomsProcedures";
             this.Load += new System.EventHandler(this.frmCompletedCustomsProcedures_Load);
             this.groupBox1.ResumeLayout(false);
