@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerConsole", "TechLink.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechLink.WindowsSync", "TechLink.WindowsSync\TechLink.WindowsSync.csproj", "{B58241FF-E3A6-4109-8332-7F79B2381BFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerPrevalence", "TechLink.NetRemoting.SyncService\ServerPrevalence\ServerPrevalence.csproj", "{D7199BD7-F25D-498A-9B7D-2E75A82CB209}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,18 @@ Global
 		{B58241FF-E3A6-4109-8332-7F79B2381BFE}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B58241FF-E3A6-4109-8332-7F79B2381BFE}.Release|x86.ActiveCfg = Release|x86
 		{B58241FF-E3A6-4109-8332-7F79B2381BFE}.Release|x86.Build.0 = Release|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Debug|x86.ActiveCfg = Debug|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Debug|x86.Build.0 = Debug|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Release|Mixed Platforms.Build.0 = Release|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Release|x86.ActiveCfg = Release|x86
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -256,5 +270,6 @@ Global
 		{F89E3CDE-703A-4C99-8EAB-E7A2CB5519A8} = {410CF867-1B57-47C2-AF69-9CF7701CD85A}
 		{564D707B-868E-48E0-820E-A436CF5945B1} = {410CF867-1B57-47C2-AF69-9CF7701CD85A}
 		{B58241FF-E3A6-4109-8332-7F79B2381BFE} = {410CF867-1B57-47C2-AF69-9CF7701CD85A}
+		{D7199BD7-F25D-498A-9B7D-2E75A82CB209} = {410CF867-1B57-47C2-AF69-9CF7701CD85A}
 	EndGlobalSection
 EndGlobal
