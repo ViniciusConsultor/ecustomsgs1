@@ -330,7 +330,6 @@ namespace ECustoms
             declarationInfo.ModifiedByID = _userInfo.UserID;
             //declarationInfo.ModifiedDate = CommonFactory.GetCurrentDate();
             //declarationInfo.CreatedDate = CommonFactory.GetCurrentDate();
-            declarationInfo.RegisterPlace = txtRegisterPlace.Text.Trim();
             declarationInfo.Money = !string.IsNullOrEmpty(txtMoney.Text) ? Convert.ToInt32(txtMoney.Text.Trim()) : 0;
             declarationInfo.TypeOption = short.Parse(((ComboBoxItem)cbTNTX.SelectedItem).Value);
             if (cbTNTX.SelectedIndex > 0 && pnTXTN.Visible)
@@ -362,7 +361,6 @@ namespace ECustoms
             txtExportCompanyCode.Text = "";
             dtpExportRegisterDate.Value = DateTime.Now;
             txtMoney.Text = "";
-            txtRegisterPlace.Text = "B15E-Chi cục Hải quan Tân Thanh";
             cbTNTX.SelectedIndex = 0;
             txtNumberTemp.Text = "";
             _statusFee = 0;
@@ -485,14 +483,6 @@ namespace ECustoms
             {
                 dataSet2.tblGoodsType.Rows.Add(goodType.TypeId, goodType.TypeName);
             }
-
-            //Autocomplete registerplace
-            var auto = new AutoCompleteStringCollection();
-            var lstAuto = DeclarationFactory.GetAllRegisterPlace();
-            auto.AddRange(lstAuto.ToArray());
-            txtRegisterPlace.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtRegisterPlace.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtRegisterPlace.AutoCompleteCustomSource = auto;
 
             //Autocomplete type export
             var autoType = new AutoCompleteStringCollection();
@@ -624,7 +614,6 @@ namespace ECustoms
                     }
 
                     dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
-                    txtRegisterPlace.Text = declarationInfo.RegisterPlace;
                     txtMoney.Text = declarationInfo.Money.ToString();
                     cbTNTX.SelectedItem = declarationInfo.TypeOption != null ? listTNTX[(int)declarationInfo.TypeOption] : listTNTX[0];
                     if (cbTNTX.SelectedIndex > 0)
@@ -1477,8 +1466,5 @@ namespace ECustoms
                 txtCustomsName.Text = "";
             }
         }
-
-
-
     }
 }
