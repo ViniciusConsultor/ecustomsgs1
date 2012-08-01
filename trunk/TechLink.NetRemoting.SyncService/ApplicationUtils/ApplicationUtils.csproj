@@ -83,19 +83,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v9.3, Version=9.3.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\DevExpress.Data.v9.3.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Utils.v9.3, Version=9.3.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\DevExpress.Utils.v9.3.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraEditors.v9.3, Version=9.3.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v9.3, Version=9.3.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\DevExpress.XtraGrid.v9.3.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=0f2fbf00d4d78015">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\log4net.dll</HintPath>
@@ -155,8 +142,6 @@
     <Compile Include="FileUtils.cs" />
     <Compile Include="GDIConstants.cs" />
     <Compile Include="GDIHelper.cs" />
-    <Compile Include="GridHelper\ColumnInfo.cs" />
-    <Compile Include="GridHelper\FieldsLoader.cs" />
     <Compile Include="HookDebug.cs" />
     <Compile Include="Layout\LayoutInfo.cs" />
     <Compile Include="Logging\BaseLog.cs" />

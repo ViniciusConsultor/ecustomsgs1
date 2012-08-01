@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{564D707B-868E-48E0-820E-A436CF5945B1}</ProjectGuid>
+    <ProjectGuid>{D7199BD7-F25D-498A-9B7D-2E75A82CB209}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ServerConsole</RootNamespace>
-    <AssemblyName>ServerConsole</AssemblyName>
+    <RootNamespace>ServerPrevalence</RootNamespace>
+    <AssemblyName>ServerPrevalence</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -45,7 +45,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NACCESS_DATA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,7 +55,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;ACCESS_DATA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -63,7 +63,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;ACCESS_DATA</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
@@ -73,7 +73,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;ACCESS_DATA</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -83,14 +83,11 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=0f2fbf00d4d78015">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -101,17 +98,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessGenericServer.cs" />
+    <Compile Include="RemoteServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoteServerActivator.cs" />
+    <Compile Include="SQLGenericServer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AbstractServerConsole\AbstractServerConsole.csproj">
-      <Project>{F89E3CDE-703A-4C99-8EAB-E7A2CB5519A8}</Project>
-      <Name>AbstractServerConsole</Name>
+    <ProjectReference Include="..\..\ECustoms.DAL\ECustoms.DAL.csproj">
+      <Project>{8AC95DDB-A7DD-40D6-A0ED-323D9B601B99}</Project>
+      <Name>ECustoms.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ApplicationUtils\ApplicationUtils.csproj">
       <Project>{7AF8057E-16FF-47F4-8BB1-57BB820FC094}</Project>
       <Name>ApplicationUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClientServerExchange\ClientServerExchange.csproj">
+      <Project>{E6E4854D-C474-4082-8CA4-A5D1988EECE3}</Project>
+      <Name>ClientServerExchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataDomain\DataDomain.csproj">
+      <Project>{6A4D516B-F7F7-4AA2-8DFD-D437D1F85D64}</Project>
+      <Name>DataDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnumConstant\EnumConstant.csproj">
+      <Project>{3518A383-55BF-433C-B961-FE62B4D049A1}</Project>
+      <Name>EnumConstant</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExceptionHandler\ExceptionHandler.csproj">
       <Project>{5DA522E1-8E43-46F8-B2B9-0E5CE4CA31FC}</Project>
@@ -121,9 +132,6 @@
       <Project>{44551F79-C17B-4526-B4F6-952AE0A8AB80}</Project>
       <Name>GenericRemoteServer</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="log4net.dll" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

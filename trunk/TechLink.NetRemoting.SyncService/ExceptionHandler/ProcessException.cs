@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -17,6 +18,8 @@ namespace ExceptionHandler
 
         public static void Handle(System.Exception exception)
         {
+            WriteErrorToLog(exception.Message);
+
 #if DEBUG && !SERVER
             System.Windows.Forms.MessageBox.Show(exception.Message + "\r\n" + exception.StackTrace, "PIS Exception Notifier", MessageBoxButtons.OK, MessageBoxIcon.Error);
             if (exception.InnerException!=null)
@@ -75,7 +78,36 @@ namespace ExceptionHandler
             fromFunction = "\r\n" + fromFunction;
             logManager.Info(fromFunction + "\r\n" + message);
         }
+
+        private static void WriteErrorToLog(string error)
+        {
+            string appName = "TechLinkServiceLog";
+
+            try
+            {
+                //MessageBox.Show(message, "Error - TechLink Sync", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+                EventLog objEventLog = new EventLog();
+                try
+                {
+                    if (!(EventLog.SourceExists(appName)))
+                    {
+                        EventLog.CreateEventSource(appName, "Error");
+                    }
+                    objEventLog.Source = appName;
+                    objEventLog.WriteEntry("ErrorLog", EventLogEntryType.Error);
+                }
+                catch (Exception Ex)
+                {
+                }
+            }
+            catch
+            {
+            }
+
+        }
     }
+
+ 
 
     public class SendEmailUtil
     {

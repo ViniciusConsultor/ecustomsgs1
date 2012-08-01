@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -12,9 +13,24 @@ public class ErrorNotify:IErrorNotify
 
     public void NotifyUser(string message)
     {
+        string appName = "TechLinkServiceLog";
+
         try
         {
-          MessageBox.Show(message, "Error - TechLink Sync", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+          //MessageBox.Show(message, "Error - TechLink Sync", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+            EventLog objEventLog = new EventLog();
+            try
+            {
+                if (!(EventLog.SourceExists(appName)))
+                {
+                    EventLog.CreateEventSource(appName, "Error");
+                }
+                objEventLog.Source = appName;
+                objEventLog.WriteEntry("ErrorLog", EventLogEntryType.Error);
+            }
+            catch (Exception Ex)
+            {
+            }
         }
         catch
         {
