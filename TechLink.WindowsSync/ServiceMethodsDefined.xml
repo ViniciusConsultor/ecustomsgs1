@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Services>
+  <Service Name="HuyptService" Url="http://error.promova.ch/erc01/Services/PromovaService.asmx" MaxContentLengthSupporting="1097151" FileExt=".up" Active="True" Description=""/>
+  <Service Name="UploadFiles" Url="http://pc02/Services/PromovaService.asmx" MaxContentLengthSupporting="2097151" FileExt=".up" Active="False" Description=""/>
+  <Service Name="UploadFile" Url="http://10.0.0.118/Services/PromovaService.asmx" MaxContentLengthSupporting="2097151" FileExt=".up" Active="False" Description=""/>
+  
+</Services>

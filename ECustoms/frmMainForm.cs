@@ -402,5 +402,17 @@ namespace ECustoms
             var filePath = Application.StartupPath + @"\Docs\GS1_UserManual.pdf";
             Help.ShowHelp(this, filePath);
         }
+
+        private void mnuSettings_Click(object sender, EventArgs e)
+        {
+            frmSettings settings = new frmSettings();
+            settings.ShowDialog(this);
+        }
+
+        private void mnuBackupRestore_Click(object sender, EventArgs e)
+        {
+            frmBackupRestoreDb backupRestore = new frmBackupRestoreDb();
+            backupRestore.ShowDialog(this);
+        }
     }
 }

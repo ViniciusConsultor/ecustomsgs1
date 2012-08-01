@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Fields>
+  <Field Name="UserName" XmlXPath="/ServerErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='Windows UserName']" Type="string" DefaultValue=""/>
+  <Field Name="MechineName" XmlXPath="/ServerErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='Machine Name']" Type="string" DefaultValue=""/>
+  
+  <Field Name="ProductVersion" XmlXPath="/ServerErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='ProductVersion']" Type="string" DefaultValue=""/>
+  
+  <Field Name="ServerCLRVersion" XmlXPath="/ServerErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='CLR Version']" Type="string" DefaultValue=""/>
+  <Field Name="ServerOSVersion" XmlXPath="/ServerErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='OSVersion']" Type="string" DefaultValue=""/>
+  <Field Name="ServerDate" XmlXPath="/ServerErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='ServerDate']" Type="DateTime" DefaultValue=""/>
+  
+  <Field Name="ClientCLRVersion" XmlXPath="/ServerErrorReport/ClientErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='CLR Version']" Type="string" DefaultValue=""/>  
+  <Field Name="ClientOSVersion" XmlXPath="/ServerErrorReport/ClientErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='OSVersion']" Type="string" DefaultValue=""/>
+  
+  <Field Name="NumberOfFiles" Type="int" DefaultValue="0"/>
+  
+  <Field Name="ErrorLocation" XmlXPath="/ServerErrorReport/ErrorLocation" Type="string" DefaultValue=""/>
+  <Field Name="ErrorMesssage" XmlXPath="/ServerErrorReport/ClientErrorReport/Exception/InnerExpcetion/ErrorMesssage" Type="string" DefaultValue=""/>
+  <Field Name="ScreenCaptureImageName" XmlXPath="/ServerErrorReport/ClientErrorReport/ScreenCaptureImageName" Type="string" DefaultValue=""/>
+  
+  <Field Name="HasSnapshot" Type="bool" DefaultValue="false"/>
+  <Field Name="InstallationName" XmlXPath="/ServerErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='InstallationName']" Type="string" DefaultValue=""/>
+  <Field Name="IsCrush" XmlXPath="/ServerErrorReport/ClientErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='IsCrush']" Type="bool" DefaultValue="False"/>
+  <Field Name="IsIssue" XmlXPath="/ServerErrorReport/ClientErrorReport/AditionalInfo//" KeyRef="InfoItem[@Key='IsIssue']" Type="bool" DefaultValue="False"/>
+  <Field Name="IsDownloaded" Type="bool" DefaultValue="False"/>  
+</Fields>

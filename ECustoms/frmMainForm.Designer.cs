@@ -34,6 +34,7 @@
             this.menuitemUser = new System.Windows.Forms.ToolStripMenuItem();
             this.mnGroup = new System.Windows.Forms.ToolStripMenuItem();
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -78,6 +79,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
+            this.mnuBackupRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +99,7 @@
             this.trợGiúpToolStripMenuItem});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
-            this.mnMain.Size = new System.Drawing.Size(1276, 29);
+            this.mnMain.Size = new System.Drawing.Size(1244, 29);
             this.mnMain.TabIndex = 0;
             this.mnMain.Tag = "";
             this.mnMain.Text = "menuStrip1";
@@ -108,6 +110,8 @@
             this.menuitemUser,
             this.mnGroup,
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1,
+            this.mnuSettings,
+            this.mnuBackupRestore,
             this.toolStripMenuItem1,
             this.menuitemLogout,
             this.toolStripSeparator1,
@@ -121,7 +125,7 @@
             // 
             this.menuitemUser.Image = global::ECustoms.Properties.Resources.user1;
             this.menuitemUser.Name = "menuitemUser";
-            this.menuitemUser.Size = new System.Drawing.Size(254, 26);
+            this.menuitemUser.Size = new System.Drawing.Size(257, 26);
             this.menuitemUser.Text = "Quản lý người dùng";
             this.menuitemUser.Click += new System.EventHandler(this.menuitemUser_Click);
             // 
@@ -129,7 +133,7 @@
             // 
             this.mnGroup.Image = global::ECustoms.Properties.Resources.goup;
             this.mnGroup.Name = "mnGroup";
-            this.mnGroup.Size = new System.Drawing.Size(254, 26);
+            this.mnGroup.Size = new System.Drawing.Size(257, 26);
             this.mnGroup.Text = "Quản lý nhóm";
             this.mnGroup.Click += new System.EventHandler(this.mnGroup_Click);
             // 
@@ -137,15 +141,23 @@
             // 
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Image = global::ECustoms.Properties.Resources.gear;
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Name = "cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1";
-            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Size = new System.Drawing.Size(254, 26);
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Size = new System.Drawing.Size(257, 26);
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Text = "Cấu hình giá trị mặc định";
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Click += new System.EventHandler(this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem_Click);
+            // 
+            // mnuSettings
+            // 
+            this.mnuSettings.Image = global::ECustoms.Properties.Resources.column_preferences;
+            this.mnuSettings.Name = "mnuSettings";
+            this.mnuSettings.Size = new System.Drawing.Size(257, 26);
+            this.mnuSettings.Text = "Cấu hình hệ thống";
+            this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Image = global::ECustoms.Properties.Resources.key1;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(254, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(257, 26);
             this.toolStripMenuItem1.Text = "Thay đổi mật khẩu";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -153,20 +165,20 @@
             // 
             this.menuitemLogout.Image = global::ECustoms.Properties.Resources.signout;
             this.menuitemLogout.Name = "menuitemLogout";
-            this.menuitemLogout.Size = new System.Drawing.Size(254, 26);
+            this.menuitemLogout.Size = new System.Drawing.Size(257, 26);
             this.menuitemLogout.Text = "Đăng xuất";
             this.menuitemLogout.Click += new System.EventHandler(this.menuitemLogout_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(251, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(254, 6);
             // 
             // menuitemExit
             // 
             this.menuitemExit.Image = global::ECustoms.Properties.Resources.Exit;
             this.menuitemExit.Name = "menuitemExit";
-            this.menuitemExit.Size = new System.Drawing.Size(254, 26);
+            this.menuitemExit.Size = new System.Drawing.Size(257, 26);
             this.menuitemExit.Text = "Thoát Khỏi chương trình";
             this.menuitemExit.Click += new System.EventHandler(this.menuitemExit_Click);
             // 
@@ -174,7 +186,7 @@
             // 
             this.aboutUsToolStripMenuItem.Image = global::ECustoms.Properties.Resources.about;
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.aboutUsToolStripMenuItem.Text = "About Us";
             this.aboutUsToolStripMenuItem.Visible = false;
             // 
@@ -446,7 +458,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 29);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 30);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1276, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(1244, 44);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -534,13 +546,20 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
+            // mnuBackupRestore
+            // 
+            this.mnuBackupRestore.Name = "mnuBackupRestore";
+            this.mnuBackupRestore.Size = new System.Drawing.Size(257, 26);
+            this.mnuBackupRestore.Text = "Sao lưu / Phục hồi dữ liệu";
+            this.mnuBackupRestore.Click += new System.EventHandler(this.mnuBackupRestore_Click);
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1276, 812);
+            this.ClientSize = new System.Drawing.Size(1244, 717);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -610,5 +629,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuGate;
         private System.Windows.Forms.ToolStripMenuItem cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettings;
+        private System.Windows.Forms.ToolStripMenuItem mnuBackupRestore;
     }
 }

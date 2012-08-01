@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Item Key="Sign In" en-US="Sign In" vi-VN="Đăng nhập"/>
+  <Item Key="English" en-US="English" vi-VN="Tiếng Anh"/>
+  <Item Key="Vietnamese" en-US="Vietnamese" vi-VN="Tiếng Việt"/>
+  <Item Key="Help" en-US="Help" vi-VN="Trợ giúp"/>
+  <Item Key="home" en-US="home" vi-VN="home"/>
+  <Item Key="contact" en-US="contact" vi-VN="sổ địa chỉ"/>
+  <Item Key="sharing" en-US="sharing" vi-VN="chia sẻ"/>
+  <Item Key="groups" en-US="groups" vi-VN="nhóm"/>
+  <Item Key="conversations" en-US="conversations" vi-VN="hội thoại"/>
+  <Item Key="backlog" en-US="backlog" vi-VN="nhật ký"/>
+  <Item Key="sprint planning" en-US="sprint planning" vi-VN="lập kế hoạch cho Sprint"/>
+  <Item Key="reports" en-US="reports" vi-VN="báo cáo"/>
+  <Item Key="sprint tracking" en-US="sprint tracking" vi-VN="theo dõi Sprint"/>
+  <Item Key="$bUser/$b Information" en-US="$bUser/$b Information" vi-VN="Thông tin $bngười dùng/$b"/>
+  <Item Key="Save" en-US="Save" vi-VN="Ghi lại"/>
+  <Item Key="sprint scheduling" en-US="sprint scheduling" vi-VN="lập lịch các Sprint"/>
+  <Item Key="detail planning" en-US="detail planning" vi-VN="chi tiết kế hoạch"/>
+  <Item Key="detail tracking" en-US="detail tracking" vi-VN="theo dõi chi tiết"/>
+  <Item Key="stories board" en-US="stories board" vi-VN="bảng các story"/>
+  <Item Key="$bAdd/$b contact information" en-US="$bAdd/$b contact information" vi-VN="$bThêm/$b thông tin địa chỉ"/>
+  
+
+</Languages>

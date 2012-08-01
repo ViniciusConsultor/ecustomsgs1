@@ -8,7 +8,7 @@ namespace TechLink.DatabaseViewer.Commands
 {
     public class UpgradeCommandBase
     {
-        private object _params;
+        protected object _params;
         protected SqlCopier _SqlCopier;
         public string Version { get; set; }
         public object Parameters { get { return _params; } }

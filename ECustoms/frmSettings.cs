@@ -19,11 +19,24 @@ namespace ECustoms
 
             cboHour.Items.AddRange(strHours);
             cboMinute.Items.AddRange(strMinutes);
+            cboHour.SelectedIndex = 0;
+            cboMinute.SelectedIndex = 0;
         }
 
         private void LoadDatabaseInfo()
         {
             
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void chkUseSyncInterval_CheckedChanged(object sender, EventArgs e)
+        {
+            panel1.Enabled = !chkUseSyncInterval.Checked;
+            txtSyncInterval.Enabled = chkUseSyncInterval.Checked;
         }
 
     }

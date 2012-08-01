@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="CustomerBillInfo" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="CustomerBillInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CustomerBillInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BillId" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Position" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="Added" type="xs:double" minOccurs="0" />
+              <xs:element name="Discounted" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalMoney" type="xs:double" minOccurs="0" />
+              <xs:element name="CustPaid" type="xs:double" minOccurs="0" />
+              <xs:element name="RemainMoney" type="xs:double" minOccurs="0" />
+              <xs:element name="IsMoveToLendBook" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Address" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone" type="xs:string" minOccurs="0" />
+              <xs:element name="Mobile" type="xs:string" minOccurs="0" />
+              <xs:element name="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="IdCard" type="xs:string" minOccurs="0" />
+              <xs:element name="DateOfBirth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="IdCardProvidedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProvidedPlace" type="xs:string" minOccurs="0" />
+              <xs:element name="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="No" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

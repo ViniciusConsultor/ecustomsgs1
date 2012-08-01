@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SkinTemplate>
+  <ColorButtonFillFirst></ColorButtonFillFirst>
+  <ColorButtonFillSecond></ColorButtonFillSecond>
+  <ColorButtonText></ColorButtonText>
+  <ColorLabelText></ColorLabelText>
+  <FontOfButtonText>Tahoma, 10, Normal</FontOfButtonText>
+  <FontOfLabelText>Tahoma, 10, Normal</FontOfLabelText>
+
+</SkinTemplate>

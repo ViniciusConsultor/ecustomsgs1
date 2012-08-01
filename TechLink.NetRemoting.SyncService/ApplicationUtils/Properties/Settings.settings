@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ApplicationUtils.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ApplicationUtils_GKErrorService_GKService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:3835/Services/GKErrorService.asmx</Value>
+    </Setting>
+    <Setting Name="TitleSystem" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GK 1.0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
