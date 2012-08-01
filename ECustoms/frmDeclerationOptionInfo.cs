@@ -42,15 +42,15 @@ namespace ECustoms
                 {
                     case Common.DeclerationOptionType.XKCK:
                         lblHeader.Text = "Quản lý hàng xuất khẩu chuyển cửa khẩu";
-                        lblGateExport.Visible = txtGateExport.Visible = false;
+                        pnExportGate.Visible = false;
                         break;
                     case Common.DeclerationOptionType.NKCK:
                         lblHeader.Text = "Quản lý hàng nhập khẩu chuyển cửa khẩu";
-                        lblGateExport.Visible = txtGateExport.Visible = false;
+                        pnExportGate.Visible = false;
                         break;
                     case Common.DeclerationOptionType.TNTX:
                         lblHeader.Text = "Quản lý hàng tạm nhập tái xuất";
-                        lblRegisterPlace.Visible = txtRegisterPlace.Visible = false;
+                        pnCustom.Visible = false;
                         break;
                     default:
                         break;
@@ -132,14 +132,14 @@ namespace ECustoms
                     result = cbReturn.Checked ? result.Where(g => g.DateReturn != null).ToList() : result.Where(g => g.DateReturn == null).ToList();
                 }
                 //filter by Register Place
-                if (!string.IsNullOrEmpty(txtRegisterPlace.Text))
+                if (!string.IsNullOrEmpty(txtCustomsCode.Text))
                 {
-                    result = result.Where(d => (d.RegisterPlace != null) && (d.RegisterPlace.Contains(txtRegisterPlace.Text.Trim()))).ToList();
+                    result = result.Where(d => (d.CustomsCode != null) && (d.CustomsCode.Contains(txtCustomsCode.Text.Trim()))).ToList();
                 }
                 //filter by Gate export
-                if (!string.IsNullOrEmpty(txtGateExport.Text))
+                if (!string.IsNullOrEmpty(txtExportGateCode.Text))
                 {
-                    result = result.Where(d => (d.GateExport != null) && (d.GateExport.Contains(txtGateExport.Text.Trim()))).ToList();
+                    result = result.Where(d => (d.GateExport != null) && (d.GateExport.Contains(txtExportGateCode.Text.Trim()))).ToList();
                 }
 
                 // Filter by Type
@@ -354,6 +354,36 @@ namespace ECustoms
             else
             {
                 dtpCreatedFrom.Enabled = dtpCreatedTo.Enabled = false;
+            }
+        }
+
+        private void txtCustomsCode_Leave(object sender, EventArgs e)
+        {
+            txtCustomsName.Text = "";
+            var customCode = txtCustomsCode.Text.Trim();
+            if (string.IsNullOrEmpty(customCode)) return;
+            var custom = CustomsFacory.FindByCode(customCode);
+            if (custom != null)
+                txtCustomsName.Text = custom.CustomsName;
+            else
+            {
+                MessageBox.Show("Không tồn tại mã đơn vị hải quan này");
+                txtCustomsCode.Focus();
+            }
+        }
+
+        private void txtExportGateCode_Leave(object sender, EventArgs e)
+        {
+            txtExportGateName.Text = "";
+            var gateCode = txtExportGateCode.Text.Trim();
+            if (string.IsNullOrEmpty(gateCode)) return;
+            var gate = GateFactory.FindByCode(gateCode);
+            if (gate != null)
+                txtExportGateName.Text = gate.GateName;
+            else
+            {
+                MessageBox.Show("Không tồn tại mã cửa khẩu này");
+                txtExportGateCode.Focus();
             }
         }
 

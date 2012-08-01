@@ -37,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
             this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
-            this.txtCustomsName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCustomsCode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -107,6 +106,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnFee = new System.Windows.Forms.Button();
+            this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
+            this.txtCustomsName = new System.Windows.Forms.TextBox();
             this.gbExportDeclaration.SuspendLayout();
             this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
@@ -114,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGoodsTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbExportDeclaration
@@ -157,15 +159,6 @@
             this.gbExportDeclaration.TabStop = false;
             this.gbExportDeclaration.Text = "Thông tin tờ khai xuất cảnh";
             // 
-            // txtCustomsName
-            // 
-            this.txtCustomsName.Enabled = false;
-            this.txtCustomsName.Location = new System.Drawing.Point(131, 153);
-            this.txtCustomsName.Multiline = true;
-            this.txtCustomsName.Name = "txtCustomsName";
-            this.txtCustomsName.Size = new System.Drawing.Size(211, 26);
-            this.txtCustomsName.TabIndex = 35;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -181,7 +174,7 @@
             this.txtCustomsCode.Multiline = true;
             this.txtCustomsCode.Name = "txtCustomsCode";
             this.txtCustomsCode.Size = new System.Drawing.Size(135, 26);
-            this.txtCustomsCode.TabIndex = 33;
+            this.txtCustomsCode.TabIndex = 3;
             this.txtCustomsCode.Tag = "required";
             this.txtCustomsCode.Leave += new System.EventHandler(this.txtCustomsCode_Leave);
             // 
@@ -200,7 +193,7 @@
             this.txtTypeName.Location = new System.Drawing.Point(131, 89);
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.Size = new System.Drawing.Size(211, 26);
-            this.txtTypeName.TabIndex = 27;
+            this.txtTypeName.TabIndex = 2;
             // 
             // label5
             // 
@@ -264,7 +257,7 @@
             this.txtNumberTemp.MaxLength = 50;
             this.txtNumberTemp.Name = "txtNumberTemp";
             this.txtNumberTemp.Size = new System.Drawing.Size(236, 26);
-            this.txtNumberTemp.TabIndex = 5;
+            this.txtNumberTemp.TabIndex = 10;
             // 
             // label4
             // 
@@ -282,7 +275,7 @@
             this.cbTNTX.Location = new System.Drawing.Point(502, 153);
             this.cbTNTX.Name = "cbTNTX";
             this.cbTNTX.Size = new System.Drawing.Size(236, 28);
-            this.cbTNTX.TabIndex = 4;
+            this.cbTNTX.TabIndex = 9;
             this.cbTNTX.ValueMember = "Value";
             this.cbTNTX.SelectedIndexChanged += new System.EventHandler(this.cbTNTX_SelectedIndexChanged);
             // 
@@ -300,7 +293,7 @@
             this.txtProductAmount.Location = new System.Drawing.Point(871, 25);
             this.txtProductAmount.Name = "txtProductAmount";
             this.txtProductAmount.Size = new System.Drawing.Size(130, 26);
-            this.txtProductAmount.TabIndex = 9;
+            this.txtProductAmount.TabIndex = 11;
             // 
             // txtMoney
             // 
@@ -308,7 +301,7 @@
             this.txtMoney.Mask = "000000000000";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(130, 26);
-            this.txtMoney.TabIndex = 11;
+            this.txtMoney.TabIndex = 13;
             // 
             // label2
             // 
@@ -325,7 +318,7 @@
             this.txtExportTotalVehicles.Mask = "00000";
             this.txtExportTotalVehicles.Name = "txtExportTotalVehicles";
             this.txtExportTotalVehicles.Size = new System.Drawing.Size(130, 26);
-            this.txtExportTotalVehicles.TabIndex = 12;
+            this.txtExportTotalVehicles.TabIndex = 14;
             this.txtExportTotalVehicles.ValidatingType = typeof(int);
             this.txtExportTotalVehicles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExportTotalVehicles_KeyDown);
             this.txtExportTotalVehicles.Leave += new System.EventHandler(this.txtExportTotalVehicles_Leave);
@@ -347,7 +340,7 @@
             this.dtpExportRegisterDate.Location = new System.Drawing.Point(131, 185);
             this.dtpExportRegisterDate.Name = "dtpExportRegisterDate";
             this.dtpExportRegisterDate.Size = new System.Drawing.Size(211, 26);
-            this.dtpExportRegisterDate.TabIndex = 3;
+            this.dtpExportRegisterDate.TabIndex = 5;
             // 
             // label9
             // 
@@ -364,7 +357,7 @@
             this.txtExportCompanyCode.Multiline = true;
             this.txtExportCompanyCode.Name = "txtExportCompanyCode";
             this.txtExportCompanyCode.Size = new System.Drawing.Size(236, 26);
-            this.txtExportCompanyCode.TabIndex = 7;
+            this.txtExportCompanyCode.TabIndex = 6;
             this.txtExportCompanyCode.Tag = "required";
             this.txtExportCompanyCode.Leave += new System.EventHandler(this.txtExportCompanyCode_Leave);
             // 
@@ -446,7 +439,7 @@
             this.txtExportCompanyName.Multiline = true;
             this.txtExportCompanyName.Name = "txtExportCompanyName";
             this.txtExportCompanyName.Size = new System.Drawing.Size(236, 26);
-            this.txtExportCompanyName.TabIndex = 6;
+            this.txtExportCompanyName.TabIndex = 7;
             // 
             // lblProductAmount
             // 
@@ -462,7 +455,7 @@
             this.txtExportUnit.Location = new System.Drawing.Point(871, 57);
             this.txtExportUnit.Name = "txtExportUnit";
             this.txtExportUnit.Size = new System.Drawing.Size(130, 26);
-            this.txtExportUnit.TabIndex = 10;
+            this.txtExportUnit.TabIndex = 12;
             // 
             // lblUnit
             // 
@@ -868,6 +861,19 @@
             this.btnFee.Visible = false;
             this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
             // 
+            // techlinkErrorProvider1
+            // 
+            this.techlinkErrorProvider1.ContainerControl = this;
+            // 
+            // txtCustomsName
+            // 
+            this.txtCustomsName.Enabled = false;
+            this.txtCustomsName.Location = new System.Drawing.Point(131, 153);
+            this.txtCustomsName.Multiline = true;
+            this.txtCustomsName.Name = "txtCustomsName";
+            this.txtCustomsName.Size = new System.Drawing.Size(211, 26);
+            this.txtCustomsName.TabIndex = 4;
+            // 
             // FrmDecleExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -882,7 +888,6 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBoxVehicle);
             this.Controls.Add(this.gbExportDeclaration);
-            this.FormStyle = System.Windows.Forms.RCMFormStyles.VistaForm;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmDecleExport";
@@ -899,6 +904,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGoodsTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -974,9 +980,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
         private System.Windows.Forms.TextBox txtTypeName;
         public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCustomsName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCustomsCode;
         private System.Windows.Forms.Label label7;
+        private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
+        private System.Windows.Forms.TextBox txtCustomsName;
     }
 }

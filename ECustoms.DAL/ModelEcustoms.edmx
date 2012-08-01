@@ -34,7 +34,6 @@
           <EntitySet Name="tblUser" EntityType="dbEcustomModel.Store.tblUser" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblUserGroupPermission" EntityType="dbEcustomModel.Store.tblUserGroupPermission" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblUserInGroup" EntityType="dbEcustomModel.Store.tblUserInGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblValidate" EntityType="dbEcustomModel.Store.tblValidate" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicle" EntityType="dbEcustomModel.Store.tblVehicle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicleCheck" EntityType="dbEcustomModel.Store.tblVehicleCheck" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblVehicleFeeSetting" EntityType="dbEcustomModel.Store.tblVehicleFeeSetting" store:Type="Tables" Schema="dbo" />
@@ -118,7 +117,9 @@
       [ViewAllDeclaration].[PersonConfirmReturnName] AS [PersonConfirmReturnName], 
       [ViewAllDeclaration].[PersonHandoverID] AS [PersonHandoverID], 
       [ViewAllDeclaration].[PersonConfirmReturnID] AS [PersonConfirmReturnID], 
-      [ViewAllDeclaration].[PersonHandoverName] AS [PersonHandoverName]
+      [ViewAllDeclaration].[PersonHandoverName] AS [PersonHandoverName], 
+      [ViewAllDeclaration].[CustomsCode] AS [CustomsCode], 
+      [ViewAllDeclaration].[GateImport] AS [GateImport]
       FROM [dbo].[ViewAllDeclaration] AS [ViewAllDeclaration]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewAllDeclarationTNTX" EntityType="dbEcustomModel.Store.ViewAllDeclarationTNTX" store:Type="Views" store:Schema="dbo" store:Name="ViewAllDeclarationTNTX">
@@ -485,7 +486,10 @@
       [ViewUserGroup].[UserFullName] AS [UserFullName], 
       [ViewUserGroup].[UserName] AS [UserName], 
       [ViewUserGroup].[GroupID] AS [GroupID], 
-      [ViewUserGroup].[GroupName] AS [GroupName]
+      [ViewUserGroup].[GroupName] AS [GroupName], 
+      [ViewUserGroup].[Address] AS [Address], 
+      [ViewUserGroup].[Email] AS [Email], 
+      [ViewUserGroup].[PhoneNumber] AS [PhoneNumber]
       FROM [dbo].[ViewUserGroup] AS [ViewUserGroup]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewVehicleFee" EntityType="dbEcustomModel.Store.ViewVehicleFee" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFee">
@@ -542,7 +546,7 @@
           </AssociationSet>
         </EntityContainer>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Log">
           <Key>
@@ -581,6 +585,7 @@
           <Property Name="ApplicationObjectValueLong" Type="bigint" />
           <Property Name="ApplicationObjectValueFloat" Type="float" />
           <Property Name="ApplicationObjectValueDatetime" Type="datetime" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblCheck">
           <Key>
@@ -599,6 +604,7 @@
           <Property Name="ModifedDate" Type="datetime" />
           <Property Name="CreatedBy" Type="int" />
           <Property Name="ModifiedBy" Type="int" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblCompany">
           <Key>
@@ -623,6 +629,7 @@
           <Property Name="CreatedBy" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="ModifiedBy" Type="int" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblDeclaration">
           <Key>
@@ -649,15 +656,16 @@
           <Property Name="Money" Type="numeric" />
           <Property Name="NumberHandover" Type="int" />
           <Property Name="DateHandover" Type="datetime" />
+          <Property Name="PersonHandoverID" Type="int" />
           <Property Name="DateReturn" Type="datetime" />
           <Property Name="PersonConfirmReturnID" Type="int" />
           <Property Name="NumberTemp" Type="nvarchar" MaxLength="50" />
           <Property Name="GateExport" Type="nvarchar" MaxLength="500" />
           <Property Name="Seal" Type="nvarchar" MaxLength="100" />
           <Property Name="TypeOption" Type="smallint" />
-          <Property Name="PersonHandoverID" Type="int" />
-          <Property Name="GateImport" Type="nvarchar" MaxLength="500" />
           <Property Name="CustomsCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="GateImport" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -666,6 +674,7 @@
           </Key>
           <Property Name="DeclarationID" Type="bigint" Nullable="false" />
           <Property Name="VehicleID" Type="bigint" Nullable="false" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblGate">
           <Key>
@@ -673,11 +682,13 @@
           </Key>
           <Property Name="GateCode" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="GateName" Type="nvarchar" MaxLength="500" />
+          <Property Name="GateType" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="1000" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="CreatedBy" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="ModifiedBy" Type="int" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblGoodsType">
           <Key>
@@ -686,6 +697,7 @@
           <Property Name="TypeId" Type="int" Nullable="false" />
           <Property Name="TypeName" Type="nvarchar" MaxLength="500" />
           <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblGroup">
           <Key>
@@ -697,6 +709,7 @@
           <Property Name="CreatedBy" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="ModifedBy" Type="int" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblPermission">
           <Key>
@@ -704,6 +717,7 @@
           </Key>
           <Property Name="PermissionID" Type="int" Nullable="false" />
           <Property Name="Permission" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblProfileConfig">
           <Key>
@@ -721,6 +735,7 @@
           </Key>
           <Property Name="GroupID" Type="int" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblType">
           <Key>
@@ -749,6 +764,7 @@
           <Property Name="Password" Type="nvarchar" MaxLength="300" />
           <Property Name="PermissionID" Type="int" />
           <Property Name="IsActive" Type="int" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblUserGroupPermission">
           <Key>
@@ -771,13 +787,7 @@
           </Key>
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="GroupID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblValidate">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="TagName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblVehicle">
           <Key>
@@ -810,12 +820,10 @@
           <Property Name="HasGoodsImportedPrintOrderNumber" Type="bigint" />
           <Property Name="ParkingTotalPrintOrderNumber" Type="bigint" />
           <Property Name="IsChineseVehicle" Type="bit" />
-          <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
           <Property Name="IsExportParking" Type="bit" />
           <Property Name="ExportParkingDate" Type="datetime" />
           <Property Name="ConfirmExportParkingBy" Type="int" />
-          <Property Name="ExportReceiptNumber" Type="varchar" MaxLength="100" />
-          <Property Name="ImportReceiptNumber" Type="varchar" MaxLength="100" />
+          <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
           <Property Name="vehicleTypeId" Type="int" />
           <Property Name="quantityExport" Type="bigint" />
           <Property Name="quantityImport" Type="bigint" />
@@ -827,9 +835,12 @@
           <Property Name="feeImportDate" Type="datetime" />
           <Property Name="confirmFeeExportBy" Type="int" />
           <Property Name="confirmFeeImportBy" Type="int" />
+          <Property Name="ExportReceiptNumber" Type="varchar" MaxLength="100" />
+          <Property Name="ImportReceiptNumber" Type="varchar" MaxLength="100" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ExportGoodTypeId" Type="int" />
           <Property Name="ImportGoodTypeId" Type="int" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblVehicleCheck">
           <Key>
@@ -863,6 +874,7 @@
           <Property Name="CreatedUser" Type="int" />
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="UpdatedUser" Type="int" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblVehicleType">
           <Key>
@@ -885,9 +897,10 @@
           <Property Name="RoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheck">
           <Key>
@@ -910,7 +923,7 @@
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheckResult">
           <Key>
@@ -937,7 +950,7 @@
           <Property Name="ExportDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclaration">
           <Key>
@@ -979,9 +992,11 @@
           <Property Name="PersonHandoverID" Type="int" />
           <Property Name="PersonConfirmReturnID" Type="int" />
           <Property Name="PersonHandoverName" Type="nvarchar" MaxLength="500" />
+          <Property Name="CustomsCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="GateImport" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclarationTNTX">
           <Key>
@@ -1026,7 +1041,7 @@
           <Property Name="PersonHandoverName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicle">
           <Key>
@@ -1059,7 +1074,7 @@
           <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicleHasGood">
           <Key>
@@ -1136,7 +1151,7 @@
           <Property Name="ImportGoodTypeId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVechicleExport">
           <Key>
@@ -1198,7 +1213,7 @@
           <Property Name="ConfirmExportByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewDeclarationVehicle">
           <Key>
@@ -1237,7 +1252,7 @@
           <Property Name="RegisterDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewDeclarationVehicleImport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewDeclarationVehicleImport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVehicleImport">
           <Key>
@@ -1299,7 +1314,7 @@
           <Property Name="DeclarationImportNumber" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewDeclarationVehicleImportExportFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewDeclarationVehicleImportExportFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVehicleImportExportFee">
           <Key>
@@ -1365,7 +1380,7 @@
           <Property Name="ConfirmExportByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewGetCurrentDate">
           <Key>
@@ -1374,7 +1389,7 @@
           <Property Name="CurrentDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewUserGroup">
           <Key>
@@ -1387,9 +1402,12 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="GroupID" Type="int" Nullable="false" />
           <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewVehicleFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewVehicleFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFee">
           <Key>
@@ -1417,7 +1435,7 @@
           <Property Name="maxDeclarationID" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewVehicleFeeSetting">
           <Key>
@@ -1433,7 +1451,7 @@
           <Property Name="Capacity" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'eCustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFreight">
           <Key>
@@ -1587,7 +1605,6 @@
           <EntitySet Name="tblUsers" EntityType="dbEcustomModel.tblUser" />
           <EntitySet Name="tblUserGroupPermissions" EntityType="dbEcustomModel.tblUserGroupPermission" />
           <EntitySet Name="tblUserInGroups" EntityType="dbEcustomModel.tblUserInGroup" />
-          <EntitySet Name="tblValidates" EntityType="dbEcustomModel.tblValidate" />
           <EntitySet Name="tblVehicles" EntityType="dbEcustomModel.tblVehicle" />
           <EntitySet Name="tblVehicleChecks" EntityType="dbEcustomModel.tblVehicleCheck" />
           <EntitySet Name="tblVehicleFeeSettings" EntityType="dbEcustomModel.tblVehicleFeeSetting" />
@@ -1655,6 +1672,7 @@
           <Property Type="Int64" Name="ApplicationObjectValueLong" />
           <Property Type="Double" Name="ApplicationObjectValueFloat" />
           <Property Type="DateTime" Name="ApplicationObjectValueDatetime" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblCheck">
           <Key>
@@ -1673,6 +1691,7 @@
           <Property Type="DateTime" Name="ModifedDate" />
           <Property Type="Int32" Name="CreatedBy" />
           <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblCompany">
           <Key>
@@ -1697,6 +1716,7 @@
           <Property Type="Int32" Name="CreatedBy" />
           <Property Type="DateTime" Name="ModifiedDate" />
           <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblDeclaration">
           <Key>
@@ -1732,6 +1752,7 @@
           <Property Type="String" Name="GateImport" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CustomsCode" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tblUser" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblDeclaration" ToRole="tblUser" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -1740,6 +1761,7 @@
           </Key>
           <Property Type="Int64" Name="DeclarationID" Nullable="false" />
           <Property Type="Int64" Name="VehicleID" Nullable="false" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblGoodsType">
           <Key>
@@ -1748,6 +1770,7 @@
           <Property Type="Int32" Name="TypeId" Nullable="false" />
           <Property Type="String" Name="TypeName" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblGroup">
           <Key>
@@ -1759,6 +1782,7 @@
           <Property Type="Int32" Name="CreatedBy" />
           <Property Type="DateTime" Name="ModifiedDate" />
           <Property Type="Int32" Name="ModifedBy" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblPermission">
           <Key>
@@ -1766,6 +1790,7 @@
           </Key>
           <Property Type="Int32" Name="PermissionID" Nullable="false" />
           <Property Type="String" Name="Permission" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblProfileConfig">
           <Key>
@@ -1784,6 +1809,7 @@
           <Property Type="Int32" Name="GroupID" Nullable="false" />
           <Property Type="Int32" Name="RoleID" Nullable="false" />
           <NavigationProperty Name="tlbRole" Relationship="dbEcustomModel.FK_tblRoleInGroup_tlbRole" FromRole="tblRoleInGroup" ToRole="tlbRole" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblType">
           <Key>
@@ -1813,6 +1839,7 @@
           <Property Type="Int32" Name="PermissionID" />
           <Property Type="Int32" Name="IsActive" />
           <NavigationProperty Name="tblDeclarations" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblUser" ToRole="tblDeclaration" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblUserGroupPermission">
           <Key>
@@ -1835,13 +1862,7 @@
           </Key>
           <Property Type="Int32" Name="UserID" Nullable="false" />
           <Property Type="Int32" Name="GroupID" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblValidate">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="TagName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblVehicle">
           <Key>
@@ -1894,6 +1915,7 @@
           <Property Type="DateTime" Name="CreatedDate" />
           <Property Type="Int32" Name="ExportGoodTypeId" />
           <Property Type="Int32" Name="ImportGoodTypeId" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblVehicleCheck">
           <Key>
@@ -1927,6 +1949,7 @@
           <Property Type="Int32" Name="CreatedUser" />
           <Property Type="DateTime" Name="UpdatedDate" />
           <Property Type="Int32" Name="UpdatedUser" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblVehicleType">
           <Key>
@@ -1950,6 +1973,7 @@
           <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tblRoleInGroups" Relationship="dbEcustomModel.FK_tblRoleInGroup_tlbRole" FromRole="tlbRole" ToRole="tblRoleInGroup" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="ViewAllCheck">
           <Key>
@@ -2035,6 +2059,8 @@
           <Property Type="Int32" Name="PersonHandoverID" />
           <Property Type="Int32" Name="PersonConfirmReturnID" />
           <Property Type="String" Name="PersonHandoverName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomsCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GateImport" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ViewAllDeclarationTNTX">
           <Key>
@@ -2416,6 +2442,9 @@
           <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="GroupID" Nullable="false" />
           <Property Type="String" Name="GroupName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNumber" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ViewVehicleFee">
           <Key>
@@ -2497,6 +2526,8 @@
           <Property Type="Int32" Name="CreatedBy" />
           <Property Type="DateTime" Name="ModifiedDate" />
           <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="Int32" Name="GateType" />
+          <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2531,6 +2562,7 @@
           <EntitySetMapping Name="tblApplicationObjects">
             <EntityTypeMapping TypeName="dbEcustomModel.tblApplicationObject">
               <MappingFragment StoreEntitySet="tblApplicationObject">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="ApplicationObjectValueDatetime" ColumnName="ApplicationObjectValueDatetime" />
                 <ScalarProperty Name="ApplicationObjectValueFloat" ColumnName="ApplicationObjectValueFloat" />
                 <ScalarProperty Name="ApplicationObjectValueLong" ColumnName="ApplicationObjectValueLong" />
@@ -2543,6 +2575,7 @@
           <EntitySetMapping Name="tblChecks">
             <EntityTypeMapping TypeName="dbEcustomModel.tblCheck">
               <MappingFragment StoreEntitySet="tblCheck">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="ModifedDate" ColumnName="ModifedDate" />
@@ -2575,6 +2608,7 @@
           <EntitySetMapping Name="tblCustoms">
             <EntityTypeMapping TypeName="dbEcustomModel.tblCustom">
               <MappingFragment StoreEntitySet="tblCustoms">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -2588,6 +2622,7 @@
           <EntitySetMapping Name="tblDeclarations">
             <EntityTypeMapping TypeName="dbEcustomModel.tblDeclaration">
               <MappingFragment StoreEntitySet="tblDeclaration">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="CustomsCode" ColumnName="CustomsCode" />
                 <ScalarProperty Name="GateImport" ColumnName="GateImport" />
                 <ScalarProperty Name="PersonHandoverID" ColumnName="PersonHandoverID" />
@@ -2623,6 +2658,7 @@
           <EntitySetMapping Name="tblDeclarationVehicles">
             <EntityTypeMapping TypeName="dbEcustomModel.tblDeclarationVehicle">
               <MappingFragment StoreEntitySet="tblDeclarationVehicle">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
                 <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
               </MappingFragment>
@@ -2631,6 +2667,7 @@
           <EntitySetMapping Name="tblGoodsTypes">
             <EntityTypeMapping TypeName="dbEcustomModel.tblGoodsType">
               <MappingFragment StoreEntitySet="tblGoodsType">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="TypeName" ColumnName="TypeName" />
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
@@ -2640,6 +2677,7 @@
           <EntitySetMapping Name="tblGroups">
             <EntityTypeMapping TypeName="dbEcustomModel.tblGroup">
               <MappingFragment StoreEntitySet="tblGroup">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="ModifedBy" ColumnName="ModifedBy" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -2652,6 +2690,7 @@
           <EntitySetMapping Name="tblPermissions">
             <EntityTypeMapping TypeName="dbEcustomModel.tblPermission">
               <MappingFragment StoreEntitySet="tblPermission">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="Permission" ColumnName="Permission" />
                 <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
               </MappingFragment>
@@ -2670,6 +2709,7 @@
           <EntitySetMapping Name="tblRoleInGroups">
             <EntityTypeMapping TypeName="dbEcustomModel.tblRoleInGroup">
               <MappingFragment StoreEntitySet="tblRoleInGroup">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="GroupID" ColumnName="GroupID" />
               </MappingFragment>
@@ -2691,6 +2731,7 @@
           <EntitySetMapping Name="tblUsers">
             <EntityTypeMapping TypeName="dbEcustomModel.tblUser">
               <MappingFragment StoreEntitySet="tblUser">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -2723,22 +2764,16 @@
           <EntitySetMapping Name="tblUserInGroups">
             <EntityTypeMapping TypeName="dbEcustomModel.tblUserInGroup">
               <MappingFragment StoreEntitySet="tblUserInGroup">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblValidates">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblValidate">
-              <MappingFragment StoreEntitySet="tblValidate">
-                <ScalarProperty Name="TagName" ColumnName="TagName" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblVehicles">
             <EntityTypeMapping TypeName="dbEcustomModel.tblVehicle">
               <MappingFragment StoreEntitySet="tblVehicle">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="ImportGoodTypeId" ColumnName="ImportGoodTypeId" />
                 <ScalarProperty Name="ExportGoodTypeId" ColumnName="ExportGoodTypeId" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -2812,6 +2847,7 @@
           <EntitySetMapping Name="tblVehicleFeeSettings">
             <EntityTypeMapping TypeName="dbEcustomModel.tblVehicleFeeSetting">
               <MappingFragment StoreEntitySet="tblVehicleFeeSetting">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
@@ -2841,6 +2877,7 @@
           <EntitySetMapping Name="tlbRoles">
             <EntityTypeMapping TypeName="dbEcustomModel.tlbRole">
               <MappingFragment StoreEntitySet="tlbRole">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
@@ -2896,6 +2933,8 @@
           <EntitySetMapping Name="ViewAllDeclarations">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewAllDeclaration">
               <MappingFragment StoreEntitySet="ViewAllDeclaration">
+                <ScalarProperty Name="GateImport" ColumnName="GateImport" />
+                <ScalarProperty Name="CustomsCode" ColumnName="CustomsCode" />
                 <ScalarProperty Name="PersonHandoverName" ColumnName="PersonHandoverName" />
                 <ScalarProperty Name="PersonConfirmReturnID" ColumnName="PersonConfirmReturnID" />
                 <ScalarProperty Name="PersonHandoverID" ColumnName="PersonHandoverID" />
@@ -3311,6 +3350,9 @@
           <EntitySetMapping Name="ViewUserGroups">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewUserGroup">
               <MappingFragment StoreEntitySet="ViewUserGroup">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="GroupName" ColumnName="GroupName" />
                 <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -3390,6 +3432,8 @@
           <EntitySetMapping Name="tblGates">
             <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
               <MappingFragment StoreEntitySet="tblGate">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
+                <ScalarProperty Name="GateType" ColumnName="GateType" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -3438,7 +3482,6 @@
         <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="5.875" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserGroupPermission" Width="1.5" PointX="11.75" PointY="3.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserInGroup" Width="1.5" PointX="11.75" PointY="7.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblValidate" Width="1.5" PointX="11.75" PointY="10.75" Height="1.4033821614583246" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="4.75" PointY="12.75" Height="10.056946614583325" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="6.75" PointY="12.75" Height="3.7109993489583246" />
         <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="13.75" PointY="0.75" Height="2.5571907552083246" />

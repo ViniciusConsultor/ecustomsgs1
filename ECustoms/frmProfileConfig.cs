@@ -18,7 +18,6 @@ namespace ECustoms
     {
         private static ILog logger = LogManager.GetLogger("ECustoms.frmProfileConfig");
         private UserInfo _userInfo;
-        private Validation _validation;
         public frmProfileConfig()
         {
             InitializeComponent();
@@ -27,7 +26,6 @@ namespace ECustoms
         public frmProfileConfig(UserInfo userInfo)
         {
             _userInfo = userInfo;
-            _validation = new Validation(this);
             InitializeComponent();
         }
 
@@ -79,7 +77,7 @@ namespace ECustoms
 
         private bool validate()
         {
-            if (!_validation.Validate()) return false;
+            if (!techlinkErrorProvider1.Validate(this)) return false;
             if (!string.IsNullOrEmpty(txtTypeCode.Text.Trim()) && TypeFactory.FindByCode(txtTypeCode.Text.Trim()) == null)
             {
                 MessageBox.Show("Mã loại hình không tồn tại");

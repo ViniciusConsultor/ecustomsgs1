@@ -15,8 +15,6 @@ namespace ECustoms
     public partial class FrmDecleExport : SubFormBase
     {
         #region Private variables
-
-        private Validation _validation;
         private int _mode;
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger("Ecustoms.FrmDecleExport");
         private List<ViewAllVehicleHasGood> _vehicleInfosTemp = new List<ViewAllVehicleHasGood>(); // This variable is used to store data in the gridview
@@ -368,7 +366,7 @@ namespace ECustoms
 
         private bool Validate()
         {
-            if (!_validation.Validate()) return false;
+            techlinkErrorProvider1.Validate(this);
             // Validate export declaration
             if (string.IsNullOrEmpty(txtExportNumber.Text.Trim()))
             {
@@ -467,7 +465,6 @@ namespace ECustoms
         /// </summary>
         private void Init()
         {
-
             //init vehicleType
             var listVehicleType = VehicleTypeFactory.getAllVehicleType();
             dataSet2.tblVehicleType.Rows.Add(0, "Không phân loại");
@@ -1102,7 +1099,7 @@ namespace ECustoms
         {
             txtExportTotalVehicles.Focus();
             this.Text = "Khai bao xuat nhap canh" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
-            _validation = new Validation(this);
+            
             // Show form to the center            
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
 

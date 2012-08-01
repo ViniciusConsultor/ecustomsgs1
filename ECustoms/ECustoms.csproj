@@ -254,9 +254,6 @@
     <Compile Include="SubFormBase.Designer.cs">
       <DependentUpon>SubFormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validation.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="VehicleFeeReport1.cs">
       <DependentUpon>VehicleFeeReport.rpt</DependentUpon>
       <SubType>Component</SubType>

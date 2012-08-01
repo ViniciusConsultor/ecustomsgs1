@@ -43,6 +43,8 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -105,7 +107,7 @@
             this.txtTypeCode.Name = "txtTypeCode";
             this.txtTypeCode.Size = new System.Drawing.Size(105, 20);
             this.txtTypeCode.TabIndex = 0;
-            this.txtTypeCode.Tag = "TypeCode";
+            this.txtTypeCode.Tag = "required";
             this.txtTypeCode.Leave += new System.EventHandler(this.txtTypeCode_Leave);
             // 
             // lblPlateNumber
@@ -156,7 +158,7 @@
             this.txtCustomCode.Name = "txtCustomCode";
             this.txtCustomCode.Size = new System.Drawing.Size(105, 20);
             this.txtCustomCode.TabIndex = 1;
-            this.txtCustomCode.Tag = "CustomCode";
+            this.txtCustomCode.Tag = "required";
             this.txtCustomCode.Leave += new System.EventHandler(this.txtCustomCode_Leave);
             // 
             // label3
@@ -193,6 +195,10 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 300;
             // 
+            // techlinkErrorProvider1
+            // 
+            this.techlinkErrorProvider1.ContainerControl = this;
+            // 
             // frmProfileConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +221,7 @@
             this.ShowInTaskbar = false;
             this.Text = "frmProfileConfig";
             this.Load += new System.EventHandler(this.frmProfileConfig_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +243,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCustomCode;
         private System.Windows.Forms.Label label3;
+        private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
     }
 }
