@@ -821,7 +821,7 @@
             using (StringFormat sf = new StringFormat())
             {
                 sf.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.Show;
-                sf.FormatFlags = StringFormatFlags.NoWrap;
+                sf.FormatFlags = StringFormatFlags.DisplayFormatControl;
                 // text alignment: bottom
                 if (btn.TextAlign == ContentAlignment.BottomCenter)
                 {

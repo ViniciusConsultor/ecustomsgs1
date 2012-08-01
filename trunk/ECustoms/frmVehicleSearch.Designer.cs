@@ -735,7 +735,7 @@
             this.btnLocalConfirm.Name = "btnLocalConfirm";
             this.btnLocalConfirm.Size = new System.Drawing.Size(162, 52);
             this.btnLocalConfirm.TabIndex = 17;
-            this.btnLocalConfirm.Text = "XN hàng vào nội địa";
+            this.btnLocalConfirm.Text = "Xác nhận hàng vào nội địa";
             this.btnLocalConfirm.UseVisualStyleBackColor = true;
             this.btnLocalConfirm.Click += new System.EventHandler(this.btnLocalConfirm_Click);
             // 
@@ -757,7 +757,7 @@
             this.btnXacNhanXuatCanhKhongCoHang.Name = "btnXacNhanXuatCanhKhongCoHang";
             this.btnXacNhanXuatCanhKhongCoHang.Size = new System.Drawing.Size(162, 52);
             this.btnXacNhanXuatCanhKhongCoHang.TabIndex = 16;
-            this.btnXacNhanXuatCanhKhongCoHang.Text = "XN nhập cảnh không có hàng";
+            this.btnXacNhanXuatCanhKhongCoHang.Text = "Xác nhận nhập cảnh không hàng";
             this.btnXacNhanXuatCanhKhongCoHang.UseVisualStyleBackColor = true;
             this.btnXacNhanXuatCanhKhongCoHang.Click += new System.EventHandler(this.btnXacNhanXuatCanhKhongCoHang_Click);
             // 
@@ -769,7 +769,7 @@
             this.btnXacNhanNhapCanhCoHang.Name = "btnXacNhanNhapCanhCoHang";
             this.btnXacNhanNhapCanhCoHang.Size = new System.Drawing.Size(162, 52);
             this.btnXacNhanNhapCanhCoHang.TabIndex = 15;
-            this.btnXacNhanNhapCanhCoHang.Text = "XN nhập cảnh có hàng";
+            this.btnXacNhanNhapCanhCoHang.Text = "Xác nhận nhập cảnh có hàng";
             this.btnXacNhanNhapCanhCoHang.UseVisualStyleBackColor = true;
             this.btnXacNhanNhapCanhCoHang.Click += new System.EventHandler(this.btnXacNhanNhapCanhCoHang_Click);
             // 
@@ -1041,7 +1041,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 778);
+            this.ClientSize = new System.Drawing.Size(1092, 782);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdateVehicle);
             this.Controls.Add(this.btnExportExcel);
