@@ -16,9 +16,6 @@ namespace ECustoms
 
     public partial class frmUpgradeDatabase : SubFormBase
     {
-        private string connectionString =
-            Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true);
-
         private string _version = string.Empty;
         private string _connection = string.Empty;
 

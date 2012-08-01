@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Default>
+  <Culture>en-US</Culture>
+  <CultureName>English</CultureName>
+  <AutoSignin>True</AutoSignin>
+  <RememberAccountInfo>True</RememberAccountInfo>
+  <SkinTemplate>RedSkin.xml</SkinTemplate>
+</Default>

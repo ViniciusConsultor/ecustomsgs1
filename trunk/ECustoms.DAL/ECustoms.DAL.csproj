@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbConnection.cs" />
+    <Compile Include="IDataController.cs" />
     <Compile Include="ModelEcustoms.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

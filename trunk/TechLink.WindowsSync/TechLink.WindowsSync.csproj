@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B58241FF-E3A6-4109-8332-7F79B2381BFE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TechLink.WindowsSync</RootNamespace>
+    <AssemblyName>TechLink.WindowsSync</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="eCustomSyncSvc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eCustomSyncSvc.Designer.cs">
+      <DependentUpon>eCustomSyncSvc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ServiceMethodsDefined.xml" />
+    <Content Include="SummaryFields.xml" />
+    <Content Include="System\Res\Arrow_down_down_60x60.png" />
+    <Content Include="System\Res\Arrow_down_hover_60x60.png" />
+    <Content Include="System\Res\Arrow_down_normal_60x60.png" />
+    <Content Include="System\Res\Document_attachment.png" />
+    <Content Include="System\Res\MeZoone_icon_large.png" />
+    <Content Include="System\Res\Notify_Emphasize.png" />
+    <Content Include="System\Res\Notify_Normal.png" />
+    <Content Include="System\Res\pencil.png" />
+    <Content Include="System\Res\Repo.png" />
+    <Content Include="System\Res\Save.png" />
+    <Content Include="System\System Configurations\DefaultSystemValues.xml" />
+    <Content Include="System\System Configurations\GeneralLanguage.xml" />
+    <Content Include="System\System Configurations\LanguagesDefinition.xml" />
+    <Content Include="System\System Configurations\ObjectsLanguage.xml" />
+    <Content Include="System\System Configurations\RedSkin.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="System\Server\Config\goldkeeper.exe.config" />
+    <None Include="System\Server\Config\Server.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Client Assemblies\" />
+    <Folder Include="System\Common Assemblies\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TechLink.NetRemoting.SyncService\AbstractServerConsole\AbstractServerConsole.csproj">
+      <Project>{F89E3CDE-703A-4C99-8EAB-E7A2CB5519A8}</Project>
+      <Name>AbstractServerConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ExceptionHandler\ExceptionHandler.csproj">
+      <Project>{5DA522E1-8E43-46F8-B2B9-0E5CE4CA31FC}</Project>
+      <Name>ExceptionHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ServerConsole\ServerConsole.csproj">
+      <Project>{564D707B-868E-48E0-820E-A436CF5945B1}</Project>
+      <Name>ServerConsole</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y /C "$(ProjectDir)ServiceMethodsDefined.xml" "$(SolutionDir)PISServerApp\bin\Debug\"
+xcopy /Y /C "$(ProjectDir)SummaryFields.xml" "$(SolutionDir)PISServerApp\bin\Debug\"
+xcopy /Y /C "$(ProjectDir)System\Server\Config\*.*" "$(ProjectDir)bin\Debug\Installations\Config\"
+xcopy /Y /C "$(ProjectDir)System\Server\Config\*.*" "$(ProjectDir)bin\Debug\Installations\Config\"
+xcopy /Y /C "$(ProjectDir)System\System Configurations\*.*" "$(ProjectDir)bin\Debug\Installations\Translations\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

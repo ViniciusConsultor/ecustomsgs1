@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Objects>
+  <ObjectDefinition Name="MedicineItem">
+    <PropertyInfo Name="Id" en-US="ID" vi-VN="Mã vị thuốc"/>
+    <PropertyInfo Name="Name" en-US="Name" vi-VN="Tên vị"/>
+    <PropertyInfo Name="PharmaceuticalValue" en-US="Pharmaceutical Value" vi-VN="Dược tính"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Ghi chú"/>
+    <PropertyInfo Name="CreatedDate" en-US="Created Date" vi-VN="Ngày tạo"/>
+  </ObjectDefinition>
+  
+  <ObjectDefinition Name="MedicineTablet" en-US="Medicine Tablet" vi-VN="Danh sách bài thuốc cổ phương">
+    <PropertyInfo Name="Id" en-US="ID" vi-VN="Mã bài thuốc"/>
+    <PropertyInfo Name="Name" en-US="Name" vi-VN="Tên bài"/>
+    <PropertyInfo Name="TabletValue" en-US="Tablet Value" vi-VN="Tác dụng"/>
+    <PropertyInfo Name="CreatedDate" en-US="Created Date" vi-VN="Ngày tạo"/>
+    <PropertyInfo Name="IsUsed" en-US="Is Used" vi-VN="Đã được sử dụng"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Chú ý"/>
+    <PropertyInfo Name="Using" en-US="Using" vi-VN="Cách sử dụng"/>
+  </ObjectDefinition>
+  
+  <ObjectDefinition Name="PatientInformation" en-US="Patient Information" vi-VN="Quản lý bệnh nhân">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã tham chiếu"/>
+    <PropertyInfo Name="TextCode" en-US="Text code" vi-VN="Mã bệnh nhân"/>
+    <PropertyInfo Name="Name" en-US="Name" vi-VN="Tên bệnh nhân"/>
+    <PropertyInfo Name="DateOfBirth" en-US="Date Of Birth" vi-VN="Ngày sinh"/>
+    <PropertyInfo Name="Address" en-US="Address" vi-VN="Địa chỉ"/>
+    <PropertyInfo Name="Phone" en-US="Phone" vi-VN="Điện thoại"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Chú ý"/>
+    ID
+  </ObjectDefinition>
+  
+  <ObjectDefinition Name="PatientOverhaulHistory" en-US="Patient Overhaul History" vi-VN="Lịch sử khám bệnh">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã tham chiếu"/>
+    <PropertyInfo Name="PatientID" en-US="PatientID" vi-VN="Mã tham chiếu bệnh nhân"/>
+    <PropertyInfo Name="Order" en-US="Order" vi-VN="Lần khám"/>
+    <PropertyInfo Name="Pulse" en-US="Pulse" vi-VN="Mạch"/>
+    <PropertyInfo Name="BoodPressure" en-US="Blood Pressure" vi-VN="Huyết áp"/>
+    <PropertyInfo Name="Temperature" en-US="Temperature" vi-VN="Nhiệt độ"/>
+    <PropertyInfo Name="PatientWords" en-US="Patient Words" vi-VN="Lời kể của bệnh nhân"/>
+    <PropertyInfo Name="Symptoms" en-US="Symptoms" vi-VN="Triệu chứng"/>
+    <PropertyInfo Name="FirstDiagnosis" en-US="First Diagnosis" vi-VN="Chuẩn đoán điều trị"/>
+    <PropertyInfo Name="EvolutionOfTreatment" en-US="Evolution Of Treatment" vi-VN="Diễn biến điều trị"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Ghi chú"/>
+    <PropertyInfo Name="Finished" en-US="Finished" vi-VN="Đã khám xong?"/>
+    <PropertyInfo Name="Diagnosis" en-US="Diagnosis" vi-VN="Chuẩn đoán của bác sĩ"/>
+    <PropertyInfo Name="Remark" en-US="Remark" vi-VN="Lưu ý"/>
+    <PropertyInfo Name="CreatedDate" en-US="Created Date" vi-VN="Ngày khám"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="XtraPatientOverhaulHistory" en-US="Xtra Patient Overhaul History" vi-VN="Xtra Patient Overhaul History">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã tham chiếu"/>
+    <PropertyInfo Name="TextCode" en-US="Text Code" vi-VN="Mã bệnh nhân"/>
+    <PropertyInfo Name="PatientID" en-US="PatientID" vi-VN="Mã tham chiếu bệnh nhân"/>
+    <PropertyInfo Name="Order" en-US="Order" vi-VN="Lần khám"/>
+    <PropertyInfo Name="Pulse" en-US="Pulse" vi-VN="Mạch"/>
+    <PropertyInfo Name="BoodPressure" en-US="Blood Pressure" vi-VN="Huyết áp"/>
+    <PropertyInfo Name="Temperature" en-US="Temperature" vi-VN="Nhiệt độ"/>
+    <PropertyInfo Name="PatientWords" en-US="Patient Words" vi-VN="Lời kể của bệnh nhân"/>
+    <PropertyInfo Name="Symptoms" en-US="Symptoms" vi-VN="Triệu chứng"/>
+    <PropertyInfo Name="FirstDiagnosis" en-US="First Diagnosis" vi-VN="Chuẩn đoán điều trị"/>
+    <PropertyInfo Name="EvolutionOfTreatment" en-US="Evolution Of Treatment" vi-VN="Diễn biến điều trị"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Ghi chú"/>
+    <PropertyInfo Name="Finished" en-US="Finished" vi-VN="Đã khám xong?"/>
+    <PropertyInfo Name="Diagnosis" en-US="Diagnosis" vi-VN="Chuẩn đoán của bác sĩ"/>
+    <PropertyInfo Name="Remark" en-US="Remark" vi-VN="Lưu ý"/>
+    <PropertyInfo Name="CreatedDate" en-US="Created Date" vi-VN="Ngày khám"/>
+    <PropertyInfo Name="DateOfBirth" en-US="Date Of Birth" vi-VN="Ngày sinh"/>
+    
+  </ObjectDefinition>
+  
+  <ObjectDefinition Name="MedicineTabletOfMeidication" en-US="Medicine Tablet Of Medication" vi-VN="Bài thuốc của bệnh nhân">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã đơn thuốc"/>
+    <PropertyInfo Name="MedicationId" en-US="MedicationId" vi-VN="Mã bệnh án"/>
+    <PropertyInfo Name="TabletCloneId" en-US="Tablet Clone Id" vi-VN="Mã bài thuốc"/>
+    <PropertyInfo Name="Barcode" en-US="Barcode" vi-VN="Mã vạch"/>
+    <PropertyInfo Name="NumberOfItems" en-US="Number Of Items" vi-VN="Số đơn thuốc"/>
+    <PropertyInfo Name="UseService" en-US="Use Service" vi-VN="Sử dụng dịch vụ sắc thuốc"/>
+    <PropertyInfo Name="NumberOfItemForService" en-US="Number Of Item For Service" vi-VN="Số thang thuốc sử dụng dịch vụ"/>
+    <PropertyInfo Name="PricePerItem" en-US="Price Per Item" vi-VN="Giá dịch vụ sắc thuốc/1thang"/>
+    <PropertyInfo Name="CreatedDate" en-US="Created Date" vi-VN="Ngày thanh toán"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="MedicineTabletIngredient" en-US="Medicine Tablet Ingredient" vi-VN="Thành phần bài thuốc cổ phương">
+    <PropertyInfo Name="MedicineTabletID" en-US="Medicine Tablet ID" vi-VN="Mã bài thuốc"/>
+    <PropertyInfo Name="MedicineItemID" en-US="Medicine Item ID" vi-VN="Mã vị thuốc"/>
+    <PropertyInfo Name="Weight" en-US="Weight" vi-VN="Khối lượng"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Lưu ý"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="MedicineTabletClone" en-US="Medicine Tablet Clone" vi-VN="Bài thuốc đã dùng">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã bài thuốc"/>
+    <PropertyInfo Name="OriginID" en-US="Origin ID" vi-VN="Mã nguồn gốc"/>
+    <PropertyInfo Name="Name" en-US="Name" vi-VN="Tên bài thuốc"/>
+    <PropertyInfo Name="TabletValue" en-US="Tablet Value" vi-VN="Tên bài thuốc cổ phương"/>
+    <PropertyInfo Name="CreatedDate" en-US="Created Date" vi-VN="Ngày tạo"/>
+    <PropertyInfo Name="IsUsed" en-US="Is Used" vi-VN="Được sử dụng"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Chú ý"/>
+    <PropertyInfo Name="Using" en-US="Using" vi-VN="Cách dùng"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="MedicineTabletIngredientClone" en-US="Medicine Tablet Ingredient Clone" vi-VN="Thành phần bài thuốc đã dùng">
+    <PropertyInfo Name="MedicineTabletCloneID" en-US="Medicine Tablet Clone ID" vi-VN="Mã bài thuốc đã dùng"/>
+    <PropertyInfo Name="MedicineItemID" en-US="Medicine Item ID" vi-VN="Mã vị thuốc"/>
+    <PropertyInfo Name="Weight" en-US="Weight" vi-VN="Khối lượng"/>
+    <PropertyInfo Name="Note" en-US="Note" vi-VN="Chú ý"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="ApplicationInfo" en-US="Application Information" vi-VN="Quản lý ứng dụng">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã ứng dụng"/>
+    <PropertyInfo Name="Name" en-US="Name" vi-VN="Tên ứng dụng"/>
+    <PropertyInfo Name="Text" en-US="Text" vi-VN="Mã resource"/>
+    <PropertyInfo Name="Caption" en-US="Caption" vi-VN="Chú thích"/>
+    <PropertyInfo Name="ShowHelp" en-US="Show Help" vi-VN="Hiển thị trợ giúp"/>
+    <PropertyInfo Name="ShowTools" en-US="Show Tools" vi-VN="Hiển thị các công cụ"/>
+    <PropertyInfo Name="IconPath" en-US="Icon Path" vi-VN="Địa chỉ ảnh hiển thị"/>
+    <PropertyInfo Name="NameSpace" en-US="NameSpace" vi-VN="NameSpace"/>
+    <PropertyInfo Name="ExtraFunctionsHeight" en-US="ExtraFunctionsHeight" vi-VN="Chiều cao của chức năng mở rộng"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="EmployeeInfo" en-US="EmployeeInformation" vi-VN="Quản lý nhân viên">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã nhân viên"/>
+    <PropertyInfo Name="FirstName" en-US="First Name" vi-VN="Họ đệm"/>
+    <PropertyInfo Name="LastName" en-US="Last Name" vi-VN="Tên"/>
+    <PropertyInfo Name="FullName" en-US="Full Name" vi-VN="Họ tên đầy đủ"/>
+    <PropertyInfo Name="Email" en-US="Email" vi-VN="Email"/>
+    <PropertyInfo Name="CurrentAddress" en-US="Current Address" vi-VN="Địa chỉ hiện tại"/>
+    <PropertyInfo Name="PermanentAddress" en-US="Permanent Address" vi-VN="Địa chỉ thường trú"/>
+    <PropertyInfo Name="HomeFone" en-US="Home Fone" vi-VN="Điện thoại bàn"/>
+    <PropertyInfo Name="MobileFone" en-US="Mobile Fone" vi-VN="Điện thoại di động"/>
+    <PropertyInfo Name="PositionId" en-US="Position Id" vi-VN="Chức vụ"/>
+    <PropertyInfo Name="CreatedDate" en-US="Created Date" vi-VN="Ngày tạo"/>
+    <PropertyInfo Name="EntranceDate" en-US="Entrance Date" vi-VN="Ngày vào"/>
+    <PropertyInfo Name="IsOff" en-US="Is Off" vi-VN="Có còn làm việc"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="UserInfo" en-US="User Information" vi-VN="Quản lý người dùng">
+    <PropertyInfo Name="ID" en-US="ID" vi-VN="Mã người dùng"/>
+    <PropertyInfo Name="Name" en-US="Name" vi-VN="Tên người dùng"/>
+    <PropertyInfo Name="UserName" en-US="UserName" vi-VN="Tên đăng nhập"/>
+    <PropertyInfo Name="Password" en-US="Password" vi-VN="Mật khẩu"/>
+    <PropertyInfo Name="GroupId" en-US="Group Id" vi-VN="Mã nhóm"/>
+    <PropertyInfo Name="EmployeeId" en-US="Employee Id" vi-VN="Mã nhân viên"/>
+    <PropertyInfo Name="IsSystemUser" en-US="Is System User" vi-VN="Là người quản trị hệ thống"/>
+    <PropertyInfo Name="IsLocked" en-US="Is Locked" vi-VN="Đã bị khóa"/>
+    <PropertyInfo Name="DateLocked" en-US="Date Locked" vi-VN="Ngày khóa"/>
+    <PropertyInfo Name="DateResetPass" en-US="Date Reset Pass" vi-VN="Ngày thay đổi mật khẩu"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="ApplicationUser" en-US="Application User" vi-VN="Ứng dụng người dùng">
+    <PropertyInfo Name="UserId" en-US="User Id" vi-VN="Mã người dùng"/>
+    <PropertyInfo Name="ApplicationId" en-US="Application Id" vi-VN="Mã ứng dụng"/>
+    <PropertyInfo Name="CanView" en-US="Can View" vi-VN="Có thể xem"/>
+    <PropertyInfo Name="CanInsert" en-US="Can Insert" vi-VN="Có thể thêm"/>
+    <PropertyInfo Name="CanUpdate" en-US="Can Update" vi-VN="Có thể sửa"/>
+    <PropertyInfo Name="CanDelete" en-US="Can Delete" vi-VN="Có thể xóa"/>
+    <PropertyInfo Name="CanPrint" en-US="Can Print" vi-VN="Có thể in"/>
+    <PropertyInfo Name="CanExport" en-US="Can Export" vi-VN="Có thể kết xuất"/>
+    <PropertyInfo Name="CanImport" en-US="Can Import" vi-VN="Có thể chuyển nhập"/>
+    <PropertyInfo Name="CanFind" en-US="Can Find" vi-VN="Có thể tìm kiếm"/>
+    <PropertyInfo Name="LastUpdate" en-US="Last Update" vi-VN="Lần cuối cập nhật"/>
+    <PropertyInfo Name="Granded" en-US="Granded" vi-VN="Đa cấp phát"/>
+    <PropertyInfo Name="OrderNo" en-US="Order No" vi-VN="Số thứ tự"/>
+  </ObjectDefinition>
+
+  <ObjectDefinition Name="SessionInformation" en-US="Session Information" vi-VN="Thông tin phiên làm việc">
+    <PropertyInfo Name="UserId" en-US="User Id" vi-VN="Mã người dùng"/>
+    <PropertyInfo Name="SessionId" en-US="Session Id" vi-VN="Mã phiên làm việc"/>
+    <PropertyInfo Name="IsClosed" en-US="Is Closed" vi-VN="Đã kết thúc"/>
+    <PropertyInfo Name="LoggedDate" en-US="Logged Date" vi-VN="Ngày đăng nhập"/>
+    <PropertyInfo Name="OutDate" en-US="Out Date" vi-VN="Ngày kết thúc"/>
+    <PropertyInfo Name="IpAddress" en-US="Ip Address" vi-VN="Địa chỉ IP"/>
+    <PropertyInfo Name="UserName" en-US="User Name" vi-VN="Tên đăng nhập"/>
+    <PropertyInfo Name="DisplayName" en-US="Display Name" vi-VN="Tên hiển thị"/>
+  </ObjectDefinition>
+</Objects>

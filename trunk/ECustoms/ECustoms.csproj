@@ -126,6 +126,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBackupRestoreDb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackupRestoreDb.Designer.cs">
+      <DependentUpon>frmBackupRestoreDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConfigSQL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -541,6 +547,9 @@
       <DependentUpon>XuatCanhXeKhong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmBackupRestoreDb.resx">
+      <DependentUpon>frmBackupRestoreDb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConfigSQL.resx">
       <DependentUpon>frmConfigSQL.cs</DependentUpon>
     </EmbeddedResource>
