@@ -40,6 +40,38 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeclerationOptionInfo));
+            this.btConfirmReturn = new System.Windows.Forms.Button();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pnExportGate = new System.Windows.Forms.Panel();
+            this.txtExportGateName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtExportGateCode = new System.Windows.Forms.TextBox();
+            this.lblGateEx = new System.Windows.Forms.Label();
+            this.pnCustom = new System.Windows.Forms.Panel();
+            this.txtCustomsCode = new System.Windows.Forms.TextBox();
+            this.txtCustomsName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cbCreatedDate = new System.Windows.Forms.CheckBox();
+            this.dtpCreatedTo = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpCreatedFrom = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbReturn = new System.Windows.Forms.CheckBox();
+            this.cbNotReturn = new System.Windows.Forms.CheckBox();
+            this.cbRegDate = new System.Windows.Forms.CheckBox();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.lblCompanyName = new System.Windows.Forms.Label();
+            this.txtDeclaraceNumber = new System.Windows.Forms.TextBox();
+            this.lblDeclaraceNumber = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.grbDecleration = new System.Windows.Forms.GroupBox();
             this.grvDecleration = new System.Windows.Forms.DataGridView();
             this.DeclarationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,29 +92,6 @@
             this.CreatedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeclarationType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbCreatedDate = new System.Windows.Forms.CheckBox();
-            this.dtpCreatedTo = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpCreatedFrom = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbReturn = new System.Windows.Forms.CheckBox();
-            this.cbNotReturn = new System.Windows.Forms.CheckBox();
-            this.txtGateExport = new System.Windows.Forms.TextBox();
-            this.lblGateExport = new System.Windows.Forms.Label();
-            this.txtRegisterPlace = new System.Windows.Forms.TextBox();
-            this.lblRegisterPlace = new System.Windows.Forms.Label();
-            this.cbRegDate = new System.Windows.Forms.CheckBox();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.lblCompanyName = new System.Windows.Forms.Label();
-            this.txtDeclaraceNumber = new System.Windows.Forms.TextBox();
-            this.lblDeclaraceNumber = new System.Windows.Forms.Label();
-            this.lblHeader = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,13 +111,363 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btConfirmReturn = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.pnExportGate.SuspendLayout();
+            this.pnCustom.SuspendLayout();
             this.grbDecleration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btConfirmReturn
+            // 
+            this.btConfirmReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btConfirmReturn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btConfirmReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.accept;
+            this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btConfirmReturn.Location = new System.Drawing.Point(733, 588);
+            this.btConfirmReturn.Name = "btConfirmReturn";
+            this.btConfirmReturn.Size = new System.Drawing.Size(112, 28);
+            this.btConfirmReturn.TabIndex = 1;
+            this.btConfirmReturn.Text = "Đ&ã hồi báo";
+            this.btConfirmReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btConfirmReturn.UseVisualStyleBackColor = true;
+            this.btConfirmReturn.Click += new System.EventHandler(this.btConfirmReturn_Click);
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(12, 9);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(961, 29);
+            this.lblHeader.TabIndex = 22;
+            this.lblHeader.Text = "Quản lý hàng hóa TNTX";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.pnExportGate);
+            this.groupBox1.Controls.Add(this.pnCustom);
+            this.groupBox1.Controls.Add(this.cbCreatedDate);
+            this.groupBox1.Controls.Add(this.dtpCreatedTo);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dtpCreatedFrom);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cbReturn);
+            this.groupBox1.Controls.Add(this.cbNotReturn);
+            this.groupBox1.Controls.Add(this.cbRegDate);
+            this.groupBox1.Controls.Add(this.dtpTo);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dtpFrom);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.txtCompanyName);
+            this.groupBox1.Controls.Add(this.lblCompanyName);
+            this.groupBox1.Controls.Add(this.txtDeclaraceNumber);
+            this.groupBox1.Controls.Add(this.lblDeclaraceNumber);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(10, 41);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(915, 210);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Điều kiện tìm kiếm";
+            // 
+            // pnExportGate
+            // 
+            this.pnExportGate.Controls.Add(this.txtExportGateName);
+            this.pnExportGate.Controls.Add(this.label12);
+            this.pnExportGate.Controls.Add(this.txtExportGateCode);
+            this.pnExportGate.Controls.Add(this.lblGateEx);
+            this.pnExportGate.Location = new System.Drawing.Point(409, 137);
+            this.pnExportGate.Name = "pnExportGate";
+            this.pnExportGate.Size = new System.Drawing.Size(326, 61);
+            this.pnExportGate.TabIndex = 46;
+            // 
+            // txtExportGateName
+            // 
+            this.txtExportGateName.Location = new System.Drawing.Point(147, 32);
+            this.txtExportGateName.Name = "txtExportGateName";
+            this.txtExportGateName.Size = new System.Drawing.Size(179, 26);
+            this.txtExportGateName.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(-5, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(142, 20);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Tên Cửa khẩu xuất";
+            // 
+            // txtExportGateCode
+            // 
+            this.txtExportGateCode.Location = new System.Drawing.Point(147, 0);
+            this.txtExportGateCode.Name = "txtExportGateCode";
+            this.txtExportGateCode.Size = new System.Drawing.Size(117, 26);
+            this.txtExportGateCode.TabIndex = 0;
+            this.txtExportGateCode.Tag = "";
+            this.txtExportGateCode.Leave += new System.EventHandler(this.txtExportGateCode_Leave);
+            // 
+            // lblGateEx
+            // 
+            this.lblGateEx.AutoSize = true;
+            this.lblGateEx.Location = new System.Drawing.Point(-4, 3);
+            this.lblGateEx.Name = "lblGateEx";
+            this.lblGateEx.Size = new System.Drawing.Size(137, 20);
+            this.lblGateEx.TabIndex = 30;
+            this.lblGateEx.Text = "Mã Cửa khẩu xuất";
+            // 
+            // pnCustom
+            // 
+            this.pnCustom.Controls.Add(this.txtCustomsCode);
+            this.pnCustom.Controls.Add(this.txtCustomsName);
+            this.pnCustom.Controls.Add(this.label16);
+            this.pnCustom.Controls.Add(this.label15);
+            this.pnCustom.Location = new System.Drawing.Point(31, 137);
+            this.pnCustom.Name = "pnCustom";
+            this.pnCustom.Size = new System.Drawing.Size(332, 61);
+            this.pnCustom.TabIndex = 45;
+            // 
+            // txtCustomsCode
+            // 
+            this.txtCustomsCode.Location = new System.Drawing.Point(145, 0);
+            this.txtCustomsCode.Multiline = true;
+            this.txtCustomsCode.Name = "txtCustomsCode";
+            this.txtCustomsCode.Size = new System.Drawing.Size(187, 26);
+            this.txtCustomsCode.TabIndex = 0;
+            this.txtCustomsCode.Tag = "required";
+            this.txtCustomsCode.Leave += new System.EventHandler(this.txtCustomsCode_Leave);
+            // 
+            // txtCustomsName
+            // 
+            this.txtCustomsName.Enabled = false;
+            this.txtCustomsName.Location = new System.Drawing.Point(143, 35);
+            this.txtCustomsName.Multiline = true;
+            this.txtCustomsName.Name = "txtCustomsName";
+            this.txtCustomsName.Size = new System.Drawing.Size(189, 26);
+            this.txtCustomsName.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(-4, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(123, 20);
+            this.label16.TabIndex = 42;
+            this.label16.Text = "Mã ĐV hải quan";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(-5, 35);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(128, 20);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Tên ĐV hải quan";
+            // 
+            // cbCreatedDate
+            // 
+            this.cbCreatedDate.AutoSize = true;
+            this.cbCreatedDate.Location = new System.Drawing.Point(31, 107);
+            this.cbCreatedDate.Name = "cbCreatedDate";
+            this.cbCreatedDate.Size = new System.Drawing.Size(137, 24);
+            this.cbCreatedDate.TabIndex = 27;
+            this.cbCreatedDate.Text = "Ngày nhập máy";
+            this.cbCreatedDate.UseVisualStyleBackColor = true;
+            this.cbCreatedDate.CheckedChanged += new System.EventHandler(this.cbCreatedDate_CheckedChanged);
+            // 
+            // dtpCreatedTo
+            // 
+            this.dtpCreatedTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpCreatedTo.Enabled = false;
+            this.dtpCreatedTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCreatedTo.Location = new System.Drawing.Point(556, 103);
+            this.dtpCreatedTo.Name = "dtpCreatedTo";
+            this.dtpCreatedTo.Size = new System.Drawing.Size(117, 26);
+            this.dtpCreatedTo.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(407, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Đến ngày";
+            // 
+            // dtpCreatedFrom
+            // 
+            this.dtpCreatedFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpCreatedFrom.Enabled = false;
+            this.dtpCreatedFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCreatedFrom.Location = new System.Drawing.Point(241, 102);
+            this.dtpCreatedFrom.Name = "dtpCreatedFrom";
+            this.dtpCreatedFrom.Size = new System.Drawing.Size(122, 26);
+            this.dtpCreatedFrom.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(170, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Từ ngày";
+            // 
+            // cbReturn
+            // 
+            this.cbReturn.AutoSize = true;
+            this.cbReturn.Location = new System.Drawing.Point(779, 28);
+            this.cbReturn.Name = "cbReturn";
+            this.cbReturn.Size = new System.Drawing.Size(105, 24);
+            this.cbReturn.TabIndex = 6;
+            this.cbReturn.Text = "Đã hồi báo";
+            this.cbReturn.UseVisualStyleBackColor = true;
+            // 
+            // cbNotReturn
+            // 
+            this.cbNotReturn.AutoSize = true;
+            this.cbNotReturn.Location = new System.Drawing.Point(779, 58);
+            this.cbNotReturn.Name = "cbNotReturn";
+            this.cbNotReturn.Size = new System.Drawing.Size(122, 24);
+            this.cbNotReturn.TabIndex = 7;
+            this.cbNotReturn.Text = "Chưa hồi báo";
+            this.cbNotReturn.UseVisualStyleBackColor = true;
+            // 
+            // cbRegDate
+            // 
+            this.cbRegDate.AutoSize = true;
+            this.cbRegDate.Location = new System.Drawing.Point(31, 69);
+            this.cbRegDate.Name = "cbRegDate";
+            this.cbRegDate.Size = new System.Drawing.Size(123, 24);
+            this.cbRegDate.TabIndex = 2;
+            this.cbRegDate.Text = "Ngày đăng ký";
+            this.cbRegDate.UseVisualStyleBackColor = true;
+            this.cbRegDate.CheckedChanged += new System.EventHandler(this.cbRegDate_CheckedChanged);
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.CustomFormat = "dd/MM/yyyy";
+            this.dtpTo.Enabled = false;
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTo.Location = new System.Drawing.Point(556, 65);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(117, 26);
+            this.dtpTo.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(407, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Đến ngày";
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.CustomFormat = "dd/MM/yyyy";
+            this.dtpFrom.Enabled = false;
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFrom.Location = new System.Drawing.Point(241, 65);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(122, 26);
+            this.dtpFrom.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(170, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Từ ngày";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(787, 115);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(122, 28);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm tờ kha&i";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtCompanyName
+            // 
+            this.txtCompanyName.Location = new System.Drawing.Point(556, 26);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(179, 26);
+            this.txtCompanyName.TabIndex = 3;
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(407, 29);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(137, 20);
+            this.lblCompanyName.TabIndex = 2;
+            this.lblCompanyName.Text = "Tên doanh nghiệp";
+            // 
+            // txtDeclaraceNumber
+            // 
+            this.txtDeclaraceNumber.Location = new System.Drawing.Point(174, 26);
+            this.txtDeclaraceNumber.Name = "txtDeclaraceNumber";
+            this.txtDeclaraceNumber.Size = new System.Drawing.Size(189, 26);
+            this.txtDeclaraceNumber.TabIndex = 0;
+            // 
+            // lblDeclaraceNumber
+            // 
+            this.lblDeclaraceNumber.AutoSize = true;
+            this.lblDeclaraceNumber.Location = new System.Drawing.Point(27, 29);
+            this.lblDeclaraceNumber.Name = "lblDeclaraceNumber";
+            this.lblDeclaraceNumber.Size = new System.Drawing.Size(80, 20);
+            this.lblDeclaraceNumber.TabIndex = 0;
+            this.lblDeclaraceNumber.Text = "Số tờ khai";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(851, 588);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(76, 28);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Th&oát";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Image = global::ECustoms.Properties.Resources.view;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(659, 588);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(68, 28);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "X&em";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // grbDecleration
             // 
@@ -117,9 +476,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDecleration.Controls.Add(this.grvDecleration);
             this.grbDecleration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDecleration.Location = new System.Drawing.Point(10, 226);
+            this.grbDecleration.Location = new System.Drawing.Point(10, 257);
             this.grbDecleration.Name = "grbDecleration";
-            this.grbDecleration.Size = new System.Drawing.Size(917, 356);
+            this.grbDecleration.Size = new System.Drawing.Size(917, 325);
             this.grbDecleration.TabIndex = 1;
             this.grbDecleration.TabStop = false;
             this.grbDecleration.Text = "Danh sách tờ khai";
@@ -153,7 +512,7 @@
             this.grvDecleration.Location = new System.Drawing.Point(3, 22);
             this.grvDecleration.Name = "grvDecleration";
             this.grvDecleration.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvDecleration.Size = new System.Drawing.Size(911, 331);
+            this.grvDecleration.Size = new System.Drawing.Size(911, 300);
             this.grvDecleration.TabIndex = 0;
             this.grvDecleration.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grvDecleration_CellFormatting);
             this.grvDecleration.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvDecleration_CellMouseClick);
@@ -293,247 +652,6 @@
             this.DeclarationType.HeaderText = "DeclarationType";
             this.DeclarationType.Name = "DeclarationType";
             this.DeclarationType.Visible = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cbCreatedDate);
-            this.groupBox1.Controls.Add(this.dtpCreatedTo);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dtpCreatedFrom);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cbReturn);
-            this.groupBox1.Controls.Add(this.cbNotReturn);
-            this.groupBox1.Controls.Add(this.txtGateExport);
-            this.groupBox1.Controls.Add(this.lblGateExport);
-            this.groupBox1.Controls.Add(this.txtRegisterPlace);
-            this.groupBox1.Controls.Add(this.lblRegisterPlace);
-            this.groupBox1.Controls.Add(this.cbRegDate);
-            this.groupBox1.Controls.Add(this.dtpTo);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dtpFrom);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.txtCompanyName);
-            this.groupBox1.Controls.Add(this.lblCompanyName);
-            this.groupBox1.Controls.Add(this.txtDeclaraceNumber);
-            this.groupBox1.Controls.Add(this.lblDeclaraceNumber);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(10, 41);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(915, 179);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Điều kiện tìm kiếm";
-            // 
-            // cbCreatedDate
-            // 
-            this.cbCreatedDate.AutoSize = true;
-            this.cbCreatedDate.Location = new System.Drawing.Point(31, 107);
-            this.cbCreatedDate.Name = "cbCreatedDate";
-            this.cbCreatedDate.Size = new System.Drawing.Size(137, 24);
-            this.cbCreatedDate.TabIndex = 27;
-            this.cbCreatedDate.Text = "Ngày nhập máy";
-            this.cbCreatedDate.UseVisualStyleBackColor = true;
-            this.cbCreatedDate.CheckedChanged += new System.EventHandler(this.cbCreatedDate_CheckedChanged);
-            // 
-            // dtpCreatedTo
-            // 
-            this.dtpCreatedTo.CustomFormat = "dd/MM/yyyy";
-            this.dtpCreatedTo.Enabled = false;
-            this.dtpCreatedTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreatedTo.Location = new System.Drawing.Point(556, 103);
-            this.dtpCreatedTo.Name = "dtpCreatedTo";
-            this.dtpCreatedTo.Size = new System.Drawing.Size(117, 26);
-            this.dtpCreatedTo.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(407, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Đến ngày";
-            // 
-            // dtpCreatedFrom
-            // 
-            this.dtpCreatedFrom.CustomFormat = "dd/MM/yyyy";
-            this.dtpCreatedFrom.Enabled = false;
-            this.dtpCreatedFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreatedFrom.Location = new System.Drawing.Point(241, 102);
-            this.dtpCreatedFrom.Name = "dtpCreatedFrom";
-            this.dtpCreatedFrom.Size = new System.Drawing.Size(122, 26);
-            this.dtpCreatedFrom.TabIndex = 28;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(170, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Từ ngày";
-            // 
-            // cbReturn
-            // 
-            this.cbReturn.AutoSize = true;
-            this.cbReturn.Location = new System.Drawing.Point(779, 28);
-            this.cbReturn.Name = "cbReturn";
-            this.cbReturn.Size = new System.Drawing.Size(105, 24);
-            this.cbReturn.TabIndex = 26;
-            this.cbReturn.Text = "Đã hồi báo";
-            this.cbReturn.UseVisualStyleBackColor = true;
-            // 
-            // cbNotReturn
-            // 
-            this.cbNotReturn.AutoSize = true;
-            this.cbNotReturn.Location = new System.Drawing.Point(779, 58);
-            this.cbNotReturn.Name = "cbNotReturn";
-            this.cbNotReturn.Size = new System.Drawing.Size(122, 24);
-            this.cbNotReturn.TabIndex = 25;
-            this.cbNotReturn.Text = "Chưa hồi báo";
-            this.cbNotReturn.UseVisualStyleBackColor = true;
-            // 
-            // txtGateExport
-            // 
-            this.txtGateExport.Location = new System.Drawing.Point(556, 141);
-            this.txtGateExport.Name = "txtGateExport";
-            this.txtGateExport.Size = new System.Drawing.Size(179, 26);
-            this.txtGateExport.TabIndex = 6;
-            // 
-            // lblGateExport
-            // 
-            this.lblGateExport.AutoSize = true;
-            this.lblGateExport.Location = new System.Drawing.Point(407, 144);
-            this.lblGateExport.Name = "lblGateExport";
-            this.lblGateExport.Size = new System.Drawing.Size(111, 20);
-            this.lblGateExport.TabIndex = 23;
-            this.lblGateExport.Text = "Cửa khẩu xuất";
-            // 
-            // txtRegisterPlace
-            // 
-            this.txtRegisterPlace.Location = new System.Drawing.Point(174, 141);
-            this.txtRegisterPlace.Name = "txtRegisterPlace";
-            this.txtRegisterPlace.Size = new System.Drawing.Size(189, 26);
-            this.txtRegisterPlace.TabIndex = 5;
-            // 
-            // lblRegisterPlace
-            // 
-            this.lblRegisterPlace.AutoSize = true;
-            this.lblRegisterPlace.Location = new System.Drawing.Point(27, 144);
-            this.lblRegisterPlace.Name = "lblRegisterPlace";
-            this.lblRegisterPlace.Size = new System.Drawing.Size(114, 20);
-            this.lblRegisterPlace.TabIndex = 21;
-            this.lblRegisterPlace.Text = "Nơi đăng ký TK";
-            // 
-            // cbRegDate
-            // 
-            this.cbRegDate.AutoSize = true;
-            this.cbRegDate.Location = new System.Drawing.Point(31, 69);
-            this.cbRegDate.Name = "cbRegDate";
-            this.cbRegDate.Size = new System.Drawing.Size(123, 24);
-            this.cbRegDate.TabIndex = 2;
-            this.cbRegDate.Text = "Ngày đăng ký";
-            this.cbRegDate.UseVisualStyleBackColor = true;
-            this.cbRegDate.CheckedChanged += new System.EventHandler(this.cbRegDate_CheckedChanged);
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.CustomFormat = "dd/MM/yyyy";
-            this.dtpTo.Enabled = false;
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(556, 65);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(117, 26);
-            this.dtpTo.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(407, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Đến ngày";
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.CustomFormat = "dd/MM/yyyy";
-            this.dtpFrom.Enabled = false;
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(241, 65);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(122, 26);
-            this.dtpFrom.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(170, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Từ ngày";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(787, 100);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(122, 28);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Tìm tờ kha&i";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.Location = new System.Drawing.Point(556, 26);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(179, 26);
-            this.txtCompanyName.TabIndex = 1;
-            // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(407, 29);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(137, 20);
-            this.lblCompanyName.TabIndex = 2;
-            this.lblCompanyName.Text = "Tên doanh nghiệp";
-            // 
-            // txtDeclaraceNumber
-            // 
-            this.txtDeclaraceNumber.Location = new System.Drawing.Point(174, 26);
-            this.txtDeclaraceNumber.Name = "txtDeclaraceNumber";
-            this.txtDeclaraceNumber.Size = new System.Drawing.Size(189, 26);
-            this.txtDeclaraceNumber.TabIndex = 0;
-            // 
-            // lblDeclaraceNumber
-            // 
-            this.lblDeclaraceNumber.AutoSize = true;
-            this.lblDeclaraceNumber.Location = new System.Drawing.Point(27, 29);
-            this.lblDeclaraceNumber.Name = "lblDeclaraceNumber";
-            this.lblDeclaraceNumber.Size = new System.Drawing.Size(80, 20);
-            this.lblDeclaraceNumber.TabIndex = 0;
-            this.lblDeclaraceNumber.Text = "Số tờ khai";
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(12, 9);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(961, 29);
-            this.lblHeader.TabIndex = 22;
-            this.lblHeader.Text = "Quản lý hàng hóa TNTX";
-            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -677,57 +795,6 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Width = 50;
             // 
-            // btConfirmReturn
-            // 
-            this.btConfirmReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btConfirmReturn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btConfirmReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.accept;
-            this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(733, 588);
-            this.btConfirmReturn.Name = "btConfirmReturn";
-            this.btConfirmReturn.Size = new System.Drawing.Size(112, 28);
-            this.btConfirmReturn.TabIndex = 23;
-            this.btConfirmReturn.Text = "Đ&ã hồi báo";
-            this.btConfirmReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btConfirmReturn.UseVisualStyleBackColor = true;
-            this.btConfirmReturn.Click += new System.EventHandler(this.btConfirmReturn_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(851, 588);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(76, 28);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Th&oát";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Image = global::ECustoms.Properties.Resources.view;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(659, 588);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(68, 28);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "X&em";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // frmDeclerationOptionInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -745,10 +812,14 @@
             this.ShowInTaskbar = false;
             this.Text = "Danh sách tờ khai";
             this.Load += new System.EventHandler(this.frmDeclerationOptionInfo_Load);
-            this.grbDecleration.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnExportGate.ResumeLayout(false);
+            this.pnExportGate.PerformLayout();
+            this.pnCustom.ResumeLayout(false);
+            this.pnCustom.PerformLayout();
+            this.grbDecleration.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grvDecleration)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -770,10 +841,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtGateExport;
-        private System.Windows.Forms.Label lblGateExport;
-        private System.Windows.Forms.TextBox txtRegisterPlace;
-        private System.Windows.Forms.Label lblRegisterPlace;
         private System.Windows.Forms.Button btConfirmReturn;
         private System.Windows.Forms.DataGridView grvDecleration;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
@@ -820,5 +887,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpCreatedFrom;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCustomsName;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtCustomsCode;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel pnCustom;
+        private System.Windows.Forms.Panel pnExportGate;
+        private System.Windows.Forms.TextBox txtExportGateName;
+        public System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtExportGateCode;
+        public System.Windows.Forms.Label lblGateEx;
     }
 }

@@ -12,7 +12,6 @@ namespace ECustoms
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmLogin");
         private UserInfo _userInfo;
         private UserFactory _userBOL = new UserFactory();
-        private Validation _validation;
         public frmChangePassword(UserInfo userInfor)
         {
             InitializeComponent();
@@ -23,7 +22,6 @@ namespace ECustoms
             user.Password = userInfoTemp.Password;
             user.UserName = userInfoTemp.Password;
             _userInfo = user;
-            _validation = new Validation(this);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -57,7 +55,7 @@ namespace ECustoms
 
         private bool Validate()
         {
-            _validation.Validate();
+            techlinkErrorProvider1.Validate(this);
             if (string.IsNullOrEmpty(txtPassOld.Text.Trim()))
             {
                 MessageBox.Show(ConstantInfo.MESSAGE_BLANK_PASSWORD);

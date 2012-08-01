@@ -78,6 +78,10 @@ namespace ECustoms
 
         private bool Validate()
         {
+            if (!techlinkErrorProvider1.Validate(this))
+            {
+                return false;
+            }
             // Validate export declaration
             if (string.IsNullOrEmpty(txtExportNumber.Text.Trim()))
             {
@@ -86,7 +90,35 @@ namespace ECustoms
                 return false;
             }
 
-            if (pnImportGate.Visible == true)
+            var typeCode = txtTypeCode.Text.Trim();
+            if (!string.IsNullOrEmpty(typeCode))
+            {
+                var type = TypeFactory.FindByCode(typeCode);
+                if (type != null)
+                    txtTypeName.Text = type.TypeName;
+                else
+                {
+                    MessageBox.Show("Không tồn tại mã loại hình này");
+                    txtTypeCode.Focus();
+                    return false;     
+                }
+            }
+
+            var customCode = txtCustomsCode.Text.Trim();
+            if (string.IsNullOrEmpty(customCode))
+            {
+                var custom = CustomsFacory.FindByCode(customCode);
+                if (custom != null)
+                    txtCustomsName.Text = custom.CustomsName;
+                else
+                {
+                    MessageBox.Show("Không tồn tại mã đơn vị hải quan này");
+                    txtCustomsCode.Focus();
+                    return false;    
+                }
+            }
+            
+            if (pnImportGate.Visible)
             {
                 String gateCode = txtImportGateCode.Text.Trim();
                 if (string.IsNullOrEmpty(gateCode) == false)
@@ -94,14 +126,13 @@ namespace ECustoms
                     tblGate gate = GateFactory.FindByCode(gateCode);
                     if (gate == null)
                     {
-                        MessageBox.Show("Không tồn tại cửa khẩu này");
+                        MessageBox.Show("Không tồn tại mã cửa khẩu này");
                         txtExportGateCode.Focus();
                         return false;
                     }
-
                 }
             }
-            if (pnExportGate.Visible == true)
+            if (pnExportGate.Visible)
             {
                 String gateCode = txtExportGateCode.Text.Trim();
                 if (string.IsNullOrEmpty(gateCode) == false)
@@ -109,11 +140,10 @@ namespace ECustoms
                     tblGate gate = GateFactory.FindByCode(gateCode);
                     if (gate == null)
                     {
-                        MessageBox.Show("Không tồn tại cửa khẩu này");
+                        MessageBox.Show("Không tồn tại mã cửa khẩu này");
                         txtImportGateCode.Focus();
                         return false;
                     }
-
                 }
             }
             return true;
@@ -134,6 +164,7 @@ namespace ECustoms
                     pnTNTX.Visible = false;
                     pnXKCK.Visible = true;
                     pnExportGate.Visible = true;
+                    txtExportGateCode.Tag = "required";
                     break;
                 case Common.DeclerationOptionType.NKCK:
                     //System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#c1ffc0");
@@ -142,6 +173,7 @@ namespace ECustoms
                     gbExportDeclaration.Text = "Thông tin tờ khai nhập khẩu";
                     pnTNTX.Visible = false;
                     pnImportGate.Visible = true;
+                    txtImportGateCode.Tag = "required";
                     break;
                 case Common.DeclerationOptionType.TNTX:
                     lblHeader.Text = "Tạm nhập tái xuất";
@@ -154,6 +186,7 @@ namespace ECustoms
                     txtExportGateCode.AutoCompleteSource = AutoCompleteSource.CustomSource;
                     txtExportGateCode.AutoCompleteCustomSource = auto;
                     pnExportGate.Visible = true;
+                    txtExportGateCode.Tag = "required";
                     break;
                 default:
                     break;
@@ -172,6 +205,13 @@ namespace ECustoms
                 txtExportGateCode.Enabled = false;
             }
 
+            //Autocomplete type export
+            var autoType = new AutoCompleteStringCollection();
+            autoType.AddRange(DeclarationFactory.GetAllTypeExport().ToArray());
+            txtTypeCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtTypeCode.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtTypeCode.AutoCompleteCustomSource = autoType;
+
             // Get Decleration information
             var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
             // Bind Declaration to controls
@@ -182,10 +222,10 @@ namespace ECustoms
                 txtExportCompanyName.Text = declarationInfo.CompanyName;
                 lblGateExport.Text = declarationInfo.ProductAmount;
                 txtExportUnit.Text = declarationInfo.Unit;
-                txtTypeExport.Text = declarationInfo.Type;
+                txtTypeCode.Text = declarationInfo.Type;
+                txtCustomsCode.Text = declarationInfo.CustomsCode;
                 txtExportCompanyCode.Text = declarationInfo.CompanyCode;
                 dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
-                txtRegisterPlace.Text = declarationInfo.RegisterPlace;
                 txtMoney.Text = declarationInfo.Money.ToString();
                 txtImportGateCode.Text = declarationInfo.GateImport;
                 txtExportGateCode.Text = declarationInfo.GateExport;
@@ -283,6 +323,18 @@ namespace ECustoms
 
                 }
 
+                var typeCode = txtTypeCode.Text.Trim();
+                if (string.IsNullOrEmpty(typeCode)) return;
+                var type = TypeFactory.FindByCode(typeCode);
+                if (type != null)
+                    txtTypeName.Text = type.TypeName;
+
+                var customCode = txtCustomsCode.Text.Trim();
+                if (string.IsNullOrEmpty(customCode)) return;
+                var custom = CustomsFacory.FindByCode(customCode);
+                if (custom != null)
+                    txtCustomsName.Text = custom.CustomsName;
+
             }
         }
 
@@ -355,7 +407,6 @@ namespace ECustoms
             }
         }
 
-
         private void txtImportGateCode_Leave(object sender, EventArgs e)
         {
             txtImportGateName.Text = "";
@@ -371,7 +422,7 @@ namespace ECustoms
             }
         }
 
-        private void txtExportGateCode_Leave_1(object sender, EventArgs e)
+        private void txtExportGateCode_Leave(object sender, EventArgs e)
         {
             txtExportGateName.Text = "";
             String gateCode = txtExportGateCode.Text.Trim();
@@ -386,5 +437,24 @@ namespace ECustoms
             }
         }
 
+        private void txtTypeCode_Leave(object sender, EventArgs e)
+        {
+            txtTypeName.Text = "";
+            var typeCode = txtTypeCode.Text.Trim();
+            if (string.IsNullOrEmpty(typeCode)) return;
+            var type = TypeFactory.FindByCode(typeCode);
+            if (type != null)
+                txtTypeName.Text = type.TypeName;
+        }
+
+        private void txtCustomsCode_Leave(object sender, EventArgs e)
+        {
+            txtCustomsName.Text = "";
+            var customCode = txtCustomsCode.Text.Trim();
+            if (string.IsNullOrEmpty(customCode)) return;
+            var custom = CustomsFacory.FindByCode(customCode);
+            if (custom != null)
+                txtCustomsName.Text = custom.CustomsName;
+        }
     }
 }

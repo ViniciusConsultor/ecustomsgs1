@@ -37,6 +37,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtPassOld = new System.Windows.Forms.TextBox();
             this.lbOldPass = new System.Windows.Forms.Label();
+            this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -46,8 +48,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(194, 20);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Tag = "Password";
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Tag = "required";
             // 
             // lblPassword
             // 
@@ -67,8 +69,8 @@
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.PasswordChar = '*';
             this.txtRetypePassword.Size = new System.Drawing.Size(194, 20);
-            this.txtRetypePassword.TabIndex = 3;
-            this.txtRetypePassword.Tag = "Password";
+            this.txtRetypePassword.TabIndex = 2;
+            this.txtRetypePassword.Tag = "required";
             // 
             // lblRetypePassword
             // 
@@ -92,7 +94,7 @@
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 28);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
@@ -109,7 +111,7 @@
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(103, 28);
-            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -122,8 +124,8 @@
             this.txtPassOld.Name = "txtPassOld";
             this.txtPassOld.PasswordChar = '*';
             this.txtPassOld.Size = new System.Drawing.Size(194, 20);
-            this.txtPassOld.TabIndex = 1;
-            this.txtPassOld.Tag = "Password";
+            this.txtPassOld.TabIndex = 0;
+            this.txtPassOld.Tag = "required";
             // 
             // lbOldPass
             // 
@@ -135,6 +137,10 @@
             this.lbOldPass.Size = new System.Drawing.Size(96, 20);
             this.lbOldPass.TabIndex = 16;
             this.lbOldPass.Text = "Mật khẩu cũ";
+            // 
+            // techlinkErrorProvider1
+            // 
+            this.techlinkErrorProvider1.ContainerControl = this;
             // 
             // frmChangePassword
             // 
@@ -156,6 +162,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Thay đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +178,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtPassOld;
         private System.Windows.Forms.Label lbOldPass;
+        private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
 
     }
 }
