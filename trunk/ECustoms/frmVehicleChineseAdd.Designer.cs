@@ -171,22 +171,18 @@
             // 
             // txtStatus
             // 
-            this.txtStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStatus.Location = new System.Drawing.Point(130, 182);
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(607, 50);
+            this.txtStatus.Size = new System.Drawing.Size(608, 50);
             this.txtStatus.TabIndex = 8;
             // 
             // txtNote
             // 
-            this.txtNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNote.Location = new System.Drawing.Point(130, 238);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(607, 55);
+            this.txtNote.Size = new System.Drawing.Size(608, 55);
             this.txtNote.TabIndex = 9;
             // 
             // lblNote
@@ -488,85 +484,80 @@
             // 
             // btnSaveAll
             // 
-            this.btnSaveAll.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSaveAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSaveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveAll.Image = global::ECustoms.Properties.Resources.save;
             this.btnSaveAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveAll.Location = new System.Drawing.Point(209, 314);
+            this.btnSaveAll.Location = new System.Drawing.Point(210, 314);
             this.btnSaveAll.Name = "btnSaveAll";
             this.btnSaveAll.Size = new System.Drawing.Size(225, 32);
             this.btnSaveAll.TabIndex = 15;
-            this.btnSaveAll.Text = "Lưu toàn bộ phương tiện";
+            this.btnSaveAll.Text = "Lư&u toàn bộ phương tiện";
             this.btnSaveAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaveAll.UseVisualStyleBackColor = true;
             this.btnSaveAll.Click += new System.EventHandler(this.btnSaveAll_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(519, 314);
+            this.btnReset.Location = new System.Drawing.Point(520, 314);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(123, 32);
             this.btnReset.TabIndex = 17;
-            this.btnReset.Text = "Thiết lập lại";
+            this.btnReset.Text = "Thiết &lập lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(440, 314);
+            this.btnDelete.Location = new System.Drawing.Point(441, 314);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(73, 32);
             this.btnDelete.TabIndex = 16;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(32, 314);
+            this.btnAdd.Location = new System.Drawing.Point(33, 314);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(171, 32);
             this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Thêm phương tiện";
+            this.btnAdd.Text = "Thê&m phương tiện";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(648, 314);
+            this.btnClose.Location = new System.Drawing.Point(649, 314);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 32);
             this.btnClose.TabIndex = 18;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -731,6 +722,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(779, 664);
             this.Name = "frmVehicleChineseAdd";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khai báo phương tiện xe Trung Quốc nhập cảnh";
             this.Load += new System.EventHandler(this.frmVehicleChineseAdd_Load);

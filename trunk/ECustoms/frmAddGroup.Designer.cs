@@ -72,7 +72,7 @@
             this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbUser.Location = new System.Drawing.Point(12, 12);
             this.grbUser.Name = "grbUser";
-            this.grbUser.Size = new System.Drawing.Size(525, 306);
+            this.grbUser.Size = new System.Drawing.Size(703, 437);
             this.grbUser.TabIndex = 2;
             this.grbUser.TabStop = false;
             this.grbUser.Text = "Danh sách nhóm";
@@ -86,7 +86,7 @@
             this.tabControlGroup.Location = new System.Drawing.Point(3, 22);
             this.tabControlGroup.Name = "tabControlGroup";
             this.tabControlGroup.SelectedIndex = 0;
-            this.tabControlGroup.Size = new System.Drawing.Size(519, 281);
+            this.tabControlGroup.Size = new System.Drawing.Size(697, 412);
             this.tabControlGroup.TabIndex = 0;
             this.tabControlGroup.Click += new System.EventHandler(this.tabControlGroup_Click);
             // 
@@ -97,7 +97,7 @@
             this.tabPageGroup.Location = new System.Drawing.Point(4, 29);
             this.tabPageGroup.Name = "tabPageGroup";
             this.tabPageGroup.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGroup.Size = new System.Drawing.Size(511, 248);
+            this.tabPageGroup.Size = new System.Drawing.Size(689, 379);
             this.tabPageGroup.TabIndex = 0;
             this.tabPageGroup.Text = "Nhóm";
             this.tabPageGroup.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.tabPageUser.Location = new System.Drawing.Point(4, 29);
             this.tabPageUser.Name = "tabPageUser";
             this.tabPageUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUser.Size = new System.Drawing.Size(527, 265);
+            this.tabPageUser.Size = new System.Drawing.Size(689, 379);
             this.tabPageUser.TabIndex = 1;
             this.tabPageUser.Text = "Người dùng";
             this.tabPageUser.UseVisualStyleBackColor = true;
@@ -137,13 +137,13 @@
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Image = global::ECustoms.Properties.Resources._001_05;
+            this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(175, 281);
+            this.btnDelete.Location = new System.Drawing.Point(172, 345);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(78, 33);
+            this.btnDelete.Size = new System.Drawing.Size(78, 28);
             this.btnDelete.TabIndex = 19;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -154,13 +154,13 @@
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::ECustoms.Properties.Resources._001_01;
+            this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(6, 281);
+            this.btnAdd.Location = new System.Drawing.Point(3, 345);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(163, 33);
+            this.btnAdd.Size = new System.Drawing.Size(163, 28);
             this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Thêm người dùng";
+            this.btnAdd.Text = "Thê&m người dùng";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -183,10 +183,10 @@
             this.Address,
             this.PhoneNumber});
             this.grvUser.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.grvUser.Location = new System.Drawing.Point(0, 10);
+            this.grvUser.Location = new System.Drawing.Point(-1, 10);
             this.grvUser.Name = "grvUser";
             this.grvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvUser.Size = new System.Drawing.Size(597, 266);
+            this.grvUser.Size = new System.Drawing.Size(690, 329);
             this.grvUser.TabIndex = 1;
             this.grvUser.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvUser_ColumnHeaderMouseClick);
             // 
@@ -244,7 +244,7 @@
             this.tabPageRights.Location = new System.Drawing.Point(4, 29);
             this.tabPageRights.Name = "tabPageRights";
             this.tabPageRights.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRights.Size = new System.Drawing.Size(527, 265);
+            this.tabPageRights.Size = new System.Drawing.Size(689, 379);
             this.tabPageRights.TabIndex = 2;
             this.tabPageRights.Text = "Quyền truy cập";
             this.tabPageRights.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@
             // chbCheckAllPermission
             // 
             this.chbCheckAllPermission.AutoSize = true;
-            this.chbCheckAllPermission.Location = new System.Drawing.Point(95, 6);
+            this.chbCheckAllPermission.Location = new System.Drawing.Point(97, 15);
             this.chbCheckAllPermission.Name = "chbCheckAllPermission";
             this.chbCheckAllPermission.Size = new System.Drawing.Size(15, 14);
             this.chbCheckAllPermission.TabIndex = 13;
@@ -272,10 +272,10 @@
             this.Check,
             this.GroupID,
             this.GroupName});
-            this.grvPermission.Location = new System.Drawing.Point(3, 6);
+            this.grvPermission.Location = new System.Drawing.Point(0, 6);
             this.grvPermission.Name = "grvPermission";
             this.grvPermission.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvPermission.Size = new System.Drawing.Size(583, 248);
+            this.grvPermission.Size = new System.Drawing.Size(689, 333);
             this.grvPermission.TabIndex = 2;
             // 
             // Check
@@ -305,13 +305,13 @@
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Image = global::ECustoms.Properties.Resources._001_39;
+            this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(175, 260);
+            this.btnReset.Location = new System.Drawing.Point(172, 345);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(102, 33);
+            this.btnReset.Size = new System.Drawing.Size(102, 28);
             this.btnReset.TabIndex = 12;
-            this.btnReset.Text = "Làm lại";
+            this.btnReset.Text = "&Làm lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -322,13 +322,13 @@
             this.btnUpdatePermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdatePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources._001_01;
+            this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources.add;
             this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePermission.Location = new System.Drawing.Point(6, 260);
+            this.btnUpdatePermission.Location = new System.Drawing.Point(3, 345);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
-            this.btnUpdatePermission.Size = new System.Drawing.Size(163, 33);
+            this.btnUpdatePermission.Size = new System.Drawing.Size(163, 28);
             this.btnUpdatePermission.TabIndex = 5;
-            this.btnUpdatePermission.Text = "Cập nhật quyền";
+            this.btnUpdatePermission.Text = "&Cập nhật quyền";
             this.btnUpdatePermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdatePermission.UseVisualStyleBackColor = true;
             this.btnUpdatePermission.Click += new System.EventHandler(this.btnUpdatePermission_Click);
@@ -341,11 +341,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(455, 324);
+            this.btnClose.Location = new System.Drawing.Point(633, 455);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 28);
             this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -358,11 +358,11 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::ECustoms.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(384, 324);
+            this.btnSave.Location = new System.Drawing.Point(562, 455);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(65, 28);
             this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Lưu";
+            this.btnSave.Text = "Lư&u";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -371,12 +371,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 355);
+            this.ClientSize = new System.Drawing.Size(717, 486);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grbUser);
             this.Controls.Add(this.btnSave);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(725, 513);
             this.Name = "frmAddGroup";
+            this.ShowInTaskbar = false;
             this.Text = "frmAddGroup";
             this.Load += new System.EventHandler(this.frmAddGroup_Load);
             this.grbUser.ResumeLayout(false);

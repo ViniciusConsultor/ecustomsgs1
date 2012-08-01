@@ -77,6 +77,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAlert";
+            this.ShowInTaskbar = false;
             this.Text = "FrmAlert";
             this.Load += new System.EventHandler(this.FrmAlert_Load);
             this.ResumeLayout(false);

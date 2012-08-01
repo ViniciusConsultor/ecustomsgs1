@@ -114,7 +114,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 28);
             this.btnClose.TabIndex = 35;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -172,7 +172,7 @@
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(102, 28);
             this.btnUpdateVehicle.TabIndex = 38;
-            this.btnUpdateVehicle.Text = "Cập nhật";
+            this.btnUpdateVehicle.Text = "&Cập nhật";
             this.btnUpdateVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateVehicle.UseVisualStyleBackColor = true;
             this.btnUpdateVehicle.Click += new System.EventHandler(this.btnUpdateVehicle_Click);
@@ -188,7 +188,7 @@
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.Size = new System.Drawing.Size(108, 28);
             this.btnAddVehicle.TabIndex = 37;
-            this.btnAddVehicle.Text = "Thêm mới";
+            this.btnAddVehicle.Text = "Thêm &mới";
             this.btnAddVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddVehicle.UseVisualStyleBackColor = true;
             this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 381);
+            this.ClientSize = new System.Drawing.Size(526, 386);
             this.Controls.Add(this.btnUpdateVehicle);
             this.Controls.Add(this.btnAddVehicle);
             this.Controls.Add(this.groupBox1);
@@ -205,7 +205,9 @@
             this.Controls.Add(this.lblHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmCheck";
+            this.ShowInTaskbar = false;
             this.Text = "FrmCheck";
             this.Load += new System.EventHandler(this.FrmCheck_Load);
             this.groupBox1.ResumeLayout(false);

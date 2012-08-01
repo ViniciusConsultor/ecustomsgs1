@@ -35,6 +35,7 @@
             this.mnGroup = new System.Windows.Forms.ToolStripMenuItem();
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBackupRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuitemLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -79,7 +80,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.viewAllVehicleTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewAllVehicleTableAdapter();
-            this.mnuBackupRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMain.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +99,7 @@
             this.trợGiúpToolStripMenuItem});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
-            this.mnMain.Size = new System.Drawing.Size(1244, 29);
+            this.mnMain.Size = new System.Drawing.Size(1228, 29);
             this.mnMain.TabIndex = 0;
             this.mnMain.Tag = "";
             this.mnMain.Text = "menuStrip1";
@@ -152,6 +152,13 @@
             this.mnuSettings.Size = new System.Drawing.Size(257, 26);
             this.mnuSettings.Text = "Cấu hình hệ thống";
             this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
+            // 
+            // mnuBackupRestore
+            // 
+            this.mnuBackupRestore.Name = "mnuBackupRestore";
+            this.mnuBackupRestore.Size = new System.Drawing.Size(257, 26);
+            this.mnuBackupRestore.Text = "Sao lưu / Phục hồi dữ liệu";
+            this.mnuBackupRestore.Click += new System.EventHandler(this.mnuBackupRestore_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -267,7 +274,7 @@
             this.mnReviewSummary});
             this.menuManageInformation.Name = "menuManageInformation";
             this.menuManageInformation.Size = new System.Drawing.Size(143, 25);
-            this.menuManageInformation.Text = "Quản lý &thông tin";
+            this.menuManageInformation.Text = "&Quản lý thông tin";
             // 
             // mnReview
             // 
@@ -371,7 +378,7 @@
             this.mnuGate});
             this.mnuGeneralInfo.Name = "mnuGeneralInfo";
             this.mnuGeneralInfo.Size = new System.Drawing.Size(190, 25);
-            this.mnuGeneralInfo.Text = "Quản lý thông tin &chung";
+            this.mnuGeneralInfo.Text = "Quản &lý thông tin chung";
             // 
             // mnuType
             // 
@@ -458,7 +465,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 29);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 30);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1244, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(1228, 44);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -546,20 +553,13 @@
             // 
             this.viewAllVehicleTableAdapter1.ClearBeforeFill = true;
             // 
-            // mnuBackupRestore
-            // 
-            this.mnuBackupRestore.Name = "mnuBackupRestore";
-            this.mnuBackupRestore.Size = new System.Drawing.Size(257, 26);
-            this.mnuBackupRestore.Text = "Sao lưu / Phục hồi dữ liệu";
-            this.mnuBackupRestore.Click += new System.EventHandler(this.mnuBackupRestore_Click);
-            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1244, 717);
+            this.ClientSize = new System.Drawing.Size(1228, 699);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

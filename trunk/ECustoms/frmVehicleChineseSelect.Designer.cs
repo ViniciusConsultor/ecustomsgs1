@@ -65,7 +65,7 @@
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.ReadOnly = true;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(771, 276);
+            this.grdVehicle.Size = new System.Drawing.Size(779, 285);
             this.grdVehicle.TabIndex = 1;
             this.grdVehicle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellDoubleClick);
             // 
@@ -122,11 +122,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(700, 362);
+            this.btnClose.Location = new System.Drawing.Point(708, 371);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 28);
             this.btnClose.TabIndex = 14;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -139,11 +139,11 @@
             this.btnAddVehichle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddVehichle.Image = global::ECustoms.Properties.Resources.add;
             this.btnAddVehichle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehichle.Location = new System.Drawing.Point(469, 361);
+            this.btnAddVehichle.Location = new System.Drawing.Point(477, 370);
             this.btnAddVehichle.Name = "btnAddVehichle";
             this.btnAddVehichle.Size = new System.Drawing.Size(225, 28);
             this.btnAddVehichle.TabIndex = 15;
-            this.btnAddVehichle.Text = "Sang tải cho xe Việt Nam";
+            this.btnAddVehichle.Text = "&Sang tải cho xe Việt Nam";
             this.btnAddVehichle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddVehichle.UseVisualStyleBackColor = true;
             this.btnAddVehichle.Click += new System.EventHandler(this.btnAddVehichle_Click);
@@ -157,7 +157,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(777, 301);
+            this.groupBox1.Size = new System.Drawing.Size(785, 310);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phương tiện xe Trung Quốc";
@@ -173,7 +173,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(111, 28);
             this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.Text = "Tìm ki&ếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 397);
+            this.ClientSize = new System.Drawing.Size(804, 406);
             this.Controls.Add(this.txtPlate);
             this.Controls.Add(this.lbOldPass);
             this.Controls.Add(this.btnSearch);
@@ -212,7 +212,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(812, 433);
             this.Name = "frmVehicleChineseSelect";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowInTaskbar = false;
             this.Text = " Tìm kiếm xe Trung Quốc";
             this.Load += new System.EventHandler(this.frmVehicleChineseSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).EndInit();

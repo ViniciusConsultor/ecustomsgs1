@@ -80,7 +80,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 28);
             this.btnClose.TabIndex = 75;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -97,7 +97,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 28);
             this.btnUpdate.TabIndex = 74;
-            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -114,7 +114,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(108, 28);
             this.btnAdd.TabIndex = 73;
-            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.Text = "Thêm &mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -209,7 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 257);
+            this.ClientSize = new System.Drawing.Size(534, 271);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
@@ -217,6 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddCustoms";
+            this.ShowInTaskbar = false;
             this.Text = "FrmAddCustoms";
             this.Load += new System.EventHandler(this.FrmAddCustoms_Load);
             this.groupBox1.ResumeLayout(false);

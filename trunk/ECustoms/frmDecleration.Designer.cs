@@ -65,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.txtDeclaraceNumber = new System.Windows.Forms.TextBox();
@@ -75,7 +76,6 @@
             this.btnFee = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnAddImport = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnExportExcel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -89,11 +89,14 @@
             // 
             // grbDecleration
             // 
+            this.grbDecleration.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDecleration.Controls.Add(this.grvDecleration);
             this.grbDecleration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDecleration.Location = new System.Drawing.Point(12, 132);
             this.grbDecleration.Name = "grbDecleration";
-            this.grbDecleration.Size = new System.Drawing.Size(1096, 290);
+            this.grbDecleration.Size = new System.Drawing.Size(1039, 195);
             this.grbDecleration.TabIndex = 0;
             this.grbDecleration.TabStop = false;
             this.grbDecleration.Text = "Danh sách tờ khai";
@@ -121,11 +124,12 @@
             this.CreatedBy,
             this.CreatedDate,
             this.DeclarationType});
-            this.grvDecleration.Location = new System.Drawing.Point(6, 25);
+            this.grvDecleration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvDecleration.Location = new System.Drawing.Point(3, 22);
             this.grvDecleration.Name = "grvDecleration";
             this.grvDecleration.ReadOnly = true;
             this.grvDecleration.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvDecleration.Size = new System.Drawing.Size(1084, 252);
+            this.grvDecleration.Size = new System.Drawing.Size(1033, 170);
             this.grvDecleration.TabIndex = 0;
             this.grvDecleration.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvDecleration_CellMouseClick);
             this.grvDecleration.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grvDecleration_CellMouseDoubleClick_1);
@@ -267,6 +271,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.cbConfirmStatus);
             this.groupBox1.Controls.Add(this.dtpConfirmTo);
             this.groupBox1.Controls.Add(this.label4);
@@ -288,7 +294,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1096, 123);
+            this.groupBox1.Size = new System.Drawing.Size(1039, 123);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
@@ -296,7 +302,7 @@
             // cbConfirmStatus
             // 
             this.cbConfirmStatus.AutoSize = true;
-            this.cbConfirmStatus.Location = new System.Drawing.Point(865, 92);
+            this.cbConfirmStatus.Location = new System.Drawing.Point(786, 93);
             this.cbConfirmStatus.Name = "cbConfirmStatus";
             this.cbConfirmStatus.Size = new System.Drawing.Size(200, 24);
             this.cbConfirmStatus.TabIndex = 20;
@@ -308,7 +314,7 @@
             // 
             this.dtpConfirmTo.CustomFormat = "dd/MM/yyyy";
             this.dtpConfirmTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpConfirmTo.Location = new System.Drawing.Point(638, 92);
+            this.dtpConfirmTo.Location = new System.Drawing.Point(586, 92);
             this.dtpConfirmTo.Name = "dtpConfirmTo";
             this.dtpConfirmTo.Size = new System.Drawing.Size(167, 26);
             this.dtpConfirmTo.TabIndex = 19;
@@ -316,7 +322,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(555, 92);
+            this.label4.Location = new System.Drawing.Point(503, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 18;
@@ -326,7 +332,7 @@
             // 
             this.dtpConfirmFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpConfirmFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpConfirmFrom.Location = new System.Drawing.Point(321, 92);
+            this.dtpConfirmFrom.Location = new System.Drawing.Point(290, 92);
             this.dtpConfirmFrom.Name = "dtpConfirmFrom";
             this.dtpConfirmFrom.Size = new System.Drawing.Size(122, 26);
             this.dtpConfirmFrom.TabIndex = 17;
@@ -334,7 +340,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(250, 92);
+            this.label5.Location = new System.Drawing.Point(219, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 16;
@@ -366,7 +372,7 @@
             // 
             this.dtpTo.CustomFormat = "dd/MM/yyyy";
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(638, 58);
+            this.dtpTo.Location = new System.Drawing.Point(586, 58);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(167, 26);
             this.dtpTo.TabIndex = 12;
@@ -374,7 +380,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(555, 58);
+            this.label3.Location = new System.Drawing.Point(503, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 11;
@@ -384,7 +390,7 @@
             // 
             this.dtpFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(321, 58);
+            this.dtpFrom.Location = new System.Drawing.Point(290, 58);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(122, 26);
             this.dtpFrom.TabIndex = 10;
@@ -392,7 +398,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 58);
+            this.label2.Location = new System.Drawing.Point(219, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 9;
@@ -420,9 +426,24 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Loại";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(831, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(128, 28);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Tìm tờ kha&i";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(638, 20);
+            this.txtCompanyName.Location = new System.Drawing.Point(586, 20);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(167, 26);
             this.txtCompanyName.TabIndex = 3;
@@ -430,7 +451,7 @@
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(495, 23);
+            this.lblCompanyName.Location = new System.Drawing.Point(443, 23);
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(137, 20);
             this.lblCompanyName.TabIndex = 2;
@@ -438,7 +459,7 @@
             // 
             // txtDeclaraceNumber
             // 
-            this.txtDeclaraceNumber.Location = new System.Drawing.Point(321, 20);
+            this.txtDeclaraceNumber.Location = new System.Drawing.Point(290, 20);
             this.txtDeclaraceNumber.Name = "txtDeclaraceNumber";
             this.txtDeclaraceNumber.Size = new System.Drawing.Size(122, 26);
             this.txtDeclaraceNumber.TabIndex = 1;
@@ -446,7 +467,7 @@
             // lblDeclaraceNumber
             // 
             this.lblDeclaraceNumber.AutoSize = true;
-            this.lblDeclaraceNumber.Location = new System.Drawing.Point(235, 20);
+            this.lblDeclaraceNumber.Location = new System.Drawing.Point(204, 20);
             this.lblDeclaraceNumber.Name = "lblDeclaraceNumber";
             this.lblDeclaraceNumber.Size = new System.Drawing.Size(80, 20);
             this.lblDeclaraceNumber.TabIndex = 0;
@@ -454,21 +475,25 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.listViewVehicle);
             this.groupBox2.Controls.Add(this.lblHeader);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 427);
+            this.groupBox2.Location = new System.Drawing.Point(11, 332);
+            this.groupBox2.MinimumSize = new System.Drawing.Size(1097, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1097, 199);
+            this.groupBox2.Size = new System.Drawing.Size(1105, 199);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phương tiện";
             // 
             // listViewVehicle
             // 
-            this.listViewVehicle.Location = new System.Drawing.Point(6, 25);
+            this.listViewVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewVehicle.Location = new System.Drawing.Point(3, 22);
             this.listViewVehicle.Name = "listViewVehicle";
-            this.listViewVehicle.Size = new System.Drawing.Size(1085, 165);
+            this.listViewVehicle.Size = new System.Drawing.Size(1099, 174);
             this.listViewVehicle.TabIndex = 2;
             this.listViewVehicle.UseCompatibleStateImageBehavior = false;
             this.listViewVehicle.View = System.Windows.Forms.View.List;
@@ -483,143 +508,136 @@
             // 
             // btnFee
             // 
+            this.btnFee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFee.Image = global::ECustoms.Properties.Resources.money;
             this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFee.Location = new System.Drawing.Point(698, 630);
+            this.btnFee.Location = new System.Drawing.Point(641, 535);
             this.btnFee.Name = "btnFee";
             this.btnFee.Size = new System.Drawing.Size(109, 28);
             this.btnFee.TabIndex = 10;
-            this.btnFee.Text = "XN thu phí";
+            this.btnFee.Text = "XN &thu phí";
             this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFee.UseVisualStyleBackColor = true;
             this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
             // 
             // btnConfirm
             // 
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Image = global::ECustoms.Properties.Resources.accept;
             this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirm.Location = new System.Drawing.Point(557, 630);
+            this.btnConfirm.Location = new System.Drawing.Point(500, 535);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(135, 28);
             this.btnConfirm.TabIndex = 9;
-            this.btnConfirm.Text = "XN trả hồ  sơ";
+            this.btnConfirm.Text = "X&N trả hồ  sơ";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnAddImport
             // 
+            this.btnAddImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddImport.Image = global::ECustoms.Properties.Resources.add;
             this.btnAddImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddImport.Location = new System.Drawing.Point(241, 630);
+            this.btnAddImport.Location = new System.Drawing.Point(184, 535);
             this.btnAddImport.Name = "btnAddImport";
             this.btnAddImport.Size = new System.Drawing.Size(154, 28);
             this.btnAddImport.TabIndex = 8;
-            this.btnAddImport.Text = "Tạo tờ khai nhập";
+            this.btnAddImport.Text = "Tạo tờ khai nhậ&p";
             this.btnAddImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddImport.UseVisualStyleBackColor = true;
             this.btnAddImport.Click += new System.EventHandler(this.btnAddImport_Click);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(910, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(128, 28);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Tìm tờ khai";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // btnExportExcel
             // 
+            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportExcel.Image = global::ECustoms.Properties.Resources.exce;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(882, 632);
+            this.btnExportExcel.Location = new System.Drawing.Point(825, 537);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(134, 28);
             this.btnExportExcel.TabIndex = 4;
-            this.btnExportExcel.Text = "Export tờ khai";
+            this.btnExportExcel.Text = "Expo&rt tờ khai";
             this.btnExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportExcel.UseVisualStyleBackColor = true;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(84, 630);
+            this.btnAdd.Location = new System.Drawing.Point(27, 535);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 28);
             this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Tạo tờ khai xuất";
+            this.btnAdd.Text = "T&ạo tờ khai xuất";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1022, 632);
+            this.btnClose.Location = new System.Drawing.Point(965, 537);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 28);
             this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(401, 630);
+            this.btnUpdate.Location = new System.Drawing.Point(344, 535);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(150, 28);
             this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Cập nhật tờ khai";
+            this.btnUpdate.Text = "&Cập nhật tờ khai";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(813, 632);
+            this.btnDelete.Location = new System.Drawing.Point(756, 537);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(63, 28);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -628,7 +646,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 665);
+            this.ClientSize = new System.Drawing.Size(1053, 572);
             this.Controls.Add(this.btnFee);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnAddImport);
@@ -641,7 +659,9 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.grbDecleration);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1061, 599);
             this.Name = "frmDecleration";
+            this.ShowInTaskbar = false;
             this.Text = "Danh sách tờ khai";
             this.Load += new System.EventHandler(this.frmDecleration_Load);
             this.grbDecleration.ResumeLayout(false);

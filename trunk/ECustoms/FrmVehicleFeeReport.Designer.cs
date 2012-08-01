@@ -161,7 +161,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(139, 28);
             this.btnSearch.TabIndex = 22;
-            this.btnSearch.Text = "Hiện báo cáo";
+            this.btnSearch.Text = "Hiện b&áo cáo";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 156);
+            this.ClientSize = new System.Drawing.Size(727, 158);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cbFeeExport);
             this.Controls.Add(this.cbFeeImport);
@@ -185,6 +185,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVehicleFeeReport";
+            this.ShowInTaskbar = false;
             this.Text = "FrmVehicleFeeReport";
             this.Load += new System.EventHandler(this.FrmVehicleFeeReport_Load);
             this.ResumeLayout(false);

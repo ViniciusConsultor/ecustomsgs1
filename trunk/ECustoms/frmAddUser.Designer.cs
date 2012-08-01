@@ -92,7 +92,7 @@
             this.txtUserName.Location = new System.Drawing.Point(185, 11);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(381, 26);
+            this.txtUserName.Size = new System.Drawing.Size(389, 26);
             this.txtUserName.TabIndex = 1;
             // 
             // txtName
@@ -102,7 +102,7 @@
             this.txtName.Location = new System.Drawing.Point(185, 171);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(381, 26);
+            this.txtName.Size = new System.Drawing.Size(389, 26);
             this.txtName.TabIndex = 5;
             // 
             // lblName
@@ -124,7 +124,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(381, 26);
+            this.txtPassword.Size = new System.Drawing.Size(389, 26);
             this.txtPassword.TabIndex = 2;
             // 
             // lblPassword
@@ -146,7 +146,7 @@
             this.txtRetypePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.PasswordChar = '*';
-            this.txtRetypePassword.Size = new System.Drawing.Size(381, 26);
+            this.txtRetypePassword.Size = new System.Drawing.Size(389, 26);
             this.txtRetypePassword.TabIndex = 3;
             // 
             // lblRetypePassword
@@ -167,7 +167,7 @@
             this.txtEmail.Location = new System.Drawing.Point(185, 131);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(381, 26);
+            this.txtEmail.Size = new System.Drawing.Size(389, 26);
             this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
@@ -189,7 +189,7 @@
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(381, 65);
+            this.txtAddress.Size = new System.Drawing.Size(389, 65);
             this.txtAddress.TabIndex = 6;
             // 
             // lblAddress
@@ -210,7 +210,7 @@
             this.txtPhone.Location = new System.Drawing.Point(185, 291);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(381, 26);
+            this.txtPhone.Size = new System.Drawing.Size(389, 26);
             this.txtPhone.TabIndex = 7;
             // 
             // lblPhone
@@ -254,7 +254,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(593, 430);
+            this.tabControl1.Size = new System.Drawing.Size(601, 439);
             this.tabControl1.TabIndex = 19;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -282,7 +282,7 @@
             this.tabUser.Location = new System.Drawing.Point(4, 29);
             this.tabUser.Name = "tabUser";
             this.tabUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUser.Size = new System.Drawing.Size(585, 397);
+            this.tabUser.Size = new System.Drawing.Size(593, 406);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "Thông tin người dùng";
             this.tabUser.UseVisualStyleBackColor = true;
@@ -295,14 +295,14 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(489, 359);
+            this.btnClose.Location = new System.Drawing.Point(497, 368);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(77, 28);
             this.btnClose.TabIndex = 12;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpdate
@@ -313,12 +313,12 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(379, 359);
+            this.btnUpdate.Location = new System.Drawing.Point(387, 368);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 28);
             this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -331,12 +331,12 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(264, 359);
+            this.btnAdd.Location = new System.Drawing.Point(272, 368);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(107, 28);
             this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.Text = "Thêm &mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -350,7 +350,7 @@
             this.tabGroup.Location = new System.Drawing.Point(4, 29);
             this.tabGroup.Name = "tabGroup";
             this.tabGroup.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGroup.Size = new System.Drawing.Size(585, 397);
+            this.tabGroup.Size = new System.Drawing.Size(593, 406);
             this.tabGroup.TabIndex = 1;
             this.tabGroup.Text = "Nhóm của người dùng";
             this.tabGroup.UseVisualStyleBackColor = true;
@@ -373,7 +373,7 @@
             this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateListGroup.Location = new System.Drawing.Point(337, 361);
+            this.btnUpdateListGroup.Location = new System.Drawing.Point(345, 370);
             this.btnUpdateListGroup.Name = "btnUpdateListGroup";
             this.btnUpdateListGroup.Size = new System.Drawing.Size(147, 28);
             this.btnUpdateListGroup.TabIndex = 17;
@@ -390,7 +390,7 @@
             this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources.undo;
             this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbnResetListGroup.Location = new System.Drawing.Point(490, 361);
+            this.tbnResetListGroup.Location = new System.Drawing.Point(498, 370);
             this.tbnResetListGroup.Name = "tbnResetListGroup";
             this.tbnResetListGroup.Size = new System.Drawing.Size(89, 28);
             this.tbnResetListGroup.TabIndex = 16;
@@ -415,7 +415,7 @@
             this.grvGroup.Location = new System.Drawing.Point(4, 6);
             this.grvGroup.Name = "grvGroup";
             this.grvGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvGroup.Size = new System.Drawing.Size(581, 349);
+            this.grvGroup.Size = new System.Drawing.Size(589, 358);
             this.grvGroup.TabIndex = 2;
             // 
             // checkGroup
@@ -446,7 +446,7 @@
             this.tabPermission.Controls.Add(this.btnUpdatePermission);
             this.tabPermission.Location = new System.Drawing.Point(4, 29);
             this.tabPermission.Name = "tabPermission";
-            this.tabPermission.Size = new System.Drawing.Size(585, 397);
+            this.tabPermission.Size = new System.Drawing.Size(593, 406);
             this.tabPermission.TabIndex = 2;
             this.tabPermission.Text = "Quyền truy cập";
             this.tabPermission.UseVisualStyleBackColor = true;
@@ -477,7 +477,7 @@
             this.grvPermission.Location = new System.Drawing.Point(4, 6);
             this.grvPermission.Name = "grvPermission";
             this.grvPermission.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvPermission.Size = new System.Drawing.Size(581, 349);
+            this.grvPermission.Size = new System.Drawing.Size(589, 358);
             this.grvPermission.TabIndex = 13;
             // 
             // Check
@@ -509,7 +509,7 @@
             this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPermission.Image = global::ECustoms.Properties.Resources.undo;
             this.btnResetPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResetPermission.Location = new System.Drawing.Point(485, 361);
+            this.btnResetPermission.Location = new System.Drawing.Point(493, 370);
             this.btnResetPermission.Name = "btnResetPermission";
             this.btnResetPermission.Size = new System.Drawing.Size(92, 28);
             this.btnResetPermission.TabIndex = 15;
@@ -526,7 +526,7 @@
             this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePermission.Location = new System.Drawing.Point(330, 361);
+            this.btnUpdatePermission.Location = new System.Drawing.Point(338, 370);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
             this.btnUpdatePermission.Size = new System.Drawing.Size(149, 28);
             this.btnUpdatePermission.TabIndex = 14;
@@ -539,13 +539,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 430);
+            this.ClientSize = new System.Drawing.Size(601, 439);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(609, 466);
             this.Name = "frmAddUser";
+            this.ShowInTaskbar = false;
             this.Text = "Thông tin người dùng";
             this.Load += new System.EventHandler(this.frmAddUser_Load);
             this.tabControl1.ResumeLayout(false);

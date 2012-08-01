@@ -61,7 +61,7 @@
             this.grbConditionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbConditionSearch.Location = new System.Drawing.Point(9, 12);
             this.grbConditionSearch.Name = "grbConditionSearch";
-            this.grbConditionSearch.Size = new System.Drawing.Size(879, 73);
+            this.grbConditionSearch.Size = new System.Drawing.Size(887, 73);
             this.grbConditionSearch.TabIndex = 33;
             this.grbConditionSearch.TabStop = false;
             this.grbConditionSearch.Text = "Điều kiện tìm kiếm";
@@ -109,7 +109,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(777, 24);
+            this.btnSearch.Location = new System.Drawing.Point(785, 24);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(95, 28);
             this.btnSearch.TabIndex = 8;
@@ -126,11 +126,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(813, 407);
+            this.btnClose.Location = new System.Drawing.Point(821, 416);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 28);
             this.btnClose.TabIndex = 32;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -143,11 +143,11 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(744, 407);
+            this.btnDelete.Location = new System.Drawing.Point(752, 416);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(63, 28);
             this.btnDelete.TabIndex = 31;
-            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -161,7 +161,7 @@
             this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbUser.Location = new System.Drawing.Point(6, 91);
             this.grbUser.Name = "grbUser";
-            this.grbUser.Size = new System.Drawing.Size(882, 312);
+            this.grbUser.Size = new System.Drawing.Size(890, 321);
             this.grbUser.TabIndex = 30;
             this.grbUser.TabStop = false;
             this.grbUser.Text = "Danh sách doanh nghiệp";
@@ -182,7 +182,7 @@
             this.grvCompany.Name = "grvCompany";
             this.grvCompany.ReadOnly = true;
             this.grvCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvCompany.Size = new System.Drawing.Size(876, 287);
+            this.grvCompany.Size = new System.Drawing.Size(884, 296);
             this.grvCompany.TabIndex = 1;
             this.grvCompany.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvCompany_CellDoubleClick);
             // 
@@ -215,11 +215,11 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(642, 409);
+            this.btnUpdate.Location = new System.Drawing.Point(650, 416);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(96, 28);
             this.btnUpdate.TabIndex = 29;
-            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -232,11 +232,11 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(545, 409);
+            this.btnAdd.Location = new System.Drawing.Point(553, 416);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(91, 28);
             this.btnAdd.TabIndex = 28;
-            this.btnAdd.Text = "Tạo mới";
+            this.btnAdd.Text = "&Tạo mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 439);
+            this.ClientSize = new System.Drawing.Size(901, 448);
             this.Controls.Add(this.grbConditionSearch);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
@@ -255,6 +255,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(909, 475);
             this.Name = "FrmListCompany";
+            this.ShowInTaskbar = false;
             this.Text = "FrmListCompany";
             this.Load += new System.EventHandler(this.FrmListCompany_Load);
             this.grbConditionSearch.ResumeLayout(false);

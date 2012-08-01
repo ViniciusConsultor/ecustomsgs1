@@ -114,7 +114,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(460, 344);
+            this.btnDelete.Location = new System.Drawing.Point(468, 353);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(73, 28);
             this.btnDelete.TabIndex = 36;
@@ -131,7 +131,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(271, 344);
+            this.btnUpdate.Location = new System.Drawing.Point(279, 353);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(174, 28);
             this.btnUpdate.TabIndex = 35;
@@ -148,7 +148,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(539, 344);
+            this.btnClose.Location = new System.Drawing.Point(547, 353);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 28);
             this.btnClose.TabIndex = 38;
@@ -165,7 +165,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(91, 344);
+            this.btnAdd.Location = new System.Drawing.Point(99, 353);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(174, 28);
             this.btnAdd.TabIndex = 34;
@@ -190,7 +190,7 @@
             this.grdVehicleFee.MultiSelect = false;
             this.grdVehicleFee.Name = "grdVehicleFee";
             this.grdVehicleFee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleFee.Size = new System.Drawing.Size(607, 208);
+            this.grdVehicleFee.Size = new System.Drawing.Size(615, 217);
             this.grdVehicleFee.TabIndex = 20;
             this.grdVehicleFee.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicleFee_CellDoubleClick);
             // 
@@ -252,7 +252,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 105);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(613, 233);
+            this.groupBox1.Size = new System.Drawing.Size(621, 242);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách biểu phí";
@@ -325,7 +325,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 384);
+            this.ClientSize = new System.Drawing.Size(645, 393);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -339,6 +339,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(653, 420);
             this.Name = "FrmVehicleFeeSetting";
+            this.ShowInTaskbar = false;
             this.Text = "FrmVehicleFeeSetting";
             this.Load += new System.EventHandler(this.FrmVehicleFeeSetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicleFee)).EndInit();

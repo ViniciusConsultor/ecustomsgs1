@@ -201,7 +201,7 @@
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(88, 28);
             this.btnAccept.TabIndex = 7;
-            this.btnAccept.Text = "Đồng ý";
+            this.btnAccept.Text = "&Đồng ý";
             this.btnAccept.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -218,7 +218,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(127, 28);
             this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "Đăng ký sau";
+            this.btnClose.Text = "Đăng ký &sau";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -227,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 312);
+            this.ClientSize = new System.Drawing.Size(480, 311);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
@@ -236,7 +236,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCheckDigestInfo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowInTaskbar = false;
             this.Text = "Đăng ký thông tin sử dụng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCheckDigestInfo_FormClosing);
             this.groupBox1.ResumeLayout(false);

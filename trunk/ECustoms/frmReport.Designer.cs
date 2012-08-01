@@ -52,7 +52,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 153);
+            this.groupBox1.Size = new System.Drawing.Size(585, 149);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
@@ -68,7 +68,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(139, 33);
             this.btnSearch.TabIndex = 21;
-            this.btnSearch.Text = "Hiện báo cáo";
+            this.btnSearch.Text = "Hiện b&áo cáo";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -138,10 +138,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 178);
+            this.ClientSize = new System.Drawing.Size(608, 173);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReport";
+            this.ShowInTaskbar = false;
             this.Text = "In báo cáo";
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.groupBox1.ResumeLayout(false);

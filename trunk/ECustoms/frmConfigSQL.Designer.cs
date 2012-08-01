@@ -209,10 +209,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 390);
+            this.ClientSize = new System.Drawing.Size(424, 381);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConfigSQL";
+            this.ShowInTaskbar = false;
             this.Text = "Cau hinh ket noi SQL";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

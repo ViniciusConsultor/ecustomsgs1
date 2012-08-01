@@ -93,7 +93,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 28);
             this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -110,7 +110,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(103, 28);
             this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 144);
+            this.ClientSize = new System.Drawing.Size(378, 168);
             this.Controls.Add(this.txtPassOld);
             this.Controls.Add(this.lbOldPass);
             this.Controls.Add(this.btnClose);
@@ -151,7 +151,9 @@
             this.Controls.Add(this.lblPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmChangePassword";
+            this.ShowInTaskbar = false;
             this.Text = "Thay đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
             this.ResumeLayout(false);

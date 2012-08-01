@@ -157,7 +157,7 @@
             this.grbConditionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbConditionSearch.Location = new System.Drawing.Point(12, 12);
             this.grbConditionSearch.Name = "grbConditionSearch";
-            this.grbConditionSearch.Size = new System.Drawing.Size(874, 129);
+            this.grbConditionSearch.Size = new System.Drawing.Size(882, 129);
             this.grbConditionSearch.TabIndex = 0;
             this.grbConditionSearch.TabStop = false;
             this.grbConditionSearch.Text = "Điều kiện tìm kiếm";
@@ -337,11 +337,11 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(767, 91);
+            this.btnSearch.Location = new System.Drawing.Point(775, 91);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(96, 28);
             this.btnSearch.TabIndex = 10;
-            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.Text = "Tìm ki&ếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -355,7 +355,7 @@
             this.grbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbResult.Location = new System.Drawing.Point(12, 147);
             this.grbResult.Name = "grbResult";
-            this.grbResult.Size = new System.Drawing.Size(874, 381);
+            this.grbResult.Size = new System.Drawing.Size(882, 390);
             this.grbResult.TabIndex = 1;
             this.grbResult.TabStop = false;
             this.grbResult.Text = "Kết quả tìm kiếm";
@@ -368,7 +368,7 @@
             this.groupBox1.Controls.Add(this.grdVehicle);
             this.groupBox1.Location = new System.Drawing.Point(6, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(857, 339);
+            this.groupBox1.Size = new System.Drawing.Size(865, 348);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phương tiện";
@@ -412,7 +412,7 @@
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.ReadOnly = true;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(851, 314);
+            this.grdVehicle.Size = new System.Drawing.Size(859, 323);
             this.grdVehicle.TabIndex = 0;
             // 
             // VehicleID
@@ -655,11 +655,11 @@
             this.btnFeeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeeImport.Image = global::ECustoms.Properties.Resources.money;
             this.btnFeeImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeeImport.Location = new System.Drawing.Point(528, 536);
+            this.btnFeeImport.Location = new System.Drawing.Point(536, 545);
             this.btnFeeImport.Name = "btnFeeImport";
             this.btnFeeImport.Size = new System.Drawing.Size(124, 28);
             this.btnFeeImport.TabIndex = 3;
-            this.btnFeeImport.Text = "XN phí nhập";
+            this.btnFeeImport.Text = "XN phí &nhập";
             this.btnFeeImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFeeImport.UseVisualStyleBackColor = true;
             this.btnFeeImport.Click += new System.EventHandler(this.btnFeeImport_Click);
@@ -672,11 +672,11 @@
             this.btnFeeExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeeExport.Image = global::ECustoms.Properties.Resources.money;
             this.btnFeeExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeeExport.Location = new System.Drawing.Point(405, 536);
+            this.btnFeeExport.Location = new System.Drawing.Point(413, 545);
             this.btnFeeExport.Name = "btnFeeExport";
             this.btnFeeExport.Size = new System.Drawing.Size(117, 28);
             this.btnFeeExport.TabIndex = 2;
-            this.btnFeeExport.Text = "XN phí xuất";
+            this.btnFeeExport.Text = "XN phí &xuất";
             this.btnFeeExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFeeExport.UseVisualStyleBackColor = true;
             this.btnFeeExport.Click += new System.EventHandler(this.btnFeeExport_Click);
@@ -689,11 +689,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(789, 534);
+            this.btnClose.Location = new System.Drawing.Point(797, 543);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(89, 28);
             this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Thoát";
+            this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -706,11 +706,11 @@
             this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportExcel.Image = global::ECustoms.Properties.Resources.exce;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(658, 534);
+            this.btnExportExcel.Location = new System.Drawing.Point(666, 543);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(125, 28);
             this.btnExportExcel.TabIndex = 6;
-            this.btnExportExcel.Text = "Export Excel";
+            this.btnExportExcel.Text = "Expo&rt Excel";
             this.btnExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportExcel.UseVisualStyleBackColor = true;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
@@ -991,7 +991,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 568);
+            this.ClientSize = new System.Drawing.Size(898, 577);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.btnFeeImport);
             this.Controls.Add(this.btnFeeExport);
@@ -1001,7 +1001,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(906, 604);
             this.Name = "frmGetFee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ShowInTaskbar = false;
             this.Text = "frmGetFee";
             this.Load += new System.EventHandler(this.frmGetFee_Load);
             this.grbConditionSearch.ResumeLayout(false);

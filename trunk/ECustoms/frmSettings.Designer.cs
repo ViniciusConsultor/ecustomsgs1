@@ -72,7 +72,7 @@
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 240);
+            this.groupBox1.Size = new System.Drawing.Size(389, 231);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "+";
@@ -192,7 +192,7 @@
             this.label8.Size = new System.Drawing.Size(367, 14);
             this.label8.TabIndex = 15;
             this.label8.Text = "---------------------------------------------------------------------------------" +
-    "---------";
+                "---------";
             // 
             // label4
             // 
@@ -275,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(427, 270);
+            this.ClientSize = new System.Drawing.Size(419, 261);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
