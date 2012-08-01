@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBackupRestoreDb));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.optBackupAll = new System.Windows.Forms.RadioButton();
-            this.optBackLatest = new System.Windows.Forms.RadioButton();
-            this.btnBackup = new System.Windows.Forms.Button();
-            this.txtPath = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.btnRestore = new System.Windows.Forms.Button();
             this.btnBrowseSavePath = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSavePath = new System.Windows.Forms.TextBox();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPath = new System.Windows.Forms.TextBox();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.optBackLatest = new System.Windows.Forms.RadioButton();
+            this.optBackupAll = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,79 +63,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "+";
-            // 
-            // optBackupAll
-            // 
-            this.optBackupAll.AutoSize = true;
-            this.optBackupAll.Checked = true;
-            this.optBackupAll.Location = new System.Drawing.Point(29, 32);
-            this.optBackupAll.Name = "optBackupAll";
-            this.optBackupAll.Size = new System.Drawing.Size(187, 18);
-            this.optBackupAll.TabIndex = 0;
-            this.optBackupAll.TabStop = true;
-            this.optBackupAll.Text = "Sao lưu toàn bộ cơ sở dữ liệu";
-            this.optBackupAll.UseVisualStyleBackColor = true;
-            // 
-            // optBackLatest
-            // 
-            this.optBackLatest.AutoSize = true;
-            this.optBackLatest.Location = new System.Drawing.Point(29, 56);
-            this.optBackLatest.Name = "optBackLatest";
-            this.optBackLatest.Size = new System.Drawing.Size(251, 18);
-            this.optBackLatest.TabIndex = 1;
-            this.optBackLatest.Text = "Sao lưu những dữ liệu cập nhật mới nhất";
-            this.optBackLatest.UseVisualStyleBackColor = true;
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBackup.Location = new System.Drawing.Point(219, 124);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(114, 23);
-            this.btnBackup.TabIndex = 2;
-            this.btnBackup.Text = "Bắt đầu sao lưu";
-            this.btnBackup.UseVisualStyleBackColor = false;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // txtPath
-            // 
-            this.txtPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtPath.Location = new System.Drawing.Point(29, 178);
-            this.txtPath.Name = "txtPath";
-            this.txtPath.ReadOnly = true;
-            this.txtPath.Size = new System.Drawing.Size(267, 22);
-            this.txtPath.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 14);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Thư mục lưu trữ:";
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBrowse.Location = new System.Drawing.Point(302, 177);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(31, 23);
-            this.btnBrowse.TabIndex = 5;
-            this.btnBrowse.Text = "...";
-            this.btnBrowse.UseVisualStyleBackColor = false;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.BackColor = System.Drawing.SystemColors.Control;
-            this.btnRestore.Location = new System.Drawing.Point(219, 206);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(114, 23);
-            this.btnRestore.TabIndex = 6;
-            this.btnRestore.Text = "Phục hồi dữ liệu";
-            this.btnRestore.UseVisualStyleBackColor = false;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnBrowseSavePath
             // 
@@ -165,6 +92,79 @@
             this.txtSavePath.ReadOnly = true;
             this.txtSavePath.Size = new System.Drawing.Size(267, 22);
             this.txtSavePath.TabIndex = 7;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRestore.Location = new System.Drawing.Point(219, 206);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(114, 23);
+            this.btnRestore.TabIndex = 6;
+            this.btnRestore.Text = "&Phục hồi dữ liệu";
+            this.btnRestore.UseVisualStyleBackColor = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBrowse.Location = new System.Drawing.Point(302, 177);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(31, 23);
+            this.btnBrowse.TabIndex = 5;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = false;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 14);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Thư mục lưu trữ:";
+            // 
+            // txtPath
+            // 
+            this.txtPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtPath.Location = new System.Drawing.Point(29, 178);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.ReadOnly = true;
+            this.txtPath.Size = new System.Drawing.Size(267, 22);
+            this.txtPath.TabIndex = 3;
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBackup.Location = new System.Drawing.Point(219, 124);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(114, 23);
+            this.btnBackup.TabIndex = 2;
+            this.btnBackup.Text = "&Bắt đầu sao lưu";
+            this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
+            // optBackLatest
+            // 
+            this.optBackLatest.AutoSize = true;
+            this.optBackLatest.Location = new System.Drawing.Point(29, 56);
+            this.optBackLatest.Name = "optBackLatest";
+            this.optBackLatest.Size = new System.Drawing.Size(251, 18);
+            this.optBackLatest.TabIndex = 1;
+            this.optBackLatest.Text = "Sao lưu những dữ liệu cập nhật &mới nhất";
+            this.optBackLatest.UseVisualStyleBackColor = true;
+            // 
+            // optBackupAll
+            // 
+            this.optBackupAll.AutoSize = true;
+            this.optBackupAll.Checked = true;
+            this.optBackupAll.Location = new System.Drawing.Point(29, 32);
+            this.optBackupAll.Name = "optBackupAll";
+            this.optBackupAll.Size = new System.Drawing.Size(187, 18);
+            this.optBackupAll.TabIndex = 0;
+            this.optBackupAll.TabStop = true;
+            this.optBackupAll.Text = "Sao lưu &toàn bộ cơ sở dữ liệu";
+            this.optBackupAll.UseVisualStyleBackColor = true;
             // 
             // frmBackupRestoreDb
             // 

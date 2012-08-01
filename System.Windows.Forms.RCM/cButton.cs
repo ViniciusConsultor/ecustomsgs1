@@ -820,7 +820,7 @@
             // draw the text
             using (StringFormat sf = new StringFormat())
             {
-                sf.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.None;
+                sf.HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.Show;
                 sf.FormatFlags = StringFormatFlags.NoWrap;
                 // text alignment: bottom
                 if (btn.TextAlign == ContentAlignment.BottomCenter)
