@@ -72,7 +72,7 @@
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(389, 231);
+            this.groupBox1.Size = new System.Drawing.Size(398, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "+";
@@ -115,7 +115,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(217, 10);
+            this.label6.Location = new System.Drawing.Point(209, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 14);
             this.label6.TabIndex = 10;
@@ -144,7 +144,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(314, 10);
+            this.label7.Location = new System.Drawing.Point(306, 10);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 14);
             this.label7.TabIndex = 12;
@@ -198,11 +198,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(212, 93);
+            this.label4.Location = new System.Drawing.Point(205, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 14);
+            this.label4.Size = new System.Drawing.Size(33, 14);
             this.label4.TabIndex = 7;
-            this.label4.Text = "giờ";
+            this.label4.Text = "phút";
             // 
             // chkUseSyncInterval
             // 
@@ -275,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(419, 261);
+            this.ClientSize = new System.Drawing.Size(428, 267);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

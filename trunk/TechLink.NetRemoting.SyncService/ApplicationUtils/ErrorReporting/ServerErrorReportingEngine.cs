@@ -3,16 +3,13 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Threading;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
-using log4net;
+using ExceptionHandler;
 
 namespace ApplicationUtils.ErrorReporting
 {
 	public class ServerErrorReportingEngine : IServerErrorReportingEngine
 	{
-    private static readonly ILog log = Log4NetManager.GetPermanentLog("ErrorReportingLog");
-
 		private static IServerErrorReportingEngine instance = null;
     
 		public static IServerErrorReportingEngine Instance
@@ -32,7 +29,7 @@ namespace ApplicationUtils.ErrorReporting
 			try
 			{
 				instance = SafeServerErrorReportingEngine.GetSafeInstance(new ServerErrorReportingEngine(reportsFolderPath,intervalOfDays, maxNumberErrReport,false));
-				log.Info(string.Format("Initializing ServerErrorReportingEngine. reportsFolderPath={0}, intervalOfDays={1}, maxNumberErrReport={2}",reportsFolderPath,intervalOfDays,maxNumberErrReport));
+				ProcessException.Handle(string.Format("Initializing ServerErrorReportingEngine. reportsFolderPath={0}, intervalOfDays={1}, maxNumberErrReport={2}",reportsFolderPath,intervalOfDays,maxNumberErrReport));
 				UploableErrorReportingEngine.Initialize(reportsFolderPath, intervalOfDays, maxNumberErrReport, addSnapshotToReport);
 			}
 			catch (Exception)
@@ -81,7 +78,7 @@ namespace ApplicationUtils.ErrorReporting
 
 		public void CreateServerErrorReport(ErrorReportBase clientErrorReport)
 		{
-			log.Info("ServerErrorReportingEngine.CreateServerErrorReport() :" + clientErrorReport.ToString());
+			ProcessException.Handle("ServerErrorReportingEngine.CreateServerErrorReport() :" + clientErrorReport.ToString());
       ServerErrorReport serverErrorReport = new ServerErrorReport();
 			serverErrorReport.ClientErrorReport = clientErrorReport;
 			OnNewErrorReport(serverErrorReport);

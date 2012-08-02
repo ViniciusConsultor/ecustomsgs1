@@ -84,12 +84,13 @@
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=0f2fbf00d4d78015">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\log4net.dll</HintPath>
+      <HintPath>..\..\_Reference\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq">
@@ -117,9 +118,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="log4net.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="BussinessLogic\" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +138,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ECustoms.BOL\ECustoms.BOL.csproj">
+      <Project>{0494EB3E-3E10-4058-B8B0-0B461E84D154}</Project>
+      <Name>ECustoms.BOL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ECustoms.DAL\ECustoms.DAL.csproj">
       <Project>{8AC95DDB-A7DD-40D6-A0ED-323D9B601B99}</Project>
       <Name>ECustoms.DAL</Name>
@@ -160,6 +162,9 @@
       <Project>{5DA522E1-8E43-46F8-B2B9-0E5CE4CA31FC}</Project>
       <Name>ExceptionHandler</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

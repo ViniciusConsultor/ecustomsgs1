@@ -87,6 +87,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
@@ -100,18 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Args\LoginArgs.cs" />
-    <Compile Include="DataSets\ProductRemainInStock.cs">
-      <DependentUpon>ProductRemainInStock.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DataSets\ProductRemainInStock.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductRemainInStock.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\StockProductRemainPlus.cs">
-      <DependentUpon>StockProductRemainPlus.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Delegates\DefineDelegates.cs" />
     <Compile Include="Interfaces\IConfigurationFolders.cs" />
     <Compile Include="Interfaces\IGenericServer.cs" />
@@ -120,13 +109,13 @@
     <Compile Include="ReportDatasource\ReportBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ECustoms.DAL\ECustoms.DAL.csproj">
+      <Project>{8AC95DDB-A7DD-40D6-A0ED-323D9B601B99}</Project>
+      <Name>ECustoms.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ApplicationUtils\ApplicationUtils.csproj">
       <Project>{7AF8057E-16FF-47F4-8BB1-57BB820FC094}</Project>
       <Name>ApplicationUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataDomain\DataDomain.csproj">
-      <Project>{6A4D516B-F7F7-4AA2-8DFD-D437D1F85D64}</Project>
-      <Name>DataDomain</Name>
     </ProjectReference>
     <ProjectReference Include="..\EnumConstant\EnumConstant.csproj">
       <Project>{3518A383-55BF-433C-B961-FE62B4D049A1}</Project>
@@ -136,37 +125,6 @@
       <Project>{5DA522E1-8E43-46F8-B2B9-0E5CE4CA31FC}</Project>
       <Name>ExceptionHandler</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DataSets\CustomerDailyExchangeBills.xsc">
-      <DependentUpon>CustomerDailyExchangeBills.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\CustomerDailyExchangeBills.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSets\CustomerDailyExchangeBills.xss">
-      <DependentUpon>CustomerDailyExchangeBills.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\ProductRemainInStock.xsc">
-      <DependentUpon>ProductRemainInStock.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\ProductRemainInStock.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProductRemainInStock.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\ProductRemainInStock.xss">
-      <DependentUpon>ProductRemainInStock.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\StockProductRemainPlus.xsc">
-      <DependentUpon>StockProductRemainPlus.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\StockProductRemainPlus.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSets\StockProductRemainPlus.xss">
-      <DependentUpon>StockProductRemainPlus.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

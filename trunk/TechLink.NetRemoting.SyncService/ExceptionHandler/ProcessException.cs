@@ -6,15 +6,17 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
-using log4net;
 namespace ExceptionHandler
 {
     public class ProcessException
     {
 
-        private static ILog logManager = LogManager.GetLogger(typeof(ProcessException));
 
         public static IErrorNotify ErrorNotify = new ErrorNotify();
+
+        public static void Handle(string str, Exception e) { }
+
+        public static void Handle(string str){}
 
         public static void Handle(System.Exception exception)
         {
@@ -27,13 +29,13 @@ namespace ExceptionHandler
                 System.Windows.Forms.MessageBox.Show(exception.Message + "\r\n" + exception.InnerException.ToString(), "PIS Exception Notifier", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 #endif
-          logManager.Error(exception);
+          //logManager.Error(exception);
         }
 
         public static void Handle(System.Exception exception, string function)
         {
             function = "\r\n" + function;
-            logManager.Error(function, exception);
+            //logManager.Error(function, exception);
 #if DEBUG && !SERVER
             MessageBox.Show(exception.Message + "\r\n" + exception.StackTrace, function, MessageBoxButtons.OK, MessageBoxIcon.Error);
 #endif
@@ -45,7 +47,7 @@ namespace ExceptionHandler
             System.Windows.Forms.MessageBox.Show(exception.Message + "\r\n" + exception.StackTrace, function, MessageBoxButtons.OK, MessageBoxIcon.Error);
 #endif
           function = "\r\n" + function + "\r\n----> NOTE:\r\n" + note + "\r\n";
-            logManager.Error(function, exception);
+            //logManager.Error(function, exception);
         }
 
         public static void HandleThroughOutMail(System.Exception exception)
@@ -70,13 +72,13 @@ namespace ExceptionHandler
         public static void WriteErrorLog(string message, string fromFunction)
         {
             fromFunction = "\r\n" + fromFunction;
-            logManager.Error(fromFunction + "\r\n" + message);
+            //logManager.Error(fromFunction + "\r\n" + message);
         }
 
         public static void WriteInfoLog(string message, string fromFunction)
         {
             fromFunction = "\r\n" + fromFunction;
-            logManager.Info(fromFunction + "\r\n" + message);
+            //logManager.Info(fromFunction + "\r\n" + message);
         }
 
         private static void WriteErrorToLog(string error)

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Xml;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
 using ExceptionHandler;
 using log4net;
@@ -22,8 +21,6 @@ namespace GenericRemoteServer.General
     private static ServerStaticData instance = null;
     private static ServerSettings settings = null;
     private static readonly ConfigFilesChangesWatcher changesWatcher = new ConfigFilesChangesWatcher();
-    private static readonly ILog generalLog = Log4NetManager.GetLog("General");
-    private static readonly ILog errorLog = Log4NetManager.GetPermanentLog("Error");
 
     public static GenericServer GenericServer;
 
@@ -90,17 +87,17 @@ namespace GenericRemoteServer.General
             string retMessage = instance.InitStaticData();
             if (retMessage != string.Empty)
             {
-              errorLog.Fatal(retMessage);
-              errorLog.Fatal("The configuration files were changed, but there was an error while reading them.");
+              ProcessException.Handle(retMessage);
+              ProcessException.Handle("The configuration files were changed, but there was an error while reading them.");
               ProcessException.ErrorNotify.NotifyUser(retMessage);
               instance = backup;
             }
           }
           catch (Exception e)
           {
-            errorLog.Fatal(e);
+            ProcessException.Handle(e);
             ProcessException.ErrorNotify.NotifyUser(e.ToString());
-            errorLog.Fatal("The configuration files were changed, but there was an error while reading them.");
+            ProcessException.Handle("The configuration files were changed, but there was an error while reading them.");
             instance = backup;
           }
           finally
@@ -217,7 +214,7 @@ namespace GenericRemoteServer.General
       else
       {
         //ApplicationDefinitionData.GeneralSettings.NrMaxConcurrentUsers = 1000;
-        generalLog.Error("License File is missing, NrMaxConcurentUsers is set to 1000 !!!");
+        ProcessException.Handle("License File is missing, NrMaxConcurentUsers is set to 1000 !!!");
       }
     }
 
@@ -240,7 +237,7 @@ namespace GenericRemoteServer.General
 
       string fileFullPath = file;
 
-      generalLog.Debug("Loading translation file " + fileFullPath);
+      ProcessException.Handle("Loading translation file " + fileFullPath);
 
       if (file == null)
       {
@@ -248,7 +245,7 @@ namespace GenericRemoteServer.General
       }
       if (!File.Exists(fileFullPath))
       {
-        generalLog.Error("Translation file " + fileFullPath + " not found.");
+        ProcessException.Handle("Translation file " + fileFullPath + " not found.");
         return null;
       }
       if (fileFullPath != "")
@@ -279,7 +276,7 @@ namespace GenericRemoteServer.General
         }
         catch (Exception e)
         {
-          generalLog.Error("Error loading translation file " + fileFullPath, e);
+          ProcessException.Handle("Error loading translation file " + fileFullPath, e);
         }
         finally
         {
@@ -297,7 +294,7 @@ namespace GenericRemoteServer.General
       string fileFullPath =
         Path.Combine("", file);
 
-      generalLog.Debug("Loading translation file " + fileFullPath);
+      ProcessException.Handle("Loading translation file " + fileFullPath);
 
       if (file == null)
       {
@@ -305,7 +302,7 @@ namespace GenericRemoteServer.General
       }
       if (!File.Exists(fileFullPath))
       {
-        generalLog.Error("Translation file " + fileFullPath + " not found.");
+        ProcessException.Handle("Translation file " + fileFullPath + " not found.");
         return;
       }
       if (fileFullPath != "")
@@ -348,7 +345,7 @@ namespace GenericRemoteServer.General
         }
         catch (Exception e)
         {
-          generalLog.Error("Error loading translation file " + fileFullPath, e);
+          ProcessException.Handle("Error loading translation file " + fileFullPath, e);
         }
         finally
         {

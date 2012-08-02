@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckDigestInfo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.opt2 = new System.Windows.Forms.RadioButton();
+            this.opt1 = new System.Windows.Forms.RadioButton();
             this.chkUserOnlineErrorChecker = new System.Windows.Forms.CheckBox();
             this.txtSerial = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,12 +48,15 @@
             this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.viewVehicleFreightTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewVehicleFreightTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.opt2);
+            this.groupBox1.Controls.Add(this.opt1);
             this.groupBox1.Controls.Add(this.chkUserOnlineErrorChecker);
             this.groupBox1.Controls.Add(this.txtSerial);
             this.groupBox1.Controls.Add(this.label6);
@@ -68,10 +73,32 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 240);
+            this.groupBox1.Size = new System.Drawing.Size(454, 260);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "+";
+            // 
+            // opt2
+            // 
+            this.opt2.AutoSize = true;
+            this.opt2.Location = new System.Drawing.Point(240, 222);
+            this.opt2.Name = "opt2";
+            this.opt2.Size = new System.Drawing.Size(187, 18);
+            this.opt2.TabIndex = 14;
+            this.opt2.Text = "Đơn vị sử dụng là cấp Chi Cục";
+            this.opt2.UseVisualStyleBackColor = true;
+            // 
+            // opt1
+            // 
+            this.opt1.AutoSize = true;
+            this.opt1.Checked = true;
+            this.opt1.Location = new System.Drawing.Point(24, 222);
+            this.opt1.Name = "opt1";
+            this.opt1.Size = new System.Drawing.Size(167, 18);
+            this.opt1.TabIndex = 13;
+            this.opt1.TabStop = true;
+            this.opt1.Text = "Đơn vị sử dụng là cấp Cục";
+            this.opt1.UseVisualStyleBackColor = true;
             // 
             // chkUserOnlineErrorChecker
             // 
@@ -196,12 +223,12 @@
             this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccept.Image = global::ECustoms.Properties.Resources.accept;
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(244, 263);
+            this.btnAccept.Location = new System.Drawing.Point(244, 281);
             this.btnAccept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(88, 28);
             this.btnAccept.TabIndex = 7;
-            this.btnAccept.Text = "&Đồng ý";
+            this.btnAccept.Text = "Đồng ý";
             this.btnAccept.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -213,21 +240,26 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(340, 263);
+            this.btnClose.Location = new System.Drawing.Point(340, 281);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(127, 28);
             this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "Đăng ký &sau";
+            this.btnClose.Text = "Đăng ký sau";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // viewVehicleFreightTableAdapter1
+            // 
+            this.viewVehicleFreightTableAdapter1.ClearBeforeFill = true;
             // 
             // frmCheckDigestInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 311);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(488, 321);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
@@ -265,5 +297,8 @@
         private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.RadioButton opt2;
+        private System.Windows.Forms.RadioButton opt1;
+        private DataSet2TableAdapters.ViewVehicleFreightTableAdapter viewVehicleFreightTableAdapter1;
     }
 }

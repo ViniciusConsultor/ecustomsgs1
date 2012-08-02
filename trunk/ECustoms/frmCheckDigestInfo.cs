@@ -101,6 +101,16 @@ namespace ECustoms
 
                         long time = DateTime.Now.Ticks;
                         FDHelper.SaveTechLinkTimeStamp(time);
+                        
+                        if(opt1.Checked)
+                        {
+                            FDHelper.SaveSizeOfUnit(ConstantInfo.Boss);    
+                        }
+                        else
+                        {
+                            FDHelper.SaveSizeOfUnit(ConstantInfo.Branch);
+                        }
+                        
                         var bone = XRayController.TranslateBoneInformation(sb.ToString());
 
                         k += "\r\n" + time.ToString();

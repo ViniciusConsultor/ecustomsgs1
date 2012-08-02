@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
-using ApplicationUtils.Logging.Log4Net;
+using ExceptionHandler;
 using log4net;
 
 namespace GenericRemoteServer.General
@@ -12,7 +12,6 @@ namespace GenericRemoteServer.General
 	public class ServerSettings
 	{
 		#region private fields
-		private static readonly ILog log = Log4NetManager.GetLog();
 		private readonly NameValueCollection settingsSource = null;
 
 		private string securityEnabled = "yes";
@@ -62,7 +61,7 @@ namespace GenericRemoteServer.General
 
 		public static void Init(NameValueCollection settingsSource)
 		{
-			log.Info("ServerSettings.Init()");
+			ProcessException.Handle("ServerSettings.Init()");
 			instance = new ServerSettings(settingsSource);
 		}
 

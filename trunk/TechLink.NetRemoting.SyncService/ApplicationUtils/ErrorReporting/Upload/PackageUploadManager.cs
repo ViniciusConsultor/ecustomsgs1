@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils.ZipUtils.Zip;
-using log4net;
 using ApplicationUtils.Utils;
 using ApplicationUtils.Utils.XMLProcessing;
+using ExceptionHandler;
 
 namespace ApplicationUtils.ErrorReporting.Upload
 {
@@ -21,7 +20,6 @@ namespace ApplicationUtils.ErrorReporting.Upload
     [Serializable]
     public class PackageUploadManager : IPackageUploadManager
     {
-        private static readonly ILog log = Log4NetManager.GetPermanentLog("ErrorReportingLog");
         private static PackageUploadManager instance;
 
         public static PackageUploadManager Instance
@@ -98,7 +96,7 @@ namespace ApplicationUtils.ErrorReporting.Upload
                         }
                         catch (Exception e)
                         {
-                            log.Error(e);
+                            ProcessException.Handle(e);
                             Debug.Fail(e.Message);
                         }
 
@@ -115,14 +113,14 @@ namespace ApplicationUtils.ErrorReporting.Upload
                         }
                         catch (Exception ex)
                         {
-                            log.Error(ex);
+                            ProcessException.Handle(ex);
                             Debug.Fail(ex.Message);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    log.Error(ex);
+                    ProcessException.Handle(ex);
                     Debug.Fail(ex.Message);
                 }
 
@@ -231,7 +229,7 @@ namespace ApplicationUtils.ErrorReporting.Upload
 						}
 						catch (Exception e)
 						{
-							log.Error(e);
+							ProcessException.Handle(e);
 							Debug.Fail(e.Message);
 						}
 #endif
@@ -259,13 +257,13 @@ namespace ApplicationUtils.ErrorReporting.Upload
                     }
                     catch (Exception ex)
                     {
-                        log.Error(ex);
+                        ProcessException.Handle(ex);
                         Debug.Fail(ex.Message);
                     }
                 }
                 catch (Exception ex)
                 {
-                    log.Error(ex);
+                    ProcessException.Handle(ex);
                     Debug.Fail(ex.Message);
                 }
 

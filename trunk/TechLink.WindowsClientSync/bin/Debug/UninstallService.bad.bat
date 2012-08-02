@@ -1,0 +1,1 @@
+InstallUtil.exe TechLink.WindowsClientSync.exe /u
