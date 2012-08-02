@@ -872,9 +872,6 @@
     <None Include="Resources\search41.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\xkill.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -882,9 +879,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exce.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\exce1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Refresh.png" />
@@ -897,12 +891,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\searchIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\excel81.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\excel82.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\data_refresh.png" />

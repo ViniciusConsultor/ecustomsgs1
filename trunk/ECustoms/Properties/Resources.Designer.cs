@@ -235,27 +235,6 @@ namespace ECustoms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap exce1 {
-            get {
-                object obj = ResourceManager.GetObject("exce1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap excel8 {
-            get {
-                object obj = ResourceManager.GetObject("excel8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap excel81 {
-            get {
-                object obj = ResourceManager.GetObject("excel81", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
@@ -581,13 +560,6 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap viewBig {
             get {
                 object obj = ResourceManager.GetObject("viewBig", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap xkill {
-            get {
-                object obj = ResourceManager.GetObject("xkill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
