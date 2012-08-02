@@ -155,6 +155,7 @@
             // 
             // mnuBackupRestore
             // 
+            this.mnuBackupRestore.Image = global::ECustoms.Properties.Resources.data_refresh;
             this.mnuBackupRestore.Name = "mnuBackupRestore";
             this.mnuBackupRestore.Size = new System.Drawing.Size(257, 26);
             this.mnuBackupRestore.Text = "Sao lưu / Phục hồi dữ liệu";
@@ -559,7 +560,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1228, 699);
+            this.ClientSize = new System.Drawing.Size(1228, 703);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
