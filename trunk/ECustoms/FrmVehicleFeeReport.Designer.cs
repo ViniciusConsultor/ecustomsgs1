@@ -161,7 +161,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(139, 28);
             this.btnSearch.TabIndex = 22;
-            this.btnSearch.Text = "Hiện b&áo cáo";
+            this.btnSearch.Text = "&Hiện báo cáo";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

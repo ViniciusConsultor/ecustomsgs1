@@ -130,7 +130,7 @@
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(112, 28);
             this.btConfirmReturn.TabIndex = 1;
-            this.btConfirmReturn.Text = "Đ&ã hồi báo";
+            this.btConfirmReturn.Text = "Đã &hồi báo";
             this.btConfirmReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btConfirmReturn.UseVisualStyleBackColor = true;
             this.btConfirmReturn.Click += new System.EventHandler(this.btConfirmReturn_Click);

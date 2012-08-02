@@ -208,7 +208,7 @@
             this.btnAddExisting.Name = "btnAddExisting";
             this.btnAddExisting.Size = new System.Drawing.Size(229, 28);
             this.btnAddExisting.TabIndex = 24;
-            this.btnAddExisting.Text = "Thêm từ phương tiện &đã XK";
+            this.btnAddExisting.Text = "Thêm từ phươn&g tiện đã XK";
             this.btnAddExisting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddExisting.UseVisualStyleBackColor = true;
             this.btnAddExisting.Click += new System.EventHandler(this.btnAddExisting_Click);

@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
             this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
+            this.txtCustomsName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCustomsCode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -107,7 +108,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnFee = new System.Windows.Forms.Button();
             this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
-            this.txtCustomsName = new System.Windows.Forms.TextBox();
             this.gbExportDeclaration.SuspendLayout();
             this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
@@ -158,6 +158,15 @@
             this.gbExportDeclaration.TabIndex = 0;
             this.gbExportDeclaration.TabStop = false;
             this.gbExportDeclaration.Text = "Thông tin tờ khai xuất cảnh";
+            // 
+            // txtCustomsName
+            // 
+            this.txtCustomsName.Enabled = false;
+            this.txtCustomsName.Location = new System.Drawing.Point(131, 153);
+            this.txtCustomsName.Multiline = true;
+            this.txtCustomsName.Name = "txtCustomsName";
+            this.txtCustomsName.Size = new System.Drawing.Size(211, 26);
+            this.txtCustomsName.TabIndex = 4;
             // 
             // label10
             // 
@@ -518,7 +527,7 @@
             this.btnAddExisting.Name = "btnAddExisting";
             this.btnAddExisting.Size = new System.Drawing.Size(235, 28);
             this.btnAddExisting.TabIndex = 6;
-            this.btnAddExisting.Text = "Thêm từ phương tiện &đã XK";
+            this.btnAddExisting.Text = "Thêm từ phương tiện đã X&K";
             this.btnAddExisting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddExisting.UseVisualStyleBackColor = true;
             this.btnAddExisting.Click += new System.EventHandler(this.btnAddExisting_Click);
@@ -806,7 +815,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(152, 28);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Cập nh&ật tờ khai";
+            this.btnUpdate.Text = "Cập &nhật tờ khai";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -864,15 +873,6 @@
             // techlinkErrorProvider1
             // 
             this.techlinkErrorProvider1.ContainerControl = this;
-            // 
-            // txtCustomsName
-            // 
-            this.txtCustomsName.Enabled = false;
-            this.txtCustomsName.Location = new System.Drawing.Point(131, 153);
-            this.txtCustomsName.Multiline = true;
-            this.txtCustomsName.Name = "txtCustomsName";
-            this.txtCustomsName.Size = new System.Drawing.Size(211, 26);
-            this.txtCustomsName.TabIndex = 4;
             // 
             // FrmDecleExport
             // 
