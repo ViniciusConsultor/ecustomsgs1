@@ -19,6 +19,7 @@
           </EntitySet>
           <EntitySet Name="sysdiagrams" EntityType="dbEcustomModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblApplicationObject" EntityType="dbEcustomModel.Store.tblApplicationObject" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomModel.Store.tblBranchDatabases" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblCheck" EntityType="dbEcustomModel.Store.tblCheck" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblCompany" EntityType="dbEcustomModel.Store.tblCompany" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.Store.tblCustoms" store:Type="Tables" Schema="dbo" />
@@ -30,6 +31,15 @@
           <EntitySet Name="tblPermission" EntityType="dbEcustomModel.Store.tblPermission" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblProfileConfig" EntityType="dbEcustomModel.Store.tblProfileConfig" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblRoleInGroup" EntityType="dbEcustomModel.Store.tblRoleInGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblSettings" EntityType="dbEcustomModel.Store.tblSettings" store:Type="Tables" store:Schema="dbo" store:Name="tblSettings">
+            <DefiningQuery>SELECT 
+      [tblSettings].[Version] AS [Version], 
+      [tblSettings].[LastSync] AS [LastSync], 
+      [tblSettings].[SyncInterval] AS [SyncInterval], 
+      [tblSettings].[SyncTime] AS [SyncTime], 
+      [tblSettings].[IsStartingSync] AS [IsStartingSync]
+      FROM [dbo].[tblSettings] AS [tblSettings]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="tblType" EntityType="dbEcustomModel.Store.tblType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblUser" EntityType="dbEcustomModel.Store.tblUser" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblUserGroupPermission" EntityType="dbEcustomModel.Store.tblUserGroupPermission" store:Type="Tables" Schema="dbo" />
@@ -587,6 +597,17 @@
           <Property Name="ApplicationObjectValueDatetime" Type="datetime" />
           <Property Name="IsSynced" Type="bit" />
         </EntityType>
+        <EntityType Name="tblBranchDatabases">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DatabaseName" Type="nvarchar" Nullable="false" MaxLength="120" />
+          <Property Name="RegisterSerial" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="BranchName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="LastSync" Type="datetime" Nullable="false" />
+          <Property Name="IsRequestingSync" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblCheck">
           <Key>
             <PropertyRef Name="CheckID" />
@@ -736,6 +757,21 @@
           <Property Name="GroupID" Type="int" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
           <Property Name="IsSynced" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'eCustoms.dbo.tblSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tblSettings">
+          <Key>
+            <PropertyRef Name="Version" />
+            <PropertyRef Name="LastSync" />
+            <PropertyRef Name="IsStartingSync" />
+          </Key>
+          <Property Name="Version" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastSync" Type="datetime" Nullable="false" />
+          <Property Name="SyncInterval" Type="int" />
+          <Property Name="SyncTime" Type="nvarchar" MaxLength="6" />
+          <Property Name="IsStartingSync" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblType">
           <Key>
@@ -1634,6 +1670,8 @@
             <End Role="tblRoleInGroup" EntitySet="tblRoleInGroups" />
           </AssociationSet>
           <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
+          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomModel.tblBranchDatabas" />
+          <EntitySet Name="tblSettings" EntityType="dbEcustomModel.tblSetting" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2528,6 +2566,29 @@
           <Property Type="Int32" Name="ModifiedBy" />
           <Property Type="Int32" Name="GateType" />
           <Property Type="Boolean" Name="IsSynced" />
+        </EntityType>
+        <EntityType Name="tblBranchDatabas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="DatabaseName" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RegisterSerial" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastSync" Nullable="false" />
+          <Property Type="Boolean" Name="IsRequestingSync" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSetting">
+          <Key>
+            <PropertyRef Name="Version" />
+            <PropertyRef Name="LastSync" />
+            <PropertyRef Name="IsStartingSync" />
+          </Key>
+          <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastSync" Nullable="false" />
+          <Property Type="Int32" Name="SyncInterval" />
+          <Property Type="String" Name="SyncTime" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsStartingSync" Nullable="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -3444,6 +3505,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblBranchDatabases">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblBranchDatabas">
+              <MappingFragment StoreEntitySet="tblBranchDatabases">
+                <ScalarProperty Name="IsRequestingSync" ColumnName="IsRequestingSync" />
+                <ScalarProperty Name="LastSync" ColumnName="LastSync" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="RegisterSerial" ColumnName="RegisterSerial" />
+                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSettings">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblSetting">
+              <MappingFragment StoreEntitySet="tblSettings">
+                <ScalarProperty Name="IsStartingSync" ColumnName="IsStartingSync" />
+                <ScalarProperty Name="SyncTime" ColumnName="SyncTime" />
+                <ScalarProperty Name="SyncInterval" ColumnName="SyncInterval" />
+                <ScalarProperty Name="LastSync" ColumnName="LastSync" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3511,6 +3595,8 @@
           <ConnectorPoint PointX="3" PointY="1.7978417968749909" />
         </AssociationConnector>
         <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="15.375" PointY="20.75" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="21.375" PointY="14.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblSetting" Width="1.5" PointX="21.375" PointY="17.75" Height="1.9802864583333246" />
       </Diagram>
     </Diagrams>
   </Designer>
