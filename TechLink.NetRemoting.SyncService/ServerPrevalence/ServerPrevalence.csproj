@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessGenericServer.cs" />
+    <Compile Include="EntityGenericServer.cs" />
     <Compile Include="RemoteServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLGenericServer.cs" />
@@ -115,10 +116,6 @@
     <ProjectReference Include="..\ClientServerExchange\ClientServerExchange.csproj">
       <Project>{E6E4854D-C474-4082-8CA4-A5D1988EECE3}</Project>
       <Name>ClientServerExchange</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataDomain\DataDomain.csproj">
-      <Project>{6A4D516B-F7F7-4AA2-8DFD-D437D1F85D64}</Project>
-      <Name>DataDomain</Name>
     </ProjectReference>
     <ProjectReference Include="..\EnumConstant\EnumConstant.csproj">
       <Project>{3518A383-55BF-433C-B961-FE62B4D049A1}</Project>

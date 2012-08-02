@@ -9,9 +9,9 @@ using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Serialization.Formatters;
 using ApplicationUtils.Logging;
-using ApplicationUtils.Logging.Log4Net;
 using ClientServerExchange.Interfaces;
 using ExceptionHandler;
+using ExceptionHandler.Logging;
 
 namespace GenericRemoteServer.General
 {
@@ -33,7 +33,6 @@ namespace GenericRemoteServer.General
         [DllImport("kernel32.dll")]
         private static extern bool SetConsoleCtrlHandler(ConsoleEventHandlerDelegate handlerProc, bool add);
 
-        private static readonly log4net.ILog log = Log4NetManager.GetLog("General");
         protected ServerSettings settings = null;
         protected ObjRef remotingDatabaseReference = null;
         protected GenericServer genericServer;
@@ -76,14 +75,14 @@ namespace GenericRemoteServer.General
                 ChannelServices.RegisterChannel(chan, false);
                 if (chan == null)
                 {
-                    ProcessException.ErrorNotify.NotifyUser(
+                    new WindowsServiceLog().WriteEntry(
                             string.Format("Could not start server with port {0}", settings.Port));
                     Process.GetCurrentProcess().Kill();
                 }
             }
             catch (SocketException e)
             {
-                ProcessException.ErrorNotify.NotifyUser(
+                new WindowsServiceLog().WriteEntry(
                         string.Format("Could not start server. Application port {1} is using by another application. Error message: {0}",
                                                     e.Message, settings.Port));
                 Process.GetCurrentProcess().Kill();
@@ -98,13 +97,13 @@ namespace GenericRemoteServer.General
             }
             catch (Exception ex)
             {
-                ProcessException.Handle(ex, "AbstractRemoteServer.MarshallGenericServer()");
+                new WindowsServiceLog().WriteEntry(ex, "AbstractRemoteServer.MarshallGenericServer()");
             }
         }
 
         protected virtual void OnClose()
         {
-            log.Info("AbstractRemoteServer.OnClose()");
+            ProcessException.Handle("AbstractRemoteServer.OnClose()");
             this.genericServer.Close();
         }
 
@@ -117,12 +116,12 @@ namespace GenericRemoteServer.General
         public void Start()
         {
             CreateDatabase();
-            log.Info(string.Format("AbstractRemoteServer.Start() at {0}", settings.CurrentDate.ToLongDateString()));
-            log.Info("------------------------------");
-            log.Info("AbstractRemoteServer.CreateCommunicationChannel()");
+            ProcessException.Handle(string.Format("AbstractRemoteServer.Start() at {0}", settings.CurrentDate.ToLongDateString()));
+            ProcessException.Handle("------------------------------");
+            ProcessException.Handle("AbstractRemoteServer.CreateCommunicationChannel()");
             CreateCommunicationChannel();
-            log.Info("------------------------------");
-            log.Info("AbstractRemoteServer.MarshallGenericServer()");
+            ProcessException.Handle("------------------------------");
+            ProcessException.Handle("AbstractRemoteServer.MarshallGenericServer()");
             MarshallGenericServer();
 
             ServerStaticData.GenericServer = genericServer;
@@ -135,7 +134,7 @@ namespace GenericRemoteServer.General
 
         public void Stop()
         {
-            log.Info(string.Format("AbstractRemoteServer.Stop()at {0}", settings.CurrentDate.ToLongDateString()));
+            ProcessException.Handle(string.Format("AbstractRemoteServer.Stop()at {0}", settings.CurrentDate.ToLongDateString()));
 
             //BackupDatabase("");
 
@@ -144,7 +143,7 @@ namespace GenericRemoteServer.General
                 OnClose();
                 RemotingServices.Unmarshal(remotingDatabaseReference);
             }
-            log.Info("AbstractRemoteServer.Stop() " +
+            ProcessException.Handle("AbstractRemoteServer.Stop() " +
                              "-> The server and the remoting service is stoped");
         }
 

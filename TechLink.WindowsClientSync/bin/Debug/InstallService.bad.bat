@@ -1,0 +1,2 @@
+InstallUtil.exe TechLink.WindowsClientSync.exe
+net start TechLinkWindowsClientSync

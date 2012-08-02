@@ -5,9 +5,8 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using ApplicationUtils.ErrorReporting.Upload;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
-using log4net;
+using ExceptionHandler;
 
 namespace ApplicationUtils.ErrorReporting
 {
@@ -48,7 +47,6 @@ namespace ApplicationUtils.ErrorReporting
   
 	public class UploableErrorReportingEngine : IUploableErrorReportingEngine
 	{
-		private static readonly ILog log = Log4NetManager.GetPermanentLog("ErrorReportingLog");
 
 		private const string LAST_SENT_ITEMS_FILE_NAME ="lastSentItems.xml";
 
@@ -89,7 +87,7 @@ namespace ApplicationUtils.ErrorReporting
 			}
 			catch (Exception e)
 			{
-				log.Error(e);
+				ProcessException.Handle(e);
 				Debug.WriteLine(e);
 			}
       
@@ -138,7 +136,7 @@ namespace ApplicationUtils.ErrorReporting
 
 		public void CreateProcessingJob(ServerErrorReport errorReport)
 		{
-			log.Info("CreateProcessingJob() -error report: " + errorReport);
+			ProcessException.Handle("CreateProcessingJob() -error report: " + errorReport);
 			ReportProcessingJob processingJob =new ReportProcessingJob(tools, errorReport);
 			processingJob.StartProcessing();
 

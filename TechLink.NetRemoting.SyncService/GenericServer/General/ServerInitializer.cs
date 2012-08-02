@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using ApplicationUtils.ErrorReporting;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
 using ExceptionHandler;
 using log4net;
@@ -17,24 +16,21 @@ namespace GenericRemoteServer.General
 	/// </summary>
 	public class ServerInitializer
 	{
-		private static readonly ILog log = Log4NetManager.GetLog();
-
-		/// <summary>
+        /// <summary>
 		/// Does the server initializations.Inialize 	ServerEnvironment base path, InstallationSpecificFolders base path, reads server settings
 		/// </summary>
 		public static void DoServerInitializations()
 		{
 			XmlConfigurator.Configure();
-			Trace.Listeners.Add(new Log4NetTraceListener());
 			Trace.AutoFlush = true;
-			log.Info("DoServerInitializations call");
+			ProcessException.Handle("DoServerInitializations call");
 			//init folders base paths
 			try
 			{
 				ServerEnvironment._Initializer.CreateInstance(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
-				log.Info("ServerEnveroniment static instance initialized");
+				ProcessException.Handle("ServerEnveroniment static instance initialized");
 				string installationPath = ServerEnvironment.Instance.GetPath(ServerFolders.InstallationsBasePath);
-				log.Info("Installation path is " + installationPath);
+				ProcessException.Handle("Installation path is " + installationPath);
 //#if DEBUG
 
 				foreach (string name in Enum.GetNames(typeof (ServerFolders)))
@@ -52,18 +48,18 @@ namespace GenericRemoteServer.General
 					installationPath = ServerEnvironment._Initializer.GetExactPath(ServerFolders.InstallationsBasePath);
 				}
 //#endif
-				log.Info("Server folders configurations completed.");
+				ExceptionHandler.ProcessException.Handle("Server folders configurations completed.");
 
 				InstallationSpecificFolders.SetBasePath(
 					Path.Combine(Path.GetDirectoryName(Assembly.GetCallingAssembly().Location), installationPath));
 
-				log.Info("InstallationSpecificFolders configured");
+                ExceptionHandler.ProcessException.Handle("InstallationSpecificFolders configured");
 
 				string serverConfigPath = InstallationSpecificFolders.GetConfigFilePath("Server.config", true);
 				ServerSettings.Init(ConfigurationSettings.GetAppSettings(serverConfigPath));
-				log.Info("ServerSettings initialized");
-				log.Info("The server was started with the folowing .exe.config file content.");
-				log.Info(ServerSettings.Instance.ToString());
+				ProcessException.Handle("ServerSettings initialized");
+				ProcessException.Handle("The server was started with the folowing .exe.config file content.");
+				ProcessException.Handle(ServerSettings.Instance.ToString());
                 //ServerErrorReportingEngine.Initialize(ServerEnvironment.Instance.GetPath(ServerFolders.ErrorReports),
                 //    ServerSettings.Instance.DaysIntervalToUploadTheSameReport, ServerSettings.Instance.NumberOfSameReportToUploadInInterval,
                 //    ServerSettings.Instance.AddSnapshotToUploadedReport);
@@ -83,9 +79,9 @@ namespace GenericRemoteServer.General
 
 		private static void CheckVitalFilesExistence()
 		{
-			log.Info("CheckVitalFilesExistence call");
+			ProcessException.Handle("CheckVitalFilesExistence call");
             InstallationSpecificFolders.GetConfigFilePath("goldkeeper.exe.config", true);
-			log.Info("CheckVitalFilesExistence call ended");
+			ProcessException.Handle("CheckVitalFilesExistence call ended");
 		}
 	}
 }

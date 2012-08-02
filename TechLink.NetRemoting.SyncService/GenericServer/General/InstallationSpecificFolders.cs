@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel;
 using System.IO;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
+using ExceptionHandler;
 using log4net;
 
 namespace GenericRemoteServer.General
@@ -50,8 +50,6 @@ namespace GenericRemoteServer.General
 
     public class InstallationSpecificFolders
     {
-        private static readonly ILog log = Log4NetManager.GetLog();
-
         private static string installtionPath = string.Empty;
 
         public static void SetBasePath(string basePath, bool validate)
@@ -65,7 +63,7 @@ namespace GenericRemoteServer.General
 
         public static void SetBasePath(string basePath)
         {
-            log.Info("InstallationSpecificFolders.SetBasePath(" + basePath + ")");
+            ProcessException.Handle("InstallationSpecificFolders.SetBasePath(" + basePath + ")");
             SetBasePath(basePath, true);
         }
 

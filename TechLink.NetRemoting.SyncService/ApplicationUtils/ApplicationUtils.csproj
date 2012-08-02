@@ -83,10 +83,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=0f2fbf00d4d78015">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -146,11 +142,6 @@
     <Compile Include="Layout\LayoutInfo.cs" />
     <Compile Include="Logging\BaseLog.cs" />
     <Compile Include="Logging\ILog.cs" />
-    <Compile Include="Logging\Log4Net\CurrentMethod.cs" />
-    <Compile Include="Logging\Log4Net\Log4NetILogWrapper.cs" />
-    <Compile Include="Logging\Log4Net\Log4NetManager.cs" />
-    <Compile Include="Logging\Log4Net\Log4NetTraceListener.cs" />
-    <Compile Include="Logging\Log4Net\NullLog4NetILog.cs" />
     <Compile Include="Logging\LogCollection.cs" />
     <Compile Include="Logging\TraceListenerToLogAdapter.cs" />
     <Compile Include="Logging\Utils.cs" />

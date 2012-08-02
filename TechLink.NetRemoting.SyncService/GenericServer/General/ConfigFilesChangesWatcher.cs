@@ -1,17 +1,14 @@
 ﻿//#define USE_TRACING
 using System.Collections;
 using System.IO;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
+using ExceptionHandler;
 using log4net;
 
 namespace GenericRemoteServer.General
 {
     internal sealed class ConfigFilesChangesWatcher
     {
-        private static readonly ILog log = Log4NetManager.GetLog("General");
-
-
         private ArrayList filesToIgnore = new ArrayList();
         private bool filesChanged = false;
         private FileSystemWatcher xmlFolderWatcher;
@@ -106,7 +103,7 @@ namespace GenericRemoteServer.General
                 Tracing.TraceCall(e.Name);
                 lock (syncObj)
                 {
-                    log.Info("Configuration file changed: " + e.Name);
+                    ProcessException.Handle("Configuration file changed: " + e.Name);
                     filesChanged = true;
                     OnChanged(e);
                 }

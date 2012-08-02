@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.IO;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
 using ExceptionHandler;
 using log4net;
@@ -11,8 +10,6 @@ namespace GenericRemoteServer.General
 {
     public class ServerEnvironment : IServerEnvironment, IServerEnvironmentInitializer
     {
-        private static readonly ILog log = Log4NetManager.GetLog();
-
         private static ServerEnvironment singletonInstance = new ServerEnvironment();
 
         private static ServerEnvironment SingletonInstance
@@ -79,7 +76,7 @@ namespace GenericRemoteServer.General
 
         public void SetExactPath(ServerFolders serverFolder, string path)
         {
-            log.Info(serverFolder + " " + path);
+            ProcessException.Handle(serverFolder + " " + path);
             ExactPaths[serverFolder] = path;
         }
 
@@ -151,7 +148,7 @@ namespace GenericRemoteServer.General
 
         public void CreateInstance(string basePath)
         {
-            log.Info("ServerEnvironment.CreateInstance(" + basePath + ")");
+            ProcessException.Handle("ServerEnvironment.CreateInstance(" + basePath + ")");
             singletonInstance = new ServerEnvironment(basePath);
         }
 

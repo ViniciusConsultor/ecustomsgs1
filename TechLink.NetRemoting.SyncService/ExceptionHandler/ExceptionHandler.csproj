@@ -85,7 +85,7 @@
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=0f2fbf00d4d78015">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\log4net.dll</HintPath>
+      <HintPath>..\..\_Reference\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -104,11 +104,9 @@
   <ItemGroup>
     <Compile Include="ErrorNotify.cs" />
     <Compile Include="IErrorNotify.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="ProcessException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="log4net.dll" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

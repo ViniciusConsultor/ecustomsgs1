@@ -1,14 +1,12 @@
 using System;
 using System.Collections;
-using ApplicationUtils.Logging.Log4Net;
-using log4net;
+using ExceptionHandler;
 
 namespace ApplicationUtils.ErrorReporting
 {
 	internal class SafeServerErrorReportingEngine : IServerErrorReportingEngine
 	{
 		private readonly IServerErrorReportingEngine instance = null;
-		private static readonly ILog errorLog = Log4NetManager.GetPermanentLog("ErrorReportingLog");
 
 		private SafeServerErrorReportingEngine(IServerErrorReportingEngine instance)
 		{
@@ -28,7 +26,7 @@ namespace ApplicationUtils.ErrorReporting
 			}
 			catch (Exception e)
 			{
-				errorLog.Error(e);
+				ProcessException.Handle(e);
 #if DEBUG
 				throw e;
 #endif
@@ -53,7 +51,7 @@ namespace ApplicationUtils.ErrorReporting
 				}
 				catch (Exception e)
 				{
-					errorLog.Error(e);
+					ProcessException.Handle(e);
 #if DEBUG
 					throw e;
 #endif
@@ -67,7 +65,7 @@ namespace ApplicationUtils.ErrorReporting
 				}
 				catch (Exception e)
 				{
-					errorLog.Error(e);
+					ProcessException.Handle(e);
 #if DEBUG
 					throw e;
 #endif

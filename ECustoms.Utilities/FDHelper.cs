@@ -101,6 +101,19 @@ namespace ECustoms.Utilities
             return 0;
         }
 
+        public static string RgGetSizeOfUnit()
+        {
+            var app = Registry.LocalMachine.OpenSubKey(ConstantInfo.RgKeyApp);
+            if (app != null)
+            {
+                var ss = app.GetValue(ConstantInfo.RgKeySizePath);
+                if (ss == null) return ConstantInfo.Branch;
+
+                return ss.ToString();
+            }
+            return ConstantInfo.Branch;
+        }
+
         /// <summary>
         /// Save data into SOFTWARE\\TechLink
         /// </summary>
@@ -144,6 +157,20 @@ namespace ECustoms.Utilities
             else
             {
                 app.SetValue(ConstantInfo.RgKeyAppUserTimeStampPath, time);
+            }
+        }
+
+        public static void SaveSizeOfUnit(string size)
+        {
+            var app = Registry.LocalMachine.OpenSubKey(ConstantInfo.RgKeyApp, true);
+            if (app == null)
+            {
+                var sig = Registry.LocalMachine.CreateSubKey(ConstantInfo.RgKeyApp);
+                sig.SetValue(ConstantInfo.RgKeySizePath, size);
+            }
+            else
+            {
+                app.SetValue(ConstantInfo.RgKeySizePath, size);
             }
         }
     }

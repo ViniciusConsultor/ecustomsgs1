@@ -12,6 +12,7 @@ using System.ServiceProcess;
 using System.Text;
 using AbstractServerConsole;
 using ExceptionHandler;
+using ExceptionHandler.Logging;
 using ServerConsole;
 
 namespace TechLink.WindowsSync
@@ -19,14 +20,17 @@ namespace TechLink.WindowsSync
     public partial class eCustomSyncSvc : ServiceBase
     {
         private static IServerConsole serverActivator = null;
+        WindowsServiceLog logging = new WindowsServiceLog();
 
         public eCustomSyncSvc()
         {
+            new WindowsServiceLog().WriteEntry("Service Initialize");
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
+            logging.WriteEntry("Service start");
             serverActivator = new RemoteServerActivator();
 
             string currentDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
@@ -44,7 +48,7 @@ namespace TechLink.WindowsSync
             }
             catch (Exception ex)
             {
-                ProcessException.Handle(ex, "eCustomSyncSvc.OnStart(string[] args)");
+                logging.WriteEntry(ex, "eCustomSyncSvc.OnStart(string[] args)");
                 throw ex.InnerException;
             }
 
@@ -55,24 +59,24 @@ namespace TechLink.WindowsSync
             }
             catch (Exception e)
             {
-                ProcessException.Handle(e, "eCustomSyncSvc.OnStart(string[] args)");
+                logging.WriteEntry(e, "eCustomSyncSvc.OnStart(string[] args)");
             }
-
-            InitializeComponent();
+            
             try
             {
                 serverActivator.Start(args);
             }
             catch (Exception exception)
             {
-                ProcessException.Handle(exception, "eCustomSyncSvc c-tor");
-                ProcessException.ErrorNotify.NotifyUser(exception.Message + "\n" +
-                        exception.InnerException.Message);
+                logging.WriteEntry(exception, "eCustomSyncSvc c-tor");
             }
+
+            logging.WriteEntry("Start Service successfully!");
         }
 
         protected override void OnStop()
         {
+            logging.WriteEntry("Service Stop");
         }
     }
 }

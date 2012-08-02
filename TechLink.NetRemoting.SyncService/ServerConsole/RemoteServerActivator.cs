@@ -4,11 +4,9 @@ using System.Reflection;
 using System.Runtime.Remoting;
 using AbstractServerConsole;
 using ApplicationUtils.Logging;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
 using ExceptionHandler;
 using GenericRemoteServer.General;
-using ILog=log4net.ILog;
 
 namespace ServerConsole
 {
@@ -16,7 +14,6 @@ namespace ServerConsole
     {
         private IRemoteServer server = null;
         private bool started = false;
-        private static readonly ILog log = Log4NetManager.GetLog("General");
 
         public RemoteServerActivator()
         {
@@ -33,7 +30,7 @@ namespace ServerConsole
 
         public void Stop()
         {
-            log.Info("RemoteServerActivator.Stop() -> TechLink Sync Server is shutting down.");
+            ProcessException.Handle("RemoteServerActivator.Stop() -> TechLink Sync Server is shutting down.");
             server.Stop();
         }
 
@@ -51,7 +48,7 @@ namespace ServerConsole
         {
             ServerStaticData.Settings = ServerSettings.Instance;
             ServerStaticData.Initialize();
-            log.Info("ServerStaticData.Initialize()");
+            ProcessException.Handle("ServerStaticData.Initialize()");
             if (ServerStaticData.Instance.ConfigFileErrors == string.Empty)
             {
                 LogCollection logsCollection = new LogCollection();
@@ -80,7 +77,7 @@ namespace ServerConsole
                     Tracing.TraceErr(e);
                     throw e;
                 }
-                log.Info("Server remoting object created.");
+                ProcessException.Handle("Server remoting object created.");
 
                 server = (IRemoteServer)objectHandle.Unwrap();
                 server.Start();

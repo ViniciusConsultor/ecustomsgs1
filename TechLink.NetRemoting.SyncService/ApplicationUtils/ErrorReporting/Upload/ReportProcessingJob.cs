@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using ApplicationUtils.Logging.Log4Net;
 using ApplicationUtils.Utils;
 using ApplicationUtils.Utils.ZipUtils.Zip;
-using log4net;
+using ExceptionHandler;
 
 namespace ApplicationUtils.ErrorReporting.Upload
 {
 	public class ReportProcessingJob
 	{
-		private static readonly ILog log = Log4NetManager.GetPermanentLog("ErrorReportingLog");
 		private readonly ProcessingJobsSharedTools tools;
 		private readonly ServerErrorReport report;
 		private readonly string reportHashCode;
@@ -48,7 +46,7 @@ namespace ApplicationUtils.ErrorReporting.Upload
     
 		public void StartProcessing()
 		{
-			log.Info("Start processing " + this.reportHashCode);
+			ProcessException.Handle("Start processing " + this.reportHashCode);
 
 			if(!ShouldStartJob())
 			{
@@ -99,7 +97,7 @@ namespace ApplicationUtils.ErrorReporting.Upload
 					}
 					catch (Exception e)
 					{
-						log.Error(e);
+						ProcessException.Handle(e);
 						Debug.WriteLine(e);
 					}
 				}
@@ -178,7 +176,7 @@ namespace ApplicationUtils.ErrorReporting.Upload
 			}
 			catch (Exception ex)
 			{
-				log.Error(ex);
+				ProcessException.Handle(ex);
 				Debug.WriteLine(ex);
 			}
 			finally
@@ -199,7 +197,7 @@ namespace ApplicationUtils.ErrorReporting.Upload
 				return true;
 			}
 
-			log.Info("This error report will not be processed.(allTicketsList.Count >= tools.MaxNumberErrReport)");
+			ProcessException.Handle("This error report will not be processed.(allTicketsList.Count >= tools.MaxNumberErrReport)");
 			return false;
 		}
 	}

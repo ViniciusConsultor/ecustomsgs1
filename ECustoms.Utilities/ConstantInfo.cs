@@ -1,7 +1,16 @@
 ﻿namespace ECustoms.Utilities
 {
     public class ConstantInfo
-    {       
+    {
+        /// <summary>
+        /// Cấp Chi Cục
+        /// </summary>
+        public static string Branch = "Cấp Chi Cục";
+        /// <summary>
+        /// Cấp Cục
+        /// </summary>
+        public static string Boss = "Cấp Cục";
+
         #region Table User
         public const string TBL_USER_USERID = "UserID";
         public const string TBL_USER_NAME = "Name";
@@ -122,6 +131,7 @@
         public const string RgKeyAppDataPath = "AppData";
         public const string RgKeyAppUserProfilePath = "Profile";
         public const string RgKeyAppUserTimeStampPath = "TimeStamp";
+        public const string RgKeySizePath = "SizeOfUnit";
         #endregion
     }
 }

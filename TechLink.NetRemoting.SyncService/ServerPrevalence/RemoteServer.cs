@@ -134,7 +134,8 @@ namespace ServerPrevalence
 		{
 #if ACCESS_DATA
             IDataController remoteDatabase = null; //= new DataController(_databaseFullPath);
-            genericServer = new AccessGenericServer(remoteDatabase);
+            genericServer = new EntityGenericServer(remoteDatabase);
+            
             //genericServer.Onlogin += new ClientServerExchange.Delegates.OnLoginHandler(genericServer_Onlogin);
             //genericServer.Onlogout += new ClientServerExchange.Delegates.OnLogoutHandler(genericServer_Onlogout);
             //genericServer.DataDomainChanged += new ClientServerExchange.Interfaces.OnDataDomainChangedHandler(genericServer_DataDomainChanged);
