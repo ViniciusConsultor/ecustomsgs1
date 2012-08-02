@@ -9,6 +9,8 @@ namespace ClientServerExchange.Interfaces
 {
 	public interface IGenericServer
 	{
+	    bool StartSync(ClientInfo clientInfo);
+
 	    List<string> Sync_tblUser(List<tblUser> users);
         List<string> Sync_tblVehicle(List<tblVehicle> vehicles);
         List<string> Sync_tblDeclaration(List<tblDeclaration> ceclarations);
@@ -22,7 +24,7 @@ namespace ClientServerExchange.Interfaces
         List<string> Sync_tblGoodsType(List<tblGoodsType> goodsTypes);
         List<string> Sync_tblGroup(List<tblGroup> groups);
         List<string> Sync_tblPermission(List<tblPermission> permissions);
-        //List<string> Sync_tblSettings(List<tblSetting> settings);
+        List<string> Sync_tblSettings(List<tblSetting> settings);
         List<string> Sync_tblUserGroupPermission(List<tblUserGroupPermission> groupPermissions);
         List<string> Sync_tblVehicleCheck(List<tblVehicleCheck> vehicleChecks);
         List<string> Sync_tblVehicleFeeSetting(List<tblVehicleFeeSetting> vehicleFeeSettings);

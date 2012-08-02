@@ -67,6 +67,11 @@ namespace GenericRemoteServer.General
 
         #region Implementation of IGenericServer
 
+        public bool StartSync(ClientInfo clientInfo)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<string> Sync_tblUser(List<tblUser> users)
         {
             throw new NotImplementedException();
@@ -128,6 +133,11 @@ namespace GenericRemoteServer.General
         }
 
         public List<string> Sync_tblPermission(List<tblPermission> permissions)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> Sync_tblSettings(List<tblSetting> settings)
         {
             throw new NotImplementedException();
         }
