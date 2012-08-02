@@ -208,7 +208,7 @@ namespace ECustoms
 
                     //Autocomplete registerplace
                     var auto = new AutoCompleteStringCollection();
-                    var lstAuto = VehicleFactory.GetAllPlateNumberChineseNoGoods();
+                    var lstAuto = VehicleFactory.GetAllPlateNumberChinese();
                     auto.AddRange(lstAuto.ToArray());
                     txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                     txtVehicleChinese.AutoCompleteSource = AutoCompleteSource.CustomSource;

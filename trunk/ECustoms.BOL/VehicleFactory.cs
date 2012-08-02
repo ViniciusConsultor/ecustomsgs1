@@ -486,10 +486,10 @@ namespace ECustoms.BOL
             return result;
         }
 
-        public static List<string> GetAllPlateNumberChineseNoGoods()
+        public static List<string> GetAllPlateNumberChinese()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var lstResult = db.tblVehicles.Where(g => g.IsChineseVehicle == true && g.IsImport == true && g.HasGoodsImported == false).Select(g => g.PlateNumber).Distinct().ToList();
+            var lstResult = db.tblVehicles.Where(g => g.IsChineseVehicle == true && g.IsImport == true).Select(g => g.PlateNumber).Distinct().ToList();
             db.Connection.Close();
             return lstResult;
         }
