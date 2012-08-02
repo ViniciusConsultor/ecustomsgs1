@@ -164,9 +164,7 @@
   <data name="KeyLock2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KeyLock2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="001_39" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\001_39.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="money" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\money.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -176,9 +174,7 @@
   <data name="exce1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exce1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="001_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\001_01.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="recycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recycle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -227,15 +223,11 @@
   <data name="accept" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\accept.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="file import1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file import2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+ 
   <data name="Signin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Signin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4469" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4469.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="exportSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportSmall.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -270,9 +262,7 @@
   <data name="viewBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\viewBig.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="file import" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file import1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+ 
   <data name="SearchVehicle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchVehicle1.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -282,9 +272,7 @@
   <data name="Icon-Error-16x16-GreyBckgrnd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon-Error-16x16-GreyBckgrnd.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="001_45" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\001_45.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+ 
   <data name="key1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\key1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -360,18 +348,12 @@
   <data name="HelpBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HelpBig.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="001_05" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\001_05.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+ 
   <data name="export" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5373" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5373.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1081" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10811.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  
+
   <data name="Vehicle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Vehicle.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
