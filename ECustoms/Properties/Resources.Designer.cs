@@ -410,13 +410,6 @@ namespace ECustoms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap import {
-            get {
-                object obj = ResourceManager.GetObject("import", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap importBig {
             get {
                 object obj = ResourceManager.GetObject("importBig", resourceCulture);
@@ -459,13 +452,6 @@ namespace ECustoms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap list {
-            get {
-                object obj = ResourceManager.GetObject("list", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Login2 {
             get {
                 object obj = ResourceManager.GetObject("Login2", resourceCulture);
@@ -490,13 +476,6 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap logoBackgound {
             get {
                 object obj = ResourceManager.GetObject("logoBackgound", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap logout {
-            get {
-                object obj = ResourceManager.GetObject("logout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -644,20 +623,6 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap user1 {
             get {
                 object obj = ResourceManager.GetObject("user1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap userlogin {
-            get {
-                object obj = ResourceManager.GetObject("userlogin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Users {
-            get {
-                object obj = ResourceManager.GetObject("Users", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

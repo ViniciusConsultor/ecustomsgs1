@@ -848,9 +848,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\userlogin.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\enter.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -920,15 +917,6 @@
     <None Include="Resources\searchIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\list.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Users.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\excel81.png" />
   </ItemGroup>
   <ItemGroup>
@@ -990,7 +978,6 @@
     <Content Include="Resources\checkIcon.png" />
     <None Include="Resources\confirm.png" />
     <None Include="Resources\report224x24 24-bit.png" />
-    <None Include="Resources\import.png" />
     <None Include="Resources\export.ico" />
     <None Include="Resources\export.png" />
     <None Include="Resources\logoBackgound.jpg" />
