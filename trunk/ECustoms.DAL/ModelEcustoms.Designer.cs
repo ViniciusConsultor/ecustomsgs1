@@ -13,7 +13,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("dbEcustomModel", "FK_tblRoleInGroup_tlbRole", "tlbRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ECustoms.DAL.tlbRole), "tblRoleInGroup", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ECustoms.DAL.tblRoleInGroup))]
 
 // Original file name:
-// Generation date: 8/2/2012 6:07:20 AM
+// Generation date: 8/2/2012 7:51:01 AM
 namespace ECustoms.DAL
 {
     
@@ -694,6 +694,40 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         private global::System.Data.Objects.ObjectQuery<tblGate> _tblGates;
         /// <summary>
+        /// There are no comments for tblBranchDatabases in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tblBranchDatabas> tblBranchDatabases
+        {
+            get
+            {
+                if ((this._tblBranchDatabases == null))
+                {
+                    this._tblBranchDatabases = base.CreateQuery<tblBranchDatabas>("[tblBranchDatabases]");
+                }
+                return this._tblBranchDatabases;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tblBranchDatabas> _tblBranchDatabases;
+        /// <summary>
+        /// There are no comments for tblSettings in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tblSetting> tblSettings
+        {
+            get
+            {
+                if ((this._tblSettings == null))
+                {
+                    this._tblSettings = base.CreateQuery<tblSetting>("[tblSettings]");
+                }
+                return this._tblSettings;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tblSetting> _tblSettings;
+        /// <summary>
         /// There are no comments for Logs in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
@@ -996,6 +1030,22 @@ namespace ECustoms.DAL
         public void AddTotblGates(tblGate tblGate)
         {
             base.AddObject("tblGates", tblGate);
+        }
+        /// <summary>
+        /// There are no comments for tblBranchDatabases in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotblBranchDatabases(tblBranchDatabas tblBranchDatabas)
+        {
+            base.AddObject("tblBranchDatabases", tblBranchDatabas);
+        }
+        /// <summary>
+        /// There are no comments for tblSettings in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotblSettings(tblSetting tblSetting)
+        {
+            base.AddObject("tblSettings", tblSetting);
         }
     }
     /// <summary>
@@ -19966,5 +20016,364 @@ namespace ECustoms.DAL
         partial void OnIsSyncedChanging(global::System.Nullable<bool> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnIsSyncedChanged();
+    }
+    /// <summary>
+    /// There are no comments for dbEcustomModel.tblBranchDatabas in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblBranchDatabas")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class tblBranchDatabas : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new tblBranchDatabas object.
+        /// </summary>
+        /// <param name="id">Initial value of Id.</param>
+        /// <param name="databaseName">Initial value of DatabaseName.</param>
+        /// <param name="registerSerial">Initial value of RegisterSerial.</param>
+        /// <param name="branchName">Initial value of BranchName.</param>
+        /// <param name="lastSync">Initial value of LastSync.</param>
+        /// <param name="isRequestingSync">Initial value of IsRequestingSync.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static tblBranchDatabas CreatetblBranchDatabas(global::System.Guid id, string databaseName, string registerSerial, string branchName, global::System.DateTime lastSync, bool isRequestingSync)
+        {
+            tblBranchDatabas tblBranchDatabas = new tblBranchDatabas();
+            tblBranchDatabas.Id = id;
+            tblBranchDatabas.DatabaseName = databaseName;
+            tblBranchDatabas.RegisterSerial = registerSerial;
+            tblBranchDatabas.BranchName = branchName;
+            tblBranchDatabas.LastSync = lastSync;
+            tblBranchDatabas.IsRequestingSync = isRequestingSync;
+            return tblBranchDatabas;
+        }
+        /// <summary>
+        /// There are no comments for property Id in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Guid Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this.ReportPropertyChanging("Id");
+                this._Id = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("Id");
+                this.OnIdChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Guid _Id;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIdChanging(global::System.Guid value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for property DatabaseName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string DatabaseName
+        {
+            get
+            {
+                return this._DatabaseName;
+            }
+            set
+            {
+                this.OnDatabaseNameChanging(value);
+                this.ReportPropertyChanging("DatabaseName");
+                this._DatabaseName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("DatabaseName");
+                this.OnDatabaseNameChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _DatabaseName;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnDatabaseNameChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnDatabaseNameChanged();
+        /// <summary>
+        /// There are no comments for property RegisterSerial in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string RegisterSerial
+        {
+            get
+            {
+                return this._RegisterSerial;
+            }
+            set
+            {
+                this.OnRegisterSerialChanging(value);
+                this.ReportPropertyChanging("RegisterSerial");
+                this._RegisterSerial = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("RegisterSerial");
+                this.OnRegisterSerialChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _RegisterSerial;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnRegisterSerialChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnRegisterSerialChanged();
+        /// <summary>
+        /// There are no comments for property BranchName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string BranchName
+        {
+            get
+            {
+                return this._BranchName;
+            }
+            set
+            {
+                this.OnBranchNameChanging(value);
+                this.ReportPropertyChanging("BranchName");
+                this._BranchName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("BranchName");
+                this.OnBranchNameChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _BranchName;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnBranchNameChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnBranchNameChanged();
+        /// <summary>
+        /// There are no comments for property LastSync in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.DateTime LastSync
+        {
+            get
+            {
+                return this._LastSync;
+            }
+            set
+            {
+                this.OnLastSyncChanging(value);
+                this.ReportPropertyChanging("LastSync");
+                this._LastSync = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("LastSync");
+                this.OnLastSyncChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.DateTime _LastSync;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnLastSyncChanging(global::System.DateTime value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnLastSyncChanged();
+        /// <summary>
+        /// There are no comments for property IsRequestingSync in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public bool IsRequestingSync
+        {
+            get
+            {
+                return this._IsRequestingSync;
+            }
+            set
+            {
+                this.OnIsRequestingSyncChanging(value);
+                this.ReportPropertyChanging("IsRequestingSync");
+                this._IsRequestingSync = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("IsRequestingSync");
+                this.OnIsRequestingSyncChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private bool _IsRequestingSync;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIsRequestingSyncChanging(bool value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIsRequestingSyncChanged();
+    }
+    /// <summary>
+    /// There are no comments for dbEcustomModel.tblSetting in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Version
+    /// LastSync
+    /// IsStartingSync
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblSetting")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class tblSetting : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new tblSetting object.
+        /// </summary>
+        /// <param name="version">Initial value of Version.</param>
+        /// <param name="lastSync">Initial value of LastSync.</param>
+        /// <param name="isStartingSync">Initial value of IsStartingSync.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static tblSetting CreatetblSetting(string version, global::System.DateTime lastSync, bool isStartingSync)
+        {
+            tblSetting tblSetting = new tblSetting();
+            tblSetting.Version = version;
+            tblSetting.LastSync = lastSync;
+            tblSetting.IsStartingSync = isStartingSync;
+            return tblSetting;
+        }
+        /// <summary>
+        /// There are no comments for property Version in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string Version
+        {
+            get
+            {
+                return this._Version;
+            }
+            set
+            {
+                this.OnVersionChanging(value);
+                this.ReportPropertyChanging("Version");
+                this._Version = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("Version");
+                this.OnVersionChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _Version;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnVersionChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnVersionChanged();
+        /// <summary>
+        /// There are no comments for property LastSync in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.DateTime LastSync
+        {
+            get
+            {
+                return this._LastSync;
+            }
+            set
+            {
+                this.OnLastSyncChanging(value);
+                this.ReportPropertyChanging("LastSync");
+                this._LastSync = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("LastSync");
+                this.OnLastSyncChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.DateTime _LastSync;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnLastSyncChanging(global::System.DateTime value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnLastSyncChanged();
+        /// <summary>
+        /// There are no comments for property SyncInterval in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<int> SyncInterval
+        {
+            get
+            {
+                return this._SyncInterval;
+            }
+            set
+            {
+                this.OnSyncIntervalChanging(value);
+                this.ReportPropertyChanging("SyncInterval");
+                this._SyncInterval = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("SyncInterval");
+                this.OnSyncIntervalChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<int> _SyncInterval;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnSyncIntervalChanging(global::System.Nullable<int> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnSyncIntervalChanged();
+        /// <summary>
+        /// There are no comments for property SyncTime in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string SyncTime
+        {
+            get
+            {
+                return this._SyncTime;
+            }
+            set
+            {
+                this.OnSyncTimeChanging(value);
+                this.ReportPropertyChanging("SyncTime");
+                this._SyncTime = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("SyncTime");
+                this.OnSyncTimeChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _SyncTime;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnSyncTimeChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnSyncTimeChanged();
+        /// <summary>
+        /// There are no comments for property IsStartingSync in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public bool IsStartingSync
+        {
+            get
+            {
+                return this._IsStartingSync;
+            }
+            set
+            {
+                this.OnIsStartingSyncChanging(value);
+                this.ReportPropertyChanging("IsStartingSync");
+                this._IsStartingSync = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("IsStartingSync");
+                this.OnIsStartingSyncChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private bool _IsStartingSync;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIsStartingSyncChanging(bool value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnIsStartingSyncChanged();
     }
 }
