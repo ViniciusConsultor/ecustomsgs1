@@ -586,7 +586,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 28);
             this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "T&ạo tờ khai xuất";
+            this.btnAdd.Text = "Tạo tờ kh&ai xuất";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);

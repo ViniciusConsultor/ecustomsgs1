@@ -147,7 +147,7 @@
             this.btnConfirmFee.Name = "btnConfirmFee";
             this.btnConfirmFee.Size = new System.Drawing.Size(104, 28);
             this.btnConfirmFee.TabIndex = 0;
-            this.btnConfirmFee.Text = "X&ác nhận";
+            this.btnConfirmFee.Text = "Xá&c nhận";
             this.btnConfirmFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirmFee.UseVisualStyleBackColor = true;
             this.btnConfirmFee.Click += new System.EventHandler(this.btnConfirmFee_Click);
