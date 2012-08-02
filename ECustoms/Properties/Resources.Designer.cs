@@ -60,44 +60,9 @@ namespace ECustoms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap _001_01 {
-            get {
-                object obj = ResourceManager.GetObject("001_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap _001_05 {
-            get {
-                object obj = ResourceManager.GetObject("001_05", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap _001_39 {
-            get {
-                object obj = ResourceManager.GetObject("001_39", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap _001_45 {
-            get {
-                object obj = ResourceManager.GetObject("001_45", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap _02 {
             get {
                 object obj = ResourceManager.GetObject("02", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap _1081 {
-            get {
-                object obj = ResourceManager.GetObject("1081", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -112,20 +77,6 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap _1336316540_document_export {
             get {
                 object obj = ResourceManager.GetObject("1336316540_document-export", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap _4469 {
-            get {
-                object obj = ResourceManager.GetObject("4469", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap _5373 {
-            get {
-                object obj = ResourceManager.GetObject("5373", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,20 +287,6 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap exportSmall {
             get {
                 object obj = ResourceManager.GetObject("exportSmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap file_import {
-            get {
-                object obj = ResourceManager.GetObject("file import", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap file_import1 {
-            get {
-                object obj = ResourceManager.GetObject("file import1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

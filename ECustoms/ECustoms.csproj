@@ -875,18 +875,6 @@
     <None Include="Resources\xkill.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\001_01.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\001_45.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\001_05.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\001_39.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -903,12 +891,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\file import1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\file import2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search2.png" />
@@ -966,9 +948,6 @@
     <None Include="Resources\gear.png" />
     <None Include="Resources\Exit.png" />
     <None Include="Resources\user.png" />
-    <None Include="Resources\4469.png" />
-    <None Include="Resources\10811.png" />
-    <None Include="Resources\5373.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\accept.png" />
     <None Include="Resources\about.png" />
