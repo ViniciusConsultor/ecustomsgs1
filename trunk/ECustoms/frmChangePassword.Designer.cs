@@ -43,43 +43,43 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(153, 56);
+            this.txtPassword.Location = new System.Drawing.Point(120, 50);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(194, 20);
+            this.txtPassword.Size = new System.Drawing.Size(150, 20);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Tag = "required";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(13, 54);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPassword.Location = new System.Drawing.Point(13, 53);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(104, 20);
+            this.lblPassword.Size = new System.Drawing.Size(71, 13);
             this.lblPassword.TabIndex = 8;
             this.lblPassword.Text = "Mật khẩu mới";
             // 
             // txtRetypePassword
             // 
-            this.txtRetypePassword.Location = new System.Drawing.Point(153, 86);
+            this.txtRetypePassword.Location = new System.Drawing.Point(120, 79);
             this.txtRetypePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.PasswordChar = '*';
-            this.txtRetypePassword.Size = new System.Drawing.Size(194, 20);
+            this.txtRetypePassword.Size = new System.Drawing.Size(150, 20);
             this.txtRetypePassword.TabIndex = 2;
             this.txtRetypePassword.Tag = "required";
             // 
             // lblRetypePassword
             // 
             this.lblRetypePassword.AutoSize = true;
-            this.lblRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetypePassword.Location = new System.Drawing.Point(13, 87);
+            this.lblRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblRetypePassword.Location = new System.Drawing.Point(13, 82);
             this.lblRetypePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRetypePassword.Name = "lblRetypePassword";
-            this.lblRetypePassword.Size = new System.Drawing.Size(136, 20);
+            this.lblRetypePassword.Size = new System.Drawing.Size(93, 13);
             this.lblRetypePassword.TabIndex = 10;
             this.lblRetypePassword.Text = "Nhập lại mật khẩu";
             // 
@@ -87,13 +87,13 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(263, 119);
+            this.btnClose.Location = new System.Drawing.Point(203, 109);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(79, 28);
+            this.btnClose.Size = new System.Drawing.Size(67, 28);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -104,13 +104,13 @@
             // 
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(152, 119);
+            this.btnUpdate.Location = new System.Drawing.Point(112, 109);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(103, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(83, 28);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,22 +119,22 @@
             // 
             // txtPassOld
             // 
-            this.txtPassOld.Location = new System.Drawing.Point(153, 24);
+            this.txtPassOld.Location = new System.Drawing.Point(120, 21);
             this.txtPassOld.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassOld.Name = "txtPassOld";
             this.txtPassOld.PasswordChar = '*';
-            this.txtPassOld.Size = new System.Drawing.Size(194, 20);
+            this.txtPassOld.Size = new System.Drawing.Size(150, 20);
             this.txtPassOld.TabIndex = 0;
             this.txtPassOld.Tag = "required";
             // 
             // lbOldPass
             // 
             this.lbOldPass.AutoSize = true;
-            this.lbOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOldPass.Location = new System.Drawing.Point(13, 22);
+            this.lbOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbOldPass.Location = new System.Drawing.Point(13, 24);
             this.lbOldPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOldPass.Name = "lbOldPass";
-            this.lbOldPass.Size = new System.Drawing.Size(96, 20);
+            this.lbOldPass.Size = new System.Drawing.Size(67, 13);
             this.lbOldPass.TabIndex = 16;
             this.lbOldPass.Text = "Mật khẩu cũ";
             // 
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 168);
+            this.ClientSize = new System.Drawing.Size(292, 153);
             this.Controls.Add(this.txtPassOld);
             this.Controls.Add(this.lbOldPass);
             this.Controls.Add(this.btnClose);

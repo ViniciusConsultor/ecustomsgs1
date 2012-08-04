@@ -54,41 +54,41 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(164, 180);
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtDescription.Location = new System.Drawing.Point(120, 107);
             this.txtDescription.MaxLength = 500;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(263, 60);
+            this.txtDescription.Size = new System.Drawing.Size(200, 60);
             this.txtDescription.TabIndex = 47;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 180);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.Location = new System.Drawing.Point(11, 110);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 52;
             this.label5.Text = "Mô tả";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 134);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(11, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 20);
+            this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 47;
             this.label4.Text = "Phí ( x 1000 VNĐ)";
             // 
             // txtFee
             // 
-            this.txtFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFee.Location = new System.Drawing.Point(164, 132);
+            this.txtFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtFee.Location = new System.Drawing.Point(120, 78);
             this.txtFee.MaxLength = 20;
             this.txtFee.Name = "txtFee";
-            this.txtFee.Size = new System.Drawing.Size(263, 26);
+            this.txtFee.Size = new System.Drawing.Size(200, 20);
             this.txtFee.TabIndex = 46;
             this.txtFee.Leave += new System.EventHandler(this.txtFee_Leave);
             // 
@@ -97,11 +97,11 @@
             this.cbGoodType.DataSource = this.tblGoodsTypeBindingSource;
             this.cbGoodType.DisplayMember = "TypeName";
             this.cbGoodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGoodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGoodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbGoodType.FormattingEnabled = true;
-            this.cbGoodType.Location = new System.Drawing.Point(164, 81);
+            this.cbGoodType.Location = new System.Drawing.Point(120, 49);
             this.cbGoodType.Name = "cbGoodType";
-            this.cbGoodType.Size = new System.Drawing.Size(263, 28);
+            this.cbGoodType.Size = new System.Drawing.Size(200, 21);
             this.cbGoodType.TabIndex = 43;
             this.cbGoodType.ValueMember = "TypeId";
             // 
@@ -120,11 +120,11 @@
             this.cbVehicleType.DataSource = this.tblVehicleTypeBindingSource;
             this.cbVehicleType.DisplayMember = "Name";
             this.cbVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVehicleType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVehicleType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbVehicleType.FormattingEnabled = true;
-            this.cbVehicleType.Location = new System.Drawing.Point(164, 28);
+            this.cbVehicleType.Location = new System.Drawing.Point(120, 20);
             this.cbVehicleType.Name = "cbVehicleType";
-            this.cbVehicleType.Size = new System.Drawing.Size(263, 28);
+            this.cbVehicleType.Size = new System.Drawing.Size(200, 21);
             this.cbVehicleType.TabIndex = 42;
             this.cbVehicleType.ValueMember = "VehicleTypeID";
             // 
@@ -136,20 +136,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 81);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(11, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 45;
             this.label3.Text = "Loại hàng hóa";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 32);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(11, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
+            this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 44;
             this.label2.Text = "Loại trọng tải";
             // 
@@ -157,12 +157,12 @@
             // 
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(290, 276);
+            this.btnReset.Location = new System.Drawing.Point(194, 195);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(91, 28);
+            this.btnReset.Size = new System.Drawing.Size(75, 28);
             this.btnReset.TabIndex = 50;
             this.btnReset.Text = "&Làm lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -173,12 +173,12 @@
             // 
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(185, 276);
+            this.btnUpdate.Location = new System.Drawing.Point(103, 195);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(99, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(83, 28);
             this.btnUpdate.TabIndex = 49;
             this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -189,12 +189,12 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(387, 276);
+            this.btnClose.Location = new System.Drawing.Point(277, 195);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(79, 28);
+            this.btnClose.Size = new System.Drawing.Size(67, 28);
             this.btnClose.TabIndex = 51;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -205,12 +205,12 @@
             // 
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(78, 276);
+            this.btnAdd.Location = new System.Drawing.Point(12, 195);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 28);
+            this.btnAdd.Size = new System.Drawing.Size(83, 28);
             this.btnAdd.TabIndex = 48;
             this.btnAdd.Text = "Thêm &mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -227,10 +227,10 @@
             this.groupBox1.Controls.Add(this.cbGoodType);
             this.groupBox1.Controls.Add(this.txtFee);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 258);
+            this.groupBox1.Size = new System.Drawing.Size(332, 177);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cấu hình phí";
@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 300);
+            this.ClientSize = new System.Drawing.Size(358, 240);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnUpdate);

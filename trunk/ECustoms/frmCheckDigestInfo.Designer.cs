@@ -226,13 +226,13 @@
             // 
             this.btnAccept.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAccept.Image = global::ECustoms.Properties.Resources.accept;
             this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccept.Location = new System.Drawing.Point(244, 281);
+            this.btnAccept.Location = new System.Drawing.Point(284, 281);
             this.btnAccept.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(88, 28);
+            this.btnAccept.Size = new System.Drawing.Size(75, 28);
             this.btnAccept.TabIndex = 7;
             this.btnAccept.Text = "Đồng ý";
             this.btnAccept.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -243,13 +243,13 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(340, 281);
+            this.btnClose.Location = new System.Drawing.Point(367, 281);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(127, 28);
+            this.btnClose.Size = new System.Drawing.Size(100, 28);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Đăng ký sau";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -265,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(488, 321);
+            this.ClientSize = new System.Drawing.Size(488, 329);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);

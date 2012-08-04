@@ -67,28 +67,28 @@
             this.grbResult.Controls.Add(this.txtReceipt);
             this.grbResult.Controls.Add(this.label2);
             this.grbResult.Controls.Add(this.label1);
-            this.grbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.grbResult.Location = new System.Drawing.Point(12, 12);
             this.grbResult.Name = "grbResult";
-            this.grbResult.Size = new System.Drawing.Size(332, 134);
+            this.grbResult.Size = new System.Drawing.Size(226, 102);
             this.grbResult.TabIndex = 0;
             this.grbResult.TabStop = false;
             this.grbResult.Text = "Thông tin thu phí";
             // 
             // txtMoney
             // 
-            this.txtMoney.Location = new System.Drawing.Point(134, 63);
+            this.txtMoney.Location = new System.Drawing.Point(74, 46);
             this.txtMoney.Mask = "000000000000";
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(185, 26);
+            this.txtMoney.Size = new System.Drawing.Size(144, 20);
             this.txtMoney.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 98);
+            this.label3.Location = new System.Drawing.Point(10, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Ngày thu";
             // 
@@ -96,43 +96,43 @@
             // 
             this.dtpFee.CustomFormat = "dd/MM/yyyy";
             this.dtpFee.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFee.Location = new System.Drawing.Point(134, 95);
+            this.dtpFee.Location = new System.Drawing.Point(74, 74);
             this.dtpFee.Name = "dtpFee";
-            this.dtpFee.Size = new System.Drawing.Size(125, 26);
+            this.dtpFee.Size = new System.Drawing.Size(96, 20);
             this.dtpFee.TabIndex = 2;
             // 
             // mtxtFeeHour
             // 
-            this.mtxtFeeHour.Location = new System.Drawing.Point(265, 95);
+            this.mtxtFeeHour.Location = new System.Drawing.Point(176, 74);
             this.mtxtFeeHour.Mask = "00:00";
             this.mtxtFeeHour.Name = "mtxtFeeHour";
-            this.mtxtFeeHour.Size = new System.Drawing.Size(54, 26);
+            this.mtxtFeeHour.Size = new System.Drawing.Size(44, 20);
             this.mtxtFeeHour.TabIndex = 3;
             this.mtxtFeeHour.ValidatingType = typeof(System.DateTime);
             // 
             // txtReceipt
             // 
             this.txtReceipt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReceipt.Location = new System.Drawing.Point(134, 31);
+            this.txtReceipt.Location = new System.Drawing.Point(74, 17);
             this.txtReceipt.Name = "txtReceipt";
-            this.txtReceipt.Size = new System.Drawing.Size(185, 26);
+            this.txtReceipt.Size = new System.Drawing.Size(144, 20);
             this.txtReceipt.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 66);
+            this.label2.Location = new System.Drawing.Point(10, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Số tiền thu";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 34);
+            this.label1.Location = new System.Drawing.Point(10, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Số biên lai";
             // 
@@ -140,12 +140,12 @@
             // 
             this.btnConfirmFee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnConfirmFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnConfirmFee.Image = global::ECustoms.Properties.Resources.accept;
             this.btnConfirmFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmFee.Location = new System.Drawing.Point(158, 152);
+            this.btnConfirmFee.Location = new System.Drawing.Point(78, 120);
             this.btnConfirmFee.Name = "btnConfirmFee";
-            this.btnConfirmFee.Size = new System.Drawing.Size(104, 28);
+            this.btnConfirmFee.Size = new System.Drawing.Size(85, 28);
             this.btnConfirmFee.TabIndex = 0;
             this.btnConfirmFee.Text = "Xá&c nhận";
             this.btnConfirmFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -156,12 +156,12 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(268, 152);
+            this.btnClose.Location = new System.Drawing.Point(171, 120);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(76, 28);
+            this.btnClose.Size = new System.Drawing.Size(67, 28);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 190);
+            this.ClientSize = new System.Drawing.Size(247, 164);
             this.Controls.Add(this.btnConfirmFee);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grbResult);

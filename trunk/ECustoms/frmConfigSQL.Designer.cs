@@ -57,23 +57,24 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtServer);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(407, 370);
+            this.groupBox1.Size = new System.Drawing.Size(322, 304);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin máy chủ";
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button1.Image = global::ECustoms.Properties.Resources.enter;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(297, 325);
+            this.button1.Location = new System.Drawing.Point(219, 258);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 32);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Kết nối";
+            this.button1.Text = "&Kết nối";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -82,9 +83,10 @@
             // 
             this.groupBox3.Controls.Add(this.cbDatabase);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(28, 227);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox3.Location = new System.Drawing.Point(18, 179);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(368, 92);
+            this.groupBox3.Size = new System.Drawing.Size(294, 73);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Connect to a database";
@@ -93,18 +95,20 @@
             // 
             this.cbDatabase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbDatabase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbDatabase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbDatabase.FormattingEnabled = true;
-            this.cbDatabase.Location = new System.Drawing.Point(44, 50);
+            this.cbDatabase.Location = new System.Drawing.Point(47, 41);
             this.cbDatabase.Name = "cbDatabase";
-            this.cbDatabase.Size = new System.Drawing.Size(318, 28);
+            this.cbDatabase.Size = new System.Drawing.Size(241, 21);
             this.cbDatabase.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 26);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(22, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 20);
+            this.label2.Size = new System.Drawing.Size(122, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Select a database name";
             // 
@@ -116,9 +120,10 @@
             this.groupBox2.Controls.Add(this.lblUser);
             this.groupBox2.Controls.Add(this.rbUser);
             this.groupBox2.Controls.Add(this.rbIntergrated);
-            this.groupBox2.Location = new System.Drawing.Point(28, 67);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox2.Location = new System.Drawing.Point(18, 39);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(368, 153);
+            this.groupBox2.Size = new System.Drawing.Size(294, 134);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Log on to server";
@@ -127,27 +132,30 @@
             // txtPassword
             // 
             this.txtPassword.Enabled = false;
-            this.txtPassword.Location = new System.Drawing.Point(143, 117);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtPassword.Location = new System.Drawing.Point(86, 92);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(199, 26);
+            this.txtPassword.Size = new System.Drawing.Size(199, 20);
             this.txtPassword.TabIndex = 3;
             // 
             // txtUser
             // 
             this.txtUser.Enabled = false;
-            this.txtUser.Location = new System.Drawing.Point(143, 85);
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtUser.Location = new System.Drawing.Point(86, 66);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(199, 26);
+            this.txtUser.Size = new System.Drawing.Size(199, 20);
             this.txtUser.TabIndex = 2;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Enabled = false;
-            this.lblPassword.Location = new System.Drawing.Point(59, 120);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPassword.Location = new System.Drawing.Point(22, 95);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(78, 20);
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password";
             // 
@@ -155,18 +163,20 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Enabled = false;
-            this.lblUser.Location = new System.Drawing.Point(59, 88);
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblUser.Location = new System.Drawing.Point(22, 69);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(43, 20);
+            this.lblUser.Size = new System.Drawing.Size(29, 13);
             this.lblUser.TabIndex = 2;
             this.lblUser.Text = "User";
             // 
             // rbUser
             // 
             this.rbUser.AutoSize = true;
-            this.rbUser.Location = new System.Drawing.Point(40, 57);
+            this.rbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.rbUser.Location = new System.Drawing.Point(25, 44);
             this.rbUser.Name = "rbUser";
-            this.rbUser.Size = new System.Drawing.Size(282, 24);
+            this.rbUser.Size = new System.Drawing.Size(196, 17);
             this.rbUser.TabIndex = 1;
             this.rbUser.Text = "Use the specific User and Password";
             this.rbUser.UseVisualStyleBackColor = true;
@@ -176,9 +186,10 @@
             // 
             this.rbIntergrated.AutoSize = true;
             this.rbIntergrated.Checked = true;
-            this.rbIntergrated.Location = new System.Drawing.Point(40, 26);
+            this.rbIntergrated.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.rbIntergrated.Location = new System.Drawing.Point(25, 19);
             this.rbIntergrated.Name = "rbIntergrated";
-            this.rbIntergrated.Size = new System.Drawing.Size(172, 24);
+            this.rbIntergrated.Size = new System.Drawing.Size(120, 17);
             this.rbIntergrated.TabIndex = 0;
             this.rbIntergrated.TabStop = true;
             this.rbIntergrated.Text = "Intergrated Sercurity";
@@ -186,18 +197,20 @@
             // 
             // txtServer
             // 
-            this.txtServer.Location = new System.Drawing.Point(137, 30);
+            this.txtServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtServer.Location = new System.Drawing.Point(97, 13);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(253, 26);
+            this.txtServer.Size = new System.Drawing.Size(215, 20);
             this.txtServer.TabIndex = 0;
             this.txtServer.Tag = "required";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(15, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Server name: ";
             // 
@@ -209,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 381);
+            this.ClientSize = new System.Drawing.Size(347, 324);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConfigSQL";
