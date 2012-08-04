@@ -77,11 +77,11 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(30, 14);
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblUsername.Location = new System.Drawing.Point(9, 11);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(96, 20);
+            this.lblUsername.Size = new System.Drawing.Size(67, 13);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Tên truy cập";
             // 
@@ -89,30 +89,32 @@
             // 
             this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUserName.Location = new System.Drawing.Point(185, 11);
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtUserName.Location = new System.Drawing.Point(110, 8);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(389, 26);
+            this.txtUserName.Size = new System.Drawing.Size(250, 20);
             this.txtUserName.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(185, 171);
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtName.Location = new System.Drawing.Point(110, 120);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(389, 26);
+            this.txtName.Size = new System.Drawing.Size(250, 20);
             this.txtName.TabIndex = 5;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(30, 171);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblName.Location = new System.Drawing.Point(9, 123);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(77, 20);
+            this.lblName.Size = new System.Drawing.Size(54, 13);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Họ và tên";
             // 
@@ -120,21 +122,22 @@
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.Location = new System.Drawing.Point(185, 51);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtPassword.Location = new System.Drawing.Point(110, 36);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(389, 26);
+            this.txtPassword.Size = new System.Drawing.Size(250, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(32, 51);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPassword.Location = new System.Drawing.Point(9, 39);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(75, 20);
+            this.lblPassword.Size = new System.Drawing.Size(52, 13);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Mật khẩu";
             // 
@@ -142,21 +145,22 @@
             // 
             this.txtRetypePassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRetypePassword.Location = new System.Drawing.Point(185, 91);
+            this.txtRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtRetypePassword.Location = new System.Drawing.Point(110, 64);
             this.txtRetypePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.PasswordChar = '*';
-            this.txtRetypePassword.Size = new System.Drawing.Size(389, 26);
+            this.txtRetypePassword.Size = new System.Drawing.Size(250, 20);
             this.txtRetypePassword.TabIndex = 3;
             // 
             // lblRetypePassword
             // 
             this.lblRetypePassword.AutoSize = true;
-            this.lblRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetypePassword.Location = new System.Drawing.Point(32, 91);
+            this.lblRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblRetypePassword.Location = new System.Drawing.Point(9, 67);
             this.lblRetypePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRetypePassword.Name = "lblRetypePassword";
-            this.lblRetypePassword.Size = new System.Drawing.Size(136, 20);
+            this.lblRetypePassword.Size = new System.Drawing.Size(93, 13);
             this.lblRetypePassword.TabIndex = 8;
             this.lblRetypePassword.Text = "Nhập lại mật khẩu";
             // 
@@ -164,20 +168,21 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(185, 131);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtEmail.Location = new System.Drawing.Point(110, 92);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(389, 26);
+            this.txtEmail.Size = new System.Drawing.Size(250, 20);
             this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(30, 131);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblEmail.Location = new System.Drawing.Point(9, 95);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 20);
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email";
             // 
@@ -185,21 +190,22 @@
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAddress.Location = new System.Drawing.Point(185, 211);
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtAddress.Location = new System.Drawing.Point(110, 148);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(389, 65);
+            this.txtAddress.Size = new System.Drawing.Size(250, 65);
             this.txtAddress.TabIndex = 6;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(30, 211);
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblAddress.Location = new System.Drawing.Point(9, 174);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(57, 20);
+            this.lblAddress.Size = new System.Drawing.Size(40, 13);
             this.lblAddress.TabIndex = 12;
             this.lblAddress.Text = "Địa chỉ";
             // 
@@ -207,38 +213,40 @@
             // 
             this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhone.Location = new System.Drawing.Point(185, 291);
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtPhone.Location = new System.Drawing.Point(110, 221);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(389, 26);
+            this.txtPhone.Size = new System.Drawing.Size(250, 20);
             this.txtPhone.TabIndex = 7;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(32, 291);
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPhone.Location = new System.Drawing.Point(9, 225);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(81, 20);
+            this.lblPhone.Size = new System.Drawing.Size(55, 13);
             this.lblPhone.TabIndex = 14;
             this.lblPhone.Text = "Điện thoại";
             // 
             // lblActive
             // 
             this.lblActive.AutoSize = true;
-            this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActive.Location = new System.Drawing.Point(32, 336);
+            this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblActive.Location = new System.Drawing.Point(9, 250);
             this.lblActive.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblActive.Name = "lblActive";
-            this.lblActive.Size = new System.Drawing.Size(123, 20);
+            this.lblActive.Size = new System.Drawing.Size(85, 13);
             this.lblActive.TabIndex = 18;
             this.lblActive.Text = "Được hoạt động";
             // 
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(185, 335);
+            this.cbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbActive.Location = new System.Drawing.Point(110, 249);
             this.cbActive.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(15, 14);
@@ -251,10 +259,12 @@
             this.tabControl1.Controls.Add(this.tabGroup);
             this.tabControl1.Controls.Add(this.tabPermission);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.MinimumSize = new System.Drawing.Size(376, 345);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(601, 439);
+            this.tabControl1.Size = new System.Drawing.Size(376, 345);
             this.tabControl1.TabIndex = 19;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -279,10 +289,10 @@
             this.tabUser.Controls.Add(this.txtEmail);
             this.tabUser.Controls.Add(this.txtAddress);
             this.tabUser.Controls.Add(this.lblAddress);
-            this.tabUser.Location = new System.Drawing.Point(4, 29);
+            this.tabUser.Location = new System.Drawing.Point(4, 22);
             this.tabUser.Name = "tabUser";
             this.tabUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUser.Size = new System.Drawing.Size(593, 406);
+            this.tabUser.Size = new System.Drawing.Size(368, 319);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "Thông tin người dùng";
             this.tabUser.UseVisualStyleBackColor = true;
@@ -292,13 +302,13 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(497, 368);
+            this.btnClose.Location = new System.Drawing.Point(292, 281);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(77, 28);
+            this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 12;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -310,13 +320,13 @@
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(387, 368);
+            this.btnUpdate.Location = new System.Drawing.Point(201, 281);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(102, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(83, 28);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -328,13 +338,13 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(272, 368);
+            this.btnAdd.Location = new System.Drawing.Point(110, 281);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(107, 28);
+            this.btnAdd.Size = new System.Drawing.Size(83, 28);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Thêm &mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -347,10 +357,10 @@
             this.tabGroup.Controls.Add(this.btnUpdateListGroup);
             this.tabGroup.Controls.Add(this.tbnResetListGroup);
             this.tabGroup.Controls.Add(this.grvGroup);
-            this.tabGroup.Location = new System.Drawing.Point(4, 29);
+            this.tabGroup.Location = new System.Drawing.Point(4, 22);
             this.tabGroup.Name = "tabGroup";
             this.tabGroup.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGroup.Size = new System.Drawing.Size(593, 406);
+            this.tabGroup.Size = new System.Drawing.Size(368, 319);
             this.tabGroup.TabIndex = 1;
             this.tabGroup.Text = "Nhóm của người dùng";
             this.tabGroup.UseVisualStyleBackColor = true;
@@ -358,7 +368,7 @@
             // chbCheckAllGroup
             // 
             this.chbCheckAllGroup.AutoSize = true;
-            this.chbCheckAllGroup.Location = new System.Drawing.Point(127, 14);
+            this.chbCheckAllGroup.Location = new System.Drawing.Point(90, 9);
             this.chbCheckAllGroup.Name = "chbCheckAllGroup";
             this.chbCheckAllGroup.Size = new System.Drawing.Size(15, 14);
             this.chbCheckAllGroup.TabIndex = 20;
@@ -370,14 +380,14 @@
             this.btnUpdateListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdateListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateListGroup.Location = new System.Drawing.Point(345, 370);
+            this.btnUpdateListGroup.Location = new System.Drawing.Point(174, 283);
             this.btnUpdateListGroup.Name = "btnUpdateListGroup";
-            this.btnUpdateListGroup.Size = new System.Drawing.Size(147, 28);
+            this.btnUpdateListGroup.Size = new System.Drawing.Size(110, 28);
             this.btnUpdateListGroup.TabIndex = 17;
-            this.btnUpdateListGroup.Text = "Cập nhật nhóm";
+            this.btnUpdateListGroup.Text = "&Cập nhật nhóm";
             this.btnUpdateListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateListGroup.UseVisualStyleBackColor = true;
             this.btnUpdateListGroup.Click += new System.EventHandler(this.btnUpdateListGroup_Click);
@@ -387,14 +397,14 @@
             this.tbnResetListGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tbnResetListGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbnResetListGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources.undo;
             this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbnResetListGroup.Location = new System.Drawing.Point(498, 370);
+            this.tbnResetListGroup.Location = new System.Drawing.Point(290, 283);
             this.tbnResetListGroup.Name = "tbnResetListGroup";
-            this.tbnResetListGroup.Size = new System.Drawing.Size(89, 28);
+            this.tbnResetListGroup.Size = new System.Drawing.Size(75, 28);
             this.tbnResetListGroup.TabIndex = 16;
-            this.tbnResetListGroup.Text = "Làm lại";
+            this.tbnResetListGroup.Text = "&Làm lại";
             this.tbnResetListGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tbnResetListGroup.UseVisualStyleBackColor = true;
             this.tbnResetListGroup.Click += new System.EventHandler(this.tbnResetListGroup_Click);
@@ -415,7 +425,7 @@
             this.grvGroup.Location = new System.Drawing.Point(4, 6);
             this.grvGroup.Name = "grvGroup";
             this.grvGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvGroup.Size = new System.Drawing.Size(589, 358);
+            this.grvGroup.Size = new System.Drawing.Size(364, 271);
             this.grvGroup.TabIndex = 2;
             // 
             // checkGroup
@@ -444,9 +454,9 @@
             this.tabPermission.Controls.Add(this.grvPermission);
             this.tabPermission.Controls.Add(this.btnResetPermission);
             this.tabPermission.Controls.Add(this.btnUpdatePermission);
-            this.tabPermission.Location = new System.Drawing.Point(4, 29);
+            this.tabPermission.Location = new System.Drawing.Point(4, 22);
             this.tabPermission.Name = "tabPermission";
-            this.tabPermission.Size = new System.Drawing.Size(593, 406);
+            this.tabPermission.Size = new System.Drawing.Size(368, 319);
             this.tabPermission.TabIndex = 2;
             this.tabPermission.Text = "Quyền truy cập";
             this.tabPermission.UseVisualStyleBackColor = true;
@@ -454,7 +464,7 @@
             // chbCheckAllPermission
             // 
             this.chbCheckAllPermission.AutoSize = true;
-            this.chbCheckAllPermission.Location = new System.Drawing.Point(127, 14);
+            this.chbCheckAllPermission.Location = new System.Drawing.Point(90, 9);
             this.chbCheckAllPermission.Name = "chbCheckAllPermission";
             this.chbCheckAllPermission.Size = new System.Drawing.Size(15, 14);
             this.chbCheckAllPermission.TabIndex = 19;
@@ -477,7 +487,7 @@
             this.grvPermission.Location = new System.Drawing.Point(4, 6);
             this.grvPermission.Name = "grvPermission";
             this.grvPermission.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvPermission.Size = new System.Drawing.Size(589, 358);
+            this.grvPermission.Size = new System.Drawing.Size(364, 262);
             this.grvPermission.TabIndex = 13;
             // 
             // Check
@@ -506,14 +516,14 @@
             this.btnResetPermission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResetPermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnResetPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnResetPermission.Image = global::ECustoms.Properties.Resources.undo;
             this.btnResetPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResetPermission.Location = new System.Drawing.Point(493, 370);
+            this.btnResetPermission.Location = new System.Drawing.Point(290, 283);
             this.btnResetPermission.Name = "btnResetPermission";
-            this.btnResetPermission.Size = new System.Drawing.Size(92, 28);
+            this.btnResetPermission.Size = new System.Drawing.Size(75, 28);
             this.btnResetPermission.TabIndex = 15;
-            this.btnResetPermission.Text = "Làm lại";
+            this.btnResetPermission.Text = "&Làm lại";
             this.btnResetPermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnResetPermission.UseVisualStyleBackColor = true;
             this.btnResetPermission.Click += new System.EventHandler(this.btnResetPermission_Click);
@@ -523,14 +533,14 @@
             this.btnUpdatePermission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdatePermission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdatePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePermission.Location = new System.Drawing.Point(338, 370);
+            this.btnUpdatePermission.Location = new System.Drawing.Point(172, 283);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
-            this.btnUpdatePermission.Size = new System.Drawing.Size(149, 28);
+            this.btnUpdatePermission.Size = new System.Drawing.Size(110, 28);
             this.btnUpdatePermission.TabIndex = 14;
-            this.btnUpdatePermission.Text = "Cập nhật quyền";
+            this.btnUpdatePermission.Text = "&Cập nhật quyền";
             this.btnUpdatePermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdatePermission.UseVisualStyleBackColor = true;
             this.btnUpdatePermission.Click += new System.EventHandler(this.btnUpdatePermission_Click_1);
@@ -539,12 +549,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 439);
+            this.ClientSize = new System.Drawing.Size(376, 345);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(609, 466);
+            this.MinimumSize = new System.Drawing.Size(384, 362);
             this.Name = "frmAddUser";
             this.ShowInTaskbar = false;
             this.Text = "Thông tin người dùng";

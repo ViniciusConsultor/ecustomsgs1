@@ -61,10 +61,10 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.grdVehicleCompleted);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(979, 476);
+            this.groupBox1.Size = new System.Drawing.Size(685, 226);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đã hoàn thành thủ tục hải quan";
@@ -76,7 +76,7 @@
             this.grdVehicleCompleted.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -92,7 +92,7 @@
             this.Parking});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.Format = "g";
             dataGridViewCellStyle4.NullValue = null;
@@ -101,13 +101,13 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grdVehicleCompleted.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdVehicleCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdVehicleCompleted.Location = new System.Drawing.Point(3, 22);
+            this.grdVehicleCompleted.Location = new System.Drawing.Point(3, 16);
             this.grdVehicleCompleted.MultiSelect = false;
             this.grdVehicleCompleted.Name = "grdVehicleCompleted";
             this.grdVehicleCompleted.ReadOnly = true;
             this.grdVehicleCompleted.RowHeadersVisible = false;
             this.grdVehicleCompleted.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicleCompleted.Size = new System.Drawing.Size(973, 451);
+            this.grdVehicleCompleted.Size = new System.Drawing.Size(679, 207);
             this.grdVehicleCompleted.TabIndex = 0;
             // 
             // PlateNumber
@@ -222,10 +222,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 491);
+            this.ClientSize = new System.Drawing.Size(698, 241);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1000, 518);
+            this.MinimumSize = new System.Drawing.Size(706, 268);
             this.Name = "frmCompletedCustomsProcedures";
             this.ShowInTaskbar = false;
             this.Text = "frmCompletedCustomsProcedures";

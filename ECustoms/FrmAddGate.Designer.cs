@@ -52,24 +52,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(468, 78);
+            this.label2.Location = new System.Drawing.Point(350, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 20);
+            this.label2.Size = new System.Drawing.Size(11, 13);
             this.label2.TabIndex = 77;
             this.label2.Text = "*";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(468, 38);
+            this.label1.Location = new System.Drawing.Point(350, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 20);
+            this.label1.Size = new System.Drawing.Size(11, 13);
             this.label1.TabIndex = 76;
             this.label1.Text = "*";
             // 
@@ -77,14 +77,13 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(422, 278);
+            this.btnClose.Location = new System.Drawing.Point(313, 188);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.MinimumSize = new System.Drawing.Size(82, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(82, 28);
+            this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 75;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -95,13 +94,13 @@
             // 
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(312, 278);
+            this.btnUpdate.Location = new System.Drawing.Point(222, 188);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(102, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(83, 28);
             this.btnUpdate.TabIndex = 74;
             this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -112,13 +111,13 @@
             // 
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(195, 278);
+            this.btnAdd.Location = new System.Drawing.Point(131, 188);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(109, 28);
+            this.btnAdd.Size = new System.Drawing.Size(83, 28);
             this.btnAdd.TabIndex = 73;
             this.btnAdd.Text = "Thêm &mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -128,67 +127,67 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(7, 35);
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblUsername.Location = new System.Drawing.Point(6, 25);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(100, 20);
+            this.lblUsername.Size = new System.Drawing.Size(70, 13);
             this.lblUsername.TabIndex = 67;
             this.lblUsername.Text = "Mã cửa khẩu";
             // 
             // txtGateCode
             // 
             this.txtGateCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtGateCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGateCode.Location = new System.Drawing.Point(127, 35);
+            this.txtGateCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtGateCode.Location = new System.Drawing.Point(97, 22);
             this.txtGateCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGateCode.MaxLength = 50;
             this.txtGateCode.Name = "txtGateCode";
-            this.txtGateCode.Size = new System.Drawing.Size(339, 26);
+            this.txtGateCode.Size = new System.Drawing.Size(250, 20);
             this.txtGateCode.TabIndex = 68;
             this.txtGateCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGateCode_KeyDown);
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(7, 75);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPassword.Location = new System.Drawing.Point(7, 54);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(105, 20);
+            this.lblPassword.Size = new System.Drawing.Size(74, 13);
             this.lblPassword.TabIndex = 70;
             this.lblPassword.Text = "Tên cửa khẩu";
             // 
             // txtGateName
             // 
-            this.txtGateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGateName.Location = new System.Drawing.Point(127, 75);
+            this.txtGateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtGateName.Location = new System.Drawing.Point(97, 51);
             this.txtGateName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGateName.MaxLength = 500;
             this.txtGateName.Name = "txtGateName";
-            this.txtGateName.Size = new System.Drawing.Size(339, 26);
+            this.txtGateName.Size = new System.Drawing.Size(250, 20);
             this.txtGateName.TabIndex = 69;
             this.txtGateName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGateName_KeyDown);
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(127, 111);
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtDescription.Location = new System.Drawing.Point(97, 80);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescription.MaxLength = 1000;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(339, 96);
+            this.txtDescription.Size = new System.Drawing.Size(250, 77);
             this.txtDescription.TabIndex = 71;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(7, 109);
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblAddress.Location = new System.Drawing.Point(7, 83);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(49, 20);
+            this.lblAddress.Size = new System.Drawing.Size(34, 13);
             this.lblAddress.TabIndex = 72;
             this.lblAddress.Text = "Mô tả";
             // 
@@ -212,10 +211,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblPassword);
             this.groupBox1.Controls.Add(this.txtGateCode);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 258);
+            this.groupBox1.Size = new System.Drawing.Size(364, 168);
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cửa khẩu";
@@ -224,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 320);
+            this.ClientSize = new System.Drawing.Size(387, 232);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
@@ -232,7 +231,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(531, 345);
             this.Name = "FrmAddGate";
             this.ShowInTaskbar = false;
             this.Text = "FrmAddGate";

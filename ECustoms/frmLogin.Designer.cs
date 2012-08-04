@@ -46,38 +46,38 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(86, 157);
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblUsername.Location = new System.Drawing.Point(78, 146);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(106, 20);
+            this.lblUsername.Size = new System.Drawing.Size(73, 13);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Tên truy nhập";
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.Location = new System.Drawing.Point(91, 182);
+            this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbPassword.Location = new System.Drawing.Point(78, 182);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(101, 20);
+            this.lbPassword.Size = new System.Drawing.Size(69, 13);
             this.lbPassword.TabIndex = 2;
             this.lbPassword.Text = "Mã truy nhập";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(208, 155);
+            this.txtUsername.Location = new System.Drawing.Point(157, 143);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(154, 20);
+            this.txtUsername.Size = new System.Drawing.Size(114, 20);
             this.txtUsername.TabIndex = 3;
             this.txtUsername.Tag = "required";
             this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(208, 184);
+            this.txtPassword.Location = new System.Drawing.Point(157, 179);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(154, 20);
+            this.txtPassword.Size = new System.Drawing.Size(114, 20);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Tag = "required";
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
@@ -85,9 +85,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ECustoms.Properties.Resources.KeyLock1;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 142);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 133);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(60, 62);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
@@ -95,12 +95,12 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(247, 223);
+            this.btnClose.Location = new System.Drawing.Point(179, 220);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(74, 28);
+            this.btnClose.Size = new System.Drawing.Size(67, 28);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -111,12 +111,12 @@
             // 
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnLogin.Image = global::ECustoms.Properties.Resources.Login2;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(127, 223);
+            this.btnLogin.Location = new System.Drawing.Point(81, 220);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(114, 28);
+            this.btnLogin.Size = new System.Drawing.Size(90, 28);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "&Đăng nhập";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,9 +126,9 @@
             // pbLogin
             // 
             this.pbLogin.Image = global::ECustoms.Properties.Resources.imageGS1;
-            this.pbLogin.Location = new System.Drawing.Point(172, 7);
+            this.pbLogin.Location = new System.Drawing.Point(94, 0);
             this.pbLogin.Name = "pbLogin";
-            this.pbLogin.Size = new System.Drawing.Size(128, 125);
+            this.pbLogin.Size = new System.Drawing.Size(104, 125);
             this.pbLogin.TabIndex = 0;
             this.pbLogin.TabStop = false;
             // 
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(408, 258);
+            this.ClientSize = new System.Drawing.Size(301, 272);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
