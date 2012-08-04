@@ -47,10 +47,10 @@
         this.groupBox1.Controls.Add(this.label1);
         this.groupBox1.Controls.Add(this.cbPrintParking);
         this.groupBox1.Controls.Add(this.cbPrintImportHasGood);
-        this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.groupBox1.Location = new System.Drawing.Point(22, 19);
+        this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+        this.groupBox1.Location = new System.Drawing.Point(12, 12);
         this.groupBox1.Name = "groupBox1";
-        this.groupBox1.Size = new System.Drawing.Size(344, 264);
+        this.groupBox1.Size = new System.Drawing.Size(244, 225);
         this.groupBox1.TabIndex = 0;
         this.groupBox1.TabStop = false;
         this.groupBox1.Text = "Thiết lập in ticket";
@@ -58,9 +58,9 @@
         // cbPrintExportPark
         // 
         this.cbPrintExportPark.AutoSize = true;
-        this.cbPrintExportPark.Location = new System.Drawing.Point(10, 228);
+        this.cbPrintExportPark.Location = new System.Drawing.Point(10, 200);
         this.cbPrintExportPark.Name = "cbPrintExportPark";
-        this.cbPrintExportPark.Size = new System.Drawing.Size(222, 24);
+        this.cbPrintExportPark.Size = new System.Drawing.Size(160, 17);
         this.cbPrintExportPark.TabIndex = 4;
         this.cbPrintExportPark.Text = "In khi xác nhận vào bãi xuất";
         this.cbPrintExportPark.UseVisualStyleBackColor = true;
@@ -68,11 +68,10 @@
         // listBoxPrint
         // 
         this.listBoxPrint.FormattingEnabled = true;
-        this.listBoxPrint.ItemHeight = 20;
-        this.listBoxPrint.Location = new System.Drawing.Point(10, 49);
+        this.listBoxPrint.Location = new System.Drawing.Point(10, 47);
         this.listBoxPrint.Name = "listBoxPrint";
         this.listBoxPrint.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-        this.listBoxPrint.Size = new System.Drawing.Size(266, 104);
+        this.listBoxPrint.Size = new System.Drawing.Size(225, 95);
         this.listBoxPrint.TabIndex = 3;
         // 
         // label1
@@ -80,16 +79,16 @@
         this.label1.AutoSize = true;
         this.label1.Location = new System.Drawing.Point(6, 26);
         this.label1.Name = "label1";
-        this.label1.Size = new System.Drawing.Size(135, 20);
+        this.label1.Size = new System.Drawing.Size(92, 13);
         this.label1.TabIndex = 2;
         this.label1.Text = "Danh sách máy in";
         // 
         // cbPrintParking
         // 
         this.cbPrintParking.AutoSize = true;
-        this.cbPrintParking.Location = new System.Drawing.Point(10, 198);
+        this.cbPrintParking.Location = new System.Drawing.Point(10, 175);
         this.cbPrintParking.Name = "cbPrintParking";
-        this.cbPrintParking.Size = new System.Drawing.Size(228, 24);
+        this.cbPrintParking.Size = new System.Drawing.Size(164, 17);
         this.cbPrintParking.TabIndex = 1;
         this.cbPrintParking.Text = "In khi xác nhận vào bãi nhập";
         this.cbPrintParking.UseVisualStyleBackColor = true;
@@ -97,9 +96,9 @@
         // cbPrintImportHasGood
         // 
         this.cbPrintImportHasGood.AutoSize = true;
-        this.cbPrintImportHasGood.Location = new System.Drawing.Point(10, 168);
+        this.cbPrintImportHasGood.Location = new System.Drawing.Point(10, 150);
         this.cbPrintImportHasGood.Name = "cbPrintImportHasGood";
-        this.cbPrintImportHasGood.Size = new System.Drawing.Size(274, 24);
+        this.cbPrintImportHasGood.Size = new System.Drawing.Size(195, 17);
         this.cbPrintImportHasGood.TabIndex = 0;
         this.cbPrintImportHasGood.Text = "In khi xác nhận nhập cảnh có hàng";
         this.cbPrintImportHasGood.UseVisualStyleBackColor = true;
@@ -108,12 +107,12 @@
         // 
         this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
         this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-        this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
         this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
         this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnClose.Location = new System.Drawing.Point(282, 289);
+        this.btnClose.Location = new System.Drawing.Point(194, 243);
         this.btnClose.Name = "btnClose";
-        this.btnClose.Size = new System.Drawing.Size(84, 28);
+        this.btnClose.Size = new System.Drawing.Size(62, 28);
         this.btnClose.TabIndex = 8;
         this.btnClose.Text = "Th&oát";
         this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -124,12 +123,12 @@
         // 
         this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
         this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-        this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
         this.btnSave.Image = global::ECustoms.Properties.Resources.save;
         this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.btnSave.Location = new System.Drawing.Point(197, 289);
+        this.btnSave.Location = new System.Drawing.Point(135, 243);
         this.btnSave.Name = "btnSave";
-        this.btnSave.Size = new System.Drawing.Size(79, 28);
+        this.btnSave.Size = new System.Drawing.Size(51, 28);
         this.btnSave.TabIndex = 7;
         this.btnSave.Text = "Lư&u";
         this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,7 +139,7 @@
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(378, 329);
+        this.ClientSize = new System.Drawing.Size(267, 284);
         this.Controls.Add(this.btnClose);
         this.Controls.Add(this.btnSave);
         this.Controls.Add(this.groupBox1);

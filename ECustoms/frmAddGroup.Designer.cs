@@ -127,7 +127,7 @@
             this.tabPageUser.Location = new System.Drawing.Point(4, 22);
             this.tabPageUser.Name = "tabPageUser";
             this.tabPageUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUser.Size = new System.Drawing.Size(556, 283);
+            this.tabPageUser.Size = new System.Drawing.Size(556, 279);
             this.tabPageUser.TabIndex = 1;
             this.tabPageUser.Text = "Người dùng";
             this.tabPageUser.UseVisualStyleBackColor = true;
@@ -140,9 +140,9 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(129, 249);
+            this.btnDelete.Location = new System.Drawing.Point(126, 249);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(63, 28);
+            this.btnDelete.Size = new System.Drawing.Size(51, 28);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -159,7 +159,7 @@
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(3, 249);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(120, 28);
+            this.btnAdd.Size = new System.Drawing.Size(115, 28);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Thê&m người dùng";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -245,7 +245,7 @@
             this.tabPageRights.Location = new System.Drawing.Point(4, 22);
             this.tabPageRights.Name = "tabPageRights";
             this.tabPageRights.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRights.Size = new System.Drawing.Size(556, 283);
+            this.tabPageRights.Size = new System.Drawing.Size(556, 279);
             this.tabPageRights.TabIndex = 2;
             this.tabPageRights.Text = "Quyền truy cập";
             this.tabPageRights.UseVisualStyleBackColor = true;
@@ -308,9 +308,9 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(122, 249);
+            this.btnReset.Location = new System.Drawing.Point(121, 249);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 28);
+            this.btnReset.Size = new System.Drawing.Size(67, 28);
             this.btnReset.TabIndex = 12;
             this.btnReset.Text = "&Làm lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,7 +327,7 @@
             this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdatePermission.Location = new System.Drawing.Point(3, 249);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
-            this.btnUpdatePermission.Size = new System.Drawing.Size(113, 28);
+            this.btnUpdatePermission.Size = new System.Drawing.Size(110, 28);
             this.btnUpdatePermission.TabIndex = 5;
             this.btnUpdatePermission.Text = "&Cập nhật quyền";
             this.btnUpdatePermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -342,7 +342,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(519, 342);
+            this.btnClose.Location = new System.Drawing.Point(519, 344);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 6;
@@ -359,9 +359,9 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSave.Image = global::ECustoms.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(448, 342);
+            this.btnSave.Location = new System.Drawing.Point(460, 344);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(63, 28);
+            this.btnSave.Size = new System.Drawing.Size(51, 28);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lư&u";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

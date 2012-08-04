@@ -46,41 +46,41 @@
             // 
             this.dtpImportTo.CustomFormat = "dd/MM/yyyy";
             this.dtpImportTo.Enabled = false;
-            this.dtpImportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpImportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpImportTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpImportTo.Location = new System.Drawing.Point(595, 23);
+            this.dtpImportTo.Location = new System.Drawing.Point(386, 10);
             this.dtpImportTo.Name = "dtpImportTo";
-            this.dtpImportTo.Size = new System.Drawing.Size(122, 26);
+            this.dtpImportTo.Size = new System.Drawing.Size(89, 20);
             this.dtpImportTo.TabIndex = 17;
             // 
             // dtpImportFrom
             // 
             this.dtpImportFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpImportFrom.Enabled = false;
-            this.dtpImportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpImportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpImportFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpImportFrom.Location = new System.Drawing.Point(330, 23);
+            this.dtpImportFrom.Location = new System.Drawing.Point(220, 10);
             this.dtpImportFrom.Name = "dtpImportFrom";
-            this.dtpImportFrom.Size = new System.Drawing.Size(122, 26);
+            this.dtpImportFrom.Size = new System.Drawing.Size(89, 20);
             this.dtpImportFrom.TabIndex = 16;
             // 
             // lblExportTo
             // 
             this.lblExportTo.AutoSize = true;
-            this.lblExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExportTo.Location = new System.Drawing.Point(489, 73);
+            this.lblExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblExportTo.Location = new System.Drawing.Point(324, 39);
             this.lblExportTo.Name = "lblExportTo";
-            this.lblExportTo.Size = new System.Drawing.Size(81, 20);
+            this.lblExportTo.Size = new System.Drawing.Size(56, 13);
             this.lblExportTo.TabIndex = 14;
             this.lblExportTo.Text = "Đến ngày:";
             // 
             // lblImportTo
             // 
             this.lblImportTo.AutoSize = true;
-            this.lblImportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImportTo.Location = new System.Drawing.Point(489, 27);
+            this.lblImportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblImportTo.Location = new System.Drawing.Point(324, 14);
             this.lblImportTo.Name = "lblImportTo";
-            this.lblImportTo.Size = new System.Drawing.Size(81, 20);
+            this.lblImportTo.Size = new System.Drawing.Size(56, 13);
             this.lblImportTo.TabIndex = 13;
             this.lblImportTo.Text = "Đến ngày:";
             // 
@@ -88,51 +88,51 @@
             // 
             this.dtpExportTo.CustomFormat = "dd/MM/yyyy";
             this.dtpExportTo.Enabled = false;
-            this.dtpExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpExportTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportTo.Location = new System.Drawing.Point(595, 69);
+            this.dtpExportTo.Location = new System.Drawing.Point(386, 35);
             this.dtpExportTo.Name = "dtpExportTo";
-            this.dtpExportTo.Size = new System.Drawing.Size(122, 26);
+            this.dtpExportTo.Size = new System.Drawing.Size(89, 20);
             this.dtpExportTo.TabIndex = 15;
             // 
             // dtpExportFrom
             // 
             this.dtpExportFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpExportFrom.Enabled = false;
-            this.dtpExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpExportFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportFrom.Location = new System.Drawing.Point(330, 69);
+            this.dtpExportFrom.Location = new System.Drawing.Point(220, 35);
             this.dtpExportFrom.Name = "dtpExportFrom";
-            this.dtpExportFrom.Size = new System.Drawing.Size(122, 26);
+            this.dtpExportFrom.Size = new System.Drawing.Size(89, 20);
             this.dtpExportFrom.TabIndex = 12;
             // 
             // lblExportFrom
             // 
             this.lblExportFrom.AutoSize = true;
-            this.lblExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExportFrom.Location = new System.Drawing.Point(238, 74);
+            this.lblExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblExportFrom.Location = new System.Drawing.Point(163, 39);
             this.lblExportFrom.Name = "lblExportFrom";
-            this.lblExportFrom.Size = new System.Drawing.Size(69, 20);
+            this.lblExportFrom.Size = new System.Drawing.Size(49, 13);
             this.lblExportFrom.TabIndex = 11;
             this.lblExportFrom.Text = "Từ ngày:";
             // 
             // lblImportFrom
             // 
             this.lblImportFrom.AutoSize = true;
-            this.lblImportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImportFrom.Location = new System.Drawing.Point(237, 27);
+            this.lblImportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblImportFrom.Location = new System.Drawing.Point(163, 14);
             this.lblImportFrom.Name = "lblImportFrom";
-            this.lblImportFrom.Size = new System.Drawing.Size(69, 20);
+            this.lblImportFrom.Size = new System.Drawing.Size(49, 13);
             this.lblImportFrom.TabIndex = 10;
             this.lblImportFrom.Text = "Từ ngày:";
             // 
             // cbFeeImport
             // 
             this.cbFeeImport.AutoSize = true;
-            this.cbFeeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFeeImport.Location = new System.Drawing.Point(13, 27);
+            this.cbFeeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbFeeImport.Location = new System.Drawing.Point(13, 12);
             this.cbFeeImport.Name = "cbFeeImport";
-            this.cbFeeImport.Size = new System.Drawing.Size(195, 24);
+            this.cbFeeImport.Size = new System.Drawing.Size(142, 17);
             this.cbFeeImport.TabIndex = 18;
             this.cbFeeImport.Text = "Ngày thu phí nhập cảnh";
             this.cbFeeImport.UseVisualStyleBackColor = true;
@@ -141,10 +141,10 @@
             // cbFeeExport
             // 
             this.cbFeeExport.AutoSize = true;
-            this.cbFeeExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFeeExport.Location = new System.Drawing.Point(13, 72);
+            this.cbFeeExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbFeeExport.Location = new System.Drawing.Point(13, 37);
             this.cbFeeExport.Name = "cbFeeExport";
-            this.cbFeeExport.Size = new System.Drawing.Size(189, 24);
+            this.cbFeeExport.Size = new System.Drawing.Size(138, 17);
             this.cbFeeExport.TabIndex = 19;
             this.cbFeeExport.Text = "Ngày thu phí xuất cảnh";
             this.cbFeeExport.UseVisualStyleBackColor = true;
@@ -154,12 +154,12 @@
             // 
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSearch.Image = global::ECustoms.Properties.Resources.report224x24_24_bit;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(578, 118);
+            this.btnSearch.Location = new System.Drawing.Point(366, 61);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(139, 28);
+            this.btnSearch.Size = new System.Drawing.Size(109, 28);
             this.btnSearch.TabIndex = 22;
             this.btnSearch.Text = "&Hiện báo cáo";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 158);
+            this.ClientSize = new System.Drawing.Size(483, 102);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cbFeeExport);
             this.Controls.Add(this.cbFeeImport);

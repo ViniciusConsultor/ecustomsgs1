@@ -61,11 +61,11 @@
             this.Status,
             this.Note});
             this.grdVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdVehicle.Location = new System.Drawing.Point(3, 22);
+            this.grdVehicle.Location = new System.Drawing.Point(3, 16);
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.ReadOnly = true;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(779, 285);
+            this.grdVehicle.Size = new System.Drawing.Size(605, 182);
             this.grdVehicle.TabIndex = 1;
             this.grdVehicle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellDoubleClick);
             // 
@@ -119,12 +119,12 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(708, 371);
+            this.btnClose.Location = new System.Drawing.Point(560, 237);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 28);
+            this.btnClose.Size = new System.Drawing.Size(62, 28);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,12 +136,12 @@
             this.btnAddVehichle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddVehichle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddVehichle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddVehichle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddVehichle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAddVehichle.Image = global::ECustoms.Properties.Resources.add;
             this.btnAddVehichle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehichle.Location = new System.Drawing.Point(477, 370);
+            this.btnAddVehichle.Location = new System.Drawing.Point(398, 237);
             this.btnAddVehichle.Name = "btnAddVehichle";
-            this.btnAddVehichle.Size = new System.Drawing.Size(225, 28);
+            this.btnAddVehichle.Size = new System.Drawing.Size(154, 28);
             this.btnAddVehichle.TabIndex = 15;
             this.btnAddVehichle.Text = "&Sang tải cho xe Việt Nam";
             this.btnAddVehichle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -154,10 +154,10 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.grdVehicle);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 55);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Location = new System.Drawing.Point(11, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(785, 310);
+            this.groupBox1.Size = new System.Drawing.Size(611, 201);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phương tiện xe Trung Quốc";
@@ -166,14 +166,14 @@
             // 
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(539, 18);
+            this.btnSearch.Location = new System.Drawing.Point(392, 1);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(111, 28);
+            this.btnSearch.Size = new System.Drawing.Size(75, 28);
             this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Tìm ki&ếm";
+            this.btnSearch.Text = "Tìm k&iếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -181,18 +181,18 @@
             // lbOldPass
             // 
             this.lbOldPass.AutoSize = true;
-            this.lbOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOldPass.Location = new System.Drawing.Point(14, 22);
+            this.lbOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbOldPass.Location = new System.Drawing.Point(13, 9);
             this.lbOldPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOldPass.Name = "lbOldPass";
-            this.lbOldPass.Size = new System.Drawing.Size(257, 20);
+            this.lbOldPass.Size = new System.Drawing.Size(175, 13);
             this.lbOldPass.TabIndex = 18;
             this.lbOldPass.Text = "Biển số phương tiện xe Trung Quốc";
             // 
             // txtPlate
             // 
             this.txtPlate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtPlate.Location = new System.Drawing.Point(293, 24);
+            this.txtPlate.Location = new System.Drawing.Point(195, 5);
             this.txtPlate.Name = "txtPlate";
             this.txtPlate.Size = new System.Drawing.Size(182, 20);
             this.txtPlate.TabIndex = 19;
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 406);
+            this.ClientSize = new System.Drawing.Size(630, 277);
             this.Controls.Add(this.txtPlate);
             this.Controls.Add(this.lbOldPass);
             this.Controls.Add(this.btnSearch);
@@ -210,7 +210,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(812, 433);
+            this.MinimumSize = new System.Drawing.Size(638, 304);
             this.Name = "frmVehicleChineseSelect";
             this.ShowInTaskbar = false;
             this.Text = " Tìm kiếm xe Trung Quốc";

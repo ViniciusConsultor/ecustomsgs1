@@ -86,7 +86,7 @@
             // 
             // mnMain
             // 
-            this.mnMain.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mnMain.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.mnMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hệThốngToolStripMenuItem,
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem,
@@ -99,7 +99,7 @@
             this.trợGiúpToolStripMenuItem});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
-            this.mnMain.Size = new System.Drawing.Size(1228, 29);
+            this.mnMain.Size = new System.Drawing.Size(1212, 24);
             this.mnMain.TabIndex = 0;
             this.mnMain.Tag = "";
             this.mnMain.Text = "menuStrip1";
@@ -118,14 +118,14 @@
             this.menuitemExit,
             this.aboutUsToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(86, 25);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.hệThốngToolStripMenuItem.Text = "&Hệ thống";
             // 
             // menuitemUser
             // 
             this.menuitemUser.Image = global::ECustoms.Properties.Resources.user1;
             this.menuitemUser.Name = "menuitemUser";
-            this.menuitemUser.Size = new System.Drawing.Size(257, 26);
+            this.menuitemUser.Size = new System.Drawing.Size(207, 22);
             this.menuitemUser.Text = "Quản lý người dùng";
             this.menuitemUser.Click += new System.EventHandler(this.menuitemUser_Click);
             // 
@@ -133,7 +133,7 @@
             // 
             this.mnGroup.Image = global::ECustoms.Properties.Resources.goup;
             this.mnGroup.Name = "mnGroup";
-            this.mnGroup.Size = new System.Drawing.Size(257, 26);
+            this.mnGroup.Size = new System.Drawing.Size(207, 22);
             this.mnGroup.Text = "Quản lý nhóm";
             this.mnGroup.Click += new System.EventHandler(this.mnGroup_Click);
             // 
@@ -141,7 +141,7 @@
             // 
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Image = global::ECustoms.Properties.Resources.gear;
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Name = "cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1";
-            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Size = new System.Drawing.Size(257, 26);
+            this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Text = "Cấu hình giá trị mặc định";
             this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem1.Click += new System.EventHandler(this.cấuHìnhGiáTrịMặcĐịnhToolStripMenuItem_Click);
             // 
@@ -149,7 +149,7 @@
             // 
             this.mnuSettings.Image = global::ECustoms.Properties.Resources.column_preferences;
             this.mnuSettings.Name = "mnuSettings";
-            this.mnuSettings.Size = new System.Drawing.Size(257, 26);
+            this.mnuSettings.Size = new System.Drawing.Size(207, 22);
             this.mnuSettings.Text = "Cấu hình hệ thống";
             this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
             // 
@@ -157,7 +157,7 @@
             // 
             this.mnuBackupRestore.Image = global::ECustoms.Properties.Resources.data_refresh;
             this.mnuBackupRestore.Name = "mnuBackupRestore";
-            this.mnuBackupRestore.Size = new System.Drawing.Size(257, 26);
+            this.mnuBackupRestore.Size = new System.Drawing.Size(207, 22);
             this.mnuBackupRestore.Text = "Sao lưu / Phục hồi dữ liệu";
             this.mnuBackupRestore.Click += new System.EventHandler(this.mnuBackupRestore_Click);
             // 
@@ -165,7 +165,7 @@
             // 
             this.toolStripMenuItem1.Image = global::ECustoms.Properties.Resources.key1;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(257, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.toolStripMenuItem1.Text = "Thay đổi mật khẩu";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -173,20 +173,20 @@
             // 
             this.menuitemLogout.Image = global::ECustoms.Properties.Resources.signout;
             this.menuitemLogout.Name = "menuitemLogout";
-            this.menuitemLogout.Size = new System.Drawing.Size(257, 26);
+            this.menuitemLogout.Size = new System.Drawing.Size(207, 22);
             this.menuitemLogout.Text = "Đăng xuất";
             this.menuitemLogout.Click += new System.EventHandler(this.menuitemLogout_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(254, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(204, 6);
             // 
             // menuitemExit
             // 
             this.menuitemExit.Image = global::ECustoms.Properties.Resources.Exit;
             this.menuitemExit.Name = "menuitemExit";
-            this.menuitemExit.Size = new System.Drawing.Size(257, 26);
+            this.menuitemExit.Size = new System.Drawing.Size(207, 22);
             this.menuitemExit.Text = "Thoát Khỏi chương trình";
             this.menuitemExit.Click += new System.EventHandler(this.menuitemExit_Click);
             // 
@@ -194,7 +194,7 @@
             // 
             this.aboutUsToolStripMenuItem.Image = global::ECustoms.Properties.Resources.about;
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.aboutUsToolStripMenuItem.Text = "About Us";
             this.aboutUsToolStripMenuItem.Visible = false;
             // 
@@ -209,14 +209,14 @@
             this.addVehicleChinese,
             this.mnuExportParking});
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Name = "khaiBáoXuấtNhậpKhẩuToolStripMenuItem";
-            this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Size = new System.Drawing.Size(192, 25);
+            this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Size = new System.Drawing.Size(148, 20);
             this.khaiBáoXuấtNhậpKhẩuToolStripMenuItem.Text = "&Khai báo xuất nhập khẩu";
             // 
             // menuitemDeclaration
             // 
             this.menuitemDeclaration.Image = global::ECustoms.Properties.Resources.form_red;
             this.menuitemDeclaration.Name = "menuitemDeclaration";
-            this.menuitemDeclaration.Size = new System.Drawing.Size(313, 26);
+            this.menuitemDeclaration.Size = new System.Drawing.Size(247, 22);
             this.menuitemDeclaration.Text = "Danh sách tờ khai";
             this.menuitemDeclaration.Click += new System.EventHandler(this.menuitemDeclaration_Click);
             // 
@@ -224,7 +224,7 @@
             // 
             this.mnExport.Image = global::ECustoms.Properties.Resources.exportSmall;
             this.mnExport.Name = "mnExport";
-            this.mnExport.Size = new System.Drawing.Size(313, 26);
+            this.mnExport.Size = new System.Drawing.Size(247, 22);
             this.mnExport.Text = "Khai báo xuất cảnh";
             this.mnExport.Click += new System.EventHandler(this.mnExport_Click);
             // 
@@ -232,7 +232,7 @@
             // 
             this.mnImport.Image = global::ECustoms.Properties.Resources.importSmall;
             this.mnImport.Name = "mnImport";
-            this.mnImport.Size = new System.Drawing.Size(313, 26);
+            this.mnImport.Size = new System.Drawing.Size(247, 22);
             this.mnImport.Text = "Khai báo nhập cảnh";
             this.mnImport.Click += new System.EventHandler(this.mnImport_Click);
             // 
@@ -240,7 +240,7 @@
             // 
             this.vehicleSearch.Image = global::ECustoms.Properties.Resources.search;
             this.vehicleSearch.Name = "vehicleSearch";
-            this.vehicleSearch.Size = new System.Drawing.Size(313, 26);
+            this.vehicleSearch.Size = new System.Drawing.Size(247, 22);
             this.vehicleSearch.Text = "Tìm kiếm phương tiện";
             this.vehicleSearch.Click += new System.EventHandler(this.vehicleSearch_Click);
             // 
@@ -248,7 +248,7 @@
             // 
             this.addNewVehiceToolStripMenuItem.Image = global::ECustoms.Properties.Resources.add;
             this.addNewVehiceToolStripMenuItem.Name = "addNewVehiceToolStripMenuItem";
-            this.addNewVehiceToolStripMenuItem.Size = new System.Drawing.Size(313, 26);
+            this.addNewVehiceToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.addNewVehiceToolStripMenuItem.Text = "Thêm phương tiện xe không";
             this.addNewVehiceToolStripMenuItem.Click += new System.EventHandler(this.addNewVehiceToolStripMenuItem_Click);
             // 
@@ -256,7 +256,7 @@
             // 
             this.addVehicleChinese.Image = global::ECustoms.Properties.Resources.add;
             this.addVehicleChinese.Name = "addVehicleChinese";
-            this.addVehicleChinese.Size = new System.Drawing.Size(313, 26);
+            this.addVehicleChinese.Size = new System.Drawing.Size(247, 22);
             this.addVehicleChinese.Text = "Thêm phương tiện xe Trung Quốc";
             this.addVehicleChinese.Click += new System.EventHandler(this.addVehicleChinese_Click);
             // 
@@ -264,7 +264,7 @@
             // 
             this.mnuExportParking.Image = global::ECustoms.Properties.Resources.export;
             this.mnuExportParking.Name = "mnuExportParking";
-            this.mnuExportParking.Size = new System.Drawing.Size(313, 26);
+            this.mnuExportParking.Size = new System.Drawing.Size(247, 22);
             this.mnuExportParking.Text = "Thêm xe vào bãi xuất";
             this.mnuExportParking.Click += new System.EventHandler(this.mnuExportParking_Click);
             // 
@@ -274,14 +274,14 @@
             this.mnReview,
             this.mnReviewSummary});
             this.menuManageInformation.Name = "menuManageInformation";
-            this.menuManageInformation.Size = new System.Drawing.Size(143, 25);
+            this.menuManageInformation.Size = new System.Drawing.Size(111, 20);
             this.menuManageInformation.Text = "&Quản lý thông tin";
             // 
             // mnReview
             // 
             this.mnReview.Image = global::ECustoms.Properties.Resources.Signin;
             this.mnReview.Name = "mnReview";
-            this.mnReview.Size = new System.Drawing.Size(336, 26);
+            this.mnReview.Size = new System.Drawing.Size(267, 22);
             this.mnReview.Text = "Danh sách thông tin đề nghị kiểm tra";
             this.mnReview.Click += new System.EventHandler(this.mnReview_Click);
             // 
@@ -289,7 +289,7 @@
             // 
             this.mnReviewSummary.Image = global::ECustoms.Properties.Resources.column_preferences;
             this.mnReviewSummary.Name = "mnReviewSummary";
-            this.mnReviewSummary.Size = new System.Drawing.Size(336, 26);
+            this.mnReviewSummary.Size = new System.Drawing.Size(267, 22);
             this.mnReviewSummary.Text = "Tổng hợp kết quả kiểm tra";
             this.mnReviewSummary.Click += new System.EventHandler(this.mnReviewSummary_Click);
             // 
@@ -300,14 +300,14 @@
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem,
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem});
             this.quảnLýHàngNTXCKToolStripMenuItem.Name = "quảnLýHàngNTXCKToolStripMenuItem";
-            this.quảnLýHàngNTXCKToolStripMenuItem.Size = new System.Drawing.Size(174, 25);
+            this.quảnLýHàngNTXCKToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
             this.quảnLýHàngNTXCKToolStripMenuItem.Text = "Quản lý hàng &NTX, CK";
             // 
             // xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem
             // 
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Image = global::ECustoms.Properties.Resources.exportSmall;
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Name = "xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem";
-            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Text = "Xuất khẩu chuyển cửa khẩu";
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem.Click += new System.EventHandler(this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem_Click);
             // 
@@ -315,7 +315,7 @@
             // 
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem.Image = global::ECustoms.Properties.Resources.importSmall;
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem.Name = "nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem";
-            this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem.Text = "Nhập khẩu chuyển cửa khẩu";
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem.Click += new System.EventHandler(this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem_Click);
             // 
@@ -323,7 +323,7 @@
             // 
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Image = global::ECustoms.Properties.Resources.recycle;
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Name = "hàngTạmNhậpTáiXuấtToolStripMenuItem";
-            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Text = "Hàng tạm nhập tái xuất";
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Click += new System.EventHandler(this.hàngTạmNhậpTáiXuấtToolStripMenuItem_Click);
             // 
@@ -335,14 +335,14 @@
             this.mnuFeeReport,
             this.mnuFeeSetting});
             this.mnuFeeManagement.Name = "mnuFeeManagement";
-            this.mnuFeeManagement.Size = new System.Drawing.Size(133, 25);
+            this.mnuFeeManagement.Size = new System.Drawing.Size(103, 20);
             this.mnuFeeManagement.Text = "Quản lý tính &phí";
             // 
             // mnuVehidleType
             // 
             this.mnuVehidleType.Image = global::ECustoms.Properties.Resources.preferences;
             this.mnuVehidleType.Name = "mnuVehidleType";
-            this.mnuVehidleType.Size = new System.Drawing.Size(288, 26);
+            this.mnuVehidleType.Size = new System.Drawing.Size(233, 22);
             this.mnuVehidleType.Text = "Loại phương tiện";
             this.mnuVehidleType.Click += new System.EventHandler(this.mnuVehidleType_Click);
             // 
@@ -350,7 +350,7 @@
             // 
             this.menuGetFee.Image = global::ECustoms.Properties.Resources.money;
             this.menuGetFee.Name = "menuGetFee";
-            this.menuGetFee.Size = new System.Drawing.Size(288, 26);
+            this.menuGetFee.Size = new System.Drawing.Size(233, 22);
             this.menuGetFee.Text = "Thu phí";
             this.menuGetFee.Click += new System.EventHandler(this.menuGetFee_Click);
             // 
@@ -358,7 +358,7 @@
             // 
             this.mnuFeeReport.Image = global::ECustoms.Properties.Resources.column_chart;
             this.mnuFeeReport.Name = "mnuFeeReport";
-            this.mnuFeeReport.Size = new System.Drawing.Size(288, 26);
+            this.mnuFeeReport.Size = new System.Drawing.Size(233, 22);
             this.mnuFeeReport.Text = "Báo cáo thu phí";
             this.mnuFeeReport.Click += new System.EventHandler(this.mnuFeeReport_Click);
             // 
@@ -366,7 +366,7 @@
             // 
             this.mnuFeeSetting.Image = global::ECustoms.Properties.Resources.scroll;
             this.mnuFeeSetting.Name = "mnuFeeSetting";
-            this.mnuFeeSetting.Size = new System.Drawing.Size(288, 26);
+            this.mnuFeeSetting.Size = new System.Drawing.Size(233, 22);
             this.mnuFeeSetting.Text = "Cấu hình tính phí phương tiện";
             this.mnuFeeSetting.Click += new System.EventHandler(this.mnuFeeSetting_Click);
             // 
@@ -378,14 +378,14 @@
             this.mnuCustoms,
             this.mnuGate});
             this.mnuGeneralInfo.Name = "mnuGeneralInfo";
-            this.mnuGeneralInfo.Size = new System.Drawing.Size(190, 25);
+            this.mnuGeneralInfo.Size = new System.Drawing.Size(147, 20);
             this.mnuGeneralInfo.Text = "Quản &lý thông tin chung";
             // 
             // mnuType
             // 
             this.mnuType.Image = global::ECustoms.Properties.Resources.clipboard_empty;
             this.mnuType.Name = "mnuType";
-            this.mnuType.Size = new System.Drawing.Size(217, 26);
+            this.mnuType.Size = new System.Drawing.Size(176, 22);
             this.mnuType.Text = "Loại hình tờ khai";
             this.mnuType.Click += new System.EventHandler(this.mnuType_Click);
             // 
@@ -393,7 +393,7 @@
             // 
             this.mnuCompany.Image = global::ECustoms.Properties.Resources.clipboard_next;
             this.mnuCompany.Name = "mnuCompany";
-            this.mnuCompany.Size = new System.Drawing.Size(217, 26);
+            this.mnuCompany.Size = new System.Drawing.Size(176, 22);
             this.mnuCompany.Text = "Doanh nghiệp";
             this.mnuCompany.Click += new System.EventHandler(this.mnuCompany_Click);
             // 
@@ -401,7 +401,7 @@
             // 
             this.mnuCustoms.Image = global::ECustoms.Properties.Resources.clipboard_next_down;
             this.mnuCustoms.Name = "mnuCustoms";
-            this.mnuCustoms.Size = new System.Drawing.Size(217, 26);
+            this.mnuCustoms.Size = new System.Drawing.Size(176, 22);
             this.mnuCustoms.Text = "Đơn vị hải quan";
             this.mnuCustoms.Click += new System.EventHandler(this.mnuCustoms_Click);
             // 
@@ -409,7 +409,7 @@
             // 
             this.mnuGate.Image = global::ECustoms.Properties.Resources.clipboard;
             this.mnuGate.Name = "mnuGate";
-            this.mnuGate.Size = new System.Drawing.Size(217, 26);
+            this.mnuGate.Size = new System.Drawing.Size(176, 22);
             this.mnuGate.Text = "Danh mục cửa khẩu";
             this.mnuGate.Click += new System.EventHandler(this.mnuGate_Click);
             // 
@@ -418,21 +418,21 @@
             this.toolStripMenuReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnItemReport});
             this.toolStripMenuReport.Name = "toolStripMenuReport";
-            this.toolStripMenuReport.Size = new System.Drawing.Size(76, 25);
+            this.toolStripMenuReport.Size = new System.Drawing.Size(60, 20);
             this.toolStripMenuReport.Text = "&Báo cáo";
             // 
             // mnItemReport
             // 
             this.mnItemReport.Image = global::ECustoms.Properties.Resources.print_icon;
             this.mnItemReport.Name = "mnItemReport";
-            this.mnItemReport.Size = new System.Drawing.Size(151, 26);
+            this.mnItemReport.Size = new System.Drawing.Size(128, 22);
             this.mnItemReport.Text = "In báo cáo";
             this.mnItemReport.Click += new System.EventHandler(this.mnItemReport_Click);
             // 
             // inTicketToolStripMenuItem
             // 
             this.inTicketToolStripMenuItem.Name = "inTicketToolStripMenuItem";
-            this.inTicketToolStripMenuItem.Size = new System.Drawing.Size(76, 25);
+            this.inTicketToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.inTicketToolStripMenuItem.Text = "&In ticket";
             this.inTicketToolStripMenuItem.Click += new System.EventHandler(this.inTicketToolStripMenuItem_Click);
             // 
@@ -441,14 +441,14 @@
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hướngDẫnSửDụngToolStripMenuItem});
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ &giúp";
             // 
             // hướngDẫnSửDụngToolStripMenuItem
             // 
             this.hướngDẫnSửDụngToolStripMenuItem.Image = global::ECustoms.Properties.Resources.help;
             this.hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
-            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
             this.hướngDẫnSửDụngToolStripMenuItem.Click += new System.EventHandler(this.hướngDẫnSửDụngToolStripMenuItem_Click);
             // 
@@ -463,10 +463,10 @@
             this.toolStripButtonListdeclarace,
             this.toolStripButton1,
             this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 29);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 30);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1228, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(1212, 44);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -560,7 +560,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1228, 703);
+            this.ClientSize = new System.Drawing.Size(1212, 685);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

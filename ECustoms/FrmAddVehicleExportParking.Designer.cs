@@ -218,7 +218,7 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(368, 206);
+            this.btnReset.Location = new System.Drawing.Point(358, 198);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(90, 28);
             this.btnReset.TabIndex = 17;
@@ -234,9 +234,9 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(297, 206);
+            this.btnDelete.Location = new System.Drawing.Point(298, 198);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(63, 28);
+            this.btnDelete.Size = new System.Drawing.Size(52, 28);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -250,9 +250,9 @@
             this.btnSaveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSaveAll.Image = global::ECustoms.Properties.Resources.save;
             this.btnSaveAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveAll.Location = new System.Drawing.Point(134, 206);
+            this.btnSaveAll.Location = new System.Drawing.Point(137, 198);
             this.btnSaveAll.Name = "btnSaveAll";
-            this.btnSaveAll.Size = new System.Drawing.Size(155, 28);
+            this.btnSaveAll.Size = new System.Drawing.Size(153, 28);
             this.btnSaveAll.TabIndex = 9;
             this.btnSaveAll.Text = "Lư&u toàn bộ phương tiện";
             this.btnSaveAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +266,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(6, 206);
+            this.btnAdd.Location = new System.Drawing.Point(9, 198);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 28);
             this.btnAdd.TabIndex = 8;
@@ -282,7 +282,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(466, 206);
+            this.btnClose.Location = new System.Drawing.Point(456, 198);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 11;

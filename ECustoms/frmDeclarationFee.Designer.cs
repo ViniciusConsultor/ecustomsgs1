@@ -78,9 +78,9 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(693, 246);
+            this.btnClose.Location = new System.Drawing.Point(697, 246);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(67, 28);
+            this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -95,9 +95,9 @@
             this.btnFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnFee.Image = global::ECustoms.Properties.Resources.money;
             this.btnFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFee.Location = new System.Drawing.Point(585, 246);
+            this.btnFee.Location = new System.Drawing.Point(594, 246);
             this.btnFee.Name = "btnFee";
-            this.btnFee.Size = new System.Drawing.Size(100, 28);
+            this.btnFee.Size = new System.Drawing.Size(95, 28);
             this.btnFee.TabIndex = 5;
             this.btnFee.Text = "Th&u phí nhập";
             this.btnFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -143,9 +143,9 @@
             this.btnConfirmFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnConfirmFee.Image = global::ECustoms.Properties.Resources.accept;
             this.btnConfirmFee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmFee.Location = new System.Drawing.Point(78, 120);
+            this.btnConfirmFee.Location = new System.Drawing.Point(87, 120);
             this.btnConfirmFee.Name = "btnConfirmFee";
-            this.btnConfirmFee.Size = new System.Drawing.Size(85, 28);
+            this.btnConfirmFee.Size = new System.Drawing.Size(80, 28);
             this.btnConfirmFee.TabIndex = 0;
             this.btnConfirmFee.Text = "Xá&c nhận";
             this.btnConfirmFee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -159,9 +159,9 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(171, 120);
+            this.btnClose.Location = new System.Drawing.Point(175, 120);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(67, 28);
+            this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

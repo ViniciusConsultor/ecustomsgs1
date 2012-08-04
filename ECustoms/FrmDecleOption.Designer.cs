@@ -132,9 +132,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button1.Image = global::ECustoms.Properties.Resources.Exit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(666, 442);
+            this.button1.Location = new System.Drawing.Point(670, 442);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 28);
+            this.button1.Size = new System.Drawing.Size(63, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "Thoát";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,9 +148,9 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.accept;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(568, 442);
+            this.btConfirmReturn.Location = new System.Drawing.Point(577, 442);
             this.btConfirmReturn.Name = "btConfirmReturn";
-            this.btConfirmReturn.Size = new System.Drawing.Size(90, 28);
+            this.btConfirmReturn.Size = new System.Drawing.Size(85, 28);
             this.btConfirmReturn.TabIndex = 3;
             this.btConfirmReturn.Text = "Đã hồi báo";
             this.btConfirmReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -164,9 +164,9 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(445, 442);
+            this.btnUpdate.Location = new System.Drawing.Point(459, 442);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(115, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(110, 28);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Cập nhật tờ khai";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,7 +179,7 @@
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblHeader.Location = new System.Drawing.Point(0, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(743, 38);
+            this.lblHeader.Size = new System.Drawing.Size(749, 38);
             this.lblHeader.TabIndex = 21;
             this.lblHeader.Text = "Hàng hóa TNTX";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -919,7 +919,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(743, 477);
+            this.ClientSize = new System.Drawing.Size(749, 491);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);

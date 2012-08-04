@@ -51,12 +51,12 @@
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(554, 155);
+            this.btnClose.Location = new System.Drawing.Point(399, 119);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(84, 28);
+            this.btnClose.Size = new System.Drawing.Size(64, 28);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -67,12 +67,12 @@
             // 
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(438, 155);
+            this.btnUpdate.Location = new System.Drawing.Point(312, 119);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(110, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(79, 28);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -83,19 +83,19 @@
             // 
             this.txtTypeName.BackColor = System.Drawing.Color.White;
             this.txtTypeName.Enabled = false;
-            this.txtTypeName.Location = new System.Drawing.Point(421, 81);
+            this.txtTypeName.Location = new System.Drawing.Point(321, 64);
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.ReadOnly = true;
-            this.txtTypeName.Size = new System.Drawing.Size(217, 20);
+            this.txtTypeName.Size = new System.Drawing.Size(142, 20);
             this.txtTypeName.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(284, 79);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(224, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
+            this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "Tên loại hình";
             // 
@@ -103,9 +103,9 @@
             // 
             this.txtTypeCode.BackColor = System.Drawing.Color.White;
             this.txtTypeCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTypeCode.Location = new System.Drawing.Point(161, 81);
+            this.txtTypeCode.Location = new System.Drawing.Point(107, 64);
             this.txtTypeCode.Name = "txtTypeCode";
-            this.txtTypeCode.Size = new System.Drawing.Size(105, 20);
+            this.txtTypeCode.Size = new System.Drawing.Size(94, 20);
             this.txtTypeCode.TabIndex = 0;
             this.txtTypeCode.Tag = "required";
             this.txtTypeCode.Leave += new System.EventHandler(this.txtTypeCode_Leave);
@@ -113,19 +113,19 @@
             // lblPlateNumber
             // 
             this.lblPlateNumber.AutoSize = true;
-            this.lblPlateNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlateNumber.Location = new System.Drawing.Point(29, 79);
+            this.lblPlateNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPlateNumber.Location = new System.Drawing.Point(9, 68);
             this.lblPlateNumber.Name = "lblPlateNumber";
-            this.lblPlateNumber.Size = new System.Drawing.Size(93, 20);
+            this.lblPlateNumber.Size = new System.Drawing.Size(64, 13);
             this.lblPlateNumber.TabIndex = 11;
             this.lblPlateNumber.Text = "Mã loại hình";
             // 
             // lblHeader
             // 
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(27, 9);
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblHeader.Location = new System.Drawing.Point(12, 9);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(570, 52);
+            this.lblHeader.Size = new System.Drawing.Size(451, 52);
             this.lblHeader.TabIndex = 28;
             this.lblHeader.Text = "Cấu hình giá trị mặc định";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,19 +134,19 @@
             // 
             this.txtCustomName.BackColor = System.Drawing.Color.White;
             this.txtCustomName.Enabled = false;
-            this.txtCustomName.Location = new System.Drawing.Point(421, 114);
+            this.txtCustomName.Location = new System.Drawing.Point(320, 93);
             this.txtCustomName.Name = "txtCustomName";
             this.txtCustomName.ReadOnly = true;
-            this.txtCustomName.Size = new System.Drawing.Size(217, 20);
+            this.txtCustomName.Size = new System.Drawing.Size(143, 20);
             this.txtCustomName.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(284, 112);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(224, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 20);
+            this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 32;
             this.label2.Text = "Tên ĐV Hải quan";
             // 
@@ -154,9 +154,9 @@
             // 
             this.txtCustomCode.BackColor = System.Drawing.Color.White;
             this.txtCustomCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCustomCode.Location = new System.Drawing.Point(161, 114);
+            this.txtCustomCode.Location = new System.Drawing.Point(107, 93);
             this.txtCustomCode.Name = "txtCustomCode";
-            this.txtCustomCode.Size = new System.Drawing.Size(105, 20);
+            this.txtCustomCode.Size = new System.Drawing.Size(94, 20);
             this.txtCustomCode.TabIndex = 1;
             this.txtCustomCode.Tag = "required";
             this.txtCustomCode.Leave += new System.EventHandler(this.txtCustomCode_Leave);
@@ -164,10 +164,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 112);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(9, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 20);
+            this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Mã ĐV Hải quan";
             // 
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 202);
+            this.ClientSize = new System.Drawing.Size(478, 163);
             this.Controls.Add(this.txtCustomName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCustomCode);
