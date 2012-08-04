@@ -172,7 +172,7 @@
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(230, 252);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(230, 251);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
             this.btnUpdateVehicle.Size = new System.Drawing.Size(83, 28);
             this.btnUpdateVehicle.TabIndex = 38;
@@ -188,7 +188,7 @@
             this.btnAddVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAddVehicle.Image = global::ECustoms.Properties.Resources.add;
             this.btnAddVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehicle.Location = new System.Drawing.Point(139, 252);
+            this.btnAddVehicle.Location = new System.Drawing.Point(139, 251);
             this.btnAddVehicle.Name = "btnAddVehicle";
             this.btnAddVehicle.Size = new System.Drawing.Size(83, 28);
             this.btnAddVehicle.TabIndex = 37;

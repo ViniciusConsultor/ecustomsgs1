@@ -61,10 +61,10 @@
             this.grbConditionSearch.Controls.Add(this.txtCustomsCode);
             this.grbConditionSearch.Controls.Add(this.lblPlateNumber);
             this.grbConditionSearch.Controls.Add(this.btnSearch);
-            this.grbConditionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConditionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.grbConditionSearch.Location = new System.Drawing.Point(8, 7);
             this.grbConditionSearch.Name = "grbConditionSearch";
-            this.grbConditionSearch.Size = new System.Drawing.Size(826, 73);
+            this.grbConditionSearch.Size = new System.Drawing.Size(693, 60);
             this.grbConditionSearch.TabIndex = 39;
             this.grbConditionSearch.TabStop = false;
             this.grbConditionSearch.Text = "Điều kiện tìm kiếm";
@@ -72,17 +72,17 @@
             // txtCustomsName
             // 
             this.txtCustomsName.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.txtCustomsName.Location = new System.Drawing.Point(419, 25);
+            this.txtCustomsName.Location = new System.Drawing.Point(303, 24);
             this.txtCustomsName.Name = "txtCustomsName";
-            this.txtCustomsName.Size = new System.Drawing.Size(286, 26);
+            this.txtCustomsName.Size = new System.Drawing.Size(179, 20);
             this.txtCustomsName.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 28);
+            this.label1.Location = new System.Drawing.Point(209, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "Tên ĐV hải quan";
             // 
@@ -90,9 +90,9 @@
             // 
             this.txtCustomsCode.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.txtCustomsCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCustomsCode.Location = new System.Drawing.Point(150, 25);
+            this.txtCustomsCode.Location = new System.Drawing.Point(103, 24);
             this.txtCustomsCode.Name = "txtCustomsCode";
-            this.txtCustomsCode.Size = new System.Drawing.Size(121, 26);
+            this.txtCustomsCode.Size = new System.Drawing.Size(100, 20);
             this.txtCustomsCode.TabIndex = 1;
             // 
             // lblPlateNumber
@@ -100,7 +100,7 @@
             this.lblPlateNumber.AutoSize = true;
             this.lblPlateNumber.Location = new System.Drawing.Point(13, 28);
             this.lblPlateNumber.Name = "lblPlateNumber";
-            this.lblPlateNumber.Size = new System.Drawing.Size(123, 20);
+            this.lblPlateNumber.Size = new System.Drawing.Size(84, 13);
             this.lblPlateNumber.TabIndex = 11;
             this.lblPlateNumber.Text = "Mã ĐV hải quan";
             // 
@@ -109,12 +109,12 @@
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(720, 23);
+            this.btnSearch.Location = new System.Drawing.Point(604, 20);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 28);
+            this.btnSearch.Size = new System.Drawing.Size(77, 28);
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "&Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -127,10 +127,10 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.grbUser.Controls.Add(this.grvCustoms);
-            this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbUser.Location = new System.Drawing.Point(5, 86);
+            this.grbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.grbUser.Location = new System.Drawing.Point(5, 73);
             this.grbUser.Name = "grbUser";
-            this.grbUser.Size = new System.Drawing.Size(829, 360);
+            this.grbUser.Size = new System.Drawing.Size(696, 279);
             this.grbUser.TabIndex = 36;
             this.grbUser.TabStop = false;
             this.grbUser.Text = "Danh sách đơn vị hải quan";
@@ -146,12 +146,12 @@
             this.CompanyName,
             this.Description});
             this.grvCustoms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grvCustoms.Location = new System.Drawing.Point(3, 22);
+            this.grvCustoms.Location = new System.Drawing.Point(3, 16);
             this.grvCustoms.MultiSelect = false;
             this.grvCustoms.Name = "grvCustoms";
             this.grvCustoms.ReadOnly = true;
             this.grvCustoms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvCustoms.Size = new System.Drawing.Size(823, 335);
+            this.grvCustoms.Size = new System.Drawing.Size(690, 260);
             this.grvCustoms.TabIndex = 38;
             this.grvCustoms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvCustoms_CellDoubleClick);
             // 
@@ -181,12 +181,12 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(744, 452);
+            this.btnClose.Location = new System.Drawing.Point(639, 358);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(84, 28);
+            this.btnClose.Size = new System.Drawing.Size(62, 28);
             this.btnClose.TabIndex = 37;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -198,12 +198,12 @@
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(671, 452);
+            this.btnDelete.Location = new System.Drawing.Point(578, 358);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(67, 28);
+            this.btnDelete.Size = new System.Drawing.Size(53, 28);
             this.btnDelete.TabIndex = 36;
             this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -215,12 +215,12 @@
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(564, 452);
+            this.btnUpdate.Location = new System.Drawing.Point(495, 358);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(101, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 28);
             this.btnUpdate.TabIndex = 35;
             this.btnUpdate.Text = "&Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -232,12 +232,12 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(465, 452);
+            this.btnAdd.Location = new System.Drawing.Point(415, 358);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(93, 28);
+            this.btnAdd.Size = new System.Drawing.Size(72, 28);
             this.btnAdd.TabIndex = 34;
             this.btnAdd.Text = "Tạo &mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -272,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 485);
+            this.ClientSize = new System.Drawing.Size(704, 398);
             this.Controls.Add(this.grbConditionSearch);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
@@ -280,7 +280,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(842, 512);
+            this.MinimumSize = new System.Drawing.Size(617, 362);
             this.Name = "FrmListCustoms";
             this.ShowInTaskbar = false;
             this.Text = "FrmListCustoms";
