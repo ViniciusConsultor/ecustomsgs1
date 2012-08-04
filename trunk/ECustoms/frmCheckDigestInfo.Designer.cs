@@ -117,6 +117,7 @@
             this.txtSerial.Size = new System.Drawing.Size(317, 22);
             this.txtSerial.TabIndex = 11;
             this.txtSerial.Tag = "required";
+            this.txtSerial.Text = "D62D19D5-00EB-1B03-9901-C59D07E4C910";
             // 
             // label6
             // 
@@ -134,6 +135,7 @@
             this.txtNumberOfUser.Size = new System.Drawing.Size(86, 22);
             this.txtNumberOfUser.TabIndex = 9;
             this.txtNumberOfUser.Tag = "required";
+            this.txtNumberOfUser.Text = "200";
             // 
             // label5
             // 
@@ -151,6 +153,7 @@
             this.txtNumberOfPc.Size = new System.Drawing.Size(86, 22);
             this.txtNumberOfPc.TabIndex = 7;
             this.txtNumberOfPc.Tag = "required";
+            this.txtNumberOfPc.Text = "100";
             // 
             // label4
             // 
@@ -168,6 +171,7 @@
             this.txtAddress.Size = new System.Drawing.Size(317, 22);
             this.txtAddress.TabIndex = 5;
             this.txtAddress.Tag = "required";
+            this.txtAddress.Text = "Đường Bạch Đằng, Thành Phố Lạng Sơn, Lạng Sơn";
             // 
             // label3
             // 
@@ -185,6 +189,7 @@
             this.txtDomain.Size = new System.Drawing.Size(317, 22);
             this.txtDomain.TabIndex = 3;
             this.txtDomain.Tag = "required";
+            this.txtDomain.Text = "tqdttntt.customs.gov.vn";
             // 
             // label2
             // 
@@ -202,6 +207,7 @@
             this.txtUnitName.Size = new System.Drawing.Size(317, 22);
             this.txtUnitName.TabIndex = 1;
             this.txtUnitName.Tag = "required";
+            this.txtUnitName.Text = "Cục Hải Quan Thành Phố Lạng Sơn";
             // 
             // label1
             // 
