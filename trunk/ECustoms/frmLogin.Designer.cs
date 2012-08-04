@@ -126,7 +126,7 @@
             // pbLogin
             // 
             this.pbLogin.Image = global::ECustoms.Properties.Resources.imageGS1;
-            this.pbLogin.Location = new System.Drawing.Point(94, 0);
+            this.pbLogin.Location = new System.Drawing.Point(100, 1);
             this.pbLogin.Name = "pbLogin";
             this.pbLogin.Size = new System.Drawing.Size(104, 125);
             this.pbLogin.TabIndex = 0;
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(311, 278);
+            this.ClientSize = new System.Drawing.Size(286, 264);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);

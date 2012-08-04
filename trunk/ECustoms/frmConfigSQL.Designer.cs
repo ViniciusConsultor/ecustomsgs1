@@ -70,9 +70,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button1.Image = global::ECustoms.Properties.Resources.enter;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(219, 258);
+            this.button1.Location = new System.Drawing.Point(238, 258);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 32);
+            this.button1.Size = new System.Drawing.Size(74, 32);
             this.button1.TabIndex = 3;
             this.button1.Text = "&Kết nối";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

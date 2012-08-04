@@ -81,9 +81,9 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(759, 327);
+            this.btnDelete.Location = new System.Drawing.Point(775, 327);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(63, 28);
+            this.btnDelete.Size = new System.Drawing.Size(51, 28);
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,9 +98,9 @@
             this.bntUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.bntUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.bntUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntUpdate.Location = new System.Drawing.Point(668, 327);
+            this.bntUpdate.Location = new System.Drawing.Point(687, 327);
             this.bntUpdate.Name = "bntUpdate";
-            this.bntUpdate.Size = new System.Drawing.Size(83, 28);
+            this.bntUpdate.Size = new System.Drawing.Size(80, 28);
             this.bntUpdate.TabIndex = 23;
             this.bntUpdate.Text = "&Cập nhật";
             this.bntUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,9 +115,9 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(830, 327);
+            this.btnClose.Location = new System.Drawing.Point(834, 327);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(67, 28);
+            this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 24;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

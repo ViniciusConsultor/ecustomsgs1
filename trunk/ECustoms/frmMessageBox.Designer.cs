@@ -35,7 +35,7 @@
             // 
             // lblContent
             // 
-            this.lblContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblContent.Location = new System.Drawing.Point(12, 19);
             this.lblContent.Name = "lblContent";
             this.lblContent.Size = new System.Drawing.Size(315, 94);
@@ -77,7 +77,6 @@
             this.Name = "frmMessageBox";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xac nhan";
             this.ResumeLayout(false);
 

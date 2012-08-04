@@ -111,9 +111,9 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(321, 251);
+            this.btnClose.Location = new System.Drawing.Point(325, 251);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(67, 28);
+            this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 35;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -172,9 +172,9 @@
             this.btnUpdateVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdateVehicle.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdateVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateVehicle.Location = new System.Drawing.Point(230, 251);
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(237, 251);
             this.btnUpdateVehicle.Name = "btnUpdateVehicle";
-            this.btnUpdateVehicle.Size = new System.Drawing.Size(83, 28);
+            this.btnUpdateVehicle.Size = new System.Drawing.Size(80, 28);
             this.btnUpdateVehicle.TabIndex = 38;
             this.btnUpdateVehicle.Text = "&Cập nhật";
             this.btnUpdateVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,9 +188,9 @@
             this.btnAddVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAddVehicle.Image = global::ECustoms.Properties.Resources.add;
             this.btnAddVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddVehicle.Location = new System.Drawing.Point(139, 251);
+            this.btnAddVehicle.Location = new System.Drawing.Point(149, 251);
             this.btnAddVehicle.Name = "btnAddVehicle";
-            this.btnAddVehicle.Size = new System.Drawing.Size(83, 28);
+            this.btnAddVehicle.Size = new System.Drawing.Size(80, 28);
             this.btnAddVehicle.TabIndex = 37;
             this.btnAddVehicle.Text = "Thêm &mới";
             this.btnAddVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

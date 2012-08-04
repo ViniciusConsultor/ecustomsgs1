@@ -49,10 +49,10 @@
             this.groupBox1.Controls.Add(this.dtpExportTo);
             this.groupBox1.Controls.Add(this.dtpExportFrom);
             this.groupBox1.Controls.Add(this.lblTime);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(13, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 149);
+            this.groupBox1.Size = new System.Drawing.Size(342, 121);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
@@ -61,12 +61,12 @@
             // 
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSearch.Image = global::ECustoms.Properties.Resources.report224x24_24_bit;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(440, 103);
+            this.btnSearch.Location = new System.Drawing.Point(221, 80);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(139, 33);
+            this.btnSearch.Size = new System.Drawing.Size(107, 28);
             this.btnSearch.TabIndex = 21;
             this.btnSearch.Text = "&Hiện báo cáo";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -76,61 +76,61 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(6, 31);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(6, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "Kiểu report:";
             // 
             // cbReportType
             // 
             this.cbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbReportType.FormattingEnabled = true;
-            this.cbReportType.Location = new System.Drawing.Point(178, 28);
+            this.cbReportType.Location = new System.Drawing.Point(78, 25);
             this.cbReportType.Name = "cbReportType";
-            this.cbReportType.Size = new System.Drawing.Size(401, 28);
+            this.cbReportType.Size = new System.Drawing.Size(250, 21);
             this.cbReportType.TabIndex = 19;
             this.cbReportType.SelectedIndexChanged += new System.EventHandler(this.cbReportType_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(357, 71);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(172, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Thơi gian tới:";
             // 
             // dtpExportTo
             // 
             this.dtpExportTo.CustomFormat = "dd/MM/yyyy";
-            this.dtpExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtpExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpExportTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportTo.Location = new System.Drawing.Point(461, 66);
+            this.dtpExportTo.Location = new System.Drawing.Point(246, 54);
             this.dtpExportTo.Name = "dtpExportTo";
-            this.dtpExportTo.Size = new System.Drawing.Size(118, 26);
+            this.dtpExportTo.Size = new System.Drawing.Size(82, 20);
             this.dtpExportTo.TabIndex = 17;
             // 
             // dtpExportFrom
             // 
             this.dtpExportFrom.CustomFormat = "dd/MM/yyyy";
-            this.dtpExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtpExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpExportFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportFrom.Location = new System.Drawing.Point(178, 66);
+            this.dtpExportFrom.Location = new System.Drawing.Point(78, 54);
             this.dtpExportFrom.Name = "dtpExportFrom";
-            this.dtpExportFrom.Size = new System.Drawing.Size(118, 26);
+            this.dtpExportFrom.Size = new System.Drawing.Size(88, 20);
             this.dtpExportFrom.TabIndex = 16;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTime.Location = new System.Drawing.Point(6, 71);
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblTime.Location = new System.Drawing.Point(6, 58);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(95, 20);
+            this.lblTime.Size = new System.Drawing.Size(66, 13);
             this.lblTime.TabIndex = 13;
             this.lblTime.Text = "Thời gian từ:";
             // 
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 173);
+            this.ClientSize = new System.Drawing.Size(364, 140);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
