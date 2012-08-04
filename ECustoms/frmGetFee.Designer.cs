@@ -154,10 +154,10 @@
             this.grbConditionSearch.Controls.Add(this.txtPlateNumber);
             this.grbConditionSearch.Controls.Add(this.lblPlateNumber);
             this.grbConditionSearch.Controls.Add(this.btnSearch);
-            this.grbConditionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConditionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.grbConditionSearch.Location = new System.Drawing.Point(12, 12);
             this.grbConditionSearch.Name = "grbConditionSearch";
-            this.grbConditionSearch.Size = new System.Drawing.Size(882, 129);
+            this.grbConditionSearch.Size = new System.Drawing.Size(700, 118);
             this.grbConditionSearch.TabIndex = 0;
             this.grbConditionSearch.TabStop = false;
             this.grbConditionSearch.Text = "Điều kiện tìm kiếm";
@@ -165,9 +165,9 @@
             // cbGetFee
             // 
             this.cbGetFee.AutoSize = true;
-            this.cbGetFee.Location = new System.Drawing.Point(638, 30);
+            this.cbGetFee.Location = new System.Drawing.Point(495, 30);
             this.cbGetFee.Name = "cbGetFee";
-            this.cbGetFee.Size = new System.Drawing.Size(116, 24);
+            this.cbGetFee.Size = new System.Drawing.Size(88, 17);
             this.cbGetFee.TabIndex = 30;
             this.cbGetFee.Text = "Ngày thu phí";
             this.cbGetFee.UseVisualStyleBackColor = true;
@@ -178,9 +178,9 @@
             this.dtpFeeTo.CustomFormat = "dd/MM/yyyy";
             this.dtpFeeTo.Enabled = false;
             this.dtpFeeTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFeeTo.Location = new System.Drawing.Point(638, 93);
+            this.dtpFeeTo.Location = new System.Drawing.Point(504, 83);
             this.dtpFeeTo.Name = "dtpFeeTo";
-            this.dtpFeeTo.Size = new System.Drawing.Size(118, 26);
+            this.dtpFeeTo.Size = new System.Drawing.Size(88, 20);
             this.dtpFeeTo.TabIndex = 32;
             // 
             // dtpFeeFrom
@@ -188,9 +188,9 @@
             this.dtpFeeFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpFeeFrom.Enabled = false;
             this.dtpFeeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFeeFrom.Location = new System.Drawing.Point(638, 61);
+            this.dtpFeeFrom.Location = new System.Drawing.Point(504, 55);
             this.dtpFeeFrom.Name = "dtpFeeFrom";
-            this.dtpFeeFrom.Size = new System.Drawing.Size(118, 26);
+            this.dtpFeeFrom.Size = new System.Drawing.Size(88, 20);
             this.dtpFeeFrom.TabIndex = 31;
             // 
             // cbCreatedVehicle
@@ -198,9 +198,9 @@
             this.cbCreatedVehicle.AutoSize = true;
             this.cbCreatedVehicle.Checked = true;
             this.cbCreatedVehicle.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCreatedVehicle.Location = new System.Drawing.Point(249, 30);
+            this.cbCreatedVehicle.Location = new System.Drawing.Point(217, 30);
             this.cbCreatedVehicle.Name = "cbCreatedVehicle";
-            this.cbCreatedVehicle.Size = new System.Drawing.Size(179, 24);
+            this.cbCreatedVehicle.Size = new System.Drawing.Size(128, 17);
             this.cbCreatedVehicle.TabIndex = 2;
             this.cbCreatedVehicle.Text = "Ngày tạo phương tiện";
             this.cbCreatedVehicle.UseVisualStyleBackColor = true;
@@ -210,44 +210,44 @@
             // 
             this.dtpCreatedDateTo.CustomFormat = "dd/MM/yyyy";
             this.dtpCreatedDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreatedDateTo.Location = new System.Drawing.Point(290, 93);
+            this.dtpCreatedDateTo.Location = new System.Drawing.Point(250, 83);
             this.dtpCreatedDateTo.Name = "dtpCreatedDateTo";
-            this.dtpCreatedDateTo.Size = new System.Drawing.Size(118, 26);
+            this.dtpCreatedDateTo.Size = new System.Drawing.Size(95, 20);
             this.dtpCreatedDateTo.TabIndex = 4;
             // 
             // dtpCreatedDateFrom
             // 
             this.dtpCreatedDateFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpCreatedDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCreatedDateFrom.Location = new System.Drawing.Point(290, 61);
+            this.dtpCreatedDateFrom.Location = new System.Drawing.Point(250, 55);
             this.dtpCreatedDateFrom.Name = "dtpCreatedDateFrom";
-            this.dtpCreatedDateFrom.Size = new System.Drawing.Size(118, 26);
+            this.dtpCreatedDateFrom.Size = new System.Drawing.Size(95, 20);
             this.dtpCreatedDateFrom.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(245, 98);
+            this.label1.Location = new System.Drawing.Point(217, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 20);
+            this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 29;
             this.label1.Text = "Đến";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 66);
+            this.label2.Location = new System.Drawing.Point(217, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 20);
+            this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 28;
             this.label2.Text = "Từ";
             // 
             // cbIsParking
             // 
             this.cbIsParking.AutoSize = true;
-            this.cbIsParking.Location = new System.Drawing.Point(449, 30);
+            this.cbIsParking.Location = new System.Drawing.Point(366, 30);
             this.cbIsParking.Name = "cbIsParking";
-            this.cbIsParking.Size = new System.Drawing.Size(103, 24);
+            this.cbIsParking.Size = new System.Drawing.Size(78, 17);
             this.cbIsParking.TabIndex = 5;
             this.cbIsParking.Text = "Đã vào bãi";
             this.cbIsParking.UseVisualStyleBackColor = true;
@@ -258,9 +258,9 @@
             this.dtpParkingDateTo.CustomFormat = "dd/MM/yyyy";
             this.dtpParkingDateTo.Enabled = false;
             this.dtpParkingDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpParkingDateTo.Location = new System.Drawing.Point(490, 93);
+            this.dtpParkingDateTo.Location = new System.Drawing.Point(399, 83);
             this.dtpParkingDateTo.Name = "dtpParkingDateTo";
-            this.dtpParkingDateTo.Size = new System.Drawing.Size(118, 26);
+            this.dtpParkingDateTo.Size = new System.Drawing.Size(86, 20);
             this.dtpParkingDateTo.TabIndex = 7;
             // 
             // dtpParkingDateFrom
@@ -268,26 +268,26 @@
             this.dtpParkingDateFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpParkingDateFrom.Enabled = false;
             this.dtpParkingDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpParkingDateFrom.Location = new System.Drawing.Point(490, 61);
+            this.dtpParkingDateFrom.Location = new System.Drawing.Point(399, 57);
             this.dtpParkingDateFrom.Name = "dtpParkingDateFrom";
-            this.dtpParkingDateFrom.Size = new System.Drawing.Size(118, 26);
+            this.dtpParkingDateFrom.Size = new System.Drawing.Size(86, 20);
             this.dtpParkingDateFrom.TabIndex = 6;
             // 
             // lblParkingDateTo
             // 
             this.lblParkingDateTo.AutoSize = true;
-            this.lblParkingDateTo.Location = new System.Drawing.Point(445, 98);
+            this.lblParkingDateTo.Location = new System.Drawing.Point(366, 87);
             this.lblParkingDateTo.Name = "lblParkingDateTo";
-            this.lblParkingDateTo.Size = new System.Drawing.Size(39, 20);
+            this.lblParkingDateTo.Size = new System.Drawing.Size(27, 13);
             this.lblParkingDateTo.TabIndex = 24;
             this.lblParkingDateTo.Text = "Đến";
             // 
             // lblParkingDateFrom
             // 
             this.lblParkingDateFrom.AutoSize = true;
-            this.lblParkingDateFrom.Location = new System.Drawing.Point(445, 66);
+            this.lblParkingDateFrom.Location = new System.Drawing.Point(366, 59);
             this.lblParkingDateFrom.Name = "lblParkingDateFrom";
-            this.lblParkingDateFrom.Size = new System.Drawing.Size(27, 20);
+            this.lblParkingDateFrom.Size = new System.Drawing.Size(20, 13);
             this.lblParkingDateFrom.TabIndex = 23;
             this.lblParkingDateFrom.Text = "Từ";
             // 
@@ -295,18 +295,18 @@
             // 
             this.txtReceiptNumber.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.txtReceiptNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReceiptNumber.Location = new System.Drawing.Point(128, 63);
+            this.txtReceiptNumber.Location = new System.Drawing.Point(91, 55);
             this.txtReceiptNumber.Name = "txtReceiptNumber";
-            this.txtReceiptNumber.Size = new System.Drawing.Size(105, 26);
+            this.txtReceiptNumber.Size = new System.Drawing.Size(105, 20);
             this.txtReceiptNumber.TabIndex = 1;
             this.txtReceiptNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceiptNumber_KeyPress);
             // 
             // lblPlateNumberChinese
             // 
             this.lblPlateNumberChinese.AutoSize = true;
-            this.lblPlateNumberChinese.Location = new System.Drawing.Point(9, 66);
+            this.lblPlateNumberChinese.Location = new System.Drawing.Point(9, 59);
             this.lblPlateNumberChinese.Name = "lblPlateNumberChinese";
-            this.lblPlateNumberChinese.Size = new System.Drawing.Size(82, 20);
+            this.lblPlateNumberChinese.Size = new System.Drawing.Size(56, 13);
             this.lblPlateNumberChinese.TabIndex = 21;
             this.lblPlateNumberChinese.Text = "Số biên lai";
             // 
@@ -314,34 +314,33 @@
             // 
             this.txtPlateNumber.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.txtPlateNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPlateNumber.Location = new System.Drawing.Point(128, 28);
+            this.txtPlateNumber.Location = new System.Drawing.Point(91, 28);
             this.txtPlateNumber.Name = "txtPlateNumber";
-            this.txtPlateNumber.Size = new System.Drawing.Size(105, 26);
+            this.txtPlateNumber.Size = new System.Drawing.Size(105, 20);
             this.txtPlateNumber.TabIndex = 0;
             this.txtPlateNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlateNumber_KeyPress);
             // 
             // lblPlateNumber
             // 
             this.lblPlateNumber.AutoSize = true;
-            this.lblPlateNumber.Location = new System.Drawing.Point(9, 31);
+            this.lblPlateNumber.Location = new System.Drawing.Point(9, 32);
             this.lblPlateNumber.Name = "lblPlateNumber";
-            this.lblPlateNumber.Size = new System.Drawing.Size(113, 20);
+            this.lblPlateNumber.Size = new System.Drawing.Size(76, 13);
             this.lblPlateNumber.TabIndex = 11;
             this.lblPlateNumber.Text = "Biển kiểm soát";
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSearch.Image = global::ECustoms.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(775, 91);
+            this.btnSearch.Location = new System.Drawing.Point(615, 24);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(96, 28);
+            this.btnSearch.Size = new System.Drawing.Size(72, 28);
             this.btnSearch.TabIndex = 10;
-            this.btnSearch.Text = "Tìm ki&ếm";
+            this.btnSearch.Text = "Tìm k&iếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -352,23 +351,21 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.grbResult.Controls.Add(this.groupBox1);
-            this.grbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbResult.Location = new System.Drawing.Point(12, 147);
+            this.grbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.grbResult.Location = new System.Drawing.Point(12, 136);
             this.grbResult.Name = "grbResult";
-            this.grbResult.Size = new System.Drawing.Size(882, 390);
+            this.grbResult.Size = new System.Drawing.Size(700, 294);
             this.grbResult.TabIndex = 1;
             this.grbResult.TabStop = false;
             this.grbResult.Text = "Kết quả tìm kiếm";
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.grdVehicle);
-            this.groupBox1.Location = new System.Drawing.Point(6, 36);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(865, 348);
+            this.groupBox1.Size = new System.Drawing.Size(694, 275);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phương tiện";
@@ -408,11 +405,11 @@
             this.ExportGoodsTypeName,
             this.ImportGoodsTypeName});
             this.grdVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdVehicle.Location = new System.Drawing.Point(3, 22);
+            this.grdVehicle.Location = new System.Drawing.Point(3, 16);
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.ReadOnly = true;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(859, 323);
+            this.grdVehicle.Size = new System.Drawing.Size(688, 256);
             this.grdVehicle.TabIndex = 0;
             // 
             // VehicleID
@@ -652,12 +649,12 @@
             this.btnFeeImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFeeImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnFeeImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnFeeImport.Image = global::ECustoms.Properties.Resources.money;
             this.btnFeeImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeeImport.Location = new System.Drawing.Point(536, 545);
+            this.btnFeeImport.Location = new System.Drawing.Point(446, 436);
             this.btnFeeImport.Name = "btnFeeImport";
-            this.btnFeeImport.Size = new System.Drawing.Size(124, 28);
+            this.btnFeeImport.Size = new System.Drawing.Size(95, 28);
             this.btnFeeImport.TabIndex = 3;
             this.btnFeeImport.Text = "XN phí &nhập";
             this.btnFeeImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -669,12 +666,12 @@
             this.btnFeeExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFeeExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnFeeExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeeExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnFeeExport.Image = global::ECustoms.Properties.Resources.money;
             this.btnFeeExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFeeExport.Location = new System.Drawing.Point(413, 545);
+            this.btnFeeExport.Location = new System.Drawing.Point(348, 436);
             this.btnFeeExport.Name = "btnFeeExport";
-            this.btnFeeExport.Size = new System.Drawing.Size(117, 28);
+            this.btnFeeExport.Size = new System.Drawing.Size(90, 28);
             this.btnFeeExport.TabIndex = 2;
             this.btnFeeExport.Text = "XN phí &xuất";
             this.btnFeeExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -686,12 +683,12 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(797, 543);
+            this.btnClose.Location = new System.Drawing.Point(650, 436);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 28);
+            this.btnClose.Size = new System.Drawing.Size(62, 28);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -703,12 +700,12 @@
             this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnExportExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnExportExcel.Image = global::ECustoms.Properties.Resources.exce;
             this.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportExcel.Location = new System.Drawing.Point(666, 543);
+            this.btnExportExcel.Location = new System.Drawing.Point(549, 436);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(125, 28);
+            this.btnExportExcel.Size = new System.Drawing.Size(93, 28);
             this.btnExportExcel.TabIndex = 6;
             this.btnExportExcel.Text = "Expo&rt Excel";
             this.btnExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -991,7 +988,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 577);
+            this.ClientSize = new System.Drawing.Size(716, 481);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.btnFeeImport);
             this.Controls.Add(this.btnFeeExport);
@@ -999,7 +996,6 @@
             this.Controls.Add(this.grbResult);
             this.Controls.Add(this.grbConditionSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(906, 604);
             this.Name = "frmGetFee";
             this.ShowInTaskbar = false;
             this.Text = "frmGetFee";
