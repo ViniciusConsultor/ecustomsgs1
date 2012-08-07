@@ -17,7 +17,7 @@ using CrystalDecisions.Shared;
 
 namespace ECustoms
 {
-    public partial class frmVehicleSearch : SubFormBase
+    public partial class frmVehicleSearch : Form
     {
         private static ILog logger = LogManager.GetLogger("Ecustoms.frmVehicleSearch");
         private UserInfo _userInfo;
@@ -755,7 +755,12 @@ namespace ECustoms
                     {
                         if (vehicle.HasGoodsImportedTocalPrint != null)
                         {
-                            if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                   
+                            //var answer = MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo);
+                            //if (answer == DialogResult.Yes)
+
+                            var msgBox1 = new frmMessageBox("Xe này đã in phiếu rồi. Bạn có muốn in lại");
+                            if (msgBox1.ShowDialog() == DialogResult.Yes)
                             {
                                 printTicket(2, vehicle);
                             }
@@ -1403,10 +1408,17 @@ namespace ECustoms
                 {
                     if (vehicleInfo.ParkingTotalPrint != null)
                     {
-                        if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+                        var msgBox1 = new frmMessageBox("Xe này đã in phiếu rồi. Bạn có muốn in lại");
+                        if (msgBox1.ShowDialog() == DialogResult.Yes)
                         {
                             printTicket(3, vehicleInfo);
                         }
+
+                        //if (MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        //{
+                        //    printTicket(3, vehicleInfo);
+                        //}
                     }
                     else
                     {
@@ -1573,7 +1585,9 @@ namespace ECustoms
                     break;
             }
 
-            txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
+            //txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
+            String PlateNumberKey = Utilities.EnCryptDecrypt.Encrypt(vehicleInfo.PlateNumber, true);
+            txtBarcode.Text = "*" + PlateNumberKey + "*";
             DateTime currentDate = CommonFactory.GetCurrentDate();
             //cap nhat so lan in ticket cua phuong tien vao CSDL
 
@@ -1591,11 +1605,18 @@ namespace ECustoms
 
             foreach (String printerName in _printSetting.ListPrinter)
             {
-                try
+                if (Utilities.PrinterChecking.IsValid(printerName))
                 {
-                    AutoPrintReport(printerName, "VehicleTicket.rpt");
+                    try
+                    {
+                        AutoPrintReport(printerName, "VehicleTicket.rpt");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không kết nối được với máy in: " + printerName);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
                     MessageBox.Show("Không kết nối được với máy in: " + printerName);
                 }
