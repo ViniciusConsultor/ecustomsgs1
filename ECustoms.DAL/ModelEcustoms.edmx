@@ -36,8 +36,7 @@
       [tblSettings].[Version] AS [Version], 
       [tblSettings].[LastSync] AS [LastSync], 
       [tblSettings].[SyncInterval] AS [SyncInterval], 
-      [tblSettings].[SyncTime] AS [SyncTime], 
-      [tblSettings].[IsStartingSync] AS [IsStartingSync]
+      [tblSettings].[SyncTime] AS [SyncTime]
       FROM [dbo].[tblSettings] AS [tblSettings]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="tblType" EntityType="dbEcustomModel.Store.tblType" store:Type="Tables" Schema="dbo" />
@@ -496,10 +495,7 @@
       [ViewUserGroup].[UserFullName] AS [UserFullName], 
       [ViewUserGroup].[UserName] AS [UserName], 
       [ViewUserGroup].[GroupID] AS [GroupID], 
-      [ViewUserGroup].[GroupName] AS [GroupName], 
-      [ViewUserGroup].[Address] AS [Address], 
-      [ViewUserGroup].[Email] AS [Email], 
-      [ViewUserGroup].[PhoneNumber] AS [PhoneNumber]
+      [ViewUserGroup].[GroupName] AS [GroupName]
       FROM [dbo].[ViewUserGroup] AS [ViewUserGroup]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewVehicleFee" EntityType="dbEcustomModel.Store.ViewVehicleFee" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFee">
@@ -556,7 +552,7 @@
           </AssociationSet>
         </EntityContainer>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Log">
           <Key>
@@ -606,7 +602,6 @@
           <Property Name="RegisterSerial" Type="nvarchar" Nullable="false" MaxLength="128" />
           <Property Name="BranchName" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="LastSync" Type="datetime" Nullable="false" />
-          <Property Name="IsRequestingSync" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblCheck">
           <Key>
@@ -677,15 +672,15 @@
           <Property Name="Money" Type="numeric" />
           <Property Name="NumberHandover" Type="int" />
           <Property Name="DateHandover" Type="datetime" />
-          <Property Name="PersonHandoverID" Type="int" />
           <Property Name="DateReturn" Type="datetime" />
           <Property Name="PersonConfirmReturnID" Type="int" />
           <Property Name="NumberTemp" Type="nvarchar" MaxLength="50" />
           <Property Name="GateExport" Type="nvarchar" MaxLength="500" />
           <Property Name="Seal" Type="nvarchar" MaxLength="100" />
           <Property Name="TypeOption" Type="smallint" />
-          <Property Name="CustomsCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonHandoverID" Type="int" />
           <Property Name="GateImport" Type="nvarchar" MaxLength="500" />
+          <Property Name="CustomsCode" Type="nvarchar" MaxLength="50" />
           <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
@@ -759,19 +754,17 @@
           <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.tblSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.tblSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="tblSettings">
           <Key>
             <PropertyRef Name="Version" />
             <PropertyRef Name="LastSync" />
-            <PropertyRef Name="IsStartingSync" />
           </Key>
           <Property Name="Version" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="LastSync" Type="datetime" Nullable="false" />
           <Property Name="SyncInterval" Type="int" />
           <Property Name="SyncTime" Type="nvarchar" MaxLength="6" />
-          <Property Name="IsStartingSync" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblType">
           <Key>
@@ -856,10 +849,12 @@
           <Property Name="HasGoodsImportedPrintOrderNumber" Type="bigint" />
           <Property Name="ParkingTotalPrintOrderNumber" Type="bigint" />
           <Property Name="IsChineseVehicle" Type="bit" />
+          <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
           <Property Name="IsExportParking" Type="bit" />
           <Property Name="ExportParkingDate" Type="datetime" />
           <Property Name="ConfirmExportParkingBy" Type="int" />
-          <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
+          <Property Name="ExportReceiptNumber" Type="varchar" MaxLength="100" />
+          <Property Name="ImportReceiptNumber" Type="varchar" MaxLength="100" />
           <Property Name="vehicleTypeId" Type="int" />
           <Property Name="quantityExport" Type="bigint" />
           <Property Name="quantityImport" Type="bigint" />
@@ -871,8 +866,6 @@
           <Property Name="feeImportDate" Type="datetime" />
           <Property Name="confirmFeeExportBy" Type="int" />
           <Property Name="confirmFeeImportBy" Type="int" />
-          <Property Name="ExportReceiptNumber" Type="varchar" MaxLength="100" />
-          <Property Name="ImportReceiptNumber" Type="varchar" MaxLength="100" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ExportGoodTypeId" Type="int" />
           <Property Name="ImportGoodTypeId" Type="int" />
@@ -936,7 +929,7 @@
           <Property Name="IsSynced" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheck">
           <Key>
@@ -959,7 +952,7 @@
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheckResult">
           <Key>
@@ -986,7 +979,7 @@
           <Property Name="ExportDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclaration">
           <Key>
@@ -1032,7 +1025,7 @@
           <Property Name="GateImport" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclarationTNTX">
           <Key>
@@ -1077,7 +1070,7 @@
           <Property Name="PersonHandoverName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicle">
           <Key>
@@ -1110,7 +1103,7 @@
           <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicleHasGood">
           <Key>
@@ -1187,7 +1180,7 @@
           <Property Name="ImportGoodTypeId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVechicleExport">
           <Key>
@@ -1249,7 +1242,7 @@
           <Property Name="ConfirmExportByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewDeclarationVehicle">
           <Key>
@@ -1288,7 +1281,7 @@
           <Property Name="RegisterDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewDeclarationVehicleImport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewDeclarationVehicleImport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVehicleImport">
           <Key>
@@ -1350,7 +1343,7 @@
           <Property Name="DeclarationImportNumber" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewDeclarationVehicleImportExportFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewDeclarationVehicleImportExportFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVehicleImportExportFee">
           <Key>
@@ -1416,7 +1409,7 @@
           <Property Name="ConfirmExportByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewGetCurrentDate">
           <Key>
@@ -1425,7 +1418,7 @@
           <Property Name="CurrentDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewUserGroup">
           <Key>
@@ -1438,12 +1431,9 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="GroupID" Type="int" Nullable="false" />
           <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="Address" Type="nvarchar" MaxLength="300" />
-          <Property Name="Email" Type="nvarchar" MaxLength="100" />
-          <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewVehicleFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewVehicleFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFee">
           <Key>
@@ -1471,7 +1461,7 @@
           <Property Name="maxDeclarationID" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewVehicleFeeSetting">
           <Key>
@@ -1487,7 +1477,7 @@
           <Property Name="Capacity" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'eCustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbECustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFreight">
           <Key>
@@ -1627,16 +1617,19 @@
           <EntitySet Name="Logs" EntityType="dbEcustomModel.Log" />
           <EntitySet Name="sysdiagrams" EntityType="dbEcustomModel.sysdiagram" />
           <EntitySet Name="tblApplicationObjects" EntityType="dbEcustomModel.tblApplicationObject" />
+          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomModel.tblBranchDatabas" />
           <EntitySet Name="tblChecks" EntityType="dbEcustomModel.tblCheck" />
           <EntitySet Name="tblCompanies" EntityType="dbEcustomModel.tblCompany" />
           <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.tblCustom" />
           <EntitySet Name="tblDeclarations" EntityType="dbEcustomModel.tblDeclaration" />
           <EntitySet Name="tblDeclarationVehicles" EntityType="dbEcustomModel.tblDeclarationVehicle" />
+          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
           <EntitySet Name="tblGoodsTypes" EntityType="dbEcustomModel.tblGoodsType" />
           <EntitySet Name="tblGroups" EntityType="dbEcustomModel.tblGroup" />
           <EntitySet Name="tblPermissions" EntityType="dbEcustomModel.tblPermission" />
           <EntitySet Name="tblProfileConfigs" EntityType="dbEcustomModel.tblProfileConfig" />
           <EntitySet Name="tblRoleInGroups" EntityType="dbEcustomModel.tblRoleInGroup" />
+          <EntitySet Name="tblSettings" EntityType="dbEcustomModel.tblSetting" />
           <EntitySet Name="tblTypes" EntityType="dbEcustomModel.tblType" />
           <EntitySet Name="tblUsers" EntityType="dbEcustomModel.tblUser" />
           <EntitySet Name="tblUserGroupPermissions" EntityType="dbEcustomModel.tblUserGroupPermission" />
@@ -1669,9 +1662,6 @@
             <End Role="tlbRole" EntitySet="tlbRoles" />
             <End Role="tblRoleInGroup" EntitySet="tblRoleInGroups" />
           </AssociationSet>
-          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
-          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomModel.tblBranchDatabas" />
-          <EntitySet Name="tblSettings" EntityType="dbEcustomModel.tblSetting" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -1711,6 +1701,16 @@
           <Property Type="Double" Name="ApplicationObjectValueFloat" />
           <Property Type="DateTime" Name="ApplicationObjectValueDatetime" />
           <Property Type="Boolean" Name="IsSynced" />
+        </EntityType>
+        <EntityType Name="tblBranchDatabas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="DatabaseName" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RegisterSerial" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastSync" Nullable="false" />
         </EntityType>
         <EntityType Name="tblCheck">
           <Key>
@@ -1789,8 +1789,8 @@
           <Property Type="Int32" Name="PersonHandoverID" />
           <Property Type="String" Name="GateImport" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CustomsCode" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblUser" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblDeclaration" ToRole="tblUser" />
           <Property Type="Boolean" Name="IsSynced" />
+          <NavigationProperty Name="tblUser" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblDeclaration" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -1799,6 +1799,20 @@
           </Key>
           <Property Type="Int64" Name="DeclarationID" Nullable="false" />
           <Property Type="Int64" Name="VehicleID" Nullable="false" />
+          <Property Type="Boolean" Name="IsSynced" />
+        </EntityType>
+        <EntityType Name="tblGate">
+          <Key>
+            <PropertyRef Name="GateCode" />
+          </Key>
+          <Property Type="String" Name="GateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GateName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="GateType" />
+          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
           <Property Type="Boolean" Name="IsSynced" />
         </EntityType>
         <EntityType Name="tblGoodsType">
@@ -1846,8 +1860,18 @@
           </Key>
           <Property Type="Int32" Name="GroupID" Nullable="false" />
           <Property Type="Int32" Name="RoleID" Nullable="false" />
-          <NavigationProperty Name="tlbRole" Relationship="dbEcustomModel.FK_tblRoleInGroup_tlbRole" FromRole="tblRoleInGroup" ToRole="tlbRole" />
           <Property Type="Boolean" Name="IsSynced" />
+          <NavigationProperty Name="tlbRole" Relationship="dbEcustomModel.FK_tblRoleInGroup_tlbRole" FromRole="tblRoleInGroup" ToRole="tlbRole" />
+        </EntityType>
+        <EntityType Name="tblSetting">
+          <Key>
+            <PropertyRef Name="Version" />
+            <PropertyRef Name="LastSync" />
+          </Key>
+          <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastSync" Nullable="false" />
+          <Property Type="Int32" Name="SyncInterval" />
+          <Property Type="String" Name="SyncTime" MaxLength="6" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblType">
           <Key>
@@ -1876,8 +1900,8 @@
           <Property Type="String" Name="Password" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="PermissionID" />
           <Property Type="Int32" Name="IsActive" />
-          <NavigationProperty Name="tblDeclarations" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblUser" ToRole="tblDeclaration" />
           <Property Type="Boolean" Name="IsSynced" />
+          <NavigationProperty Name="tblDeclarations" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblUser" ToRole="tblDeclaration" />
         </EntityType>
         <EntityType Name="tblUserGroupPermission">
           <Key>
@@ -2010,8 +2034,8 @@
           <Property Type="Int32" Name="RoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblRoleInGroups" Relationship="dbEcustomModel.FK_tblRoleInGroup_tlbRole" FromRole="tlbRole" ToRole="tblRoleInGroup" />
           <Property Type="Boolean" Name="IsSynced" />
+          <NavigationProperty Name="tblRoleInGroups" Relationship="dbEcustomModel.FK_tblRoleInGroup_tlbRole" FromRole="tlbRole" ToRole="tblRoleInGroup" />
         </EntityType>
         <EntityType Name="ViewAllCheck">
           <Key>
@@ -2480,9 +2504,6 @@
           <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="GroupID" Nullable="false" />
           <Property Type="String" Name="GroupName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="PhoneNumber" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ViewVehicleFee">
           <Key>
@@ -2553,43 +2574,6 @@
           </ReferentialConstraint>
           
         </Association>
-        <EntityType Name="tblGate">
-          <Key>
-            <PropertyRef Name="GateCode" />
-          </Key>
-          <Property Type="String" Name="GateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="GateName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="CreatedDate" />
-          <Property Type="Int32" Name="CreatedBy" />
-          <Property Type="DateTime" Name="ModifiedDate" />
-          <Property Type="Int32" Name="ModifiedBy" />
-          <Property Type="Int32" Name="GateType" />
-          <Property Type="Boolean" Name="IsSynced" />
-        </EntityType>
-        <EntityType Name="tblBranchDatabas">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="String" Name="DatabaseName" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="RegisterSerial" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="BranchName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="LastSync" Nullable="false" />
-          <Property Type="Boolean" Name="IsRequestingSync" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblSetting">
-          <Key>
-            <PropertyRef Name="Version" />
-            <PropertyRef Name="LastSync" />
-            <PropertyRef Name="IsStartingSync" />
-          </Key>
-          <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="LastSync" Nullable="false" />
-          <Property Type="Int32" Name="SyncInterval" />
-          <Property Type="String" Name="SyncTime" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="IsStartingSync" Nullable="false" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2630,6 +2614,17 @@
                 <ScalarProperty Name="ApplicationObjectValueString" ColumnName="ApplicationObjectValueString" />
                 <ScalarProperty Name="ApplicationObjectName" ColumnName="ApplicationObjectName" />
                 <ScalarProperty Name="ApplicationObjectID" ColumnName="ApplicationObjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBranchDatabases">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblBranchDatabas">
+              <MappingFragment StoreEntitySet="tblBranchDatabases">
+                <ScalarProperty Name="LastSync" ColumnName="LastSync" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="RegisterSerial" ColumnName="RegisterSerial" />
+                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2725,6 +2720,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblGates">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
+              <MappingFragment StoreEntitySet="tblGate">
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GateType" ColumnName="GateType" />
+                <ScalarProperty Name="GateName" ColumnName="GateName" />
+                <ScalarProperty Name="GateCode" ColumnName="GateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblGoodsTypes">
             <EntityTypeMapping TypeName="dbEcustomModel.tblGoodsType">
               <MappingFragment StoreEntitySet="tblGoodsType">
@@ -2773,6 +2783,16 @@
                 <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSettings">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblSetting">
+              <MappingFragment StoreEntitySet="tblSettings">
+                <ScalarProperty Name="SyncTime" ColumnName="SyncTime" />
+                <ScalarProperty Name="SyncInterval" ColumnName="SyncInterval" />
+                <ScalarProperty Name="LastSync" ColumnName="LastSync" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3411,9 +3431,6 @@
           <EntitySetMapping Name="ViewUserGroups">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewUserGroup">
               <MappingFragment StoreEntitySet="ViewUserGroup">
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="GroupName" ColumnName="GroupName" />
                 <ScalarProperty Name="GroupID" ColumnName="GroupID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -3490,44 +3507,6 @@
               <ScalarProperty Name="RoleID" ColumnName="RoleID" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="tblGates">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblGate">
-              <MappingFragment StoreEntitySet="tblGate">
-                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
-                <ScalarProperty Name="GateType" ColumnName="GateType" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="GateName" ColumnName="GateName" />
-                <ScalarProperty Name="GateCode" ColumnName="GateCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblBranchDatabases">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblBranchDatabas">
-              <MappingFragment StoreEntitySet="tblBranchDatabases">
-                <ScalarProperty Name="IsRequestingSync" ColumnName="IsRequestingSync" />
-                <ScalarProperty Name="LastSync" ColumnName="LastSync" />
-                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
-                <ScalarProperty Name="RegisterSerial" ColumnName="RegisterSerial" />
-                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblSettings">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblSetting">
-              <MappingFragment StoreEntitySet="tblSettings">
-                <ScalarProperty Name="IsStartingSync" ColumnName="IsStartingSync" />
-                <ScalarProperty Name="SyncTime" ColumnName="SyncTime" />
-                <ScalarProperty Name="SyncInterval" ColumnName="SyncInterval" />
-                <ScalarProperty Name="LastSync" ColumnName="LastSync" />
-                <ScalarProperty Name="Version" ColumnName="Version" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3551,52 +3530,52 @@
       <Diagram Name="ModelEcustoms" ShowGrid="true" ZoomLevel="80">
         <EntityTypeShape EntityType="dbEcustomModel.Log" Width="1.5" PointX="5.75" PointY="0.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblApplicationObject" Width="1.5" PointX="7.75" PointY="0.75" Height="2.1725878906250102" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblCheck" Width="1.5" PointX="7.75" PointY="3.75" Height="3.5186979166666674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="5.75" PointY="8.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="7.75" PointY="8.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.125" Height="6.7878222656249818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationVehicle" Width="1.5" PointX="9.75" PointY="0.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="9.75" PointY="7.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblGroup" Width="1.5" PointX="9.75" PointY="10.75" Height="2.1725878906249818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblPermission" Width="1.5" PointX="11.75" PointY="0.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblProfileConfig" Width="1.5" PointX="0.75" PointY="11.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblRoleInGroup" Width="1.5" PointX="3" PointY="1" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="2.75" PointY="11.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="5.875" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblUserGroupPermission" Width="1.5" PointX="11.75" PointY="3.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblUserInGroup" Width="1.5" PointX="11.75" PointY="7.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="4.75" PointY="12.75" Height="10.056946614583325" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="6.75" PointY="12.75" Height="3.7109993489583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="13.75" PointY="0.75" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="13.75" PointY="4.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tlbRole" Width="1.5" PointX="0.75" PointY="0.875" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="13.75" PointY="8.75" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheckResult" Width="1.5" PointX="8.75" PointY="13.75" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclaration" Width="1.5" PointX="10.75" PointY="13.75" Height="7.7493294270833246" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclarationTNTX" Width="1.5" PointX="12.75" PointY="13.75" Height="7.9416308593749818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="14.75" PointY="13.75" Height="5.8263151041666674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="0.75" PointY="15.75" Height="14.095276692708325" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="15.75" PointY="0.75" Height="11.403056640624982" />
-        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="16.75" PointY="13.75" Height="6.7878222656249818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="17.75" PointY="0.75" Height="11.403056640624982" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="18.75" PointY="13.75" Height="12.172262369791667" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblApplicationObject" Width="1.5" PointX="7.75" PointY="0.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="7.75" PointY="4.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCheck" Width="1.5" PointX="5.75" PointY="7.75" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="7.75" PointY="7.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="9.75" PointY="0.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.125" Height="6.9801236979166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationVehicle" Width="1.5" PointX="9.75" PointY="4.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="9.75" PointY="7.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="11.75" PointY="0.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGroup" Width="1.5" PointX="11.75" PointY="3.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblPermission" Width="1.5" PointX="11.75" PointY="7.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblProfileConfig" Width="1.5" PointX="7.75" PointY="11.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblRoleInGroup" Width="1.5" PointX="3" PointY="1" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblSetting" Width="1.5" PointX="9.75" PointY="11.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="11.75" PointY="10.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="5.875" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUserGroupPermission" Width="1.5" PointX="0.75" PointY="12.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUserInGroup" Width="1.5" PointX="2.75" PointY="12.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="4.75" PointY="12.75" Height="10.249248046874982" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="13.75" PointY="0.75" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="13.75" PointY="5.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="13.75" PointY="9.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tlbRole" Width="1.5" PointX="0.75" PointY="0.875" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="13.75" PointY="13.75" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheckResult" Width="1.5" PointX="6.75" PointY="14.75" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclaration" Width="1.5" PointX="8.75" PointY="14.75" Height="8.1339322916666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclarationTNTX" Width="1.5" PointX="10.75" PointY="14.75" Height="7.9416308593749818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="15.75" PointY="0.75" Height="5.8263151041666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="15.75" PointY="7.75" Height="14.095276692708325" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="0.75" PointY="16.75" Height="11.403056640624982" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="17.75" PointY="0.75" Height="6.7878222656249818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="17.75" PointY="8.75" Height="11.403056640624982" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="12.75" PointY="18.75" Height="12.172262369791667" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewGetCurrentDate" Width="1.5" PointX="19.75" PointY="0.75" Height="1.2110807291666674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewUserGroup" Width="1.5" PointX="19.75" PointY="2.75" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFee" Width="1.5" PointX="19.75" PointY="5.75" Height="4.0956022135416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="6.75" PointY="19.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="20.75" PointY="10.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="19.75" PointY="10.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="19.75" PointY="14.75" Height="2.7494921874999818" />
         <AssociationConnector Association="dbEcustomModel.FK_tblDeclaration_tblUser" >
-          <ConnectorPoint PointX="2.25" PointY="7.5381982421874909" />
-          <ConnectorPoint PointX="3" PointY="7.5381982421874909" />
+          <ConnectorPoint PointX="2.25" PointY="7.6343489583333337" />
+          <ConnectorPoint PointX="3" PointY="7.6343489583333337" />
         </AssociationConnector>
         <AssociationConnector Association="dbEcustomModel.FK_tblRoleInGroup_tlbRole" >
-          <ConnectorPoint PointX="2.25" PointY="1.7978417968749909" />
-          <ConnectorPoint PointX="3" PointY="1.7978417968749909" />
+          <ConnectorPoint PointX="2.25" PointY="1.8939925130208337" />
+          <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="15.375" PointY="20.75" Height="2.0853483072916674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="21.375" PointY="14.75" Height="2.1725878906250102" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblSetting" Width="1.5" PointX="21.375" PointY="17.75" Height="1.9802864583333246" />
       </Diagram>
     </Diagrams>
   </Designer>

@@ -15,7 +15,7 @@ using CrystalDecisions.Shared;
 
 namespace ECustoms
 {
-    public partial class FrmAddVehicleExportParking : SubFormBase
+    public partial class FrmAddVehicleExportParking : Form
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.FrmAddVehicleExportParking");
         private List<ViewAllVehicleHasGood> _vehicleInfosTemp = new List<ViewAllVehicleHasGood>();
@@ -419,7 +419,9 @@ namespace ECustoms
                 txtParkingDate.Text = ((DateTime)vehicleInfo.ExportParkingDate).ToString("dd/MM/yyyy HH:mm");
             }
 
-            txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
+            //txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
+            String PlateNumberKey = Utilities.EnCryptDecrypt.Encrypt(vehicleInfo.PlateNumber, true);
+            txtBarcode.Text = "*" + PlateNumberKey + "*";
 
             txtPrintUser.Text = _userInfo.Name;
             txtPrintType.Text = "Nhập xe vào bãi xuất";
@@ -432,7 +434,8 @@ namespace ECustoms
             txtTotalPrintVehicleTicketOfDay.Text = orderNumber.ToString();
 
             //preview ticket
-            //var report = new FrmCrystalReport(vehicleTicket, _userInfo);
+            //FrmCrystalReport report = new FrmCrystalReport(vehicleTicket, _userInfo);
+       
             //report.MaximizeBox = true;
             //report.Show(this);
 
@@ -441,11 +444,18 @@ namespace ECustoms
 
             foreach (String printerName in _printSetting.ListPrinter)
             {
-                try
+                if (Utilities.PrinterChecking.IsValid(printerName))
                 {
-                    AutoPrintReport(printerName, "VehicleTicket.rpt");
+                    try
+                    {
+                        AutoPrintReport(printerName, "VehicleTicket.rpt");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không kết nối được với máy in: " + printerName);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
                     MessageBox.Show("Không kết nối được với máy in: " + printerName);
                 }

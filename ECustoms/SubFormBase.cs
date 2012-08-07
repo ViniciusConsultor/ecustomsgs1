@@ -24,14 +24,21 @@ namespace ECustoms
 
         protected override void OnLoad(EventArgs e)
         {
-            base.OnLoad(e);
+            try
+            {
+                base.OnLoad(e);
 
-            cRCM _cRCM = new cRCM(this.Handle);
-            LoadRes.LoadFrameImages(_cRCM, (int)FormStyle);
-            LoadRes.LoadControlImages(_cRCM, (int)FormStyle);
-            this.Width = this.Width + 10;
-            _cRCM.Start();
-            this.Refresh();
+                cRCM _cRCM = new cRCM(this.Handle);
+                LoadRes.LoadFrameImages(_cRCM, (int)FormStyle);
+                LoadRes.LoadControlImages(_cRCM, (int)FormStyle);
+                this.Width = this.Width + 10;
+                _cRCM.Start();
+                this.Refresh();
+            }
+            catch (Exception ex)
+            {
+                //do nothing
+            }
         }
 
         public SubFormBase()
