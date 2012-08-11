@@ -89,6 +89,7 @@
     <Compile Include="VehicleCheckFactory.cs" />
     <Compile Include="VehicleFactory.cs" />
     <Compile Include="VehicleFeeSettingFactory.cs" />
+    <Compile Include="VehicleOvedueFactory.cs" />
     <Compile Include="VehicleTypeFactory.cs" />
   </ItemGroup>
   <ItemGroup>

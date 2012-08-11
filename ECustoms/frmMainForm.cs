@@ -141,7 +141,10 @@ namespace ECustoms
                 _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_MOI_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN) ||
                 _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN) ||
                 _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN);
-            
+
+            //xem danh sach xe qua han
+            //mnuVehicleOverdueList.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN) || 
+            //    _userInfo.UserPermission.Contains (ConstantInfo.PERMISSON_CAP_NHAT_PHUONG_TIEN)
         }
 
         private void mnExport_Click(object sender, EventArgs e)
@@ -414,5 +417,12 @@ namespace ECustoms
             frmBackupRestoreDb backupRestore = new frmBackupRestoreDb();
             backupRestore.ShowDialog(this);
         }
+
+        private void mnuVehicleOverdueList_Click(object sender, EventArgs e)
+        {
+            var vehicleSearch = new frmVehicleOverdue(_userInfo);
+            vehicleSearch.Show(this);
+        }
+
     }
 }
