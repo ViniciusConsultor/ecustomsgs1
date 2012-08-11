@@ -10,7 +10,7 @@ using log4net;
 
 namespace ECustoms
 {
-    public partial class frmAddGroup : SubFormBase
+    public partial class frmAddGroup : Form
     {
         private static ILog logger = LogManager.GetLogger("Ecustoms.frmAddGroup");
 
@@ -22,6 +22,8 @@ namespace ECustoms
         private TabPage _tabAddGroup;
         private TabPage _tabUser;
         private TabPage _tabRight;
+
+        private HashSet<int> listCheckPermission;
 
         public frmAddGroup()
         {
@@ -73,6 +75,7 @@ namespace ECustoms
             // Show form to the center
             this.Location = new Point((this.Owner.Width - this.Width) / 2, (this.Owner.Height - this.Height) / 2);
             InitData();
+            initTreeView();
         }
 
         /// <summary>
@@ -86,29 +89,6 @@ namespace ECustoms
           grvUser.DataSource = users;
         }
 
-
-
-        public void LoadAllPermissionData()
-        {
-          grvPermission.AutoGenerateColumns = false;
-          grvPermission.DataSource = PermissionFactory.GetAllPermission();
-        }
-
-        public void CheckAllPermissonOfGroup()
-        {
-          List<tblUserGroupPermission> listUserGroupPermission = UserGroupPermissionFactory.GetByGroupID(_groupID);
-          foreach (tblUserGroupPermission obj in listUserGroupPermission)
-          {
-            foreach (DataGridViewRow dr in grvPermission.Rows)
-            {
-              if (dr.Cells[1].Value + "" == obj.PermissionID + "")
-              {
-                dr.Cells[0].Value = true;
-                break;
-              }
-            }
-          }
-        }
 
         public void InitData()
         {
@@ -126,6 +106,53 @@ namespace ECustoms
               //EnableTab(tabControlGroup.TabPages[0], false);  
             }
         }
+
+        private void initTreeView()
+        {
+            treeView1.CheckBoxes = true;
+
+            // Add nodes to treeView1.
+            //TreeNode node;
+            TreeNode rootNode;
+            TreeNode node;
+            rootNode = treeView1.Nodes.Add("root", "Tất cả");
+
+            List<tblPermissionType> list = PermissionTypeFactory.GetAllPermissionType();
+            foreach (tblPermissionType type in list)
+            {
+                node = rootNode.Nodes.Add(type.TypeCode, type.TypeName);
+                List<tblPermission> listPermission = PermissionFactory.GetPermissionByType(type.TypeCode);
+                foreach (tblPermission permission in listPermission)
+                {
+                    node.Nodes.Add(permission.PermissionID + "", permission.Permission);
+                }
+            }
+            treeView1.ExpandAll();
+
+        }
+        private void fillPermission()
+        {
+            treeView1.Nodes.Find("root", true)[0].Checked = false;
+            this.listCheckPermission = new HashSet<int>();
+            //check Permissions if User has them
+            List<tblUserGroupPermission> listUserGroupPermission = UserGroupPermissionFactory.GetByGroupID(_groupID);
+            foreach (tblUserGroupPermission obj in listUserGroupPermission)
+            {
+                TreeNode[] listNode = treeView1.Nodes.Find(obj.PermissionID + "", true);
+                if (listNode != null && listNode.Length > 0)
+                {
+                    TreeNode checkNode = listNode[0];
+                    try
+                    {
+                        checkNode.Checked = true;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+            }
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -169,8 +196,6 @@ namespace ECustoms
                         btnSave.Enabled = false;
                         tabControlGroup.TabPages.Add(_tabUser);
                         tabControlGroup.TabPages.Add(_tabRight);
-                        LoadAllPermissionData();
-                        CheckAllPermissonOfGroup();
                         //EnableTab(tabControlGroup.TabPages[0],false);
 
                     } else
@@ -309,11 +334,8 @@ namespace ECustoms
           try
           {
             List<tblUserGroupPermission> listUserGroupPermission = new List<tblUserGroupPermission>();
-            foreach (DataGridViewRow dr in grvPermission.Rows)
+            foreach (int permissionID in listCheckPermission)
             {
-              if (dr.Cells[0].Value + "" == "True")
-              {
-                int permissionID = (int)dr.Cells[1].Value;
                 tblUserGroupPermission userGroupPermission = new tblUserGroupPermission();
                 userGroupPermission.GroupID = _groupID;
                 userGroupPermission.PermissionID = permissionID;
@@ -324,7 +346,6 @@ namespace ECustoms
                 userGroupPermission.ModifiedDate = CommonFactory.GetCurrentDate();
                 //add to listUserGroupPermission
                 listUserGroupPermission.Add(userGroupPermission);
-              }
             }
 
             //save listUserGroupPermission to database
@@ -342,27 +363,21 @@ namespace ECustoms
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-          LoadAllPermissionData();
-          CheckAllPermissonOfGroup();
+          //LoadAllPermissionData();
+          //CheckAllPermissonOfGroup();
+            fillPermission();
         }
 
         private void tabControlGroup_Click(object sender, EventArgs e)
         {
           if (tabControlGroup.SelectedIndex == 2)
           {
-            LoadAllPermissionData();
-            CheckAllPermissonOfGroup();
+            //LoadAllPermissionData();
+            //CheckAllPermissonOfGroup();
+            fillPermission();
           }
         }
 
-        private void chbCheckAllPermission_CheckedChanged(object sender, EventArgs e)
-        {
-          for (int i = 0; i < grvPermission.RowCount; i++)
-          {
-            grvPermission[0, i].Value = chbCheckAllPermission.Checked;
-          }
-          grvPermission.EndEdit();
-        }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -385,6 +400,34 @@ namespace ECustoms
             if (keyData == (Keys.Alt | Keys.D4))
                 btnClose.PerformClick();
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void treeView1_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            //MessageBox.Show("node: " + e.Node.Name);
+            //check all child node
+            foreach (TreeNode node in e.Node.Nodes)
+            {
+                node.Checked = e.Node.Checked;
+            }
+
+            //add permission to list
+            try
+            {
+                int permissionID = int.Parse(e.Node.Name);
+                if (e.Node.Checked)
+                {
+                    listCheckPermission.Add(permissionID);
+                }
+                else
+                {
+                    listCheckPermission.Remove(permissionID);
+                }
+            }
+            catch (Exception ex)
+            {
+                //do nothing
+            }
         }
 
  

@@ -80,6 +80,7 @@
     <Compile Include="GoodTypeFactory.cs" />
     <Compile Include="GroupFactory.cs" />
     <Compile Include="PermissionFactory.cs" />
+    <Compile Include="PermissionTypeFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeFactory.cs" />
     <Compile Include="UserFactory.cs" />

@@ -9,7 +9,7 @@ using ECustoms.DAL;
 
 namespace ECustoms
 {
-    public partial class frmUser : SubFormBase
+    public partial class frmUser : Form
     {
         private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmUser");
         private UserFactory _userBOL;
