@@ -265,6 +265,12 @@
     <Compile Include="FrmVehicleFeeSetting.Designer.cs">
       <DependentUpon>FrmVehicleFeeSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVehicleOverdue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehicleOverdue.Designer.cs">
+      <DependentUpon>frmVehicleOverdue.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIFormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -618,6 +624,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVehicleFeeSetting.resx">
       <DependentUpon>FrmVehicleFeeSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehicleOverdue.resx">
+      <DependentUpon>frmVehicleOverdue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIFormBase.resx">
       <DependentUpon>MDIFormBase.cs</DependentUpon>

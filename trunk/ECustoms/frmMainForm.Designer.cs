@@ -52,6 +52,7 @@
             this.menuManageInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.mnReview = new System.Windows.Forms.ToolStripMenuItem();
             this.mnReviewSummary = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuVehicleOverdueList = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHàngNTXCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,7 +100,7 @@
             this.trợGiúpToolStripMenuItem});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
-            this.mnMain.Size = new System.Drawing.Size(1212, 24);
+            this.mnMain.Size = new System.Drawing.Size(1172, 24);
             this.mnMain.TabIndex = 0;
             this.mnMain.Tag = "";
             this.mnMain.Text = "menuStrip1";
@@ -272,7 +273,8 @@
             // 
             this.menuManageInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnReview,
-            this.mnReviewSummary});
+            this.mnReviewSummary,
+            this.mnuVehicleOverdueList});
             this.menuManageInformation.Name = "menuManageInformation";
             this.menuManageInformation.Size = new System.Drawing.Size(111, 20);
             this.menuManageInformation.Text = "&Quản lý thông tin";
@@ -292,6 +294,13 @@
             this.mnReviewSummary.Size = new System.Drawing.Size(267, 22);
             this.mnReviewSummary.Text = "Tổng hợp kết quả kiểm tra";
             this.mnReviewSummary.Click += new System.EventHandler(this.mnReviewSummary_Click);
+            // 
+            // mnuVehicleOverdueList
+            // 
+            this.mnuVehicleOverdueList.Name = "mnuVehicleOverdueList";
+            this.mnuVehicleOverdueList.Size = new System.Drawing.Size(267, 22);
+            this.mnuVehicleOverdueList.Text = "Danh sách phương tiện quá hạn";
+            this.mnuVehicleOverdueList.Click += new System.EventHandler(this.mnuVehicleOverdueList_Click);
             // 
             // quảnLýHàngNTXCKToolStripMenuItem
             // 
@@ -466,7 +475,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 30);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1212, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(1172, 44);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -560,7 +569,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1212, 685);
+            this.ClientSize = new System.Drawing.Size(1172, 640);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -632,5 +641,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
         private System.Windows.Forms.ToolStripMenuItem mnuBackupRestore;
+        private System.Windows.Forms.ToolStripMenuItem mnuVehicleOverdueList;
     }
 }

@@ -51,6 +51,10 @@ namespace ECustoms
                     txtCustomCode.Text = profileConfig.Value;
                     txtCustomName.Text = CustomsFacory.FindByCode(profileConfig.Value).CustomsName;
                 }
+                if (profileConfig.Type == (int)ProfileConfig.OverdueDate)
+                {
+                    txtOverdueVehicleDate.Text = profileConfig.Value;
+                }
             }
 
             //Autocomplete
@@ -119,6 +123,16 @@ namespace ECustoms
                                        };
                         listProfileConfig.Add(item);
                     }
+                    if (!string.IsNullOrEmpty(txtOverdueVehicleDate.Text.Trim()))
+                    {
+                        var item = new tblProfileConfig
+                                        {
+                                            Type = (int)ProfileConfig.OverdueDate,
+                                            Value = txtOverdueVehicleDate.Text.Trim()
+                                        };
+                        listProfileConfig.Add(item);
+                    }
+
                     UserFactory.UpdateProfileConfig(_userInfo.UserID, listProfileConfig);
                     MessageBox.Show("Cập nhật thành công");
                     this.Close();
@@ -155,6 +169,23 @@ namespace ECustoms
             }
             else
                 txtCustomName.Text = custom.CustomsName;
+        }
+
+        private void txtOverdueVehicleDate_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtOverdueVehicleDate.Text.Trim())) return;
+            int overdueDate;
+            if (int.TryParse(txtOverdueVehicleDate.Text.Trim(), out overdueDate))
+            {
+                if (overdueDate < 0)
+                {
+                    MessageBox.Show("Số ngày phải là một số nguyên lớn hơn 0");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Số ngày phải là một số nguyên lớn hơn 0");
+            }
         }
     }
 }
