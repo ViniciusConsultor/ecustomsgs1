@@ -59,19 +59,18 @@
             this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPermission = new System.Windows.Forms.TabPage();
-            this.chbCheckAllPermission = new System.Windows.Forms.CheckBox();
-            this.grvPermission = new System.Windows.Forms.DataGridView();
-            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.btnResetPermission = new System.Windows.Forms.Button();
             this.btnUpdatePermission = new System.Windows.Forms.Button();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.tabGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvGroup)).BeginInit();
             this.tabPermission.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvPermission)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -93,7 +92,7 @@
             this.txtUserName.Location = new System.Drawing.Point(110, 8);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(250, 20);
+            this.txtUserName.Size = new System.Drawing.Size(571, 20);
             this.txtUserName.TabIndex = 1;
             // 
             // txtName
@@ -104,7 +103,7 @@
             this.txtName.Location = new System.Drawing.Point(110, 120);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(250, 20);
+            this.txtName.Size = new System.Drawing.Size(571, 20);
             this.txtName.TabIndex = 5;
             // 
             // lblName
@@ -127,7 +126,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(250, 20);
+            this.txtPassword.Size = new System.Drawing.Size(571, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // lblPassword
@@ -150,7 +149,7 @@
             this.txtRetypePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.PasswordChar = '*';
-            this.txtRetypePassword.Size = new System.Drawing.Size(250, 20);
+            this.txtRetypePassword.Size = new System.Drawing.Size(571, 20);
             this.txtRetypePassword.TabIndex = 3;
             // 
             // lblRetypePassword
@@ -172,7 +171,7 @@
             this.txtEmail.Location = new System.Drawing.Point(110, 92);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(250, 20);
+            this.txtEmail.Size = new System.Drawing.Size(571, 20);
             this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
@@ -195,7 +194,7 @@
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 65);
+            this.txtAddress.Size = new System.Drawing.Size(571, 65);
             this.txtAddress.TabIndex = 6;
             // 
             // lblAddress
@@ -217,7 +216,7 @@
             this.txtPhone.Location = new System.Drawing.Point(110, 221);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(250, 20);
+            this.txtPhone.Size = new System.Drawing.Size(571, 20);
             this.txtPhone.TabIndex = 7;
             // 
             // lblPhone
@@ -255,16 +254,18 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabUser);
             this.tabControl1.Controls.Add(this.tabGroup);
             this.tabControl1.Controls.Add(this.tabPermission);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.MinimumSize = new System.Drawing.Size(376, 345);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(376, 345);
+            this.tabControl1.Size = new System.Drawing.Size(697, 361);
             this.tabControl1.TabIndex = 19;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -292,7 +293,7 @@
             this.tabUser.Location = new System.Drawing.Point(4, 22);
             this.tabUser.Name = "tabUser";
             this.tabUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUser.Size = new System.Drawing.Size(368, 319);
+            this.tabUser.Size = new System.Drawing.Size(689, 335);
             this.tabUser.TabIndex = 0;
             this.tabUser.Text = "Thông tin người dùng";
             this.tabUser.UseVisualStyleBackColor = true;
@@ -305,7 +306,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(297, 281);
+            this.btnClose.Location = new System.Drawing.Point(618, 297);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(63, 28);
@@ -323,7 +324,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(209, 281);
+            this.btnUpdate.Location = new System.Drawing.Point(530, 297);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(80, 28);
@@ -341,7 +342,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAdd.Image = global::ECustoms.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(121, 281);
+            this.btnAdd.Location = new System.Drawing.Point(442, 297);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 28);
@@ -360,7 +361,7 @@
             this.tabGroup.Location = new System.Drawing.Point(4, 22);
             this.tabGroup.Name = "tabGroup";
             this.tabGroup.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGroup.Size = new System.Drawing.Size(368, 319);
+            this.tabGroup.Size = new System.Drawing.Size(689, 335);
             this.tabGroup.TabIndex = 1;
             this.tabGroup.Text = "Nhóm của người dùng";
             this.tabGroup.UseVisualStyleBackColor = true;
@@ -383,7 +384,7 @@
             this.btnUpdateListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdateListGroup.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdateListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateListGroup.Location = new System.Drawing.Point(174, 283);
+            this.btnUpdateListGroup.Location = new System.Drawing.Point(490, 301);
             this.btnUpdateListGroup.Name = "btnUpdateListGroup";
             this.btnUpdateListGroup.Size = new System.Drawing.Size(110, 28);
             this.btnUpdateListGroup.TabIndex = 17;
@@ -400,7 +401,7 @@
             this.tbnResetListGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.tbnResetListGroup.Image = global::ECustoms.Properties.Resources.undo;
             this.tbnResetListGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbnResetListGroup.Location = new System.Drawing.Point(290, 283);
+            this.tbnResetListGroup.Location = new System.Drawing.Point(606, 301);
             this.tbnResetListGroup.Name = "tbnResetListGroup";
             this.tbnResetListGroup.Size = new System.Drawing.Size(75, 28);
             this.tbnResetListGroup.TabIndex = 16;
@@ -425,7 +426,7 @@
             this.grvGroup.Location = new System.Drawing.Point(4, 6);
             this.grvGroup.Name = "grvGroup";
             this.grvGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvGroup.Size = new System.Drawing.Size(364, 271);
+            this.grvGroup.Size = new System.Drawing.Size(677, 289);
             this.grvGroup.TabIndex = 2;
             // 
             // checkGroup
@@ -450,66 +451,26 @@
             // 
             // tabPermission
             // 
-            this.tabPermission.Controls.Add(this.chbCheckAllPermission);
-            this.tabPermission.Controls.Add(this.grvPermission);
+            this.tabPermission.Controls.Add(this.treeView1);
             this.tabPermission.Controls.Add(this.btnResetPermission);
             this.tabPermission.Controls.Add(this.btnUpdatePermission);
             this.tabPermission.Location = new System.Drawing.Point(4, 22);
             this.tabPermission.Name = "tabPermission";
-            this.tabPermission.Size = new System.Drawing.Size(368, 319);
+            this.tabPermission.Size = new System.Drawing.Size(689, 335);
             this.tabPermission.TabIndex = 2;
             this.tabPermission.Text = "Quyền truy cập";
             this.tabPermission.UseVisualStyleBackColor = true;
             // 
-            // chbCheckAllPermission
+            // treeView1
             // 
-            this.chbCheckAllPermission.AutoSize = true;
-            this.chbCheckAllPermission.Location = new System.Drawing.Point(90, 9);
-            this.chbCheckAllPermission.Name = "chbCheckAllPermission";
-            this.chbCheckAllPermission.Size = new System.Drawing.Size(15, 14);
-            this.chbCheckAllPermission.TabIndex = 19;
-            this.chbCheckAllPermission.UseVisualStyleBackColor = true;
-            this.chbCheckAllPermission.CheckedChanged += new System.EventHandler(this.chbCheckAllPermission_CheckedChanged);
-            // 
-            // grvPermission
-            // 
-            this.grvPermission.AllowUserToAddRows = false;
-            this.grvPermission.AllowUserToDeleteRows = false;
-            this.grvPermission.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.grvPermission.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grvPermission.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvPermission.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Check,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.grvPermission.Location = new System.Drawing.Point(4, 6);
-            this.grvPermission.Name = "grvPermission";
-            this.grvPermission.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvPermission.Size = new System.Drawing.Size(364, 262);
-            this.grvPermission.TabIndex = 13;
-            // 
-            // Check
-            // 
-            this.Check.DataPropertyName = "Check";
-            this.Check.HeaderText = "Chọn";
-            this.Check.Name = "Check";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PermissionID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "PermissonID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Permission";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Quyền truy cập";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.treeView1.Location = new System.Drawing.Point(8, 6);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(673, 292);
+            this.treeView1.TabIndex = 22;
+            this.treeView1.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCheck);
             // 
             // btnResetPermission
             // 
@@ -519,7 +480,7 @@
             this.btnResetPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnResetPermission.Image = global::ECustoms.Properties.Resources.undo;
             this.btnResetPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResetPermission.Location = new System.Drawing.Point(290, 283);
+            this.btnResetPermission.Location = new System.Drawing.Point(606, 304);
             this.btnResetPermission.Name = "btnResetPermission";
             this.btnResetPermission.Size = new System.Drawing.Size(75, 28);
             this.btnResetPermission.TabIndex = 15;
@@ -536,7 +497,7 @@
             this.btnUpdatePermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdatePermission.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdatePermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePermission.Location = new System.Drawing.Point(172, 283);
+            this.btnUpdatePermission.Location = new System.Drawing.Point(488, 304);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
             this.btnUpdatePermission.Size = new System.Drawing.Size(110, 28);
             this.btnUpdatePermission.TabIndex = 14;
@@ -545,11 +506,40 @@
             this.btnUpdatePermission.UseVisualStyleBackColor = true;
             this.btnUpdatePermission.Click += new System.EventHandler(this.btnUpdatePermission_Click_1);
             // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Chọn";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 317;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Check";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Chọn";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Width = 94;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PermissionID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PermissonID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Permission";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Quyền truy cập";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 94;
+            // 
             // frmAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 345);
+            this.ClientSize = new System.Drawing.Size(697, 368);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -566,8 +556,6 @@
             this.tabGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvGroup)).EndInit();
             this.tabPermission.ResumeLayout(false);
-            this.tabPermission.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvPermission)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -598,18 +586,18 @@
         private System.Windows.Forms.TabPage tabGroup;
         private System.Windows.Forms.TabPage tabPermission;
         private System.Windows.Forms.DataGridView grvGroup;
-        private System.Windows.Forms.DataGridView grvPermission;
         private System.Windows.Forms.Button btnUpdateListGroup;
         private System.Windows.Forms.Button tbnResetListGroup;
         private System.Windows.Forms.Button btnResetPermission;
         private System.Windows.Forms.Button btnUpdatePermission;
-        private System.Windows.Forms.CheckBox chbCheckAllPermission;
         private System.Windows.Forms.CheckBox chbCheckAllGroup;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupID;
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupName;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

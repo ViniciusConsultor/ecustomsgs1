@@ -16,5 +16,13 @@ namespace ECustoms.BOL
           return list;
         }
 
+        public static List<tblPermission> GetPermissionByType(string type)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            List<tblPermission> list = db.tblPermissions.Where(g => g.TypeCode == type).ToList();
+            db.Connection.Close();
+            return list;
+        }
+
     }
 }

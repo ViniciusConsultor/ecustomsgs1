@@ -10,7 +10,7 @@ using log4net;
 
 namespace ECustoms
 {
-  public partial class frmAddUser : SubFormBase
+  public partial class frmAddUser : Form
   {
     private static log4net.ILog logger = LogManager.GetLogger("Ecustoms.frmLogin");
     private frmUser _parrent;
@@ -20,6 +20,7 @@ namespace ECustoms
     private TabPage _tabUser;
     private TabPage _tabGroup;
     private TabPage _tabPermission;
+    private HashSet<int> listCheckPermission;
 
     public frmAddUser()
     {
@@ -60,8 +61,56 @@ namespace ECustoms
       // Show form to the center
       this.Location = new Point((this.ParentForm.Width - this.Width) / 2, (this.ParentForm.Height - this.Height) / 2);      
       grvGroup.AutoGenerateColumns = false;
-      grvPermission.AutoGenerateColumns = false;
       Init();
+      initTreeView();
+      fillPermission();
+    }
+
+
+    private void initTreeView()
+    {
+        treeView1.CheckBoxes = true;
+
+        // Add nodes to treeView1.
+        //TreeNode node;
+        TreeNode rootNode;
+        TreeNode node;
+        rootNode = treeView1.Nodes.Add("root","Tất cả");
+
+        List<tblPermissionType> list = PermissionTypeFactory.GetAllPermissionType();
+        foreach (tblPermissionType type in list)
+        {
+            node = rootNode.Nodes.Add(type.TypeCode, type.TypeName);
+            List<tblPermission> listPermission = PermissionFactory.GetPermissionByType(type.TypeCode);
+            foreach (tblPermission permission in listPermission)
+            {
+                node.Nodes.Add(permission.PermissionID +"", permission.Permission);
+            }
+        }
+        treeView1.ExpandAll();
+
+    }
+    private void fillPermission()
+    {
+        treeView1.Nodes.Find("root", true)[0].Checked = false;
+        this.listCheckPermission = new HashSet<int>();
+       //check Permissions if User has them
+        List<tblUserGroupPermission> listUserGroupPermission = UserGroupPermissionFactory.GetByUserID(_userID);
+        foreach (tblUserGroupPermission obj in listUserGroupPermission)
+        {
+            TreeNode[] listNode= treeView1.Nodes.Find(obj.PermissionID + "", true);
+            if (listNode != null && listNode.Length > 0)
+            {
+                TreeNode checkNode = listNode[0];
+                try
+                {
+                    checkNode.Checked = true;
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+        }
     }
 
     private void BinDataForListGroup()
@@ -76,25 +125,6 @@ namespace ECustoms
         foreach (DataGridViewRow dr in grvGroup.Rows)
         {
           if (dr.Cells[1].Value + "" == obj.GroupID + "")
-          {
-            dr.Cells[0].Value = true;
-            break;
-          }
-        }
-      }
-    }
-
-    private void BinDataForListPermission()
-    {
-      //load all Permission
-      grvPermission.DataSource = PermissionFactory.GetAllPermission();
-      //check Permissions if User has them
-      List<tblUserGroupPermission> listUserGroupPermission = UserGroupPermissionFactory.GetByUserID(_userID);
-      foreach (tblUserGroupPermission obj in listUserGroupPermission)
-      {
-        foreach (DataGridViewRow dr in grvPermission.Rows)
-        {
-          if (dr.Cells[1].Value + "" == obj.PermissionID + "")
           {
             dr.Cells[0].Value = true;
             break;
@@ -307,13 +337,13 @@ namespace ECustoms
       }
       if (tabControl1.SelectedIndex == 2)
       {
-        BinDataForListPermission();
+          fillPermission();
       }
     }
 
     private void btnResetPermission_Click(object sender, EventArgs e)
     {
-      BinDataForListPermission();
+      fillPermission();
     }
 
     private void tbnResetListGroup_Click(object sender, EventArgs e)
@@ -374,11 +404,8 @@ namespace ECustoms
       try
       {
         List<tblUserGroupPermission> listUserGroupPermission = new List<tblUserGroupPermission>();
-        foreach (DataGridViewRow dr in grvPermission.Rows)
+        foreach (int permissionID in listCheckPermission)
         {
-          if (dr.Cells[0].Value + "" == "True")
-          {
-            int permissionID = (int)dr.Cells[1].Value;
             tblUserGroupPermission userGroupPermission = new tblUserGroupPermission();
             userGroupPermission.UserID = _userID;
             userGroupPermission.PermissionID = permissionID;
@@ -389,7 +416,7 @@ namespace ECustoms
             userGroupPermission.ModifiedDate = CommonFactory.GetCurrentDate();
             //add to listUserGroupPermission
             listUserGroupPermission.Add(userGroupPermission);
-          }
+          
         }
 
         //save listUserGroupPermission to database
@@ -404,14 +431,6 @@ namespace ECustoms
       MessageBox.Show(ConstantInfo.MESSAGE_ADD_USER_IN_GROUP_SUCESSFULLY);
     }
 
-    private void chbCheckAllPermission_CheckedChanged(object sender, EventArgs e)
-    {
-      for (int i = 0; i < grvPermission.RowCount; i++)
-      {
-        grvPermission[0, i].Value = chbCheckAllPermission.Checked;
-      }
-      grvPermission.EndEdit();
-    }
 
     private void chbCheckAllGroup_CheckedChanged(object sender, EventArgs e)
     {
@@ -420,6 +439,34 @@ namespace ECustoms
         grvGroup[0, i].Value = chbCheckAllGroup.Checked;
       }
       grvGroup.EndEdit();
+    }
+
+    private void treeView1_AfterCheck(object sender, TreeViewEventArgs e)
+    {
+        //MessageBox.Show("node: " + e.Node.Name);
+        //check all child node
+        foreach (TreeNode node in e.Node.Nodes)
+        {
+            node.Checked = e.Node.Checked;
+        }
+
+        //add permission to list
+        try
+        {
+            int permissionID = int.Parse(e.Node.Name);
+            if (e.Node.Checked)
+            {
+                listCheckPermission.Add(permissionID);
+            }
+            else
+            {
+                listCheckPermission.Remove(permissionID);
+            }
+        }
+        catch (Exception ex)
+        {
+            //do nothing
+        }
     }
   }
 }
