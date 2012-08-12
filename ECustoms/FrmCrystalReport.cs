@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using ECustoms.Utilities.Enums;
 using ECustoms.Utilities;
+using ECustoms.BOL;
 
 namespace ECustoms
 {
@@ -51,6 +52,20 @@ namespace ECustoms
             this.WindowState = FormWindowState.Maximized;
         }
 
+
+        private string GetUserConfig()
+        {
+            var profileConfig = UserFactory.GetProfileConfigByUserId(_userInfo.UserID);
+            foreach (var config in profileConfig)
+            {
+                if (config.Type == (int)ProfileConfig.SuperiorCompany)
+                {
+                    return config.Value;
+                }
+            }
+            return "";
+        }
+
         private  void ViewReport()
         {
             try
@@ -61,6 +76,9 @@ namespace ECustoms
                 {
                     case ReportType.ExportAndNoItem: // Type 1
                         {
+                            // Superior Company
+                            ((TextObject)xuatCanhXeKhong.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)xuatCanhXeKhong.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             // Created by
                             var createdByxuatCanhXeKhong = (TextObject)xuatCanhXeKhong.Section1.ReportObjects["CreatedBy"];
@@ -76,7 +94,7 @@ namespace ECustoms
                             
                             // Header 
                             var lblHeader = (TextObject)xuatCanhXeKhong.Section1.ReportObjects["lblHeader"];
-                            lblHeader.Text = "Sổ theo dõi phương tiện xuất cảnh xe không";
+                            lblHeader.Text = "SỔ THEO DÕI PHƯƠNG TIỆN XUẤT CẢNH XE KHÔNG";
 
                             var sql = new StringBuilder();
                             sql.Append("SELECT * ");
@@ -95,6 +113,9 @@ namespace ECustoms
                         break;
                     case ReportType.ImportAndNoItem: // Type 2
                         {
+                            // Superior Company
+                            ((TextObject)nhapCanhXeKhong1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)nhapCanhXeKhong1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdByxuatCanhXeKhong = (TextObject)nhapCanhXeKhong1.Section1.ReportObjects["CreatedBy"];
                             createdByxuatCanhXeKhong.Text = _userInfo.Name;
@@ -126,6 +147,9 @@ namespace ECustoms
                         break;
                     case ReportType.ExportAndHasItem: // type 3
                         {
+                            // Superior Company
+                            ((TextObject)exportAndHasItem1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)exportAndHasItem1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdByexportAndHasItem = (TextObject)exportAndHasItem1.Section1.ReportObjects["CreatedBy"];
                             createdByexportAndHasItem.Text = _userInfo.Name;
@@ -138,7 +162,7 @@ namespace ECustoms
 
                             // Header 
                             var lblHeader = (TextObject)xuatCanhXeKhong.Section1.ReportObjects["lblHeader"];
-                            lblHeader.Text = "Sổ theo dõi phương tiện chở hàng xuất khẩu";
+                            lblHeader.Text = "SỔ THEO DÕI PHƯƠNG TIỆN CHỞ HÀNG XUẤT KHẨU";
 
                             var sql = new StringBuilder();
                             sql.Append("SELECT     * FROM ViewAllVehicleHasGood ");
@@ -158,6 +182,9 @@ namespace ECustoms
                         break;
                     case ReportType.ImportAndHasItem: // Type 4
                         {
+                            // Superior Company
+                            ((TextObject)importAndHasItem1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)importAndHasItem1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdimportAndHasItem = (TextObject)importAndHasItem1.Section1.ReportObjects["CreatedBy"];
                             createdimportAndHasItem.Text = _userInfo.Name;
@@ -170,7 +197,7 @@ namespace ECustoms
 
                             // Header 
                             var lblHeader = (TextObject)xuatCanhXeKhong.Section1.ReportObjects["lblHeader"];
-                            lblHeader.Text = "Sổ theo dõi phương tiện chở hàng nhập khẩu";
+                            lblHeader.Text = "SỔ THEO DÕI PHƯƠNG TIỆN CHỞ HÀNG NHẬP KHẨU";
 
                             var sql = new StringBuilder();
                             //sql.Append("SELECT * FROM ViewAllVehicleHasGood ");
@@ -208,6 +235,9 @@ namespace ECustoms
                         break;
                     case ReportType.LocalImportAndHasItem:
                         {
+                            // Superior Company
+                            ((TextObject)localImportAndHasItem1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)localImportAndHasItem1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var createdlocalImportAndHasItem = (TextObject)localImportAndHasItem1.Section1.ReportObjects["CreatedBy"];
                             createdlocalImportAndHasItem.Text = _userInfo.Name;
@@ -237,6 +267,9 @@ namespace ECustoms
                         break;
                     case ReportType.ExportGateTransfer:
                         {
+                            // Superior Company
+                            ((TextObject)exportGate1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)exportGate1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var dateFrom = (TextObject)exportGate1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
@@ -261,6 +294,9 @@ namespace ECustoms
                         break;
                     case ReportType.ImportGateTransfer:
                         {
+                            // Superior Company
+                            ((TextObject)importGate1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)importGate1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var dateFrom = (TextObject)importGate1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
@@ -285,6 +321,9 @@ namespace ECustoms
                         break;
                     case ReportType.TempImportedReExport:
                         {
+                            // Superior Company
+                            ((TextObject)tempImportReExport1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
                             ((TextObject)tempImportReExport1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var dateFrom = (TextObject)tempImportReExport1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
@@ -309,7 +348,10 @@ namespace ECustoms
                         break;
                     case ReportType.VehicleTransportGoods:
                         {
-                            ((TextObject)vehicleFreight1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName;
+                            // Superior Company
+                            ((TextObject)vehicleFreight1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
+                            ((TextObject)vehicleFreight1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
                             var dateFrom = (TextObject)vehicleFreight1.Section1.ReportObjects["dateFrom"];
                             dateFrom.Text = _from.ToString("dd/MM/yyyy");
 
