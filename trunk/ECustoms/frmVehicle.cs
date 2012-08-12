@@ -409,6 +409,10 @@ namespace ECustoms
 
                 txtStatus.Text = vehicleInfo.Status;
                 txtNote.Text = vehicleInfo.Note;
+                if (vehicleInfo.IsCompleted != null)
+                {
+                    _isCompleted = vehicleInfo.IsCompleted.Value;
+                }
                 if(vehicleInfo.IsImport != null) {
                     _isImport = vehicleInfo.IsImport.Value;
                 }
@@ -535,7 +539,7 @@ namespace ECustoms
                     mtxtImportHour.Text = string.Format("{0:HH:mm}", CommonFactory.GetCurrentDate());
                     lblIsImport.Visible = false;
                     //_isImport = true;
-                    _isCompleted = true;
+                    //_isCompleted = true;
 
                     if (_mode == 1 || _mode == 2) // AddNew- Edit - Update mode
                     {
@@ -573,7 +577,7 @@ namespace ECustoms
                     mtxtImportHour.Visible = false;
                     lblIsImport.Visible = true;
                     _isImport = false;
-                    _isCompleted = true;
+                    //_isCompleted = true;
                 }
             }
             catch (Exception ex)
