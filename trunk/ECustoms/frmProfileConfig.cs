@@ -55,6 +55,10 @@ namespace ECustoms
                 {
                     txtOverdueVehicleDate.Text = profileConfig.Value;
                 }
+                if (profileConfig.Type == (int)ProfileConfig.SuperiorCompany)
+                {
+                    txtSuperiorCompany.Text = profileConfig.Value;
+                }
             }
 
             //Autocomplete
@@ -132,7 +136,15 @@ namespace ECustoms
                                         };
                         listProfileConfig.Add(item);
                     }
-
+                    if (!string.IsNullOrEmpty(txtSuperiorCompany.Text.Trim()))
+                    {
+                        var item = new tblProfileConfig
+                        {
+                            Type = (int)ProfileConfig.SuperiorCompany,
+                            Value = txtSuperiorCompany.Text.Trim()
+                        };
+                        listProfileConfig.Add(item);
+                    }
                     UserFactory.UpdateProfileConfig(_userInfo.UserID, listProfileConfig);
                     MessageBox.Show("Cập nhật thành công");
                     this.Close();

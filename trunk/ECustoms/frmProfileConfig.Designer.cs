@@ -46,6 +46,9 @@
             this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
             this.txtOverdueVehicleDate = new System.Windows.Forms.TextBox();
             this.lblOverdueVehicleDate = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSuperiorCompany = new System.Windows.Forms.Label();
+            this.txtSuperiorCompany = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +59,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(400, 151);
+            this.btnClose.Location = new System.Drawing.Point(424, 151);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(63, 28);
             this.btnClose.TabIndex = 3;
@@ -72,7 +75,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(317, 151);
+            this.btnUpdate.Location = new System.Drawing.Point(341, 151);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 28);
             this.btnUpdate.TabIndex = 5;
@@ -85,7 +88,7 @@
             // 
             this.txtTypeName.BackColor = System.Drawing.Color.White;
             this.txtTypeName.Enabled = false;
-            this.txtTypeName.Location = new System.Drawing.Point(321, 64);
+            this.txtTypeName.Location = new System.Drawing.Point(345, 64);
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.ReadOnly = true;
             this.txtTypeName.Size = new System.Drawing.Size(142, 20);
@@ -95,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(224, 68);
+            this.label1.Location = new System.Drawing.Point(248, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 12;
@@ -107,7 +110,7 @@
             this.txtTypeCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTypeCode.Location = new System.Drawing.Point(107, 64);
             this.txtTypeCode.Name = "txtTypeCode";
-            this.txtTypeCode.Size = new System.Drawing.Size(94, 20);
+            this.txtTypeCode.Size = new System.Drawing.Size(113, 20);
             this.txtTypeCode.TabIndex = 0;
             this.txtTypeCode.Tag = "required";
             this.txtTypeCode.Leave += new System.EventHandler(this.txtTypeCode_Leave);
@@ -136,7 +139,7 @@
             // 
             this.txtCustomName.BackColor = System.Drawing.Color.White;
             this.txtCustomName.Enabled = false;
-            this.txtCustomName.Location = new System.Drawing.Point(320, 92);
+            this.txtCustomName.Location = new System.Drawing.Point(344, 92);
             this.txtCustomName.Name = "txtCustomName";
             this.txtCustomName.ReadOnly = true;
             this.txtCustomName.Size = new System.Drawing.Size(143, 20);
@@ -146,7 +149,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(224, 96);
+            this.label2.Location = new System.Drawing.Point(248, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 32;
@@ -158,7 +161,7 @@
             this.txtCustomCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCustomCode.Location = new System.Drawing.Point(107, 92);
             this.txtCustomCode.Name = "txtCustomCode";
-            this.txtCustomCode.Size = new System.Drawing.Size(94, 20);
+            this.txtCustomCode.Size = new System.Drawing.Size(113, 20);
             this.txtCustomCode.TabIndex = 2;
             this.txtCustomCode.Tag = "required";
             this.txtCustomCode.Leave += new System.EventHandler(this.txtCustomCode_Leave);
@@ -205,10 +208,10 @@
             // 
             this.txtOverdueVehicleDate.BackColor = System.Drawing.Color.White;
             this.txtOverdueVehicleDate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtOverdueVehicleDate.Location = new System.Drawing.Point(145, 121);
+            this.txtOverdueVehicleDate.Location = new System.Drawing.Point(145, 118);
             this.txtOverdueVehicleDate.MaxLength = 20;
             this.txtOverdueVehicleDate.Name = "txtOverdueVehicleDate";
-            this.txtOverdueVehicleDate.Size = new System.Drawing.Size(56, 20);
+            this.txtOverdueVehicleDate.Size = new System.Drawing.Size(39, 20);
             this.txtOverdueVehicleDate.TabIndex = 4;
             this.txtOverdueVehicleDate.Tag = "required";
             this.txtOverdueVehicleDate.Leave += new System.EventHandler(this.txtOverdueVehicleDate_Leave);
@@ -217,17 +220,49 @@
             // 
             this.lblOverdueVehicleDate.AutoSize = true;
             this.lblOverdueVehicleDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblOverdueVehicleDate.Location = new System.Drawing.Point(9, 124);
+            this.lblOverdueVehicleDate.Location = new System.Drawing.Point(9, 122);
             this.lblOverdueVehicleDate.Name = "lblOverdueVehicleDate";
             this.lblOverdueVehicleDate.Size = new System.Drawing.Size(130, 13);
             this.lblOverdueVehicleDate.TabIndex = 34;
             this.lblOverdueVehicleDate.Text = "Số ngày giới hạn xe trở về";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(190, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "ngày";
+            // 
+            // lblSuperiorCompany
+            // 
+            this.lblSuperiorCompany.AutoSize = true;
+            this.lblSuperiorCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblSuperiorCompany.Location = new System.Drawing.Point(248, 122);
+            this.lblSuperiorCompany.Name = "lblSuperiorCompany";
+            this.lblSuperiorCompany.Size = new System.Drawing.Size(86, 13);
+            this.lblSuperiorCompany.TabIndex = 37;
+            this.lblSuperiorCompany.Text = "Tên ĐV cấp trên";
+            // 
+            // txtSuperiorCompany
+            // 
+            this.txtSuperiorCompany.BackColor = System.Drawing.Color.White;
+            this.txtSuperiorCompany.Location = new System.Drawing.Point(344, 118);
+            this.txtSuperiorCompany.Name = "txtSuperiorCompany";
+            this.txtSuperiorCompany.Size = new System.Drawing.Size(143, 20);
+            this.txtSuperiorCompany.TabIndex = 38;
+            this.txtSuperiorCompany.Tag = "required";
+            // 
             // frmProfileConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 191);
+            this.ClientSize = new System.Drawing.Size(510, 191);
+            this.Controls.Add(this.txtSuperiorCompany);
+            this.Controls.Add(this.lblSuperiorCompany);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtOverdueVehicleDate);
             this.Controls.Add(this.lblOverdueVehicleDate);
             this.Controls.Add(this.txtCustomName);
@@ -272,5 +307,8 @@
         private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
         private System.Windows.Forms.TextBox txtOverdueVehicleDate;
         private System.Windows.Forms.Label lblOverdueVehicleDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSuperiorCompany;
+        private System.Windows.Forms.TextBox txtSuperiorCompany;
     }
 }
