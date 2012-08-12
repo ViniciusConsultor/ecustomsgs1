@@ -598,7 +598,23 @@ namespace ECustoms
                     return;
                 }
 
+
                 var vehicleInfo = VehicleFactory.GetByID(long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
+
+                //Đối với những xe chưa hoàn thành thì hiện cảnh báo.
+                //VD: Xe xuất cảnh mà chưa hoàn thành thủ tục mà lại xuất cảnh tiếp --> Cảnh báo
+                if (vehicleInfo.IsExport == true && vehicleInfo.IsCompleted == false)
+                {
+                    var message1 = new StringBuilder();
+                    message1.AppendLine("Cảnh báo: Xe" + vehicleInfo.PlateNumber + " xuất cảnh mà chưa hoàn thành thủ tục mà lại xuất cảnh tiếp");
+                    message1.AppendLine("Bạn có muốn tiếp tục ?");
+                    var msgBox1 = new frmMessageBox(message1.ToString());
+                    if (msgBox1.ShowDialog() != DialogResult.Yes)
+                    {
+                        return;
+                    }
+                }
+
 
                 var message = new StringBuilder();
                 message.AppendLine("Thời gian xuất cảnh: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
@@ -720,6 +736,22 @@ namespace ECustoms
                     frmAlert.Show(this);
                     return;
                 }
+
+                //Đối với những xe chưa hoàn thành thì hiện cảnh báo.
+                //VD: Xe nhập cảnh mà chưa hoàn thành thủ tục mà lại nhập cảnh tiếp --> Cảnh báo
+                if (vehicle.IsImport == true && vehicle.IsCompleted == false)
+                {
+                    var message1 = new StringBuilder();
+                    message1.AppendLine("Cảnh báo: Xe" + vehicle.PlateNumber + " nhập cảnh mà chưa hoàn thành thủ tục mà lại nhập cảnh tiếp");
+                    message1.AppendLine("Bạn có muốn tiếp tục ?");
+                    var msgBox1 = new frmMessageBox(message1.ToString());
+                    if (msgBox1.ShowDialog() != DialogResult.Yes)
+                    {
+                        return;
+                    }
+                }
+
+
                 var message = new StringBuilder();
                 message.Append("Thời gian nhập cảnh: " + CommonFactory.GetCurrentDate().ToString("dd/MM/yyyy HH:mm"));
 
@@ -805,6 +837,20 @@ namespace ECustoms
                     var frmAlert = new FrmAlert(_userInfo, vehicleID, _checkID, VehicleCheckFactory.CHECK_TYPE_EXPORT);
                     frmAlert.Show(this);
                     return;
+                }
+
+                //Đối với những xe chưa hoàn thành thì hiện cảnh báo.
+                //VD: Xe nhập cảnh mà chưa hoàn thành thủ tục mà lại nhập cảnh tiếp --> Cảnh báo
+                if (vehicle.IsImport == true && vehicle.IsCompleted == false)
+                {
+                    var message1 = new StringBuilder();
+                    message1.AppendLine("Cảnh báo: Xe" + vehicle.PlateNumber + " nhập cảnh mà chưa hoàn thành thủ tục mà lại nhập cảnh tiếp");
+                    message1.AppendLine("Bạn có muốn tiếp tục ?");
+                    var msgBox1 = new frmMessageBox(message1.ToString());
+                    if (msgBox1.ShowDialog() != DialogResult.Yes)
+                    {
+                        return;
+                    }
                 }
 
                 var message = new StringBuilder();

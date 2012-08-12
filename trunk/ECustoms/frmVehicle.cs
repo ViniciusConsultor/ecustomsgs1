@@ -476,6 +476,7 @@ namespace ECustoms
                             count += 1;
                             if (count == _count)
                             {
+
                                 if (vehicleInfo.ConfirmExportBy == null || vehicleInfo.ConfirmExportBy == 0)
                                 {
                                     _isExport = true;
