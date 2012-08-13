@@ -159,6 +159,7 @@ namespace ECustoms
                     vehicleInfo.feeImportStatus = (int) FeeStatus.PaidFee;
                     vehicleInfo.confirmFeeImportBy = _userinfo.UserID;
                 }
+                vehicleInfo.ModifiedById = _userinfo.UserID;
                 VehicleFactory.UpdateVehicle(vehicleInfo);
                 this.DialogResult = DialogResult.OK;
             }

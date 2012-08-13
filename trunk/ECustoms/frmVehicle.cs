@@ -797,6 +797,7 @@ namespace ECustoms
                         vehicle.ImportDate = vehicle.ImportDate.Value.AddMinutes(importMinitues - dtpImportDate.Value.Minute);
                     }
 
+                    vehicle.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicle);
 
                     MessageBox.Show("Cập nhật thành công.");
@@ -1052,6 +1053,7 @@ namespace ECustoms
                     v.ConfirmExportBy = vehicle.ConfirmExportBy;
                     v.ConfirmImportBy = vehicle.ConfirmImportBy;
                     v.ConfirmLocalImportBy = vehicle.ConfirmLocalImportBy;
+                    v.CreatedById = _userInfo.UserID;
                     VehicleFactory.InsertVehicle(v,_parrentDeclaration.DeclarationID);                                        
                 }
 
