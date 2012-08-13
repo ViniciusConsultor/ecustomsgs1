@@ -395,6 +395,7 @@ namespace ECustoms
 
                 foreach (var vehicleInfo in VehicleInfosTemp)
                 {
+                    vehicleInfo.CreatedById = _userInfo.UserID;
                     VehicleFactory.InsertVehicle(vehicleInfo);
                 }
 

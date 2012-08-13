@@ -322,7 +322,7 @@ namespace ECustoms
                     vehicleInfo.IsExportParking = info.IsExportParking;
                     vehicleInfo.ExportParkingDate = info.ExportParkingDate;
                     vehicleInfo.ConfirmExportParkingBy = info.ConfirmExportParkingBy;
-
+                    vehicleInfo.CreatedById = _userInfo.UserID;
                     VehicleFactory.InsertVehicle(vehicleInfo);
                 }
 

@@ -377,6 +377,7 @@ namespace ECustoms
                     vehicleInfo.IsImport = info.IsImport;
                     vehicleInfo.IsCompleted = info.IsCompleted;
                     vehicleInfo.vehicleTypeId = info.vehicleTypeId;
+                    vehicleInfo.CreatedById = _userInfo.UserID;
                     VehicleFactory.InsertVehicle(vehicleInfo);
                 }
 

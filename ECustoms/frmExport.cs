@@ -415,6 +415,7 @@ namespace ECustoms
                         v.ConfirmExportBy = vehicle.ConfirmExportBy;
                         v.ConfirmImportBy = vehicle.ConfirmImportBy;
                         v.ConfirmLocalImportBy = vehicle.ConfirmLocalImportBy;
+                        v.ModifiedById = _userInfo.UserID;
                         VehicleFactory.UpdateVehicle(v);
                     }
 

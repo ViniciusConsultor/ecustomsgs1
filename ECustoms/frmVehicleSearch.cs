@@ -98,6 +98,7 @@ namespace ECustoms
                 grdVehicle.AutoGenerateColumns = false;
                 List<ViewAllVehicleHasGood> result = VehicleFactory.SearchVehicle(cbIsCompleted.Checked, txtPlateNumber.Text.Trim().ToUpper(), txtPlateNumberChinese.Text.Trim().ToUpper(), cbIsExport.Checked, cbIsImport.Checked, cbIsNotImport.Checked, dtpImportFrom.Value, dtpImportTo.Value,
                                                         dtpExportFrom.Value, dtpExportTo.Value, cbIsChineseVehicle.Checked);
+                //MessageBox.Show(result.FirstOrDefault().ModifiedByUserName);  
                 // Limit xe khong cho hang
                 if (checkBoxNoItem.Checked)
                 {
@@ -641,6 +642,7 @@ namespace ECustoms
                     vehicleInfo.ConfirmExportBy = _userInfo.UserID;
                     vehicleInfo.IsExport = true;
                     if (isExportNoGood) vehicleInfo.feeExportStatus = (int) FeeStatus.NotNeedPayFee;
+                    vehicleInfo.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicleInfo);
                 
                     // Bind to grid
@@ -778,6 +780,7 @@ namespace ECustoms
                     }
 
                     vehicle.ConfirmImportBy = _userInfo.UserID;
+                    vehicle.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicle);
                     // Bind data to gridview
                     BindData();
@@ -872,6 +875,7 @@ namespace ECustoms
                     vehicle.ConfirmImportBy = _userInfo.UserID;
                     vehicle.ImportStatus = "Nhập cảnh không có hàng";
                     vehicle.feeImportStatus = (int) FeeStatus.NotNeedPayFee;
+                    vehicle.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicle);
                 }
                 // Bind data
@@ -949,7 +953,7 @@ namespace ECustoms
                     }
 
                     vehicleInfo.ConfirmLocalImportBy = _userInfo.UserID;
-
+                    vehicleInfo.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicleInfo);
                     // Bind data to gridview
                     BindData();
@@ -1054,6 +1058,7 @@ namespace ECustoms
                     var vehicleInfo = VehicleFactory.GetByID(int.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString()));
 
                     vehicleInfo.ImportedLocalTime = dateNoidia;
+                    vehicleInfo.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicleInfo);
                     BindData();
                 }
@@ -1445,6 +1450,7 @@ namespace ECustoms
 
                 vehicleInfo.Parking = "Hàng đã vào bãi";
                 vehicleInfo.ParkingDate = CommonFactory.GetCurrentDate();
+                vehicleInfo.ModifiedById = _userInfo.UserID;
                 VehicleFactory.UpdateVehicle(vehicleInfo);
                 // Bind data to gridview
                 BindData();

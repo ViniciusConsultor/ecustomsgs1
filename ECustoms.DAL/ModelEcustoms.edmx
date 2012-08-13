@@ -270,7 +270,11 @@
       [ViewAllVehicleHasGood].[vehicleTypeId] AS [vehicleTypeId], 
       [ViewAllVehicleHasGood].[ImportGoodTypeName] AS [ImportGoodTypeName], 
       [ViewAllVehicleHasGood].[ExportGoodTypeId] AS [ExportGoodTypeId], 
-      [ViewAllVehicleHasGood].[ImportGoodTypeId] AS [ImportGoodTypeId]
+      [ViewAllVehicleHasGood].[ImportGoodTypeId] AS [ImportGoodTypeId], 
+      [ViewAllVehicleHasGood].[VehicleCreatedById] AS [VehicleCreatedById], 
+      [ViewAllVehicleHasGood].[VehicleModifiedById] AS [VehicleModifiedById], 
+      [ViewAllVehicleHasGood].[CreatedByUserName] AS [CreatedByUserName], 
+      [ViewAllVehicleHasGood].[ModifiedByUserName] AS [ModifiedByUserName]
       FROM [dbo].[ViewAllVehicleHasGood] AS [ViewAllVehicleHasGood]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewDeclarationVechicleExport" EntityType="dbEcustomModel.Store.ViewDeclarationVechicleExport" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVechicleExport">
@@ -892,6 +896,8 @@
           <Property Name="ExportGoodTypeId" Type="int" />
           <Property Name="ImportGoodTypeId" Type="int" />
           <Property Name="IsSynced" Type="bit" />
+          <Property Name="CreatedById" Type="int" />
+          <Property Name="ModifiedById" Type="int" />
         </EntityType>
         <EntityType Name="tblVehicleCheck">
           <Key>
@@ -1200,6 +1206,10 @@
           <Property Name="ImportGoodTypeName" Type="nvarchar" MaxLength="500" />
           <Property Name="ExportGoodTypeId" Type="int" />
           <Property Name="ImportGoodTypeId" Type="int" />
+          <Property Name="VehicleCreatedById" Type="int" />
+          <Property Name="VehicleModifiedById" Type="int" />
+          <Property Name="CreatedByUserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="ModifiedByUserName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbECustoms.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -2027,6 +2037,8 @@
           <Property Type="Int32" Name="ExportGoodTypeId" />
           <Property Type="Int32" Name="ImportGoodTypeId" />
           <Property Type="Boolean" Name="IsSynced" />
+          <Property Type="Int32" Name="CreatedById" />
+          <Property Type="Int32" Name="ModifiedById" />
         </EntityType>
         <EntityType Name="tblVehicleCheck">
           <Key>
@@ -2318,6 +2330,10 @@
           <Property Type="String" Name="ImportGoodTypeName" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="ExportGoodTypeId" />
           <Property Type="Int32" Name="ImportGoodTypeId" />
+          <Property Type="Int32" Name="VehicleCreatedById" />
+          <Property Type="Int32" Name="VehicleModifiedById" />
+          <Property Type="String" Name="CreatedByUserName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ModifiedByUserName" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ViewDeclarationVechicleExport">
           <Key>
@@ -2926,6 +2942,8 @@
           <EntitySetMapping Name="tblVehicles">
             <EntityTypeMapping TypeName="dbEcustomModel.tblVehicle">
               <MappingFragment StoreEntitySet="tblVehicle">
+                <ScalarProperty Name="ModifiedById" ColumnName="ModifiedById" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
                 <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
                 <ScalarProperty Name="ImportGoodTypeId" ColumnName="ImportGoodTypeId" />
                 <ScalarProperty Name="ExportGoodTypeId" ColumnName="ExportGoodTypeId" />
@@ -3202,6 +3220,10 @@
           <EntitySetMapping Name="ViewAllVehicleHasGoods">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewAllVehicleHasGood">
               <MappingFragment StoreEntitySet="ViewAllVehicleHasGood">
+                <ScalarProperty Name="ModifiedByUserName" ColumnName="ModifiedByUserName" />
+                <ScalarProperty Name="CreatedByUserName" ColumnName="CreatedByUserName" />
+                <ScalarProperty Name="VehicleModifiedById" ColumnName="VehicleModifiedById" />
+                <ScalarProperty Name="VehicleCreatedById" ColumnName="VehicleCreatedById" />
                 <ScalarProperty Name="ImportGoodTypeId" ColumnName="ImportGoodTypeId" />
                 <ScalarProperty Name="ExportGoodTypeId" ColumnName="ExportGoodTypeId" />
                 <ScalarProperty Name="ImportGoodTypeName" ColumnName="ImportGoodTypeName" />
@@ -3616,54 +3638,54 @@
     <Diagrams>
       <Diagram Name="ModelEcustoms" ShowGrid="true" ZoomLevel="80">
         <EntityTypeShape EntityType="dbEcustomModel.Log" Width="1.5" PointX="5.75" PointY="0.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbEcustomModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" Height="1.980286458333353" />
         <EntityTypeShape EntityType="dbEcustomModel.tblApplicationObject" Width="1.5" PointX="7.75" PointY="0.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="7.75" PointY="4.75" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblCheck" Width="1.5" PointX="5.75" PointY="7.75" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="7.75" PointY="4.75" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCheck" Width="1.5" PointX="5.75" PointY="7.75" Height="3.710999348958353" />
         <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="7.75" PointY="7.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="9.75" PointY="0.75" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.125" Height="6.9801236979166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="9.75" PointY="0.75" Height="2.557190755208353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.125" Height="6.9801236979166106" />
         <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationVehicle" Width="1.5" PointX="9.75" PointY="4.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="9.75" PointY="7.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="11.75" PointY="0.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblGroup" Width="1.5" PointX="11.75" PointY="3.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblPermission" Width="1.5" PointX="11.75" PointY="7.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblPermissionType" Width="1.5" PointX="7.75" PointY="11.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblPermissionType" Width="1.5" PointX="7.75" PointY="11.75" Height="1.403382161458353" />
         <EntityTypeShape EntityType="dbEcustomModel.tblProfileConfig" Width="1.5" PointX="9.75" PointY="11.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblRoleInGroup" Width="1.5" PointX="3" PointY="1" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblRoleInGroup" Width="1.5" PointX="3" PointY="1" Height="1.7879850260416106" />
         <EntityTypeShape EntityType="dbEcustomModel.tblSetting" Width="1.5" PointX="11.75" PointY="10.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="0.75" PointY="12.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="5.875" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="5.875" Height="3.5186979166666106" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserGroupPermission" Width="1.5" PointX="2.75" PointY="12.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserInGroup" Width="1.5" PointX="4.75" PointY="12.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="13.75" PointY="0.75" Height="10.249248046874982" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="13.75" PointY="11.75" Height="3.7109993489583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="6.75" PointY="14.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="8.75" PointY="14.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="13.75" PointY="0.75" Height="10.633850911458353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="11.75" PointY="13.75" Height="3.710999348958353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="13.75" PointY="12.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="6.75" PointY="14.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tlbRole" Width="1.5" PointX="0.75" PointY="0.875" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="10.75" PointY="14.75" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="8.75" PointY="14.75" Height="3.9033007812499818" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheckResult" Width="1.5" PointX="15.75" PointY="0.75" Height="4.6725065104166674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclaration" Width="1.5" PointX="15.75" PointY="6.75" Height="8.1339322916666674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclarationTNTX" Width="1.5" PointX="15.75" PointY="15.75" Height="7.9416308593749818" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="0.75" PointY="16.75" Height="5.8263151041666674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="2.75" PointY="16.75" Height="14.095276692708325" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="12.75" PointY="16.75" Height="11.403056640624982" />
-        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="17.75" PointY="0.75" Height="6.7878222656249818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="17.75" PointY="8.75" Height="11.403056640624982" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="4.75" PointY="18.75" Height="12.172262369791667" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewGetCurrentDate" Width="1.5" PointX="6.75" PointY="18.75" Height="1.2110807291666674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewUserGroup" Width="1.5" PointX="19.75" PointY="0.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="2.75" PointY="16.75" Height="14.864482421874982" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="17.75" PointY="0.75" Height="11.403056640624982" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="17.75" PointY="13.75" Height="6.7878222656249818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="4.75" PointY="18.75" Height="11.403056640624982" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="10.75" PointY="18.75" Height="12.172262369791667" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewGetCurrentDate" Width="1.5" PointX="12.75" PointY="18.75" Height="1.2110807291666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewUserGroup" Width="1.5" PointX="19.75" PointY="0.75" Height="1.980286458333353" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFee" Width="1.5" PointX="19.75" PointY="3.75" Height="4.0956022135416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="19.75" PointY="8.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="8.75" PointY="19.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="6.75" PointY="19.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="19.75" PointY="8.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleOverdue" Width="1.5" PointX="19.75" PointY="12.75" Height="2.7494921874999818" />
         <AssociationConnector Association="dbEcustomModel.FK_tblDeclaration_tblUser" >
-          <ConnectorPoint PointX="2.25" PointY="7.6343489583333337" />
-          <ConnectorPoint PointX="3" PointY="7.6343489583333337" />
+          <ConnectorPoint PointX="2.25" PointY="7.6343489583333053" />
+          <ConnectorPoint PointX="3" PointY="7.6343489583333053" />
         </AssociationConnector>
         <AssociationConnector Association="dbEcustomModel.FK_tblRoleInGroup_tlbRole" >
-          <ConnectorPoint PointX="2.25" PointY="1.8939925130208337" />
-          <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
+          <ConnectorPoint PointX="2.25" PointY="1.8939925130208053" />
+          <ConnectorPoint PointX="3" PointY="1.8939925130208053" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

@@ -951,6 +951,7 @@ namespace ECustoms
                                 v.confirmFeeImportBy = _userInfo.UserID;
                             }
                         }
+                        v.ModifiedById = _userInfo.UserID;
                         VehicleFactory.UpdateVehicle(v);
                     }
                     MessageBox.Show("Cập nhật thành công");
