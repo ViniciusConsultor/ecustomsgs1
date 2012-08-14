@@ -198,7 +198,8 @@
       [ViewAllVehicle].[ModifiedDate] AS [ModifiedDate], 
       [ViewAllVehicle].[Parking] AS [Parking], 
       [ViewAllVehicle].[ParkingDate] AS [ParkingDate], 
-      [ViewAllVehicle].[PlateNumberPartner] AS [PlateNumberPartner]
+      [ViewAllVehicle].[PlateNumberPartner] AS [PlateNumberPartner], 
+      [ViewAllVehicle].[ModifiedByUserName] AS [ModifiedByUserName]
       FROM [dbo].[ViewAllVehicle] AS [ViewAllVehicle]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewAllVehicleHasGood" EntityType="dbEcustomModel.Store.ViewAllVehicleHasGood" store:Type="Views" store:Schema="dbo" store:Name="ViewAllVehicleHasGood">
@@ -1129,6 +1130,7 @@
           <Property Name="Parking" Type="nvarchar" MaxLength="250" />
           <Property Name="ParkingDate" Type="datetime" />
           <Property Name="PlateNumberPartner" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedByUserName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbECustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -1693,7 +1695,6 @@
           <EntitySet Name="ViewAllCheckResults" EntityType="dbEcustomModel.ViewAllCheckResult" />
           <EntitySet Name="ViewAllDeclarations" EntityType="dbEcustomModel.ViewAllDeclaration" />
           <EntitySet Name="ViewAllDeclarationTNTXes" EntityType="dbEcustomModel.ViewAllDeclarationTNTX" />
-          <EntitySet Name="ViewAllVehicles" EntityType="dbEcustomModel.ViewAllVehicle" />
           <EntitySet Name="ViewAllVehicleHasGoods" EntityType="dbEcustomModel.ViewAllVehicleHasGood" />
           <EntitySet Name="ViewDeclarationVechicleExports" EntityType="dbEcustomModel.ViewDeclarationVechicleExport" />
           <EntitySet Name="viewDeclarationVehicles" EntityType="dbEcustomModel.viewDeclarationVehicle" />
@@ -1713,6 +1714,7 @@
             <End Role="tlbRole" EntitySet="tlbRoles" />
             <End Role="tblRoleInGroup" EntitySet="tblRoleInGroups" />
           </AssociationSet>
+          <EntitySet Name="ViewAllVehicles" EntityType="dbEcustomModel.ViewAllVehicle" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2227,36 +2229,6 @@
           <Property Type="Int32" Name="PersonHandoverID" />
           <Property Type="String" Name="PersonHandoverName" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="ViewAllVehicle">
-          <Key>
-            <PropertyRef Name="VehicleID" />
-          </Key>
-          <Property Type="Int64" Name="VehicleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="PlateNumber" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="NumberOfContainer" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="DriverName" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="ImportDate" />
-          <Property Type="Boolean" Name="IsImport" />
-          <Property Type="DateTime" Name="ExportDate" />
-          <Property Type="Boolean" Name="IsExport" />
-          <Property Type="String" Name="Note" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Status" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="IsCompleted" />
-          <Property Type="Boolean" Name="IsGoodsImported" />
-          <Property Type="String" Name="ImportStatus" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="ImportedLocalTime" />
-          <Property Type="Boolean" Name="HasGoodsImported" />
-          <Property Type="Int32" Name="ConfirmImportBy" />
-          <Property Type="Int32" Name="ConfirmExportBy" />
-          <Property Type="Int32" Name="ConfirmLocalImportBy" />
-          <Property Type="String" Name="ConfirmExportByName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="ConfirmImportByName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="ConfirmLocalImportByName" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="ModifiedDate" />
-          <Property Type="String" Name="Parking" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="ParkingDate" />
-          <Property Type="String" Name="PlateNumberPartner" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="ViewAllVehicleHasGood">
           <Key>
             <PropertyRef Name="VehicleID" />
@@ -2653,6 +2625,37 @@
           </ReferentialConstraint>
           
         </Association>
+        <EntityType Name="ViewAllVehicle">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Type="Int64" Name="VehicleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PlateNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NumberOfContainer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DriverName" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ImportDate" />
+          <Property Type="Boolean" Name="IsImport" />
+          <Property Type="DateTime" Name="ExportDate" />
+          <Property Type="Boolean" Name="IsExport" />
+          <Property Type="String" Name="Note" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCompleted" />
+          <Property Type="Boolean" Name="IsGoodsImported" />
+          <Property Type="String" Name="ImportStatus" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ImportedLocalTime" />
+          <Property Type="Boolean" Name="HasGoodsImported" />
+          <Property Type="Int32" Name="ConfirmImportBy" />
+          <Property Type="Int32" Name="ConfirmExportBy" />
+          <Property Type="Int32" Name="ConfirmLocalImportBy" />
+          <Property Type="String" Name="ConfirmExportByName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfirmImportByName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfirmLocalImportByName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="String" Name="Parking" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ParkingDate" />
+          <Property Type="String" Name="PlateNumberPartner" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ModifiedByUserName" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3186,37 +3189,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ViewAllVehicles">
-            <EntityTypeMapping TypeName="dbEcustomModel.ViewAllVehicle">
-              <MappingFragment StoreEntitySet="ViewAllVehicle">
-                <ScalarProperty Name="PlateNumberPartner" ColumnName="PlateNumberPartner" />
-                <ScalarProperty Name="ParkingDate" ColumnName="ParkingDate" />
-                <ScalarProperty Name="Parking" ColumnName="Parking" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="ConfirmLocalImportByName" ColumnName="ConfirmLocalImportByName" />
-                <ScalarProperty Name="ConfirmImportByName" ColumnName="ConfirmImportByName" />
-                <ScalarProperty Name="ConfirmExportByName" ColumnName="ConfirmExportByName" />
-                <ScalarProperty Name="ConfirmLocalImportBy" ColumnName="ConfirmLocalImportBy" />
-                <ScalarProperty Name="ConfirmExportBy" ColumnName="ConfirmExportBy" />
-                <ScalarProperty Name="ConfirmImportBy" ColumnName="ConfirmImportBy" />
-                <ScalarProperty Name="HasGoodsImported" ColumnName="HasGoodsImported" />
-                <ScalarProperty Name="ImportedLocalTime" ColumnName="ImportedLocalTime" />
-                <ScalarProperty Name="ImportStatus" ColumnName="ImportStatus" />
-                <ScalarProperty Name="IsGoodsImported" ColumnName="IsGoodsImported" />
-                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="IsExport" ColumnName="IsExport" />
-                <ScalarProperty Name="ExportDate" ColumnName="ExportDate" />
-                <ScalarProperty Name="IsImport" ColumnName="IsImport" />
-                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
-                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
-                <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
-                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
-                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ViewAllVehicleHasGoods">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewAllVehicleHasGood">
               <MappingFragment StoreEntitySet="ViewAllVehicleHasGood">
@@ -3616,6 +3588,38 @@
               <ScalarProperty Name="RoleID" ColumnName="RoleID" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="ViewAllVehicles">
+            <EntityTypeMapping TypeName="dbEcustomModel.ViewAllVehicle">
+              <MappingFragment StoreEntitySet="ViewAllVehicle">
+                <ScalarProperty Name="ModifiedByUserName" ColumnName="ModifiedByUserName" />
+                <ScalarProperty Name="PlateNumberPartner" ColumnName="PlateNumberPartner" />
+                <ScalarProperty Name="ParkingDate" ColumnName="ParkingDate" />
+                <ScalarProperty Name="Parking" ColumnName="Parking" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ConfirmLocalImportByName" ColumnName="ConfirmLocalImportByName" />
+                <ScalarProperty Name="ConfirmImportByName" ColumnName="ConfirmImportByName" />
+                <ScalarProperty Name="ConfirmExportByName" ColumnName="ConfirmExportByName" />
+                <ScalarProperty Name="ConfirmLocalImportBy" ColumnName="ConfirmLocalImportBy" />
+                <ScalarProperty Name="ConfirmExportBy" ColumnName="ConfirmExportBy" />
+                <ScalarProperty Name="ConfirmImportBy" ColumnName="ConfirmImportBy" />
+                <ScalarProperty Name="HasGoodsImported" ColumnName="HasGoodsImported" />
+                <ScalarProperty Name="ImportedLocalTime" ColumnName="ImportedLocalTime" />
+                <ScalarProperty Name="ImportStatus" ColumnName="ImportStatus" />
+                <ScalarProperty Name="IsGoodsImported" ColumnName="IsGoodsImported" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IsExport" ColumnName="IsExport" />
+                <ScalarProperty Name="ExportDate" ColumnName="ExportDate" />
+                <ScalarProperty Name="IsImport" ColumnName="IsImport" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3667,7 +3671,6 @@
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheckResult" Width="1.5" PointX="15.75" PointY="0.75" Height="4.6725065104166674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclaration" Width="1.5" PointX="15.75" PointY="6.75" Height="8.1339322916666674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclarationTNTX" Width="1.5" PointX="15.75" PointY="15.75" Height="7.9416308593749818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="0.75" PointY="16.75" Height="5.8263151041666674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="2.75" PointY="16.75" Height="14.864482421874982" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="17.75" PointY="0.75" Height="11.403056640624982" />
         <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="17.75" PointY="13.75" Height="6.7878222656249818" />
@@ -3687,6 +3690,7 @@
           <ConnectorPoint PointX="2.25" PointY="1.8939925130208053" />
           <ConnectorPoint PointX="3" PointY="1.8939925130208053" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="20.375" PointY="16.75" Height="6.0186165364583246" />
       </Diagram>
     </Diagrams>
   </Designer>
