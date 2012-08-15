@@ -372,6 +372,49 @@ namespace ECustoms
                             crystalReportViewer1.ReportSource = vehicleFreight1;
                             break;
                         }
+
+                    case ReportType.ChinesseVehicle: // Type 10 Xe Trung Quoc
+                        {
+                            // Superior Company
+                            ((TextObject)chinesseVehicleReport1.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+                            // Company
+                            ((TextObject)chinesseVehicleReport1.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
+                            var createdimportAndHasItem = (TextObject)chinesseVehicleReport1.Section1.ReportObjects["CreatedBy"];
+                            createdimportAndHasItem.Text = _userInfo.Name;
+
+                            var dateFromimportAndHasItem = (TextObject)chinesseVehicleReport1.Section1.ReportObjects["dateFrom"];
+                            dateFromimportAndHasItem.Text = _from.ToString("dd/MM/yyy HH:mm");
+
+                            var dateToimportAndHasItem = (TextObject)chinesseVehicleReport1.Section1.ReportObjects["dateTo"];
+                            dateToimportAndHasItem.Text = _to.ToString("dd/MM/yyy HH:mm");
+
+                            // Header 
+                            var lblHeader = (TextObject)xuatCanhXeKhong.Section1.ReportObjects["lblHeader"];
+                            lblHeader.Text = "SỔ THEO DÕI PHƯƠNG TIỆN XE TRUNG QUỐC";
+
+                            var sql = new StringBuilder();
+                            //sql.Append("SELECT * FROM ViewAllVehicleHasGood ");
+                            //sql.Append(" WHERE ");
+                            //sql.Append(" (DeclarationID > 0 OR DeclarationID = 1) "); // LAY NHUNG PHUONG TIEN THUOC TO KHAI 1, CO NGHIA LA DANG O BAI                        
+                            //sql.Append(" AND HasGoodsImported = 1 ");
+                            //sql.Append(" AND DeclarationType = 1 ");
+                            //sql.Append(" AND IsImport = 1 ");
+                            //sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            //sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+
+                            sql.Append("select * from ViewAllVehicleHasGood as table1");
+                            sql.Append(" WHERE  IsChineseVehicle=1");
+                            sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+
+                            var adpater = new SqlDataAdapter(sql.ToString(), connection);
+                            var dt = new DataTable();
+                            adpater.Fill(dt);
+                            chinesseVehicleReport1.SetDataSource(dt);
+                            crystalReportViewer1.ReportSource = chinesseVehicleReport1;
+                        }
+                        break;
+
                 }
             }
             catch (Exception ex)

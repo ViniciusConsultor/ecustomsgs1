@@ -25,5 +25,7 @@ namespace ECustoms.Utilities.Enums
         TempImportedReExport = 8,
         //Số liệu phương tiện vận chuyển hàng hóa
         VehicleTransportGoods = 9,
+        //Xe Trung Quoc
+        ChinesseVehicle = 10,
     }
 }

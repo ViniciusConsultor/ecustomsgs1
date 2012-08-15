@@ -667,6 +667,14 @@ GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tblReportType" msprop:Generator_TableClassName="tblReportTypeDataTable" msprop:Generator_TableVarName="tabletblReportType" msprop:Generator_TablePropName="tblReportType" msprop:Generator_RowDeletingName="tblReportTypeRowDeleting" msprop:Generator_UserTableName="tblReportType" msprop:Generator_RowChangingName="tblReportTypeRowChanging" msprop:Generator_RowEvHandlerName="tblReportTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="tblReportTypeRowDeleted" msprop:Generator_RowEvArgName="tblReportTypeRowChangeEvent" msprop:Generator_RowChangedName="tblReportTypeRowChanged" msprop:Generator_RowClassName="tblReportTypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportTypeID" msprop:Generator_ColumnVarNameInTable="columnReportTypeID" msprop:Generator_ColumnPropNameInRow="ReportTypeID" msprop:Generator_ColumnPropNameInTable="ReportTypeIDColumn" msprop:Generator_UserColumnName="ReportTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="ReportTypeName" msprop:Generator_ColumnVarNameInTable="columnReportTypeName" msprop:Generator_ColumnPropNameInRow="ReportTypeName" msprop:Generator_ColumnPropNameInTable="ReportTypeNameColumn" msprop:Generator_UserColumnName="ReportTypeName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -37,7 +38,13 @@
             this.dtpExportTo = new System.Windows.Forms.DateTimePicker();
             this.dtpExportFrom = new System.Windows.Forms.DateTimePicker();
             this.lblTime = new System.Windows.Forms.Label();
+            this.dataSet2 = new ECustoms.DataSet2();
+            this.tblReportTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblReportTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,6 +63,7 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnSearch
             // 
@@ -85,6 +93,8 @@
             // 
             // cbReportType
             // 
+            this.cbReportType.DataSource = this.tblReportTypeBindingSource1;
+            this.cbReportType.DisplayMember = "ReportTypeName";
             this.cbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbReportType.FormattingEnabled = true;
@@ -92,6 +102,7 @@
             this.cbReportType.Name = "cbReportType";
             this.cbReportType.Size = new System.Drawing.Size(250, 21);
             this.cbReportType.TabIndex = 19;
+            this.cbReportType.ValueMember = "ReportTypeID";
             this.cbReportType.SelectedIndexChanged += new System.EventHandler(this.cbReportType_SelectedIndexChanged);
             // 
             // label2
@@ -134,6 +145,21 @@
             this.lblTime.TabIndex = 13;
             this.lblTime.Text = "Thời gian từ:";
             // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblReportTypeBindingSource
+            // 
+            this.tblReportTypeBindingSource.DataMember = "tblReportType";
+            this.tblReportTypeBindingSource.DataSource = this.dataSet2;
+            // 
+            // tblReportTypeBindingSource1
+            // 
+            this.tblReportTypeBindingSource1.DataMember = "tblReportType";
+            this.tblReportTypeBindingSource1.DataSource = this.dataSet2;
+            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +174,9 @@
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,6 +191,9 @@
         private System.Windows.Forms.DateTimePicker dtpExportTo;
         private System.Windows.Forms.DateTimePicker dtpExportFrom;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.BindingSource tblReportTypeBindingSource1;
+        private DataSet2 dataSet2;
+        private System.Windows.Forms.BindingSource tblReportTypeBindingSource;
         
     }
 }
