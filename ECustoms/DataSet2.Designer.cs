@@ -28,9 +28,9 @@ namespace ECustoms {
         
         private ViewAllVehicleHasGoodDataTable tableViewAllVehicleHasGood;
         
-        private ViewAllDeclarationTNTXDataTable tableViewAllDeclarationTNTX;
-        
         private ViewVehicleFreightDataTable tableViewVehicleFreight;
+        
+        private ViewAllDeclarationTNTXDataTable tableViewAllDeclarationTNTX;
         
         private tblVehicleTypeDataTable tabletblVehicleType;
         
@@ -76,11 +76,11 @@ namespace ECustoms {
                 if ((ds.Tables["ViewAllVehicleHasGood"] != null)) {
                     base.Tables.Add(new ViewAllVehicleHasGoodDataTable(ds.Tables["ViewAllVehicleHasGood"]));
                 }
-                if ((ds.Tables["ViewAllDeclarationTNTX"] != null)) {
-                    base.Tables.Add(new ViewAllDeclarationTNTXDataTable(ds.Tables["ViewAllDeclarationTNTX"]));
-                }
                 if ((ds.Tables["ViewVehicleFreight"] != null)) {
                     base.Tables.Add(new ViewVehicleFreightDataTable(ds.Tables["ViewVehicleFreight"]));
+                }
+                if ((ds.Tables["ViewAllDeclarationTNTX"] != null)) {
+                    base.Tables.Add(new ViewAllDeclarationTNTXDataTable(ds.Tables["ViewAllDeclarationTNTX"]));
                 }
                 if ((ds.Tables["tblVehicleType"] != null)) {
                     base.Tables.Add(new tblVehicleTypeDataTable(ds.Tables["tblVehicleType"]));
@@ -139,9 +139,9 @@ namespace ECustoms {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ViewAllDeclarationTNTXDataTable ViewAllDeclarationTNTX {
+        public ViewVehicleFreightDataTable ViewVehicleFreight {
             get {
-                return this.tableViewAllDeclarationTNTX;
+                return this.tableViewVehicleFreight;
             }
         }
         
@@ -149,9 +149,9 @@ namespace ECustoms {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ViewVehicleFreightDataTable ViewVehicleFreight {
+        public ViewAllDeclarationTNTXDataTable ViewAllDeclarationTNTX {
             get {
-                return this.tableViewVehicleFreight;
+                return this.tableViewAllDeclarationTNTX;
             }
         }
         
@@ -278,11 +278,11 @@ namespace ECustoms {
                 if ((ds.Tables["ViewAllVehicleHasGood"] != null)) {
                     base.Tables.Add(new ViewAllVehicleHasGoodDataTable(ds.Tables["ViewAllVehicleHasGood"]));
                 }
-                if ((ds.Tables["ViewAllDeclarationTNTX"] != null)) {
-                    base.Tables.Add(new ViewAllDeclarationTNTXDataTable(ds.Tables["ViewAllDeclarationTNTX"]));
-                }
                 if ((ds.Tables["ViewVehicleFreight"] != null)) {
                     base.Tables.Add(new ViewVehicleFreightDataTable(ds.Tables["ViewVehicleFreight"]));
+                }
+                if ((ds.Tables["ViewAllDeclarationTNTX"] != null)) {
+                    base.Tables.Add(new ViewAllDeclarationTNTXDataTable(ds.Tables["ViewAllDeclarationTNTX"]));
                 }
                 if ((ds.Tables["tblVehicleType"] != null)) {
                     base.Tables.Add(new tblVehicleTypeDataTable(ds.Tables["tblVehicleType"]));
@@ -344,16 +344,16 @@ namespace ECustoms {
                     this.tableViewAllVehicleHasGood.InitVars();
                 }
             }
-            this.tableViewAllDeclarationTNTX = ((ViewAllDeclarationTNTXDataTable)(base.Tables["ViewAllDeclarationTNTX"]));
-            if ((initTable == true)) {
-                if ((this.tableViewAllDeclarationTNTX != null)) {
-                    this.tableViewAllDeclarationTNTX.InitVars();
-                }
-            }
             this.tableViewVehicleFreight = ((ViewVehicleFreightDataTable)(base.Tables["ViewVehicleFreight"]));
             if ((initTable == true)) {
                 if ((this.tableViewVehicleFreight != null)) {
                     this.tableViewVehicleFreight.InitVars();
+                }
+            }
+            this.tableViewAllDeclarationTNTX = ((ViewAllDeclarationTNTXDataTable)(base.Tables["ViewAllDeclarationTNTX"]));
+            if ((initTable == true)) {
+                if ((this.tableViewAllDeclarationTNTX != null)) {
+                    this.tableViewAllDeclarationTNTX.InitVars();
                 }
             }
             this.tabletblVehicleType = ((tblVehicleTypeDataTable)(base.Tables["tblVehicleType"]));
@@ -400,10 +400,10 @@ namespace ECustoms {
             base.Tables.Add(this.tableViewAllVehicle);
             this.tableViewAllVehicleHasGood = new ViewAllVehicleHasGoodDataTable();
             base.Tables.Add(this.tableViewAllVehicleHasGood);
-            this.tableViewAllDeclarationTNTX = new ViewAllDeclarationTNTXDataTable();
-            base.Tables.Add(this.tableViewAllDeclarationTNTX);
             this.tableViewVehicleFreight = new ViewVehicleFreightDataTable();
             base.Tables.Add(this.tableViewVehicleFreight);
+            this.tableViewAllDeclarationTNTX = new ViewAllDeclarationTNTXDataTable();
+            base.Tables.Add(this.tableViewAllDeclarationTNTX);
             this.tabletblVehicleType = new tblVehicleTypeDataTable();
             base.Tables.Add(this.tabletblVehicleType);
             this.tabletblGoodsType = new tblGoodsTypeDataTable();
@@ -430,13 +430,13 @@ namespace ECustoms {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeViewAllDeclarationTNTX() {
+        private bool ShouldSerializeViewVehicleFreight() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeViewVehicleFreight() {
+        private bool ShouldSerializeViewAllDeclarationTNTX() {
             return false;
         }
         
@@ -532,10 +532,10 @@ namespace ECustoms {
         public delegate void ViewAllVehicleHasGoodRowChangeEventHandler(object sender, ViewAllVehicleHasGoodRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ViewAllDeclarationTNTXRowChangeEventHandler(object sender, ViewAllDeclarationTNTXRowChangeEvent e);
+        public delegate void ViewVehicleFreightRowChangeEventHandler(object sender, ViewVehicleFreightRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ViewVehicleFreightRowChangeEventHandler(object sender, ViewVehicleFreightRowChangeEvent e);
+        public delegate void ViewAllDeclarationTNTXRowChangeEventHandler(object sender, ViewAllDeclarationTNTXRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblVehicleTypeRowChangeEventHandler(object sender, tblVehicleTypeRowChangeEvent e);
@@ -2155,6 +2155,313 @@ namespace ECustoms {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ViewVehicleFreightDataTable : global::System.Data.TypedTableBase<ViewVehicleFreightRow> {
+            
+            private global::System.Data.DataColumn columnvehicleTypeId;
+            
+            private global::System.Data.DataColumn columnCountVehicle;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnGoodTypeName;
+            
+            private global::System.Data.DataColumn columnSumFeeAmount;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewVehicleFreightDataTable() {
+                this.TableName = "ViewVehicleFreight";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ViewVehicleFreightDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ViewVehicleFreightDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn vehicleTypeIdColumn {
+                get {
+                    return this.columnvehicleTypeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CountVehicleColumn {
+                get {
+                    return this.columnCountVehicle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GoodTypeNameColumn {
+                get {
+                    return this.columnGoodTypeName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SumFeeAmountColumn {
+                get {
+                    return this.columnSumFeeAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewVehicleFreightRow this[int index] {
+                get {
+                    return ((ViewVehicleFreightRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddViewVehicleFreightRow(ViewVehicleFreightRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewVehicleFreightRow AddViewVehicleFreightRow(int vehicleTypeId, int CountVehicle, string Name, string GoodTypeName, long SumFeeAmount) {
+                ViewVehicleFreightRow rowViewVehicleFreightRow = ((ViewVehicleFreightRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        vehicleTypeId,
+                        CountVehicle,
+                        Name,
+                        GoodTypeName,
+                        SumFeeAmount};
+                rowViewVehicleFreightRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowViewVehicleFreightRow);
+                return rowViewVehicleFreightRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ViewVehicleFreightDataTable cln = ((ViewVehicleFreightDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ViewVehicleFreightDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnvehicleTypeId = base.Columns["vehicleTypeId"];
+                this.columnCountVehicle = base.Columns["CountVehicle"];
+                this.columnName = base.Columns["Name"];
+                this.columnGoodTypeName = base.Columns["GoodTypeName"];
+                this.columnSumFeeAmount = base.Columns["SumFeeAmount"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnvehicleTypeId = new global::System.Data.DataColumn("vehicleTypeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvehicleTypeId);
+                this.columnCountVehicle = new global::System.Data.DataColumn("CountVehicle", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountVehicle);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnGoodTypeName = new global::System.Data.DataColumn("GoodTypeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGoodTypeName);
+                this.columnSumFeeAmount = new global::System.Data.DataColumn("SumFeeAmount", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSumFeeAmount);
+                this.columnCountVehicle.ReadOnly = true;
+                this.columnName.MaxLength = 1000;
+                this.columnGoodTypeName.MaxLength = 500;
+                this.columnSumFeeAmount.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ViewVehicleFreightRow NewViewVehicleFreightRow() {
+                return ((ViewVehicleFreightRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ViewVehicleFreightRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ViewVehicleFreightRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ViewVehicleFreightRowChanged != null)) {
+                    this.ViewVehicleFreightRowChanged(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ViewVehicleFreightRowChanging != null)) {
+                    this.ViewVehicleFreightRowChanging(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ViewVehicleFreightRowDeleted != null)) {
+                    this.ViewVehicleFreightRowDeleted(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ViewVehicleFreightRowDeleting != null)) {
+                    this.ViewVehicleFreightRowDeleting(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveViewVehicleFreightRow(ViewVehicleFreightRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet2 ds = new DataSet2();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ViewVehicleFreightDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ViewAllDeclarationTNTXDataTable : global::System.Data.TypedTableBase<ViewAllDeclarationTNTXRow> {
             
             private global::System.Data.DataColumn columnDeclarationID;
@@ -2228,6 +2535,8 @@ namespace ECustoms {
             private global::System.Data.DataColumn columnPersonHandoverID;
             
             private global::System.Data.DataColumn columnPersonHandoverName;
+            
+            private global::System.Data.DataColumn columnReceiveNumberInYear;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2552,6 +2861,14 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ReceiveNumberInYearColumn {
+                get {
+                    return this.columnReceiveNumberInYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2623,7 +2940,8 @@ namespace ECustoms {
                         bool IsExport, 
                         string StatusExport, 
                         int PersonHandoverID, 
-                        string PersonHandoverName) {
+                        string PersonHandoverName, 
+                        long ReceiveNumberInYear) {
                 ViewAllDeclarationTNTXRow rowViewAllDeclarationTNTXRow = ((ViewAllDeclarationTNTXRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DeclarationID,
@@ -2661,7 +2979,8 @@ namespace ECustoms {
                         IsExport,
                         StatusExport,
                         PersonHandoverID,
-                        PersonHandoverName};
+                        PersonHandoverName,
+                        ReceiveNumberInYear};
                 rowViewAllDeclarationTNTXRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewAllDeclarationTNTXRow);
                 return rowViewAllDeclarationTNTXRow;
@@ -2720,6 +3039,7 @@ namespace ECustoms {
                 this.columnStatusExport = base.Columns["StatusExport"];
                 this.columnPersonHandoverID = base.Columns["PersonHandoverID"];
                 this.columnPersonHandoverName = base.Columns["PersonHandoverName"];
+                this.columnReceiveNumberInYear = base.Columns["ReceiveNumberInYear"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2797,6 +3117,8 @@ namespace ECustoms {
                 base.Columns.Add(this.columnPersonHandoverID);
                 this.columnPersonHandoverName = new global::System.Data.DataColumn("PersonHandoverName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPersonHandoverName);
+                this.columnReceiveNumberInYear = new global::System.Data.DataColumn("ReceiveNumberInYear", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceiveNumberInYear);
                 this.columnDeclarationID.AllowDBNull = false;
                 this.columnCompanyName.MaxLength = 500;
                 this.columnProductName.MaxLength = 500;
@@ -2906,313 +3228,6 @@ namespace ECustoms {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ViewAllDeclarationTNTXDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ViewVehicleFreightDataTable : global::System.Data.TypedTableBase<ViewVehicleFreightRow> {
-            
-            private global::System.Data.DataColumn columnvehicleTypeId;
-            
-            private global::System.Data.DataColumn columnCountVehicle;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            private global::System.Data.DataColumn columnGoodTypeName;
-            
-            private global::System.Data.DataColumn columnSumFeeAmount;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewVehicleFreightDataTable() {
-                this.TableName = "ViewVehicleFreight";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ViewVehicleFreightDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ViewVehicleFreightDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn vehicleTypeIdColumn {
-                get {
-                    return this.columnvehicleTypeId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CountVehicleColumn {
-                get {
-                    return this.columnCountVehicle;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GoodTypeNameColumn {
-                get {
-                    return this.columnGoodTypeName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SumFeeAmountColumn {
-                get {
-                    return this.columnSumFeeAmount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewVehicleFreightRow this[int index] {
-                get {
-                    return ((ViewVehicleFreightRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ViewVehicleFreightRowChangeEventHandler ViewVehicleFreightRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddViewVehicleFreightRow(ViewVehicleFreightRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewVehicleFreightRow AddViewVehicleFreightRow(int vehicleTypeId, int CountVehicle, string Name, string GoodTypeName, long SumFeeAmount) {
-                ViewVehicleFreightRow rowViewVehicleFreightRow = ((ViewVehicleFreightRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        vehicleTypeId,
-                        CountVehicle,
-                        Name,
-                        GoodTypeName,
-                        SumFeeAmount};
-                rowViewVehicleFreightRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowViewVehicleFreightRow);
-                return rowViewVehicleFreightRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ViewVehicleFreightDataTable cln = ((ViewVehicleFreightDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ViewVehicleFreightDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnvehicleTypeId = base.Columns["vehicleTypeId"];
-                this.columnCountVehicle = base.Columns["CountVehicle"];
-                this.columnName = base.Columns["Name"];
-                this.columnGoodTypeName = base.Columns["GoodTypeName"];
-                this.columnSumFeeAmount = base.Columns["SumFeeAmount"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnvehicleTypeId = new global::System.Data.DataColumn("vehicleTypeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvehicleTypeId);
-                this.columnCountVehicle = new global::System.Data.DataColumn("CountVehicle", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCountVehicle);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnGoodTypeName = new global::System.Data.DataColumn("GoodTypeName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGoodTypeName);
-                this.columnSumFeeAmount = new global::System.Data.DataColumn("SumFeeAmount", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSumFeeAmount);
-                this.columnCountVehicle.ReadOnly = true;
-                this.columnName.MaxLength = 1000;
-                this.columnGoodTypeName.MaxLength = 500;
-                this.columnSumFeeAmount.ReadOnly = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewVehicleFreightRow NewViewVehicleFreightRow() {
-                return ((ViewVehicleFreightRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ViewVehicleFreightRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ViewVehicleFreightRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ViewVehicleFreightRowChanged != null)) {
-                    this.ViewVehicleFreightRowChanged(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ViewVehicleFreightRowChanging != null)) {
-                    this.ViewVehicleFreightRowChanging(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ViewVehicleFreightRowDeleted != null)) {
-                    this.ViewVehicleFreightRowDeleted(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ViewVehicleFreightRowDeleting != null)) {
-                    this.ViewVehicleFreightRowDeleting(this, new ViewVehicleFreightRowChangeEvent(((ViewVehicleFreightRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveViewVehicleFreightRow(ViewVehicleFreightRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet2 ds = new DataSet2();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ViewVehicleFreightDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6712,6 +6727,161 @@ namespace ECustoms {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class ViewVehicleFreightRow : global::System.Data.DataRow {
+            
+            private ViewVehicleFreightDataTable tableViewVehicleFreight;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ViewVehicleFreightRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableViewVehicleFreight = ((ViewVehicleFreightDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int vehicleTypeId {
+                get {
+                    try {
+                        return ((int)(this[this.tableViewVehicleFreight.vehicleTypeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'vehicleTypeId\' in table \'ViewVehicleFreight\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewVehicleFreight.vehicleTypeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CountVehicle {
+                get {
+                    try {
+                        return ((int)(this[this.tableViewVehicleFreight.CountVehicleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountVehicle\' in table \'ViewVehicleFreight\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewVehicleFreight.CountVehicleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewVehicleFreight.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'ViewVehicleFreight\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewVehicleFreight.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GoodTypeName {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewVehicleFreight.GoodTypeNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GoodTypeName\' in table \'ViewVehicleFreight\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewVehicleFreight.GoodTypeNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long SumFeeAmount {
+                get {
+                    try {
+                        return ((long)(this[this.tableViewVehicleFreight.SumFeeAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SumFeeAmount\' in table \'ViewVehicleFreight\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewVehicleFreight.SumFeeAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsvehicleTypeIdNull() {
+                return this.IsNull(this.tableViewVehicleFreight.vehicleTypeIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetvehicleTypeIdNull() {
+                this[this.tableViewVehicleFreight.vehicleTypeIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCountVehicleNull() {
+                return this.IsNull(this.tableViewVehicleFreight.CountVehicleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCountVehicleNull() {
+                this[this.tableViewVehicleFreight.CountVehicleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableViewVehicleFreight.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableViewVehicleFreight.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGoodTypeNameNull() {
+                return this.IsNull(this.tableViewVehicleFreight.GoodTypeNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGoodTypeNameNull() {
+                this[this.tableViewVehicleFreight.GoodTypeNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSumFeeAmountNull() {
+                return this.IsNull(this.tableViewVehicleFreight.SumFeeAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSumFeeAmountNull() {
+                this[this.tableViewVehicleFreight.SumFeeAmountColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class ViewAllDeclarationTNTXRow : global::System.Data.DataRow {
             
             private ViewAllDeclarationTNTXDataTable tableViewAllDeclarationTNTX;
@@ -7303,6 +7473,23 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long ReceiveNumberInYear {
+                get {
+                    try {
+                        return ((long)(this[this.tableViewAllDeclarationTNTX.ReceiveNumberInYearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceiveNumberInYear\' in table \'ViewAllDeclarationTNTX\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.ReceiveNumberInYearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumberNull() {
                 return this.IsNull(this.tableViewAllDeclarationTNTX.NumberColumn);
             }
@@ -7708,160 +7895,17 @@ namespace ECustoms {
             public void SetPersonHandoverNameNull() {
                 this[this.tableViewAllDeclarationTNTX.PersonHandoverNameColumn] = global::System.Convert.DBNull;
             }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ViewVehicleFreightRow : global::System.Data.DataRow {
-            
-            private ViewVehicleFreightDataTable tableViewVehicleFreight;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ViewVehicleFreightRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableViewVehicleFreight = ((ViewVehicleFreightDataTable)(this.Table));
+            public bool IsReceiveNumberInYearNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.ReceiveNumberInYearColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int vehicleTypeId {
-                get {
-                    try {
-                        return ((int)(this[this.tableViewVehicleFreight.vehicleTypeIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'vehicleTypeId\' in table \'ViewVehicleFreight\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewVehicleFreight.vehicleTypeIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CountVehicle {
-                get {
-                    try {
-                        return ((int)(this[this.tableViewVehicleFreight.CountVehicleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CountVehicle\' in table \'ViewVehicleFreight\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewVehicleFreight.CountVehicleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableViewVehicleFreight.NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'ViewVehicleFreight\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewVehicleFreight.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GoodTypeName {
-                get {
-                    try {
-                        return ((string)(this[this.tableViewVehicleFreight.GoodTypeNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GoodTypeName\' in table \'ViewVehicleFreight\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewVehicleFreight.GoodTypeNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long SumFeeAmount {
-                get {
-                    try {
-                        return ((long)(this[this.tableViewVehicleFreight.SumFeeAmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SumFeeAmount\' in table \'ViewVehicleFreight\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableViewVehicleFreight.SumFeeAmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsvehicleTypeIdNull() {
-                return this.IsNull(this.tableViewVehicleFreight.vehicleTypeIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetvehicleTypeIdNull() {
-                this[this.tableViewVehicleFreight.vehicleTypeIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCountVehicleNull() {
-                return this.IsNull(this.tableViewVehicleFreight.CountVehicleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCountVehicleNull() {
-                this[this.tableViewVehicleFreight.CountVehicleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableViewVehicleFreight.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableViewVehicleFreight.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGoodTypeNameNull() {
-                return this.IsNull(this.tableViewVehicleFreight.GoodTypeNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGoodTypeNameNull() {
-                this[this.tableViewVehicleFreight.GoodTypeNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSumFeeAmountNull() {
-                return this.IsNull(this.tableViewVehicleFreight.SumFeeAmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSumFeeAmountNull() {
-                this[this.tableViewVehicleFreight.SumFeeAmountColumn] = global::System.Convert.DBNull;
+            public void SetReceiveNumberInYearNull() {
+                this[this.tableViewAllDeclarationTNTX.ReceiveNumberInYearColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8572,22 +8616,22 @@ namespace ECustoms {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ViewAllDeclarationTNTXRowChangeEvent : global::System.EventArgs {
+        public class ViewVehicleFreightRowChangeEvent : global::System.EventArgs {
             
-            private ViewAllDeclarationTNTXRow eventRow;
+            private ViewVehicleFreightRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewAllDeclarationTNTXRowChangeEvent(ViewAllDeclarationTNTXRow row, global::System.Data.DataRowAction action) {
+            public ViewVehicleFreightRowChangeEvent(ViewVehicleFreightRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewAllDeclarationTNTXRow Row {
+            public ViewVehicleFreightRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8606,22 +8650,22 @@ namespace ECustoms {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ViewVehicleFreightRowChangeEvent : global::System.EventArgs {
+        public class ViewAllDeclarationTNTXRowChangeEvent : global::System.EventArgs {
             
-            private ViewVehicleFreightRow eventRow;
+            private ViewAllDeclarationTNTXRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewVehicleFreightRowChangeEvent(ViewVehicleFreightRow row, global::System.Data.DataRowAction action) {
+            public ViewAllDeclarationTNTXRowChangeEvent(ViewAllDeclarationTNTXRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewVehicleFreightRow Row {
+            public ViewAllDeclarationTNTXRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -9223,208 +9267,6 @@ namespace ECustoms.DataSet2TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ViewAllDeclarationTNTXTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ViewAllDeclarationTNTXTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ViewAllDeclarationTNTX";
-            tableMapping.ColumnMappings.Add("DeclarationID", "DeclarationID");
-            tableMapping.ColumnMappings.Add("Number", "Number");
-            tableMapping.ColumnMappings.Add("CompanyName", "CompanyName");
-            tableMapping.ColumnMappings.Add("ProductName", "ProductName");
-            tableMapping.ColumnMappings.Add("ProductAmount", "ProductAmount");
-            tableMapping.ColumnMappings.Add("Unit", "Unit");
-            tableMapping.ColumnMappings.Add("CreatedByID", "CreatedByID");
-            tableMapping.ColumnMappings.Add("CreatedByName", "CreatedByName");
-            tableMapping.ColumnMappings.Add("ModifiedByID", "ModifiedByID");
-            tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
-            tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate");
-            tableMapping.ColumnMappings.Add("HasDeclaration", "HasDeclaration");
-            tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("CompanyCode", "CompanyCode");
-            tableMapping.ColumnMappings.Add("RegisterDate", "RegisterDate");
-            tableMapping.ColumnMappings.Add("DeclarationType", "DeclarationType");
-            tableMapping.ColumnMappings.Add("ConfirmStatus", "ConfirmStatus");
-            tableMapping.ColumnMappings.Add("ConfirmDate", "ConfirmDate");
-            tableMapping.ColumnMappings.Add("RegisterPlace", "RegisterPlace");
-            tableMapping.ColumnMappings.Add("Money", "Money");
-            tableMapping.ColumnMappings.Add("NumberHandover", "NumberHandover");
-            tableMapping.ColumnMappings.Add("DateHandover", "DateHandover");
-            tableMapping.ColumnMappings.Add("DateReturn", "DateReturn");
-            tableMapping.ColumnMappings.Add("PersonConfirmReturnID", "PersonConfirmReturnID");
-            tableMapping.ColumnMappings.Add("PersonConfirmReturnName", "PersonConfirmReturnName");
-            tableMapping.ColumnMappings.Add("NumberTemp", "NumberTemp");
-            tableMapping.ColumnMappings.Add("GateExport", "GateExport");
-            tableMapping.ColumnMappings.Add("TypeOption", "TypeOption");
-            tableMapping.ColumnMappings.Add("Seal", "Seal");
-            tableMapping.ColumnMappings.Add("VehicleID", "VehicleID");
-            tableMapping.ColumnMappings.Add("PlateNumber", "PlateNumber");
-            tableMapping.ColumnMappings.Add("NumberOfContainer", "NumberOfContainer");
-            tableMapping.ColumnMappings.Add("IsExport", "IsExport");
-            tableMapping.ColumnMappings.Add("StatusExport", "StatusExport");
-            tableMapping.ColumnMappings.Add("PersonHandoverID", "PersonHandoverID");
-            tableMapping.ColumnMappings.Add("PersonHandoverName", "PersonHandoverName");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ECustoms.Properties.Settings.Default.eCustomsConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ViewAllDeclarationTNTX.*\r\nFROM            ViewAllDeclarationTNTX";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet2.ViewAllDeclarationTNTXDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet2.ViewAllDeclarationTNTXDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet2.ViewAllDeclarationTNTXDataTable dataTable = new DataSet2.ViewAllDeclarationTNTXDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class ViewVehicleFreightTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -9575,6 +9417,209 @@ namespace ECustoms.DataSet2TableAdapters {
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ViewAllDeclarationTNTXTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ViewAllDeclarationTNTXTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ViewAllDeclarationTNTX";
+            tableMapping.ColumnMappings.Add("DeclarationID", "DeclarationID");
+            tableMapping.ColumnMappings.Add("Number", "Number");
+            tableMapping.ColumnMappings.Add("CompanyName", "CompanyName");
+            tableMapping.ColumnMappings.Add("ProductName", "ProductName");
+            tableMapping.ColumnMappings.Add("ProductAmount", "ProductAmount");
+            tableMapping.ColumnMappings.Add("Unit", "Unit");
+            tableMapping.ColumnMappings.Add("CreatedByID", "CreatedByID");
+            tableMapping.ColumnMappings.Add("CreatedByName", "CreatedByName");
+            tableMapping.ColumnMappings.Add("ModifiedByID", "ModifiedByID");
+            tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate");
+            tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate");
+            tableMapping.ColumnMappings.Add("HasDeclaration", "HasDeclaration");
+            tableMapping.ColumnMappings.Add("Type", "Type");
+            tableMapping.ColumnMappings.Add("CompanyCode", "CompanyCode");
+            tableMapping.ColumnMappings.Add("RegisterDate", "RegisterDate");
+            tableMapping.ColumnMappings.Add("DeclarationType", "DeclarationType");
+            tableMapping.ColumnMappings.Add("ConfirmStatus", "ConfirmStatus");
+            tableMapping.ColumnMappings.Add("ConfirmDate", "ConfirmDate");
+            tableMapping.ColumnMappings.Add("RegisterPlace", "RegisterPlace");
+            tableMapping.ColumnMappings.Add("Money", "Money");
+            tableMapping.ColumnMappings.Add("NumberHandover", "NumberHandover");
+            tableMapping.ColumnMappings.Add("DateHandover", "DateHandover");
+            tableMapping.ColumnMappings.Add("DateReturn", "DateReturn");
+            tableMapping.ColumnMappings.Add("PersonConfirmReturnID", "PersonConfirmReturnID");
+            tableMapping.ColumnMappings.Add("PersonConfirmReturnName", "PersonConfirmReturnName");
+            tableMapping.ColumnMappings.Add("NumberTemp", "NumberTemp");
+            tableMapping.ColumnMappings.Add("GateExport", "GateExport");
+            tableMapping.ColumnMappings.Add("TypeOption", "TypeOption");
+            tableMapping.ColumnMappings.Add("Seal", "Seal");
+            tableMapping.ColumnMappings.Add("VehicleID", "VehicleID");
+            tableMapping.ColumnMappings.Add("PlateNumber", "PlateNumber");
+            tableMapping.ColumnMappings.Add("NumberOfContainer", "NumberOfContainer");
+            tableMapping.ColumnMappings.Add("IsExport", "IsExport");
+            tableMapping.ColumnMappings.Add("StatusExport", "StatusExport");
+            tableMapping.ColumnMappings.Add("PersonHandoverID", "PersonHandoverID");
+            tableMapping.ColumnMappings.Add("PersonHandoverName", "PersonHandoverName");
+            tableMapping.ColumnMappings.Add("ReceiveNumberInYear", "ReceiveNumberInYear");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ECustoms.Properties.Settings.Default.dbECustomsConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        ViewAllDeclarationTNTX.*\r\nFROM            ViewAllDeclarationTNTX";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet2.ViewAllDeclarationTNTXDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet2.ViewAllDeclarationTNTXDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet2.ViewAllDeclarationTNTXDataTable dataTable = new DataSet2.ViewAllDeclarationTNTXDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

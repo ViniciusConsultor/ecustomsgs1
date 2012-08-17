@@ -43,5 +43,16 @@ namespace ECustoms.Properties {
                 return ((string)(this["eCustomsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THANHTUNG-PC;Initial Catalog=dbECustoms;Persist Security Info=True;Us" +
+            "er ID=sa;Password=thanhtung123654;MultipleActiveResultSets=True")]
+        public string dbECustomsConnectionString {
+            get {
+                return ((string)(this["dbECustomsConnectionString"]));
+            }
+        }
     }
 }
