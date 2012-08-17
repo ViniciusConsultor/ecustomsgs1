@@ -63,6 +63,8 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -76,6 +78,12 @@
     <Compile Include="CustomsFacory.cs" />
     <Compile Include="DeclarationFactory.cs" />
     <Compile Include="DeclarationVehicleFactory.cs" />
+    <Compile Include="FrmReceiveNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceiveNumber.Designer.cs">
+      <DependentUpon>FrmReceiveNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="GateFactory.cs" />
     <Compile Include="GoodTypeFactory.cs" />
     <Compile Include="GroupFactory.cs" />
@@ -119,6 +127,11 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmReceiveNumber.resx">
+      <DependentUpon>FrmReceiveNumber.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

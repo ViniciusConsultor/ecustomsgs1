@@ -11,6 +11,7 @@ namespace ECustoms.BOL
   {
     public const string TOTAL_TICKET_IN_DATE = "TOTAL_TICKET_IN_DATE";
     public const string TOTAL_EXPORT_PARK_TICKET_IN_DATE = "TOTAL_EXPORT_PARK_TICKET_IN_DATE";
+    public const string TOTAL_TEMP_RECEIVE_NUMBER_IN_YEAR = "TOTAL_TEMP_RECEIVE_NUMBER_IN_YEAR"; //so tiep nhan tam nhap tai xuat trong nam
 
     public static dbEcustomEntities _db =
         new dbEcustomEntities(
@@ -34,6 +35,38 @@ namespace ECustoms.BOL
         else
         {
             if (currentDate.DayOfYear != ((DateTime)appObj.ApplicationObjectValueDatetime).DayOfYear)
+            {
+                appObj.ApplicationObjectValueDatetime = currentDate;
+                appObj.ApplicationObjectValueLong = 1;
+            }
+            else
+            {
+                appObj.ApplicationObjectValueLong = appObj.ApplicationObjectValueLong + 1;
+            }
+            ApplicationObjectFactory.Update(appObj);
+        }
+        long applicationObjectValueLong = appObj.ApplicationObjectValueLong.GetValueOrDefault();
+        return applicationObjectValueLong;
+    }
+
+
+    //cap nhat so tiep nhap TNTX trong nam
+    //day la tong so tiep nhap TNTX trong nam
+    public static long updateTotalReceiveNumber()
+    {
+        tblApplicationObject appObj = ApplicationObjectFactory.getByName(TOTAL_TEMP_RECEIVE_NUMBER_IN_YEAR);
+        DateTime currentDate = CommonFactory.GetCurrentDate();
+        if (appObj == null)
+        {
+            appObj = new tblApplicationObject();
+            appObj.ApplicationObjectName = TOTAL_TEMP_RECEIVE_NUMBER_IN_YEAR;
+            appObj.ApplicationObjectValueDatetime = CommonFactory.GetCurrentDate();
+            appObj.ApplicationObjectValueLong = 1;
+            ApplicationObjectFactory.Insert(appObj);
+        }
+        else
+        {
+            if (currentDate.Year != ((DateTime)appObj.ApplicationObjectValueDatetime).Year)
             {
                 appObj.ApplicationObjectValueDatetime = currentDate;
                 appObj.ApplicationObjectValueLong = 1;

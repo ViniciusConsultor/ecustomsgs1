@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace ECustoms
 {
-    public partial class FrmDecleExport : SubFormBase
+    public partial class FrmDecleExport : Form
     {
         #region Private variables
         private int _mode;
@@ -273,9 +273,20 @@ namespace ECustoms
 
                     } // End for
                 }
+                //cap nhat So tiep nhap tai khai Xuat chuyen khai trong nam
+                //cap nhat khi la xuat khau chuyen cua khau
+                if (declarationInfo.DeclarationType == (short)Common.DeclerationType.Export && declarationInfo.TypeOption==1)
+                {
+                    long receiveNumber = ApplicationObjectFactory.updateTotalReceiveNumber();
+                    declarationInfo.ReceiveNumberInYear = receiveNumber;
+                }
+
                 // TODO: Need to check return value
                 DeclarationFactory.AddDeclaration(declarationInfo, listVehicleInfo, listVehicleUpdate, _userInfo.UserID);
-                MessageBox.Show(ConstantInfo.MESSAGE_INSERT_SUCESSFULLY);
+                //MessageBox.Show(ConstantInfo.MESSAGE_INSERT_SUCESSFULLY);
+                FrmReceiveNumber frmReceiveNumber = new FrmReceiveNumber(declarationInfo.ReceiveNumberInYear.GetValueOrDefault());
+                frmReceiveNumber.MdiParent = this.MdiParent;
+                frmReceiveNumber.Show(this);
 
                 switch (this.Owner.Name.ToUpper())
                 {
