@@ -9,8 +9,11 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using ConnectionController;
+using ECustoms.BOL;
 using ECustoms.DAL;
+using ECustoms.Utilities;
 using ExceptionHandler.Logging;
+using techlink.Digest;
 
 namespace TechLink.WindowsClientSync
 {
@@ -19,11 +22,47 @@ namespace TechLink.WindowsClientSync
         private WindowsServiceLog logging = new WindowsServiceLog();
         public static NameValueCollection Settings = null;
         private ClientConfigurableSettings clientConfigurableSettings = null;
-
+        ServerInterfacesHelper serverInterfacesHelper = null;
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private ClientInfo clientInfo = null;
         public eCustomClientSyncSvc()
         {
             InitializeComponent();
             logging.WriteEntry("Initialize Service");
+            timer.Interval = 5000;
+            timer.Tick += new EventHandler(timer_Tick);
+            clientInfo = new ClientInfo();
+            var bone = BoneReader.GetBoneInfo(FDHelper.RgGetUserProfilePath());
+            var s = XRayController.TranslateBoneInformation(bone);
+            string[] ss = s.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 6; i++)
+            {
+                sb.AppendLine(ss[i]);
+            }
+
+            // Set company name
+            if (ss[1] != null)
+            {
+                clientInfo.Name = ss[1].ToString();
+            }
+
+
+            //clientInfo.Serial = FDHelper.get
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            var ProxyGenericServer = serverInterfacesHelper.ServerInterfacesDispatcher.GenericServer;
+            var UnSyncedUsers = UserFactory.SelectAllUnSyncedUser();
+
+            if (UnSyncedUsers.Count <= 20)
+            {
+
+            }
+
         }
 
         protected override void OnStart(string[] args)
@@ -39,8 +78,6 @@ namespace TechLink.WindowsClientSync
             #endregion
 
             #region Init Remote Connection
-
-            ServerInterfacesHelper serverInterfacesHelper = null;
             try
             {
                 serverInterfacesHelper = ConnectionManager.ConnectToServer(
@@ -67,8 +104,8 @@ namespace TechLink.WindowsClientSync
                 Process.GetCurrentProcess().Kill();
             }
 
-            var ProxyGenericServer = serverInterfacesHelper.ServerInterfacesDispatcher.GenericServer;
-            
+
+
             logging.WriteEntry("Start Service successfully!");
         }
 

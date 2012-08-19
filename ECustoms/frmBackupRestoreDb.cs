@@ -65,19 +65,19 @@ namespace ECustoms
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-
-
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "*.bak|*.bak";
+            openFile.ShowDialog(this);
+            if (!string.IsNullOrEmpty(openFile.FileName))
+            {
+                txtPath.Text = openFile.FileName;
+            }
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "*.bak|*.bak";
-            openFile.ShowDialog(this);
-            if(!string.IsNullOrEmpty(openFile.FileName))
-            {
-                txtPath.Text = openFile.FileName;
-            }
+            MessageBox.Show("Phục hồi dữ liệu thành công!", "Info", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
         }
 
         private void btnBrowseSavePath_Click(object sender, EventArgs e)

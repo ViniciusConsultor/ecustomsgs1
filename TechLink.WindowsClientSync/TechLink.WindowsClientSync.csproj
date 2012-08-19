@@ -39,6 +39,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -73,9 +74,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ECustoms.BOL\ECustoms.BOL.csproj">
+      <Project>{0494EB3E-3E10-4058-B8B0-0B461E84D154}</Project>
+      <Name>ECustoms.BOL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ECustoms.DAL\ECustoms.DAL.csproj">
       <Project>{8AC95DDB-A7DD-40D6-A0ED-323D9B601B99}</Project>
       <Name>ECustoms.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECustoms.Utilities\ECustoms.Utilities.csproj">
+      <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
+      <Name>ECustoms.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\techlink.Digest\techlink.Digest.csproj">
+      <Project>{ACD706C7-4946-4D64-B590-8389B861F825}</Project>
+      <Name>techlink.Digest</Name>
     </ProjectReference>
     <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ClientServerExchange\ClientServerExchange.csproj">
       <Project>{E6E4854D-C474-4082-8CA4-A5D1988EECE3}</Project>
