@@ -77,6 +77,12 @@
     <Compile Include="cTrackBar.cs" />
     <Compile Include="cTransition.cs" />
     <Compile Include="cTreeView.cs" />
+    <Compile Include="MsButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MsButton.Designer.cs">
+      <DependentUpon>MsButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Office2007LightColorTable.cs" />
     <Compile Include="Office2007LightHelpers.cs" />
     <Compile Include="Office2007LightRenderer.cs" />

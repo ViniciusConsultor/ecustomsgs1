@@ -153,6 +153,14 @@ namespace ECustoms.BOL
             return list;
         }
 
+        public static List<tblUser> SelectAllUnSyncedUser()
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            List<tblUser> list = (from item in db.tblUsers where item.IsSynced==false orderby item.Name select item).ToList();
+            db.Connection.Close();
+            return list;
+        }
+
         public static List<tblUser> SearchByName(string name)
         {
             if (string.IsNullOrEmpty(name))

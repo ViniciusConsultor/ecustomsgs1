@@ -62,7 +62,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(15, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 254);
+            this.panel1.Size = new System.Drawing.Size(556, 236);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -73,6 +73,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(221, 20);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // btnExit
             // 
@@ -152,7 +153,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox1.Size = new System.Drawing.Size(266, 254);
+            this.groupBox1.Size = new System.Drawing.Size(266, 236);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách CSDL chi Cục";
@@ -164,7 +165,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(8, 23);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(250, 223);
+            this.dataGridView1.Size = new System.Drawing.Size(250, 205);
             this.dataGridView1.TabIndex = 0;
             // 
             // frmBranchesManager
@@ -172,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(602, 284);
+            this.ClientSize = new System.Drawing.Size(586, 266);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

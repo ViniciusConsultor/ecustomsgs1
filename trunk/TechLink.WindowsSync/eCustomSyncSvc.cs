@@ -10,6 +10,8 @@ using System.Reflection;
 using System.Runtime.Remoting;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
+using System.Timers;
 using AbstractServerConsole;
 using ExceptionHandler;
 using ExceptionHandler.Logging;
@@ -22,10 +24,20 @@ namespace TechLink.WindowsSync
         private static IServerConsole serverActivator = null;
         WindowsServiceLog logging = new WindowsServiceLog();
 
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+
+        
         public eCustomSyncSvc()
         {
             new WindowsServiceLog().WriteEntry("Service Initialize");
             InitializeComponent();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = 5000;
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            
         }
 
         protected override void OnStart(string[] args)
@@ -70,6 +82,8 @@ namespace TechLink.WindowsSync
             {
                 logging.WriteEntry(exception, "eCustomSyncSvc c-tor");
             }
+
+            timer.Start();
 
             logging.WriteEntry("Start Service successfully!");
         }
