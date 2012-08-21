@@ -86,9 +86,9 @@
       <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
       <Name>ECustoms.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\techlink.Digest\techlink.Digest.csproj">
+    <ProjectReference Include="..\techlink.Digest\Techlink.Digest.csproj">
       <Project>{ACD706C7-4946-4D64-B590-8389B861F825}</Project>
-      <Name>techlink.Digest</Name>
+      <Name>Techlink.Digest</Name>
     </ProjectReference>
     <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ClientServerExchange\ClientServerExchange.csproj">
       <Project>{E6E4854D-C474-4082-8CA4-A5D1988EECE3}</Project>
