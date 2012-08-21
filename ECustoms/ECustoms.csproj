@@ -853,9 +853,9 @@
       <Project>{2086B386-76E0-4AC3-9090-9CCDA0D8A606}</Project>
       <Name>System.Windows.Forms.ResourcesManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\techlink.Digest\techlink.Digest.csproj">
+    <ProjectReference Include="..\techlink.Digest\Techlink.Digest.csproj">
       <Project>{ACD706C7-4946-4D64-B590-8389B861F825}</Project>
-      <Name>techlink.Digest</Name>
+      <Name>Techlink.Digest</Name>
     </ProjectReference>
     <ProjectReference Include="..\TechLink.Tools\TechLink.DatabaseViewer\TechLink.DatabaseViewer.csproj">
       <Project>{8E56F49A-2D2A-491A-9C3A-964BFBAD94A8}</Project>

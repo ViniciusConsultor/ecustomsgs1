@@ -15,7 +15,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -31,6 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,16 +78,57 @@
     <Compile Include="cTrackBar.cs" />
     <Compile Include="cTransition.cs" />
     <Compile Include="cTreeView.cs" />
+    <Compile Include="DatasourceUtils.cs" />
+    <Compile Include="DrawHelper.cs" />
+    <Compile Include="INiqControl.cs" />
+    <Compile Include="INiqInputControl.cs" />
+    <Compile Include="InputTypes.cs" />
+    <Compile Include="IObjectData.cs" />
+    <Compile Include="ITranslate.cs" />
     <Compile Include="MsButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MsButton.Designer.cs">
       <DependentUpon>MsButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="NiqButtonCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NiqColorTable.cs" />
+    <Compile Include="NiqExtentions.cs" />
+    <Compile Include="NiqInputGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NiqInputGroup.designer.cs">
+      <DependentUpon>NiqInputGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NiqLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NiqLabel.designer.cs">
+      <DependentUpon>NiqLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NiqPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NiqPanel.designer.cs">
+      <DependentUpon>NiqPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NiqTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NiqTextbox.designer.cs">
+      <DependentUpon>NiqTextbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Office2007LightColorTable.cs" />
     <Compile Include="Office2007LightHelpers.cs" />
     <Compile Include="Office2007LightRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -104,6 +146,27 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NiqButtonCell.resx">
+      <DependentUpon>NiqButtonCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NiqLabel.resx">
+      <DependentUpon>NiqLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NiqTextbox.resx">
+      <DependentUpon>NiqTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
