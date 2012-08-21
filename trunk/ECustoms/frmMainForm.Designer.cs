@@ -333,7 +333,7 @@
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Image = global::ECustoms.Properties.Resources.recycle;
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Name = "hàngTạmNhậpTáiXuấtToolStripMenuItem";
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Text = "Hàng tạm nhập tái xuất";
+            this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Text = "Hàng TNTX, Quá cảnh";
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem.Click += new System.EventHandler(this.hàngTạmNhậpTáiXuấtToolStripMenuItem_Click);
             // 
             // mnuFeeManagement
@@ -569,7 +569,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1172, 640);
+            this.ClientSize = new System.Drawing.Size(1172, 642);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
