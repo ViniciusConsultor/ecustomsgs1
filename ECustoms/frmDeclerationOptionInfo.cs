@@ -49,7 +49,7 @@ namespace ECustoms
                         pnExportGate.Visible = false;
                         break;
                     case Common.DeclerationOptionType.TNTX:
-                        lblHeader.Text = "Quản lý hàng tạm nhập tái xuất";
+                        lblHeader.Text = "Quản lý hàng tạm nhập tái xuất, hàng quá cảnh";
                         pnCustom.Visible = false;
                         break;
                     default:
