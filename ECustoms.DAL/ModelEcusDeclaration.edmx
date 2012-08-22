@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EcusDeclarationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="EcusDeclarationModelStoreContainer">
+          <EntitySet Name="DToKhaiMD" EntityType="EcusDeclarationModel.Store.DToKhaiMD" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="DToKhaiMD">
+          <Key>
+            <PropertyRef Name="SoTK" />
+            <PropertyRef Name="Ma_LH" />
+            <PropertyRef Name="Ma_HQ" />
+            <PropertyRef Name="NamDK" />
+          </Key>
+          <Property Name="SoTK" Type="int" Nullable="false" />
+          <Property Name="Ma_LH" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Ma_HQ" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="NamDK" Type="smallint" Nullable="false" />
+          <Property Name="Ngay_DK" Type="datetime" Nullable="false" />
+          <Property Name="Ma_DV" Type="varchar" Nullable="false" MaxLength="17" />
+          <Property Name="Ma_DVUT" Type="varchar" MaxLength="17" />
+          <Property Name="DV_DT" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Ma_PTVT" Type="varchar" MaxLength="3" />
+          <Property Name="Ten_PTVT" Type="varchar" MaxLength="20" />
+          <Property Name="NgayKH" Type="datetime" />
+          <Property Name="NgayDen" Type="datetime" />
+          <Property Name="Van_Don" Type="varchar" MaxLength="35" />
+          <Property Name="Ma_CK" Type="char" MaxLength="4" />
+          <Property Name="CangNN" Type="varchar" MaxLength="40" />
+          <Property Name="So_GP" Type="varchar" MaxLength="100" />
+          <Property Name="Ngay_GP" Type="datetime" />
+          <Property Name="Ngay_HHGP" Type="datetime" />
+          <Property Name="So_HD" Type="varchar" MaxLength="50" />
+          <Property Name="TyGia_USD" Type="money" Nullable="false" />
+          <Property Name="Ngay_HD" Type="datetime" />
+          <Property Name="Ngay_HHHD" Type="datetime" />
+          <Property Name="Nuoc_XK" Type="char" MaxLength="3" />
+          <Property Name="Nuoc_NK" Type="char" MaxLength="3" />
+          <Property Name="Ma_GH" Type="varchar" Nullable="false" MaxLength="7" />
+          <Property Name="SoHang" Type="smallint" Nullable="false" />
+          <Property Name="Ma_PTTT" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Ma_NT" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="TyGia_VND" Type="money" Nullable="false" />
+          <Property Name="LePhi_HQ" Type="money" />
+          <Property Name="BL_LPHQ" Type="varchar" MaxLength="20" />
+          <Property Name="GiayTo" Type="varchar" MaxLength="40" />
+          <Property Name="TenCH" Type="varchar" MaxLength="30" />
+          <Property Name="Ngay_KB" Type="datetime" />
+          <Property Name="User_DK" Type="varchar" MaxLength="30" />
+          <Property Name="DDiem_KH" Type="varchar" MaxLength="40" />
+          <Property Name="PThuc_KH" Type="varchar" MaxLength="40" />
+          <Property Name="Ngay_KH" Type="datetime" />
+          <Property Name="User_KH1" Type="varchar" MaxLength="30" />
+          <Property Name="User_KH2" Type="varchar" MaxLength="30" />
+          <Property Name="User_PCKH" Type="varchar" MaxLength="30" />
+          <Property Name="Phi_BH" Type="money" />
+          <Property Name="Phi_VC" Type="money" />
+          <Property Name="Ngay_TH" Type="datetime" />
+          <Property Name="User_TH" Type="varchar" MaxLength="30" />
+          <Property Name="TongTGKB" Type="money" Nullable="false" />
+          <Property Name="TongTGTT" Type="money" />
+          <Property Name="Tr_Luong" Type="numeric" Scale="2" />
+          <Property Name="So_Kien" Type="numeric" Precision="15" />
+          <Property Name="So_Container" Type="numeric" Precision="15" />
+          <Property Name="NguoiNhap" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="NgayNhap" Type="datetime" Nullable="false" />
+          <Property Name="PLuong" Type="char" MaxLength="4" />
+          <Property Name="Pass_DK" Type="tinyint" Nullable="false" />
+          <Property Name="Pass_KH" Type="tinyint" Nullable="false" />
+          <Property Name="Pass_TH" Type="tinyint" Nullable="false" />
+          <Property Name="Pass_GC" Type="tinyint" Nullable="false" />
+          <Property Name="TTTK" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="PPT_GTGT" Type="char" MaxLength="1" />
+          <Property Name="PPT_GTGTUT" Type="char" MaxLength="1" />
+          <Property Name="DaTruyen" Type="char" MaxLength="1" />
+          <Property Name="Ma_DVKT" Type="char" MaxLength="17" />
+          <Property Name="ThanhKhoan" Type="tinyint" />
+          <Property Name="PPT_GTGTKT" Type="char" MaxLength="1" />
+          <Property Name="Ngay_GiaoTK" Type="datetime" />
+          <Property Name="Ngay_NhanTK" Type="datetime" />
+          <Property Name="Ngay_LuuTK" Type="datetime" />
+          <Property Name="NVPSinh" Type="ntext" />
+          <Property Name="So_Container40" Type="numeric" />
+          <Property Name="KiemHoaNK" Type="tinyint" />
+          <Property Name="So_HDTM" Type="nvarchar" MaxLength="30" />
+          <Property Name="Ngay_HDTM" Type="datetime" />
+          <Property Name="Ngay_VanDon" Type="datetime" />
+          <Property Name="Thue" Type="tinyint" />
+          <Property Name="HTKT" Type="smallint" />
+          <Property Name="TyLe_KT" Type="numeric" Scale="2" />
+          <Property Name="DenNgay_KH" Type="datetime" />
+          <Property Name="DaiDien_DN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NguoiQDHTKT" Type="nvarchar" MaxLength="50" />
+          <Property Name="So_PLTK" Type="smallint" />
+          <Property Name="Ma_MID" Type="varchar" MaxLength="50" />
+          <Property Name="MienKT" Type="tinyint" />
+          <Property Name="DeXuatKhac" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Ngay_VanDon_HH" Type="datetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EcusDeclarationModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="dbEcusDeclaration">
+          <EntitySet Name="DToKhaiMDs" EntityType="EcusDeclarationModel.DToKhaiMD" />
+        </EntityContainer>
+        <EntityType Name="DToKhaiMD">
+          <Key>
+            <PropertyRef Name="SoTK" />
+            <PropertyRef Name="Ma_LH" />
+            <PropertyRef Name="Ma_HQ" />
+            <PropertyRef Name="NamDK" />
+          </Key>
+          <Property Name="SoTK" Type="Int32" Nullable="false" />
+          <Property Name="Ma_LH" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="Ma_HQ" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="NamDK" Type="Int16" Nullable="false" />
+          <Property Name="Ngay_DK" Type="DateTime" Nullable="false" />
+          <Property Name="Ma_DV" Type="String" Nullable="false" MaxLength="17" Unicode="false" FixedLength="false" />
+          <Property Name="Ma_DVUT" Type="String" MaxLength="17" Unicode="false" FixedLength="false" />
+          <Property Name="DV_DT" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Ma_PTVT" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="Ten_PTVT" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NgayKH" Type="DateTime" />
+          <Property Name="NgayDen" Type="DateTime" />
+          <Property Name="Van_Don" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+          <Property Name="Ma_CK" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="CangNN" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="So_GP" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Ngay_GP" Type="DateTime" />
+          <Property Name="Ngay_HHGP" Type="DateTime" />
+          <Property Name="So_HD" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TyGia_USD" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Ngay_HD" Type="DateTime" />
+          <Property Name="Ngay_HHHD" Type="DateTime" />
+          <Property Name="Nuoc_XK" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="Nuoc_NK" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="Ma_GH" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="SoHang" Type="Int16" Nullable="false" />
+          <Property Name="Ma_PTTT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Ma_NT" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="TyGia_VND" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="LePhi_HQ" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BL_LPHQ" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="GiayTo" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="TenCH" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Ngay_KB" Type="DateTime" />
+          <Property Name="User_DK" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DDiem_KH" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="PThuc_KH" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Ngay_KH" Type="DateTime" />
+          <Property Name="User_KH1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="User_KH2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="User_PCKH" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Phi_BH" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Phi_VC" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Ngay_TH" Type="DateTime" />
+          <Property Name="User_TH" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="TongTGKB" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TongTGTT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Tr_Luong" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="So_Kien" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="So_Container" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="NguoiNhap" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="NgayNhap" Type="DateTime" Nullable="false" />
+          <Property Name="PLuong" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="Pass_DK" Type="Byte" Nullable="false" />
+          <Property Name="Pass_KH" Type="Byte" Nullable="false" />
+          <Property Name="Pass_TH" Type="Byte" Nullable="false" />
+          <Property Name="Pass_GC" Type="Byte" Nullable="false" />
+          <Property Name="TTTK" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PPT_GTGT" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PPT_GTGTUT" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="DaTruyen" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Ma_DVKT" Type="String" MaxLength="17" Unicode="false" FixedLength="true" />
+          <Property Name="ThanhKhoan" Type="Byte" />
+          <Property Name="PPT_GTGTKT" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Ngay_GiaoTK" Type="DateTime" />
+          <Property Name="Ngay_NhanTK" Type="DateTime" />
+          <Property Name="Ngay_LuuTK" Type="DateTime" />
+          <Property Name="NVPSinh" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="So_Container40" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="KiemHoaNK" Type="Byte" />
+          <Property Name="So_HDTM" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Ngay_HDTM" Type="DateTime" />
+          <Property Name="Ngay_VanDon" Type="DateTime" />
+          <Property Name="Thue" Type="Byte" />
+          <Property Name="HTKT" Type="Int16" />
+          <Property Name="TyLe_KT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DenNgay_KH" Type="DateTime" />
+          <Property Name="DaiDien_DN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NguoiQDHTKT" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="So_PLTK" Type="Int16" />
+          <Property Name="Ma_MID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MienKT" Type="Byte" />
+          <Property Name="DeXuatKhac" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="Ngay_VanDon_HH" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="EcusDeclarationModelStoreContainer" CdmEntityContainer="dbEcusDeclaration">
+          <EntitySetMapping Name="DToKhaiMDs"><EntityTypeMapping TypeName="EcusDeclarationModel.DToKhaiMD"><MappingFragment StoreEntitySet="DToKhaiMD">
+            <ScalarProperty Name="SoTK" ColumnName="SoTK" />
+            <ScalarProperty Name="Ma_LH" ColumnName="Ma_LH" />
+            <ScalarProperty Name="Ma_HQ" ColumnName="Ma_HQ" />
+            <ScalarProperty Name="NamDK" ColumnName="NamDK" />
+            <ScalarProperty Name="Ngay_DK" ColumnName="Ngay_DK" />
+            <ScalarProperty Name="Ma_DV" ColumnName="Ma_DV" />
+            <ScalarProperty Name="Ma_DVUT" ColumnName="Ma_DVUT" />
+            <ScalarProperty Name="DV_DT" ColumnName="DV_DT" />
+            <ScalarProperty Name="Ma_PTVT" ColumnName="Ma_PTVT" />
+            <ScalarProperty Name="Ten_PTVT" ColumnName="Ten_PTVT" />
+            <ScalarProperty Name="NgayKH" ColumnName="NgayKH" />
+            <ScalarProperty Name="NgayDen" ColumnName="NgayDen" />
+            <ScalarProperty Name="Van_Don" ColumnName="Van_Don" />
+            <ScalarProperty Name="Ma_CK" ColumnName="Ma_CK" />
+            <ScalarProperty Name="CangNN" ColumnName="CangNN" />
+            <ScalarProperty Name="So_GP" ColumnName="So_GP" />
+            <ScalarProperty Name="Ngay_GP" ColumnName="Ngay_GP" />
+            <ScalarProperty Name="Ngay_HHGP" ColumnName="Ngay_HHGP" />
+            <ScalarProperty Name="So_HD" ColumnName="So_HD" />
+            <ScalarProperty Name="TyGia_USD" ColumnName="TyGia_USD" />
+            <ScalarProperty Name="Ngay_HD" ColumnName="Ngay_HD" />
+            <ScalarProperty Name="Ngay_HHHD" ColumnName="Ngay_HHHD" />
+            <ScalarProperty Name="Nuoc_XK" ColumnName="Nuoc_XK" />
+            <ScalarProperty Name="Nuoc_NK" ColumnName="Nuoc_NK" />
+            <ScalarProperty Name="Ma_GH" ColumnName="Ma_GH" />
+            <ScalarProperty Name="SoHang" ColumnName="SoHang" />
+            <ScalarProperty Name="Ma_PTTT" ColumnName="Ma_PTTT" />
+            <ScalarProperty Name="Ma_NT" ColumnName="Ma_NT" />
+            <ScalarProperty Name="TyGia_VND" ColumnName="TyGia_VND" />
+            <ScalarProperty Name="LePhi_HQ" ColumnName="LePhi_HQ" />
+            <ScalarProperty Name="BL_LPHQ" ColumnName="BL_LPHQ" />
+            <ScalarProperty Name="GiayTo" ColumnName="GiayTo" />
+            <ScalarProperty Name="TenCH" ColumnName="TenCH" />
+            <ScalarProperty Name="Ngay_KB" ColumnName="Ngay_KB" />
+            <ScalarProperty Name="User_DK" ColumnName="User_DK" />
+            <ScalarProperty Name="DDiem_KH" ColumnName="DDiem_KH" />
+            <ScalarProperty Name="PThuc_KH" ColumnName="PThuc_KH" />
+            <ScalarProperty Name="Ngay_KH" ColumnName="Ngay_KH" />
+            <ScalarProperty Name="User_KH1" ColumnName="User_KH1" />
+            <ScalarProperty Name="User_KH2" ColumnName="User_KH2" />
+            <ScalarProperty Name="User_PCKH" ColumnName="User_PCKH" />
+            <ScalarProperty Name="Phi_BH" ColumnName="Phi_BH" />
+            <ScalarProperty Name="Phi_VC" ColumnName="Phi_VC" />
+            <ScalarProperty Name="Ngay_TH" ColumnName="Ngay_TH" />
+            <ScalarProperty Name="User_TH" ColumnName="User_TH" />
+            <ScalarProperty Name="TongTGKB" ColumnName="TongTGKB" />
+            <ScalarProperty Name="TongTGTT" ColumnName="TongTGTT" />
+            <ScalarProperty Name="Tr_Luong" ColumnName="Tr_Luong" />
+            <ScalarProperty Name="So_Kien" ColumnName="So_Kien" />
+            <ScalarProperty Name="So_Container" ColumnName="So_Container" />
+            <ScalarProperty Name="NguoiNhap" ColumnName="NguoiNhap" />
+            <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+            <ScalarProperty Name="PLuong" ColumnName="PLuong" />
+            <ScalarProperty Name="Pass_DK" ColumnName="Pass_DK" />
+            <ScalarProperty Name="Pass_KH" ColumnName="Pass_KH" />
+            <ScalarProperty Name="Pass_TH" ColumnName="Pass_TH" />
+            <ScalarProperty Name="Pass_GC" ColumnName="Pass_GC" />
+            <ScalarProperty Name="TTTK" ColumnName="TTTK" />
+            <ScalarProperty Name="PPT_GTGT" ColumnName="PPT_GTGT" />
+            <ScalarProperty Name="PPT_GTGTUT" ColumnName="PPT_GTGTUT" />
+            <ScalarProperty Name="DaTruyen" ColumnName="DaTruyen" />
+            <ScalarProperty Name="Ma_DVKT" ColumnName="Ma_DVKT" />
+            <ScalarProperty Name="ThanhKhoan" ColumnName="ThanhKhoan" />
+            <ScalarProperty Name="PPT_GTGTKT" ColumnName="PPT_GTGTKT" />
+            <ScalarProperty Name="Ngay_GiaoTK" ColumnName="Ngay_GiaoTK" />
+            <ScalarProperty Name="Ngay_NhanTK" ColumnName="Ngay_NhanTK" />
+            <ScalarProperty Name="Ngay_LuuTK" ColumnName="Ngay_LuuTK" />
+            <ScalarProperty Name="NVPSinh" ColumnName="NVPSinh" />
+            <ScalarProperty Name="So_Container40" ColumnName="So_Container40" />
+            <ScalarProperty Name="KiemHoaNK" ColumnName="KiemHoaNK" />
+            <ScalarProperty Name="So_HDTM" ColumnName="So_HDTM" />
+            <ScalarProperty Name="Ngay_HDTM" ColumnName="Ngay_HDTM" />
+            <ScalarProperty Name="Ngay_VanDon" ColumnName="Ngay_VanDon" />
+            <ScalarProperty Name="Thue" ColumnName="Thue" />
+            <ScalarProperty Name="HTKT" ColumnName="HTKT" />
+            <ScalarProperty Name="TyLe_KT" ColumnName="TyLe_KT" />
+            <ScalarProperty Name="DenNgay_KH" ColumnName="DenNgay_KH" />
+            <ScalarProperty Name="DaiDien_DN" ColumnName="DaiDien_DN" />
+            <ScalarProperty Name="NguoiQDHTKT" ColumnName="NguoiQDHTKT" />
+            <ScalarProperty Name="So_PLTK" ColumnName="So_PLTK" />
+            <ScalarProperty Name="Ma_MID" ColumnName="Ma_MID" />
+            <ScalarProperty Name="MienKT" ColumnName="MienKT" />
+            <ScalarProperty Name="DeXuatKhac" ColumnName="DeXuatKhac" />
+            <ScalarProperty Name="Ngay_VanDon_HH" ColumnName="Ngay_VanDon_HH" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModelEcusDeclaration" ZoomLevel="74">
+        <EntityTypeShape EntityType="EcusDeclarationModel.DToKhaiMD" Width="1.5" PointX="0.75" PointY="0.75" Height="17.172099609375003" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -72,6 +72,7 @@
     <Compile Include="AssemblyHelper.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="ConstantInfo.cs" />
+    <Compile Include="Converter.cs" />
     <Compile Include="EnCryptDecrypt.cs" />
     <Compile Include="Enums\ProfileConfig.cs" />
     <Compile Include="Enums\DeclarationType.cs" />

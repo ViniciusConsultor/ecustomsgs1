@@ -70,6 +70,11 @@
     <Compile Include="ClientInfo.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="IDataController.cs" />
+    <Compile Include="ModelEcusDeclaration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEcusDeclaration.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ModelEcustoms.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +100,10 @@
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
+    <EntityDeploy Include="ModelEcusDeclaration.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelEcusDeclaration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
