@@ -1447,6 +1447,7 @@ namespace ECustoms
             {
                 txtTypeName.Text = "";
             }
+            LoadDeclaration();
         }
 
         private void txtExportCompanyCode_Leave(object sender, EventArgs e)
@@ -1455,7 +1456,7 @@ namespace ECustoms
             tblCompany company = CompanyFactory.FindByCode(companyCode);
             if (company != null)
             {
-                txtExportCompanyName.Text = company.CompanyName;
+                txtExportCompanyName.Text = Converter.TCVN3ToUnicode(company.CompanyName);
             }
             else
             {
@@ -1474,6 +1475,34 @@ namespace ECustoms
             {
                 txtCustomsName.Text = "";
             }
+            LoadDeclaration();
+        }
+
+        private void LoadDeclaration()
+        {
+            if (string.IsNullOrEmpty(txtExportNumber.Text) || string.IsNullOrEmpty(txtTypeExport.Text) || string.IsNullOrEmpty(txtCustomsCode.Text))
+            {
+                txtExportCompanyCode.Enabled = true;
+                txtExportCompanyCode.Text = string.Empty;
+                txtExportCompanyName.Text = string.Empty;
+                return;
+            }
+            var declaration = LoadDeclarationFactory.Load(int.Parse(txtExportNumber.Text), txtTypeExport.Text, txtCustomsCode.Text, dtpExportRegisterDate.Value.Year);
+            if (declaration == null)
+            {
+                txtExportCompanyCode.Enabled = true;
+                txtExportCompanyCode.Text = string.Empty;
+                txtExportCompanyName.Text = string.Empty;
+                return;
+            }
+            txtExportCompanyCode.Text = declaration.Ma_DV;
+            txtExportCompanyCode.Enabled = false;
+            txtExportCompanyCode_Leave(null, null);
+        }
+
+        private void txtExportNumber_Leave(object sender, EventArgs e)
+        {
+            LoadDeclaration();
         }
     }
 }
