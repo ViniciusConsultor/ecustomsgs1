@@ -153,6 +153,18 @@
     <Compile Include="frmConfigSQL.Designer.cs">
       <DependentUpon>frmConfigSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDeclarationManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeclarationManagement.Designer.cs">
+      <DependentUpon>frmDeclarationManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPageNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPageNumber.Designer.cs">
+      <DependentUpon>frmPageNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProfileConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,6 +590,12 @@
     <EmbeddedResource Include="frmConfigSQL.resx">
       <DependentUpon>frmConfigSQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDeclarationManagement.resx">
+      <DependentUpon>frmDeclarationManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPageNumber.resx">
+      <DependentUpon>frmPageNumber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProfileConfig.resx">
       <DependentUpon>frmProfileConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -751,6 +769,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainForm.resx">
       <DependentUpon>frmMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>

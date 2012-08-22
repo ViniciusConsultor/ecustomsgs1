@@ -420,8 +420,19 @@ namespace ECustoms
 
         private void mnuVehicleOverdueList_Click(object sender, EventArgs e)
         {
-            var vehicleSearch = new frmVehicleOverdue(_userInfo);
-            vehicleSearch.Show(this);
+            var frm = new frmVehicleOverdue(_userInfo);
+            frm.Show(this);
+        }
+        private void mnuHandover2_Click(object sender, EventArgs e)
+        {
+            var frm = new frmDeclarationManagement(_userInfo, true);
+            frm.Show(this);
+        }
+
+        private void mnuHandover1_Click(object sender, EventArgs e)
+        {
+            var frm = new frmDeclarationManagement(_userInfo);
+            frm.Show(this);
         }
 
     }

@@ -67,6 +67,10 @@
             this.mnuCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustoms = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGate = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHandover1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHandover2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeclarationManager = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnItemReport = new System.Windows.Forms.ToolStripMenuItem();
             this.inTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,12 +99,13 @@
             this.quảnLýHàngNTXCKToolStripMenuItem,
             this.mnuFeeManagement,
             this.mnuGeneralInfo,
+            this.quảnLýToolStripMenuItem,
             this.toolStripMenuReport,
             this.inTicketToolStripMenuItem,
             this.trợGiúpToolStripMenuItem});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
-            this.mnMain.Size = new System.Drawing.Size(1172, 24);
+            this.mnMain.Size = new System.Drawing.Size(1140, 24);
             this.mnMain.TabIndex = 0;
             this.mnMain.Tag = "";
             this.mnMain.Text = "menuStrip1";
@@ -422,6 +427,36 @@
             this.mnuGate.Text = "Danh mục cửa khẩu";
             this.mnuGate.Click += new System.EventHandler(this.mnuGate_Click);
             // 
+            // quảnLýToolStripMenuItem
+            // 
+            this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHandover1,
+            this.mnuHandover2,
+            this.mnuDeclarationManager});
+            this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.quảnLýToolStripMenuItem.Text = "Quản lý tờ k&hai";
+            // 
+            // mnuHandover1
+            // 
+            this.mnuHandover1.Name = "mnuHandover1";
+            this.mnuHandover1.Size = new System.Drawing.Size(288, 22);
+            this.mnuHandover1.Text = "Bàn giao hồ sơ từ nhân viên lên phúc tập";
+            this.mnuHandover1.Click += new System.EventHandler(this.mnuHandover1_Click);
+            // 
+            // mnuHandover2
+            // 
+            this.mnuHandover2.Name = "mnuHandover2";
+            this.mnuHandover2.Size = new System.Drawing.Size(288, 22);
+            this.mnuHandover2.Text = "Bàn giao hồ sơ từ phúc tập sang lưu trữ";
+            this.mnuHandover2.Click += new System.EventHandler(this.mnuHandover2_Click);
+            // 
+            // mnuDeclarationManager
+            // 
+            this.mnuDeclarationManager.Name = "mnuDeclarationManager";
+            this.mnuDeclarationManager.Size = new System.Drawing.Size(288, 22);
+            this.mnuDeclarationManager.Text = "Quản lý hồ sơ lưu trữ";
+            // 
             // toolStripMenuReport
             // 
             this.toolStripMenuReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -475,7 +510,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 30);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1172, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(1140, 44);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -569,7 +604,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1172, 642);
+            this.ClientSize = new System.Drawing.Size(1140, 604);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -642,5 +677,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
         private System.Windows.Forms.ToolStripMenuItem mnuBackupRestore;
         private System.Windows.Forms.ToolStripMenuItem mnuVehicleOverdueList;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuHandover1;
+        private System.Windows.Forms.ToolStripMenuItem mnuHandover2;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeclarationManager;
     }
 }
