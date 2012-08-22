@@ -78,6 +78,7 @@
     <Compile Include="LoadDeclarationFacory.cs" />
     <Compile Include="CustomsFacory.cs" />
     <Compile Include="DeclarationFactory.cs" />
+    <Compile Include="DeclarationManagementFactory.cs" />
     <Compile Include="DeclarationVehicleFactory.cs" />
     <Compile Include="FrmReceiveNumber.cs">
       <SubType>Form</SubType>

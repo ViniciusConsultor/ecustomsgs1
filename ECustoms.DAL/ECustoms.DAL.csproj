@@ -104,6 +104,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelEcusDeclaration.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Properties\DataSources\dbEcusDeclaration.datasource" />
+    <None Include="Properties\DataSources\dbEcustomEntities.datasource" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

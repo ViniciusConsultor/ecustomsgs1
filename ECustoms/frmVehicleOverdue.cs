@@ -53,7 +53,7 @@ namespace ECustoms
 
         private void Search()
         {
-            List<ViewVehicleOverdue> list = VehicleOvedueFactory.GetAllVehicleNotCompleted();
+            var list = VehicleOvedueFactory.GetVehicleOverdue(overdueDate);
             if (txtPlateNumber.Text.Trim().Length > 0)
             {
  //               list = list.Where(g => g.PlateNumber.Contains(txtPlateNumber.Text.Trim())).ToList();
@@ -64,8 +64,6 @@ namespace ECustoms
             }
             grdVehicleOverdue.AutoGenerateColumns = false;
             grdVehicleOverdue.DataSource = list;
-            foreach (var item in list) { 
-            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
