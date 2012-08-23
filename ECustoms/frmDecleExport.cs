@@ -351,7 +351,10 @@ namespace ECustoms
                 declarationInfo.PersonHandoverID = _userInfo.UserID;
             }
             if (!string.IsNullOrEmpty(txtNumberTemp.Text.Trim()))
+            {
                 declarationInfo.NumberTemp = txtNumberTemp.Text.Trim();
+                declarationInfo.NumberTempInfo = txtNumberTempInfo.Text.Trim();
+            }
             return declarationInfo;
         }
 
@@ -631,6 +634,7 @@ namespace ECustoms
                         dtpHandover.Value = declarationInfo.DateHandover != null ? declarationInfo.DateHandover.Value : CommonFactory.GetCurrentDate();
                     }
                     txtNumberTemp.Text = declarationInfo.NumberTemp ?? "";
+                    txtNumberTempInfo.Text = declarationInfo.NumberTempInfo ?? "";
                 }
                 // Get Vehicle by DeclarationID
                 var listVehicle = VehicleFactory.GetFromViewByDeclarationID(this._declerationID);
@@ -1121,6 +1125,15 @@ namespace ECustoms
             Init();
             //InitialPermission();
 
+            if (txtNumberTemp.Text.Trim().Length > 0)
+            {
+                txtNumberTempInfo.Enabled = true;
+            }
+            else
+            {
+                txtNumberTempInfo.Enabled = false;
+            }
+
         }
 
         private void btnComfirmExport_Click(object sender, EventArgs e)
@@ -1503,6 +1516,18 @@ namespace ECustoms
         private void txtExportNumber_Leave(object sender, EventArgs e)
         {
             LoadDeclaration();
+        }
+
+        private void txtNumberTemp_Leave(object sender, EventArgs e)
+        {
+            if (txtNumberTemp.Text.Trim().Length > 0)
+            {
+                txtNumberTempInfo.Enabled = true;
+            }
+            else
+            {
+                txtNumberTempInfo.Enabled = false;
+            }
         }
     }
 }
