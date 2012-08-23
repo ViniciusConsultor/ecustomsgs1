@@ -17,7 +17,7 @@ using System.Configuration;
 
 namespace ECustoms
 {
-    public partial class frmDecleration : SubFormBase
+    public partial class frmDecleration : Form
     {
         private readonly ILog logger = LogManager.GetLogger("Ecustoms.frmDecleration");
 
@@ -129,6 +129,7 @@ namespace ECustoms
                 // Get declaration from database
                 _listDeclarationinfo = DeclarationFactory.SelectAllFromView();
                 var declarationNumber = txtDeclaraceNumber.Text.Trim();
+                var numberTemp = txtNumberTemp.Text.Trim();
                 var companyName = txtCompanyName.Text.Trim();
                 List<ViewAllDeclaration> result = null;
 
@@ -137,6 +138,12 @@ namespace ECustoms
                 if (string.IsNullOrEmpty(txtDeclaraceNumber.Text) == false) //TODO: xem lai cho nay vua sua dâtbae
                 { //has nunber, not has copany name
                     result = result.Where(d => d.Number.ToString().Contains(declarationNumber)).OrderByDescending(p => p.ModifiedDate).ToList();
+                }
+
+                //filter by numberTemp (so to khai thu 2)
+                if (string.IsNullOrEmpty(numberTemp) == false)
+                {
+                    result = result.Where(d => (d.NumberTemp != null) && (d.NumberTemp.Contains(numberTemp))).OrderByDescending(p => p.ModifiedDate).ToList();
                 }
 
                 //filter by CompanyName
