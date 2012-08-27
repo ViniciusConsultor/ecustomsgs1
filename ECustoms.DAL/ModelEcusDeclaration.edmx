@@ -312,7 +312,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ModelEcusDeclaration" ZoomLevel="74">
+      <Diagram Name="ModelEcusDeclaration" ZoomLevel="85">
         <EntityTypeShape EntityType="EcusDeclarationModel.DToKhaiMD" Width="1.5" PointX="0.75" PointY="0.75" Height="17.172099609375003" IsExpanded="true" />
       </Diagram>
     </Diagrams>

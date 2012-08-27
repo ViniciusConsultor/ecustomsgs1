@@ -135,6 +135,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="frmConfigSQL2DbEcus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigSQL2DbEcus.Designer.cs">
+      <DependentUpon>frmConfigSQL2DbEcus.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBackupRestoreDb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -580,6 +586,9 @@
     <EmbeddedResource Include="ChinesseVehicleReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ChinesseVehicleReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigSQL2DbEcus.resx">
+      <DependentUpon>frmConfigSQL2DbEcus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBackupRestoreDb.resx">
       <DependentUpon>frmBackupRestoreDb.cs</DependentUpon>

@@ -2,6 +2,7 @@
 using ECustoms.DAL;
 using System.Configuration;
 using System.Data;
+using ECustoms.Utilities;
 
 namespace ECustoms.BOL
 {
@@ -9,7 +10,8 @@ namespace ECustoms.BOL
     {
         public static DToKhaiMD Load(int number, string typeCode, string customCode, int year)
         {
-            var _db = new dbEcusDeclaration(ConfigurationManager.ConnectionStrings["dbEcusDeclaration"].ConnectionString);
+            if (ConfigurationManager.ConnectionStrings["dbEcusDeclaration"] == null) return null;
+            var _db = new dbEcusDeclaration(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcusDeclaration"].ConnectionString, true));
             try
             {
                 if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();

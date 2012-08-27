@@ -435,5 +435,11 @@ namespace ECustoms
             frm.Show(this);
         }
 
+        private void mnuConfigSQL2DbEcus_Click(object sender, EventArgs e)
+        {
+            var frm = new frmConfigSQL2DbEcus();
+            frm.ShowDialog(this);
+        }
+
     }
 }
