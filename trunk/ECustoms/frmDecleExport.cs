@@ -1506,11 +1506,13 @@ namespace ECustoms
                 txtExportCompanyCode.Enabled = true;
                 txtExportCompanyCode.Text = string.Empty;
                 txtExportCompanyName.Text = string.Empty;
+                txtProductAmount.Text = string.Empty;
                 return;
             }
             txtExportCompanyCode.Text = declaration.Ma_DV;
             txtExportCompanyCode.Enabled = false;
             txtExportCompanyCode_Leave(null, null);
+            txtProductAmount.Text = declaration.SoHang.ToString();
         }
 
         private void txtExportNumber_Leave(object sender, EventArgs e)
