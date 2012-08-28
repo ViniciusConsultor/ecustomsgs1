@@ -37,7 +37,7 @@ namespace ECustoms
         {
             try
             {
-                if (!_isSecondHandover)
+                if (!_isSecondHandover) //ban giao tu nhan vien len phuc tap
                 {
                     declaration.PageNumbers = Int32.Parse(txtPageNumber.Text.Trim());
                     declaration.DateHandover = dateTimePickerHandover.Value;

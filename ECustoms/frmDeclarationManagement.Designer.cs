@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDeclarationNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +51,8 @@
             this.grvDeclarationList = new System.Windows.Forms.DataGridView();
             this.btnConfirmHandover = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnLoan = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +61,10 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnLoan = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeclarationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +73,10 @@
             this.DateReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateHandover = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonHandoverUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonHandoverSecondUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonReceiveSecond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDeclarationList)).BeginInit();
@@ -169,19 +180,23 @@
             // 
             // dateTimePickerReturn
             // 
+            this.dateTimePickerReturn.Checked = false;
             this.dateTimePickerReturn.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerReturn.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerReturn.Location = new System.Drawing.Point(98, 41);
             this.dateTimePickerReturn.Name = "dateTimePickerReturn";
+            this.dateTimePickerReturn.ShowCheckBox = true;
             this.dateTimePickerReturn.Size = new System.Drawing.Size(113, 20);
             this.dateTimePickerReturn.TabIndex = 35;
             // 
             // dateTimePickerHandover
             // 
+            this.dateTimePickerHandover.Checked = false;
             this.dateTimePickerHandover.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerHandover.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHandover.Location = new System.Drawing.Point(559, 41);
             this.dateTimePickerHandover.Name = "dateTimePickerHandover";
+            this.dateTimePickerHandover.ShowCheckBox = true;
             this.dateTimePickerHandover.Size = new System.Drawing.Size(98, 20);
             this.dateTimePickerHandover.TabIndex = 34;
             // 
@@ -248,8 +263,6 @@
             // 
             this.grvDeclarationList.AllowUserToAddRows = false;
             this.grvDeclarationList.AllowUserToDeleteRows = false;
-            this.grvDeclarationList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grvDeclarationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvDeclarationList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DeclarationID,
             this.Number,
@@ -258,7 +271,11 @@
             this.Type,
             this.DateReturn,
             this.DateHandover,
-            this.CreatedDate});
+            this.CreatedDate,
+            this.PersonHandoverUserName,
+            this.PersonReceive,
+            this.PersonHandoverSecondUserName,
+            this.PersonReceiveSecond});
             this.grvDeclarationList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvDeclarationList.Location = new System.Drawing.Point(3, 16);
             this.grvDeclarationList.Name = "grvDeclarationList";
@@ -300,62 +317,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DeclarationID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Number";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Số tờ khai";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CompanyName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tên đơn vị XNK";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CustomsCode";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Mã Hải quan";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Type";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Loại hình";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DateReturn";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Ngày trả hồ sơ";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "DateHandover";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Ngày bàn giao lưu trữ";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CreatedDate";
-            this.dataGridViewTextBoxColumn8.HeaderText = "CreatedDate";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 96;
-            // 
             // btnReturn
             // 
             this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -388,55 +349,199 @@
             this.btnLoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoan.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DeclarationID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Number";
+            this.dataGridViewTextBoxColumn2.FillWeight = 5.30004F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Số tờ khai";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CompanyName";
+            this.dataGridViewTextBoxColumn3.FillWeight = 23.97429F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tên đơn vị XNK";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CustomsCode";
+            this.dataGridViewTextBoxColumn4.FillWeight = 33.09856F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Mã Hải quan";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Type";
+            this.dataGridViewTextBoxColumn5.FillWeight = 67.15515F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Loại hình";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DateReturn";
+            this.dataGridViewTextBoxColumn6.FillWeight = 136.177F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Ngày trả hồ sơ";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "DateHandover";
+            this.dataGridViewTextBoxColumn7.FillWeight = 275.9182F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Ngày bàn giao lưu trữ";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CreatedDate";
+            this.dataGridViewTextBoxColumn8.FillWeight = 558.3757F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "CreatedDate";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "PersonHandoverUserName";
+            this.dataGridViewTextBoxColumn9.FillWeight = 2.856749E-05F;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Người bàn giao lên phúc tập";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "PersonReceive";
+            this.dataGridViewTextBoxColumn10.FillWeight = 8.51311E-05F;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Người nhận bàn giao lên phúc tập";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "PersonHandoverSecondUserName";
+            this.dataGridViewTextBoxColumn11.FillWeight = 0.000259347F;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Người bàn giao sang lưu trữ";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "PersonReceiveSecond";
+            this.dataGridViewTextBoxColumn12.FillWeight = 0.000795932F;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Người nhận bàn giao sang lưu trữ";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 200;
+            // 
             // DeclarationID
             // 
             this.DeclarationID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.DeclarationID.DataPropertyName = "DeclarationID";
             this.DeclarationID.HeaderText = "ID";
             this.DeclarationID.Name = "DeclarationID";
+            this.DeclarationID.Visible = false;
             this.DeclarationID.Width = 43;
             // 
             // Number
             // 
             this.Number.DataPropertyName = "Number";
+            this.Number.FillWeight = 5.30004F;
             this.Number.HeaderText = "Số tờ khai";
             this.Number.Name = "Number";
             // 
             // CompanyName
             // 
             this.CompanyName.DataPropertyName = "CompanyName";
+            this.CompanyName.FillWeight = 23.97429F;
             this.CompanyName.HeaderText = "Tên đơn vị XNK";
             this.CompanyName.Name = "CompanyName";
             // 
             // CustomsCode
             // 
             this.CustomsCode.DataPropertyName = "CustomsCode";
+            this.CustomsCode.FillWeight = 33.09856F;
             this.CustomsCode.HeaderText = "Mã Hải quan";
             this.CustomsCode.Name = "CustomsCode";
             // 
             // Type
             // 
             this.Type.DataPropertyName = "Type";
+            this.Type.FillWeight = 67.15515F;
             this.Type.HeaderText = "Loại hình";
             this.Type.Name = "Type";
             // 
             // DateReturn
             // 
             this.DateReturn.DataPropertyName = "DateReturn";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy hh:mm";
+            this.DateReturn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DateReturn.FillWeight = 136.177F;
             this.DateReturn.HeaderText = "Ngày trả hồ sơ";
             this.DateReturn.Name = "DateReturn";
+            this.DateReturn.Width = 120;
             // 
             // DateHandover
             // 
             this.DateHandover.DataPropertyName = "DateHandover";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
+            this.DateHandover.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DateHandover.FillWeight = 275.9182F;
             this.DateHandover.HeaderText = "Ngày bàn giao lưu trữ";
             this.DateHandover.Name = "DateHandover";
+            this.DateHandover.Width = 150;
             // 
             // CreatedDate
             // 
             this.CreatedDate.DataPropertyName = "CreatedDate";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
+            this.CreatedDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CreatedDate.FillWeight = 558.3757F;
             this.CreatedDate.HeaderText = "Ngày đăng ký";
             this.CreatedDate.Name = "CreatedDate";
+            // 
+            // PersonHandoverUserName
+            // 
+            this.PersonHandoverUserName.DataPropertyName = "PersonHandoverUserName";
+            this.PersonHandoverUserName.FillWeight = 2.856749E-05F;
+            this.PersonHandoverUserName.HeaderText = "Người bàn giao lên phúc tập";
+            this.PersonHandoverUserName.Name = "PersonHandoverUserName";
+            this.PersonHandoverUserName.Width = 200;
+            // 
+            // PersonReceive
+            // 
+            this.PersonReceive.DataPropertyName = "PersonReceive";
+            this.PersonReceive.FillWeight = 8.51311E-05F;
+            this.PersonReceive.HeaderText = "Người nhận bàn giao lên phúc tập";
+            this.PersonReceive.Name = "PersonReceive";
+            this.PersonReceive.Width = 200;
+            // 
+            // PersonHandoverSecondUserName
+            // 
+            this.PersonHandoverSecondUserName.DataPropertyName = "PersonHandoverSecondUserName";
+            this.PersonHandoverSecondUserName.FillWeight = 0.000259347F;
+            this.PersonHandoverSecondUserName.HeaderText = "Người bàn giao sang lưu trữ";
+            this.PersonHandoverSecondUserName.Name = "PersonHandoverSecondUserName";
+            this.PersonHandoverSecondUserName.Width = 200;
+            // 
+            // PersonReceiveSecond
+            // 
+            this.PersonReceiveSecond.DataPropertyName = "PersonReceiveSecond";
+            this.PersonReceiveSecond.FillWeight = 0.000795932F;
+            this.PersonReceiveSecond.HeaderText = "Người nhận bàn giao sang lưu trữ";
+            this.PersonReceiveSecond.Name = "PersonReceiveSecond";
+            this.PersonReceiveSecond.Width = 200;
             // 
             // frmDeclarationManagement
             // 
@@ -451,6 +556,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDeclarationManagement";
             this.Text = "frmDeclarationManagement";
+            this.Load += new System.EventHandler(this.frmDeclarationManagement_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -491,6 +597,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerReturn;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnLoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeclarationID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
@@ -499,5 +609,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateReturn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateHandover;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonHandoverUserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonReceive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonHandoverSecondUserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonReceiveSecond;
     }
 }
