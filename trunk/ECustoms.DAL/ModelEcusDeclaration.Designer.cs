@@ -11,7 +11,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
 
 // Original file name:
-// Generation date: 8/25/2012 12:55:20 AM
+// Generation date: 8/28/2012 11:12:58 PM
 namespace ECustoms.DAL
 {
     

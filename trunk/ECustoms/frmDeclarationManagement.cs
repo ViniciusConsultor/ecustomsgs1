@@ -33,18 +33,27 @@ namespace ECustoms
             btnReturn.Visible = _isManagementMode;
             btnLoan.Visible = _isManagementMode;
             btnConfirmHandover.Visible = !_isManagementMode;
+            fillData();
+        }
+
+        public void fillData()
+        {
             if (!_isSecondHandover && !_isManagementMode)
             {
                 listDeclaration = DeclarationManagementFactory.GetDeclarationNew();
-                
+                this.Text = "Ban giao ho so tu nhan vien len phuc tap" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
+
             }
             else if (_isSecondHandover && !_isManagementMode)
             {
                 listDeclaration = DeclarationManagementFactory.GetDeclarationHandover();
+                this.Text = "Ban giao ho so tu phuc tap sang luu tru" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
+
             }
             else
             {
                 listDeclaration = DeclarationManagementFactory.GetDeclarationSaved();
+                this.Text = "Muon tra ho so" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             }
             grvDeclarationList.AutoGenerateColumns = false;
             grvDeclarationList.DataSource = listDeclaration;
@@ -103,8 +112,77 @@ namespace ECustoms
             this.Close();
         }
 
+        public void search()
+        {
+            string number = txtNumber.Text.Trim();
+            string type = txtType.Text.Trim();
+            string registeredYear = txtRegisteredYear.Text.Trim();
+            string customsCode = cbxCustomsCode.Text.Trim();
+
+            DateTime DateReturnFrom = new DateTime(dateTimePickerReturn.Value.Year, dateTimePickerReturn.Value.Month, dateTimePickerReturn.Value.Day, 0, 0, 0);
+            DateTime DateReturnTo = new DateTime(dateTimePickerReturn.Value.Year, dateTimePickerReturn.Value.Month, dateTimePickerReturn.Value.Day, 23, 59, 59);
+
+            DateTime DateHandoverFrom = new DateTime(dateTimePickerHandover.Value.Year, dateTimePickerHandover.Value.Month, dateTimePickerHandover.Value.Day, 0, 0, 0);
+            DateTime DateHandoverTo = new DateTime(dateTimePickerHandover.Value.Year, dateTimePickerHandover.Value.Month, dateTimePickerHandover.Value.Day, 23, 59, 59);
+
+            string companyName = txtCompanyName.Text.Trim();
+
+            
+            if (!_isSecondHandover && !_isManagementMode)
+            {
+                listDeclaration = DeclarationManagementFactory.GetDeclarationNew();
+            }
+            else if (_isSecondHandover && !_isManagementMode)
+            {
+                listDeclaration = DeclarationManagementFactory.GetDeclarationHandover();
+            }
+            else
+            {
+                listDeclaration = DeclarationManagementFactory.GetDeclarationSaved();
+            }
+
+            if (string.IsNullOrEmpty(number) == false)
+            {
+                listDeclaration = listDeclaration.Where(g => g.Number.ToString().Contains(number)).ToList();
+            }
+
+            if (string.IsNullOrEmpty(type) == false)
+            {
+                listDeclaration = listDeclaration.Where(g => g.Type!=null && g.Type.ToString().Contains(type)).ToList();
+            }
+
+            if (string.IsNullOrEmpty(registeredYear) == false)
+            {
+                listDeclaration = listDeclaration.Where(g => g.CreatedDate.GetValueOrDefault().Year.ToString() == registeredYear).ToList();
+            }
+
+            if (string.IsNullOrEmpty(customsCode) == false)
+            {
+                listDeclaration = listDeclaration.Where(g => g.CustomsCode!=null && g.CustomsCode.ToString().Contains(customsCode)).ToList();
+            }
+            if (dateTimePickerReturn.Checked == true)
+            {
+                listDeclaration = listDeclaration.Where(g => g.DateReturn != null && g.DateReturn >= DateReturnFrom && g.DateReturn <= DateReturnTo).ToList();
+            }
+
+            if (dateTimePickerHandover.Checked == true)
+            {
+                listDeclaration = listDeclaration.Where(g => g.DateHandover != null && g.DateHandover >= DateHandoverFrom && g.DateHandover <= DateHandoverTo).ToList();
+            }
+
+            if (string.IsNullOrEmpty(companyName) == false)
+            {
+                listDeclaration = listDeclaration.Where(g => g.CompanyName!=null && g.CompanyName.ToString().Contains(companyName)).ToList();
+            }
+
+            grvDeclarationList.AutoGenerateColumns = false;
+            grvDeclarationList.DataSource = listDeclaration;
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
+            search();
+
         //    if (listDeclaration.Count > 0)
         //    {
         //        if (!String.IsNullOrEmpty(txtNumber.Text.Trim()))
@@ -143,6 +221,11 @@ namespace ECustoms
 
         //    }
         //    grvDeclarationList.DataSource = listDeclaration;
+        }
+
+        private void frmDeclarationManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
