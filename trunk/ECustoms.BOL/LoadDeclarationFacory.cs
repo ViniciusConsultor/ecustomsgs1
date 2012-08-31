@@ -15,8 +15,16 @@ namespace ECustoms.BOL
             try
             {
                 if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
-                var r = _db.DToKhaiMDs.Where(x => x.SoTK == number && x.Ma_LH == typeCode && x.Ma_HQ == customCode && x.NamDK == year).FirstOrDefault();
-                return r;
+                var toKhai = _db.DToKhaiMDs.Where(x => x.SoTK == number && x.Ma_LH == typeCode && x.Ma_HQ == customCode && x.NamDK == year).FirstOrDefault();
+                if (toKhai == null) return null;
+                var hang = _db.DHangMDs.Where(x => x.SoTK == number && x.Ma_LH == typeCode && x.Ma_HQ == customCode && x.NamDK == year).FirstOrDefault();
+                if (hang != null)
+                {
+                    toKhai.TenHang = Converter.TCVN3ToUnicode(hang.Ten_Hang);
+                    toKhai.Dvt = _db.SDVTs.Where(x => x.Ma_DVT == hang.Ma_DVT).FirstOrDefault().Ten_DVT;
+                    toKhai.SoLuong = hang.Luong;
+                }
+                return toKhai;
             }
             catch
             {

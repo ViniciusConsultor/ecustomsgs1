@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientInfo.cs" />
+    <Compile Include="CusEcusDeclarationEntities.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="IDataController.cs" />
     <Compile Include="ModelEcusDeclaration.Designer.cs">
