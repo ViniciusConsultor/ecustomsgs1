@@ -19,12 +19,15 @@ namespace ECustoms
         tblDeclaration declaration;
         bool _isSecondHandover;
         UserInfo _userInfo;
+        frmDeclarationManagement _frmParent;
 
-        public frmPageNumber(UserInfo userInfo, long declarationId, bool isSecondHandover = false)
+        public frmPageNumber(frmDeclarationManagement frmParent,UserInfo userInfo, long declarationId, bool isSecondHandover = false)
         {
+            this.Text = "Ban giao ho so" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             declaration = DeclarationFactory.GetByID(declarationId);
             _isSecondHandover = isSecondHandover;
             _userInfo = userInfo;
+            _frmParent = frmParent;
             InitializeComponent();
             if (_isSecondHandover)
             {
@@ -51,10 +54,12 @@ namespace ECustoms
                     declaration.DateHandoverSecond = dateTimePickerHandover.Value;
                     declaration.PersonReceiveSecond = txtRecipient.Text.Trim();
                     declaration.PersonHandoverSecondID = _userInfo.UserID;
+                    declaration.LoanStatus = false;
                     DeclarationFactory.Update(declaration);
                     MessageBox.Show("Hồ sơ đã được bàn giao cho lưu trữ!");
                 }
                 this.Close();
+                _frmParent.search();
             }
             catch (Exception ex)
             {

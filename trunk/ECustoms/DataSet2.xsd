@@ -678,6 +678,14 @@ FROM            ViewAllDeclarationTNTX</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tblLoanStatus" msprop:Generator_TableClassName="tblLoanStatusDataTable" msprop:Generator_TableVarName="tabletblLoanStatus" msprop:Generator_TablePropName="tblLoanStatus" msprop:Generator_RowDeletingName="tblLoanStatusRowDeleting" msprop:Generator_UserTableName="tblLoanStatus" msprop:Generator_RowChangingName="tblLoanStatusRowChanging" msprop:Generator_RowEvHandlerName="tblLoanStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="tblLoanStatusRowDeleted" msprop:Generator_RowEvArgName="tblLoanStatusRowChangeEvent" msprop:Generator_RowChangedName="tblLoanStatusRowChanged" msprop:Generator_RowClassName="tblLoanStatusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StatusCode" msprop:Generator_ColumnVarNameInTable="columnStatusCode" msprop:Generator_ColumnPropNameInRow="StatusCode" msprop:Generator_ColumnPropNameInTable="StatusCodeColumn" msprop:Generator_UserColumnName="StatusCode" type="xs:boolean" minOccurs="0" />
+              <xs:element name="StatusName" msprop:Generator_ColumnVarNameInTable="columnStatusName" msprop:Generator_ColumnPropNameInRow="StatusName" msprop:Generator_ColumnPropNameInTable="StatusNameColumn" msprop:Generator_UserColumnName="StatusName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

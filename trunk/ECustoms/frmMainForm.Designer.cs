@@ -466,6 +466,7 @@
             this.mnuDeclarationManager.Name = "mnuDeclarationManager";
             this.mnuDeclarationManager.Size = new System.Drawing.Size(288, 22);
             this.mnuDeclarationManager.Text = "Quản lý hồ sơ lưu trữ";
+            this.mnuDeclarationManager.Click += new System.EventHandler(this.mnuDeclarationManager_Click);
             // 
             // toolStripMenuReport
             // 
@@ -614,7 +615,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1140, 610);
+            this.ClientSize = new System.Drawing.Size(1140, 614);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

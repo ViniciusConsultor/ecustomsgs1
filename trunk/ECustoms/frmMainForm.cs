@@ -441,5 +441,12 @@ namespace ECustoms
             frm.ShowDialog(this);
         }
 
+        private void mnuDeclarationManager_Click(object sender, EventArgs e)
+        {
+            frmDeclarationFilesManagement form = new frmDeclarationFilesManagement(_userInfo);
+            form.MdiParent = this;
+            form.Show();
+        }
+
     }
 }
