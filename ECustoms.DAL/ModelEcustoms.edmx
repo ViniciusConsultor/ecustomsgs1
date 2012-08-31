@@ -282,6 +282,25 @@
       [ViewAllVehicleHasGood].[ModifiedByUserName] AS [ModifiedByUserName]
       FROM [dbo].[ViewAllVehicleHasGood] AS [ViewAllVehicleHasGood]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="viewDeclarationLoan" EntityType="dbEcustomModel.Store.viewDeclarationLoan" store:Type="Views" store:Schema="dbo" store:Name="viewDeclarationLoan">
+            <DefiningQuery>SELECT 
+      [viewDeclarationLoan].[ID] AS [ID], 
+      [viewDeclarationLoan].[DeclarationID] AS [DeclarationID], 
+      [viewDeclarationLoan].[LoanDate] AS [LoanDate], 
+      [viewDeclarationLoan].[ReturnDate] AS [ReturnDate], 
+      [viewDeclarationLoan].[LenderUserID] AS [LenderUserID], 
+      [viewDeclarationLoan].[BorrowerName] AS [BorrowerName], 
+      [viewDeclarationLoan].[LoanReason] AS [LoanReason], 
+      [viewDeclarationLoan].[GetLoanDescription] AS [GetLoanDescription], 
+      [viewDeclarationLoan].[ReturnLoanDescription] AS [ReturnLoanDescription], 
+      [viewDeclarationLoan].[CreatedDate] AS [CreatedDate], 
+      [viewDeclarationLoan].[ModifiedDate] AS [ModifiedDate], 
+      [viewDeclarationLoan].[PageNumbers] AS [PageNumbers], 
+      [viewDeclarationLoan].[LoanStatus] AS [LoanStatus], 
+      [viewDeclarationLoan].[Number] AS [Number], 
+      [viewDeclarationLoan].[LenderFullName] AS [LenderFullName]
+      FROM [dbo].[viewDeclarationLoan] AS [viewDeclarationLoan]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ViewDeclarationManagement" EntityType="dbEcustomModel.Store.ViewDeclarationManagement" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationManagement">
             <DefiningQuery>SELECT 
       [ViewDeclarationManagement].[DeclarationID] AS [DeclarationID], 
@@ -302,7 +321,9 @@
       [ViewDeclarationManagement].[RegisterDate] AS [RegisterDate], 
       [ViewDeclarationManagement].[DateReturn] AS [DateReturn], 
       [ViewDeclarationManagement].[PersonConfirmReturnID] AS [PersonConfirmReturnID], 
-      [ViewDeclarationManagement].[PersonConfirmReturnUserName] AS [PersonConfirmReturnUserName]
+      [ViewDeclarationManagement].[PersonConfirmReturnUserName] AS [PersonConfirmReturnUserName], 
+      [ViewDeclarationManagement].[FilesLocation] AS [FilesLocation], 
+      [ViewDeclarationManagement].[LoanStatus] AS [LoanStatus]
       FROM [dbo].[ViewDeclarationManagement] AS [ViewDeclarationManagement]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewDeclarationVechicleExport" EntityType="dbEcustomModel.Store.ViewDeclarationVechicleExport" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVechicleExport">
@@ -735,17 +756,26 @@
           <Property Name="PersonReceiveSecond" Type="nvarchar" MaxLength="50" />
           <Property Name="DateHandoverSecond" Type="datetime" />
           <Property Name="NumberTempInfo" Type="nvarchar" />
+          <Property Name="FilesLocation" Type="nvarchar" MaxLength="2000" />
+          <Property Name="LoanStatus" Type="bit" />
         </EntityType>
         <EntityType Name="tblDeclarationLoan">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="DeclarationID" Type="bigint" Nullable="false" />
-          <Property Name="LoanDate" Type="datetime" Nullable="false" />
+          <Property Name="DeclarationID" Type="bigint" />
+          <Property Name="LoanDate" Type="datetime" />
           <Property Name="ReturnDate" Type="datetime" />
-          <Property Name="LoanPerson" Type="nvarchar" MaxLength="50" />
-          <Property Name="LoanReason" Type="nvarchar(max)" />
+          <Property Name="LenderUserID" Type="int" />
+          <Property Name="BorrowerName" Type="nvarchar" MaxLength="500" />
+          <Property Name="LoanReason" Type="nvarchar" />
+          <Property Name="GetLoanDescription" Type="nvarchar" />
+          <Property Name="ReturnLoanDescription" Type="nvarchar" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="ModifiedUserID" Type="int" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -1262,6 +1292,29 @@
           <Property Name="ModifiedByUserName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
+      warning 6002: The table/view 'dbECustoms.dbo.viewDeclarationLoan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="viewDeclarationLoan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="DeclarationID" Type="bigint" />
+          <Property Name="LoanDate" Type="datetime" />
+          <Property Name="ReturnDate" Type="datetime" />
+          <Property Name="LenderUserID" Type="int" />
+          <Property Name="BorrowerName" Type="nvarchar" MaxLength="500" />
+          <Property Name="LoanReason" Type="nvarchar" />
+          <Property Name="GetLoanDescription" Type="nvarchar" />
+          <Property Name="ReturnLoanDescription" Type="nvarchar" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="PageNumbers" Type="int" />
+          <Property Name="LoanStatus" Type="bit" />
+          <Property Name="Number" Type="int" />
+          <Property Name="LenderFullName" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
       warning 6002: The table/view 'dbECustoms.dbo.ViewDeclarationManagement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationManagement">
@@ -1287,6 +1340,8 @@
           <Property Name="DateReturn" Type="datetime" />
           <Property Name="PersonConfirmReturnID" Type="int" />
           <Property Name="PersonConfirmReturnUserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="FilesLocation" Type="nvarchar" MaxLength="2000" />
+          <Property Name="LoanStatus" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbECustoms.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -1773,6 +1828,7 @@
           <EntitySet Name="ViewAllDeclarationTNTXes" EntityType="dbEcustomModel.ViewAllDeclarationTNTX" />
           <EntitySet Name="ViewAllVehicles" EntityType="dbEcustomModel.ViewAllVehicle" />
           <EntitySet Name="ViewAllVehicleHasGoods" EntityType="dbEcustomModel.ViewAllVehicleHasGood" />
+          <EntitySet Name="viewDeclarationLoans" EntityType="dbEcustomModel.viewDeclarationLoan" />
           <EntitySet Name="ViewDeclarationManagements" EntityType="dbEcustomModel.ViewDeclarationManagement" />
           <EntitySet Name="ViewDeclarationVechicleExports" EntityType="dbEcustomModel.ViewDeclarationVechicleExport" />
           <EntitySet Name="viewDeclarationVehicles" EntityType="dbEcustomModel.viewDeclarationVehicle" />
@@ -1927,6 +1983,8 @@
           <Property Type="String" Name="PersonReceiveSecond" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="DateHandoverSecond" />
           <Property Type="String" Name="NumberTempInfo" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FilesLocation" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="LoanStatus" />
           <NavigationProperty Name="tblUser" Relationship="dbEcustomModel.FK_tblDeclaration_tblUser" FromRole="tblDeclaration" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblDeclarationLoan">
@@ -1934,11 +1992,18 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int64" Name="DeclarationID" Nullable="false" />
-          <Property Type="DateTime" Name="LoanDate" Nullable="false" />
+          <Property Type="Int64" Name="DeclarationID" />
+          <Property Type="DateTime" Name="LoanDate" />
           <Property Type="DateTime" Name="ReturnDate" />
-          <Property Type="String" Name="LoanPerson" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="LoanReason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LenderUserID" />
+          <Property Type="String" Name="BorrowerName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoanReason" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GetLoanDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReturnLoanDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="CreatedUserID" />
+          <Property Type="Int32" Name="ModifiedUserID" />
         </EntityType>
         <EntityType Name="tblDeclarationVehicle">
           <Key>
@@ -2436,6 +2501,26 @@
           <Property Type="String" Name="CreatedByUserName" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="ModifiedByUserName" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="viewDeclarationLoan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="Int64" Name="DeclarationID" />
+          <Property Type="DateTime" Name="LoanDate" />
+          <Property Type="DateTime" Name="ReturnDate" />
+          <Property Type="Int32" Name="LenderUserID" />
+          <Property Type="String" Name="BorrowerName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoanReason" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GetLoanDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReturnLoanDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="PageNumbers" />
+          <Property Type="Boolean" Name="LoanStatus" />
+          <Property Type="Int32" Name="Number" />
+          <Property Type="String" Name="LenderFullName" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="ViewDeclarationManagement">
           <Key>
             <PropertyRef Name="DeclarationID" />
@@ -2459,6 +2544,8 @@
           <Property Type="DateTime" Name="DateReturn" />
           <Property Type="Int32" Name="PersonConfirmReturnID" />
           <Property Type="String" Name="PersonConfirmReturnUserName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FilesLocation" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="LoanStatus" />
         </EntityType>
         <EntityType Name="ViewDeclarationVechicleExport">
           <Key>
@@ -2882,6 +2969,8 @@
           <EntitySetMapping Name="tblDeclarations">
             <EntityTypeMapping TypeName="dbEcustomModel.tblDeclaration">
               <MappingFragment StoreEntitySet="tblDeclaration">
+                <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+                <ScalarProperty Name="FilesLocation" ColumnName="FilesLocation" />
                 <ScalarProperty Name="NumberTempInfo" ColumnName="NumberTempInfo" />
                 <ScalarProperty Name="DateHandoverSecond" ColumnName="DateHandoverSecond" />
                 <ScalarProperty Name="PersonReceiveSecond" ColumnName="PersonReceiveSecond" />
@@ -2925,8 +3014,15 @@
           <EntitySetMapping Name="tblDeclarationLoans">
             <EntityTypeMapping TypeName="dbEcustomModel.tblDeclarationLoan">
               <MappingFragment StoreEntitySet="tblDeclarationLoan">
+                <ScalarProperty Name="ModifiedUserID" ColumnName="ModifiedUserID" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ReturnLoanDescription" ColumnName="ReturnLoanDescription" />
+                <ScalarProperty Name="GetLoanDescription" ColumnName="GetLoanDescription" />
                 <ScalarProperty Name="LoanReason" ColumnName="LoanReason" />
-                <ScalarProperty Name="LoanPerson" ColumnName="LoanPerson" />
+                <ScalarProperty Name="BorrowerName" ColumnName="BorrowerName" />
+                <ScalarProperty Name="LenderUserID" ColumnName="LenderUserID" />
                 <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
                 <ScalarProperty Name="LoanDate" ColumnName="LoanDate" />
                 <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
@@ -3443,9 +3539,32 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="viewDeclarationLoans">
+            <EntityTypeMapping TypeName="dbEcustomModel.viewDeclarationLoan">
+              <MappingFragment StoreEntitySet="viewDeclarationLoan">
+                <ScalarProperty Name="LenderFullName" ColumnName="LenderFullName" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+                <ScalarProperty Name="PageNumbers" ColumnName="PageNumbers" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ReturnLoanDescription" ColumnName="ReturnLoanDescription" />
+                <ScalarProperty Name="GetLoanDescription" ColumnName="GetLoanDescription" />
+                <ScalarProperty Name="LoanReason" ColumnName="LoanReason" />
+                <ScalarProperty Name="BorrowerName" ColumnName="BorrowerName" />
+                <ScalarProperty Name="LenderUserID" ColumnName="LenderUserID" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="LoanDate" ColumnName="LoanDate" />
+                <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ViewDeclarationManagements">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewDeclarationManagement">
               <MappingFragment StoreEntitySet="ViewDeclarationManagement">
+                <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+                <ScalarProperty Name="FilesLocation" ColumnName="FilesLocation" />
                 <ScalarProperty Name="PersonConfirmReturnUserName" ColumnName="PersonConfirmReturnUserName" />
                 <ScalarProperty Name="PersonConfirmReturnID" ColumnName="PersonConfirmReturnID" />
                 <ScalarProperty Name="DateReturn" ColumnName="DateReturn" />
@@ -3811,56 +3930,57 @@
     <Diagrams>
       <Diagram Name="ModelEcustoms" ShowGrid="true" ZoomLevel="80">
         <EntityTypeShape EntityType="dbEcustomModel.Log" Width="1.5" PointX="5.75" PointY="0.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="dbEcustomModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" Height="1.980286458333353" />
         <EntityTypeShape EntityType="dbEcustomModel.tblApplicationObject" Width="1.5" PointX="7.75" PointY="0.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="7.75" PointY="4.75" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblCheck" Width="1.5" PointX="5.75" PointY="7.75" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="7.75" PointY="4.75" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCheck" Width="1.5" PointX="5.75" PointY="7.75" Height="3.710999348958353" />
         <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="7.75" PointY="7.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="9.75" PointY="0.75" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.25" Height="8.326233723958353" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationLoan" Width="1.5" PointX="9.75" PointY="4.75" Height="2.1725878906249818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationVehicle" Width="1.5" PointX="9.75" PointY="7.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="9.75" PointY="10.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="11.75" PointY="0.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblGroup" Width="1.5" PointX="11.75" PointY="3.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblPermission" Width="1.5" PointX="11.75" PointY="7.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblPermissionType" Width="1.5" PointX="11.75" PointY="10.75" Height="1.4033821614583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblProfileConfig" Width="1.5" PointX="5.75" PointY="12.75" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblRoleInGroup" Width="1.5" PointX="3" PointY="1" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="9.75" PointY="0.75" Height="2.557190755208353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="3" PointY="4.25" Height="8.71083658854161" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationLoan" Width="1.5" PointX="9.75" PointY="4.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationVehicle" Width="1.5" PointX="9.75" PointY="9.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="11.75" PointY="0.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="11.75" PointY="4.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGroup" Width="1.5" PointX="11.75" PointY="7.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblPermission" Width="1.5" PointX="11.75" PointY="11.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblPermissionType" Width="1.5" PointX="5.75" PointY="12.75" Height="1.403382161458353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblProfileConfig" Width="1.5" PointX="7.75" PointY="12.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblRoleInGroup" Width="1.5" PointX="3" PointY="1" Height="1.7879850260416106" />
         <EntityTypeShape EntityType="dbEcustomModel.tblSetting" Width="1.5" PointX="13.75" PointY="0.75" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="0.75" PointY="13.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="6.625" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="0.75" PointY="6.875" Height="3.5186979166666106" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserGroupPermission" Width="1.5" PointX="2.75" PointY="13.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblUserInGroup" Width="1.5" PointX="13.75" PointY="3.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="13.75" PointY="6.75" Height="10.633850911458325" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="7.75" PointY="14.75" Height="3.7109993489583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="9.75" PointY="14.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="15.75" PointY="0.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="13.75" PointY="6.75" Height="10.633850911458353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="9.75" PointY="14.75" Height="3.710999348958353" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="15.75" PointY="0.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="15.75" PointY="4.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tlbRole" Width="1.5" PointX="0.75" PointY="0.875" Height="1.980286458333353" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="15.75" PointY="4.75" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheckResult" Width="1.5" PointX="4.75" PointY="15.75" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclaration" Width="1.5" PointX="15.75" PointY="9.75" Height="8.5185351562499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="4.75" PointY="15.75" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheckResult" Width="1.5" PointX="6.75" PointY="15.75" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclaration" Width="1.5" PointX="15.75" PointY="8.75" Height="8.5185351562499818" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclarationTNTX" Width="1.5" PointX="17.75" PointY="0.75" Height="8.1339322916666674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="0.75" PointY="17.75" Height="6.0186165364583246" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="17.75" PointY="9.75" Height="14.864482421874982" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationManagement" Width="1.5" PointX="9.75" PointY="18.75" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="11.75" PointY="18.75" Height="11.403056640624982" />
-        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="19.75" PointY="0.75" Height="6.7878222656249818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="6.75" PointY="19.75" Height="11.403056640624982" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="19.75" PointY="8.75" Height="12.172262369791667" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewGetCurrentDate" Width="1.5" PointX="13.75" PointY="19.75" Height="1.2110807291666674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewUserGroup" Width="1.5" PointX="21.75" PointY="0.75" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFee" Width="1.5" PointX="2.75" PointY="21.75" Height="4.0956022135416674" />
-        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="21.75" PointY="3.75" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="21.75" PointY="7.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleOverdue" Width="1.5" PointX="21.75" PointY="11.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="0.75" PointY="17.75" Height="6.018616536458353" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="17.75" PointY="9.75" Height="14.864482421875096" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationLoan" Width="1.5" PointX="11.75" PointY="18.75" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationManagement" Width="1.5" PointX="13.75" PointY="18.75" Height="5.0571093750000955" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="19.75" PointY="0.75" Height="11.403056640625096" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="8.75" PointY="19.75" Height="6.7878222656250955" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="19.75" PointY="13.75" Height="11.403056640625096" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="2.75" PointY="20.75" Height="12.172262369791611" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewGetCurrentDate" Width="1.5" PointX="21.75" PointY="0.75" Height="1.2110807291667243" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewUserGroup" Width="1.5" PointX="21.75" PointY="2.75" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFee" Width="1.5" PointX="4.75" PointY="21.75" Height="4.0956022135417243" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="21.75" PointY="5.75" Height="2.3648893229167243" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="21.75" PointY="9.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleOverdue" Width="1.5" PointX="21.75" PointY="13.75" Height="2.7494921874999818" />
         <AssociationConnector Association="dbEcustomModel.FK_tblDeclaration_tblUser" >
-          <ConnectorPoint PointX="2.25" PointY="8.3843489583333337" />
-          <ConnectorPoint PointX="3" PointY="8.3843489583333337" />
+          <ConnectorPoint PointX="2.25" PointY="8.6343489583333053" />
+          <ConnectorPoint PointX="3" PointY="8.6343489583333053" />
         </AssociationConnector>
         <AssociationConnector Association="dbEcustomModel.FK_tblRoleInGroup_tlbRole" >
-          <ConnectorPoint PointX="2.25" PointY="1.8939925130208337" />
-          <ConnectorPoint PointX="3" PointY="1.8939925130208337" />
+          <ConnectorPoint PointX="2.25" PointY="1.8939925130208053" />
+          <ConnectorPoint PointX="3" PointY="1.8939925130208053" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

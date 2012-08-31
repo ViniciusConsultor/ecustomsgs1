@@ -91,7 +91,7 @@ namespace ECustoms
                     }
 
 
-                    frmPageNumber frm = new frmPageNumber(_userInfo, declarationID, _isSecondHandover);
+                    frmPageNumber frm = new frmPageNumber(this,_userInfo, declarationID, _isSecondHandover);
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
