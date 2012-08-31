@@ -4,10 +4,91 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EcusDeclarationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="EcusDeclarationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="EcusDeclarationModelStoreContainer">
+          <EntitySet Name="DHangMD" EntityType="EcusDeclarationModel.Store.DHangMD" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DToKhaiMD" EntityType="EcusDeclarationModel.Store.DToKhaiMD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SDVT" EntityType="EcusDeclarationModel.Store.SDVT" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
+        <EntityType Name="DHangMD">
+          <Key>
+            <PropertyRef Name="SoTK" />
+            <PropertyRef Name="Ma_LH" />
+            <PropertyRef Name="Ma_HQ" />
+            <PropertyRef Name="NamDK" />
+            <PropertyRef Name="STTHang" />
+          </Key>
+          <Property Name="SoTK" Type="int" Nullable="false" />
+          <Property Name="Ma_LH" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Ma_HQ" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="NamDK" Type="smallint" Nullable="false" />
+          <Property Name="STTHang" Type="smallint" Nullable="false" />
+          <Property Name="Ma_HangKB" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Ma_Hang" Type="varchar" MaxLength="30" />
+          <Property Name="Ma_Phu" Type="varchar" MaxLength="31" />
+          <Property Name="Ten_Hang" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="DinhMuc" Type="int" Nullable="false" />
+          <Property Name="Nuoc_XX" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="Ma_DVT" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="Luong" Type="numeric" Nullable="false" Scale="6" />
+          <Property Name="DGia_KB" Type="numeric" Precision="24" Scale="6" />
+          <Property Name="DGia_TT" Type="numeric" Precision="24" Scale="6" />
+          <Property Name="Ma_DG" Type="char" MaxLength="2" />
+          <Property Name="TriGia_KB" Type="money" Nullable="false" />
+          <Property Name="TriGia_TT" Type="money" Nullable="false" />
+          <Property Name="TGKB_VND" Type="money" Nullable="false" />
+          <Property Name="LoaiTSXNK" Type="tinyint" />
+          <Property Name="TS_XNK" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="TS_TTDB" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="TS_VAT" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="Thue_XNK" Type="money" />
+          <Property Name="Thue_TTDB" Type="money" />
+          <Property Name="Thue_VAT" Type="money" />
+          <Property Name="Phu_Thu" Type="money" />
+          <Property Name="MienThue" Type="tinyint" Nullable="false" />
+          <Property Name="TL_QuyDoi" Type="numeric" Precision="15" Scale="6" />
+          <Property Name="Ma_ThKe" Type="varchar" MaxLength="10" />
+          <Property Name="ChoXuLy" Type="tinyint" />
+          <Property Name="TyLe_ThuKhac" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="TriGia_ThuKhac" Type="money" />
+          <Property Name="Ma_HTS" Type="varchar" MaxLength="14" />
+          <Property Name="Luong_HTS" Type="numeric" />
+          <Property Name="DVT_HTS" Type="char" MaxLength="3" />
+          <Property Name="DonGia_HTS" Type="money" />
+          <Property Name="ecsMa_HangSX" Type="varchar" MaxLength="17" />
+          <Property Name="ecsTen_HangSX" Type="nvarchar" MaxLength="256" />
+          <Property Name="ecsMa_HSMR" Type="varchar" MaxLength="12" />
+          <Property Name="ecsNhan_Hieu" Type="nvarchar" MaxLength="256" />
+          <Property Name="ecsQuyCach_PC" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ecsThanhPhan" Type="nvarchar" MaxLength="100" />
+          <Property Name="ecsModel_HH" Type="nvarchar" MaxLength="35" />
+          <Property Name="ecsTong_CP_Khac" Type="numeric" Scale="2" />
+          <Property Name="ecsPhi_VC" Type="numeric" Scale="2" />
+          <Property Name="ecsPPTG" Type="char" MaxLength="1" />
+          <Property Name="ecsTong_CP" Type="numeric" Scale="2" />
+          <Property Name="ecsLayMau" Type="int" />
+          <Property Name="ecsSo_CO" Type="varchar" MaxLength="35" />
+          <Property Name="ecsNgay_CO" Type="datetime" />
+          <Property Name="ecsNgay_CO_HH" Type="datetime" />
+          <Property Name="ecsTo_Chuc_Cap_CO" Type="nvarchar" MaxLength="100" />
+          <Property Name="ecsNuoc_Cap_CO" Type="varchar" MaxLength="2" />
+          <Property Name="Ma_Loai_CO" Type="char" MaxLength="10" />
+          <Property Name="ecsLoai_CO" Type="nvarchar" MaxLength="256" />
+          <Property Name="ecsNguoi_XK_CO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ecsMa_Nuoc_XK_CO" Type="varchar" MaxLength="2" />
+          <Property Name="ecsNguoi_NK_CO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ecsMa_Nuoc_NK_CO" Type="varchar" MaxLength="2" />
+          <Property Name="ecsMo_Ta_HH_CO" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ecsSo_GP" Type="nvarchar" MaxLength="35" />
+          <Property Name="ecsNgay_GP" Type="datetime" />
+          <Property Name="ecsNgay_GP_HH" Type="datetime" />
+          <Property Name="ecsLoai_GP" Type="varchar" MaxLength="3" />
+          <Property Name="ecsTen_GP" Type="nvarchar" MaxLength="256" />
+          <Property Name="ecsNguoi_Cap_GP" Type="nvarchar" MaxLength="35" />
+          <Property Name="ecsNoi_Cap_GP" Type="nvarchar" MaxLength="200" />
+          <Property Name="ecsNgay_Nop_CO" Type="datetime" />
+          <Property Name="IsNoCO" Type="int" />
+        </EntityType>
         <EntityType Name="DToKhaiMD">
           <Key>
             <PropertyRef Name="SoTK" />
@@ -100,13 +181,23 @@
           <Property Name="DeXuatKhac" Type="nvarchar" MaxLength="2000" />
           <Property Name="Ngay_VanDon_HH" Type="datetime" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityType Name="SDVT">
+          <Key>
+            <PropertyRef Name="Ma_DVT" />
+          </Key>
+          <Property Name="Ma_DVT" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="Ten_DVT" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Ma_Std" Type="char" MaxLength="3" />
+          <Property Name="TL_QuyDoi" Type="numeric" Precision="15" Scale="6" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EcusDeclarationModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
         <EntityContainer Name="dbEcusDeclaration">
           <EntitySet Name="DToKhaiMDs" EntityType="EcusDeclarationModel.DToKhaiMD" />
+          <EntitySet Name="DHangMDs" EntityType="EcusDeclarationModel.DHangMD" />
+          <EntitySet Name="SDVTs" EntityType="EcusDeclarationModel.SDVT" />
         </EntityContainer>
         <EntityType Name="DToKhaiMD">
           <Key>
@@ -200,6 +291,94 @@
           <Property Name="DeXuatKhac" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
           <Property Name="Ngay_VanDon_HH" Type="DateTime" />
         </EntityType>
+        <EntityType Name="DHangMD">
+          <Key>
+            <PropertyRef Name="SoTK" />
+            <PropertyRef Name="Ma_LH" />
+            <PropertyRef Name="Ma_HQ" />
+            <PropertyRef Name="NamDK" />
+            <PropertyRef Name="STTHang" />
+          </Key>
+          <Property Type="Int32" Name="SoTK" Nullable="false" />
+          <Property Type="String" Name="Ma_LH" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Ma_HQ" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="NamDK" Nullable="false" />
+          <Property Type="Int16" Name="STTHang" Nullable="false" />
+          <Property Type="String" Name="Ma_HangKB" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ma_Hang" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ma_Phu" MaxLength="31" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ten_Hang" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DinhMuc" Nullable="false" />
+          <Property Type="String" Name="Nuoc_XX" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Ma_DVT" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Luong" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="DGia_KB" Precision="24" Scale="6" />
+          <Property Type="Decimal" Name="DGia_TT" Precision="24" Scale="6" />
+          <Property Type="String" Name="Ma_DG" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="TriGia_KB" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TriGia_TT" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TGKB_VND" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Byte" Name="LoaiTSXNK" />
+          <Property Type="Decimal" Name="TS_XNK" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="TS_TTDB" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="TS_VAT" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="Thue_XNK" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Thue_TTDB" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Thue_VAT" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Phu_Thu" Precision="19" Scale="4" />
+          <Property Type="Byte" Name="MienThue" Nullable="false" />
+          <Property Type="Decimal" Name="TL_QuyDoi" Precision="15" Scale="6" />
+          <Property Type="String" Name="Ma_ThKe" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="ChoXuLy" />
+          <Property Type="Decimal" Name="TyLe_ThuKhac" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="TriGia_ThuKhac" Precision="19" Scale="4" />
+          <Property Type="String" Name="Ma_HTS" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Luong_HTS" Precision="18" Scale="0" />
+          <Property Type="String" Name="DVT_HTS" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="DonGia_HTS" Precision="19" Scale="4" />
+          <Property Type="String" Name="ecsMa_HangSX" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ecsTen_HangSX" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsMa_HSMR" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ecsNhan_Hieu" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsQuyCach_PC" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsThanhPhan" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsModel_HH" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="ecsTong_CP_Khac" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="ecsPhi_VC" Precision="18" Scale="2" />
+          <Property Type="String" Name="ecsPPTG" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="ecsTong_CP" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="ecsLayMau" />
+          <Property Type="String" Name="ecsSo_CO" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ecsNgay_CO" />
+          <Property Type="DateTime" Name="ecsNgay_CO_HH" />
+          <Property Type="String" Name="ecsTo_Chuc_Cap_CO" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsNuoc_Cap_CO" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ma_Loai_CO" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ecsLoai_CO" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsNguoi_XK_CO" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsMa_Nuoc_XK_CO" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ecsNguoi_NK_CO" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsMa_Nuoc_NK_CO" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ecsMo_Ta_HH_CO" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsSo_GP" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ecsNgay_GP" />
+          <Property Type="DateTime" Name="ecsNgay_GP_HH" />
+          <Property Type="String" Name="ecsLoai_GP" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ecsTen_GP" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsNguoi_Cap_GP" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ecsNoi_Cap_GP" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ecsNgay_Nop_CO" />
+          <Property Type="Int32" Name="IsNoCO" />
+        </EntityType>
+        <EntityType Name="SDVT">
+          <Key>
+            <PropertyRef Name="Ma_DVT" />
+          </Key>
+          <Property Type="String" Name="Ma_DVT" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Ten_DVT" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ma_Std" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="TL_QuyDoi" Precision="15" Scale="6" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -292,6 +471,92 @@
             <ScalarProperty Name="DeXuatKhac" ColumnName="DeXuatKhac" />
             <ScalarProperty Name="Ngay_VanDon_HH" ColumnName="Ngay_VanDon_HH" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DHangMDs">
+            <EntityTypeMapping TypeName="EcusDeclarationModel.DHangMD">
+              <MappingFragment StoreEntitySet="DHangMD">
+                <ScalarProperty Name="IsNoCO" ColumnName="IsNoCO" />
+                <ScalarProperty Name="ecsNgay_Nop_CO" ColumnName="ecsNgay_Nop_CO" />
+                <ScalarProperty Name="ecsNoi_Cap_GP" ColumnName="ecsNoi_Cap_GP" />
+                <ScalarProperty Name="ecsNguoi_Cap_GP" ColumnName="ecsNguoi_Cap_GP" />
+                <ScalarProperty Name="ecsTen_GP" ColumnName="ecsTen_GP" />
+                <ScalarProperty Name="ecsLoai_GP" ColumnName="ecsLoai_GP" />
+                <ScalarProperty Name="ecsNgay_GP_HH" ColumnName="ecsNgay_GP_HH" />
+                <ScalarProperty Name="ecsNgay_GP" ColumnName="ecsNgay_GP" />
+                <ScalarProperty Name="ecsSo_GP" ColumnName="ecsSo_GP" />
+                <ScalarProperty Name="ecsMo_Ta_HH_CO" ColumnName="ecsMo_Ta_HH_CO" />
+                <ScalarProperty Name="ecsMa_Nuoc_NK_CO" ColumnName="ecsMa_Nuoc_NK_CO" />
+                <ScalarProperty Name="ecsNguoi_NK_CO" ColumnName="ecsNguoi_NK_CO" />
+                <ScalarProperty Name="ecsMa_Nuoc_XK_CO" ColumnName="ecsMa_Nuoc_XK_CO" />
+                <ScalarProperty Name="ecsNguoi_XK_CO" ColumnName="ecsNguoi_XK_CO" />
+                <ScalarProperty Name="ecsLoai_CO" ColumnName="ecsLoai_CO" />
+                <ScalarProperty Name="Ma_Loai_CO" ColumnName="Ma_Loai_CO" />
+                <ScalarProperty Name="ecsNuoc_Cap_CO" ColumnName="ecsNuoc_Cap_CO" />
+                <ScalarProperty Name="ecsTo_Chuc_Cap_CO" ColumnName="ecsTo_Chuc_Cap_CO" />
+                <ScalarProperty Name="ecsNgay_CO_HH" ColumnName="ecsNgay_CO_HH" />
+                <ScalarProperty Name="ecsNgay_CO" ColumnName="ecsNgay_CO" />
+                <ScalarProperty Name="ecsSo_CO" ColumnName="ecsSo_CO" />
+                <ScalarProperty Name="ecsLayMau" ColumnName="ecsLayMau" />
+                <ScalarProperty Name="ecsTong_CP" ColumnName="ecsTong_CP" />
+                <ScalarProperty Name="ecsPPTG" ColumnName="ecsPPTG" />
+                <ScalarProperty Name="ecsPhi_VC" ColumnName="ecsPhi_VC" />
+                <ScalarProperty Name="ecsTong_CP_Khac" ColumnName="ecsTong_CP_Khac" />
+                <ScalarProperty Name="ecsModel_HH" ColumnName="ecsModel_HH" />
+                <ScalarProperty Name="ecsThanhPhan" ColumnName="ecsThanhPhan" />
+                <ScalarProperty Name="ecsQuyCach_PC" ColumnName="ecsQuyCach_PC" />
+                <ScalarProperty Name="ecsNhan_Hieu" ColumnName="ecsNhan_Hieu" />
+                <ScalarProperty Name="ecsMa_HSMR" ColumnName="ecsMa_HSMR" />
+                <ScalarProperty Name="ecsTen_HangSX" ColumnName="ecsTen_HangSX" />
+                <ScalarProperty Name="ecsMa_HangSX" ColumnName="ecsMa_HangSX" />
+                <ScalarProperty Name="DonGia_HTS" ColumnName="DonGia_HTS" />
+                <ScalarProperty Name="DVT_HTS" ColumnName="DVT_HTS" />
+                <ScalarProperty Name="Luong_HTS" ColumnName="Luong_HTS" />
+                <ScalarProperty Name="Ma_HTS" ColumnName="Ma_HTS" />
+                <ScalarProperty Name="TriGia_ThuKhac" ColumnName="TriGia_ThuKhac" />
+                <ScalarProperty Name="TyLe_ThuKhac" ColumnName="TyLe_ThuKhac" />
+                <ScalarProperty Name="ChoXuLy" ColumnName="ChoXuLy" />
+                <ScalarProperty Name="Ma_ThKe" ColumnName="Ma_ThKe" />
+                <ScalarProperty Name="TL_QuyDoi" ColumnName="TL_QuyDoi" />
+                <ScalarProperty Name="MienThue" ColumnName="MienThue" />
+                <ScalarProperty Name="Phu_Thu" ColumnName="Phu_Thu" />
+                <ScalarProperty Name="Thue_VAT" ColumnName="Thue_VAT" />
+                <ScalarProperty Name="Thue_TTDB" ColumnName="Thue_TTDB" />
+                <ScalarProperty Name="Thue_XNK" ColumnName="Thue_XNK" />
+                <ScalarProperty Name="TS_VAT" ColumnName="TS_VAT" />
+                <ScalarProperty Name="TS_TTDB" ColumnName="TS_TTDB" />
+                <ScalarProperty Name="TS_XNK" ColumnName="TS_XNK" />
+                <ScalarProperty Name="LoaiTSXNK" ColumnName="LoaiTSXNK" />
+                <ScalarProperty Name="TGKB_VND" ColumnName="TGKB_VND" />
+                <ScalarProperty Name="TriGia_TT" ColumnName="TriGia_TT" />
+                <ScalarProperty Name="TriGia_KB" ColumnName="TriGia_KB" />
+                <ScalarProperty Name="Ma_DG" ColumnName="Ma_DG" />
+                <ScalarProperty Name="DGia_TT" ColumnName="DGia_TT" />
+                <ScalarProperty Name="DGia_KB" ColumnName="DGia_KB" />
+                <ScalarProperty Name="Luong" ColumnName="Luong" />
+                <ScalarProperty Name="Ma_DVT" ColumnName="Ma_DVT" />
+                <ScalarProperty Name="Nuoc_XX" ColumnName="Nuoc_XX" />
+                <ScalarProperty Name="DinhMuc" ColumnName="DinhMuc" />
+                <ScalarProperty Name="Ten_Hang" ColumnName="Ten_Hang" />
+                <ScalarProperty Name="Ma_Phu" ColumnName="Ma_Phu" />
+                <ScalarProperty Name="Ma_Hang" ColumnName="Ma_Hang" />
+                <ScalarProperty Name="Ma_HangKB" ColumnName="Ma_HangKB" />
+                <ScalarProperty Name="STTHang" ColumnName="STTHang" />
+                <ScalarProperty Name="NamDK" ColumnName="NamDK" />
+                <ScalarProperty Name="Ma_HQ" ColumnName="Ma_HQ" />
+                <ScalarProperty Name="Ma_LH" ColumnName="Ma_LH" />
+                <ScalarProperty Name="SoTK" ColumnName="SoTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDVTs">
+            <EntityTypeMapping TypeName="EcusDeclarationModel.SDVT">
+              <MappingFragment StoreEntitySet="SDVT">
+                <ScalarProperty Name="TL_QuyDoi" ColumnName="TL_QuyDoi" />
+                <ScalarProperty Name="Ma_Std" ColumnName="Ma_Std" />
+                <ScalarProperty Name="Ten_DVT" ColumnName="Ten_DVT" />
+                <ScalarProperty Name="Ma_DVT" ColumnName="Ma_DVT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -312,8 +577,10 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ModelEcusDeclaration" ZoomLevel="85">
+      <Diagram Name="ModelEcusDeclaration" ZoomLevel="34">
         <EntityTypeShape EntityType="EcusDeclarationModel.DToKhaiMD" Width="1.5" PointX="0.75" PointY="0.75" Height="17.172099609375003" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcusDeclarationModel.DHangMD" Width="1.5" PointX="3.375" PointY="0.75" Height="14.479879557291667" />
+        <EntityTypeShape EntityType="EcusDeclarationModel.SDVT" Width="1.5" PointX="5.375" PointY="0.75" Height="1.7879850260416665" />
       </Diagram>
     </Diagrams>
   </Designer>

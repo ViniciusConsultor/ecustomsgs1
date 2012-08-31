@@ -1512,7 +1512,9 @@ namespace ECustoms
             txtExportCompanyCode.Text = declaration.Ma_DV;
             txtExportCompanyCode.Enabled = false;
             txtExportCompanyCode_Leave(null, null);
-            txtProductAmount.Text = declaration.SoHang.ToString();
+            txtProductAmount.Text = declaration.SoLuong.ToString("#,#.###");
+            txtExportUnit.Text = declaration.Dvt;
+            txtExportProductName.Text = declaration.TenHang;
         }
 
         private void txtExportNumber_Leave(object sender, EventArgs e)
