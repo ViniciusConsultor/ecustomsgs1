@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ECustoms.BOL;
+using ECustoms.Utilities;
 
 namespace ECustoms
 {
@@ -21,11 +23,18 @@ namespace ECustoms
             cboMinute.Items.AddRange(strMinutes);
             cboHour.SelectedIndex = 0;
             cboMinute.SelectedIndex = 0;
+
+            LoadDatabaseInfo();
         }
 
         private void LoadDatabaseInfo()
         {
-            
+            var settings = SettingsFactory.GetTheLastSetting();
+            txtVersion.Text = settings.Version;
+            txtLastimeSync.Text = settings.LastSync.ToVnDate();
+            txtSyncInterval.Text = settings.SyncInterval.HasValue ? settings.SyncInterval.ToString() : "0";
+            cboHour.Text = settings.SyncTime.ToHour();
+            cboMinute.Text = settings.SyncTime.ToMinute();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -37,6 +46,15 @@ namespace ECustoms
         {
             panel1.Enabled = !chkUseSyncInterval.Checked;
             txtSyncInterval.Enabled = chkUseSyncInterval.Checked;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            var settings = SettingsFactory.GetTheLastSetting();
+            SettingsFactory.UpdateSettings(settings.Version,settings.LastSync,txtSyncInterval.Text.StringToInt(),
+                cboHour.Text + ":" + cboMinute.Text,false);
+
+            this.Close();
         }
 
     }

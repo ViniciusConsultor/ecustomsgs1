@@ -100,7 +100,8 @@ namespace ECustoms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
+            //this.Close();
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)

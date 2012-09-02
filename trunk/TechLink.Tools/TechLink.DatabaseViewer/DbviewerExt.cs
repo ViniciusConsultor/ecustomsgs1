@@ -43,5 +43,28 @@ namespace TechLink.DatabaseViewer
 
             return sqlConnectionStr.ToString();
         }
+
+        public static bool ObjectNullOrEmpty(this object value)
+        {
+            return value == null || value.ToString().Trim().Length == 0;
+        }
+
+        public static bool ObjectToBoolean(this object value)
+        {
+            if(value.ObjectNullOrEmpty())
+            {
+                return false;
+            }
+            else if (value.ToString().Equals("no") || value.ToString().Equals("false") || value.ToString().Equals("0"))
+            {
+                return false;
+            }
+            else if (value.ToString().Equals("yes") || value.ToString().Equals("true") || value.ToString().Equals("1"))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

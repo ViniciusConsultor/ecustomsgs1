@@ -114,6 +114,19 @@ namespace ECustoms.Utilities
             return ConstantInfo.Branch;
         }
 
+        public static string RgCodeOfUnit()
+        {
+            var app = Registry.LocalMachine.OpenSubKey(ConstantInfo.RgKeyApp);
+            if (app != null)
+            {
+                var ss = app.GetValue(ConstantInfo.RgKeyUnitCode);
+                if (ss == null) return string.Empty;
+
+                return ss.ToString();
+            }
+            return string.Empty;
+        }
+
         /// <summary>
         /// Save data into SOFTWARE\\TechLink
         /// </summary>
@@ -143,6 +156,20 @@ namespace ECustoms.Utilities
             else
             {
                 app.SetValue(ConstantInfo.RgKeyAppUserProfilePath, fileName);
+            }
+        }
+
+        public static void SaveUnitCode(string code)
+        {
+            var app = Registry.LocalMachine.OpenSubKey(ConstantInfo.RgKeyApp, true);
+            if (app == null)
+            {
+                var sig = Registry.LocalMachine.CreateSubKey(ConstantInfo.RgKeyApp);
+                sig.SetValue(ConstantInfo.RgKeyUnitCode, code);
+            }
+            else
+            {
+                app.SetValue(ConstantInfo.RgKeyUnitCode, code);
             }
         }
 

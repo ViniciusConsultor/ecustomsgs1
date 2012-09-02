@@ -23,7 +23,7 @@ namespace ECustoms.BOL
             var currentDate = CommonFactory.GetCurrentDate();
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
 
-            declarationInfo.tblUser = db.tblUsers.Where(g => g.UserID.Equals(userID)).FirstOrDefault();
+            //declarationInfo.tblUser = db.tblUsers.Where(g => g.UserID.Equals(userID)).FirstOrDefault();
             // Set Created date and Last modified date
             declarationInfo.CreatedDate = currentDate;
             declarationInfo.ModifiedDate = currentDate;

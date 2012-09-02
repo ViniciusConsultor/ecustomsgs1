@@ -120,13 +120,14 @@ namespace ECustoms
             var tblSettings = tables.FirstOrDefault(item => item.Name.ToLower() == "tblsettings");
             if (tblSettings == null)
             {
-                ConfirmUpgradeDB();
-                Application.Run(new frmUpgradeDatabase("1.0.0", connectionString));
+                    ConfirmUpgradeDB();
+                    //frmUpgradeDatabase upgradeDatabase = new frmUpgradeDatabase(ConstantInfo.CurrentVersion, connectionString);
+                    Application.Run(new frmUpgradeDatabase(ConstantInfo.CurrentVersion, connectionString));
             }
             else
             {
                 var data = sqlCopier.GetDataFromTable(tblSettings.Name);
-                var version = (data.Rows.Count == 0 ? "1.0.0" : data.Rows[0]["Version"].ToString());
+                var version = (data.Rows.Count == 0 ? ConstantInfo.CurrentVersion : data.Rows[0]["Version"].ToString());
 
                 if (version != UpgradeDatabase.CommandNames[UpgradeDatabase.CommandNames.Length - 1])
                 {

@@ -16,6 +16,7 @@ namespace TechLink.DatabaseViewer.Commands
         {
             Version = "1.0.0";
             _SqlCopier = sqlCopier;
+
         }
 
         public virtual bool DoUpgrade(object parameters)

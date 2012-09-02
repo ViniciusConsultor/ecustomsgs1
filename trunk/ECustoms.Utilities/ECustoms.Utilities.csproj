@@ -92,6 +92,7 @@
     <Compile Include="TechlinkErrorProvider.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TechLinkExt.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="UserType.cs" />
   </ItemGroup>

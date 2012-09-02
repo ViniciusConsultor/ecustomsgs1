@@ -69,6 +69,24 @@
     <Compile Include="DataAccess\SqlAccessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\UpgradeCommandBase.cs" />
+    <Compile Include="SQLHelper.cs" />
+    <Compile Include="Subtext\Scripting\ConnectionString.cs" />
+    <Compile Include="Subtext\Scripting\Exceptions\SqlParseException.cs" />
+    <Compile Include="Subtext\Scripting\Exceptions\SqlScriptExecutionException.cs" />
+    <Compile Include="Subtext\Scripting\IScript.cs" />
+    <Compile Include="Subtext\Scripting\ITemplateScript.cs" />
+    <Compile Include="Subtext\Scripting\ParameterValueChangedEventArgs.cs" />
+    <Compile Include="Subtext\Scripting\Script.cs" />
+    <Compile Include="Subtext\Scripting\ScriptCollection.cs" />
+    <Compile Include="Subtext\Scripting\ScriptReader.cs" />
+    <Compile Include="Subtext\Scripting\ScriptSplitter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Subtext\Scripting\SeparatorLineReader.cs" />
+    <Compile Include="Subtext\Scripting\SqlScriptReader.cs" />
+    <Compile Include="Subtext\Scripting\SqlScriptRunner.cs" />
+    <Compile Include="Subtext\Scripting\TemplateParameter.cs" />
+    <Compile Include="Subtext\Scripting\TemplateParameterCollection.cs" />
     <Compile Include="UpgradeDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
