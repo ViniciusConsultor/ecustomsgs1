@@ -132,6 +132,9 @@
         public const string RgKeyAppUserProfilePath = "Profile";
         public const string RgKeyAppUserTimeStampPath = "TimeStamp";
         public const string RgKeySizePath = "SizeOfUnit";
+        public const string RgKeyUnitCode = "UnitCode";
+        public const string CurrentVersion = "1.0.0";
+
         #endregion
     }
 }

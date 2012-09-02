@@ -92,18 +92,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ModelEcustoms.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelEcustoms.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
     <EntityDeploy Include="ModelEcusDeclaration.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelEcusDeclaration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ModelEcustoms.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelEcustoms.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Properties\DataSources\dbEcusDeclaration.datasource" />
     <None Include="Properties\DataSources\dbEcustomEntities.datasource" />

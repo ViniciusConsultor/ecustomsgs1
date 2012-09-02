@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TechLink.DatabaseViewer.DataTransferObjects;
+using TechLink.DatabaseViewer.Subtext.Scripting;
 
 namespace TechLink.DatabaseViewer.DataAccess
 {
@@ -67,6 +68,42 @@ namespace TechLink.DatabaseViewer.DataAccess
             return (from item in lst orderby item.Name select item).ToList();
         }
 
+        public List<FieldInfo> GetAllFieldsOfTable(string  tableName)
+        {
+            string sqlQuery = string.Format("SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='{0}'", tableName);
+            DataTable table = InvokeCommand(sqlQuery) as DataTable;
+
+            if (table == null) return new List<FieldInfo>();
+
+            List<FieldInfo> lst = new List<FieldInfo>();
+            foreach (DataRow dataRow in table.Rows)
+            {
+                FieldInfo fieldInfo = new FieldInfo()
+                                          {
+                                              Name = dataRow["COLUMN_NAME"].ToString(),
+                                              Type = dataRow["DATA_TYPE"].ToString(),
+                                              IsNullable = dataRow["IS_NULLABLE"].ObjectToBoolean(),
+                                              MaxLength =
+                                                  dataRow["CHARACTER_MAXIMUM_LENGTH"].ObjectNullOrEmpty()
+                                                      ? -1
+                                                      : Convert.ToInt32(dataRow["CHARACTER_MAXIMUM_LENGTH"])
+                };
+                lst.Add(fieldInfo);
+            }
+
+            return (from item in lst orderby item.Name select item).ToList();
+        }
+
+        public bool ExistingFieldInTable(string tableName, string fieldCheck)
+        {
+            string sqlQuery = string.Format("SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='{0}' AND column_name='{1}'", tableName, fieldCheck);
+            DataTable table = InvokeCommand(sqlQuery) as DataTable;
+
+            if (table == null) return false;
+
+            return table.Rows.Count > 0;
+        }
+
         private object InvokeCommand(string commandText, bool isGetData = true)
         {
             command.CommandText = commandText;
@@ -93,7 +130,7 @@ namespace TechLink.DatabaseViewer.DataAccess
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Lỗi thực thi lệnh: " + commandText, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lỗi thực thi lệnh: \r\n" + commandText, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {
@@ -142,6 +179,27 @@ namespace TechLink.DatabaseViewer.DataAccess
         public object RunSqlQuery(string sqlQuery)
         {
             var result = InvokeCommand(sqlQuery, false);
+            return result;
+        }
+
+        public object RunScript(string tSqlScript)
+        {
+            object result = null;
+            SqlScriptRunner runner = new SqlScriptRunner(tSqlScript);
+
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
+            if (connection.State != ConnectionState.Open)
+            {
+                throw new Exception("Cannot create a connection to database!");
+            }
+            
+            using (SqlTransaction transaction = connection.BeginTransaction())
+            {
+                result = runner.Execute(transaction);
+                transaction.Commit();
+            }
+            
             return result;
         }
 

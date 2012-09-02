@@ -110,6 +110,8 @@ namespace ECustoms
                         {
                             FDHelper.SaveSizeOfUnit(ConstantInfo.Branch);
                         }
+
+                        FDHelper.SaveUnitCode(txtCode.Text.ToUpper());
                         
                         var bone = XRayController.TranslateBoneInformation(sb.ToString());
 

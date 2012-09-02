@@ -26,11 +26,13 @@ namespace ECustoms
             _connection = connection;
         }
 
-        protected override void OnLoad(EventArgs e)
+        
+
+        public void DoUpgrate()
         {
-            base.OnLoad(e);
             SqlCopier sqlCopier = new SqlCopier(_connection);
             UpgradeDatabase upgradeDatabase = new UpgradeDatabase();
+            string unitCode = FDHelper.RgCodeOfUnit();
 
             var currentVersions = _version.Split('.');
             int fromVersion = 0;
@@ -51,7 +53,7 @@ namespace ECustoms
 
             for (int i = fromVersion; i < UpgradeDatabase.CommandNames.Length; i++)
             {
-                if (!upgradeDatabase.UpgradeCommands[UpgradeDatabase.CommandNames[i]].DoUpgrade(this.progressBar1))
+                if (!upgradeDatabase.UpgradeCommands[UpgradeDatabase.CommandNames[i]].DoUpgrade(new List<object> { this.progressBar1, unitCode }))
                 {
                     MessageBox.Show(
                         "Nâng cấp cơ sở dữ liệu không thành công. Ứng dụng không thể tiếp tục chạy.\r\nVui lòng liên hệ với TechLink để được trợ giúp!",
@@ -65,7 +67,17 @@ namespace ECustoms
                 "Nâng cấp cơ sở dữ liệu thành công. Nhấn OK để tiếp tục!",
                 "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+        }
 
+        private void frmUpgradeDatabase_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            DoUpgrate();
         }
     }
 }
