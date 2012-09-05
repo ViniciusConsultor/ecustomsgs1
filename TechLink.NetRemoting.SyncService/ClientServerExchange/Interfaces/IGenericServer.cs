@@ -10,6 +10,7 @@ namespace ClientServerExchange.Interfaces
 	public interface IGenericServer
 	{
 	    bool StartSync(ClientInfo clientInfo);
+        void StopSync(ClientInfo clientInfo);
 
 	    List<string> Sync_tblUser(List<tblUser> users);
         List<string> Sync_tblVehicle(List<tblVehicle> vehicles);

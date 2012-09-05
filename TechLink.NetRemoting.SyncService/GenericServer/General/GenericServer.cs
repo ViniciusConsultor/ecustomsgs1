@@ -27,6 +27,8 @@ namespace GenericRemoteServer.General
         private IDataController _dataController = null;
         private bool _securityEnabled = false;
         private System.Timers.Timer GCCollectTimer = null;
+        private List<ClientInfo> SyncingClients = new List<ClientInfo>();
+
         public GenericServer(IDataController dataController)
         {
             _dataController = dataController;
@@ -68,6 +70,20 @@ namespace GenericRemoteServer.General
         #region Implementation of IGenericServer
 
         public bool StartSync(ClientInfo clientInfo)
+        {
+            var result = BranchFactory.IsExistingBranch(clientInfo.Name, clientInfo.Serial);
+            if (result)
+            {
+                if (SyncingClients.FirstOrDefault(item => item.Serial == clientInfo.Serial && item.Name == clientInfo.Name) == null)
+                {
+                    SyncingClients.Add(clientInfo);
+                }
+            }
+
+            return result;
+        }
+
+        public void StopSync(ClientInfo clientInfo)
         {
             throw new NotImplementedException();
         }

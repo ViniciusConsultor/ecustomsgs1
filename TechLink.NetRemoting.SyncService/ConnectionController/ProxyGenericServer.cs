@@ -30,6 +30,11 @@ namespace ConnectionController
             throw new NotImplementedException();
         }
 
+        public void StopSync(ClientInfo clientInfo)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<string> Sync_tblUser(List<tblUser> users)
         {
             throw new NotImplementedException();
