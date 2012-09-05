@@ -56,11 +56,21 @@ namespace TechLink.WindowsClientSync
         {
             //throw new NotImplementedException();
             var ProxyGenericServer = serverInterfacesHelper.ServerInterfacesDispatcher.GenericServer;
+
+            var canSync =
+                ProxyGenericServer.StartSync(new ClientInfo()
+                                                 {Name = FDHelper.RgCodeOfUnit(), Serial = FDHelper.RgGetSizeOfUnit()});
+            if(!canSync)
+            {
+                timer.Stop();
+                return;
+            }
+
             var UnSyncedUsers = UserFactory.SelectAllUnSyncedUser();
 
             if (UnSyncedUsers.Count <= 20)
             {
-
+                
             }
 
         }

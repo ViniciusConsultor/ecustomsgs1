@@ -182,6 +182,12 @@ namespace TechLink.DatabaseViewer.DataAccess
             return result;
         }
 
+        public object RunSqlReader(string sqlQuery)
+        {
+            var result = InvokeCommand(sqlQuery, true);
+            return result;
+        }
+
         public object RunScript(string tSqlScript)
         {
             object result = null;
