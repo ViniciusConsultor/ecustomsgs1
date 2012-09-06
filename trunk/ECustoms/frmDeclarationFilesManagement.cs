@@ -35,6 +35,7 @@ namespace ECustoms
             dataSet2.tblLoanStatus.Rows.Add(true, "Đã cho mượn");
             this.Text = "Quan ly ho so luu tru" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
             init();
+            btnUpdate.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LUU_TRU_HO_SO_TO_KHAI);
 
         }
         private void init()
@@ -112,6 +113,10 @@ namespace ECustoms
 
         private void grvDeclarationList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (_userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LUU_TRU_HO_SO_TO_KHAI) == false)
+            {
+                return;
+            }
             try
             {
                 if (this.grvDeclarationList.SelectedRows.Count > 0)
@@ -199,13 +204,13 @@ namespace ECustoms
                     tblDeclaration declaration = DeclarationFactory.GetByID(ID);
                     if (declaration != null && declaration.LoanStatus == false)
                     {
-                        btnGetFiles.Enabled = true;
+                        btnGetFiles.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CHO_MUON_HO_SO_TO_KHAI);
                         btnReturnFiles.Enabled = false;
                     }
                     if (declaration != null && declaration.LoanStatus == true)
                     {
                         btnGetFiles.Enabled = false;
-                        btnReturnFiles.Enabled = true;
+                        btnReturnFiles.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_HO_SO_TO_KHAI);
                     }
                 }
             }

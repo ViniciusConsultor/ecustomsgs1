@@ -122,6 +122,12 @@
         public const int PERMISSON_CAP_NHAT_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN = 52;
         public const int PERMISSON_XOA_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN = 53;
 
+        public const int PERMISSON_TRA_CUU_THONG_TIN_HO_SO_TO_KHAI = 54;
+        public const int PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_LEN_PHUC_TAP = 55;
+        public const int PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_SANG_LUU_TRU = 56;
+        public const int PERMISSON_CHO_MUON_HO_SO_TO_KHAI = 57;
+        public const int PERMISSON_TRA_HO_SO_TO_KHAI = 58;
+        public const int PERMISSON_CAP_NHAT_THONG_TIN_LUU_TRU_HO_SO_TO_KHAI = 59;
 
 
         #region System

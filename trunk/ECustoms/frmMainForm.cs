@@ -142,6 +142,25 @@ namespace ECustoms
                 _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN) ||
                 _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_THONG_CAU_HINH_TINH_PHI_PHUONG_TIEN);
 
+            //thong tin ho so to khai
+            mnuDeclerationFilesManagement.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_LEN_PHUC_TAP) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_SANG_LUU_TRU) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CHO_MUON_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LUU_TRU_HO_SO_TO_KHAI);
+
+            mnuHandover1.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_LEN_PHUC_TAP);
+
+            mnuHandover2.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_SANG_LUU_TRU);
+
+            mnuDeclarationManager.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_CUU_THONG_TIN_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CHO_MUON_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_TRA_HO_SO_TO_KHAI) ||
+                _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_CAP_NHAT_THONG_TIN_LUU_TRU_HO_SO_TO_KHAI);
+
             //xem danh sach xe qua han
             //mnuVehicleOverdueList.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN) || 
             //    _userInfo.UserPermission.Contains (ConstantInfo.PERMISSON_CAP_NHAT_PHUONG_TIEN)

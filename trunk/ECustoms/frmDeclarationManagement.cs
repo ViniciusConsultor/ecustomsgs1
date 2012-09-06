@@ -30,8 +30,6 @@ namespace ECustoms
             cbxCustomsCode.DisplayMember = "CustomsCode";
             cbxCustomsCode.ValueMember = "CustomsCode";
             cbxCustomsCode.SelectedIndex = -1;
-            btnReturn.Visible = _isManagementMode;
-            btnLoan.Visible = _isManagementMode;
             btnConfirmHandover.Visible = !_isManagementMode;
             fillData();
         }
@@ -42,12 +40,14 @@ namespace ECustoms
             {
                 listDeclaration = DeclarationManagementFactory.GetDeclarationNew();
                 this.Text = "Ban giao ho so tu nhan vien len phuc tap" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
+                btnConfirmHandover.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_LEN_PHUC_TAP);
 
             }
             else if (_isSecondHandover && !_isManagementMode)
             {
                 listDeclaration = DeclarationManagementFactory.GetDeclarationHandover();
                 this.Text = "Ban giao ho so tu phuc tap sang luu tru" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
+                btnConfirmHandover.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_BAN_GIAO_HO_SO_TO_KHAI_SANG_LUU_TRU);
 
             }
             else
@@ -224,6 +224,11 @@ namespace ECustoms
         }
 
         private void frmDeclarationManagement_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
         {
 
         }

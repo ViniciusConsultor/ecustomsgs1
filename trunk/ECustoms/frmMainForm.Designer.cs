@@ -68,7 +68,7 @@
             this.mnuCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustoms = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGate = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeclerationFilesManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHandover1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHandover2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeclarationManager = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +100,7 @@
             this.quảnLýHàngNTXCKToolStripMenuItem,
             this.mnuFeeManagement,
             this.mnuGeneralInfo,
-            this.quảnLýToolStripMenuItem,
+            this.mnuDeclerationFilesManagement,
             this.toolStripMenuReport,
             this.inTicketToolStripMenuItem,
             this.trợGiúpToolStripMenuItem});
@@ -437,15 +437,15 @@
             this.mnuGate.Text = "Danh mục cửa khẩu";
             this.mnuGate.Click += new System.EventHandler(this.mnuGate_Click);
             // 
-            // quảnLýToolStripMenuItem
+            // mnuDeclerationFilesManagement
             // 
-            this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDeclerationFilesManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuHandover1,
             this.mnuHandover2,
             this.mnuDeclarationManager});
-            this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.quảnLýToolStripMenuItem.Text = "Quản lý tờ k&hai";
+            this.mnuDeclerationFilesManagement.Name = "mnuDeclerationFilesManagement";
+            this.mnuDeclerationFilesManagement.Size = new System.Drawing.Size(98, 20);
+            this.mnuDeclerationFilesManagement.Text = "Quản lý tờ k&hai";
             // 
             // mnuHandover1
             // 
@@ -615,7 +615,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1140, 614);
+            this.ClientSize = new System.Drawing.Size(1140, 616);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -688,7 +688,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
         private System.Windows.Forms.ToolStripMenuItem mnuBackupRestore;
         private System.Windows.Forms.ToolStripMenuItem mnuVehicleOverdueList;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeclerationFilesManagement;
         private System.Windows.Forms.ToolStripMenuItem mnuHandover1;
         private System.Windows.Forms.ToolStripMenuItem mnuHandover2;
         private System.Windows.Forms.ToolStripMenuItem mnuDeclarationManager;
