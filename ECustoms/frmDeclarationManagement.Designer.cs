@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDeclarationNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,22 +49,6 @@
             this.txtRegisteredYear = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grvDeclarationList = new System.Windows.Forms.DataGridView();
-            this.btnConfirmHandover = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnLoan = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeclarationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +61,20 @@
             this.PersonReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PersonHandoverSecondUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PersonReceiveSecond = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnConfirmHandover = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDeclarationList)).BeginInit();
@@ -283,6 +281,103 @@
             this.grvDeclarationList.Size = new System.Drawing.Size(1022, 249);
             this.grvDeclarationList.TabIndex = 0;
             // 
+            // DeclarationID
+            // 
+            this.DeclarationID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DeclarationID.DataPropertyName = "DeclarationID";
+            this.DeclarationID.HeaderText = "ID";
+            this.DeclarationID.Name = "DeclarationID";
+            this.DeclarationID.Visible = false;
+            // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "Number";
+            this.Number.FillWeight = 5.30004F;
+            this.Number.HeaderText = "Số tờ khai";
+            this.Number.Name = "Number";
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.DataPropertyName = "CompanyName";
+            this.CompanyName.FillWeight = 23.97429F;
+            this.CompanyName.HeaderText = "Tên đơn vị XNK";
+            this.CompanyName.Name = "CompanyName";
+            // 
+            // CustomsCode
+            // 
+            this.CustomsCode.DataPropertyName = "CustomsCode";
+            this.CustomsCode.FillWeight = 33.09856F;
+            this.CustomsCode.HeaderText = "Mã Hải quan";
+            this.CustomsCode.Name = "CustomsCode";
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "Type";
+            this.Type.FillWeight = 67.15515F;
+            this.Type.HeaderText = "Loại hình";
+            this.Type.Name = "Type";
+            // 
+            // DateReturn
+            // 
+            this.DateReturn.DataPropertyName = "DateReturn";
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy hh:mm";
+            this.DateReturn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DateReturn.FillWeight = 136.177F;
+            this.DateReturn.HeaderText = "Ngày trả hồ sơ";
+            this.DateReturn.Name = "DateReturn";
+            this.DateReturn.Width = 120;
+            // 
+            // DateHandover
+            // 
+            this.DateHandover.DataPropertyName = "DateHandover";
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy hh:mm";
+            this.DateHandover.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DateHandover.FillWeight = 275.9182F;
+            this.DateHandover.HeaderText = "Ngày bàn giao lưu trữ";
+            this.DateHandover.Name = "DateHandover";
+            this.DateHandover.Width = 150;
+            // 
+            // CreatedDate
+            // 
+            this.CreatedDate.DataPropertyName = "CreatedDate";
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy hh:mm";
+            this.CreatedDate.DefaultCellStyle = dataGridViewCellStyle6;
+            this.CreatedDate.FillWeight = 558.3757F;
+            this.CreatedDate.HeaderText = "Ngày đăng ký";
+            this.CreatedDate.Name = "CreatedDate";
+            // 
+            // PersonHandoverUserName
+            // 
+            this.PersonHandoverUserName.DataPropertyName = "PersonHandoverUserName";
+            this.PersonHandoverUserName.FillWeight = 2.856749E-05F;
+            this.PersonHandoverUserName.HeaderText = "Người bàn giao lên phúc tập";
+            this.PersonHandoverUserName.Name = "PersonHandoverUserName";
+            this.PersonHandoverUserName.Width = 200;
+            // 
+            // PersonReceive
+            // 
+            this.PersonReceive.DataPropertyName = "PersonReceive";
+            this.PersonReceive.FillWeight = 8.51311E-05F;
+            this.PersonReceive.HeaderText = "Người nhận bàn giao lên phúc tập";
+            this.PersonReceive.Name = "PersonReceive";
+            this.PersonReceive.Width = 200;
+            // 
+            // PersonHandoverSecondUserName
+            // 
+            this.PersonHandoverSecondUserName.DataPropertyName = "PersonHandoverSecondUserName";
+            this.PersonHandoverSecondUserName.FillWeight = 0.000259347F;
+            this.PersonHandoverSecondUserName.HeaderText = "Người bàn giao sang lưu trữ";
+            this.PersonHandoverSecondUserName.Name = "PersonHandoverSecondUserName";
+            this.PersonHandoverSecondUserName.Width = 200;
+            // 
+            // PersonReceiveSecond
+            // 
+            this.PersonReceiveSecond.DataPropertyName = "PersonReceiveSecond";
+            this.PersonReceiveSecond.FillWeight = 0.000795932F;
+            this.PersonReceiveSecond.HeaderText = "Người nhận bàn giao sang lưu trữ";
+            this.PersonReceiveSecond.Name = "PersonReceiveSecond";
+            this.PersonReceiveSecond.Width = 200;
+            // 
             // btnConfirmHandover
             // 
             this.btnConfirmHandover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -316,38 +411,6 @@
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnReturn.Image = global::ECustoms.Properties.Resources.accept;
-            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturn.Location = new System.Drawing.Point(753, 368);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(94, 28);
-            this.btnReturn.TabIndex = 12;
-            this.btnReturn.Text = "Xác nhận t&rả";
-            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReturn.UseVisualStyleBackColor = true;
-            // 
-            // btnLoan
-            // 
-            this.btnLoan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnLoan.Image = global::ECustoms.Properties.Resources.accept;
-            this.btnLoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoan.Location = new System.Drawing.Point(855, 368);
-            this.btnLoan.Name = "btnLoan";
-            this.btnLoan.Size = new System.Drawing.Size(107, 28);
-            this.btnLoan.TabIndex = 13;
-            this.btnLoan.Text = "&Xác nhận mượn";
-            this.btnLoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoan.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -445,111 +508,11 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 200;
             // 
-            // DeclarationID
-            // 
-            this.DeclarationID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DeclarationID.DataPropertyName = "DeclarationID";
-            this.DeclarationID.HeaderText = "ID";
-            this.DeclarationID.Name = "DeclarationID";
-            this.DeclarationID.Visible = false;
-            this.DeclarationID.Width = 43;
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.FillWeight = 5.30004F;
-            this.Number.HeaderText = "Số tờ khai";
-            this.Number.Name = "Number";
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.DataPropertyName = "CompanyName";
-            this.CompanyName.FillWeight = 23.97429F;
-            this.CompanyName.HeaderText = "Tên đơn vị XNK";
-            this.CompanyName.Name = "CompanyName";
-            // 
-            // CustomsCode
-            // 
-            this.CustomsCode.DataPropertyName = "CustomsCode";
-            this.CustomsCode.FillWeight = 33.09856F;
-            this.CustomsCode.HeaderText = "Mã Hải quan";
-            this.CustomsCode.Name = "CustomsCode";
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "Type";
-            this.Type.FillWeight = 67.15515F;
-            this.Type.HeaderText = "Loại hình";
-            this.Type.Name = "Type";
-            // 
-            // DateReturn
-            // 
-            this.DateReturn.DataPropertyName = "DateReturn";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy hh:mm";
-            this.DateReturn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.DateReturn.FillWeight = 136.177F;
-            this.DateReturn.HeaderText = "Ngày trả hồ sơ";
-            this.DateReturn.Name = "DateReturn";
-            this.DateReturn.Width = 120;
-            // 
-            // DateHandover
-            // 
-            this.DateHandover.DataPropertyName = "DateHandover";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
-            this.DateHandover.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DateHandover.FillWeight = 275.9182F;
-            this.DateHandover.HeaderText = "Ngày bàn giao lưu trữ";
-            this.DateHandover.Name = "DateHandover";
-            this.DateHandover.Width = 150;
-            // 
-            // CreatedDate
-            // 
-            this.CreatedDate.DataPropertyName = "CreatedDate";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
-            this.CreatedDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CreatedDate.FillWeight = 558.3757F;
-            this.CreatedDate.HeaderText = "Ngày đăng ký";
-            this.CreatedDate.Name = "CreatedDate";
-            // 
-            // PersonHandoverUserName
-            // 
-            this.PersonHandoverUserName.DataPropertyName = "PersonHandoverUserName";
-            this.PersonHandoverUserName.FillWeight = 2.856749E-05F;
-            this.PersonHandoverUserName.HeaderText = "Người bàn giao lên phúc tập";
-            this.PersonHandoverUserName.Name = "PersonHandoverUserName";
-            this.PersonHandoverUserName.Width = 200;
-            // 
-            // PersonReceive
-            // 
-            this.PersonReceive.DataPropertyName = "PersonReceive";
-            this.PersonReceive.FillWeight = 8.51311E-05F;
-            this.PersonReceive.HeaderText = "Người nhận bàn giao lên phúc tập";
-            this.PersonReceive.Name = "PersonReceive";
-            this.PersonReceive.Width = 200;
-            // 
-            // PersonHandoverSecondUserName
-            // 
-            this.PersonHandoverSecondUserName.DataPropertyName = "PersonHandoverSecondUserName";
-            this.PersonHandoverSecondUserName.FillWeight = 0.000259347F;
-            this.PersonHandoverSecondUserName.HeaderText = "Người bàn giao sang lưu trữ";
-            this.PersonHandoverSecondUserName.Name = "PersonHandoverSecondUserName";
-            this.PersonHandoverSecondUserName.Width = 200;
-            // 
-            // PersonReceiveSecond
-            // 
-            this.PersonReceiveSecond.DataPropertyName = "PersonReceiveSecond";
-            this.PersonReceiveSecond.FillWeight = 0.000795932F;
-            this.PersonReceiveSecond.HeaderText = "Người nhận bàn giao sang lưu trữ";
-            this.PersonReceiveSecond.Name = "PersonReceiveSecond";
-            this.PersonReceiveSecond.Width = 200;
-            // 
             // frmDeclarationManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 404);
-            this.Controls.Add(this.btnLoan);
-            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnConfirmHandover);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
@@ -595,8 +558,6 @@
         private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.DateTimePicker dateTimePickerHandover;
         private System.Windows.Forms.DateTimePicker dateTimePickerReturn;
-        private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Button btnLoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
