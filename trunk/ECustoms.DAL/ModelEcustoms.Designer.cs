@@ -11,7 +11,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
 
 // Original file name:
-// Generation date: 9/6/2012 1:43:54 AM
+// Generation date: 9/7/2012 11:13:07 AM
 namespace ECustoms.DAL
 {
     
@@ -1172,7 +1172,7 @@ namespace ECustoms.DAL
         }
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.Log in the schema.
+    /// There are no comments for dbEcustomModel.Log in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
@@ -1182,7 +1182,7 @@ namespace ECustoms.DAL
     /// Logger
     /// Message
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="Log")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="Log")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Log : global::System.Data.Objects.DataClasses.EntityObject
@@ -1399,12 +1399,12 @@ namespace ECustoms.DAL
         partial void OnExceptionChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.sysdiagram in the schema.
+    /// There are no comments for dbEcustomModel.sysdiagram in the schema.
     /// </summary>
     /// <KeyProperties>
     /// diagram_id
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="sysdiagram")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="sysdiagram")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class sysdiagram : global::System.Data.Objects.DataClasses.EntityObject
@@ -1561,13 +1561,13 @@ namespace ECustoms.DAL
         partial void OndefinitionChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblApplicationObject in the schema.
+    /// There are no comments for dbEcustomModel.tblApplicationObject in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ApplicationObjectID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblApplicationObject")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblApplicationObject")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblApplicationObject : global::System.Data.Objects.DataClasses.EntityObject
@@ -1803,12 +1803,12 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblBranchDatabas in the schema.
+    /// There are no comments for dbEcustomModel.tblBranchDatabas in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblBranchDatabas")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblBranchDatabas")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblBranchDatabas : global::System.Data.Objects.DataClasses.EntityObject
@@ -1998,13 +1998,13 @@ namespace ECustoms.DAL
         partial void OnIsRequestingSyncChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblCheck in the schema.
+    /// There are no comments for dbEcustomModel.tblCheck in the schema.
     /// </summary>
     /// <KeyProperties>
     /// CheckID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblCheck")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblCheck")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblCheck : global::System.Data.Objects.DataClasses.EntityObject
@@ -2429,13 +2429,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblCompany in the schema.
+    /// There are no comments for dbEcustomModel.tblCompany in the schema.
     /// </summary>
     /// <KeyProperties>
     /// CompanyCode
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblCompany")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblCompany")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblCompany : global::System.Data.Objects.DataClasses.EntityObject
@@ -2698,13 +2698,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblCustom in the schema.
+    /// There are no comments for dbEcustomModel.tblCustom in the schema.
     /// </summary>
     /// <KeyProperties>
     /// CustomsCode
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblCustom")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblCustom")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblCustom : global::System.Data.Objects.DataClasses.EntityObject
@@ -2967,13 +2967,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblDeclaration in the schema.
+    /// There are no comments for dbEcustomModel.tblDeclaration in the schema.
     /// </summary>
     /// <KeyProperties>
     /// DeclarationID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblDeclaration")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblDeclaration")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblDeclaration : global::System.Data.Objects.DataClasses.EntityObject
@@ -4100,13 +4100,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblDeclarationLoan in the schema.
+    /// There are no comments for dbEcustomModel.tblDeclarationLoan in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblDeclarationLoan")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblDeclarationLoan")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblDeclarationLoan : global::System.Data.Objects.DataClasses.EntityObject
@@ -4531,14 +4531,14 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblDeclarationVehicle in the schema.
+    /// There are no comments for dbEcustomModel.tblDeclarationVehicle in the schema.
     /// </summary>
     /// <KeyProperties>
     /// DeclarationID
     /// VehicleID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblDeclarationVehicle")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblDeclarationVehicle")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblDeclarationVehicle : global::System.Data.Objects.DataClasses.EntityObject
@@ -4668,13 +4668,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblGate in the schema.
+    /// There are no comments for dbEcustomModel.tblGate in the schema.
     /// </summary>
     /// <KeyProperties>
     /// GateCode
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblGate")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblGate")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblGate : global::System.Data.Objects.DataClasses.EntityObject
@@ -4964,13 +4964,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblGoodsType in the schema.
+    /// There are no comments for dbEcustomModel.tblGoodsType in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TypeId
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblGoodsType")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblGoodsType")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblGoodsType : global::System.Data.Objects.DataClasses.EntityObject
@@ -5125,13 +5125,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblGroup in the schema.
+    /// There are no comments for dbEcustomModel.tblGroup in the schema.
     /// </summary>
     /// <KeyProperties>
     /// GroupID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblGroup")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblGroup")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblGroup : global::System.Data.Objects.DataClasses.EntityObject
@@ -5369,13 +5369,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblPermission in the schema.
+    /// There are no comments for dbEcustomModel.tblPermission in the schema.
     /// </summary>
     /// <KeyProperties>
     /// PermissionID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblPermission")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblPermission")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblPermission : global::System.Data.Objects.DataClasses.EntityObject
@@ -5530,13 +5530,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblPermissionType in the schema.
+    /// There are no comments for dbEcustomModel.tblPermissionType in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TypeCode
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblPermissionType")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblPermissionType")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblPermissionType : global::System.Data.Objects.DataClasses.EntityObject
@@ -5664,13 +5664,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblProfileConfig in the schema.
+    /// There are no comments for dbEcustomModel.tblProfileConfig in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblProfileConfig")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblProfileConfig")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblProfileConfig : global::System.Data.Objects.DataClasses.EntityObject
@@ -5858,14 +5858,14 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblRoleInGroup in the schema.
+    /// There are no comments for dbEcustomModel.tblRoleInGroup in the schema.
     /// </summary>
     /// <KeyProperties>
     /// GroupID
     /// RoleID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblRoleInGroup")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblRoleInGroup")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblRoleInGroup : global::System.Data.Objects.DataClasses.EntityObject
@@ -5995,12 +5995,12 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblSetting in the schema.
+    /// There are no comments for dbEcustomModel.tblSetting in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Version
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblSetting")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblSetting")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblSetting : global::System.Data.Objects.DataClasses.EntityObject
@@ -6157,13 +6157,13 @@ namespace ECustoms.DAL
         partial void OnIsStartingSyncChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblType in the schema.
+    /// There are no comments for dbEcustomModel.tblType in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TypeCode
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblType")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblType")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblType : global::System.Data.Objects.DataClasses.EntityObject
@@ -6426,13 +6426,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblUser in the schema.
+    /// There are no comments for dbEcustomModel.tblUser in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblUser")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblUser")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblUser : global::System.Data.Objects.DataClasses.EntityObject
@@ -6803,13 +6803,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblUserGroupPermission in the schema.
+    /// There are no comments for dbEcustomModel.tblUserGroupPermission in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblUserGroupPermission")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblUserGroupPermission")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblUserGroupPermission : global::System.Data.Objects.DataClasses.EntityObject
@@ -7126,14 +7126,14 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblUserInGroup in the schema.
+    /// There are no comments for dbEcustomModel.tblUserInGroup in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserID
     /// GroupID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblUserInGroup")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblUserInGroup")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblUserInGroup : global::System.Data.Objects.DataClasses.EntityObject
@@ -7263,13 +7263,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblVehicle in the schema.
+    /// There are no comments for dbEcustomModel.tblVehicle in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblVehicle")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblVehicle")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblVehicle : global::System.Data.Objects.DataClasses.EntityObject
@@ -8666,13 +8666,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblVehicleCheck in the schema.
+    /// There are no comments for dbEcustomModel.tblVehicleCheck in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleCheckID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblVehicleCheck")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblVehicleCheck")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblVehicleCheck : global::System.Data.Objects.DataClasses.EntityObject
@@ -9124,14 +9124,14 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblVehicleFeeSetting in the schema.
+    /// There are no comments for dbEcustomModel.tblVehicleFeeSetting in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleTypeId
     /// GoodsTypeId
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblVehicleFeeSetting")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblVehicleFeeSetting")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblVehicleFeeSetting : global::System.Data.Objects.DataClasses.EntityObject
@@ -9423,13 +9423,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tblVehicleType in the schema.
+    /// There are no comments for dbEcustomModel.tblVehicleType in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleTypeID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tblVehicleType")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblVehicleType")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tblVehicleType : global::System.Data.Objects.DataClasses.EntityObject
@@ -9746,13 +9746,13 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.tlbRole in the schema.
+    /// There are no comments for dbEcustomModel.tlbRole in the schema.
     /// </summary>
     /// <KeyProperties>
     /// RoleID
     /// BranchId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="tlbRole")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tlbRole")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class tlbRole : global::System.Data.Objects.DataClasses.EntityObject
@@ -9907,12 +9907,12 @@ namespace ECustoms.DAL
         partial void OnBranchIdChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewAllCheck in the schema.
+    /// There are no comments for dbEcustomModel.ViewAllCheck in the schema.
     /// </summary>
     /// <KeyProperties>
     /// CheckID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewAllCheck")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewAllCheck")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewAllCheck : global::System.Data.Objects.DataClasses.EntityObject
@@ -10335,12 +10335,12 @@ namespace ECustoms.DAL
         partial void OnModifiedByNameChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewAllCheckResult in the schema.
+    /// There are no comments for dbEcustomModel.ViewAllCheckResult in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleCheckID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewAllCheckResult")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewAllCheckResult")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewAllCheckResult : global::System.Data.Objects.DataClasses.EntityObject
@@ -10871,13 +10871,13 @@ namespace ECustoms.DAL
         partial void OnExportDateChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewAllDeclaration in the schema.
+    /// There are no comments for dbEcustomModel.ViewAllDeclaration in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserID
     /// DeclarationID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewAllDeclaration")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewAllDeclaration")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewAllDeclaration : global::System.Data.Objects.DataClasses.EntityObject
@@ -11950,13 +11950,13 @@ namespace ECustoms.DAL
         partial void OnNumberTempInfoChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewAllDeclarationTNTX in the schema.
+    /// There are no comments for dbEcustomModel.ViewAllDeclarationTNTX in the schema.
     /// </summary>
     /// <KeyProperties>
     /// DeclarationID
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewAllDeclarationTNTX")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewAllDeclarationTNTX")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewAllDeclarationTNTX : global::System.Data.Objects.DataClasses.EntityObject
@@ -12975,12 +12975,12 @@ namespace ECustoms.DAL
         partial void OnReceiveNumberInYearChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewAllVehicle in the schema.
+    /// There are no comments for dbEcustomModel.ViewAllVehicle in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewAllVehicle")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewAllVehicle")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewAllVehicle : global::System.Data.Objects.DataClasses.EntityObject
@@ -13700,13 +13700,13 @@ namespace ECustoms.DAL
         partial void OnModifiedByUserNameChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewAllVehicleHasGood in the schema.
+    /// There are no comments for dbEcustomModel.ViewAllVehicleHasGood in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// DeclarationID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewAllVehicleHasGood")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewAllVehicleHasGood")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewAllVehicleHasGood : global::System.Data.Objects.DataClasses.EntityObject
@@ -15670,12 +15670,12 @@ namespace ECustoms.DAL
         partial void OnModifiedByUserNameChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.viewDeclarationLoan in the schema.
+    /// There are no comments for dbEcustomModel.viewDeclarationLoan in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="viewDeclarationLoan")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="viewDeclarationLoan")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class viewDeclarationLoan : global::System.Data.Objects.DataClasses.EntityObject
@@ -16098,12 +16098,12 @@ namespace ECustoms.DAL
         partial void OnLenderFullNameChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewDeclarationManagement in the schema.
+    /// There are no comments for dbEcustomModel.ViewDeclarationManagement in the schema.
     /// </summary>
     /// <KeyProperties>
     /// DeclarationID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewDeclarationManagement")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewDeclarationManagement")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewDeclarationManagement : global::System.Data.Objects.DataClasses.EntityObject
@@ -16688,12 +16688,12 @@ namespace ECustoms.DAL
         partial void OnLoanStatusChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewDeclarationVechicleExport in the schema.
+    /// There are no comments for dbEcustomModel.ViewDeclarationVechicleExport in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewDeclarationVechicleExport")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewDeclarationVechicleExport")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewDeclarationVechicleExport : global::System.Data.Objects.DataClasses.EntityObject
@@ -18169,13 +18169,13 @@ namespace ECustoms.DAL
         partial void OnConfirmExportByNameChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.viewDeclarationVehicle in the schema.
+    /// There are no comments for dbEcustomModel.viewDeclarationVehicle in the schema.
     /// </summary>
     /// <KeyProperties>
     /// DeclarationID
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="viewDeclarationVehicle")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="viewDeclarationVehicle")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class viewDeclarationVehicle : global::System.Data.Objects.DataClasses.EntityObject
@@ -19005,12 +19005,12 @@ namespace ECustoms.DAL
         partial void OnRegisterDateChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewDeclarationVehicleImport in the schema.
+    /// There are no comments for dbEcustomModel.ViewDeclarationVehicleImport in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewDeclarationVehicleImport")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewDeclarationVehicleImport")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewDeclarationVehicleImport : global::System.Data.Objects.DataClasses.EntityObject
@@ -20486,12 +20486,12 @@ namespace ECustoms.DAL
         partial void OnDeclarationImportNumberChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewDeclarationVehicleImportExportFee in the schema.
+    /// There are no comments for dbEcustomModel.ViewDeclarationVehicleImportExportFee in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewDeclarationVehicleImportExportFee")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewDeclarationVehicleImportExportFee")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewDeclarationVehicleImportExportFee : global::System.Data.Objects.DataClasses.EntityObject
@@ -22075,12 +22075,12 @@ namespace ECustoms.DAL
         partial void OnConfirmExportByNameChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewGetCurrentDate in the schema.
+    /// There are no comments for dbEcustomModel.ViewGetCurrentDate in the schema.
     /// </summary>
     /// <KeyProperties>
     /// CurrentDateTime
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewGetCurrentDate")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewGetCurrentDate")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewGetCurrentDate : global::System.Data.Objects.DataClasses.EntityObject
@@ -22125,14 +22125,14 @@ namespace ECustoms.DAL
         partial void OnCurrentDateTimeChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewUserGroup in the schema.
+    /// There are no comments for dbEcustomModel.ViewUserGroup in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserID
     /// GroupID
     /// GroupName
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewUserGroup")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewUserGroup")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewUserGroup : global::System.Data.Objects.DataClasses.EntityObject
@@ -22289,7 +22289,7 @@ namespace ECustoms.DAL
         partial void OnGroupNameChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewVehicleFee in the schema.
+    /// There are no comments for dbEcustomModel.ViewVehicleFee in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
@@ -22298,7 +22298,7 @@ namespace ECustoms.DAL
     /// FeeTypeID
     /// VehicleIdTmp
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewVehicleFee")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewVehicleFee")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewVehicleFee : global::System.Data.Objects.DataClasses.EntityObject
@@ -22756,13 +22756,13 @@ namespace ECustoms.DAL
         partial void OnmaxDeclarationIDChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.viewVehicleFeeSetting in the schema.
+    /// There are no comments for dbEcustomModel.viewVehicleFeeSetting in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleTypeId
     /// GoodsTypeId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="viewVehicleFeeSetting")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="viewVehicleFeeSetting")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class viewVehicleFeeSetting : global::System.Data.Objects.DataClasses.EntityObject
@@ -22971,12 +22971,12 @@ namespace ECustoms.DAL
         partial void OnCapacityChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewVehicleFreight in the schema.
+    /// There are no comments for dbEcustomModel.ViewVehicleFreight in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewVehicleFreight")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewVehicleFreight")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewVehicleFreight : global::System.Data.Objects.DataClasses.EntityObject
@@ -23237,12 +23237,12 @@ namespace ECustoms.DAL
         partial void OnFeeAmountChanged();
     }
     /// <summary>
-    /// There are no comments for dbEcustomsEntities.ViewVehicleOverdue in the schema.
+    /// There are no comments for dbEcustomModel.ViewVehicleOverdue in the schema.
     /// </summary>
     /// <KeyProperties>
     /// VehicleID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomsEntities", Name="ViewVehicleOverdue")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="ViewVehicleOverdue")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class ViewVehicleOverdue : global::System.Data.Objects.DataClasses.EntityObject

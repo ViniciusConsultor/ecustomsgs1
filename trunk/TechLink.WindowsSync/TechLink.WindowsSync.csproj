@@ -81,7 +81,9 @@
     <Content Include="System\System Configurations\RedSkin.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="System\Server\Config\goldkeeper.exe.config" />
     <None Include="System\Server\Config\Server.config" />
   </ItemGroup>

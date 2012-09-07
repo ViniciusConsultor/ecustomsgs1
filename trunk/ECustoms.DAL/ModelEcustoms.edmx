@@ -4,9 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbEcustomsEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
-        <EntityContainer Name="dbEcustomsEntitiesStoreContainer">
-          <EntitySet Name="Log" EntityType="dbEcustomsEntities.Store.Log" store:Type="Tables" store:Schema="dbo" store:Name="Log">
+      <Schema Namespace="dbEcustomModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="dbEcustomModelStoreContainer">
+          <EntitySet Name="Log" EntityType="dbEcustomModel.Store.Log" store:Type="Tables" store:Schema="dbo" store:Name="Log">
             <DefiningQuery>SELECT 
       [Log].[Id] AS [Id], 
       [Log].[Date] AS [Date], 
@@ -17,33 +17,33 @@
       [Log].[Exception] AS [Exception]
       FROM [dbo].[Log] AS [Log]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="sysdiagrams" EntityType="dbEcustomsEntities.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblApplicationObject" EntityType="dbEcustomsEntities.Store.tblApplicationObject" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomsEntities.Store.tblBranchDatabases" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblCheck" EntityType="dbEcustomsEntities.Store.tblCheck" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblCompany" EntityType="dbEcustomsEntities.Store.tblCompany" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblCustoms" EntityType="dbEcustomsEntities.Store.tblCustoms" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblDeclaration" EntityType="dbEcustomsEntities.Store.tblDeclaration" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblDeclarationLoan" EntityType="dbEcustomsEntities.Store.tblDeclarationLoan" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblDeclarationVehicle" EntityType="dbEcustomsEntities.Store.tblDeclarationVehicle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblGate" EntityType="dbEcustomsEntities.Store.tblGate" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblGoodsType" EntityType="dbEcustomsEntities.Store.tblGoodsType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblGroup" EntityType="dbEcustomsEntities.Store.tblGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblPermission" EntityType="dbEcustomsEntities.Store.tblPermission" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblPermissionType" EntityType="dbEcustomsEntities.Store.tblPermissionType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblProfileConfig" EntityType="dbEcustomsEntities.Store.tblProfileConfig" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblRoleInGroup" EntityType="dbEcustomsEntities.Store.tblRoleInGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblSettings" EntityType="dbEcustomsEntities.Store.tblSettings" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblType" EntityType="dbEcustomsEntities.Store.tblType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblUser" EntityType="dbEcustomsEntities.Store.tblUser" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblUserGroupPermission" EntityType="dbEcustomsEntities.Store.tblUserGroupPermission" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblUserInGroup" EntityType="dbEcustomsEntities.Store.tblUserInGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblVehicle" EntityType="dbEcustomsEntities.Store.tblVehicle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblVehicleCheck" EntityType="dbEcustomsEntities.Store.tblVehicleCheck" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblVehicleFeeSetting" EntityType="dbEcustomsEntities.Store.tblVehicleFeeSetting" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblVehicleType" EntityType="dbEcustomsEntities.Store.tblVehicleType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tlbRole" EntityType="dbEcustomsEntities.Store.tlbRole" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ViewAllCheck" EntityType="dbEcustomsEntities.Store.ViewAllCheck" store:Type="Views" store:Schema="dbo" store:Name="ViewAllCheck">
+          <EntitySet Name="sysdiagrams" EntityType="dbEcustomModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblApplicationObject" EntityType="dbEcustomModel.Store.tblApplicationObject" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomModel.Store.tblBranchDatabases" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCheck" EntityType="dbEcustomModel.Store.tblCheck" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCompany" EntityType="dbEcustomModel.Store.tblCompany" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.Store.tblCustoms" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDeclaration" EntityType="dbEcustomModel.Store.tblDeclaration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDeclarationLoan" EntityType="dbEcustomModel.Store.tblDeclarationLoan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDeclarationVehicle" EntityType="dbEcustomModel.Store.tblDeclarationVehicle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblGate" EntityType="dbEcustomModel.Store.tblGate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblGoodsType" EntityType="dbEcustomModel.Store.tblGoodsType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblGroup" EntityType="dbEcustomModel.Store.tblGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPermission" EntityType="dbEcustomModel.Store.tblPermission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPermissionType" EntityType="dbEcustomModel.Store.tblPermissionType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblProfileConfig" EntityType="dbEcustomModel.Store.tblProfileConfig" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblRoleInGroup" EntityType="dbEcustomModel.Store.tblRoleInGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblSettings" EntityType="dbEcustomModel.Store.tblSettings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblType" EntityType="dbEcustomModel.Store.tblType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUser" EntityType="dbEcustomModel.Store.tblUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUserGroupPermission" EntityType="dbEcustomModel.Store.tblUserGroupPermission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUserInGroup" EntityType="dbEcustomModel.Store.tblUserInGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblVehicle" EntityType="dbEcustomModel.Store.tblVehicle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblVehicleCheck" EntityType="dbEcustomModel.Store.tblVehicleCheck" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblVehicleFeeSetting" EntityType="dbEcustomModel.Store.tblVehicleFeeSetting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblVehicleType" EntityType="dbEcustomModel.Store.tblVehicleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tlbRole" EntityType="dbEcustomModel.Store.tlbRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ViewAllCheck" EntityType="dbEcustomModel.Store.ViewAllCheck" store:Type="Views" store:Schema="dbo" store:Name="ViewAllCheck">
             <DefiningQuery>SELECT 
       [ViewAllCheck].[CheckID] AS [CheckID], 
       [ViewAllCheck].[PlateNumber] AS [PlateNumber], 
@@ -62,7 +62,7 @@
       [ViewAllCheck].[ModifiedByName] AS [ModifiedByName]
       FROM [dbo].[ViewAllCheck] AS [ViewAllCheck]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewAllCheckResult" EntityType="dbEcustomsEntities.Store.ViewAllCheckResult" store:Type="Views" store:Schema="dbo" store:Name="ViewAllCheckResult">
+          <EntitySet Name="ViewAllCheckResult" EntityType="dbEcustomModel.Store.ViewAllCheckResult" store:Type="Views" store:Schema="dbo" store:Name="ViewAllCheckResult">
             <DefiningQuery>SELECT 
       [ViewAllCheckResult].[VehicleCheckID] AS [VehicleCheckID], 
       [ViewAllCheckResult].[VehicleID] AS [VehicleID], 
@@ -85,7 +85,7 @@
       [ViewAllCheckResult].[ExportDate] AS [ExportDate]
       FROM [dbo].[ViewAllCheckResult] AS [ViewAllCheckResult]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewAllDeclaration" EntityType="dbEcustomsEntities.Store.ViewAllDeclaration" store:Type="Views" store:Schema="dbo" store:Name="ViewAllDeclaration">
+          <EntitySet Name="ViewAllDeclaration" EntityType="dbEcustomModel.Store.ViewAllDeclaration" store:Type="Views" store:Schema="dbo" store:Name="ViewAllDeclaration">
             <DefiningQuery>SELECT 
       [ViewAllDeclaration].[UserID] AS [UserID], 
       [ViewAllDeclaration].[Name] AS [Name], 
@@ -128,7 +128,7 @@
       [ViewAllDeclaration].[NumberTempInfo] AS [NumberTempInfo]
       FROM [dbo].[ViewAllDeclaration] AS [ViewAllDeclaration]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewAllDeclarationTNTX" EntityType="dbEcustomsEntities.Store.ViewAllDeclarationTNTX" store:Type="Views" store:Schema="dbo" store:Name="ViewAllDeclarationTNTX">
+          <EntitySet Name="ViewAllDeclarationTNTX" EntityType="dbEcustomModel.Store.ViewAllDeclarationTNTX" store:Type="Views" store:Schema="dbo" store:Name="ViewAllDeclarationTNTX">
             <DefiningQuery>SELECT 
       [ViewAllDeclarationTNTX].[DeclarationID] AS [DeclarationID], 
       [ViewAllDeclarationTNTX].[Number] AS [Number], 
@@ -169,7 +169,7 @@
       [ViewAllDeclarationTNTX].[ReceiveNumberInYear] AS [ReceiveNumberInYear]
       FROM [dbo].[ViewAllDeclarationTNTX] AS [ViewAllDeclarationTNTX]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewAllVehicle" EntityType="dbEcustomsEntities.Store.ViewAllVehicle" store:Type="Views" store:Schema="dbo" store:Name="ViewAllVehicle">
+          <EntitySet Name="ViewAllVehicle" EntityType="dbEcustomModel.Store.ViewAllVehicle" store:Type="Views" store:Schema="dbo" store:Name="ViewAllVehicle">
             <DefiningQuery>SELECT 
       [ViewAllVehicle].[VehicleID] AS [VehicleID], 
       [ViewAllVehicle].[PlateNumber] AS [PlateNumber], 
@@ -199,7 +199,7 @@
       [ViewAllVehicle].[ModifiedByUserName] AS [ModifiedByUserName]
       FROM [dbo].[ViewAllVehicle] AS [ViewAllVehicle]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewAllVehicleHasGood" EntityType="dbEcustomsEntities.Store.ViewAllVehicleHasGood" store:Type="Views" store:Schema="dbo" store:Name="ViewAllVehicleHasGood">
+          <EntitySet Name="ViewAllVehicleHasGood" EntityType="dbEcustomModel.Store.ViewAllVehicleHasGood" store:Type="Views" store:Schema="dbo" store:Name="ViewAllVehicleHasGood">
             <DefiningQuery>SELECT 
       [ViewAllVehicleHasGood].[VehicleID] AS [VehicleID], 
       [ViewAllVehicleHasGood].[PlateNumber] AS [PlateNumber], 
@@ -275,7 +275,7 @@
       [ViewAllVehicleHasGood].[ModifiedByUserName] AS [ModifiedByUserName]
       FROM [dbo].[ViewAllVehicleHasGood] AS [ViewAllVehicleHasGood]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="viewDeclarationLoan" EntityType="dbEcustomsEntities.Store.viewDeclarationLoan" store:Type="Views" store:Schema="dbo" store:Name="viewDeclarationLoan">
+          <EntitySet Name="viewDeclarationLoan" EntityType="dbEcustomModel.Store.viewDeclarationLoan" store:Type="Views" store:Schema="dbo" store:Name="viewDeclarationLoan">
             <DefiningQuery>SELECT 
       [viewDeclarationLoan].[ID] AS [ID], 
       [viewDeclarationLoan].[DeclarationID] AS [DeclarationID], 
@@ -294,7 +294,7 @@
       [viewDeclarationLoan].[LenderFullName] AS [LenderFullName]
       FROM [dbo].[viewDeclarationLoan] AS [viewDeclarationLoan]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewDeclarationManagement" EntityType="dbEcustomsEntities.Store.ViewDeclarationManagement" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationManagement">
+          <EntitySet Name="ViewDeclarationManagement" EntityType="dbEcustomModel.Store.ViewDeclarationManagement" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationManagement">
             <DefiningQuery>SELECT 
       [ViewDeclarationManagement].[DeclarationID] AS [DeclarationID], 
       [ViewDeclarationManagement].[Number] AS [Number], 
@@ -319,7 +319,7 @@
       [ViewDeclarationManagement].[LoanStatus] AS [LoanStatus]
       FROM [dbo].[ViewDeclarationManagement] AS [ViewDeclarationManagement]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewDeclarationVechicleExport" EntityType="dbEcustomsEntities.Store.ViewDeclarationVechicleExport" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVechicleExport">
+          <EntitySet Name="ViewDeclarationVechicleExport" EntityType="dbEcustomModel.Store.ViewDeclarationVechicleExport" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVechicleExport">
             <DefiningQuery>SELECT 
       [ViewDeclarationVechicleExport].[DeclarationID] AS [DeclarationID], 
       [ViewDeclarationVechicleExport].[DeclarationExportNumber] AS [DeclarationExportNumber], 
@@ -377,7 +377,7 @@
       [ViewDeclarationVechicleExport].[ConfirmExportByName] AS [ConfirmExportByName]
       FROM [dbo].[ViewDeclarationVechicleExport] AS [ViewDeclarationVechicleExport]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="viewDeclarationVehicle" EntityType="dbEcustomsEntities.Store.viewDeclarationVehicle" store:Type="Views" store:Schema="dbo" store:Name="viewDeclarationVehicle">
+          <EntitySet Name="viewDeclarationVehicle" EntityType="dbEcustomModel.Store.viewDeclarationVehicle" store:Type="Views" store:Schema="dbo" store:Name="viewDeclarationVehicle">
             <DefiningQuery>SELECT 
       [viewDeclarationVehicle].[DeclarationID] AS [DeclarationID], 
       [viewDeclarationVehicle].[VehicleID] AS [VehicleID], 
@@ -411,7 +411,7 @@
       [viewDeclarationVehicle].[RegisterDate] AS [RegisterDate]
       FROM [dbo].[viewDeclarationVehicle] AS [viewDeclarationVehicle]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewDeclarationVehicleImport" EntityType="dbEcustomsEntities.Store.ViewDeclarationVehicleImport" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVehicleImport">
+          <EntitySet Name="ViewDeclarationVehicleImport" EntityType="dbEcustomModel.Store.ViewDeclarationVehicleImport" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVehicleImport">
             <DefiningQuery>SELECT 
       [ViewDeclarationVehicleImport].[DeclarationID] AS [DeclarationID], 
       [ViewDeclarationVehicleImport].[DeclarationImportType] AS [DeclarationImportType], 
@@ -469,7 +469,7 @@
       [ViewDeclarationVehicleImport].[DeclarationImportNumber] AS [DeclarationImportNumber]
       FROM [dbo].[ViewDeclarationVehicleImport] AS [ViewDeclarationVehicleImport]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewDeclarationVehicleImportExportFee" EntityType="dbEcustomsEntities.Store.ViewDeclarationVehicleImportExportFee" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVehicleImportExportFee">
+          <EntitySet Name="ViewDeclarationVehicleImportExportFee" EntityType="dbEcustomModel.Store.ViewDeclarationVehicleImportExportFee" store:Type="Views" store:Schema="dbo" store:Name="ViewDeclarationVehicleImportExportFee">
             <DefiningQuery>SELECT 
       [ViewDeclarationVehicleImportExportFee].[VehicleID] AS [VehicleID], 
       [ViewDeclarationVehicleImportExportFee].[PlateNumber] AS [PlateNumber], 
@@ -531,12 +531,12 @@
       [ViewDeclarationVehicleImportExportFee].[ConfirmExportByName] AS [ConfirmExportByName]
       FROM [dbo].[ViewDeclarationVehicleImportExportFee] AS [ViewDeclarationVehicleImportExportFee]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewGetCurrentDate" EntityType="dbEcustomsEntities.Store.ViewGetCurrentDate" store:Type="Views" store:Schema="dbo" store:Name="ViewGetCurrentDate">
+          <EntitySet Name="ViewGetCurrentDate" EntityType="dbEcustomModel.Store.ViewGetCurrentDate" store:Type="Views" store:Schema="dbo" store:Name="ViewGetCurrentDate">
             <DefiningQuery>SELECT 
       [ViewGetCurrentDate].[CurrentDateTime] AS [CurrentDateTime]
       FROM [dbo].[ViewGetCurrentDate] AS [ViewGetCurrentDate]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewUserGroup" EntityType="dbEcustomsEntities.Store.ViewUserGroup" store:Type="Views" store:Schema="dbo" store:Name="ViewUserGroup">
+          <EntitySet Name="ViewUserGroup" EntityType="dbEcustomModel.Store.ViewUserGroup" store:Type="Views" store:Schema="dbo" store:Name="ViewUserGroup">
             <DefiningQuery>SELECT 
       [ViewUserGroup].[UserID] AS [UserID], 
       [ViewUserGroup].[UserFullName] AS [UserFullName], 
@@ -545,7 +545,7 @@
       [ViewUserGroup].[GroupName] AS [GroupName]
       FROM [dbo].[ViewUserGroup] AS [ViewUserGroup]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewVehicleFee" EntityType="dbEcustomsEntities.Store.ViewVehicleFee" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFee">
+          <EntitySet Name="ViewVehicleFee" EntityType="dbEcustomModel.Store.ViewVehicleFee" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFee">
             <DefiningQuery>SELECT 
       [ViewVehicleFee].[VehicleID] AS [VehicleID], 
       [ViewVehicleFee].[PlateNumber] AS [PlateNumber], 
@@ -565,7 +565,7 @@
       [ViewVehicleFee].[maxDeclarationID] AS [maxDeclarationID]
       FROM [dbo].[ViewVehicleFee] AS [ViewVehicleFee]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="viewVehicleFeeSetting" EntityType="dbEcustomsEntities.Store.viewVehicleFeeSetting" store:Type="Views" store:Schema="dbo" store:Name="viewVehicleFeeSetting">
+          <EntitySet Name="viewVehicleFeeSetting" EntityType="dbEcustomModel.Store.viewVehicleFeeSetting" store:Type="Views" store:Schema="dbo" store:Name="viewVehicleFeeSetting">
             <DefiningQuery>SELECT 
       [viewVehicleFeeSetting].[VehicleTypeId] AS [VehicleTypeId], 
       [viewVehicleFeeSetting].[GoodsTypeId] AS [GoodsTypeId], 
@@ -576,7 +576,7 @@
       [viewVehicleFeeSetting].[Capacity] AS [Capacity]
       FROM [dbo].[viewVehicleFeeSetting] AS [viewVehicleFeeSetting]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewVehicleFreight" EntityType="dbEcustomsEntities.Store.ViewVehicleFreight" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFreight">
+          <EntitySet Name="ViewVehicleFreight" EntityType="dbEcustomModel.Store.ViewVehicleFreight" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleFreight">
             <DefiningQuery>SELECT 
       [ViewVehicleFreight].[VehicleID] AS [VehicleID], 
       [ViewVehicleFreight].[PlateNumber] AS [PlateNumber], 
@@ -589,7 +589,7 @@
       [ViewVehicleFreight].[FeeAmount] AS [FeeAmount]
       FROM [dbo].[ViewVehicleFreight] AS [ViewVehicleFreight]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewVehicleOverdue" EntityType="dbEcustomsEntities.Store.ViewVehicleOverdue" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleOverdue">
+          <EntitySet Name="ViewVehicleOverdue" EntityType="dbEcustomModel.Store.ViewVehicleOverdue" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleOverdue">
             <DefiningQuery>SELECT 
       [ViewVehicleOverdue].[VehicleID] AS [VehicleID], 
       [ViewVehicleOverdue].[PlateNumber] AS [PlateNumber], 
@@ -604,7 +604,7 @@
           </EntitySet>
         </EntityContainer>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Log">
           <Key>
@@ -1070,7 +1070,7 @@
           <Property Name="BranchId" Type="nvarchar" Nullable="false" MaxLength="15" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewAllCheck' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheck">
           <Key>
@@ -1093,7 +1093,7 @@
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewAllCheckResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllCheckResult">
           <Key>
@@ -1120,7 +1120,7 @@
           <Property Name="ExportDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewAllDeclaration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclaration">
           <Key>
@@ -1168,7 +1168,7 @@
           <Property Name="NumberTempInfo" Type="nvarchar" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewAllDeclarationTNTX' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllDeclarationTNTX">
           <Key>
@@ -1214,7 +1214,7 @@
           <Property Name="ReceiveNumberInYear" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewAllVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicle">
           <Key>
@@ -1248,7 +1248,7 @@
           <Property Name="ModifiedByUserName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewAllVehicleHasGood' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewAllVehicleHasGood">
           <Key>
@@ -1329,7 +1329,7 @@
           <Property Name="ModifiedByUserName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.viewDeclarationLoan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.viewDeclarationLoan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewDeclarationLoan">
           <Key>
@@ -1352,7 +1352,7 @@
           <Property Name="LenderFullName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewDeclarationManagement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewDeclarationManagement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationManagement">
           <Key>
@@ -1381,7 +1381,7 @@
           <Property Name="LoanStatus" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewDeclarationVechicleExport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVechicleExport">
           <Key>
@@ -1443,7 +1443,7 @@
           <Property Name="ConfirmExportByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.viewDeclarationVehicle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewDeclarationVehicle">
           <Key>
@@ -1482,7 +1482,7 @@
           <Property Name="RegisterDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewDeclarationVehicleImport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewDeclarationVehicleImport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVehicleImport">
           <Key>
@@ -1544,7 +1544,7 @@
           <Property Name="DeclarationImportNumber" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewDeclarationVehicleImportExportFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewDeclarationVehicleImportExportFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewDeclarationVehicleImportExportFee">
           <Key>
@@ -1610,7 +1610,7 @@
           <Property Name="ConfirmExportByName" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewGetCurrentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewGetCurrentDate">
           <Key>
@@ -1619,7 +1619,7 @@
           <Property Name="CurrentDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewUserGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewUserGroup">
           <Key>
@@ -1634,7 +1634,7 @@
           <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="200" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewVehicleFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewVehicleFee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFee">
           <Key>
@@ -1662,7 +1662,7 @@
           <Property Name="maxDeclarationID" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.viewVehicleFeeSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="viewVehicleFeeSetting">
           <Key>
@@ -1678,7 +1678,7 @@
           <Property Name="Capacity" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewVehicleFreight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleFreight">
           <Key>
@@ -1695,7 +1695,7 @@
           <Property Name="FeeAmount" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'dbEcustoms.dbo.ViewVehicleOverdue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'dbEcustom.dbo.ViewVehicleOverdue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="ViewVehicleOverdue">
           <Key>
@@ -1715,53 +1715,53 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="dbEcustomsEntities" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-        <EntityContainer Name="Entities">
-          <EntitySet Name="Logs" EntityType="dbEcustomsEntities.Log" />
-          <EntitySet Name="sysdiagrams" EntityType="dbEcustomsEntities.sysdiagram" />
-          <EntitySet Name="tblApplicationObjects" EntityType="dbEcustomsEntities.tblApplicationObject" />
-          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomsEntities.tblBranchDatabas" />
-          <EntitySet Name="tblChecks" EntityType="dbEcustomsEntities.tblCheck" />
-          <EntitySet Name="tblCompanies" EntityType="dbEcustomsEntities.tblCompany" />
-          <EntitySet Name="tblCustoms" EntityType="dbEcustomsEntities.tblCustom" />
-          <EntitySet Name="tblDeclarations" EntityType="dbEcustomsEntities.tblDeclaration" />
-          <EntitySet Name="tblDeclarationLoans" EntityType="dbEcustomsEntities.tblDeclarationLoan" />
-          <EntitySet Name="tblDeclarationVehicles" EntityType="dbEcustomsEntities.tblDeclarationVehicle" />
-          <EntitySet Name="tblGates" EntityType="dbEcustomsEntities.tblGate" />
-          <EntitySet Name="tblGoodsTypes" EntityType="dbEcustomsEntities.tblGoodsType" />
-          <EntitySet Name="tblGroups" EntityType="dbEcustomsEntities.tblGroup" />
-          <EntitySet Name="tblPermissions" EntityType="dbEcustomsEntities.tblPermission" />
-          <EntitySet Name="tblPermissionTypes" EntityType="dbEcustomsEntities.tblPermissionType" />
-          <EntitySet Name="tblProfileConfigs" EntityType="dbEcustomsEntities.tblProfileConfig" />
-          <EntitySet Name="tblRoleInGroups" EntityType="dbEcustomsEntities.tblRoleInGroup" />
-          <EntitySet Name="tblSettings" EntityType="dbEcustomsEntities.tblSetting" />
-          <EntitySet Name="tblTypes" EntityType="dbEcustomsEntities.tblType" />
-          <EntitySet Name="tblUsers" EntityType="dbEcustomsEntities.tblUser" />
-          <EntitySet Name="tblUserGroupPermissions" EntityType="dbEcustomsEntities.tblUserGroupPermission" />
-          <EntitySet Name="tblUserInGroups" EntityType="dbEcustomsEntities.tblUserInGroup" />
-          <EntitySet Name="tblVehicles" EntityType="dbEcustomsEntities.tblVehicle" />
-          <EntitySet Name="tblVehicleChecks" EntityType="dbEcustomsEntities.tblVehicleCheck" />
-          <EntitySet Name="tblVehicleFeeSettings" EntityType="dbEcustomsEntities.tblVehicleFeeSetting" />
-          <EntitySet Name="tblVehicleTypes" EntityType="dbEcustomsEntities.tblVehicleType" />
-          <EntitySet Name="tlbRoles" EntityType="dbEcustomsEntities.tlbRole" />
-          <EntitySet Name="ViewAllChecks" EntityType="dbEcustomsEntities.ViewAllCheck" />
-          <EntitySet Name="ViewAllCheckResults" EntityType="dbEcustomsEntities.ViewAllCheckResult" />
-          <EntitySet Name="ViewAllDeclarations" EntityType="dbEcustomsEntities.ViewAllDeclaration" />
-          <EntitySet Name="ViewAllDeclarationTNTXes" EntityType="dbEcustomsEntities.ViewAllDeclarationTNTX" />
-          <EntitySet Name="ViewAllVehicles" EntityType="dbEcustomsEntities.ViewAllVehicle" />
-          <EntitySet Name="ViewAllVehicleHasGoods" EntityType="dbEcustomsEntities.ViewAllVehicleHasGood" />
-          <EntitySet Name="viewDeclarationLoans" EntityType="dbEcustomsEntities.viewDeclarationLoan" />
-          <EntitySet Name="ViewDeclarationManagements" EntityType="dbEcustomsEntities.ViewDeclarationManagement" />
-          <EntitySet Name="ViewDeclarationVechicleExports" EntityType="dbEcustomsEntities.ViewDeclarationVechicleExport" />
-          <EntitySet Name="viewDeclarationVehicles" EntityType="dbEcustomsEntities.viewDeclarationVehicle" />
-          <EntitySet Name="ViewDeclarationVehicleImports" EntityType="dbEcustomsEntities.ViewDeclarationVehicleImport" />
-          <EntitySet Name="ViewDeclarationVehicleImportExportFees" EntityType="dbEcustomsEntities.ViewDeclarationVehicleImportExportFee" />
-          <EntitySet Name="ViewGetCurrentDates" EntityType="dbEcustomsEntities.ViewGetCurrentDate" />
-          <EntitySet Name="ViewUserGroups" EntityType="dbEcustomsEntities.ViewUserGroup" />
-          <EntitySet Name="ViewVehicleFees" EntityType="dbEcustomsEntities.ViewVehicleFee" />
-          <EntitySet Name="viewVehicleFeeSettings" EntityType="dbEcustomsEntities.viewVehicleFeeSetting" />
-          <EntitySet Name="ViewVehicleFreights" EntityType="dbEcustomsEntities.ViewVehicleFreight" />
-          <EntitySet Name="ViewVehicleOverdues" EntityType="dbEcustomsEntities.ViewVehicleOverdue" />
+      <Schema Namespace="dbEcustomModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="dbEcustomEntities">
+          <EntitySet Name="Logs" EntityType="dbEcustomModel.Log" />
+          <EntitySet Name="sysdiagrams" EntityType="dbEcustomModel.sysdiagram" />
+          <EntitySet Name="tblApplicationObjects" EntityType="dbEcustomModel.tblApplicationObject" />
+          <EntitySet Name="tblBranchDatabases" EntityType="dbEcustomModel.tblBranchDatabas" />
+          <EntitySet Name="tblChecks" EntityType="dbEcustomModel.tblCheck" />
+          <EntitySet Name="tblCompanies" EntityType="dbEcustomModel.tblCompany" />
+          <EntitySet Name="tblCustoms" EntityType="dbEcustomModel.tblCustom" />
+          <EntitySet Name="tblDeclarations" EntityType="dbEcustomModel.tblDeclaration" />
+          <EntitySet Name="tblDeclarationLoans" EntityType="dbEcustomModel.tblDeclarationLoan" />
+          <EntitySet Name="tblDeclarationVehicles" EntityType="dbEcustomModel.tblDeclarationVehicle" />
+          <EntitySet Name="tblGates" EntityType="dbEcustomModel.tblGate" />
+          <EntitySet Name="tblGoodsTypes" EntityType="dbEcustomModel.tblGoodsType" />
+          <EntitySet Name="tblGroups" EntityType="dbEcustomModel.tblGroup" />
+          <EntitySet Name="tblPermissions" EntityType="dbEcustomModel.tblPermission" />
+          <EntitySet Name="tblPermissionTypes" EntityType="dbEcustomModel.tblPermissionType" />
+          <EntitySet Name="tblProfileConfigs" EntityType="dbEcustomModel.tblProfileConfig" />
+          <EntitySet Name="tblRoleInGroups" EntityType="dbEcustomModel.tblRoleInGroup" />
+          <EntitySet Name="tblSettings" EntityType="dbEcustomModel.tblSetting" />
+          <EntitySet Name="tblTypes" EntityType="dbEcustomModel.tblType" />
+          <EntitySet Name="tblUsers" EntityType="dbEcustomModel.tblUser" />
+          <EntitySet Name="tblUserGroupPermissions" EntityType="dbEcustomModel.tblUserGroupPermission" />
+          <EntitySet Name="tblUserInGroups" EntityType="dbEcustomModel.tblUserInGroup" />
+          <EntitySet Name="tblVehicles" EntityType="dbEcustomModel.tblVehicle" />
+          <EntitySet Name="tblVehicleChecks" EntityType="dbEcustomModel.tblVehicleCheck" />
+          <EntitySet Name="tblVehicleFeeSettings" EntityType="dbEcustomModel.tblVehicleFeeSetting" />
+          <EntitySet Name="tblVehicleTypes" EntityType="dbEcustomModel.tblVehicleType" />
+          <EntitySet Name="tlbRoles" EntityType="dbEcustomModel.tlbRole" />
+          <EntitySet Name="ViewAllChecks" EntityType="dbEcustomModel.ViewAllCheck" />
+          <EntitySet Name="ViewAllCheckResults" EntityType="dbEcustomModel.ViewAllCheckResult" />
+          <EntitySet Name="ViewAllDeclarations" EntityType="dbEcustomModel.ViewAllDeclaration" />
+          <EntitySet Name="ViewAllDeclarationTNTXes" EntityType="dbEcustomModel.ViewAllDeclarationTNTX" />
+          <EntitySet Name="ViewAllVehicles" EntityType="dbEcustomModel.ViewAllVehicle" />
+          <EntitySet Name="ViewAllVehicleHasGoods" EntityType="dbEcustomModel.ViewAllVehicleHasGood" />
+          <EntitySet Name="viewDeclarationLoans" EntityType="dbEcustomModel.viewDeclarationLoan" />
+          <EntitySet Name="ViewDeclarationManagements" EntityType="dbEcustomModel.ViewDeclarationManagement" />
+          <EntitySet Name="ViewDeclarationVechicleExports" EntityType="dbEcustomModel.ViewDeclarationVechicleExport" />
+          <EntitySet Name="viewDeclarationVehicles" EntityType="dbEcustomModel.viewDeclarationVehicle" />
+          <EntitySet Name="ViewDeclarationVehicleImports" EntityType="dbEcustomModel.ViewDeclarationVehicleImport" />
+          <EntitySet Name="ViewDeclarationVehicleImportExportFees" EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" />
+          <EntitySet Name="ViewGetCurrentDates" EntityType="dbEcustomModel.ViewGetCurrentDate" />
+          <EntitySet Name="ViewUserGroups" EntityType="dbEcustomModel.ViewUserGroup" />
+          <EntitySet Name="ViewVehicleFees" EntityType="dbEcustomModel.ViewVehicleFee" />
+          <EntitySet Name="viewVehicleFeeSettings" EntityType="dbEcustomModel.viewVehicleFeeSetting" />
+          <EntitySet Name="ViewVehicleFreights" EntityType="dbEcustomModel.ViewVehicleFreight" />
+          <EntitySet Name="ViewVehicleOverdues" EntityType="dbEcustomModel.ViewVehicleOverdue" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2819,8 +2819,8 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-        <EntityContainerMapping StorageEntityContainer="dbEcustomsEntitiesStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="Logs"><EntityTypeMapping TypeName="dbEcustomsEntities.Log"><MappingFragment StoreEntitySet="Log">
+        <EntityContainerMapping StorageEntityContainer="dbEcustomModelStoreContainer" CdmEntityContainer="dbEcustomEntities">
+          <EntitySetMapping Name="Logs"><EntityTypeMapping TypeName="dbEcustomModel.Log"><MappingFragment StoreEntitySet="Log">
             <ScalarProperty Name="Id" ColumnName="Id" />
             <ScalarProperty Name="Date" ColumnName="Date" />
             <ScalarProperty Name="Thread" ColumnName="Thread" />
@@ -2829,14 +2829,14 @@
             <ScalarProperty Name="Message" ColumnName="Message" />
             <ScalarProperty Name="Exception" ColumnName="Exception" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="dbEcustomsEntities.sysdiagram"><MappingFragment StoreEntitySet="sysdiagrams">
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="dbEcustomModel.sysdiagram"><MappingFragment StoreEntitySet="sysdiagrams">
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="principal_id" ColumnName="principal_id" />
             <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
             <ScalarProperty Name="version" ColumnName="version" />
             <ScalarProperty Name="definition" ColumnName="definition" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblApplicationObjects"><EntityTypeMapping TypeName="dbEcustomsEntities.tblApplicationObject"><MappingFragment StoreEntitySet="tblApplicationObject">
+          <EntitySetMapping Name="tblApplicationObjects"><EntityTypeMapping TypeName="dbEcustomModel.tblApplicationObject"><MappingFragment StoreEntitySet="tblApplicationObject">
             <ScalarProperty Name="ApplicationObjectID" ColumnName="ApplicationObjectID" />
             <ScalarProperty Name="ApplicationObjectName" ColumnName="ApplicationObjectName" />
             <ScalarProperty Name="ApplicationObjectValueString" ColumnName="ApplicationObjectValueString" />
@@ -2846,7 +2846,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblBranchDatabases"><EntityTypeMapping TypeName="dbEcustomsEntities.tblBranchDatabas"><MappingFragment StoreEntitySet="tblBranchDatabases">
+          <EntitySetMapping Name="tblBranchDatabases"><EntityTypeMapping TypeName="dbEcustomModel.tblBranchDatabas"><MappingFragment StoreEntitySet="tblBranchDatabases">
             <ScalarProperty Name="Id" ColumnName="Id" />
             <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
             <ScalarProperty Name="RegisterSerial" ColumnName="RegisterSerial" />
@@ -2854,7 +2854,7 @@
             <ScalarProperty Name="LastSync" ColumnName="LastSync" />
             <ScalarProperty Name="IsRequestingSync" ColumnName="IsRequestingSync" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblChecks"><EntityTypeMapping TypeName="dbEcustomsEntities.tblCheck"><MappingFragment StoreEntitySet="tblCheck">
+          <EntitySetMapping Name="tblChecks"><EntityTypeMapping TypeName="dbEcustomModel.tblCheck"><MappingFragment StoreEntitySet="tblCheck">
             <ScalarProperty Name="CheckID" ColumnName="CheckID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="DeclarationNumber" ColumnName="DeclarationNumber" />
@@ -2871,7 +2871,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblCompanies"><EntityTypeMapping TypeName="dbEcustomsEntities.tblCompany"><MappingFragment StoreEntitySet="tblCompany">
+          <EntitySetMapping Name="tblCompanies"><EntityTypeMapping TypeName="dbEcustomModel.tblCompany"><MappingFragment StoreEntitySet="tblCompany">
             <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
             <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -2882,7 +2882,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblCustoms"><EntityTypeMapping TypeName="dbEcustomsEntities.tblCustom"><MappingFragment StoreEntitySet="tblCustoms">
+          <EntitySetMapping Name="tblCustoms"><EntityTypeMapping TypeName="dbEcustomModel.tblCustom"><MappingFragment StoreEntitySet="tblCustoms">
             <ScalarProperty Name="CustomsCode" ColumnName="CustomsCode" />
             <ScalarProperty Name="CustomsName" ColumnName="CustomsName" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -2893,7 +2893,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblDeclarations"><EntityTypeMapping TypeName="dbEcustomsEntities.tblDeclaration"><MappingFragment StoreEntitySet="tblDeclaration">
+          <EntitySetMapping Name="tblDeclarations"><EntityTypeMapping TypeName="dbEcustomModel.tblDeclaration"><MappingFragment StoreEntitySet="tblDeclaration">
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="Number" ColumnName="Number" />
             <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -2936,7 +2936,7 @@
             <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblDeclarationLoans"><EntityTypeMapping TypeName="dbEcustomsEntities.tblDeclarationLoan"><MappingFragment StoreEntitySet="tblDeclarationLoan">
+          <EntitySetMapping Name="tblDeclarationLoans"><EntityTypeMapping TypeName="dbEcustomModel.tblDeclarationLoan"><MappingFragment StoreEntitySet="tblDeclarationLoan">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="LoanDate" ColumnName="LoanDate" />
@@ -2953,13 +2953,13 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblDeclarationVehicles"><EntityTypeMapping TypeName="dbEcustomsEntities.tblDeclarationVehicle"><MappingFragment StoreEntitySet="tblDeclarationVehicle">
+          <EntitySetMapping Name="tblDeclarationVehicles"><EntityTypeMapping TypeName="dbEcustomModel.tblDeclarationVehicle"><MappingFragment StoreEntitySet="tblDeclarationVehicle">
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblGates"><EntityTypeMapping TypeName="dbEcustomsEntities.tblGate"><MappingFragment StoreEntitySet="tblGate">
+          <EntitySetMapping Name="tblGates"><EntityTypeMapping TypeName="dbEcustomModel.tblGate"><MappingFragment StoreEntitySet="tblGate">
             <ScalarProperty Name="GateCode" ColumnName="GateCode" />
             <ScalarProperty Name="GateName" ColumnName="GateName" />
             <ScalarProperty Name="GateType" ColumnName="GateType" />
@@ -2971,14 +2971,14 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblGoodsTypes"><EntityTypeMapping TypeName="dbEcustomsEntities.tblGoodsType"><MappingFragment StoreEntitySet="tblGoodsType">
+          <EntitySetMapping Name="tblGoodsTypes"><EntityTypeMapping TypeName="dbEcustomModel.tblGoodsType"><MappingFragment StoreEntitySet="tblGoodsType">
             <ScalarProperty Name="TypeId" ColumnName="TypeId" />
             <ScalarProperty Name="TypeName" ColumnName="TypeName" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblGroups"><EntityTypeMapping TypeName="dbEcustomsEntities.tblGroup"><MappingFragment StoreEntitySet="tblGroup">
+          <EntitySetMapping Name="tblGroups"><EntityTypeMapping TypeName="dbEcustomModel.tblGroup"><MappingFragment StoreEntitySet="tblGroup">
             <ScalarProperty Name="GroupID" ColumnName="GroupID" />
             <ScalarProperty Name="GroupName" ColumnName="GroupName" />
             <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -2988,20 +2988,20 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblPermissions"><EntityTypeMapping TypeName="dbEcustomsEntities.tblPermission"><MappingFragment StoreEntitySet="tblPermission">
+          <EntitySetMapping Name="tblPermissions"><EntityTypeMapping TypeName="dbEcustomModel.tblPermission"><MappingFragment StoreEntitySet="tblPermission">
             <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
             <ScalarProperty Name="Permission" ColumnName="Permission" />
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblPermissionTypes"><EntityTypeMapping TypeName="dbEcustomsEntities.tblPermissionType"><MappingFragment StoreEntitySet="tblPermissionType">
+          <EntitySetMapping Name="tblPermissionTypes"><EntityTypeMapping TypeName="dbEcustomModel.tblPermissionType"><MappingFragment StoreEntitySet="tblPermissionType">
             <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
             <ScalarProperty Name="TypeName" ColumnName="TypeName" />
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblProfileConfigs"><EntityTypeMapping TypeName="dbEcustomsEntities.tblProfileConfig"><MappingFragment StoreEntitySet="tblProfileConfig">
+          <EntitySetMapping Name="tblProfileConfigs"><EntityTypeMapping TypeName="dbEcustomModel.tblProfileConfig"><MappingFragment StoreEntitySet="tblProfileConfig">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="Type" ColumnName="Type" />
@@ -3009,20 +3009,20 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblRoleInGroups"><EntityTypeMapping TypeName="dbEcustomsEntities.tblRoleInGroup"><MappingFragment StoreEntitySet="tblRoleInGroup">
+          <EntitySetMapping Name="tblRoleInGroups"><EntityTypeMapping TypeName="dbEcustomModel.tblRoleInGroup"><MappingFragment StoreEntitySet="tblRoleInGroup">
             <ScalarProperty Name="GroupID" ColumnName="GroupID" />
             <ScalarProperty Name="RoleID" ColumnName="RoleID" />
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblSettings"><EntityTypeMapping TypeName="dbEcustomsEntities.tblSetting"><MappingFragment StoreEntitySet="tblSettings">
+          <EntitySetMapping Name="tblSettings"><EntityTypeMapping TypeName="dbEcustomModel.tblSetting"><MappingFragment StoreEntitySet="tblSettings">
             <ScalarProperty Name="Version" ColumnName="Version" />
             <ScalarProperty Name="LastSync" ColumnName="LastSync" />
             <ScalarProperty Name="SyncInterval" ColumnName="SyncInterval" />
             <ScalarProperty Name="SyncTime" ColumnName="SyncTime" />
             <ScalarProperty Name="IsStartingSync" ColumnName="IsStartingSync" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblTypes"><EntityTypeMapping TypeName="dbEcustomsEntities.tblType"><MappingFragment StoreEntitySet="tblType">
+          <EntitySetMapping Name="tblTypes"><EntityTypeMapping TypeName="dbEcustomModel.tblType"><MappingFragment StoreEntitySet="tblType">
             <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
             <ScalarProperty Name="TypeName" ColumnName="TypeName" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -3033,7 +3033,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblUsers"><EntityTypeMapping TypeName="dbEcustomsEntities.tblUser"><MappingFragment StoreEntitySet="tblUser">
+          <EntitySetMapping Name="tblUsers"><EntityTypeMapping TypeName="dbEcustomModel.tblUser"><MappingFragment StoreEntitySet="tblUser">
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="Sex" ColumnName="Sex" />
@@ -3048,7 +3048,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblUserGroupPermissions"><EntityTypeMapping TypeName="dbEcustomsEntities.tblUserGroupPermission"><MappingFragment StoreEntitySet="tblUserGroupPermission">
+          <EntitySetMapping Name="tblUserGroupPermissions"><EntityTypeMapping TypeName="dbEcustomModel.tblUserGroupPermission"><MappingFragment StoreEntitySet="tblUserGroupPermission">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="GroupID" ColumnName="GroupID" />
@@ -3061,13 +3061,13 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblUserInGroups"><EntityTypeMapping TypeName="dbEcustomsEntities.tblUserInGroup"><MappingFragment StoreEntitySet="tblUserInGroup">
+          <EntitySetMapping Name="tblUserInGroups"><EntityTypeMapping TypeName="dbEcustomModel.tblUserInGroup"><MappingFragment StoreEntitySet="tblUserInGroup">
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="GroupID" ColumnName="GroupID" />
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblVehicles"><EntityTypeMapping TypeName="dbEcustomsEntities.tblVehicle"><MappingFragment StoreEntitySet="tblVehicle">
+          <EntitySetMapping Name="tblVehicles"><EntityTypeMapping TypeName="dbEcustomModel.tblVehicle"><MappingFragment StoreEntitySet="tblVehicle">
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
@@ -3120,7 +3120,7 @@
             <ScalarProperty Name="ModifiedById" ColumnName="ModifiedById" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblVehicleChecks"><EntityTypeMapping TypeName="dbEcustomsEntities.tblVehicleCheck"><MappingFragment StoreEntitySet="tblVehicleCheck">
+          <EntitySetMapping Name="tblVehicleChecks"><EntityTypeMapping TypeName="dbEcustomModel.tblVehicleCheck"><MappingFragment StoreEntitySet="tblVehicleCheck">
             <ScalarProperty Name="VehicleCheckID" ColumnName="VehicleCheckID" />
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="InputBy" ColumnName="InputBy" />
@@ -3138,7 +3138,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblVehicleFeeSettings"><EntityTypeMapping TypeName="dbEcustomsEntities.tblVehicleFeeSetting"><MappingFragment StoreEntitySet="tblVehicleFeeSetting">
+          <EntitySetMapping Name="tblVehicleFeeSettings"><EntityTypeMapping TypeName="dbEcustomModel.tblVehicleFeeSetting"><MappingFragment StoreEntitySet="tblVehicleFeeSetting">
             <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
             <ScalarProperty Name="GoodsTypeId" ColumnName="GoodsTypeId" />
             <ScalarProperty Name="Fee" ColumnName="Fee" />
@@ -3150,7 +3150,7 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tblVehicleTypes"><EntityTypeMapping TypeName="dbEcustomsEntities.tblVehicleType"><MappingFragment StoreEntitySet="tblVehicleType">
+          <EntitySetMapping Name="tblVehicleTypes"><EntityTypeMapping TypeName="dbEcustomModel.tblVehicleType"><MappingFragment StoreEntitySet="tblVehicleType">
             <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
             <ScalarProperty Name="Code" ColumnName="Code" />
             <ScalarProperty Name="Name" ColumnName="Name" />
@@ -3163,14 +3163,14 @@
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tlbRoles"><EntityTypeMapping TypeName="dbEcustomsEntities.tlbRole"><MappingFragment StoreEntitySet="tlbRole">
+          <EntitySetMapping Name="tlbRoles"><EntityTypeMapping TypeName="dbEcustomModel.tlbRole"><MappingFragment StoreEntitySet="tlbRole">
             <ScalarProperty Name="RoleID" ColumnName="RoleID" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
             <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewAllChecks"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewAllCheck"><MappingFragment StoreEntitySet="ViewAllCheck">
+          <EntitySetMapping Name="ViewAllChecks"><EntityTypeMapping TypeName="dbEcustomModel.ViewAllCheck"><MappingFragment StoreEntitySet="ViewAllCheck">
             <ScalarProperty Name="CheckID" ColumnName="CheckID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="DeclarationNumber" ColumnName="DeclarationNumber" />
@@ -3187,7 +3187,7 @@
             <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
             <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewAllCheckResults"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewAllCheckResult"><MappingFragment StoreEntitySet="ViewAllCheckResult">
+          <EntitySetMapping Name="ViewAllCheckResults"><EntityTypeMapping TypeName="dbEcustomModel.ViewAllCheckResult"><MappingFragment StoreEntitySet="ViewAllCheckResult">
             <ScalarProperty Name="VehicleCheckID" ColumnName="VehicleCheckID" />
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="InputBy" ColumnName="InputBy" />
@@ -3208,7 +3208,7 @@
             <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
             <ScalarProperty Name="ExportDate" ColumnName="ExportDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewAllDeclarations"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewAllDeclaration"><MappingFragment StoreEntitySet="ViewAllDeclaration">
+          <EntitySetMapping Name="ViewAllDeclarations"><EntityTypeMapping TypeName="dbEcustomModel.ViewAllDeclaration"><MappingFragment StoreEntitySet="ViewAllDeclaration">
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
@@ -3249,7 +3249,7 @@
             <ScalarProperty Name="ReceiveNumberInYear" ColumnName="ReceiveNumberInYear" />
             <ScalarProperty Name="NumberTempInfo" ColumnName="NumberTempInfo" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewAllDeclarationTNTXes"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewAllDeclarationTNTX"><MappingFragment StoreEntitySet="ViewAllDeclarationTNTX">
+          <EntitySetMapping Name="ViewAllDeclarationTNTXes"><EntityTypeMapping TypeName="dbEcustomModel.ViewAllDeclarationTNTX"><MappingFragment StoreEntitySet="ViewAllDeclarationTNTX">
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="Number" ColumnName="Number" />
             <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -3288,7 +3288,7 @@
             <ScalarProperty Name="PersonHandoverName" ColumnName="PersonHandoverName" />
             <ScalarProperty Name="ReceiveNumberInYear" ColumnName="ReceiveNumberInYear" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewAllVehicles"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewAllVehicle"><MappingFragment StoreEntitySet="ViewAllVehicle">
+          <EntitySetMapping Name="ViewAllVehicles"><EntityTypeMapping TypeName="dbEcustomModel.ViewAllVehicle"><MappingFragment StoreEntitySet="ViewAllVehicle">
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
@@ -3316,7 +3316,7 @@
             <ScalarProperty Name="PlateNumberPartner" ColumnName="PlateNumberPartner" />
             <ScalarProperty Name="ModifiedByUserName" ColumnName="ModifiedByUserName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewAllVehicleHasGoods"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewAllVehicleHasGood"><MappingFragment StoreEntitySet="ViewAllVehicleHasGood">
+          <EntitySetMapping Name="ViewAllVehicleHasGoods"><EntityTypeMapping TypeName="dbEcustomModel.ViewAllVehicleHasGood"><MappingFragment StoreEntitySet="ViewAllVehicleHasGood">
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
@@ -3390,7 +3390,7 @@
             <ScalarProperty Name="CreatedByUserName" ColumnName="CreatedByUserName" />
             <ScalarProperty Name="ModifiedByUserName" ColumnName="ModifiedByUserName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="viewDeclarationLoans"><EntityTypeMapping TypeName="dbEcustomsEntities.viewDeclarationLoan"><MappingFragment StoreEntitySet="viewDeclarationLoan">
+          <EntitySetMapping Name="viewDeclarationLoans"><EntityTypeMapping TypeName="dbEcustomModel.viewDeclarationLoan"><MappingFragment StoreEntitySet="viewDeclarationLoan">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="LoanDate" ColumnName="LoanDate" />
@@ -3407,7 +3407,7 @@
             <ScalarProperty Name="Number" ColumnName="Number" />
             <ScalarProperty Name="LenderFullName" ColumnName="LenderFullName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewDeclarationManagements"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewDeclarationManagement"><MappingFragment StoreEntitySet="ViewDeclarationManagement">
+          <EntitySetMapping Name="ViewDeclarationManagements"><EntityTypeMapping TypeName="dbEcustomModel.ViewDeclarationManagement"><MappingFragment StoreEntitySet="ViewDeclarationManagement">
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="Number" ColumnName="Number" />
             <ScalarProperty Name="CustomsCode" ColumnName="CustomsCode" />
@@ -3430,7 +3430,7 @@
             <ScalarProperty Name="FilesLocation" ColumnName="FilesLocation" />
             <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewDeclarationVechicleExports"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewDeclarationVechicleExport"><MappingFragment StoreEntitySet="ViewDeclarationVechicleExport">
+          <EntitySetMapping Name="ViewDeclarationVechicleExports"><EntityTypeMapping TypeName="dbEcustomModel.ViewDeclarationVechicleExport"><MappingFragment StoreEntitySet="ViewDeclarationVechicleExport">
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="DeclarationExportNumber" ColumnName="DeclarationExportNumber" />
             <ScalarProperty Name="DeclarationExportType" ColumnName="DeclarationExportType" />
@@ -3486,7 +3486,7 @@
             <ScalarProperty Name="ConfirmFeeExportByUserName" ColumnName="ConfirmFeeExportByUserName" />
             <ScalarProperty Name="ConfirmExportByName" ColumnName="ConfirmExportByName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="viewDeclarationVehicles"><EntityTypeMapping TypeName="dbEcustomsEntities.viewDeclarationVehicle"><MappingFragment StoreEntitySet="viewDeclarationVehicle">
+          <EntitySetMapping Name="viewDeclarationVehicles"><EntityTypeMapping TypeName="dbEcustomModel.viewDeclarationVehicle"><MappingFragment StoreEntitySet="viewDeclarationVehicle">
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="Number" ColumnName="Number" />
@@ -3518,7 +3518,7 @@
             <ScalarProperty Name="ProductName" ColumnName="ProductName" />
             <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewDeclarationVehicleImports"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewDeclarationVehicleImport"><MappingFragment StoreEntitySet="ViewDeclarationVehicleImport">
+          <EntitySetMapping Name="ViewDeclarationVehicleImports"><EntityTypeMapping TypeName="dbEcustomModel.ViewDeclarationVehicleImport"><MappingFragment StoreEntitySet="ViewDeclarationVehicleImport">
             <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
             <ScalarProperty Name="DeclarationImportType" ColumnName="DeclarationImportType" />
             <ScalarProperty Name="DeclarationType" ColumnName="DeclarationType" />
@@ -3574,7 +3574,7 @@
             <ScalarProperty Name="ConfirmImportByName" ColumnName="ConfirmImportByName" />
             <ScalarProperty Name="DeclarationImportNumber" ColumnName="DeclarationImportNumber" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewDeclarationVehicleImportExportFees"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewDeclarationVehicleImportExportFee"><MappingFragment StoreEntitySet="ViewDeclarationVehicleImportExportFee">
+          <EntitySetMapping Name="ViewDeclarationVehicleImportExportFees"><EntityTypeMapping TypeName="dbEcustomModel.ViewDeclarationVehicleImportExportFee"><MappingFragment StoreEntitySet="ViewDeclarationVehicleImportExportFee">
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="NumberOfContainer" ColumnName="NumberOfContainer" />
@@ -3634,17 +3634,17 @@
             <ScalarProperty Name="ConfirmImportByName" ColumnName="ConfirmImportByName" />
             <ScalarProperty Name="ConfirmExportByName" ColumnName="ConfirmExportByName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewGetCurrentDates"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewGetCurrentDate"><MappingFragment StoreEntitySet="ViewGetCurrentDate">
+          <EntitySetMapping Name="ViewGetCurrentDates"><EntityTypeMapping TypeName="dbEcustomModel.ViewGetCurrentDate"><MappingFragment StoreEntitySet="ViewGetCurrentDate">
             <ScalarProperty Name="CurrentDateTime" ColumnName="CurrentDateTime" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewUserGroups"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewUserGroup"><MappingFragment StoreEntitySet="ViewUserGroup">
+          <EntitySetMapping Name="ViewUserGroups"><EntityTypeMapping TypeName="dbEcustomModel.ViewUserGroup"><MappingFragment StoreEntitySet="ViewUserGroup">
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
             <ScalarProperty Name="UserName" ColumnName="UserName" />
             <ScalarProperty Name="GroupID" ColumnName="GroupID" />
             <ScalarProperty Name="GroupName" ColumnName="GroupName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewVehicleFees"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewVehicleFee"><MappingFragment StoreEntitySet="ViewVehicleFee">
+          <EntitySetMapping Name="ViewVehicleFees"><EntityTypeMapping TypeName="dbEcustomModel.ViewVehicleFee"><MappingFragment StoreEntitySet="ViewVehicleFee">
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="FeeReceiptNumber" ColumnName="FeeReceiptNumber" />
@@ -3662,7 +3662,7 @@
             <ScalarProperty Name="VehicleIdTmp" ColumnName="VehicleIdTmp" />
             <ScalarProperty Name="maxDeclarationID" ColumnName="maxDeclarationID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="viewVehicleFeeSettings"><EntityTypeMapping TypeName="dbEcustomsEntities.viewVehicleFeeSetting"><MappingFragment StoreEntitySet="viewVehicleFeeSetting">
+          <EntitySetMapping Name="viewVehicleFeeSettings"><EntityTypeMapping TypeName="dbEcustomModel.viewVehicleFeeSetting"><MappingFragment StoreEntitySet="viewVehicleFeeSetting">
             <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
             <ScalarProperty Name="GoodsTypeId" ColumnName="GoodsTypeId" />
             <ScalarProperty Name="Fee" ColumnName="Fee" />
@@ -3671,7 +3671,7 @@
             <ScalarProperty Name="VehicleTypeName" ColumnName="VehicleTypeName" />
             <ScalarProperty Name="Capacity" ColumnName="Capacity" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewVehicleFreights"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewVehicleFreight"><MappingFragment StoreEntitySet="ViewVehicleFreight">
+          <EntitySetMapping Name="ViewVehicleFreights"><EntityTypeMapping TypeName="dbEcustomModel.ViewVehicleFreight"><MappingFragment StoreEntitySet="ViewVehicleFreight">
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -3682,7 +3682,7 @@
             <ScalarProperty Name="GoodTypeName" ColumnName="GoodTypeName" />
             <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ViewVehicleOverdues"><EntityTypeMapping TypeName="dbEcustomsEntities.ViewVehicleOverdue"><MappingFragment StoreEntitySet="ViewVehicleOverdue">
+          <EntitySetMapping Name="ViewVehicleOverdues"><EntityTypeMapping TypeName="dbEcustomModel.ViewVehicleOverdue"><MappingFragment StoreEntitySet="ViewVehicleOverdue">
             <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
             <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
             <ScalarProperty Name="DriverName" ColumnName="DriverName" />
@@ -3714,51 +3714,51 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ModelEcustoms">
-        <EntityTypeShape EntityType="dbEcustomsEntities.Log" Width="1.5" PointX="0.75" PointY="0.75" Height="2.085348307291667" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7566536458333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblApplicationObject" Width="1.5" PointX="0.75" PointY="3.75" Height="2.2496956380208335" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblBranchDatabas" Width="1.5" PointX="2.75" PointY="3.75" Height="1.9210009765624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblCheck" Width="1.5" PointX="4.75" PointY="0.75" Height="3.4001269531249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblCompany" Width="1.5" PointX="4.75" PointY="5.75" Height="2.4140429687499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblCustom" Width="1.5" PointX="6.75" PointY="0.75" Height="2.4140429687499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblDeclaration" Width="1.5" PointX="0.75" PointY="6.75" Height="7.6731575520833353" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblDeclarationLoan" Width="1.5" PointX="6.75" PointY="4.75" Height="3.4001269531249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblDeclarationVehicle" Width="1.5" PointX="8.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblGate" Width="1.5" PointX="8.75" PointY="3.75" Height="2.5783902994791674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblGoodsType" Width="1.5" PointX="8.75" PointY="7.75" Height="1.7566536458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblGroup" Width="1.5" PointX="2.75" PointY="9.75" Height="2.2496956380208388" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblPermission" Width="1.5" PointX="4.75" PointY="9.75" Height="1.7566536458333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblPermissionType" Width="1.5" PointX="10.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblProfileConfig" Width="1.5" PointX="10.75" PointY="3.75" Height="1.9210009765625031" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblRoleInGroup" Width="1.5" PointX="10.75" PointY="6.75" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblSetting" Width="1.5" PointX="6.75" PointY="10.75" Height="1.7566536458333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblType" Width="1.5" PointX="8.75" PointY="10.75" Height="2.4140429687500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblUser" Width="1.5" PointX="10.75" PointY="9.75" Height="3.0714322916666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblUserGroupPermission" Width="1.5" PointX="12.75" PointY="0.75" Height="2.7427376302083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblUserInGroup" Width="1.5" PointX="2.75" PointY="12.75" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblVehicle" Width="1.5" PointX="12.75" PointY="4.75" Height="9.31663085937501" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblVehicleCheck" Width="1.5" PointX="4.75" PointY="13.75" Height="3.5644742838541674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblVehicleFeeSetting" Width="1.5" PointX="14.75" PointY="0.75" Height="2.5783902994791674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tblVehicleType" Width="1.5" PointX="14.75" PointY="4.75" Height="2.7427376302083246" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.tlbRole" Width="1.5" PointX="6.75" PointY="14.75" Height="1.7566536458333246" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewAllCheck" Width="1.5" PointX="14.75" PointY="8.75" Height="3.4001269531250102" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewAllCheckResult" Width="1.5" PointX="8.75" PointY="14.75" Height="4.0575162760416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewAllDeclaration" Width="1.5" PointX="14.75" PointY="13.75" Height="7.34446289062501" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewAllDeclarationTNTX" Width="1.5" PointX="0.75" PointY="15.75" Height="7.0157682291666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewAllVehicle" Width="1.5" PointX="10.75" PointY="15.75" Height="5.2079475911458246" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewAllVehicleHasGood" Width="1.5" PointX="16.75" PointY="0.75" Height="12.76792480468751" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.viewDeclarationLoan" Width="1.5" PointX="16.75" PointY="14.75" Height="3.4001269531250102" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewDeclarationManagement" Width="1.5" PointX="18.75" PointY="0.75" Height="4.38621093750001" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewDeclarationVechicleExport" Width="1.5" PointX="2.75" PointY="18.75" Height="9.80967285156251" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.viewDeclarationVehicle" Width="1.5" PointX="4.75" PointY="18.75" Height="5.86533691406251" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewDeclarationVehicleImport" Width="1.5" PointX="18.75" PointY="6.75" Height="9.809672851562496" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="18.75" PointY="17.75" Height="10.467062174479167" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewGetCurrentDate" Width="1.5" PointX="6.75" PointY="19.75" Height="1.0992643229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewUserGroup" Width="1.5" PointX="20.75" PointY="0.75" Height="1.7566536458333246" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewVehicleFee" Width="1.5" PointX="20.75" PointY="3.75" Height="3.5644742838541674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.viewVehicleFeeSetting" Width="1.5" PointX="20.75" PointY="8.75" Height="2.0853483072916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewVehicleFreight" Width="1.5" PointX="20.75" PointY="11.75" Height="2.4140429687500102" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbEcustomsEntities.ViewVehicleOverdue" Width="1.5" PointX="20.75" PointY="15.75" Height="2.4140429687499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.Log" Width="1.5" PointX="0.75" PointY="0.75" Height="2.085348307291667" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7566536458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblApplicationObject" Width="1.5" PointX="0.75" PointY="3.75" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblBranchDatabas" Width="1.5" PointX="2.75" PointY="3.75" Height="1.9210009765624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCheck" Width="1.5" PointX="4.75" PointY="0.75" Height="3.4001269531249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCompany" Width="1.5" PointX="4.75" PointY="5.75" Height="2.4140429687499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblCustom" Width="1.5" PointX="6.75" PointY="0.75" Height="2.4140429687499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclaration" Width="1.5" PointX="0.75" PointY="6.75" Height="7.6731575520833353" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationLoan" Width="1.5" PointX="6.75" PointY="4.75" Height="3.4001269531249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblDeclarationVehicle" Width="1.5" PointX="8.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGate" Width="1.5" PointX="8.75" PointY="3.75" Height="2.5783902994791674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGoodsType" Width="1.5" PointX="8.75" PointY="7.75" Height="1.7566536458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblGroup" Width="1.5" PointX="2.75" PointY="9.75" Height="2.2496956380208388" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblPermission" Width="1.5" PointX="4.75" PointY="9.75" Height="1.7566536458333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblPermissionType" Width="1.5" PointX="10.75" PointY="0.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblProfileConfig" Width="1.5" PointX="10.75" PointY="3.75" Height="1.9210009765625031" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblRoleInGroup" Width="1.5" PointX="10.75" PointY="6.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblSetting" Width="1.5" PointX="6.75" PointY="10.75" Height="1.7566536458333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblType" Width="1.5" PointX="8.75" PointY="10.75" Height="2.4140429687500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUser" Width="1.5" PointX="10.75" PointY="9.75" Height="3.0714322916666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUserGroupPermission" Width="1.5" PointX="12.75" PointY="0.75" Height="2.7427376302083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblUserInGroup" Width="1.5" PointX="2.75" PointY="12.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicle" Width="1.5" PointX="12.75" PointY="4.75" Height="9.31663085937501" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleCheck" Width="1.5" PointX="4.75" PointY="13.75" Height="3.5644742838541674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleFeeSetting" Width="1.5" PointX="14.75" PointY="0.75" Height="2.5783902994791674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblVehicleType" Width="1.5" PointX="14.75" PointY="4.75" Height="2.7427376302083246" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.tlbRole" Width="1.5" PointX="6.75" PointY="14.75" Height="1.7566536458333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheck" Width="1.5" PointX="14.75" PointY="8.75" Height="3.4001269531250102" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllCheckResult" Width="1.5" PointX="8.75" PointY="14.75" Height="4.0575162760416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclaration" Width="1.5" PointX="14.75" PointY="13.75" Height="7.34446289062501" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllDeclarationTNTX" Width="1.5" PointX="0.75" PointY="15.75" Height="7.0157682291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicle" Width="1.5" PointX="10.75" PointY="15.75" Height="5.2079475911458246" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewAllVehicleHasGood" Width="1.5" PointX="16.75" PointY="0.75" Height="12.76792480468751" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationLoan" Width="1.5" PointX="16.75" PointY="14.75" Height="3.4001269531250102" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationManagement" Width="1.5" PointX="18.75" PointY="0.75" Height="4.38621093750001" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="2.75" PointY="18.75" Height="9.80967285156251" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="4.75" PointY="18.75" Height="5.86533691406251" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="18.75" PointY="6.75" Height="9.809672851562496" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="18.75" PointY="17.75" Height="10.467062174479167" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewGetCurrentDate" Width="1.5" PointX="6.75" PointY="19.75" Height="1.0992643229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewUserGroup" Width="1.5" PointX="20.75" PointY="0.75" Height="1.7566536458333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFee" Width="1.5" PointX="20.75" PointY="3.75" Height="3.5644742838541674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="20.75" PointY="8.75" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="20.75" PointY="11.75" Height="2.4140429687500102" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleOverdue" Width="1.5" PointX="20.75" PointY="15.75" Height="2.4140429687499818" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>
