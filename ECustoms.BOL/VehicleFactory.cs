@@ -308,7 +308,7 @@ namespace ECustoms.BOL
                         var vehicleOrgin = db.tblVehicles.Where(g => g.VehicleID == vehicle.VehicleID).FirstOrDefault();
                         db.Attach(vehicleOrgin);
                         db.ApplyPropertyChanges("tblVehicles", vehicle);
-                        db.SaveChanges();
+                        //db.SaveChanges();
                         // Insert to tblVehicleDeclerateion
                         var vehicleDeclara = new tblDeclarationVehicle();
                         vehicleDeclara.VehicleID = vehicle.VehicleID;
@@ -534,6 +534,83 @@ namespace ECustoms.BOL
                                                                   select a).ToList();
             return result;
 
+        }
+
+        public static List<VehicleNumber> GetAllPlateNumberChange(bool isVehicleChinese = false)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var listResult = new List<VehicleNumber>();
+            if (isVehicleChinese)
+            {
+                var lst = db.tblVehicles.Where(x => !string.IsNullOrEmpty(x.PlateNumber) && x.IsChineseVehicle == true && x.IsImport == true && (x.IsExport == null || x.IsExport == false))
+                                        .ToList();
+                listResult.AddRange(lst.Select(vehicleNumber => new VehicleNumber(vehicleNumber.PlateNumber, vehicleNumber.VehicleID)));
+            }
+            else
+            {
+                var lst = db.tblVehicles.Join(db.tblDeclarationVehicles, v => v.VehicleID, dv => dv.VehicleID, (v, dv) => new { tblVehicle = v, tblDeclarationVehicle = dv})
+                                        .Where(x => x.tblDeclarationVehicle.DeclarationID == 0 && 
+                                                    !string.IsNullOrEmpty(x.tblVehicle.PlateNumber) &&
+                                                    (x.tblVehicle.IsCompleted == null || x.tblVehicle.IsCompleted == false) &&
+                                                    (x.tblVehicle.IsChineseVehicle == null || x.tblVehicle.IsChineseVehicle == false) &&
+                                                    (x.tblVehicle.IsExport == null || x.tblVehicle.IsExport == false) &&
+                                                    (x.tblVehicle.IsExportParking == null || x.tblVehicle.IsExportParking == false))
+                                        .Select(x => x.tblVehicle)
+                                        .ToList();
+                listResult.AddRange(lst.Select(vehicleNumber => new VehicleNumber(vehicleNumber.PlateNumber, vehicleNumber.VehicleID)));
+            }
+            db.Connection.Close();
+            return listResult;
+        }
+
+        public static List<VehicleNumber> GetListVehicleChangeById(long vehicleId, bool isVehicleChinese = false)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var listResult = new List<VehicleNumber>();
+            var listId = db.tblVehicleChanges.Where(x => x.VehicleFromID == vehicleId).Select(x => x.VehicleToID)
+                .Union(db.tblVehicleChanges.Where(x => x.VehicleToID == vehicleId).Select(x => x.VehicleFromID))
+                .Distinct().ToList();
+            foreach (var id in listId)
+            {
+                var vehicle = isVehicleChinese ? db.tblVehicles.Where(x => x.VehicleID == id && x.IsChineseVehicle == true).FirstOrDefault() :
+                                                 db.tblVehicles.Where(x => x.VehicleID == id && (x.IsChineseVehicle == null || x.IsChineseVehicle == false)).FirstOrDefault();
+                if (!string.IsNullOrEmpty(vehicle.PlateNumber))
+                {
+                    listResult.Add(new VehicleNumber(vehicle.PlateNumber, vehicle.VehicleID));
+                }
+            }
+            return listResult;
+        }
+
+        public static int DeleteVehicleChangeByVehicleId(long vehicleId)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var list = db.tblVehicleChanges.Where(x => x.VehicleFromID == vehicleId || x.VehicleToID == vehicleId);
+            foreach (var vehicleChange in list)
+            {
+                db.DeleteObject(vehicleChange);
+            }
+            return db.SaveChanges();
+        }
+        public static int AddVehicleChangeByVehicleId(long vehicleFromId, List<long> vehicleToId)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var vehicleFrom = db.tblVehicles.Where(x => x.VehicleID == vehicleFromId).FirstOrDefault();
+            foreach (var toId in vehicleToId)
+            {
+                var vehicleChange = new tblVehicleChange()
+                                        {
+                                            VehicleFromID = vehicleFromId,
+                                            VehicleToID = toId,
+                                            BranchId = FDHelper.RgCodeOfUnit() 
+                                        };
+                db.AddTotblVehicleChanges(vehicleChange);
+                var vehicleTo = db.tblVehicles.Where(x => x.VehicleID == toId).FirstOrDefault();
+                vehicleTo.StatusChangeGood = vehicleFrom.IsChineseVehicle == true
+                                                 ? (byte) VehicleChangeStatus.SangTaiTQ
+                                                 : (byte) VehicleChangeStatus.SangTaiVN;
+            }
+            return db.SaveChanges();
         }
     }
 }

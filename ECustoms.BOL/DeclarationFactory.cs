@@ -40,6 +40,9 @@ namespace ECustoms.BOL
                 db.AddTotblVehicles(vehicle);
                 db.SaveChanges();
 
+                //insert to the tblVehicleChange
+                VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x => x.VehicleId).ToList());
+                
                 // Insert to the tblVehicleDeclerateion
                 var vehicleDeclara = new tblDeclarationVehicle();
                 vehicleDeclara.VehicleID = vehicle.VehicleID;
@@ -64,6 +67,10 @@ namespace ECustoms.BOL
                     vehicleDeclara.VehicleID = vehicle.VehicleID;
                     vehicleDeclara.DeclarationID = declerartionTem.DeclarationID;
                     db.AddTotblDeclarationVehicles(vehicleDeclara);
+
+                    //update tblVehicleChange 
+                    VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
+                    VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x=>x.VehicleId).ToList());
                     db.SaveChanges();
                 }
             }

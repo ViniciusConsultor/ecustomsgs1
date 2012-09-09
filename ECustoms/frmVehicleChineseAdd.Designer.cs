@@ -675,7 +675,7 @@
             this.pnGoodsImports.Controls.Add(this.label3);
             this.pnGoodsImports.Controls.Add(this.rbHasGoods);
             this.pnGoodsImports.Controls.Add(this.rbNoGoods);
-            this.pnGoodsImports.Location = new System.Drawing.Point(358, 85);
+            this.pnGoodsImports.Location = new System.Drawing.Point(358, 117);
             this.pnGoodsImports.Name = "pnGoodsImports";
             this.pnGoodsImports.Size = new System.Drawing.Size(251, 27);
             this.pnGoodsImports.TabIndex = 37;

@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -112,8 +116,11 @@
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlateNumberPartner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleChangeGoodVN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleChangeGoodChinese = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -507,11 +514,13 @@
             // 
             // listViewVehicle
             // 
-            this.listViewVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewVehicle.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listViewVehicle.Location = new System.Drawing.Point(3, 16);
+            this.listViewVehicle.Location = new System.Drawing.Point(3, 38);
             this.listViewVehicle.Name = "listViewVehicle";
-            this.listViewVehicle.Size = new System.Drawing.Size(858, 130);
+            this.listViewVehicle.Size = new System.Drawing.Size(858, 108);
             this.listViewVehicle.TabIndex = 3;
             this.listViewVehicle.UseCompatibleStateImageBehavior = false;
             this.listViewVehicle.View = System.Windows.Forms.View.List;
@@ -543,7 +552,8 @@
             this.grdVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PlateNumber,
-            this.PlateNumberPartner,
+            this.VehicleChangeGoodVN,
+            this.VehicleChangeGoodChinese,
             this.DriverName,
             this.ExportDate,
             this.Importdate,
@@ -811,6 +821,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Tên lái xe";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 140;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -836,6 +847,8 @@
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn6.DataPropertyName = "NumberOfContainer";
+            dataGridViewCellStyle8.Format = "dd/MM/yyyy hh:mm";
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn6.HeaderText = "Số container";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -843,6 +856,7 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "parking";
             this.dataGridViewTextBoxColumn7.HeaderText = "Hàng vào bãi";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -852,8 +866,8 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "ParkingDate";
-            dataGridViewCellStyle8.Format = "dd/MM/yyyy hh:mm";
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Format = "dd/MM/yyyy hh:mm";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn8.HeaderText = "Ngày vào bãi";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -862,6 +876,8 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Status";
+            dataGridViewCellStyle10.Format = "dd/MM/yyyy hh:mm";
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn9.HeaderText = "Diễn giải";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -886,8 +902,8 @@
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "ImportedLocalTime";
-            dataGridViewCellStyle9.Format = "dd/MM/yyyy hh:mm";
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle11.Format = "dd/MM/yyyy hh:mm";
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn12.HeaderText = "Ngày vào nội địa";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
@@ -897,10 +913,14 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "VehicleID";
+            dataGridViewCellStyle12.Format = "dd/MM/yyyy hh:mm";
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn13.HeaderText = "VehicleID";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn13.Visible = false;
+            this.dataGridViewTextBoxColumn13.Width = 200;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -908,6 +928,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Người xác nhận xuất";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
             this.dataGridViewTextBoxColumn14.Width = 200;
             // 
             // dataGridViewTextBoxColumn15
@@ -937,12 +958,29 @@
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "ModifiedDate";
-            dataGridViewCellStyle10.Format = "dd/MM/yyyy hh:mm";
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.Format = "dd/MM/yyyy hh:mm";
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn18.HeaderText = "Thời điểm cập nhật cuối";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
             this.dataGridViewTextBoxColumn18.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "ModifiedDate";
+            dataGridViewCellStyle14.Format = "dd/MM/yyyy hh:mm";
+            this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewTextBoxColumn19.HeaderText = "Thời điểm cập nhật cuối";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "VehicleChangeGoodVN";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Xe sang tai";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
             // 
             // PlateNumber
             // 
@@ -952,13 +990,21 @@
             this.PlateNumber.ReadOnly = true;
             this.PlateNumber.Width = 140;
             // 
-            // PlateNumberPartner
+            // VehicleChangeGoodVN
             // 
-            this.PlateNumberPartner.DataPropertyName = "PlateNumberPartner";
-            this.PlateNumberPartner.HeaderText = "Xe Trung Quốc";
-            this.PlateNumberPartner.Name = "PlateNumberPartner";
-            this.PlateNumberPartner.ReadOnly = true;
-            this.PlateNumberPartner.Width = 140;
+            this.VehicleChangeGoodVN.DataPropertyName = "VehicleChangeGoodVN";
+            this.VehicleChangeGoodVN.HeaderText = "Xe sang tải";
+            this.VehicleChangeGoodVN.Name = "VehicleChangeGoodVN";
+            this.VehicleChangeGoodVN.ReadOnly = true;
+            this.VehicleChangeGoodVN.Width = 150;
+            // 
+            // VehicleChangeGoodChinese
+            // 
+            this.VehicleChangeGoodChinese.DataPropertyName = "VehicleChangeGoodChinese";
+            this.VehicleChangeGoodChinese.HeaderText = "Xe Trung Quốc";
+            this.VehicleChangeGoodChinese.Name = "VehicleChangeGoodChinese";
+            this.VehicleChangeGoodChinese.ReadOnly = true;
+            this.VehicleChangeGoodChinese.Width = 150;
             // 
             // DriverName
             // 
@@ -1203,7 +1249,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumberPartner;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleChangeGoodVN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleChangeGoodChinese;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importdate;
@@ -1220,5 +1267,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ConfirmLocalImportByName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModifiedByUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModifiedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
     }
 }

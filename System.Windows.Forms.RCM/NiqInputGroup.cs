@@ -219,10 +219,12 @@ namespace Niq.Msd.Layout
             List<object> txtDatasource = DatasourceUtils.CloneObject<List<object>>(_datasourceItems);
             foreach (var selectedItem in SelectedItems)
             {
-                var _text = DatasourceUtils.GetValueOfProperty(selectedItem, TextField).ToString();
+                //var _text = DatasourceUtils.GetValueOfProperty(selectedItem, TextField).ToString();
                 var _value = DatasourceUtils.GetValueOfProperty(selectedItem, ValueField).ToString();
 
-                var removeItem = txtDatasource.FirstOrDefault(p => (p as IObjectData).ToName().Equals(_value));
+                //var removeItem = txtDatasource.FirstOrDefault(p => (p as IObjectData).ToName().Equals(_value));
+                //Replace by CuongTd
+                var removeItem = txtDatasource.FirstOrDefault(p => DatasourceUtils.GetValueOfProperty(p, ValueField).ToString().Equals(_value));
                 txtDatasource.Remove(removeItem);
             }
 

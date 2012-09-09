@@ -247,11 +247,16 @@ namespace ECustoms
                                 }
                             }      
                         }
-                        
+
+                        var vehicleRow = (ViewAllVehicleHasGood) grdVehicle.Rows[i].DataBoundItem;
+                        if (vehicleRow.StatusChangeGood != null)
+                        {    
+                            vehicleInfo.StatusChangeGood = vehicleRow.StatusChangeGood;
+                            vehicleInfo.ListVehicleChangeGood = vehicleRow.ListVehicleChangeGood;
+                        }
 
                         if (grdVehicle.Rows[i].Cells["VehicleID"].Value != null && Convert.ToInt64(grdVehicle.Rows[i].Cells["VehicleID"].Value) > 0) // Update this vehicle only.
                         {
-
                             listVehicleUpdate.Add(vehicleInfo);
                             continue;
                         }

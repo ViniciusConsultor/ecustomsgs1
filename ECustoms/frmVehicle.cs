@@ -8,6 +8,8 @@ using ECustoms.Utilities;
 using ECustoms.BOL;
 using ECustoms.DAL;
 using log4net;
+using Niq.Msd.Base;
+using Niq.Msd.Layout;
 
 namespace ECustoms
 {
@@ -31,6 +33,8 @@ namespace ECustoms
 
         private Form _seachFrom;
 
+        private List<VehicleNumber> _listVehicleChangeVN;
+        private List<VehicleNumber> _listVehicleChangeChinese;
         public frmVehicle()
         {
             InitializeComponent();
@@ -154,6 +158,12 @@ namespace ECustoms
             _isImport = false;
             // Set focus
             txtPlateNumber.Focus();
+
+            cbVehicleType.SelectedIndex = cbExportGoodType.SelectedIndex = cbImportGoodType.SelectedIndex = 0;
+            rbVehicleChangeVN.Checked = rbVehicleChangeChinese.Checked = false;
+            txtVehicleChangeGood.DataSource = new List<object>();
+            txtVehicleChangeGood.SelectedItems = new List<object>();
+            txtVehicleChangeGood.BindData();
         }
 
         private void CheckPermisson()
@@ -177,7 +187,6 @@ namespace ECustoms
         {
             try
             {
-
                 //init vehicleType
                 var listVehicleType = VehicleTypeFactory.getAllVehicleType();
                 dataSet2.tblVehicleType.Rows.Add(0, "Không phân loại");
@@ -206,7 +215,7 @@ namespace ECustoms
                     btnConfirmExport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_XUAT_CANH);
                     btnConfirmImport.Enabled = false;
 
-                    //Autocomplete registerplace
+                    //Autocomplete 
                     var auto = new AutoCompleteStringCollection();
                     var lstAuto = VehicleFactory.GetAllPlateNumberChinese();
                     auto.AddRange(lstAuto.ToArray());
@@ -223,6 +232,8 @@ namespace ECustoms
                     btnConfirmImport.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
                    
                     cbExportGoodType.Enabled = false;
+
+                    rbVehicleChangeVN.Enabled = rbVehicleChangeChinese.Enabled = txtVehicleChangeGood.Enabled = false;
                 }
 
                 // TODO: Need to handler it
@@ -232,6 +243,14 @@ namespace ECustoms
                     btnDelete.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XOA_PHUONG_TIEN);
                 }
                 btnSearch.Enabled = false;
+                
+                //Init data default for VehicleChangeGood
+                _listVehicleChangeVN = VehicleFactory.GetAllPlateNumberChange();
+                _listVehicleChangeChinese = VehicleFactory.GetAllPlateNumberChange(true);
+                txtVehicleChangeGood.TextField = "PlateNumber";
+                txtVehicleChangeGood.ValueField = "VehicleId";
+                txtVehicleChangeGood.OnItemRemoveClick += new OnItemRemoveClickHandler(txtVehicleChangeGood_OnItemRemoveClick);
+                txtVehicleChangeGood.OnValidDataInput += new OnValidDataInputHandler(txtVehicleChangeGood_OnValidDataInput);
 
                 if (_mode == 0 || _mode == 4) // Add mode - Click on Add New
                 {
@@ -252,7 +271,8 @@ namespace ECustoms
                     ResetForm();
                     btnAdd.Text = "Lưu trữ phương tiện";
                     btnSearch.Enabled = true;
-
+                    
+                    //rbVehicleChangeVN.Checked = true;
                 }
                 else if (_mode == 1) // Add mode - CLick on Update
                 {
@@ -354,6 +374,19 @@ namespace ECustoms
             }
         }
 
+        private void txtVehicleChangeGood_OnValidDataInput(object sender, object datavalidate)
+        {
+            //var vehicleNumber = datavalidate as string;
+            //if (vehicleNumber != null)
+            //    MessageBox.Show(string.Format("Xe có biển kiểm soát {0} không tồn tại trong hệ thống. Bạn phải chọn xe khác hoặc để trống.", vehicleNumber));
+        }
+
+        private void txtVehicleChangeGood_OnItemRemoveClick(object sender, object selecteditem)
+        {
+            var vehicleNumber = selecteditem as VehicleNumber;
+            if (vehicleNumber != null) txtVehicleChangeGood.RemoveAt(vehicleNumber.VehicleId.ToString());
+        }
+
         private void BindDataToControls(ViewAllVehicleHasGood vehicleInfo)
         {
             try
@@ -369,7 +402,50 @@ namespace ECustoms
                 //{
                 //    lblVehicleChinese.Visible = txtVehicleChinese.Visible = false;
                 //}
+                //TODO: CheckBox VehicleChangeGood
                 txtVehicleChinese.Text = vehicleInfo.PlateNumberPartner;
+                if (vehicleInfo.IsChineseVehicle == true) rbVehicleChangeChinese.Enabled = false;
+                switch (vehicleInfo.StatusChangeGood)
+                {
+                    case (byte) Utilities.Enums.VehicleChangeStatus.SangTaiVN:
+                        {
+                            //Get from db if mode = 2 or 3
+                            List<VehicleNumber> listSelectChange;
+                            if (_mode == 2 || _mode == 3)
+                            {
+                                listSelectChange = VehicleFactory.GetListVehicleChangeById(vehicleInfo.VehicleID);
+                                _listVehicleChangeVN.AddRange(listSelectChange);
+                                _listVehicleChangeVN = _listVehicleChangeVN.Distinct(new VehicleNumberComparer()).ToList();
+                            }
+                            else
+                            {
+                                listSelectChange = vehicleInfo.ListVehicleChangeGood;
+                            }
+                            rbVehicleChangeVN.Checked = true;
+                            txtVehicleChangeGood.SelectedItems = listSelectChange.Cast<object>().ToList();
+                            txtVehicleChangeGood.BindData();
+                        }
+                        break;
+                    case (byte)Utilities.Enums.VehicleChangeStatus.SangTaiTQ:
+                        {
+                            //Get from db if mode = 2 or 3
+                            List<VehicleNumber> listSelectChange;
+                            if (_mode == 2 || _mode == 3)
+                            {
+                                listSelectChange = VehicleFactory.GetListVehicleChangeById(vehicleInfo.VehicleID, true);
+                                _listVehicleChangeChinese.AddRange(listSelectChange);
+                                _listVehicleChangeChinese = _listVehicleChangeChinese.Distinct(new VehicleNumberComparer()).ToList();
+                            }
+                            else
+                            {
+                                listSelectChange = vehicleInfo.ListVehicleChangeGood;
+                            }
+                            rbVehicleChangeChinese.Checked = true;
+                            txtVehicleChangeGood.SelectedItems = listSelectChange.Cast<object>().ToList();
+                            txtVehicleChangeGood.BindData();
+                        }
+                        break;
+                }
                 if (vehicleInfo.IsChineseVehicle == true)
                 {
                     txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.None;
@@ -639,6 +715,14 @@ namespace ECustoms
                 vehicleInfo.vehicleTypeId = Int32.Parse(cbVehicleType.SelectedValue.ToString());
                 vehicleInfo.ExportGoodTypeId = Int32.Parse(cbExportGoodType.SelectedValue.ToString());
                 vehicleInfo.ImportGoodTypeId = Int32.Parse(cbImportGoodType.SelectedValue.ToString());
+
+                if (rbVehicleChangeVN.Checked || rbVehicleChangeChinese.Checked)
+                {
+                    vehicleInfo.StatusChangeGood = rbVehicleChangeVN.Checked
+                                                       ? (byte) Utilities.Enums.VehicleChangeStatus.SangTaiVN
+                                                       : (byte) Utilities.Enums.VehicleChangeStatus.SangTaiTQ;
+                    vehicleInfo.ListVehicleChangeGood = txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().ToList();
+                }
  
                 // Add Mode
                 if (_mode == 0)
@@ -694,6 +778,13 @@ namespace ECustoms
                     result.NumberOfContainer = txtNumberOfContainer.Text;
                     result.Status = txtStatus.Text;
                     result.Note = txtNote.Text;
+                    if (rbVehicleChangeVN.Checked || rbVehicleChangeChinese.Checked)
+                    {
+                        result.StatusChangeGood = rbVehicleChangeVN.Checked
+                                                           ? (byte)Utilities.Enums.VehicleChangeStatus.SangTaiVN
+                                                           : (byte)Utilities.Enums.VehicleChangeStatus.SangTaiTQ;
+                        result.ListVehicleChangeGood = txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().ToList();
+                    }
 
                     grdVehicle.Refresh();
                     ((FrmDecleExport)this.Owner).grdVehicle.DataSource = null;
@@ -747,6 +838,14 @@ namespace ECustoms
 
                             if (vehicleInfo.ConfirmImportBy == 0 && vehicleInfo.IsImport.Value)
                                 vehicleInfo.ConfirmImportBy = _userInfo.UserID;
+
+                            if (rbVehicleChangeVN.Checked || rbVehicleChangeChinese.Checked)
+                            {
+                                vehicleInfo.StatusChangeGood = rbVehicleChangeVN.Checked
+                                                                   ? (byte)Utilities.Enums.VehicleChangeStatus.SangTaiVN
+                                                                   : (byte)Utilities.Enums.VehicleChangeStatus.SangTaiTQ;
+                                vehicleInfo.ListVehicleChangeGood = txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().ToList();
+                            }
                             break;
                         }
                     }
@@ -798,6 +897,15 @@ namespace ECustoms
                     }
 
                     vehicle.ModifiedById = _userInfo.UserID;
+                    
+                    if (rbVehicleChangeVN.Checked || rbVehicleChangeChinese.Checked)
+                    {
+                        vehicle.StatusChangeGood = rbVehicleChangeVN.Checked
+                                                       ? (byte) Utilities.Enums.VehicleChangeStatus.SangTaiVN
+                                                       : (byte) Utilities.Enums.VehicleChangeStatus.SangTaiTQ;
+                        VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
+                        VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().Select(x => x.VehicleId).ToList());
+                    }
                     VehicleFactory.UpdateVehicle(vehicle);
 
                     MessageBox.Show("Cập nhật thành công.");
@@ -866,20 +974,21 @@ namespace ECustoms
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtDriverName.Text = "";
-            txtPlateNumber.Text = "";
-            txtVehicleChinese.Text = "";
-            txtNumberOfContainer.Text = "";
-            dtpImportDate.Visible = false;
-            dtpExportDate.Visible = false;
-            mtxtImportHour.Visible = false;
-            mtxtExportHour.Visible = false;
-            lblIsImport.Visible = true;
-            lblIsExport.Visible = true;
-            _isImport = false;
-            _isExport = false;
-            txtStatus.Text = "";
-            txtNote.Text = "";
+            ResetForm();
+            //txtDriverName.Text = "";
+            //txtPlateNumber.Text = "";
+            //txtVehicleChinese.Text = "";
+            //txtNumberOfContainer.Text = "";
+            //dtpImportDate.Visible = false;
+            //dtpExportDate.Visible = false;
+            //mtxtImportHour.Visible = false;
+            //mtxtExportHour.Visible = false;
+            //lblIsImport.Visible = true;
+            //lblIsExport.Visible = true;
+            //_isImport = false;
+            //_isExport = false;
+            //txtStatus.Text = "";
+            //txtNote.Text = "";
         }
 
         /// <summary>
@@ -938,6 +1047,14 @@ namespace ECustoms
                     if (vehicleInfo.ImportDate != null && vehicleInfo.ImportDate.Value.Year.Equals(1900))
                     {
                         vehicleInfo.ImportDate = null;
+                    }
+                    
+                    if (rbVehicleChangeVN.Checked || rbVehicleChangeChinese.Checked)
+                    {
+                        vehicleInfo.StatusChangeGood = rbVehicleChangeVN.Checked
+                                                           ? (byte)Utilities.Enums.VehicleChangeStatus.SangTaiVN
+                                                           : (byte)Utilities.Enums.VehicleChangeStatus.SangTaiTQ;
+                        vehicleInfo.ListVehicleChangeGood = txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().ToList();
                     }
 
                     _vehicleInfosTemp.Add(vehicleInfo);
@@ -1011,7 +1128,27 @@ namespace ECustoms
                 cbVehicleType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["VehicleType"].Value.ToString();
                 cbExportGoodType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["ExportGoodType"].Value.ToString();
                 cbImportGoodType.SelectedValue = grdVehicle.Rows[e.RowIndex].Cells["ImportGoodType"].Value.ToString();
-                
+
+                switch (result.StatusChangeGood)
+                {
+                    case (byte)Utilities.Enums.VehicleChangeStatus.SangTaiVN:
+                        {
+                            var listSelectChange = result.ListVehicleChangeGood;
+                            rbVehicleChangeVN.Checked = true;
+                            txtVehicleChangeGood.SelectedItems = listSelectChange.Cast<object>().ToList();
+                            txtVehicleChangeGood.BindData();
+                        }
+                        break;
+                    case (byte)Utilities.Enums.VehicleChangeStatus.SangTaiTQ:
+                        {
+                            var listSelectChange = result.ListVehicleChangeGood;
+                            rbVehicleChangeChinese.Checked = true;
+                            txtVehicleChangeGood.SelectedItems = listSelectChange.Cast<object>().ToList();
+                            txtVehicleChangeGood.BindData();
+                        }
+                        break;
+                }
+
                 _currentModifyPlateNumber = plateNumber;
                 btnAdd.Enabled = false;
                 btnUpdate.Enabled = true;
@@ -1106,6 +1243,22 @@ namespace ECustoms
                 txtDriverName.Text = vehicle.DriverName;
             }
             
+        }
+
+        private void rbVehicleChangeVN_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rbVehicleChangeVN.Checked) return;
+            txtVehicleChangeGood.DataSource = _listVehicleChangeVN;
+            txtVehicleChangeGood.SelectedItems = new List<object>();
+            txtVehicleChangeGood.BindData();
+        }
+
+        private void rbVehicleChangeChinese_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rbVehicleChangeChinese.Checked) return;
+            txtVehicleChangeGood.DataSource = _listVehicleChangeChinese;
+            txtVehicleChangeGood.SelectedItems = new List<object>();
+            txtVehicleChangeGood.BindData();
         }
     }
 }
