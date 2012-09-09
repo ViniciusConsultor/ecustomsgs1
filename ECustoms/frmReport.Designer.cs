@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbUnit = new System.Windows.Forms.ComboBox();
+            this.tblReportTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new ECustoms.DataSet2();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbReportType = new System.Windows.Forms.ComboBox();
@@ -38,17 +42,17 @@
             this.dtpExportTo = new System.Windows.Forms.DateTimePicker();
             this.dtpExportFrom = new System.Windows.Forms.DateTimePicker();
             this.lblTime = new System.Windows.Forms.Label();
-            this.dataSet2 = new ECustoms.DataSet2();
             this.tblReportTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblReportTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cbUnit);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbReportType);
@@ -59,11 +63,41 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(342, 121);
+            this.groupBox1.Size = new System.Drawing.Size(342, 218);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm kiếm";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(6, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Chi cục:";
+            // 
+            // cbUnit
+            // 
+            this.cbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbUnit.FormattingEnabled = true;
+            this.cbUnit.Location = new System.Drawing.Point(78, 31);
+            this.cbUnit.Name = "cbUnit";
+            this.cbUnit.Size = new System.Drawing.Size(250, 21);
+            this.cbUnit.TabIndex = 22;
+            // 
+            // tblReportTypeBindingSource1
+            // 
+            this.tblReportTypeBindingSource1.DataMember = "tblReportType";
+            this.tblReportTypeBindingSource1.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSearch
             // 
@@ -72,7 +106,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSearch.Image = global::ECustoms.Properties.Resources.report224x24_24_bit;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(221, 80);
+            this.btnSearch.Location = new System.Drawing.Point(221, 115);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(107, 28);
             this.btnSearch.TabIndex = 21;
@@ -85,7 +119,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(6, 28);
+            this.label3.Location = new System.Drawing.Point(6, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 20;
@@ -98,7 +132,7 @@
             this.cbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbReportType.FormattingEnabled = true;
-            this.cbReportType.Location = new System.Drawing.Point(78, 25);
+            this.cbReportType.Location = new System.Drawing.Point(78, 60);
             this.cbReportType.Name = "cbReportType";
             this.cbReportType.Size = new System.Drawing.Size(250, 21);
             this.cbReportType.TabIndex = 19;
@@ -109,7 +143,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(172, 58);
+            this.label2.Location = new System.Drawing.Point(172, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 18;
@@ -120,7 +154,7 @@
             this.dtpExportTo.CustomFormat = "dd/MM/yyyy";
             this.dtpExportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpExportTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportTo.Location = new System.Drawing.Point(246, 54);
+            this.dtpExportTo.Location = new System.Drawing.Point(246, 89);
             this.dtpExportTo.Name = "dtpExportTo";
             this.dtpExportTo.Size = new System.Drawing.Size(82, 20);
             this.dtpExportTo.TabIndex = 17;
@@ -130,7 +164,7 @@
             this.dtpExportFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpExportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpExportFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportFrom.Location = new System.Drawing.Point(78, 54);
+            this.dtpExportFrom.Location = new System.Drawing.Point(78, 89);
             this.dtpExportFrom.Name = "dtpExportFrom";
             this.dtpExportFrom.Size = new System.Drawing.Size(88, 20);
             this.dtpExportFrom.TabIndex = 16;
@@ -139,32 +173,22 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblTime.Location = new System.Drawing.Point(6, 58);
+            this.lblTime.Location = new System.Drawing.Point(6, 93);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(66, 13);
             this.lblTime.TabIndex = 13;
             this.lblTime.Text = "Thời gian từ:";
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblReportTypeBindingSource
             // 
             this.tblReportTypeBindingSource.DataMember = "tblReportType";
             this.tblReportTypeBindingSource.DataSource = this.dataSet2;
             // 
-            // tblReportTypeBindingSource1
-            // 
-            this.tblReportTypeBindingSource1.DataMember = "tblReportType";
-            this.tblReportTypeBindingSource1.DataSource = this.dataSet2;
-            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 140);
+            this.ClientSize = new System.Drawing.Size(364, 242);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -174,9 +198,9 @@
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblReportTypeBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,6 +218,8 @@
         private System.Windows.Forms.BindingSource tblReportTypeBindingSource1;
         private DataSet2 dataSet2;
         private System.Windows.Forms.BindingSource tblReportTypeBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbUnit;
         
     }
 }
