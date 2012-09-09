@@ -57,6 +57,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
@@ -68,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientInfo.cs" />
+    <Compile Include="VehicleDAL.cs" />
+    <Compile Include="CustomEcustomEntities.cs" />
     <Compile Include="CusEcusDeclarationEntities.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="IDataController.cs" />
@@ -89,6 +92,10 @@
     <ProjectReference Include="..\ECustoms.Utilities\ECustoms.Utilities.csproj">
       <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
       <Name>ECustoms.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.RCM\System.Windows.Forms.RCM.csproj">
+      <Project>{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}</Project>
+      <Name>System.Windows.Forms.RCM</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -51,29 +51,33 @@ namespace Niq.Msd.Layout
 
         void timer_Tick(object sender, EventArgs e)
         {
-            Rectangle r = new Rectangle(0, 0, this.Width, this.Height);
-            Color border = BorderFirst;
-            Color first = ColorFillFirst;
-            Color second = ColorFillSecond;
-
-            if (tick % 2==0)
+            try
             {
-                border = NiqColorTable.StandardColor_Yellow;
-                first = NiqColorTable.StandardColor_Yellow;
-                second = NiqColorTable.StandardColor_Yellow;
+                Rectangle r = new Rectangle(0, 0, this.Width, this.Height);
+                Color border = BorderFirst;
+                Color first = ColorFillFirst;
+                Color second = ColorFillSecond;
+
+                if (tick % 2 == 0)
+                {
+                    border = NiqColorTable.StandardColor_Yellow;
+                    first = NiqColorTable.StandardColor_Yellow;
+                    second = NiqColorTable.StandardColor_Yellow;
+                }
+
+                tick++;
+
+                if (tick == 6)
+                {
+                    tick = 0;
+                    timer.Stop();
+                }
+
+                txtInput.BackColor = first;
+                DrawHelper.DrawDoubleBorder(this.CreateGraphics(), r, border,
+                                           BorderSecond, first, second, 2, true);
             }
-
-            tick++;
-
-            if(tick==6)
-            {
-                tick = 0;
-                timer.Stop();
-            }
-
-            txtInput.BackColor = first;
-            DrawHelper.DrawDoubleBorder(this.CreateGraphics(), r, border,
-                                       BorderSecond, first, second, 2, true);
+            catch (Exception) {}
         }
 
         private void InitializeComponentExtend()

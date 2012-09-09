@@ -115,6 +115,10 @@
       <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
       <Name>ECustoms.Utilities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.RCM\System.Windows.Forms.RCM.csproj">
+      <Project>{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}</Project>
+      <Name>System.Windows.Forms.RCM</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

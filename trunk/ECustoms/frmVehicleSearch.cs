@@ -102,7 +102,7 @@ namespace ECustoms
                 // Limit xe khong cho hang
                 if (checkBoxNoItem.Checked)
                 {
-                    result = result.Where(g => g.DeclarationID == 0).ToList();
+                    result = result.Where(g => g.DeclarationID == 0 && (g.IsExportParking == null || g.IsExportParking == false)).ToList();
                 }
 
                 if (checkBoxNhapCanhCHChuaVaoND.Checked)
@@ -1708,7 +1708,7 @@ namespace ECustoms
             cbIsExport.Checked = cbIsNotImport.Checked = cbIsNotImport.Enabled = false;
             cbIsImport.Checked = true;
 
-            txtPlateNumberChinese.Visible = lblPlateNumberChinese.Visible = grdVehicle.Columns["PlateNumberPartner"].Visible = !cbIsChineseVehicle.Checked;
+            txtPlateNumberChinese.Visible = lblPlateNumberChinese.Visible = grdVehicle.Columns["VehicleChangeGoodChinese"].Visible = !cbIsChineseVehicle.Checked;
             BindData();
             if (grdVehicle.Rows.Count > 0) // Set focus
             {

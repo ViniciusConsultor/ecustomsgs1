@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVehicle));
             this.lblPlateNumber = new System.Windows.Forms.Label();
             this.txtPlateNumber = new System.Windows.Forms.TextBox();
@@ -88,6 +88,9 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbImportGoodType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtVehicleChangeGood = new Niq.Msd.Layout.NiqInputGroup(this.components);
+            this.rbVehicleChangeVN = new System.Windows.Forms.RadioButton();
+            this.rbVehicleChangeChinese = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVehicleTypeBindingSource)).BeginInit();
@@ -113,7 +116,7 @@
             this.txtPlateNumber.MaxLength = 12;
             this.txtPlateNumber.Name = "txtPlateNumber";
             this.txtPlateNumber.Size = new System.Drawing.Size(98, 20);
-            this.txtPlateNumber.TabIndex = 1;
+            this.txtPlateNumber.TabIndex = 0;
             this.txtPlateNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlateNumber_KeyPress);
             this.txtPlateNumber.Leave += new System.EventHandler(this.txtPlateNumber_Leave);
             // 
@@ -123,7 +126,7 @@
             this.txtNumberOfContainer.MaxLength = 12;
             this.txtNumberOfContainer.Name = "txtNumberOfContainer";
             this.txtNumberOfContainer.Size = new System.Drawing.Size(83, 20);
-            this.txtNumberOfContainer.TabIndex = 3;
+            this.txtNumberOfContainer.TabIndex = 2;
             // 
             // lblNumberOfContainer
             // 
@@ -140,7 +143,7 @@
             this.txtDriverName.Location = new System.Drawing.Point(311, 5);
             this.txtDriverName.Name = "txtDriverName";
             this.txtDriverName.Size = new System.Drawing.Size(145, 20);
-            this.txtDriverName.TabIndex = 2;
+            this.txtDriverName.TabIndex = 1;
             // 
             // lblDriverName
             // 
@@ -156,7 +159,7 @@
             // 
             this.lblExportDate.AutoSize = true;
             this.lblExportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblExportDate.Location = new System.Drawing.Point(13, 70);
+            this.lblExportDate.Location = new System.Drawing.Point(13, 105);
             this.lblExportDate.Name = "lblExportDate";
             this.lblExportDate.Size = new System.Drawing.Size(82, 13);
             this.lblExportDate.TabIndex = 6;
@@ -166,44 +169,44 @@
             // 
             this.dtpExportDate.CustomFormat = "dd/MM/yyyy";
             this.dtpExportDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportDate.Location = new System.Drawing.Point(148, 66);
+            this.dtpExportDate.Location = new System.Drawing.Point(148, 101);
             this.dtpExportDate.Name = "dtpExportDate";
             this.dtpExportDate.Size = new System.Drawing.Size(124, 20);
-            this.dtpExportDate.TabIndex = 4;
+            this.dtpExportDate.TabIndex = 7;
             this.dtpExportDate.Value = new System.DateTime(2011, 4, 12, 8, 32, 28, 0);
             // 
             // mtxtExportHour
             // 
-            this.mtxtExportHour.Location = new System.Drawing.Point(278, 67);
+            this.mtxtExportHour.Location = new System.Drawing.Point(278, 102);
             this.mtxtExportHour.Mask = "00:00";
             this.mtxtExportHour.Name = "mtxtExportHour";
             this.mtxtExportHour.Size = new System.Drawing.Size(33, 20);
-            this.mtxtExportHour.TabIndex = 5;
+            this.mtxtExportHour.TabIndex = 8;
             this.mtxtExportHour.ValidatingType = typeof(System.DateTime);
             // 
             // mtxtImportHour
             // 
-            this.mtxtImportHour.Location = new System.Drawing.Point(589, 66);
+            this.mtxtImportHour.Location = new System.Drawing.Point(589, 101);
             this.mtxtImportHour.Mask = "00:00";
             this.mtxtImportHour.Name = "mtxtImportHour";
             this.mtxtImportHour.Size = new System.Drawing.Size(34, 20);
-            this.mtxtImportHour.TabIndex = 7;
+            this.mtxtImportHour.TabIndex = 10;
             this.mtxtImportHour.ValidatingType = typeof(System.DateTime);
             // 
             // dtpImportDate
             // 
             this.dtpImportDate.CustomFormat = "dd/MM/yyyy";
             this.dtpImportDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpImportDate.Location = new System.Drawing.Point(453, 66);
+            this.dtpImportDate.Location = new System.Drawing.Point(453, 101);
             this.dtpImportDate.Name = "dtpImportDate";
             this.dtpImportDate.Size = new System.Drawing.Size(127, 20);
-            this.dtpImportDate.TabIndex = 6;
+            this.dtpImportDate.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(358, 70);
+            this.label1.Location = new System.Drawing.Point(358, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 9;
@@ -213,7 +216,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblStatus.Location = new System.Drawing.Point(13, 98);
+            this.lblStatus.Location = new System.Drawing.Point(13, 131);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(55, 13);
             this.lblStatus.TabIndex = 12;
@@ -221,25 +224,25 @@
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(111, 95);
+            this.txtStatus.Location = new System.Drawing.Point(148, 128);
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(512, 73);
-            this.txtStatus.TabIndex = 9;
+            this.txtStatus.Size = new System.Drawing.Size(475, 52);
+            this.txtStatus.TabIndex = 11;
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(109, 176);
+            this.txtNote.Location = new System.Drawing.Point(148, 186);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(514, 73);
-            this.txtNote.TabIndex = 10;
+            this.txtNote.Size = new System.Drawing.Size(475, 63);
+            this.txtNote.TabIndex = 12;
             // 
             // lblNote
             // 
             this.lblNote.AutoSize = true;
             this.lblNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblNote.Location = new System.Drawing.Point(13, 179);
+            this.lblNote.Location = new System.Drawing.Point(13, 189);
             this.lblNote.Name = "lblNote";
             this.lblNote.Size = new System.Drawing.Size(44, 13);
             this.lblNote.TabIndex = 14;
@@ -252,7 +255,7 @@
             this.btnConfirmExport.Location = new System.Drawing.Point(645, 98);
             this.btnConfirmExport.Name = "btnConfirmExport";
             this.btnConfirmExport.Size = new System.Drawing.Size(141, 52);
-            this.btnConfirmExport.TabIndex = 11;
+            this.btnConfirmExport.TabIndex = 13;
             this.btnConfirmExport.Text = "Xác nhận xuất cảnh";
             this.btnConfirmExport.UseVisualStyleBackColor = true;
             this.btnConfirmExport.Click += new System.EventHandler(this.btnConfirmExport_Click);
@@ -263,7 +266,7 @@
             this.btnConfirmImport.Location = new System.Drawing.Point(645, 164);
             this.btnConfirmImport.Name = "btnConfirmImport";
             this.btnConfirmImport.Size = new System.Drawing.Size(141, 52);
-            this.btnConfirmImport.TabIndex = 12;
+            this.btnConfirmImport.TabIndex = 14;
             this.btnConfirmImport.Text = "Xác nhận nhập cảnh";
             this.btnConfirmImport.UseVisualStyleBackColor = true;
             this.btnConfirmImport.Click += new System.EventHandler(this.btnConfirmImport_Click);
@@ -273,7 +276,7 @@
             this.lblIsExport.AutoSize = true;
             this.lblIsExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblIsExport.ForeColor = System.Drawing.Color.Red;
-            this.lblIsExport.Location = new System.Drawing.Point(147, 70);
+            this.lblIsExport.Location = new System.Drawing.Point(147, 105);
             this.lblIsExport.Name = "lblIsExport";
             this.lblIsExport.Size = new System.Drawing.Size(82, 13);
             this.lblIsExport.TabIndex = 17;
@@ -284,7 +287,7 @@
             this.lblIsImport.AutoSize = true;
             this.lblIsImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblIsImport.ForeColor = System.Drawing.Color.Red;
-            this.lblIsImport.Location = new System.Drawing.Point(450, 70);
+            this.lblIsImport.Location = new System.Drawing.Point(450, 105);
             this.lblIsImport.Name = "lblIsImport";
             this.lblIsImport.Size = new System.Drawing.Size(86, 13);
             this.lblIsImport.TabIndex = 18;
@@ -297,10 +300,10 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnReset.Image = global::ECustoms.Properties.Resources.undo;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(357, 255);
+            this.btnReset.Location = new System.Drawing.Point(361, 255);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(88, 28);
-            this.btnReset.TabIndex = 17;
+            this.btnReset.TabIndex = 19;
             this.btnReset.Text = "Thiết &lập lại";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
@@ -313,10 +316,10 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnDelete.Image = global::ECustoms.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(296, 255);
+            this.btnDelete.Location = new System.Drawing.Point(300, 255);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(53, 28);
-            this.btnDelete.TabIndex = 16;
+            this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -329,10 +332,10 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(150, 255);
+            this.btnUpdate.Location = new System.Drawing.Point(154, 255);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(138, 28);
-            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "&Cập nhật phương tiện";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -347,8 +350,8 @@
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(15, 255);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(127, 28);
-            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Size = new System.Drawing.Size(133, 28);
+            this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Lư&u trữ phương tiện";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -361,10 +364,10 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnClose.Image = global::ECustoms.Properties.Resources.Exit;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(453, 255);
+            this.btnClose.Location = new System.Drawing.Point(457, 255);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(62, 28);
-            this.btnClose.TabIndex = 18;
+            this.btnClose.TabIndex = 20;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
@@ -407,7 +410,7 @@
             this.grdVehicle.Name = "grdVehicle";
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdVehicle.Size = new System.Drawing.Size(849, 215);
-            this.grdVehicle.TabIndex = 19;
+            this.grdVehicle.TabIndex = 0;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             this.grdVehicle.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdVehicle_CellMouseDoubleClick);
             // 
@@ -426,8 +429,8 @@
             // ExportDate
             // 
             this.ExportDate.DataPropertyName = "ExportDate";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.ExportDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ExportDate.HeaderText = "Ngày xuất cảnh";
             this.ExportDate.Name = "ExportDate";
             // 
@@ -498,7 +501,7 @@
             this.btnSearch.Location = new System.Drawing.Point(645, 231);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(141, 52);
-            this.btnSearch.TabIndex = 13;
+            this.btnSearch.TabIndex = 15;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -508,8 +511,9 @@
             this.txtVehicleChinese.Location = new System.Drawing.Point(148, 35);
             this.txtVehicleChinese.MaxLength = 12;
             this.txtVehicleChinese.Name = "txtVehicleChinese";
-            this.txtVehicleChinese.Size = new System.Drawing.Size(308, 20);
+            this.txtVehicleChinese.Size = new System.Drawing.Size(98, 20);
             this.txtVehicleChinese.TabIndex = 5;
+            this.txtVehicleChinese.Visible = false;
             // 
             // lblVehicleChinese
             // 
@@ -551,7 +555,7 @@
             this.cbVehicleType.Location = new System.Drawing.Point(746, 3);
             this.cbVehicleType.Name = "cbVehicleType";
             this.cbVehicleType.Size = new System.Drawing.Size(116, 23);
-            this.cbVehicleType.TabIndex = 4;
+            this.cbVehicleType.TabIndex = 3;
             this.cbVehicleType.ValueMember = "VehicleTypeID";
             // 
             // tblVehicleTypeBindingSource1
@@ -569,7 +573,7 @@
             this.cbExportGoodType.Location = new System.Drawing.Point(746, 34);
             this.cbExportGoodType.Name = "cbExportGoodType";
             this.cbExportGoodType.Size = new System.Drawing.Size(116, 23);
-            this.cbExportGoodType.TabIndex = 6;
+            this.cbExportGoodType.TabIndex = 4;
             this.cbExportGoodType.ValueMember = "TypeId";
             // 
             // tblGoodsTypeBindingSource
@@ -594,8 +598,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ExportDate";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn3.HeaderText = "Ngày xuất cảnh";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 150;
@@ -631,7 +635,7 @@
             this.cbImportGoodType.Location = new System.Drawing.Point(746, 65);
             this.cbImportGoodType.Name = "cbImportGoodType";
             this.cbImportGoodType.Size = new System.Drawing.Size(116, 23);
-            this.cbImportGoodType.TabIndex = 26;
+            this.cbImportGoodType.TabIndex = 5;
             this.cbImportGoodType.ValueMember = "TypeId";
             // 
             // label4
@@ -644,11 +648,52 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Loại hàng hóa nhập";
             // 
+            // txtVehicleChangeGood
+            // 
+            this.txtVehicleChangeGood.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtVehicleChangeGood.AutoUpperCase = true;
+            this.txtVehicleChangeGood.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(155)))), ((int)(((byte)(197)))));
+            this.txtVehicleChangeGood.ButtonCellBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(155)))), ((int)(((byte)(197)))));
+            this.txtVehicleChangeGood.DataSource = null;
+            this.txtVehicleChangeGood.InputType = Niq.Msd.Layout.InputTypes.Text;
+            this.txtVehicleChangeGood.IsValidTextInput = true;
+            this.txtVehicleChangeGood.Location = new System.Drawing.Point(148, 34);
+            this.txtVehicleChangeGood.Name = "txtVehicleChangeGood";
+            this.txtVehicleChangeGood.SelectedItems = ((System.Collections.Generic.List<object>)(resources.GetObject("txtVehicleChangeGood.SelectedItems")));
+            this.txtVehicleChangeGood.Size = new System.Drawing.Size(475, 61);
+            this.txtVehicleChangeGood.TabIndex = 6;
+            this.txtVehicleChangeGood.TextField = "";
+            this.txtVehicleChangeGood.ValueField = "";
+            // 
+            // rbVehicleChangeVN
+            // 
+            this.rbVehicleChangeVN.AutoSize = true;
+            this.rbVehicleChangeVN.Location = new System.Drawing.Point(44, 55);
+            this.rbVehicleChangeVN.Name = "rbVehicleChangeVN";
+            this.rbVehicleChangeVN.Size = new System.Drawing.Size(84, 17);
+            this.rbVehicleChangeVN.TabIndex = 31;
+            this.rbVehicleChangeVN.Text = "Xe Việt Nam";
+            this.rbVehicleChangeVN.UseVisualStyleBackColor = true;
+            this.rbVehicleChangeVN.CheckedChanged += new System.EventHandler(this.rbVehicleChangeVN_CheckedChanged);
+            // 
+            // rbVehicleChangeChinese
+            // 
+            this.rbVehicleChangeChinese.AutoSize = true;
+            this.rbVehicleChangeChinese.Location = new System.Drawing.Point(44, 78);
+            this.rbVehicleChangeChinese.Name = "rbVehicleChangeChinese";
+            this.rbVehicleChangeChinese.Size = new System.Drawing.Size(98, 17);
+            this.rbVehicleChangeChinese.TabIndex = 32;
+            this.rbVehicleChangeChinese.Text = "Xe Trung Quốc";
+            this.rbVehicleChangeChinese.UseVisualStyleBackColor = true;
+            this.rbVehicleChangeChinese.CheckedChanged += new System.EventHandler(this.rbVehicleChangeChinese_CheckedChanged);
+            // 
             // frmVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 540);
+            this.Controls.Add(this.rbVehicleChangeChinese);
+            this.Controls.Add(this.rbVehicleChangeVN);
             this.Controls.Add(this.cbImportGoodType);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbExportGoodType);
@@ -684,6 +729,7 @@
             this.Controls.Add(this.txtPlateNumber);
             this.Controls.Add(this.lblPlateNumber);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtVehicleChangeGood);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVehicle";
             this.ShowInTaskbar = false;
@@ -760,5 +806,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private Niq.Msd.Layout.NiqInputGroup txtVehicleChangeGood;
+        private System.Windows.Forms.RadioButton rbVehicleChangeVN;
+        private System.Windows.Forms.RadioButton rbVehicleChangeChinese;
     }
 }
