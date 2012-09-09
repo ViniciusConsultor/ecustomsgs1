@@ -4,6 +4,9 @@ using System.Windows.Forms;
 using ECustoms.Utilities;
 using ECustoms.Utilities.Enums;
 using log4net;
+using System.Collections.Generic;
+using ECustoms.BOL;
+using ECustoms.DAL;
 
 namespace ECustoms
 {
@@ -78,8 +81,8 @@ namespace ECustoms
                 var from = new DateTime(dtpExportFrom.Value.Year, dtpExportFrom.Value.Month, dtpExportFrom.Value.Day, 0, 0, 0);
                 var to = new DateTime(dtpExportTo.Value.Year, dtpExportTo.Value.Month, dtpExportTo.Value.Day, 23, 59, 59);
                 var reportType = GetReportType(Int32.Parse(cbReportType.SelectedValue + ""));
-
-                var report = new FrmCrystalReport(reportType, from, to, _userInfo);
+                var branchId = cbUnit.SelectedValue.ToString();
+                var report = new FrmCrystalReport(reportType, from, to, _userInfo, branchId);
                 report.MaximizeBox = true;
                 report.Show(this);
             }
@@ -93,8 +96,28 @@ namespace ECustoms
 
         private void frmReport_Load(object sender, EventArgs e)
         {
-
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
+            List<tblBranchDatabas> list = new List<tblBranchDatabas>();
+            tblBranchDatabas branch = new tblBranchDatabas();
+            branch.Id = "0";
+            branch.BranchName = "Tất cả";
+            list.Add(branch);   
+
+            List<tblBranchDatabas> listTblBranchDatabas=   BranchFactory.getAllBranchDatabas();
+            foreach (tblBranchDatabas obj in listTblBranchDatabas)
+            {
+                list.Add(obj);
+            }
+
+            cbUnit.DisplayMember = "BranchName";
+            cbUnit.ValueMember = "Id";
+            cbUnit.DataSource = list;
+            if (FDHelper.RgGetSizeOfUnit() == ConstantInfo.Branch)
+            {
+                String unitCode= FDHelper.RgCodeOfUnit();
+                cbUnit.SelectedValue = unitCode;
+                cbUnit.Enabled = false;
+            }
          }
 
         private ReportType GetReportType(int value)

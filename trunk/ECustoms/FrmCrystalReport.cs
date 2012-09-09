@@ -17,6 +17,7 @@ namespace ECustoms
         private DateTime _from;
         private DateTime _to;
         private UserInfo _userInfo;
+        private string _branchId;
 
         public FrmCrystalReport(VehicleFeeReport report)
         {
@@ -25,9 +26,10 @@ namespace ECustoms
             this.WindowState = FormWindowState.Maximized;
         }
 
-        public FrmCrystalReport(ReportType type, DateTime from, DateTime to, UserInfo userInfo)
+        public FrmCrystalReport(ReportType type, DateTime from, DateTime to, UserInfo userInfo, string branchId = "0")
         {
             InitializeComponent();
+            _branchId = branchId;
             _type = type;
             _from = from;
             _to = to;
@@ -97,12 +99,25 @@ namespace ECustoms
                             lblHeader.Text = "SỔ THEO DÕI PHƯƠNG TIỆN XUẤT CẢNH XE KHÔNG";
 
                             var sql = new StringBuilder();
-                            sql.Append("SELECT * ");
-                            sql.Append(" FROM  ViewAllVehicleHasGood ");
-                            sql.Append(" WHERE IsExport = 1 ");
-                            sql.Append(" AND  ExportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND  DeclarationID = 0");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                sql.Append("SELECT * ");
+                                sql.Append(" FROM  ViewAllVehicleHasGood ");
+                                sql.Append(" WHERE IsExport = 1 ");
+                                sql.Append(" AND  ExportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND  DeclarationID = 0");
+                                sql.Append(" AND  BranchId = '" + _branchId + "'");
+                            }
+                            else //tim tat cac cac chi cuc hai quan
+                            {
+                                sql.Append("SELECT * ");
+                                sql.Append(" FROM  ViewAllVehicleHasGood ");
+                                sql.Append(" WHERE IsExport = 1 ");
+                                sql.Append(" AND  ExportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND  DeclarationID = 0");
+                            }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
@@ -131,12 +146,25 @@ namespace ECustoms
                             lblHeader.Text = "Sổ theo dõi phương tiện nhập cảnh xe không";
 
                             var sql = new StringBuilder();
-                            sql.Append("SELECT * ");
-                            sql.Append(" FROM  ViewAllVehicleHasGood ");
-                            sql.Append(" WHERE IsImport = 1 ");
-                            sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND DeclarationID = 0 ");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                sql.Append("SELECT * ");
+                                sql.Append(" FROM  ViewAllVehicleHasGood ");
+                                sql.Append(" WHERE IsImport = 1 ");
+                                sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND DeclarationID = 0 ");
+                                sql.Append(" AND  BranchId = '" + _branchId + "'");
+                            }
+                            else //tim tat cac cac chi cuc hai quan
+                            {
+                                sql.Append("SELECT * ");
+                                sql.Append(" FROM  ViewAllVehicleHasGood ");
+                                sql.Append(" WHERE IsImport = 1 ");
+                                sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND DeclarationID = 0 ");
+                            }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
@@ -165,13 +193,27 @@ namespace ECustoms
                             lblHeader.Text = "SỔ THEO DÕI PHƯƠNG TIỆN CHỞ HÀNG XUẤT KHẨU";
 
                             var sql = new StringBuilder();
-                            sql.Append("SELECT     * FROM ViewAllVehicleHasGood ");
-                            sql.Append(" WHERE  ");
-                            sql.Append(" DeclarationID > 0 ");
-                            sql.Append(" AND DeclarationType = 0 ");
-                            sql.Append(" AND IsExport = 1 ");
-                            sql.Append(" AND  ExportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                sql.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+                                sql.Append(" WHERE  ");
+                                sql.Append(" DeclarationID > 0 ");
+                                sql.Append(" AND DeclarationType = 0 ");
+                                sql.Append(" AND IsExport = 1 ");
+                                sql.Append(" AND  ExportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                sql.Append(" AND  BranchId = '" + _branchId + "'");
+                            }
+                            else
+                            {
+                                sql.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+                                sql.Append(" WHERE  ");
+                                sql.Append(" DeclarationID > 0 ");
+                                sql.Append(" AND DeclarationType = 0 ");
+                                sql.Append(" AND IsExport = 1 ");
+                                sql.Append(" AND  ExportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
@@ -208,24 +250,45 @@ namespace ECustoms
                             //sql.Append(" AND IsImport = 1 ");
                             //sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                             //sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                sql.Append("select * from ViewAllVehicleHasGood as table1");
+                                sql.Append(" inner join");
+                                sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID, DeclarationType from ViewAllVehicleHasGood ");
+                                sql.Append(" where 1=1");
+                                sql.Append(" group by ViewAllVehicleHasGood.VehicleID, ViewAllVehicleHasGood.DeclarationType) as table2");
 
-                            sql.Append("select * from ViewAllVehicleHasGood as table1");
-                            sql.Append(" inner join");
-                            sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID, DeclarationType from ViewAllVehicleHasGood ");
-                            sql.Append(" where 1=1");
-                            sql.Append(" group by ViewAllVehicleHasGood.VehicleID, ViewAllVehicleHasGood.DeclarationType) as table2");
-
-                            sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
-                            sql.Append(" AND");
+                                sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
+                                sql.Append(" AND");
 
 
-                            sql.Append(" (table1.DeclarationID > 0 OR table1.DeclarationID = 1) "); // LAY NHUNG PHUONG TIEN THUOC TO KHAI 1, CO NGHIA LA DANG O BAI                        
-                            sql.Append(" AND table1.HasGoodsImported = 1 ");
-                            sql.Append(" AND table1.DeclarationType = 1 ");
-                            sql.Append(" AND table1.IsImport = 1 ");
-                            sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                sql.Append(" (table1.DeclarationID > 0 OR table1.DeclarationID = 1) "); // LAY NHUNG PHUONG TIEN THUOC TO KHAI 1, CO NGHIA LA DANG O BAI                        
+                                sql.Append(" AND table1.HasGoodsImported = 1 ");
+                                sql.Append(" AND table1.DeclarationType = 1 ");
+                                sql.Append(" AND table1.IsImport = 1 ");
+                                sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                sql.Append(" AND  table1.BranchId = '" + _branchId + "'");
+                            }
+                            else
+                            {
+                                sql.Append("select * from ViewAllVehicleHasGood as table1");
+                                sql.Append(" inner join");
+                                sql.Append(" (select VehicleID,max(ViewAllVehicleHasGood.DeclarationID) as maxDeclarationID, DeclarationType from ViewAllVehicleHasGood ");
+                                sql.Append(" where 1=1");
+                                sql.Append(" group by ViewAllVehicleHasGood.VehicleID, ViewAllVehicleHasGood.DeclarationType) as table2");
 
+                                sql.Append(" on table1.VehicleID = table2.VehicleID and table1.DeclarationID = table2.maxDeclarationID");
+                                sql.Append(" AND");
+
+
+                                sql.Append(" (table1.DeclarationID > 0 OR table1.DeclarationID = 1) "); // LAY NHUNG PHUONG TIEN THUOC TO KHAI 1, CO NGHIA LA DANG O BAI                        
+                                sql.Append(" AND table1.HasGoodsImported = 1 ");
+                                sql.Append(" AND table1.DeclarationType = 1 ");
+                                sql.Append(" AND table1.IsImport = 1 ");
+                                sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
@@ -249,14 +312,29 @@ namespace ECustoms
                             dateTolocalImportAndHasItem.Text = _to.ToString("dd/MM/yyy HH:mm");
 
                             var sql = new StringBuilder();
-                            sql.Append("SELECT     * FROM ViewAllVehicleHasGood ");
-                            
-                            sql.Append(" WHERE ");
-                            sql.Append(" DeclarationID > 1 ");
-                            sql.Append(" AND DeclarationType = 1 ");
-                            sql.Append(" AND IsGoodsImported = 1 ");
-                            sql.Append(" AND  ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                sql.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+
+                                sql.Append(" WHERE ");
+                                sql.Append(" DeclarationID > 1 ");
+                                sql.Append(" AND DeclarationType = 1 ");
+                                sql.Append(" AND IsGoodsImported = 1 ");
+                                sql.Append(" AND  ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                sql.Append(" AND  BranchId = '" + _branchId + "'");
+                            }
+                            else
+                            {
+                                sql.Append("SELECT     * FROM ViewAllVehicleHasGood ");
+
+                                sql.Append(" WHERE ");
+                                sql.Append(" DeclarationID > 1 ");
+                                sql.Append(" AND DeclarationType = 1 ");
+                                sql.Append(" AND IsGoodsImported = 1 ");
+                                sql.Append(" AND  ImportedLocalTime >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
@@ -278,12 +356,26 @@ namespace ECustoms
                             dateTo.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
-                            buffer.Append(" WHERE ");
-                            buffer.Append(" DeclarationID > 1 ");
-                            buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.XKCK);
-                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" DeclarationID > 1 ");
+                                buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.XKCK);
+                                buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                buffer.Append(" AND  BranchId = '" + _branchId + "'");
+                            }
+                            else
+                            {
+                                buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" DeclarationID > 1 ");
+                                buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.XKCK);
+                                buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+
+                            }
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -305,12 +397,25 @@ namespace ECustoms
                             dateTo.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
-                            buffer.Append(" WHERE ");
-                            buffer.Append(" DeclarationID > 1 ");
-                            buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.NKCK);
-                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" DeclarationID > 1 ");
+                                buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.NKCK);
+                                buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                buffer.Append(" AND  BranchId = '" + _branchId + "'");
+                            }
+                            else
+                            {
+                                buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" DeclarationID > 1 ");
+                                buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.NKCK);
+                                buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -332,12 +437,25 @@ namespace ECustoms
                             dateTo.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
-                            buffer.Append(" WHERE ");
-                            buffer.Append(" DeclarationID > 1 ");
-                            buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.TNTX);
-                            buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" DeclarationID > 1 ");
+                                buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.TNTX);
+                                buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                buffer.Append(" AND  BranchId = '" + _branchId + "'");
+                            }
+                            else
+                            {
+                                buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" DeclarationID > 1 ");
+                                buffer.Append(" AND TypeOption = " + (short)Common.DeclerationOptionType.TNTX);
+                                buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -359,11 +477,23 @@ namespace ECustoms
                             dateTo.Text = _to.ToString("dd/MM/yyyy");
 
                             StringBuilder buffer = new StringBuilder();
-                            buffer.Append(" SELECT vehicleTypeId, GoodTypeName, COUNT(*) as CountVehicle, SUM (FeeAmount) as SumFeeAmount, Name FROM ViewVehicleFreight ");
-                            buffer.Append(" WHERE ");
-                            buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
-                            buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
-                            buffer.Append(" GROUP BY vehicleTypeId, GoodTypeName, Name");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                buffer.Append(" SELECT vehicleTypeId, GoodTypeName, COUNT(*) as CountVehicle, SUM (FeeAmount) as SumFeeAmount, Name FROM ViewVehicleFreight ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
+                                buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                buffer.Append(" AND  BranchId = '" + _branchId + "'");
+                                buffer.Append(" GROUP BY vehicleTypeId, GoodTypeName, Name");
+                            }
+                            else
+                            {
+                                buffer.Append(" SELECT vehicleTypeId, GoodTypeName, COUNT(*) as CountVehicle, SUM (FeeAmount) as SumFeeAmount, Name FROM ViewVehicleFreight ");
+                                buffer.Append(" WHERE ");
+                                buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
+                                buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                buffer.Append(" GROUP BY vehicleTypeId, GoodTypeName, Name");
+                            }
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
@@ -401,11 +531,21 @@ namespace ECustoms
                             //sql.Append(" AND IsImport = 1 ");
                             //sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                             //sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
-
-                            sql.Append("select * from ViewAllVehicleHasGood as table1");
-                            sql.Append(" WHERE  IsChineseVehicle=1");
-                            sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                            sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            if (_branchId != "0")  //tim theo chi cuc hai quan
+                            {
+                                sql.Append("select * from ViewAllVehicleHasGood as table1");
+                                sql.Append(" WHERE  IsChineseVehicle=1");
+                                sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                sql.Append(" AND  table1.BranchId = '" + _branchId + "'");
+                            }
+                            else
+                            {
+                                sql.Append("select * from ViewAllVehicleHasGood as table1");
+                                sql.Append(" WHERE  IsChineseVehicle=1");
+                                sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                                sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
