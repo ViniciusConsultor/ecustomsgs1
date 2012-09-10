@@ -312,6 +312,7 @@
             // 
             // mnuVehicleOverdueList
             // 
+            this.mnuVehicleOverdueList.Image = global::ECustoms.Properties.Resources.car_delete;
             this.mnuVehicleOverdueList.Name = "mnuVehicleOverdueList";
             this.mnuVehicleOverdueList.Size = new System.Drawing.Size(267, 22);
             this.mnuVehicleOverdueList.Text = "Danh sách phương tiện quá hạn";
@@ -449,6 +450,7 @@
             // 
             // mnuHandover1
             // 
+            this.mnuHandover1.Image = global::ECustoms.Properties.Resources.shape_move_forwards;
             this.mnuHandover1.Name = "mnuHandover1";
             this.mnuHandover1.Size = new System.Drawing.Size(288, 22);
             this.mnuHandover1.Text = "Bàn giao hồ sơ từ nhân viên lên phúc tập";
@@ -456,6 +458,7 @@
             // 
             // mnuHandover2
             // 
+            this.mnuHandover2.Image = global::ECustoms.Properties.Resources.shape_move_backwards;
             this.mnuHandover2.Name = "mnuHandover2";
             this.mnuHandover2.Size = new System.Drawing.Size(288, 22);
             this.mnuHandover2.Text = "Bàn giao hồ sơ từ phúc tập sang lưu trữ";
@@ -463,6 +466,7 @@
             // 
             // mnuDeclarationManager
             // 
+            this.mnuDeclarationManager.Image = global::ECustoms.Properties.Resources.application_side_boxes;
             this.mnuDeclarationManager.Name = "mnuDeclarationManager";
             this.mnuDeclarationManager.Size = new System.Drawing.Size(288, 22);
             this.mnuDeclarationManager.Text = "Quản lý hồ sơ lưu trữ";
@@ -615,7 +619,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1140, 616);
+            this.ClientSize = new System.Drawing.Size(1140, 624);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeclarationManagement));
             this.lblDeclarationNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -320,8 +321,8 @@
             // DateReturn
             // 
             this.DateReturn.DataPropertyName = "DateReturn";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy hh:mm";
-            this.DateReturn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy hh:mm";
+            this.DateReturn.DefaultCellStyle = dataGridViewCellStyle1;
             this.DateReturn.FillWeight = 136.177F;
             this.DateReturn.HeaderText = "Ngày trả hồ sơ";
             this.DateReturn.Name = "DateReturn";
@@ -330,8 +331,8 @@
             // DateHandover
             // 
             this.DateHandover.DataPropertyName = "DateHandover";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy hh:mm";
-            this.DateHandover.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy hh:mm";
+            this.DateHandover.DefaultCellStyle = dataGridViewCellStyle2;
             this.DateHandover.FillWeight = 275.9182F;
             this.DateHandover.HeaderText = "Ngày bàn giao lưu trữ";
             this.DateHandover.Name = "DateHandover";
@@ -340,8 +341,8 @@
             // CreatedDate
             // 
             this.CreatedDate.DataPropertyName = "CreatedDate";
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy hh:mm";
-            this.CreatedDate.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy hh:mm";
+            this.CreatedDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.CreatedDate.FillWeight = 558.3757F;
             this.CreatedDate.HeaderText = "Ngày đăng ký";
             this.CreatedDate.Name = "CreatedDate";
@@ -517,6 +518,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDeclarationManagement";
             this.Text = "frmDeclarationManagement";
             this.Load += new System.EventHandler(this.frmDeclarationManagement_Load);
