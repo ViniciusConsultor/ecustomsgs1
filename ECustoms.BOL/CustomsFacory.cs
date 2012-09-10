@@ -55,6 +55,7 @@ namespace ECustoms.BOL
             _db.Connection.Open();
             customs.CreatedDate = CommonFactory.GetCurrentDate();
             customs.ModifiedDate = CommonFactory.GetCurrentDate();
+            customs.BranchId= FDHelper.RgCodeOfUnit();
             _db.AddTotblCustoms(customs);
             try
             {

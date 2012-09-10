@@ -201,6 +201,7 @@ namespace ECustoms.BOL
                 else
                 {
                     config.UserID = userId;
+                    config.BranchId = FDHelper.RgCodeOfUnit();
                     _db.AddTotblProfileConfigs(config);    
                 }
             }
