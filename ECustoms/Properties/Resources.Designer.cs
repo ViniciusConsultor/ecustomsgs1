@@ -102,9 +102,23 @@ namespace ECustoms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap application_side_boxes {
+            get {
+                object obj = ResourceManager.GetObject("application_side_boxes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap car_delete {
+            get {
+                object obj = ResourceManager.GetObject("car_delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -497,6 +511,20 @@ namespace ECustoms.Properties {
         internal static System.Drawing.Bitmap SearchVehicle1 {
             get {
                 object obj = ResourceManager.GetObject("SearchVehicle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap shape_move_backwards {
+            get {
+                object obj = ResourceManager.GetObject("shape_move_backwards", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap shape_move_forwards {
+            get {
+                object obj = ResourceManager.GetObject("shape_move_forwards", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
