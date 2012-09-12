@@ -13,7 +13,8 @@ namespace ECustoms
     public partial class FrmCrystalReport : SubFormBase
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger("Ecustoms.FrmDecleExport");
-        private ReportType _type;
+        private String _type; //loai hinh
+        private ReportType _reportType;
         private DateTime _from;
         private DateTime _to;
         private UserInfo _userInfo;
@@ -26,11 +27,12 @@ namespace ECustoms
             this.WindowState = FormWindowState.Maximized;
         }
 
-        public FrmCrystalReport(ReportType type, DateTime from, DateTime to, UserInfo userInfo, string branchId = "0")
+        public FrmCrystalReport(ReportType reportType, DateTime from, DateTime to, UserInfo userInfo, string branchId = "0",string type= "")
         {
             InitializeComponent();
-            _branchId = branchId;
             _type = type;
+            _branchId = branchId;
+            _reportType = reportType;
             _from = from;
             _to = to;
             _userInfo = userInfo;
@@ -74,7 +76,7 @@ namespace ECustoms
             {
                 var connection = new SqlConnection(Common.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["connectionString"], true));
 
-                switch (_type)
+                switch (_reportType)
                 {
                     case ReportType.ExportAndNoItem: // Type 1
                         {
@@ -118,7 +120,11 @@ namespace ECustoms
                                 sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND  DeclarationID = 0");
                             }
-
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                sql.Append(" AND  Type = '" + _type + "'");
+                            }
+                           
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
@@ -164,6 +170,11 @@ namespace ECustoms
                                 sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND DeclarationID = 0 ");
+                            }
+
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                sql.Append(" AND  Type = '" + _type + "'");
                             }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
@@ -213,6 +224,11 @@ namespace ECustoms
                                 sql.Append(" AND IsExport = 1 ");
                                 sql.Append(" AND  ExportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND ExportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
+
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                sql.Append(" AND  Type = '" + _type + "'");
                             }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
@@ -289,6 +305,12 @@ namespace ECustoms
                                 sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
                             }
+
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                sql.Append(" AND  table1.Type = '" + _type + "'");
+                            }
+
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
@@ -336,6 +358,11 @@ namespace ECustoms
                                 sql.Append("' AND ImportedLocalTime < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
                             }
 
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                sql.Append(" AND  Type = '" + _type + "'");
+                            }
+
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
@@ -375,6 +402,10 @@ namespace ECustoms
                                 buffer.Append(" AND CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                                 buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
 
+                            }
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                buffer.Append(" AND  Type = '" + _type + "'");
                             }
 
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
@@ -417,6 +448,11 @@ namespace ECustoms
                                 buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
                             }
 
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                buffer.Append(" AND  Type = '" + _type + "'");
+                            }
+
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
@@ -457,6 +493,11 @@ namespace ECustoms
                                 buffer.Append("' AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
                             }
 
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                buffer.Append(" AND  Type = '" + _type + "'");
+                            }
+
                             var adpater = new SqlDataAdapter(buffer.ToString(), connection);
                             var dt = new DataTable();
                             adpater.Fill(dt);
@@ -484,6 +525,10 @@ namespace ECustoms
                                 buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
                                 buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
                                 buffer.Append(" AND  BranchId = '" + _branchId + "'");
+                                if(string.IsNullOrEmpty(_type)==false)
+                                {
+                                    buffer.Append(" AND  Type = '" + _type + "'");
+                                }
                                 buffer.Append(" GROUP BY vehicleTypeId, GoodTypeName, Name");
                             }
                             else
@@ -492,6 +537,10 @@ namespace ECustoms
                                 buffer.Append(" WHERE ");
                                 buffer.Append(" CreatedDate >= '" + _from.ToString("yyyy-MM-dd HH:mm") + "'");
                                 buffer.Append(" AND CreatedDate <= '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                                if(string.IsNullOrEmpty(_type)==false)
+                                {
+                                    buffer.Append(" AND  Type = '" + _type + "'");
+                                }
                                 buffer.Append(" GROUP BY vehicleTypeId, GoodTypeName, Name");
                             }
 
@@ -545,6 +594,11 @@ namespace ECustoms
                                 sql.Append(" WHERE  IsChineseVehicle=1");
                                 sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
+                            }
+
+                            if(string.IsNullOrEmpty(_type)==false)
+                            {
+                                sql.Append(" AND  table1.Type = '" + _type + "'");
                             }
 
                             var adpater = new SqlDataAdapter(sql.ToString(), connection);

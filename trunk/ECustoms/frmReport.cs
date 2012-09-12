@@ -82,7 +82,8 @@ namespace ECustoms
                 var to = new DateTime(dtpExportTo.Value.Year, dtpExportTo.Value.Month, dtpExportTo.Value.Day, 23, 59, 59);
                 var reportType = GetReportType(Int32.Parse(cbReportType.SelectedValue + ""));
                 var branchId = cbUnit.SelectedValue.ToString();
-                var report = new FrmCrystalReport(reportType, from, to, _userInfo, branchId);
+                var type = cbType.SelectedValue.ToString();
+                var report = new FrmCrystalReport(reportType, from, to, _userInfo, branchId, type);
                 report.MaximizeBox = true;
                 report.Show(this);
             }
@@ -103,6 +104,7 @@ namespace ECustoms
             branch.BranchName = "Tất cả";
             list.Add(branch);   
 
+            //tao danh sach don vi hai quan
             List<tblBranchDatabas> listTblBranchDatabas=   BranchFactory.getAllBranchDatabas();
             foreach (tblBranchDatabas obj in listTblBranchDatabas)
             {
@@ -118,6 +120,23 @@ namespace ECustoms
                 cbUnit.SelectedValue = unitCode;
                 cbUnit.Enabled = false;
             }
+
+            //tao danh sach loai hinh
+            List<tblType> listType = new List<tblType>();
+            tblType type = new tblType();
+            type.TypeCode = "";
+            type.TypeName = "Tất cả";
+            listType.Add(type);
+            foreach (tblType obj in TypeFactory.getAllType())
+            {
+                tblType typeObj = new tblType();
+                typeObj.TypeName = obj.TypeCode + " - " + obj.TypeName;
+                typeObj.TypeCode = obj.TypeCode;
+                listType.Add(typeObj);
+            }
+            cbType.DisplayMember = "TypeName";
+            cbType.ValueMember = "TypeCode";
+            cbType.DataSource = listType;
          }
 
         private ReportType GetReportType(int value)
