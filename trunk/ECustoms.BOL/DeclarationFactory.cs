@@ -41,7 +41,12 @@ namespace ECustoms.BOL
                 db.SaveChanges();
 
                 //insert to the tblVehicleChange
-                VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x => x.VehicleId).ToList());
+                List<long> listVehicleId = new List<long>();
+                if (vehicle.ListVehicleChangeGood != null)
+                {
+                    listVehicleId= vehicle.ListVehicleChangeGood.Select(x => x.VehicleId).ToList();
+                }
+                VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, listVehicleId);
                 
                 // Insert to the tblVehicleDeclerateion
                 var vehicleDeclara = new tblDeclarationVehicle();
