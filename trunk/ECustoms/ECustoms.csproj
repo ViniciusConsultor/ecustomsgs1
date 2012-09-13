@@ -308,6 +308,12 @@
     <Compile Include="frmVehicleOverdue.Designer.cs">
       <DependentUpon>frmVehicleOverdue.cs</DependentUpon>
     </Compile>
+    <Compile Include="HandoverTempImportReExport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandoverTempImportReExport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MDIFormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -692,6 +698,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVehicleOverdue.resx">
       <DependentUpon>frmVehicleOverdue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandoverTempImportReExport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HandoverTempImportReExport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIFormBase.resx">
       <DependentUpon>MDIFormBase.cs</DependentUpon>

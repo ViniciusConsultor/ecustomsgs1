@@ -5,7 +5,13 @@ using System.Windows.Forms;
 using ECustoms.BOL;
 using ECustoms.DAL;
 using ECustoms.Utilities;
-
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using ECustoms.Utilities.Enums;
+using ECustoms.Utilities;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
 namespace ECustoms
 {
     public partial class FrmDecleExportOption : SubFormBase
@@ -455,6 +461,59 @@ namespace ECustoms
             var custom = CustomsFacory.FindByCode(customCode);
             if (custom != null)
                 txtCustomsName.Text = custom.CustomsName;
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            // Get Decleration information
+            var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
+
+            ECustoms.HandoverTempImportReExport report = new HandoverTempImportReExport();
+            // Cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+            // Chi cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
+
+            ((TextObject)report.Section1.ReportObjects["txtHandoverNumber"]).Text = declarationInfo.NumberHandover!=null? declarationInfo.NumberHandover.ToString() : ""; 
+
+            if( declarationInfo.DateHandover != null )
+            {
+                ((TextObject)report.Section1.ReportObjects["txtDate"]).Text = "Hồi " + declarationInfo.DateHandover.Value.Hour + " giờ " + declarationInfo.DateHandover.Value.Minute + " phút, " + "ngày " + declarationInfo.DateHandover.Value.Day + " tháng " + declarationInfo.DateHandover.Value.Month + " năm " + declarationInfo.DateHandover.Value.Year + ",";
+            }
+
+            // Chi cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["txtBranchName"]).Text = GlobalInfo.CompanyName.ToUpper();
+
+            ((TextObject)report.Section1.ReportObjects["txtCompany"]).Text = declarationInfo.CompanyName;
+            ((TextObject)report.Section1.ReportObjects["txtNumber"]).Text = declarationInfo.Number.ToString();
+
+            StringBuilder buffer = new StringBuilder();
+            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+            buffer.Append(" WHERE ");
+            buffer.Append(" DeclarationID = " + _declerationID);
+
+            var connection = new SqlConnection(Common.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["connectionString"], true));
+
+            var adpater = new SqlDataAdapter(buffer.ToString(), connection);
+            var dt = new DataTable();
+            adpater.Fill(dt);
+            report.SetDataSource(dt);
+            //preview ticket
+            var reportForm = new FrmCrystalReport(report, _userInfo);
+            reportForm.MaximizeBox = true;
+            reportForm.Show(this);
+        }
+        private string GetUserConfig()
+        {
+            var profileConfig = UserFactory.GetProfileConfigByUserId(_userInfo.UserID);
+            foreach (var config in profileConfig)
+            {
+                if (config.Type == (int)ProfileConfig.SuperiorCompany)
+                {
+                    return config.Value;
+                }
+            }
+            return "";
         }
     }
 }
