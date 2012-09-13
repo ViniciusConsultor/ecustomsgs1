@@ -114,6 +114,8 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.cachedXuatCanhXeKhong1 = new ECustoms.CachedXuatCanhXeKhong();
             this.groupBoxVehicle.SuspendLayout();
             this.pnXKCK.SuspendLayout();
             this.pnTNTX.SuspendLayout();
@@ -913,13 +915,30 @@
             // 
             this.techlinkErrorProvider1.ContainerControl = this;
             // 
+            // btnReport
+            // 
+            this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnReport.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(321, 443);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(130, 28);
+            this.btnReport.TabIndex = 22;
+            this.btnReport.Text = "In biên bản bàn giao";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // FrmDecleExportOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(749, 491);
+            this.ClientSize = new System.Drawing.Size(749, 495);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button1);
@@ -1028,5 +1047,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn PersonConfirm;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsExport;
+        private System.Windows.Forms.Button btnReport;
+        private CachedXuatCanhXeKhong cachedXuatCanhXeKhong1;
     }
 }

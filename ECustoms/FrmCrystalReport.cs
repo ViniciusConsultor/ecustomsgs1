@@ -48,6 +48,14 @@ namespace ECustoms
           this.WindowState = FormWindowState.Maximized;
         }
 
+        public FrmCrystalReport(HandoverTempImportReExport report, UserInfo userInfo)
+        {
+            InitializeComponent();
+            _userInfo = userInfo;
+            crystalReportViewer1.ReportSource = report;
+            this.WindowState = FormWindowState.Maximized;
+        }
+
         public FrmCrystalReport(VehicleExportParkTicket vehicleTicket, UserInfo userInfo)
         {
             InitializeComponent();
