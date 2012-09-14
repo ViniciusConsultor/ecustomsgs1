@@ -110,7 +110,7 @@ namespace ECustoms.BOL
                 {
                     if (item is tblDeclarationVehicle)
                     {
-                        _db.AddObjectDirectly("tblDeclarationVehicle", item);
+                        _db.AddObjectDirectly("tblDeclarationVehicles", item);
                     }
                 }
 
@@ -156,7 +156,34 @@ namespace ECustoms.BOL
 
         public bool UpdatePatch(object[] items)
         {
-            throw new NotImplementedException();
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+
+            try
+            {
+                _db.Connection.Open();
+                var updateItems = items.OfType<tblDeclarationVehicle>().ToList();
+
+                foreach (var updateItem in updateItems)
+                {
+                    var item =
+                        _db.tblDeclarationVehicles.FirstOrDefault(
+                            p => p.BranchId == updateItem.BranchId && p.DeclarationID == updateItem.DeclarationID
+                            && p.VehicleID == updateItem.VehicleID);
+                    item.IsSynced = true;
+                }
+                _db.SaveChanges();
+                _db.Connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogManager.GetLogger("ECustoms.AllFactory").Error(ex.ToString());
+                throw;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
         }
 
         #endregion

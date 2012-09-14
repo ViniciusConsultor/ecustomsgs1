@@ -33,6 +33,7 @@ namespace ECustoms
                 LoadRes.LoadControlImages(_cRCM, (int)FormStyle);
                 this.Width = this.Width + 10;
                 _cRCM.Start();
+                this.ShowInTaskbar = false;
                 this.Refresh();
             }
             catch (Exception ex)
