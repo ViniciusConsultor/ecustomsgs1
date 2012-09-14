@@ -216,12 +216,12 @@ namespace ECustoms
                     btnConfirmImport.Enabled = false;
 
                     //Autocomplete 
-                    var auto = new AutoCompleteStringCollection();
-                    var lstAuto = VehicleFactory.GetAllPlateNumberChinese();
-                    auto.AddRange(lstAuto.ToArray());
-                    txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                    txtVehicleChinese.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    txtVehicleChinese.AutoCompleteCustomSource = auto;
+                    //var auto = new AutoCompleteStringCollection();
+                    //var lstAuto = VehicleFactory.GetAllPlateNumberChinese();
+                    //auto.AddRange(lstAuto.ToArray());
+                    //txtVehicleChinese.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    //txtVehicleChinese.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    //txtVehicleChinese.AutoCompleteCustomSource = auto;
                     
                     cbImportGoodType.Enabled = false;
                 }
@@ -233,7 +233,7 @@ namespace ECustoms
                    
                     cbExportGoodType.Enabled = false;
 
-                    rbVehicleChangeVN.Enabled = rbVehicleChangeChinese.Enabled = txtVehicleChangeGood.Enabled = false;
+                    //rbVehicleChangeVN.Enabled = rbVehicleChangeChinese.Enabled = txtVehicleChangeGood.Enabled = false;
                 }
 
                 // TODO: Need to handler it
@@ -419,7 +419,7 @@ namespace ECustoms
                             }
                             else
                             {
-                                listSelectChange = vehicleInfo.ListVehicleChangeGood;
+                                listSelectChange = vehicleInfo.ListVehicleChangeGood ?? VehicleFactory.GetListVehicleChangeById(vehicleInfo.VehicleID);
                             }
                             rbVehicleChangeVN.Checked = true;
                             txtVehicleChangeGood.SelectedItems = listSelectChange.Cast<object>().ToList();
@@ -438,7 +438,7 @@ namespace ECustoms
                             }
                             else
                             {
-                                listSelectChange = vehicleInfo.ListVehicleChangeGood;
+                                listSelectChange = vehicleInfo.ListVehicleChangeGood ?? VehicleFactory.GetListVehicleChangeById(vehicleInfo.VehicleID, true);
                             }
                             rbVehicleChangeChinese.Checked = true;
                             txtVehicleChangeGood.SelectedItems = listSelectChange.Cast<object>().ToList();

@@ -356,7 +356,7 @@ namespace ECustoms.BOL
         public static List<tblVehicle> GetExported()
         {
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            var result = db.tblVehicles.Where(g => (g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false) && (g.IsChineseVehicle == null || g.IsChineseVehicle == false)) || (g.IsChineseVehicle == true && g.IsExport == false && g.IsImport == true && g.HasGoodsImported == true)).OrderByDescending(g => g.ExportDate).ToList();
+            var result = db.tblVehicles.Where(g => (g.IsExport == true && (g.IsGoodsImported == null || g.IsGoodsImported == false) && (g.IsChineseVehicle == null || g.IsChineseVehicle == false)) || (g.IsChineseVehicle == true && (g.IsExport == null || g.IsExport == false) && g.IsImport == true && g.HasGoodsImported == true)).OrderByDescending(g => g.ExportDate).ToList();
             return result;
         }
 
@@ -553,8 +553,9 @@ namespace ECustoms.BOL
                                                     !string.IsNullOrEmpty(x.tblVehicle.PlateNumber) &&
                                                     (x.tblVehicle.IsCompleted == null || x.tblVehicle.IsCompleted == false) &&
                                                     (x.tblVehicle.IsChineseVehicle == null || x.tblVehicle.IsChineseVehicle == false) &&
-                                                    (x.tblVehicle.IsExport == null || x.tblVehicle.IsExport == false) &&
-                                                    (x.tblVehicle.IsExportParking == null || x.tblVehicle.IsExportParking == false))
+                                                    (x.tblVehicle.IsExport == null || x.tblVehicle.IsExport == false) 
+                                                    //&& (x.tblVehicle.IsExportParking == null || x.tblVehicle.IsExportParking == false)
+                                                    )
                                         .Select(x => x.tblVehicle)
                                         .ToList();
                 listResult.AddRange(lst.Select(vehicleNumber => new VehicleNumber(vehicleNumber.PlateNumber, vehicleNumber.VehicleID)));
@@ -574,7 +575,7 @@ namespace ECustoms.BOL
             {
                 var vehicle = isVehicleChinese ? db.tblVehicles.Where(x => x.VehicleID == id && x.IsChineseVehicle == true).FirstOrDefault() :
                                                  db.tblVehicles.Where(x => x.VehicleID == id && (x.IsChineseVehicle == null || x.IsChineseVehicle == false)).FirstOrDefault();
-                if (!string.IsNullOrEmpty(vehicle.PlateNumber))
+                if (vehicle != null && !string.IsNullOrEmpty(vehicle.PlateNumber))
                 {
                     listResult.Add(new VehicleNumber(vehicle.PlateNumber, vehicle.VehicleID));
                 }
