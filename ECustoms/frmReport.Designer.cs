@@ -33,13 +33,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbType = new System.Windows.Forms.ComboBox();
-            this.tblReportTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet2 = new ECustoms.DataSet2();
             this.label1 = new System.Windows.Forms.Label();
             this.cbUnit = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbReportType = new System.Windows.Forms.ComboBox();
+            this.tblReportTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new ECustoms.DataSet2();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpExportTo = new System.Windows.Forms.DateTimePicker();
             this.dtpExportFrom = new System.Windows.Forms.DateTimePicker();
@@ -85,7 +85,9 @@
             // 
             // cbType
             // 
-            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbType.DisplayMember = "ReportTypeID";
             this.cbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbType.FormattingEnabled = true;
             this.cbType.Location = new System.Drawing.Point(78, 61);
@@ -93,16 +95,6 @@
             this.cbType.Size = new System.Drawing.Size(250, 21);
             this.cbType.TabIndex = 24;
             this.cbType.ValueMember = "ReportTypeID";
-            // 
-            // tblReportTypeBindingSource1
-            // 
-            this.tblReportTypeBindingSource1.DataMember = "tblReportType";
-            this.tblReportTypeBindingSource1.DataSource = this.dataSet2;
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -116,7 +108,8 @@
             // 
             // cbUnit
             // 
-            this.cbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbUnit.FormattingEnabled = true;
             this.cbUnit.Location = new System.Drawing.Point(78, 31);
@@ -163,6 +156,16 @@
             this.cbReportType.TabIndex = 19;
             this.cbReportType.ValueMember = "ReportTypeID";
             this.cbReportType.SelectedIndexChanged += new System.EventHandler(this.cbReportType_SelectedIndexChanged);
+            // 
+            // tblReportTypeBindingSource1
+            // 
+            this.tblReportTypeBindingSource1.DataMember = "tblReportType";
+            this.tblReportTypeBindingSource1.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
