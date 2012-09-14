@@ -1,31 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
-using System.Text;
+using ECustoms.BOL;
 using ECustoms.DAL;
 using ECustoms.Utilities;
-using System.Configuration;
 using log4net;
 
 namespace ECustoms.BOL
 {
-    public class PermissionTypeFactory : IDataModelCommand
+    public class ProfileConfigFactory : IDataModelCommand
     {
-        public static List<tblPermissionType> GetAllPermissionType()
-        {
-            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            List<tblPermissionType> list = db.tblPermissionTypes.ToList();
-            db.Connection.Close();
-            return list;
-        }
-
         #region Implementation of IDataModelCommand
 
         public bool DeleteItem(string[] itemParams)
         {
             if (itemParams.Length < 2) return false;
 
-            string id = itemParams[0];
+            int id = itemParams[0].StringToInt();
             string branchId = itemParams[1];
 
             var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
@@ -33,8 +24,8 @@ namespace ECustoms.BOL
             try
             {
                 var deleteItem =
-                    _db.tblPermissionTypes.FirstOrDefault(
-                        item => item.TypeCode == id && item.BranchId == branchId);
+                    _db.tblProfileConfigs.FirstOrDefault(
+                        item => item.ID == id && item.BranchId == branchId);
                 if (deleteItem != null)
                 {
                     _db.DeleteDirectly(deleteItem);
@@ -45,7 +36,7 @@ namespace ECustoms.BOL
             }
             catch (Exception exception)
             {
-                LogManager.GetLogger("ECustoms.PermissionTypeFactory").Error(exception.ToString());
+                LogManager.GetLogger("ECustoms.ProfileConfigFactory").Error(exception.ToString());
                 throw;
             }
             finally

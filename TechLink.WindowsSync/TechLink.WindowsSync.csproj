@@ -32,12 +32,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eCustomSyncWCF.cs" />
+    <Compile Include="IeCustomSyncWCF.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -60,6 +67,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncSessions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ServiceMethodsDefined.xml" />
@@ -92,9 +100,17 @@
     <Folder Include="System\Common Assemblies\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ECustoms.BOL\ECustoms.BOL.csproj">
+      <Project>{0494EB3E-3E10-4058-B8B0-0B461E84D154}</Project>
+      <Name>ECustoms.BOL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TechLink.NetRemoting.SyncService\AbstractServerConsole\AbstractServerConsole.csproj">
       <Project>{F89E3CDE-703A-4C99-8EAB-E7A2CB5519A8}</Project>
       <Name>AbstractServerConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ClientServerExchange\ClientServerExchange.csproj">
+      <Project>{E6E4854D-C474-4082-8CA4-A5D1988EECE3}</Project>
+      <Name>ClientServerExchange</Name>
     </ProjectReference>
     <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ExceptionHandler\ExceptionHandler.csproj">
       <Project>{5DA522E1-8E43-46F8-B2B9-0E5CE4CA31FC}</Project>
@@ -103,6 +119,10 @@
     <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ServerConsole\ServerConsole.csproj">
       <Project>{564D707B-868E-48E0-820E-A436CF5945B1}</Project>
       <Name>ServerConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechLink.SyncDataModel\TechLink.SyncDataModel.csproj">
+      <Project>{73436DF9-25B4-4B0A-B209-152E0C3224B6}</Project>
+      <Name>TechLink.SyncDataModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

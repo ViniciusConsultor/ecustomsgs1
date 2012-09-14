@@ -113,6 +113,10 @@
       <Project>{8AC95DDB-A7DD-40D6-A0ED-323D9B601B99}</Project>
       <Name>ECustoms.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ECustoms.Utilities\ECustoms.Utilities.csproj">
+      <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
+      <Name>ECustoms.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ApplicationUtils\ApplicationUtils.csproj">
       <Project>{7AF8057E-16FF-47F4-8BB1-57BB820FC094}</Project>
       <Name>ApplicationUtils</Name>

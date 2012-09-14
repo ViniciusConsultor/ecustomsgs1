@@ -14,6 +14,7 @@ namespace ECustoms.BOL
         public static bool IsExistingBranch(string branchId, string serialNumber)
         {
             dbEcustomEntities _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            
             try
             {
                 if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();

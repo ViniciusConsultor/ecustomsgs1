@@ -102,6 +102,10 @@
       <Project>{5DA522E1-8E43-46F8-B2B9-0E5CE4CA31FC}</Project>
       <Name>ExceptionHandler</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TechLink.SyncDataModel\TechLink.SyncDataModel.csproj">
+      <Project>{73436DF9-25B4-4B0A-B209-152E0C3224B6}</Project>
+      <Name>TechLink.SyncDataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

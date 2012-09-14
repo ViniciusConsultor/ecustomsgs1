@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using Microsoft.Win32;
 
 namespace ECustoms.Utilities
@@ -12,6 +13,12 @@ namespace ECustoms.Utilities
         {
             return Environment.CurrentDirectory;
         }
+
+        public static string AppDir()
+        {
+            return System.Windows.Forms.Application.StartupPath;
+        }
+
         public static string GetAppData()
         {
             return System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);

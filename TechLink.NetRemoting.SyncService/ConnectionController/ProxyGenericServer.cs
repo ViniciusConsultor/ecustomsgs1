@@ -8,6 +8,7 @@ using ClientServerExchange.Args;
 using ClientServerExchange.Delegates;
 using ClientServerExchange.Interfaces;
 using ECustoms.DAL;
+using ECustoms.Utilities;
 using EnumConstant.Enums;
 using ExceptionHandler;
 
@@ -22,112 +23,21 @@ namespace ConnectionController
             this.genericServer = genericServer;
         }
 
-
         #region Implementation of IGenericServer
 
-        public bool StartSync(ClientInfo clientInfo)
+        public string StartSync(string branchId, string serial)
         {
-            throw new NotImplementedException();
+            return genericServer.StartSync(branchId, serial);
         }
 
-        public void StopSync(ClientInfo clientInfo)
+        public bool Sync(string token, string tableName, object[] itemsSync)
         {
-            throw new NotImplementedException();
+            return genericServer.Sync(token, tableName, itemsSync);
         }
 
-        public List<string> Sync_tblUser(List<tblUser> users)
+        public void StopSync(string token)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblVehicle(List<tblVehicle> vehicles)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblDeclaration(List<tblDeclaration> ceclarations)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tlbRole(List<tlbRole> roles)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblRoleInGroup(List<tblRoleInGroup> roleInGroups)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblApplicationObject(List<tblApplicationObject> applicationObjects)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblCheck(List<tblCheck> checks)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblCustoms(List<tblCustom> customses)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblDeclarationVehicle(List<tblDeclarationVehicle> declarationVehicles)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblGate(List<tblGate> gates)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblGoodsType(List<tblGoodsType> goodsTypes)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblGroup(List<tblGroup> groups)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblPermission(List<tblPermission> permissions)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblSettings(List<tblSetting> settings)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblUserGroupPermission(List<tblUserGroupPermission> groupPermissions)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblVehicleCheck(List<tblVehicleCheck> vehicleChecks)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblVehicleFeeSetting(List<tblVehicleFeeSetting> vehicleFeeSettings)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblVehicleType(List<tblVehicleType> vehicleTypes)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> Sync_tblUserInGroup(List<tblUserInGroup> userInGroups)
-        {
-            throw new NotImplementedException();
+            genericServer.StopSync(token);
         }
 
         #endregion

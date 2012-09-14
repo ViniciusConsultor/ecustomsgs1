@@ -1,40 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
-using System.Text;
+using ECustoms.BOL;
 using ECustoms.DAL;
 using ECustoms.Utilities;
-using System.Configuration;
 using log4net;
 
 namespace ECustoms.BOL
 {
-    public class PermissionTypeFactory : IDataModelCommand
+    public class RoleInGroupFactory : IDataModelCommand
     {
-        public static List<tblPermissionType> GetAllPermissionType()
-        {
-            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-            List<tblPermissionType> list = db.tblPermissionTypes.ToList();
-            db.Connection.Close();
-            return list;
-        }
-
         #region Implementation of IDataModelCommand
 
         public bool DeleteItem(string[] itemParams)
         {
-            if (itemParams.Length < 2) return false;
+            if (itemParams.Length < 3) return false;
 
-            string id = itemParams[0];
-            string branchId = itemParams[1];
+            int id = itemParams[0].StringToInt();
+            int roleId = itemParams[1].StringToInt();
+            string branchId = itemParams[2];
 
             var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
 
             try
             {
                 var deleteItem =
-                    _db.tblPermissionTypes.FirstOrDefault(
-                        item => item.TypeCode == id && item.BranchId == branchId);
+                    _db.tblRoleInGroups.FirstOrDefault(
+                        item => item.GroupID == id && item.RoleID == roleId && item.BranchId == branchId);
                 if (deleteItem != null)
                 {
                     _db.DeleteDirectly(deleteItem);
@@ -45,7 +37,7 @@ namespace ECustoms.BOL
             }
             catch (Exception exception)
             {
-                LogManager.GetLogger("ECustoms.PermissionTypeFactory").Error(exception.ToString());
+                LogManager.GetLogger("ECustoms.RoleInGroupFactory").Error(exception.ToString());
                 throw;
             }
             finally

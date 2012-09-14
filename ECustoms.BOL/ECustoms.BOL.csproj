@@ -76,6 +76,7 @@
     <Compile Include="CheckFactory.cs" />
     <Compile Include="CommonFactory.cs" />
     <Compile Include="CompanyFactory.cs" />
+    <Compile Include="IDataModelCommand.cs" />
     <Compile Include="DeclarationLoanFactory.cs" />
     <Compile Include="LoadDeclarationFacory.cs" />
     <Compile Include="CustomsFacory.cs" />
@@ -93,7 +94,9 @@
     <Compile Include="GroupFactory.cs" />
     <Compile Include="PermissionFactory.cs" />
     <Compile Include="PermissionTypeFactory.cs" />
+    <Compile Include="ProfileConfigFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleInGroupFactory.cs" />
     <Compile Include="SettingsFactory.cs" />
     <Compile Include="TypeFactory.cs" />
     <Compile Include="UserFactory.cs" />
