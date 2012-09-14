@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDeclarationFilesGetLoan));
             this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.lblPageNumber = new System.Windows.Forms.Label();
+            this.lblNumber = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtLoanReason = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pkLoanDate = new System.Windows.Forms.DateTimePicker();
             this.txtBorrower = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtLoanReason = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblNumber = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lblPageNumber = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.grbInfo.SuspendLayout();
@@ -67,6 +67,88 @@
             this.grbInfo.TabIndex = 37;
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "Thông tin mượn hồ sơ";
+            // 
+            // lblPageNumber
+            // 
+            this.lblPageNumber.AutoSize = true;
+            this.lblPageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageNumber.Location = new System.Drawing.Point(175, 53);
+            this.lblPageNumber.Name = "lblPageNumber";
+            this.lblPageNumber.Size = new System.Drawing.Size(69, 16);
+            this.lblPageNumber.TabIndex = 42;
+            this.lblPageNumber.Text = "Số lượng";
+            // 
+            // lblNumber
+            // 
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber.Location = new System.Drawing.Point(175, 27);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(77, 16);
+            this.lblNumber.TabIndex = 41;
+            this.lblNumber.Text = "Số tờ khai";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(152, 16);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Số lượng (tờ) trong hồ sơ";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(14, 27);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(67, 16);
+            this.lbl1.TabIndex = 38;
+            this.lbl1.Text = "Số tờ khai";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Ghi chú ";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(178, 242);
+            this.txtDescription.MaxLength = 4000;
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtDescription.Size = new System.Drawing.Size(454, 88);
+            this.txtDescription.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 16);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Lý do mượn";
+            // 
+            // txtLoanReason
+            // 
+            this.txtLoanReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoanReason.Location = new System.Drawing.Point(178, 145);
+            this.txtLoanReason.MaxLength = 4000;
+            this.txtLoanReason.Multiline = true;
+            this.txtLoanReason.Name = "txtLoanReason";
+            this.txtLoanReason.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtLoanReason.Size = new System.Drawing.Size(454, 88);
+            this.txtLoanReason.TabIndex = 35;
             // 
             // label3
             // 
@@ -106,88 +188,6 @@
             this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 28;
             this.label1.Text = "Người mượn";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 16);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Lý do mượn";
-            // 
-            // txtLoanReason
-            // 
-            this.txtLoanReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoanReason.Location = new System.Drawing.Point(178, 145);
-            this.txtLoanReason.MaxLength = 4000;
-            this.txtLoanReason.Multiline = true;
-            this.txtLoanReason.Name = "txtLoanReason";
-            this.txtLoanReason.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtLoanReason.Size = new System.Drawing.Size(454, 88);
-            this.txtLoanReason.TabIndex = 35;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(178, 242);
-            this.txtDescription.MaxLength = 4000;
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtDescription.Size = new System.Drawing.Size(454, 88);
-            this.txtDescription.TabIndex = 36;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 242);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Nghi chú ";
-            // 
-            // lblNumber
-            // 
-            this.lblNumber.AutoSize = true;
-            this.lblNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumber.Location = new System.Drawing.Point(175, 27);
-            this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(77, 16);
-            this.lblNumber.TabIndex = 41;
-            this.lblNumber.Text = "Số tờ khai";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 16);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "Số lượng (tờ) trong hồ sơ";
-            // 
-            // lbl1
-            // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(14, 27);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(67, 16);
-            this.lbl1.TabIndex = 38;
-            this.lbl1.Text = "Số tờ khai";
-            // 
-            // lblPageNumber
-            // 
-            this.lblPageNumber.AutoSize = true;
-            this.lblPageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNumber.Location = new System.Drawing.Point(175, 53);
-            this.lblPageNumber.Name = "lblPageNumber";
-            this.lblPageNumber.Size = new System.Drawing.Size(69, 16);
-            this.lblPageNumber.TabIndex = 42;
-            this.lblPageNumber.Text = "Số lượng";
             // 
             // btnAdd
             // 

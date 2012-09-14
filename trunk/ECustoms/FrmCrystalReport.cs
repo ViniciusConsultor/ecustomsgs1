@@ -591,7 +591,7 @@ namespace ECustoms
                             if (_branchId != "0")  //tim theo chi cuc hai quan
                             {
                                 sql.Append("select * from ViewAllVehicleHasGood as table1");
-                                sql.Append(" WHERE  IsChineseVehicle=1");
+                                sql.Append(" WHERE  IsChineseVehicle = 1");
                                 sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
                                 sql.Append(" AND  table1.BranchId = '" + _branchId + "'");
@@ -599,7 +599,7 @@ namespace ECustoms
                             else
                             {
                                 sql.Append("select * from ViewAllVehicleHasGood as table1");
-                                sql.Append(" WHERE  IsChineseVehicle=1");
+                                sql.Append(" WHERE  IsChineseVehicle = 1");
                                 sql.Append(" AND  table1.ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
                                 sql.Append("' AND table1.ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm") + "'");
                             }

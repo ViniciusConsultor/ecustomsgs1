@@ -118,13 +118,14 @@ namespace ECustoms
                     result = result.Where(g => g.Parking != null && g.ParkingDate >= parkingDateFrom && g.ParkingDate <= parkingDateTo).ToList();
                 }
                 
-                var listVehilceID = result.Select(x => x.VehicleID).Distinct().ToList();
+                var listVehilceId = result.Select(x => x.VehicleID).Distinct().ToList();
 
                 var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
                 var allVehicles = db.ViewAllVehicles.ToList();
+                //var searchVehicles = db.ViewAllVehicles.Where(g => listVehilceId.Contains((g.VehicleID)).OrderByDescending(g => g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
                 db.Connection.Close();
                 // var allVehicles = VehicleFactory.GetAllViewAllVehicle();
-                var q = (from x in allVehicles where listVehilceID.Contains(x.VehicleID) select x).OrderByDescending(g => g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
+                var q = (from x in allVehicles where listVehilceId.Contains(x.VehicleID) select x).OrderByDescending(g => g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
 
                 if (!string.IsNullOrEmpty(txtXeSangtai.Text))
                 {
@@ -267,7 +268,7 @@ namespace ECustoms
                     EnabledImport(false);
                     cbIsImport.Checked = false;
                     cbIsNotImport.Checked = false;
-                }    
+                }
             }
             else //xe TQ
             {
@@ -288,9 +289,9 @@ namespace ECustoms
                 {
                     EnableExport(false);
                     cbIsExport.Checked = false;
-                }        
+                }
             }
-            
+
         }
 
         private void cbIsImport_CheckedChanged(object sender, EventArgs e)
@@ -331,9 +332,9 @@ namespace ECustoms
                     EnableExport(false);
                     cbIsExport.Checked = false;
                     cbIsNotImport.Checked = false;
-                }    
+                }
             }
-            
+
         }
 
         /// <summary>
@@ -396,7 +397,7 @@ namespace ECustoms
                 {
                     EnabledImport(false);
                     cbIsImport.Enabled = true;
-                }    
+                }
             }
             else //xeTQ
             {
@@ -412,9 +413,9 @@ namespace ECustoms
                     EnableExport(false);
                     cbIsExport.Checked = false;
                     cbIsImport.Checked = false;
-                }        
+                }
             }
-            
+
         }
 
         private void grdVehicle_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -649,10 +650,10 @@ namespace ECustoms
 
                     vehicleInfo.ConfirmExportBy = _userInfo.UserID;
                     vehicleInfo.IsExport = true;
-                    if (isExportNoGood) vehicleInfo.feeExportStatus = (int) FeeStatus.NotNeedPayFee;
+                    if (isExportNoGood) vehicleInfo.feeExportStatus = (int)FeeStatus.NotNeedPayFee;
                     vehicleInfo.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicleInfo);
-                
+
                     // Bind to grid
                     BindData();
 
@@ -717,7 +718,7 @@ namespace ECustoms
                 default:
                     return "Không xác định";
             }
-            
+
         }
 
         private void btnXacNhanNhapCanhCoHang_Click(object sender, EventArgs e)
@@ -798,7 +799,7 @@ namespace ECustoms
                     {
                         if (vehicle.HasGoodsImportedTocalPrint != null)
                         {
-                   
+
                             //var answer = MessageBox.Show("Xe này đã in phiếu rồi. Bạn có muốn in lại", "Cảnh báo", MessageBoxButtons.YesNo);
                             //if (answer == DialogResult.Yes)
 
@@ -882,7 +883,7 @@ namespace ECustoms
 
                     vehicle.ConfirmImportBy = _userInfo.UserID;
                     vehicle.ImportStatus = "Nhập cảnh không có hàng";
-                    vehicle.feeImportStatus = (int) FeeStatus.NotNeedPayFee;
+                    vehicle.feeImportStatus = (int)FeeStatus.NotNeedPayFee;
                     vehicle.ModifiedById = _userInfo.UserID;
                     VehicleFactory.UpdateVehicle(vehicle);
                 }
@@ -1536,10 +1537,10 @@ namespace ECustoms
 
             txtVehicleNumber.Text = vehicleInfo.PlateNumber;
 
-            if(vehicleInfo.vehicleTypeId !=null && vehicleInfo.vehicleTypeId>0)
+            if (vehicleInfo.vehicleTypeId != null && vehicleInfo.vehicleTypeId > 0)
             {
                 tblVehicleType vehicleType = VehicleTypeFactory.FindById(vehicleInfo.vehicleTypeId.GetValueOrDefault());
-                if(vehicleType!=null)
+                if (vehicleType != null)
                 {
                     txtVehicleType.Text = vehicleType.Name;
                 }
@@ -1594,7 +1595,7 @@ namespace ECustoms
 
             txtPrintUser.Text = _userInfo.Name;
 
-            
+
             switch (printType)
             {
                 case 1:
@@ -1635,7 +1636,7 @@ namespace ECustoms
                         vehicleInfo.ParkingTotalPrint = 1;
 
                         //update tong so lan print ticket trong 1 ngay
-                        long orderNumber= updateTotalTicketPrint();
+                        long orderNumber = updateTotalTicketPrint();
 
                         //cap nhat so tu thu in cua xe
                         vehicleInfo.ParkingTotalPrintOrderNumber = orderNumber;
