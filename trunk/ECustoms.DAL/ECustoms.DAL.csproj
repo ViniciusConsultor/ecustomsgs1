@@ -57,6 +57,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
@@ -69,6 +70,7 @@
   <ItemGroup>
     <Compile Include="ClientInfo.cs" />
     <Compile Include="CusEcusDeclarationEntities.cs" />
+    <Compile Include="CustomEcustomEntities.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="dbEcustomEntitiesExt.cs" />
     <Compile Include="IDataController.cs" />
@@ -85,11 +87,16 @@
     <Compile Include="PermissionDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDAL.cs" />
+    <Compile Include="VehicleDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ECustoms.Utilities\ECustoms.Utilities.csproj">
       <Project>{DC919A57-770A-453A-A7F8-FD4F37491957}</Project>
       <Name>ECustoms.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.RCM\System.Windows.Forms.RCM.csproj">
+      <Project>{D90BC13F-A4EF-4A69-9157-07FA2F2FC065}</Project>
+      <Name>System.Windows.Forms.RCM</Name>
     </ProjectReference>
     <ProjectReference Include="..\TechLink.NetRemoting.SyncService\ApplicationUtils\ApplicationUtils.csproj">
       <Project>{7AF8057E-16FF-47F4-8BB1-57BB820FC094}</Project>

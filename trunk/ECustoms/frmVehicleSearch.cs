@@ -96,7 +96,7 @@ namespace ECustoms
             try
             {
                 grdVehicle.AutoGenerateColumns = false;
-                List<ViewAllVehicleHasGood> result = VehicleFactory.SearchVehicle(cbIsCompleted.Checked, txtPlateNumber.Text.Trim().ToUpper(), txtPlateNumberChinese.Text.Trim().ToUpper(), cbIsExport.Checked, cbIsImport.Checked, cbIsNotImport.Checked, dtpImportFrom.Value, dtpImportTo.Value,
+                List<ViewAllVehicleHasGood> result = VehicleFactory.SearchVehicle(cbIsCompleted.Checked, txtPlateNumber.Text.Trim().ToUpper(), "", cbIsExport.Checked, cbIsImport.Checked, cbIsNotImport.Checked, dtpImportFrom.Value, dtpImportTo.Value,
                                                         dtpExportFrom.Value, dtpExportTo.Value, cbIsChineseVehicle.Checked);
                 //MessageBox.Show(result.FirstOrDefault().ModifiedByUserName);  
                 // Limit xe khong cho hang
@@ -117,7 +117,7 @@ namespace ECustoms
 
                     result = result.Where(g => g.Parking != null && g.ParkingDate >= parkingDateFrom && g.ParkingDate <= parkingDateTo).ToList();
                 }
-
+                
                 var listVehilceID = result.Select(x => x.VehicleID).Distinct().ToList();
 
                 var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
@@ -126,6 +126,14 @@ namespace ECustoms
                 // var allVehicles = VehicleFactory.GetAllViewAllVehicle();
                 var q = (from x in allVehicles where listVehilceID.Contains(x.VehicleID) select x).OrderByDescending(g => g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
 
+                if (!string.IsNullOrEmpty(txtXeSangtai.Text))
+                {
+                    q = q.Where(g => g.VehicleChangeGoodVN.Contains(txtXeSangtai.Text.Trim())).ToList();
+                }
+                if (!string.IsNullOrEmpty(txtPlateNumberChinese.Text))
+                {
+                    q = q.Where(g => g.VehicleChangeGoodChinese.Contains(txtPlateNumberChinese.Text.Trim())).ToList();
+                }
                 grdVehicle.DataSource = q;
 
                 int xeKhongChoHangDaXC = 0;
@@ -1709,10 +1717,23 @@ namespace ECustoms
             cbIsImport.Checked = true;
 
             txtPlateNumberChinese.Visible = lblPlateNumberChinese.Visible = grdVehicle.Columns["VehicleChangeGoodChinese"].Visible = !cbIsChineseVehicle.Checked;
+            txtPlateNumberChinese.Text = "";
             BindData();
             if (grdVehicle.Rows.Count > 0) // Set focus
             {
                 btnXacNhanXuatCanh.Focus();
+            }
+        }
+
+        private void txtXeSangtai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) // Enter key
+            {
+                BindData();
+                if (grdVehicle.Rows.Count > 0) // Set focus
+                {
+                    btnXacNhanXuatCanh.Focus();
+                }
             }
         }
 
