@@ -67,5 +67,15 @@ namespace ECustoms.Utilities
 
             return 0;
         }
+
+        /// <summary>
+        /// Convert a string True/False to boolean
+        /// </summary>
+        /// <param name="value">The string to convert</param>
+        /// <returns>Return True of the string is true or True, False if the string is False/false</returns>
+        public static bool StringToBoolean(this string value)
+        {
+            return bool.Parse(value);
+        }
     }
 }

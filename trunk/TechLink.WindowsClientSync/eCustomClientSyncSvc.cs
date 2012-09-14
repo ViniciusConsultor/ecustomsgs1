@@ -14,6 +14,7 @@ using ECustoms.DAL;
 using ECustoms.Utilities;
 using ExceptionHandler.Logging;
 using techlink.Digest;
+using TechLink.SyncDataModel;
 
 namespace TechLink.WindowsClientSync
 {
@@ -24,32 +25,27 @@ namespace TechLink.WindowsClientSync
         private ClientConfigurableSettings clientConfigurableSettings = null;
         ServerInterfacesHelper serverInterfacesHelper = null;
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        private ClientInfo clientInfo = null;
+
+        private string seri = string.Empty;
+        private string branchid = string.Empty;
+
         public eCustomClientSyncSvc()
         {
             InitializeComponent();
             logging.WriteEntry("Initialize Service");
             timer.Interval = 5000;
             timer.Tick += new EventHandler(timer_Tick);
-            clientInfo = new ClientInfo();
-            var bone = BoneReader.GetBoneInfo(FDHelper.RgGetUserProfilePath());
-            var s = XRayController.TranslateBoneInformation(bone);
-            string[] ss = s.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < 6; i++)
-            {
-                sb.AppendLine(ss[i]);
-            }
+            string strd = System.IO.Path.Combine(FDHelper.AppDir(),
+                                                     System.IO.Path.GetFileName(
+                                                         FDHelper.RgGetUserProfilePath()));
+            var coccyx =
+                BoneReader.GetBoneInfo(strd);
+            var coc = XRayController.TranslateBoneInformation(coccyx);
+            string[] sss = coc.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            seri = new Guid(sss[0]).ToString();
+            branchid = FDHelper.RgCodeOfUnit();
 
-            // Set company name
-            if (ss[1] != null)
-            {
-                clientInfo.Name = ss[1].ToString();
-            }
-
-
-            //clientInfo.Serial = FDHelper.get
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -57,20 +53,56 @@ namespace TechLink.WindowsClientSync
             //throw new NotImplementedException();
             var ProxyGenericServer = serverInterfacesHelper.ServerInterfacesDispatcher.GenericServer;
 
-            var canSync =
-                ProxyGenericServer.StartSync(new ClientInfo()
-                                                 {Name = FDHelper.RgCodeOfUnit(), Serial = FDHelper.RgGetSizeOfUnit()});
-            if(!canSync)
+            var token =
+                ProxyGenericServer.StartSync(branchid, seri);
+            if (string.IsNullOrEmpty(token))
             {
                 timer.Stop();
                 return;
             }
 
-            var UnSyncedUsers = UserFactory.SelectAllUnSyncedUser();
+            //Sync Company
+            var companies = DataModelManager.GetUnSyncedItems("tblCompany");
 
-            if (UnSyncedUsers.Count <= 20)
+            if (companies.Count() > 1000)
             {
-                
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (companies.Count() / 1000) + companies.Count() % 1000 > 0 ? 1 : 0;
+
+                while (!finished)
+                {
+                    var n = (from item in companies
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblCompany", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblCompany).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblCompany", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+
+                        finished = true;
+                }
+
+            }
+            else if (companies.Count()>0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblCompany", companies))
+                {
+                    foreach (object obj in companies)
+                    {
+                        (obj as tblCompany).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblCompany", companies);
+                }
             }
 
         }

@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Remoting;
+using System.ServiceModel;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading;
@@ -23,7 +24,7 @@ namespace TechLink.WindowsSync
     {
         private static IServerConsole serverActivator = null;
         WindowsServiceLog logging = new WindowsServiceLog();
-
+        ServiceHost deletionService = new ServiceHost(typeof(eCustomSyncWCF));
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
         
@@ -83,9 +84,13 @@ namespace TechLink.WindowsSync
                 logging.WriteEntry(exception, "eCustomSyncSvc c-tor");
             }
 
+            logging.WriteEntry("Starting the timer listener!");
             timer.Start();
 
-            logging.WriteEntry("Start Service successfully!");
+            logging.WriteEntry("Starting Deletion Service!");
+            deletionService.Open();
+
+            logging.WriteEntry("All Services Started successfully!");
         }
 
         protected override void OnStop()

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Objects.DataClasses;
 using System.Linq;
 using ECustoms.DAL;
 using ECustoms.Utilities;
@@ -7,7 +9,7 @@ using log4net;
 
 namespace ECustoms.BOL
 {
-  public class ApplicationObjectFactory
+  public class ApplicationObjectFactory:IDataModelCommand
   {
     public const string TOTAL_TICKET_IN_DATE = "TOTAL_TICKET_IN_DATE";
     public const string TOTAL_EXPORT_PARK_TICKET_IN_DATE = "TOTAL_EXPORT_PARK_TICKET_IN_DATE";
@@ -142,5 +144,96 @@ namespace ECustoms.BOL
             _db.Connection.Close();
         }
     }
+
+      #region Implementation of IDataModelCommand
+
+      public bool DeleteItem(string[] itemParams)
+      {
+          if (itemParams.Length < 2) return false;
+
+          int id = itemParams[0].StringToInt();
+          string branchId = itemParams[1];
+
+          try
+          {
+              var deleteItem =
+                  _db.tblApplicationObjects.FirstOrDefault(
+                      item => item.ApplicationObjectID == id && item.BranchId == branchId);
+              if(deleteItem!=null)
+              {
+                  _db.DeleteDirectly(deleteItem);
+                  _db.SaveChanges();
+              }
+
+              return true;
+          }
+          catch (Exception exception)
+          {
+              logger.Error(exception.ToString());
+              throw;
+          }
+          finally
+          {
+              _db.Connection.Close();
+          }
+      }
+
+      public bool BatchInsert(object[] items)
+      {
+          try
+          {
+              _db.Connection.Open();
+              foreach (object item in items)
+              {
+                  if (item is tblApplicationObject)
+                  {
+                      _db.AddObjectDirectly("tblApplicationObject", item);
+                  }
+              }
+
+              _db.SaveChanges();
+              return true;
+          }
+          catch (Exception ex)
+          {
+              logger.Error(ex.ToString());
+              throw;
+          }
+          finally
+          {
+              _db.Connection.Close();
+          }
+
+          return false;
+      }
+
+      public object[] GetUnSyncedItems()
+      {
+          try
+          {
+              _db.Connection.Open();
+              var lstUnSyncedItems = (from item in _db.tblApplicationObjects
+                                      where item.IsSynced == false
+                                      select item).ToArray();
+              _db.Connection.Close();
+              return lstUnSyncedItems;
+          }
+          catch (Exception ex)
+          {
+              logger.Error(ex.ToString());
+              throw;
+          }
+          finally
+          {
+              _db.Connection.Close();
+          }
+      }
+
+      public bool UpdatePatch(object[] items)
+      {
+          throw new NotImplementedException();
+      }
+
+      #endregion
   }
 }

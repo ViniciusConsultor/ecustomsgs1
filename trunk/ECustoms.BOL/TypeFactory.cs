@@ -6,10 +6,11 @@ using ECustoms.DAL;
 using ECustoms.Utilities;
 using System.Configuration;
 using System.Data;
+using log4net;
 
 namespace ECustoms.BOL
 {
-    public class TypeFactory
+    public class TypeFactory : IDataModelCommand
     {
 
         public static List<tblType> getAllType()
@@ -122,5 +123,57 @@ namespace ECustoms.BOL
                 _db.Connection.Close();
             }
         }
+
+        #region Implementation of IDataModelCommand
+
+        public bool DeleteItem(string[] itemParams)
+        {
+            if (itemParams.Length < 2) return false;
+
+            string id = itemParams[0];
+            string branchId = itemParams[1];
+
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+
+            try
+            {
+                var deleteItem =
+                    _db.tblTypes.FirstOrDefault(
+                        item => item.TypeCode == id && item.BranchId == branchId);
+                if (deleteItem != null)
+                {
+                    _db.DeleteDirectly(deleteItem);
+                    _db.SaveChanges();
+                }
+
+                return true;
+            }
+            catch (Exception exception)
+            {
+                LogManager.GetLogger("ECustoms.TypeFactory").Error(exception.ToString());
+                throw;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
+
+        public bool BatchInsert(object[] items)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object[] GetUnSyncedItems()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdatePatch(object[] items)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }
