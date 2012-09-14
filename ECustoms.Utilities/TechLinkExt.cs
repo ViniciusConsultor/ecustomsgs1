@@ -75,7 +75,12 @@ namespace ECustoms.Utilities
         /// <returns>Return True of the string is true or True, False if the string is False/false</returns>
         public static bool StringToBoolean(this string value)
         {
-            return bool.Parse(value);
+            bool rt = false;
+            if (bool.TryParse(value, out rt))
+            {
+                return rt;
+            }
+            return false;
         }
     }
 }
