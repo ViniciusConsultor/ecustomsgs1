@@ -25,7 +25,7 @@ namespace ECustoms
             if (ConfigurationManager.ConnectionStrings["dbEcusDeclaration"] == null) txtServer.Text = Dns.GetHostName();
             else
             {
-                var sConnection = ConfigurationManager.ConnectionStrings["dbEcusDeclaration"].ConnectionString;
+                var sConnection = Utilities.Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcusDeclaration"].ConnectionString, true);
                 txtServer.Text = getSubString(sConnection, "Data Source=");
                 if (sConnection.IndexOf("Integrated Security=") > 0)
                 {
@@ -48,6 +48,7 @@ namespace ECustoms
         }
         private string getSubString (string s, string sIndex, string sLastIndex = ";")
         {
+            if (s.LastIndexOf(sIndex) == -1) return string.Empty;
             var startIndex = s.LastIndexOf(sIndex) + sIndex.Length;
             var endIndex = s.IndexOf(sLastIndex, startIndex);
             var length = endIndex >= s.Length ? s.Length - startIndex : endIndex - startIndex;

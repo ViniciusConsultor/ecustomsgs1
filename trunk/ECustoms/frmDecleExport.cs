@@ -522,8 +522,9 @@ namespace ECustoms
                 this.BackColor = col;
                 lblHeader.Text = "Khai báo xuất cảnh";
                 gbExportDeclaration.Text = "Thông tin tờ khai xuất khẩu";
-                btnAddExisting.Text = "Thêm từ xe trong bãi xuất";
-                btnAddExisting.Enabled = true;
+                //btnAddExisting.Text = "Thêm từ xe trong bãi xuất";
+                btnAddExisting.Enabled = false;
+                btnAddVehicleExportParking.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_XUAT_CANH);
                 bntConfirmImportCH.Visible = false;
                 btnConfirmImportKH.Visible = false;
                 btnComfirmExport.Visible = true;
@@ -541,8 +542,8 @@ namespace ECustoms
                 this.BackColor = col;
                 lblHeader.Text = "Khai báo nhập cảnh";
                 gbExportDeclaration.Text = "Thông tin tờ khai nhập khẩu";
-                btnAddExisting.Enabled = true;
-                btnAddExisting.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_NHAP_CANH);
+                
+                btnAddExisting.Enabled = btnAddVehicleExportParking.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_THEM_PHUONG_TIEN_CHO_TO_KHAI_NHAP_CANH);
                 bntConfirmImportCH.Visible = true;
                 bntConfirmImportCH.Enabled = _userInfo.UserPermission.Contains(ConstantInfo.PERMISSON_XAC_NHAN_NHAP_CANH);
                 //bntConfirmImportCH.Location = new Point(865, 25);
@@ -1193,7 +1194,7 @@ namespace ECustoms
 
         private void btnAddExisting_Click(object sender, EventArgs e)
         {
-            //neu la khai bao nhap canh, thi them tu phuong tien da xuat canh
+            //neu la khai bao nhap canh, thi them tu phuong tien da xuat canh hoặc xe TQ
             if (_declerationType.Equals(Common.DeclerationType.Import))
             {
                 var frmSelect = new frmVehicleSelect(_declerationID);
@@ -1202,9 +1203,9 @@ namespace ECustoms
             }
             else //neu la khai bao xuat canh thi them tu phuont tien trong bai xuat
             {
-                var frmSelectExport = new FrmAddSelectVehichleFromExportPark(_declerationID);
-                frmSelectExport.OnSelectedVehichle += new FrmAddSelectVehichleFromExportPark.OnSelectedVehicleHandler(frmSelect_OnSelectedVehichle);
-                frmSelectExport.Show(this);
+                //var frmSelectExport = new FrmAddSelectVehichleFromExportPark(_declerationID);
+                //frmSelectExport.OnSelectedVehichle += new FrmAddSelectVehichleFromExportPark.OnSelectedVehicleHandler(frmSelect_OnSelectedVehichle);
+                //frmSelectExport.Show(this);
             }
         }
 
@@ -1537,6 +1538,13 @@ namespace ECustoms
             {
                 txtNumberTempInfo.Enabled = false;
             }
+        }
+
+        private void btnAddVehicleExportParking_Click(object sender, EventArgs e)
+        {
+            var frmSelectExport = new FrmAddSelectVehichleFromExportPark(_declerationID);
+            frmSelectExport.OnSelectedVehichle += new FrmAddSelectVehichleFromExportPark.OnSelectedVehicleHandler(frmSelect_OnSelectedVehichle);
+            frmSelectExport.Show(this);
         }
     }
 }
