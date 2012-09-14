@@ -191,17 +191,86 @@ namespace ECustoms.BOL
 
         public bool BatchInsert(object[] items)
         {
-            throw new NotImplementedException();
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+
+            try
+            {
+                _db.Connection.Open();
+                foreach (object item in items)
+                {
+                    _db.AddObjectDirectly("tblVehicleTypes", item);
+                }
+
+                _db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogManager.GetLogger("ECustoms.AllFactory").Error(ex.ToString());
+                throw;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+
+            return false;
         }
 
         public object[] GetUnSyncedItems()
         {
-            throw new NotImplementedException();
+
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            try
+            {
+                _db.Connection.Open();
+                var lstUnSyncedItems = (from item in _db.tblVehicleTypes
+                                        where item.IsSynced == false
+                                        select item).ToArray();
+                _db.Connection.Close();
+                return lstUnSyncedItems;
+            }
+            catch (Exception ex)
+            {
+                LogManager.GetLogger("ECustoms.AllFactory").Error(ex.ToString());
+                throw;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+
         }
 
         public bool UpdatePatch(object[] items)
         {
-            throw new NotImplementedException();
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+
+            try
+            {
+                _db.Connection.Open();
+                var updateItems = items.OfType<tblVehicleType>().ToList();
+
+                foreach (var updateItem in updateItems)
+                {
+                    var item =
+                        _db.tblVehicleTypes.FirstOrDefault(
+                            p => p.BranchId == updateItem.BranchId && p.VehicleTypeID == updateItem.VehicleTypeID);
+                    item.IsSynced = true;
+                }
+                _db.SaveChanges();
+                _db.Connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogManager.GetLogger("ECustoms.AllFactory").Error(ex.ToString());
+                throw;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
         }
 
         #endregion

@@ -222,26 +222,47 @@ namespace ECustoms.BOL
             try
             {
                 _db.Connection.Open();
+                var companies = items.OfType<tblCompany>().ToList();
 
-                foreach (object item in items)
+                foreach (var company in companies)
                 {
-                    tblCompany company = item as tblCompany;
-                    var updateItem =
+                    var item =
                         _db.tblCompanies.FirstOrDefault(
-                            p => p.CompanyCode == company.CompanyCode && p.BranchId == company.BranchId);
-                    if(updateItem!=null)
-                    {
-
-                        updateItem.CompanyName = company.CompanyName;
-                        updateItem.CreatedBy = company.CreatedBy;
-                        updateItem.CreatedDate = company.CreatedDate;
-                        updateItem.Description = company.Description;
-                        updateItem.IsSynced = company.IsSynced;
-                        updateItem.ModifiedBy = company.ModifiedBy;
-                        updateItem.ModifiedDate = company.ModifiedDate;
-                    }
+                            p => p.BranchId == company.BranchId && p.CompanyCode == company.CompanyCode);
+                    item.IsSynced = true;
                 }
 
+                //var nink = from i in companies
+                //           from company in _db.tblCompanies
+                //           let c = company.IsSynced = true 
+                //           where company.BranchId == i.BranchId &&
+                //                 company.CompanyCode == i.CompanyCode
+                //           select company;
+                
+                //var shit = nink.ToList();
+                //foreach (var company in nink)
+                //{
+                //    company.IsSynced = true;
+                //}
+
+                //foreach (object item in items)
+                //{
+                //    tblCompany company = item as tblCompany;
+                //    var updateItem =
+                //        _db.tblCompanies.FirstOrDefault(
+                //            p => p.CompanyCode == company.CompanyCode && p.BranchId == company.BranchId);
+                //    if (updateItem != null)
+                //    {
+
+                //        updateItem.CompanyName = company.CompanyName;
+                //        updateItem.CreatedBy = company.CreatedBy;
+                //        updateItem.CreatedDate = company.CreatedDate;
+                //        updateItem.Description = company.Description;
+                //        updateItem.IsSynced = company.IsSynced;
+                //        updateItem.ModifiedBy = company.ModifiedBy;
+                //        updateItem.ModifiedDate = company.ModifiedDate;
+                //    }
+                //}
                 _db.SaveChanges();
                 _db.Connection.Close();
                 return true;

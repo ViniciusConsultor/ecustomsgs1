@@ -213,7 +213,34 @@ namespace ECustoms.BOL
 
         public bool UpdatePatch(object[] items)
         {
-            throw new NotImplementedException();
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+
+            try
+            {
+                _db.Connection.Open();
+                var updateItems = items.OfType<tblVehicleFeeSetting>().ToList();
+
+                foreach (var updateItem in updateItems)
+                {
+                    var item =
+                        _db.tblVehicleFeeSettings.FirstOrDefault(
+                            p => p.BranchId == updateItem.BranchId && p.VehicleTypeId == updateItem.VehicleTypeId
+                            && p.GoodsTypeId == updateItem.GoodsTypeId);
+                    item.IsSynced = true;
+                }
+                _db.SaveChanges();
+                _db.Connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogManager.GetLogger("ECustoms.AllFactory").Error(ex.ToString());
+                throw;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
         }
 
         #endregion

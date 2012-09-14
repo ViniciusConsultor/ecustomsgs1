@@ -122,10 +122,7 @@ namespace ECustoms.BOL
                 _db.Connection.Open();
                 foreach (object item in items)
                 {
-                    if (item is tblCheck)
-                    {
-                        _db.AddObjectDirectly("tblCheck", item);
-                    }
+                    _db.AddObjectDirectly("tblChecks", item);
                 }
 
                 _db.SaveChanges();
@@ -170,7 +167,33 @@ namespace ECustoms.BOL
 
         public bool UpdatePatch(object[] items)
         {
-            throw new NotImplementedException();
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+
+            try
+            {
+                _db.Connection.Open();
+                var updateItems = items.OfType<tblCheck>().ToList();
+
+                foreach (var updateItem in updateItems)
+                {
+                    var item =
+                        _db.tblChecks.FirstOrDefault(
+                            p => p.BranchId == updateItem.BranchId && p.CheckID == updateItem.CheckID);
+                    item.IsSynced = true;
+                }
+                _db.SaveChanges();
+                _db.Connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogManager.GetLogger("ECustoms.CheckFactory").Error(ex.ToString());
+                throw;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
         }
 
         #endregion
