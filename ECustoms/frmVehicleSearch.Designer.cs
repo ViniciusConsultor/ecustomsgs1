@@ -98,6 +98,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.vehicleTicket = new ECustoms.vehicleTicket();
+            this.txtXeSangtai = new System.Windows.Forms.TextBox();
+            this.lblXeSangtai = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,7 +119,6 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleChangeGoodVN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleChangeGoodChinese = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +138,7 @@
             this.ConfirmLocalImportByName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModifiedByUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModifiedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbConditionSearch.SuspendLayout();
             this.grbResult.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -146,6 +148,8 @@
             // 
             // grbConditionSearch
             // 
+            this.grbConditionSearch.Controls.Add(this.txtXeSangtai);
+            this.grbConditionSearch.Controls.Add(this.lblXeSangtai);
             this.grbConditionSearch.Controls.Add(this.txtPlateNumberChinese);
             this.grbConditionSearch.Controls.Add(this.lblPlateNumberChinese);
             this.grbConditionSearch.Controls.Add(this.cbIsChineseVehicle);
@@ -183,7 +187,7 @@
             // 
             this.txtPlateNumberChinese.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.txtPlateNumberChinese.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPlateNumberChinese.Location = new System.Drawing.Point(509, 94);
+            this.txtPlateNumberChinese.Location = new System.Drawing.Point(494, 118);
             this.txtPlateNumberChinese.Name = "txtPlateNumberChinese";
             this.txtPlateNumberChinese.Size = new System.Drawing.Size(87, 20);
             this.txtPlateNumberChinese.TabIndex = 22;
@@ -192,7 +196,7 @@
             // lblPlateNumberChinese
             // 
             this.lblPlateNumberChinese.AutoSize = true;
-            this.lblPlateNumberChinese.Location = new System.Drawing.Point(338, 98);
+            this.lblPlateNumberChinese.Location = new System.Drawing.Point(338, 122);
             this.lblPlateNumberChinese.Name = "lblPlateNumberChinese";
             this.lblPlateNumberChinese.Size = new System.Drawing.Size(150, 13);
             this.lblPlateNumberChinese.TabIndex = 21;
@@ -798,6 +802,25 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // txtXeSangtai
+            // 
+            this.txtXeSangtai.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.txtXeSangtai.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtXeSangtai.Location = new System.Drawing.Point(494, 93);
+            this.txtXeSangtai.Name = "txtXeSangtai";
+            this.txtXeSangtai.Size = new System.Drawing.Size(87, 20);
+            this.txtXeSangtai.TabIndex = 24;
+            this.txtXeSangtai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtXeSangtai_KeyPress);
+            // 
+            // lblXeSangtai
+            // 
+            this.lblXeSangtai.AutoSize = true;
+            this.lblXeSangtai.Location = new System.Drawing.Point(338, 97);
+            this.lblXeSangtai.Name = "lblXeSangtai";
+            this.lblXeSangtai.Size = new System.Drawing.Size(130, 13);
+            this.lblXeSangtai.TabIndex = 23;
+            this.lblXeSangtai.Text = "Biển kiểm soát xe sang tải";
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "PlateNumber";
@@ -975,13 +998,6 @@
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
             this.dataGridViewTextBoxColumn19.Width = 200;
             // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "VehicleChangeGoodVN";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Xe sang tai";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            // 
             // PlateNumber
             // 
             this.PlateNumber.DataPropertyName = "PlateNumber";
@@ -1145,6 +1161,13 @@
             this.ModifiedDate.ReadOnly = true;
             this.ModifiedDate.Width = 200;
             // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "VehicleChangeGoodVN";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Xe sang tai";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
             // frmVehicleSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1269,5 +1292,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ModifiedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.TextBox txtXeSangtai;
+        private System.Windows.Forms.Label lblXeSangtai;
     }
 }

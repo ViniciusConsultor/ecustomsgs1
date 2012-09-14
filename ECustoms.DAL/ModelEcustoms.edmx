@@ -591,7 +591,8 @@
       [ViewVehicleFreight].[DeclarationType] AS [DeclarationType], 
       [ViewVehicleFreight].[GoodTypeName] AS [GoodTypeName], 
       [ViewVehicleFreight].[FeeAmount] AS [FeeAmount], 
-      [ViewVehicleFreight].[BranchId] AS [BranchId]
+      [ViewVehicleFreight].[BranchId] AS [BranchId], 
+      [ViewVehicleFreight].[Type] AS [Type]
       FROM [dbo].[ViewVehicleFreight] AS [ViewVehicleFreight]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewVehicleOverdue" EntityType="dbEcustomModel.Store.ViewVehicleOverdue" store:Type="Views" store:Schema="dbo" store:Name="ViewVehicleOverdue">
@@ -1707,6 +1708,7 @@
           <Property Name="GoodTypeName" Type="nvarchar" MaxLength="500" />
           <Property Name="FeeAmount" Type="bigint" />
           <Property Name="BranchId" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="Type" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'dbEcustom.dbo.ViewVehicleOverdue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -2821,6 +2823,7 @@
           <Property Type="String" Name="GoodTypeName" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Int64" Name="FeeAmount" />
           <Property Type="String" Name="BranchId" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ViewVehicleOverdue">
           <Key>
@@ -3872,6 +3875,7 @@
           <EntitySetMapping Name="ViewVehicleFreights">
             <EntityTypeMapping TypeName="dbEcustomModel.ViewVehicleFreight">
               <MappingFragment StoreEntitySet="ViewVehicleFreight">
+                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="BranchId" ColumnName="BranchId" />
                 <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
                 <ScalarProperty Name="GoodTypeName" ColumnName="GoodTypeName" />
@@ -3959,7 +3963,7 @@
         <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVechicleExport" Width="1.5" PointX="6.75" PointY="18.75" Height="11.403056640624982" />
         <EntityTypeShape EntityType="dbEcustomModel.viewDeclarationVehicle" Width="1.5" PointX="8.75" PointY="18.75" Height="6.78782226562501" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImport" Width="1.5" PointX="18.75" PointY="11.75" Height="11.403056640624982" />
-        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="1.5" PointX="20.75" PointY="0.75" Height="12.172262369791667" />
+        <EntityTypeShape EntityType="dbEcustomModel.ViewDeclarationVehicleImportExportFee" Width="2" PointX="20.75" PointY="0.75" Height="12.172262369791667" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewGetCurrentDate" Width="1.5" PointX="20.75" PointY="13.75" Height="1.2110807291666674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewUserGroup" Width="1.5" PointX="20.75" PointY="15.75" Height="1.9802864583333388" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFee" Width="1.5" PointX="20.75" PointY="18.75" Height="4.0956022135416674" />
