@@ -9,10 +9,16 @@ using ECustoms.Utilities;
 using Point = System.Drawing.Point;
 using log4net;
 using ECustoms.DAL;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using ECustoms.Utilities.Enums;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
 
 namespace ECustoms
 {
-    public partial class frmDeclerationOptionInfo : SubFormBase
+    public partial class frmDeclerationOptionInfo : Form
     {
         private readonly ILog logger = LogManager.GetLogger("Ecustoms.frmDeclerationOptionInfo");
 
@@ -147,7 +153,7 @@ namespace ECustoms
                 result = result.OrderByDescending(p => p.ModifiedDate).ToList();
                 grvDecleration.AutoGenerateColumns = false;
                 grvDecleration.DataSource = result;
-
+                _listDeclarationinfo = result;
                 for (int i = 0; i < grvDecleration.Rows.Count; i++)
                 {
                     var declarationType = grvDecleration.Rows[i].Cells["DeclarationType"].Value;
@@ -385,6 +391,91 @@ namespace ECustoms
                 MessageBox.Show("Không tồn tại mã cửa khẩu này");
                 txtExportGateCode.Focus();
             }
+        }
+
+        private void btnPrintReport_Click(object sender, EventArgs e)
+        {
+            ECustoms.HandoverStatisticReport report = new HandoverStatisticReport();
+            // Cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+            // Chi cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
+
+            //StringBuilder buffer = new StringBuilder();
+            //buffer.Append(" SELECT * FROM ViewAllDeclarationTNTX ");
+            //buffer.Append(" WHERE DeclarationID != 0 AND DeclarationID != 1 ");
+
+
+            //var connection = new SqlConnection(Common.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["connectionString"], true));
+
+            //var adpater = new SqlDataAdapter(buffer.ToString(), connection);
+            //var dt = new DataTable();
+            //adpater.Fill(dt);
+            //report.SetDataSource(dt);
+
+            DataSet2 dataSet2 = new DataSet2();
+            DataTable table1 = dataSet2.ViewAllDeclarationTNTX;
+            foreach (ViewAllDeclaration obj in _listDeclarationinfo)
+            {
+                table1.Rows.Add(
+                    obj.DeclarationID,
+                    obj.Number,
+                    null,
+                    null,
+                    null,
+                    obj.Unit,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    obj.RegisterDate,
+                    null,
+                    null,
+                    null,
+                    obj.RegisterPlace,
+                    null,
+                    obj.NumberHandover,
+                    obj.DateHandover,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    obj.Seal,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null);
+            }
+
+            report.SetDataSource(dataSet2);
+            //preview report
+            var reportForm = new FrmCrystalReport(report, _userInfo);
+            reportForm.MaximizeBox = true;
+            reportForm.Show(this);
+
+        }
+
+        private string GetUserConfig()
+        {
+            var profileConfig = UserFactory.GetProfileConfigByUserId(_userInfo.UserID);
+            foreach (var config in profileConfig)
+            {
+                if (config.Type == (int)ProfileConfig.SuperiorCompany)
+                {
+                    return config.Value;
+                }
+            }
+            return "";
         }
 
     }

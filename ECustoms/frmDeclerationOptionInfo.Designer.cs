@@ -111,6 +111,7 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnPrintReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.pnExportGate.SuspendLayout();
             this.pnCustom.SuspendLayout();
@@ -793,11 +794,28 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Width = 50;
             // 
+            // btnPrintReport
+            // 
+            this.btnPrintReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnPrintReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnPrintReport.Image = global::ECustoms.Properties.Resources.print_icon;
+            this.btnPrintReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrintReport.Location = new System.Drawing.Point(282, 403);
+            this.btnPrintReport.Name = "btnPrintReport";
+            this.btnPrintReport.Size = new System.Drawing.Size(86, 28);
+            this.btnPrintReport.TabIndex = 23;
+            this.btnPrintReport.Text = "&In báo cáo";
+            this.btnPrintReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrintReport.UseVisualStyleBackColor = true;
+            this.btnPrintReport.Click += new System.EventHandler(this.btnPrintReport_Click);
+            // 
             // frmDeclerationOptionInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 449);
+            this.Controls.Add(this.btnPrintReport);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.groupBox1);
@@ -894,5 +912,6 @@
         public System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtExportGateCode;
         public System.Windows.Forms.Label lblGateEx;
+        private System.Windows.Forms.Button btnPrintReport;
     }
 }
