@@ -308,6 +308,12 @@
     <Compile Include="frmVehicleOverdue.Designer.cs">
       <DependentUpon>frmVehicleOverdue.cs</DependentUpon>
     </Compile>
+    <Compile Include="HandoverStatisticReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandoverStatisticReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="HandoverTempImportReExport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -698,6 +704,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVehicleOverdue.resx">
       <DependentUpon>frmVehicleOverdue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandoverStatisticReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HandoverStatisticReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="HandoverTempImportReExport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

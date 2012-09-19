@@ -62,6 +62,7 @@ namespace ECustoms
             declarationInfo.PersonHandoverID = _userInfo.UserID;
             //declarationInfo.DateReturn = dtpReturn.Value;
             declarationInfo.TypeOption = (short)_declerationOptionType;
+            declarationInfo.CustomsCode = txtCustomsCode.Text.Trim();  
             if (_declerationOptionType == Common.DeclerationOptionType.TNTX)
             {
                 declarationInfo.NumberTemp = !string.IsNullOrEmpty(txtNumberTemp.Text) ? txtNumberTemp.Text.Trim() : "";
@@ -84,10 +85,10 @@ namespace ECustoms
 
         private bool Validate()
         {
-            if (!techlinkErrorProvider1.Validate(this))
-            {
-                return false;
-            }
+            //if (!techlinkErrorProvider1.Validate(this))
+            //{
+            //    return false;
+            //}
             // Validate export declaration
             if (string.IsNullOrEmpty(txtExportNumber.Text.Trim()))
             {
@@ -111,7 +112,7 @@ namespace ECustoms
             }
 
             var customCode = txtCustomsCode.Text.Trim();
-            if (string.IsNullOrEmpty(customCode))
+            if (string.IsNullOrEmpty(customCode)==false)
             {
                 var custom = CustomsFacory.FindByCode(customCode);
                 if (custom != null)
@@ -123,6 +124,7 @@ namespace ECustoms
                     return false;    
                 }
             }
+            
             
             if (pnImportGate.Visible)
             {
@@ -474,7 +476,7 @@ namespace ECustoms
             // Chi cuc hai quan
             ((TextObject)report.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
 
-            ((TextObject)report.Section1.ReportObjects["txtHandoverNumber"]).Text = declarationInfo.NumberHandover!=null? declarationInfo.NumberHandover.ToString() : ""; 
+            //((TextObject)report.Section1.ReportObjects["txtHandoverNumber"]).Text = declarationInfo.NumberHandover!=null? declarationInfo.NumberHandover.ToString() : ""; 
 
             if( declarationInfo.DateHandover != null )
             {
@@ -498,7 +500,7 @@ namespace ECustoms
             var dt = new DataTable();
             adpater.Fill(dt);
             report.SetDataSource(dt);
-            //preview ticket
+            //preview report
             var reportForm = new FrmCrystalReport(report, _userInfo);
             reportForm.MaximizeBox = true;
             reportForm.Show(this);
