@@ -42,12 +42,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
-            this.pnXKCK = new System.Windows.Forms.Panel();
             this.pnTNTX = new System.Windows.Forms.Panel();
             this.txtNumberTemp = new System.Windows.Forms.TextBox();
             this.lblNumberTemp = new System.Windows.Forms.Label();
             this.lblSeal = new System.Windows.Forms.Label();
             this.txtSeal = new System.Windows.Forms.TextBox();
+            this.pnXKCK = new System.Windows.Forms.Panel();
             this.grvVehicle = new System.Windows.Forms.DataGridView();
             this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,8 +117,8 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.cachedXuatCanhXeKhong1 = new ECustoms.CachedXuatCanhXeKhong();
             this.groupBoxVehicle.SuspendLayout();
-            this.pnXKCK.SuspendLayout();
             this.pnTNTX.SuspendLayout();
+            this.pnXKCK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).BeginInit();
             this.pnImportGate.SuspendLayout();
             this.pnExportGate.SuspendLayout();
@@ -188,6 +188,7 @@
             // 
             // groupBoxVehicle
             // 
+            this.groupBoxVehicle.Controls.Add(this.pnTNTX);
             this.groupBoxVehicle.Controls.Add(this.pnXKCK);
             this.groupBoxVehicle.Controls.Add(this.pnImportGate);
             this.groupBoxVehicle.Controls.Add(this.txtPersonConfirmReturn);
@@ -208,26 +209,13 @@
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Thông tin bổ sung";
             // 
-            // pnXKCK
-            // 
-            this.pnXKCK.Controls.Add(this.pnTNTX);
-            this.pnXKCK.Controls.Add(this.grvVehicle);
-            this.pnXKCK.Controls.Add(this.lblStatus);
-            this.pnXKCK.Controls.Add(this.label11);
-            this.pnXKCK.Controls.Add(this.label10);
-            this.pnXKCK.Location = new System.Drawing.Point(279, 19);
-            this.pnXKCK.Name = "pnXKCK";
-            this.pnXKCK.Size = new System.Drawing.Size(426, 176);
-            this.pnXKCK.TabIndex = 5;
-            this.pnXKCK.Visible = false;
-            // 
             // pnTNTX
             // 
             this.pnTNTX.Controls.Add(this.txtNumberTemp);
             this.pnTNTX.Controls.Add(this.lblNumberTemp);
             this.pnTNTX.Controls.Add(this.lblSeal);
             this.pnTNTX.Controls.Add(this.txtSeal);
-            this.pnTNTX.Location = new System.Drawing.Point(7, 23);
+            this.pnTNTX.Location = new System.Drawing.Point(279, 19);
             this.pnTNTX.Name = "pnTNTX";
             this.pnTNTX.Size = new System.Drawing.Size(324, 64);
             this.pnTNTX.TabIndex = 6;
@@ -264,6 +252,18 @@
             this.txtSeal.Name = "txtSeal";
             this.txtSeal.Size = new System.Drawing.Size(183, 20);
             this.txtSeal.TabIndex = 1;
+            // 
+            // pnXKCK
+            // 
+            this.pnXKCK.Controls.Add(this.grvVehicle);
+            this.pnXKCK.Controls.Add(this.lblStatus);
+            this.pnXKCK.Controls.Add(this.label11);
+            this.pnXKCK.Controls.Add(this.label10);
+            this.pnXKCK.Location = new System.Drawing.Point(279, 19);
+            this.pnXKCK.Name = "pnXKCK";
+            this.pnXKCK.Size = new System.Drawing.Size(426, 176);
+            this.pnXKCK.TabIndex = 5;
+            this.pnXKCK.Visible = false;
             // 
             // grvVehicle
             // 
@@ -948,14 +948,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmDecleExportOption";
+            this.ShowInTaskbar = false;
             this.Text = "Khai báo xuất cảnh";
             this.Load += new System.EventHandler(this.FrmDecleOption_Load);
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
-            this.pnXKCK.ResumeLayout(false);
-            this.pnXKCK.PerformLayout();
             this.pnTNTX.ResumeLayout(false);
             this.pnTNTX.PerformLayout();
+            this.pnXKCK.ResumeLayout(false);
+            this.pnXKCK.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).EndInit();
             this.pnImportGate.ResumeLayout(false);
             this.pnImportGate.PerformLayout();
