@@ -380,6 +380,7 @@ namespace ECustoms
             txtMoney.Text = "";
             cbTNTX.SelectedIndex = 0;
             txtNumberTemp.Text = "";
+            txtNumberTempInfo.Text = "";
             _statusFee = 0;
         }
 

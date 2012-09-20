@@ -325,8 +325,8 @@
             this.nhậpKhẩuChuyểnCửaKhẩuToolStripMenuItem,
             this.hàngTạmNhậpTáiXuấtToolStripMenuItem});
             this.quảnLýHàngNTXCKToolStripMenuItem.Name = "quảnLýHàngNTXCKToolStripMenuItem";
-            this.quảnLýHàngNTXCKToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
-            this.quảnLýHàngNTXCKToolStripMenuItem.Text = "Quản lý hàng &NTX, CK";
+            this.quảnLýHàngNTXCKToolStripMenuItem.Size = new System.Drawing.Size(141, 20);
+            this.quảnLýHàngNTXCKToolStripMenuItem.Text = "Quản lý tt hàng &NTX, CK";
             // 
             // xuấtKhẩuChuyểnCửaKhẩuToolStripMenuItem
             // 
@@ -445,8 +445,8 @@
             this.mnuHandover2,
             this.mnuDeclarationManager});
             this.mnuDeclerationFilesManagement.Name = "mnuDeclerationFilesManagement";
-            this.mnuDeclerationFilesManagement.Size = new System.Drawing.Size(98, 20);
-            this.mnuDeclerationFilesManagement.Text = "Quản lý tờ k&hai";
+            this.mnuDeclerationFilesManagement.Size = new System.Drawing.Size(175, 20);
+            this.mnuDeclerationFilesManagement.Text = "Quản lý tt luân chuyển tờ k&hai";
             // 
             // mnuHandover1
             // 
@@ -619,7 +619,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1140, 624);
+            this.ClientSize = new System.Drawing.Size(1140, 632);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

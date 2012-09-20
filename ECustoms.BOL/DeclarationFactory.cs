@@ -28,6 +28,7 @@ namespace ECustoms.BOL
             // Set Created date and Last modified date
             declarationInfo.CreatedDate = currentDate;
             declarationInfo.ModifiedDate = currentDate;
+            declarationInfo.CreatedByID = userID;
             db.AddTotblDeclarations(declarationInfo);
             db.SaveChanges();
             // Return if insert fail
