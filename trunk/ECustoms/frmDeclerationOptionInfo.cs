@@ -430,7 +430,7 @@ namespace ECustoms
                     null,
                     null,
                     null,
-                    null,
+                    obj.Type,
                     null,
                     obj.RegisterDate,
                     null,
