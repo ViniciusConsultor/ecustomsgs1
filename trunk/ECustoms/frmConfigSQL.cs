@@ -95,8 +95,22 @@ namespace ECustoms
                         connectionStringsSection.ConnectionStrings["dbEcustomEntities"].ConnectionString = Utilities.Common.Encrypt(cnn, true);    
                     }
                     
+                    //Save config for report
+                    var appSettingSection = (AppSettingsSection)config.GetSection("appSettings");
+                    var cnnReport = SqlAccessor.Instance().ConnectionString;
+                    if (appSettingSection.Settings["connectionString"] == null)
+                    {
+                        appSettingSection.Settings.Add("connectionString", Utilities.Common.Encrypt(cnnReport, true));
+                    }
+                    else
+                    {
+                        appSettingSection.Settings["connectionString"].Value = Utilities.Common.Encrypt(cnnReport, true);
+                    }
+
+                    //save and refresh
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
+                    ConfigurationManager.RefreshSection("appSettings");
                     this.Close();
                 }
                 else
