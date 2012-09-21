@@ -116,6 +116,7 @@
             this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
             this.btnReport = new System.Windows.Forms.Button();
             this.cachedXuatCanhXeKhong1 = new ECustoms.CachedXuatCanhXeKhong();
+            this.btnReportQC = new System.Windows.Forms.Button();
             this.groupBoxVehicle.SuspendLayout();
             this.pnTNTX.SuspendLayout();
             this.pnXKCK.SuspendLayout();
@@ -134,7 +135,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button1.Image = global::ECustoms.Properties.Resources.Exit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(670, 442);
+            this.button1.Location = new System.Drawing.Point(664, 443);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 28);
             this.button1.TabIndex = 4;
@@ -150,7 +151,7 @@
             this.btConfirmReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btConfirmReturn.Image = global::ECustoms.Properties.Resources.accept;
             this.btConfirmReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btConfirmReturn.Location = new System.Drawing.Point(577, 442);
+            this.btConfirmReturn.Location = new System.Drawing.Point(573, 443);
             this.btConfirmReturn.Name = "btConfirmReturn";
             this.btConfirmReturn.Size = new System.Drawing.Size(85, 28);
             this.btConfirmReturn.TabIndex = 3;
@@ -166,7 +167,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdate.Image = global::ECustoms.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(459, 442);
+            this.btnUpdate.Location = new System.Drawing.Point(457, 443);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(110, 28);
             this.btnUpdate.TabIndex = 2;
@@ -931,6 +932,22 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // btnReportQC
+            // 
+            this.btnReportQC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnReportQC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportQC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnReportQC.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnReportQC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportQC.Location = new System.Drawing.Point(151, 443);
+            this.btnReportQC.Name = "btnReportQC";
+            this.btnReportQC.Size = new System.Drawing.Size(164, 28);
+            this.btnReportQC.TabIndex = 23;
+            this.btnReportQC.Text = "In biên bản hàng Quá cảnh";
+            this.btnReportQC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportQC.UseVisualStyleBackColor = true;
+            this.btnReportQC.Click += new System.EventHandler(this.btnReportQC_Click);
+            // 
             // FrmDecleExportOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -938,6 +955,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(749, 495);
+            this.Controls.Add(this.btnReportQC);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btConfirmReturn);
             this.Controls.Add(this.btnUpdate);
@@ -1050,5 +1068,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IsExport;
         private System.Windows.Forms.Button btnReport;
         private CachedXuatCanhXeKhong cachedXuatCanhXeKhong1;
+        private System.Windows.Forms.Button btnReportQC;
     }
 }

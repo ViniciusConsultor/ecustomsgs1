@@ -55,6 +55,13 @@ namespace ECustoms
             crystalReportViewer1.ReportSource = report;
             this.WindowState = FormWindowState.Maximized;
         }
+        public FrmCrystalReport(HandoverQuaCanh report, UserInfo userInfo)
+        {
+            InitializeComponent();
+            _userInfo = userInfo;
+            crystalReportViewer1.ReportSource = report;
+            this.WindowState = FormWindowState.Maximized;
+        }
 
         public FrmCrystalReport(HandoverStatisticReport report, UserInfo userInfo)
         {

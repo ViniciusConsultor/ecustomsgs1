@@ -195,6 +195,7 @@ namespace ECustoms
                     txtExportGateCode.AutoCompleteCustomSource = auto;
                     pnExportGate.Visible = true;
                     txtExportGateCode.Tag = "required";
+                    btnReportQC.Visible = false;
                     break;
                 default:
                     break;
@@ -516,6 +517,48 @@ namespace ECustoms
                 }
             }
             return "";
+        }
+
+        private void btnReportQC_Click(object sender, EventArgs e)
+        {
+            // Get Decleration information
+            var declarationInfo = DeclarationFactory.GetByID(this._declerationID);
+
+            var report = new HandoverQuaCanh();
+            // Cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["SuperiorCompany"]).Text = GetUserConfig().ToUpper();
+            // Chi cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["CompanyName"]).Text = GlobalInfo.CompanyName.ToUpper();
+
+            //((TextObject)report.Section1.ReportObjects["txtHandoverNumber"]).Text = declarationInfo.NumberHandover!=null? declarationInfo.NumberHandover.ToString() : ""; 
+
+            if (declarationInfo.DateHandover != null)
+            {
+                ((TextObject)report.Section1.ReportObjects["txtDate"]).Text = "Hồi " + declarationInfo.DateHandover.Value.Hour + " giờ " + declarationInfo.DateHandover.Value.Minute + " phút, " + "ngày " + declarationInfo.DateHandover.Value.Day + " tháng " + declarationInfo.DateHandover.Value.Month + " năm " + declarationInfo.DateHandover.Value.Year + ",";
+            }
+
+            // Chi cuc hai quan
+            ((TextObject)report.Section1.ReportObjects["txtBranchName"]).Text = GlobalInfo.CompanyName.ToUpper();
+            ((TextObject)report.Section1.ReportObjects["txtBranchName"]).Text = GlobalInfo.CompanyName.ToUpper();
+
+            ((TextObject)report.Section1.ReportObjects["txtCompany"]).Text = declarationInfo.CompanyName;
+            ((TextObject)report.Section1.ReportObjects["txtNumber"]).Text = declarationInfo.Number.ToString();
+
+            StringBuilder buffer = new StringBuilder();
+            buffer.Append(" SELECT    * FROM ViewAllDeclarationTNTX ");
+            buffer.Append(" WHERE ");
+            buffer.Append(" DeclarationID = " + _declerationID);
+
+            var connection = new SqlConnection(Common.Decrypt(System.Configuration.ConfigurationSettings.AppSettings["connectionString"], true));
+
+            var adpater = new SqlDataAdapter(buffer.ToString(), connection);
+            var dt = new DataTable();
+            adpater.Fill(dt);
+            report.SetDataSource(dt);
+            //preview report
+            var reportForm = new FrmCrystalReport(report, _userInfo);
+            reportForm.MaximizeBox = true;
+            reportForm.Show(this);
         }
     }
 }
