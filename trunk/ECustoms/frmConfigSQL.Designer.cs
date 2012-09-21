@@ -227,7 +227,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConfigSQL";
             this.ShowInTaskbar = false;
-            this.Text = "Cau hinh ket noi SQL";
+            this.Text = "";
+            this.Load += new System.EventHandler(this.frmConfigSQL_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
