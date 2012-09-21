@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using TechLink.DatabaseViewer.DataAccess;
+using ECustoms.Utilities;
 
 namespace ECustoms
 {
@@ -140,6 +141,11 @@ namespace ECustoms
                 }
 
             }
+        }
+
+        private void frmConfigSQL2DbEcus_Load(object sender, EventArgs e)
+        {
+            this.Text = "Cau hinh ket noi CSDL hai quan" + ConstantInfo.MESSAGE_TITLE + GlobalInfo.CompanyName;
         }
     }
 }

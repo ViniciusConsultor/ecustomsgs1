@@ -228,6 +228,7 @@
             this.Name = "frmConfigSQL2DbEcus";
             this.ShowInTaskbar = false;
             this.Text = "Cau hinh ket noi SQL";
+            this.Load += new System.EventHandler(this.frmConfigSQL2DbEcus_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
