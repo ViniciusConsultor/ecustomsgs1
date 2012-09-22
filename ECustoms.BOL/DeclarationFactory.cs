@@ -24,6 +24,7 @@ namespace ECustoms.BOL
             var currentDate = CommonFactory.GetCurrentDate();
             var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
 
+            //--------------Luu vào bảng tờ khai ----------------
             //declarationInfo.tblUser = db.tblUsers.Where(g => g.UserID.Equals(userID)).FirstOrDefault();
             // Set Created date and Last modified date
             declarationInfo.CreatedDate = currentDate;
@@ -33,6 +34,8 @@ namespace ECustoms.BOL
             db.SaveChanges();
             // Return if insert fail
             if (declarationInfo.DeclarationID <= 0) return -1;
+            
+            // -------- Trong trường hợp đây là tạo mới, thì add vehicle ---------------
             // Add vehicle
             foreach (var vehicle in vehicleInfos)
             {
@@ -59,12 +62,14 @@ namespace ECustoms.BOL
                 // Add data to tblDecleVehicle
             }
 
+            // -------- Trong trường hợp đây là cập nhật, thì add vehicle ---------------
+
             // Update the vehicle
             if (listVehicleUpdate.Count > 0)
             {
                 foreach (var vehicle in listVehicleUpdate)
                 {
-                    // Update Vehicle infor
+                    // Update Vehicle info
                     VehicleFactory.UpdateVehicle(vehicle, 0);
                     // Add to tblDeclerateVehcle
                     var declerartionTem =
@@ -77,7 +82,13 @@ namespace ECustoms.BOL
 
                     //update tblVehicleChange 
                     VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
-                    VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x=>x.VehicleId).ToList());
+
+                    //TODO: Mr Huy kiem tra lai cai nay
+                    if(vehicle.ListVehicleChangeGood != null) 
+                    {
+                        VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x => x.VehicleId).ToList());
+                    }
+                   
                     db.SaveChanges();
                 }
             }
