@@ -88,12 +88,14 @@ namespace ECustoms
                 cbVehicleType.Focus();
                 return false;    
             }
-            if (cbGoodType.SelectedIndex == 0)
-            {
-                MessageBox.Show("Bạn phải chọn loại hàng hóa xuất!");
-                cbGoodType.Focus();
-                return false;      
-            }
+
+            // ------- Tạm thởi bỏ validate cho loại hàng hóa xuất --> Phục vụ cửa khẩu Hữu Nghị -------
+            //if (cbGoodType.SelectedIndex == 0)
+            //{
+            //    MessageBox.Show("Bạn phải chọn loại hàng hóa xuất!");
+            //    cbGoodType.Focus();
+            //    return false;      
+            //}
 
             return true;
         }
