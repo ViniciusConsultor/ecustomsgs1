@@ -112,6 +112,7 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnPrintReport = new System.Windows.Forms.Button();
+            this.btnReportBBBG = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.pnExportGate.SuspendLayout();
             this.pnCustom.SuspendLayout();
@@ -801,14 +802,30 @@
             this.btnPrintReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnPrintReport.Image = global::ECustoms.Properties.Resources.print_icon;
             this.btnPrintReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrintReport.Location = new System.Drawing.Point(282, 403);
+            this.btnPrintReport.Location = new System.Drawing.Point(247, 403);
             this.btnPrintReport.Name = "btnPrintReport";
-            this.btnPrintReport.Size = new System.Drawing.Size(86, 28);
+            this.btnPrintReport.Size = new System.Drawing.Size(121, 28);
             this.btnPrintReport.TabIndex = 23;
-            this.btnPrintReport.Text = "&In báo cáo";
+            this.btnPrintReport.Text = "&Thống kê hồi báo";
             this.btnPrintReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrintReport.UseVisualStyleBackColor = true;
             this.btnPrintReport.Click += new System.EventHandler(this.btnPrintReport_Click);
+            // 
+            // btnReportBBBG
+            // 
+            this.btnReportBBBG.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnReportBBBG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportBBBG.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnReportBBBG.Image = global::ECustoms.Properties.Resources.edit;
+            this.btnReportBBBG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportBBBG.Location = new System.Drawing.Point(238, 403);
+            this.btnReportBBBG.Name = "btnReportBBBG";
+            this.btnReportBBBG.Size = new System.Drawing.Size(130, 28);
+            this.btnReportBBBG.TabIndex = 24;
+            this.btnReportBBBG.Text = "In biên bản bàn giao";
+            this.btnReportBBBG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportBBBG.UseVisualStyleBackColor = true;
+            this.btnReportBBBG.Click += new System.EventHandler(this.btnReportBBBG_Click);
             // 
             // frmDeclerationOptionInfo
             // 
@@ -822,6 +839,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.grbDecleration);
+            this.Controls.Add(this.btnReportBBBG);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDeclerationOptionInfo";
             this.ShowInTaskbar = false;
@@ -913,5 +931,6 @@
         private System.Windows.Forms.TextBox txtExportGateCode;
         public System.Windows.Forms.Label lblGateEx;
         private System.Windows.Forms.Button btnPrintReport;
+        private System.Windows.Forms.Button btnReportBBBG;
     }
 }

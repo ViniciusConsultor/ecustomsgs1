@@ -42,6 +42,11 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
+            this.pnExportGate = new System.Windows.Forms.Panel();
+            this.txtExportGateName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtExportGateCode = new System.Windows.Forms.TextBox();
+            this.lblGateEx = new System.Windows.Forms.Label();
             this.pnTNTX = new System.Windows.Forms.Panel();
             this.txtNumberTemp = new System.Windows.Forms.TextBox();
             this.lblNumberTemp = new System.Windows.Forms.Label();
@@ -59,11 +64,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pnImportGate = new System.Windows.Forms.Panel();
-            this.pnExportGate = new System.Windows.Forms.Panel();
-            this.txtExportGateName = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtExportGateCode = new System.Windows.Forms.TextBox();
-            this.lblGateEx = new System.Windows.Forms.Label();
             this.txtImportGateName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtImportGateCode = new System.Windows.Forms.TextBox();
@@ -118,11 +118,11 @@
             this.cachedXuatCanhXeKhong1 = new ECustoms.CachedXuatCanhXeKhong();
             this.btnReportQC = new System.Windows.Forms.Button();
             this.groupBoxVehicle.SuspendLayout();
+            this.pnExportGate.SuspendLayout();
             this.pnTNTX.SuspendLayout();
             this.pnXKCK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).BeginInit();
             this.pnImportGate.SuspendLayout();
-            this.pnExportGate.SuspendLayout();
             this.gbExportDeclaration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -202,6 +202,7 @@
             this.groupBoxVehicle.Controls.Add(this.label3);
             this.groupBoxVehicle.Controls.Add(this.label4);
             this.groupBoxVehicle.Controls.Add(this.txtNumberHandover);
+            this.groupBoxVehicle.Controls.Add(this.pnExportGate);
             this.groupBoxVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBoxVehicle.Location = new System.Drawing.Point(12, 213);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
@@ -209,6 +210,53 @@
             this.groupBoxVehicle.TabIndex = 1;
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Thông tin bổ sung";
+            // 
+            // pnExportGate
+            // 
+            this.pnExportGate.Controls.Add(this.txtExportGateName);
+            this.pnExportGate.Controls.Add(this.label12);
+            this.pnExportGate.Controls.Add(this.txtExportGateCode);
+            this.pnExportGate.Controls.Add(this.lblGateEx);
+            this.pnExportGate.Location = new System.Drawing.Point(9, 161);
+            this.pnExportGate.Name = "pnExportGate";
+            this.pnExportGate.Size = new System.Drawing.Size(268, 57);
+            this.pnExportGate.TabIndex = 31;
+            this.pnExportGate.Visible = false;
+            // 
+            // txtExportGateName
+            // 
+            this.txtExportGateName.Location = new System.Drawing.Point(128, 28);
+            this.txtExportGateName.Name = "txtExportGateName";
+            this.txtExportGateName.ReadOnly = true;
+            this.txtExportGateName.Size = new System.Drawing.Size(134, 20);
+            this.txtExportGateName.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(-3, 28);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 13);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Tên Cửa khẩu xuất";
+            // 
+            // txtExportGateCode
+            // 
+            this.txtExportGateCode.Location = new System.Drawing.Point(130, 0);
+            this.txtExportGateCode.Name = "txtExportGateCode";
+            this.txtExportGateCode.Size = new System.Drawing.Size(106, 20);
+            this.txtExportGateCode.TabIndex = 0;
+            this.txtExportGateCode.Tag = "";
+            this.txtExportGateCode.Leave += new System.EventHandler(this.txtExportGateCode_Leave);
+            // 
+            // lblGateEx
+            // 
+            this.lblGateEx.AutoSize = true;
+            this.lblGateEx.Location = new System.Drawing.Point(-4, 3);
+            this.lblGateEx.Name = "lblGateEx";
+            this.lblGateEx.Size = new System.Drawing.Size(94, 13);
+            this.lblGateEx.TabIndex = 30;
+            this.lblGateEx.Text = "Mã Cửa khẩu xuất";
             // 
             // pnTNTX
             // 
@@ -373,63 +421,15 @@
             // 
             // pnImportGate
             // 
-            this.pnImportGate.Controls.Add(this.pnExportGate);
             this.pnImportGate.Controls.Add(this.txtImportGateName);
             this.pnImportGate.Controls.Add(this.label13);
             this.pnImportGate.Controls.Add(this.txtImportGateCode);
             this.pnImportGate.Controls.Add(this.label14);
             this.pnImportGate.Location = new System.Drawing.Point(9, 160);
             this.pnImportGate.Name = "pnImportGate";
-            this.pnImportGate.Size = new System.Drawing.Size(287, 58);
+            this.pnImportGate.Size = new System.Drawing.Size(268, 58);
             this.pnImportGate.TabIndex = 30;
             this.pnImportGate.Visible = false;
-            // 
-            // pnExportGate
-            // 
-            this.pnExportGate.Controls.Add(this.txtExportGateName);
-            this.pnExportGate.Controls.Add(this.label12);
-            this.pnExportGate.Controls.Add(this.txtExportGateCode);
-            this.pnExportGate.Controls.Add(this.lblGateEx);
-            this.pnExportGate.Location = new System.Drawing.Point(0, 0);
-            this.pnExportGate.Name = "pnExportGate";
-            this.pnExportGate.Size = new System.Drawing.Size(287, 57);
-            this.pnExportGate.TabIndex = 31;
-            this.pnExportGate.Visible = false;
-            // 
-            // txtExportGateName
-            // 
-            this.txtExportGateName.Location = new System.Drawing.Point(128, 28);
-            this.txtExportGateName.Name = "txtExportGateName";
-            this.txtExportGateName.ReadOnly = true;
-            this.txtExportGateName.Size = new System.Drawing.Size(134, 20);
-            this.txtExportGateName.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(-3, 28);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(98, 13);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Tên Cửa khẩu xuất";
-            // 
-            // txtExportGateCode
-            // 
-            this.txtExportGateCode.Location = new System.Drawing.Point(130, 0);
-            this.txtExportGateCode.Name = "txtExportGateCode";
-            this.txtExportGateCode.Size = new System.Drawing.Size(106, 20);
-            this.txtExportGateCode.TabIndex = 0;
-            this.txtExportGateCode.Tag = "";
-            this.txtExportGateCode.Leave += new System.EventHandler(this.txtExportGateCode_Leave);
-            // 
-            // lblGateEx
-            // 
-            this.lblGateEx.AutoSize = true;
-            this.lblGateEx.Location = new System.Drawing.Point(-4, 3);
-            this.lblGateEx.Name = "lblGateEx";
-            this.lblGateEx.Size = new System.Drawing.Size(94, 13);
-            this.lblGateEx.TabIndex = 30;
-            this.lblGateEx.Text = "Mã Cửa khẩu xuất";
             // 
             // txtImportGateName
             // 
@@ -971,6 +971,8 @@
             this.Load += new System.EventHandler(this.FrmDecleOption_Load);
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
+            this.pnExportGate.ResumeLayout(false);
+            this.pnExportGate.PerformLayout();
             this.pnTNTX.ResumeLayout(false);
             this.pnTNTX.PerformLayout();
             this.pnXKCK.ResumeLayout(false);
@@ -978,8 +980,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvVehicle)).EndInit();
             this.pnImportGate.ResumeLayout(false);
             this.pnImportGate.PerformLayout();
-            this.pnExportGate.ResumeLayout(false);
-            this.pnExportGate.PerformLayout();
             this.gbExportDeclaration.ResumeLayout(false);
             this.gbExportDeclaration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).EndInit();
