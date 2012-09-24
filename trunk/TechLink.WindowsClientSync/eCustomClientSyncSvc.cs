@@ -24,21 +24,27 @@ namespace TechLink.WindowsClientSync
         public static NameValueCollection Settings = null;
         private ClientConfigurableSettings clientConfigurableSettings = null;
         ServerInterfacesHelper serverInterfacesHelper = null;
-        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private System.Timers.Timer timer = new System.Timers.Timer();
 
         private string seri = string.Empty;
         private string branchid = string.Empty;
+        private bool isSyncing = false;
 
         public eCustomClientSyncSvc()
         {
             InitializeComponent();
             logging.WriteEntry("Initialize Service");
+
             timer.Interval = 5000;
-            timer.Tick += new EventHandler(timer_Tick);
+            //timer.Tick += new EventHandler(timer_Tick);
+            timer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
 
             string strd = System.IO.Path.Combine(FDHelper.AppDir(),
                                                      System.IO.Path.GetFileName(
                                                          FDHelper.RgGetUserProfilePath()));
+
+            logging.WriteEntry("Initialize Service. Dat dir:" + strd);
+
             var coccyx =
                 BoneReader.GetBoneInfo(strd);
             var coc = XRayController.TranslateBoneInformation(coccyx);
@@ -46,11 +52,22 @@ namespace TechLink.WindowsClientSync
             seri = new Guid(sss[0]).ToString();
             branchid = FDHelper.RgCodeOfUnit();
 
+            logging.WriteEntry("Initialize Service. seri:" + seri + ", branchid:" + branchid);
+
+        }
+
+        void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            if (!isSyncing)
+                timer_Tick(this, new EventArgs());
         }
 
         void timer_Tick(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            isSyncing = true;
+
+            logging.WriteEntry("Timer tick");
+
             var ProxyGenericServer = serverInterfacesHelper.ServerInterfacesDispatcher.GenericServer;
 
             var token =
@@ -58,8 +75,11 @@ namespace TechLink.WindowsClientSync
             if (string.IsNullOrEmpty(token))
             {
                 timer.Stop();
+                logging.WriteError("Cannot get a token to transfer");
                 return;
             }
+
+            logging.WriteEntry("Start syncing");
             
             #region Sync tblDeclaration
             var declarations = DataModelManager.GetUnSyncedItems("tblDeclaration");
@@ -69,7 +89,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (declarations.Count() / 1000) + declarations.Count() % 1000 > 0 ? 1 : 0;
+                int max = (declarations.Count() / 1000) + (declarations.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -105,6 +125,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
+            logging.WriteEntry("The tblDeclaration is Synced");
+
             #region Sync tblVehicle
             var vehicles = DataModelManager.GetUnSyncedItems("tblVehicle");
 
@@ -113,7 +135,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (vehicles.Count() / 1000) + vehicles.Count() % 1000 > 0 ? 1 : 0;
+                int max = (vehicles.Count() / 1000) + (vehicles.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -149,7 +171,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
-            return;
+            logging.WriteEntry("The tblVehicle is Synced");
+            
             #region Sync tblDeclarationVehicle
             var declarationVehicles = DataModelManager.GetUnSyncedItems("tblDeclarationVehicle");
 
@@ -158,7 +181,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (declarationVehicles.Count() / 1000) + declarationVehicles.Count() % 1000 > 0 ? 1 : 0;
+                int max = (declarationVehicles.Count() / 1000) + (declarationVehicles.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -194,6 +217,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
+            logging.WriteEntry("The tblDeclarationVehicle is Synced");
+
             #region Sync Company
             var companies = DataModelManager.GetUnSyncedItems("tblCompany");
 
@@ -202,7 +227,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (companies.Count() / 1000) + companies.Count() % 1000 > 0 ? 1 : 0;
+                int max = (companies.Count() / 1000) + (companies.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -239,6 +264,8 @@ namespace TechLink.WindowsClientSync
 
             #endregion
 
+            logging.WriteEntry("The tblCompany is Synced");
+
             #region Sync tblApplicationObject
             var applicationObjects = DataModelManager.GetUnSyncedItems("tblApplicationObject");
 
@@ -247,7 +274,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (applicationObjects.Count() / 1000) + applicationObjects.Count() % 1000 > 0 ? 1 : 0;
+                int max = (applicationObjects.Count() / 1000) + (applicationObjects.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -283,6 +310,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
+            logging.WriteEntry("The tblApplicationObject is Synced");
+
             #region Sync tblCheck
             var checks = DataModelManager.GetUnSyncedItems("tblCheck");
 
@@ -291,7 +320,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (checks.Count() / 1000) + checks.Count() % 1000 > 0 ? 1 : 0;
+                int max = (checks.Count() / 1000) + (checks.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -327,6 +356,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
+            logging.WriteEntry("The tblCheck is Synced");
+
             #region Sync tblCustoms
             var customs = DataModelManager.GetUnSyncedItems("tblCustoms");
 
@@ -335,7 +366,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (customs.Count() / 1000) + customs.Count() % 1000 > 0 ? 1 : 0;
+                int max = (customs.Count() / 1000) + (customs.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -371,6 +402,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
+            logging.WriteEntry("The tblCustoms is Synced");
+
             #region Sync tblDeclarationLoan
             var declarationLoans = DataModelManager.GetUnSyncedItems("tblDeclarationLoan");
 
@@ -379,7 +412,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (declarationLoans.Count() / 1000) + declarationLoans.Count() % 1000 > 0 ? 1 : 0;
+                int max = (declarationLoans.Count() / 1000) + (declarationLoans.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -415,6 +448,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
+            logging.WriteEntry("The tblDeclarationLoan is Synced");
+
             #region Sync tblGate
             var gates = DataModelManager.GetUnSyncedItems("tblGate");
 
@@ -423,7 +458,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (gates.Count() / 1000) + gates.Count() % 1000 > 0 ? 1 : 0;
+                int max = (gates.Count() / 1000) + (gates.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -459,6 +494,8 @@ namespace TechLink.WindowsClientSync
             }
             #endregion
 
+            logging.WriteEntry("The tblGate is Synced");
+
             #region Sync tblGoodsType
             var goodsTypes = DataModelManager.GetUnSyncedItems("tblGoodsType");
 
@@ -467,7 +504,7 @@ namespace TechLink.WindowsClientSync
                 int ncount = 0;
                 bool finished = false;
 
-                int max = (goodsTypes.Count() / 1000) + goodsTypes.Count() % 1000 > 0 ? 1 : 0;
+                int max = (goodsTypes.Count() / 1000) + (goodsTypes.Count() % 1000 > 0 ? 1 : 0);
 
                 while (!finished)
                 {
@@ -502,6 +539,610 @@ namespace TechLink.WindowsClientSync
                 }
             }
             #endregion
+
+            logging.WriteEntry("The tblGoodsType is Synced");
+
+            #region Sync tblGroup
+            var groups = DataModelManager.GetUnSyncedItems("tblGroup");
+
+            if (groups.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (groups.Count() / 1000) + (groups.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in groups
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblGroup", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblGroup).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblGroup", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (groups.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblGroup", groups))
+                {
+                    foreach (object obj in groups)
+                    {
+                        (obj as tblGroup).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblGroup", groups);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblGroup is Synced");
+
+            #region Sync tblPermission
+            var permissions = DataModelManager.GetUnSyncedItems("tblPermission");
+
+            if (permissions.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (permissions.Count() / 1000) + (permissions.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in permissions
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblPermission", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblPermission).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblPermission", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (permissions.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblPermission", permissions))
+                {
+                    foreach (object obj in permissions)
+                    {
+                        (obj as tblPermission).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblPermission", permissions);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblPermission is Synced");
+
+            #region Sync tblPermissionType
+            var permissionTypes = DataModelManager.GetUnSyncedItems("tblPermissionType");
+
+            if (permissionTypes.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (permissionTypes.Count() / 1000) + (permissionTypes.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in permissionTypes
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblPermissionType", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblPermissionType).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblPermissionType", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (permissionTypes.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblPermissionType", permissionTypes))
+                {
+                    foreach (object obj in permissionTypes)
+                    {
+                        (obj as tblPermissionType).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblPermissionType", permissionTypes);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblPermissionType is Synced");
+
+            #region Sync tblProfileConfig
+            var profileConfigs = DataModelManager.GetUnSyncedItems("tblProfileConfig");
+
+            if (profileConfigs.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (profileConfigs.Count() / 1000) + (profileConfigs.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in profileConfigs
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblProfileConfig", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblPermissionType).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblProfileConfig", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (profileConfigs.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblProfileConfig", profileConfigs))
+                {
+                    foreach (object obj in profileConfigs)
+                    {
+                        (obj as tblProfileConfig).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblProfileConfig", profileConfigs);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblProfileConfig is Synced");
+
+            #region Sync tblRoleInGroup
+            var roleInGroups = DataModelManager.GetUnSyncedItems("tblRoleInGroup");
+
+            if (roleInGroups.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (roleInGroups.Count() / 1000) + (roleInGroups.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in roleInGroups
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblRoleInGroup", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblRoleInGroup).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblRoleInGroup", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (roleInGroups.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblRoleInGroup", roleInGroups))
+                {
+                    foreach (object obj in roleInGroups)
+                    {
+                        (obj as tblRoleInGroup).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblRoleInGroup", roleInGroups);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblRoleInGroup is Synced");
+
+            #region Sync tblType
+            var types = DataModelManager.GetUnSyncedItems("tblType");
+
+            if (types.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (types.Count() / 1000) + (types.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in types
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblType", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblType).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblType", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (types.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblType", types))
+                {
+                    foreach (object obj in types)
+                    {
+                        (obj as tblType).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblType", types);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblType is Synced");
+
+            #region Sync tblUser
+            var users = DataModelManager.GetUnSyncedItems("tblUser");
+
+            if (users.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (users.Count() / 1000) + (users.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in users
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblUser", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblUser).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblUser", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (users.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblUser", users))
+                {
+                    foreach (object obj in users)
+                    {
+                        (obj as tblUser).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblUser", users);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblUser is Synced");
+
+            #region Sync tblUserGroupPermission
+            var groupPermissions = DataModelManager.GetUnSyncedItems("tblUserGroupPermission");
+
+            if (groupPermissions.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (groupPermissions.Count() / 1000) + (groupPermissions.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in groupPermissions
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblUserGroupPermission", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblUserGroupPermission).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblUserGroupPermission", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (groupPermissions.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblUserGroupPermission", groupPermissions))
+                {
+                    foreach (object obj in groupPermissions)
+                    {
+                        (obj as tblUserGroupPermission).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblUserGroupPermission", groupPermissions);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblUserGroupPermission is Synced");
+
+            #region Sync tblUserInGroup
+            var userInGroups = DataModelManager.GetUnSyncedItems("tblUserInGroup");
+
+            if (userInGroups.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (userInGroups.Count() / 1000) + (userInGroups.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in userInGroups
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblUserInGroup", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblUserInGroup).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblUserInGroup", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (userInGroups.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblUserInGroup", userInGroups))
+                {
+                    foreach (object obj in userInGroups)
+                    {
+                        (obj as tblUserInGroup).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblUserInGroup", userInGroups);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblRoleInGroup is Synced");
+
+            #region Sync tblVehicleCheck
+            var vehicleChecks = DataModelManager.GetUnSyncedItems("tblVehicleCheck");
+
+            if (vehicleChecks.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (vehicleChecks.Count() / 1000) + (vehicleChecks.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in vehicleChecks
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblVehicleCheck", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblVehicleCheck).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblVehicleCheck", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (vehicleChecks.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblVehicleCheck", vehicleChecks))
+                {
+                    foreach (object obj in vehicleChecks)
+                    {
+                        (obj as tblVehicleCheck).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblVehicleCheck", vehicleChecks);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblVehicleCheck is Synced");
+
+            #region Sync tblVehicleFeeSetting
+            var vehicleFeeSettings = DataModelManager.GetUnSyncedItems("tblVehicleFeeSetting");
+
+            if (vehicleFeeSettings.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (vehicleFeeSettings.Count() / 1000) + (vehicleFeeSettings.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in vehicleFeeSettings
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblVehicleFeeSetting", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblVehicleFeeSetting).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblVehicleFeeSetting", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (vehicleFeeSettings.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblVehicleFeeSetting", vehicleFeeSettings))
+                {
+                    foreach (object obj in vehicleFeeSettings)
+                    {
+                        (obj as tblVehicleFeeSetting).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblVehicleFeeSetting", vehicleFeeSettings);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblVehicleFeeSetting is Synced");
+
+            #region Sync tblVehicleType
+            var vehicleTypes = DataModelManager.GetUnSyncedItems("tblVehicleType");
+
+            if (vehicleTypes.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (vehicleTypes.Count() / 1000) + (vehicleTypes.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in vehicleTypes
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tblVehicleType", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tblVehicleType).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tblVehicleType", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (vehicleTypes.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tblVehicleType", vehicleTypes))
+                {
+                    foreach (object obj in vehicleTypes)
+                    {
+                        (obj as tblVehicleType).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tblVehicleType", vehicleTypes);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tblVehicleType is Synced");
+
+            #region Sync tlbRole
+            var roles = DataModelManager.GetUnSyncedItems("tlbRole");
+
+            if (roles.Count() > 1000)
+            {
+                int ncount = 0;
+                bool finished = false;
+
+                int max = (roles.Count() / 1000) + (roles.Count() % 1000 > 0 ? 1 : 0);
+
+                while (!finished)
+                {
+                    var n = (from item in roles
+                             select item).Skip(ncount * 1000).Take(1000).ToArray();
+
+                    if (ProxyGenericServer.Sync(token, "tlbRole", n))
+                    {
+                        foreach (object obj in n)
+                        {
+                            (obj as tlbRole).IsSynced = true;
+                        }
+
+                        var updated = DataModelManager.UpdateBatchItems("tlbRole", n);
+                        ncount++;
+                    }
+                    if (ncount > max)
+                        finished = true;
+                }
+
+            }
+            else if (roles.Count() > 0)
+            {
+                if (ProxyGenericServer.Sync(token, "tlbRole", roles))
+                {
+                    foreach (object obj in roles)
+                    {
+                        (obj as tlbRole).IsSynced = true;
+                    }
+
+                    var updated = DataModelManager.UpdateBatchItems("tlbRole", roles);
+                }
+            }
+            #endregion
+
+            logging.WriteEntry("The tlbRole is Synced");
+
+            logging.WriteSuccessAudit("Sync all data is completed!");
+
+            isSyncing = false;
         }
 
         protected override void OnStart(string[] args)
@@ -546,6 +1187,11 @@ namespace TechLink.WindowsClientSync
 
 
             logging.WriteEntry("Start Service successfully!");
+
+            logging.WriteEntry("Starting timer");
+            timer.Start();
+            logging.WriteEntry("Timer is started");
+
         }
 
         protected override void OnStop()
