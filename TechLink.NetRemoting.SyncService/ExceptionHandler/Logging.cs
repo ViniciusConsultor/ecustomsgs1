@@ -31,6 +31,18 @@ namespace ExceptionHandler.Logging
             Debug.WriteLine(strLogMsg);
         }
 
+        public void WriteSuccessAudit(string strLogMsg)
+        {
+            ooDriveLog.WriteEntry(strLogMsg, System.Diagnostics.EventLogEntryType.SuccessAudit);
+            Debug.WriteLine(strLogMsg);
+        }
+
+        public void WriteError(string strLogMsg)
+        {
+            ooDriveLog.WriteEntry(strLogMsg, System.Diagnostics.EventLogEntryType.Error);
+            Debug.WriteLine(strLogMsg);
+        }
+
         public void WriteEntry(System.Exception exc)
         {
             string strLogMsg = string.Format("{0}: msg:{1} trace:{2}", "eCustom Error", exc.Message, exc.StackTrace);
