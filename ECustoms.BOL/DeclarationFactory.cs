@@ -79,16 +79,6 @@ namespace ECustoms.BOL
                     vehicleDeclara.VehicleID = vehicle.VehicleID;
                     vehicleDeclara.DeclarationID = declerartionTem.DeclarationID;
                     db.AddTotblDeclarationVehicles(vehicleDeclara);
-
-                    //update tblVehicleChange 
-                    VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
-
-                    //TODO: Mr Huy kiem tra lai cai nay
-                    if(vehicle.ListVehicleChangeGood != null) 
-                    {
-                        VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x => x.VehicleId).ToList());
-                    }
-                   
                     db.SaveChanges();
                 }
             }
