@@ -910,9 +910,10 @@ namespace ECustoms
                     return;
                 }
                 var vehicleID = long.Parse(grdVehicle.SelectedRows[0].Cells["VehicleID"].Value.ToString());
-
+                
                 //check work-flow
                 tblVehicle vehicle = VehicleFactory.GetByID(vehicleID);
+                //VehicleChangeStatus get this field
                 //if (vehicle != null && vehicle.Parking == null)
                 //{
                 //  MessageBox.Show("Xe này chưa chưa vào bãi, nên không thể vào nội địa", "Lỗi trình tự");
@@ -920,11 +921,12 @@ namespace ECustoms
                 //}
 
                 //check work-flow
-                if (vehicle != null && vehicle.HasGoodsImported != true)
-                {
-                    MessageBox.Show("Xe này chưa nhập cảnh có hàng, nên không thể vào nội địa", "Lỗi trình tự");
-                    return;
-                }
+                //TODO: Tạm thời bỏ điểu kiên ko cần xe nhập cảnh có hàng OLD:vehicle != null && vehicle.HasGoodsImported != true PHục vụ Hữu nghị
+                //if (vehicle != null && vehicle.HasGoodsImported != true)
+                //{
+                //    MessageBox.Show("Xe này chưa nhập cảnh có hàng, nên không thể vào nội địa", "Lỗi trình tự");
+                //    return;
+                //}
 
                 var message = new StringBuilder();
 
