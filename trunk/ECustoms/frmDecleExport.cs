@@ -252,7 +252,7 @@ namespace ECustoms
                         if (vehicleRow.StatusChangeGood != null)
                         {    
                             vehicleInfo.StatusChangeGood = vehicleRow.StatusChangeGood;
-                            vehicleInfo.ListVehicleChangeGood = vehicleRow.ListVehicleChangeGood;
+                            vehicleInfo.ListVehicleChangeGood = vehicleRow.ListVehicleChangeGood ?? VehicleFactory.GetListVehicleChangeById(vehicleRow.VehicleID);
                         }
 
                         if (grdVehicle.Rows[i].Cells["VehicleID"].Value != null && Convert.ToInt64(grdVehicle.Rows[i].Cells["VehicleID"].Value) > 0) // Update this vehicle only.
@@ -872,8 +872,7 @@ namespace ECustoms
                         // Insert vehicle and Declaration to DeclarationVehicle table
                         DeclarationVehicleFactory.Insert(vehicle.VehicleID, _declerationID);
                         // Update vehicle
-                        var v = new tblVehicle();
-                        v.VehicleID = vehicle.VehicleID;
+                        var v = VehicleFactory.GetByID(vehicle.VehicleID);
                         v.PlateNumber = vehicle.PlateNumber;
                         v.PlateNumberPartner = vehicle.PlateNumberPartner;
                         v.NumberOfContainer = vehicle.NumberOfContainer;
@@ -895,7 +894,6 @@ namespace ECustoms
                         v.ConfirmExportBy = vehicle.ConfirmExportBy;
                         v.ConfirmImportBy = vehicle.ConfirmImportBy;
                         v.ConfirmLocalImportBy = vehicle.ConfirmLocalImportBy;
-                        v.CreatedDate = vehicle.CreatedDateVehicle;
                         //Set Fee
                         if (_statusFee == 1)
                         {
@@ -972,6 +970,12 @@ namespace ECustoms
                                 v.feeImportStatus = (int)FeeStatus.PaidFee;
                                 v.confirmFeeImportBy = _userInfo.UserID;
                             }
+                        }
+                        //vehicle change
+                        if (vehicle.StatusChangeGood != null)
+                        {
+                            v.StatusChangeGood = vehicle.StatusChangeGood;
+                            v.ListVehicleChangeGood = vehicle.ListVehicleChangeGood ?? VehicleFactory.GetListVehicleChangeById(vehicle.VehicleID);
                         }
                         v.ModifiedById = _userInfo.UserID;
                         VehicleFactory.UpdateVehicle(v);
@@ -1503,17 +1507,17 @@ namespace ECustoms
             if (string.IsNullOrEmpty(txtExportNumber.Text) || string.IsNullOrEmpty(txtTypeExport.Text) || string.IsNullOrEmpty(txtCustomsCode.Text))
             {
                 txtExportCompanyCode.Enabled = true;
-                txtExportCompanyCode.Text = string.Empty;
-                txtExportCompanyName.Text = string.Empty;
+                //txtExportCompanyCode.Text = string.Empty;
+                //txtExportCompanyName.Text = string.Empty;
                 return;
             }
             var declaration = LoadDeclarationFactory.Load(int.Parse(txtExportNumber.Text), txtTypeExport.Text, txtCustomsCode.Text, dtpExportRegisterDate.Value.Year);
             if (declaration == null)
             {
                 txtExportCompanyCode.Enabled = true;
-                txtExportCompanyCode.Text = string.Empty;
-                txtExportCompanyName.Text = string.Empty;
-                txtProductAmount.Text = string.Empty;
+                //txtExportCompanyCode.Text = string.Empty;
+                //txtExportCompanyName.Text = string.Empty;
+                //txtProductAmount.Text = string.Empty;
                 return;
             }
             txtExportCompanyCode.Text = declaration.Ma_DV;

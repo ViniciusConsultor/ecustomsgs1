@@ -298,8 +298,16 @@ namespace ECustoms.BOL
                         {
                             db.Attach(vehicleOrgin);
                             db.ApplyPropertyChanges("tblVehicles", vehicle);
-                            int re = db.SaveChanges();
+                            
+                            //update tblVehicleChange 
+                            VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
+                            if (vehicle.ListVehicleChangeGood != null)
+                            {
+                                VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x => x.VehicleId).ToList());
+                            }
                             db.Connection.Close();
+                            
+                            int re = db.SaveChanges();
                             return re;
                         }
                         return -1;
@@ -735,5 +743,6 @@ namespace ECustoms.BOL
             }
             return db.SaveChanges();
         }
+
     }
 }
