@@ -77,16 +77,32 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Reference\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\_Reference\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Reference\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Reference\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Reference\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\_Reference\log4net.dll</HintPath>
     </Reference>
@@ -911,6 +927,25 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model2.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Docs\WebHelp\scr\BackupRestore_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\CauHinhGiaTriMacDinh_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\FeeManagement_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\GS1_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\ListDecla_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\NewDeclaration_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\NewDeclarExport_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\Phuongtienxekhong_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\Print_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\Reports_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\SeachVehicle_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\SystemConfig_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\template2\fixedtop_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\Themxebaixuat_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\Tonghopttkiemtra_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\topic1_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\topic_files\themedata.thmx" />
+    <None Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\themedata.thmx" />
     <None Include="Font\BarcodeFont.ttf" />
     <None Include="Font\FRE3OF9X.TTF" />
     <None Include="Font\FREE3OF9.TTF" />
@@ -1045,6 +1080,221 @@
     <None Include="Resources\KeyLock.png" />
     <None Include="Resources\Signin.png" />
     <None Include="Resources\GS1_icon.ico" />
+    <Content Include="Docs\WebHelp\back.jpg" />
+    <Content Include="Docs\WebHelp\data.js" />
+    <Content Include="Docs\WebHelp\icons\1.gif" />
+    <Content Include="Docs\WebHelp\icons\11.gif" />
+    <Content Include="Docs\WebHelp\icons\2.gif" />
+    <Content Include="Docs\WebHelp\icons\arrowdn.gif" />
+    <Content Include="Docs\WebHelp\icons\arrowrt.gif" />
+    <Content Include="Docs\WebHelp\icons\blank.gif" />
+    <Content Include="Docs\WebHelp\icons\cminus.gif" />
+    <Content Include="Docs\WebHelp\icons\cplus.gif" />
+    <Content Include="Docs\WebHelp\icons\daminus.gif" />
+    <Content Include="Docs\WebHelp\icons\daplus.gif" />
+    <Content Include="Docs\WebHelp\icons\downangle.gif" />
+    <Content Include="Docs\WebHelp\icons\line.gif" />
+    <Content Include="Docs\WebHelp\icons\minus.gif" />
+    <Content Include="Docs\WebHelp\icons\plus.gif" />
+    <Content Include="Docs\WebHelp\icons\sline.gif" />
+    <Content Include="Docs\WebHelp\icons\sminus.gif" />
+    <Content Include="Docs\WebHelp\icons\splus.gif" />
+    <Content Include="Docs\WebHelp\icons\tminus.gif" />
+    <Content Include="Docs\WebHelp\icons\tplus.gif" />
+    <Content Include="Docs\WebHelp\icons\tshaped.gif" />
+    <Content Include="Docs\WebHelp\icons\uaminus.gif" />
+    <Content Include="Docs\WebHelp\icons\uaplus.gif" />
+    <Content Include="Docs\WebHelp\icons\upangle.gif" />
+    <Content Include="Docs\WebHelp\images\hideall.gif" />
+    <Content Include="Docs\WebHelp\images\next.gif" />
+    <Content Include="Docs\WebHelp\images\previous.gif" />
+    <Content Include="Docs\WebHelp\images\print.gif" />
+    <Content Include="Docs\WebHelp\images\showall.gif" />
+    <Content Include="Docs\WebHelp\index.htm" />
+    <Content Include="Docs\WebHelp\indexh.htm" />
+    <Content Include="Docs\WebHelp\languages.js" />
+    <Content Include="Docs\WebHelp\scr\Addphuongtienxekhong.png" />
+    <Content Include="Docs\WebHelp\scr\BackupRestore.htm" />
+    <Content Include="Docs\WebHelp\scr\BackupRestore.png" />
+    <Content Include="Docs\WebHelp\scr\BackupRestore_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\BackupRestore_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\cauhinhCSDLHaiQuan.htm" />
+    <Content Include="Docs\WebHelp\scr\CauHinhGiaTriMacDinh.htm" />
+    <Content Include="Docs\WebHelp\scr\CauHinhGiaTriMacDinh_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\CauHinhGiaTriMacDinh_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\cauhinhngdung.png" />
+    <Content Include="Docs\WebHelp\scr\ChangePassword.htm" />
+    <Content Include="Docs\WebHelp\scr\ChangePassword.png" />
+    <Content Include="Docs\WebHelp\scr\ConfigFee.htm" />
+    <Content Include="Docs\WebHelp\scr\ConfigFee.png" />
+    <Content Include="Docs\WebHelp\scr\Configuration.png" />
+    <Content Include="Docs\WebHelp\scr\danhsachdenghikiemtra.png" />
+    <Content Include="Docs\WebHelp\scr\danhsachdenhikiemtra.htm" />
+    <Content Include="Docs\WebHelp\scr\danhsachquahan.htm" />
+    <Content Include="Docs\WebHelp\scr\danhsachquahan.png" />
+    <Content Include="Docs\WebHelp\scr\DecImport.htm" />
+    <Content Include="Docs\WebHelp\scr\DeclaraExport.png" />
+    <Content Include="Docs\WebHelp\scr\Feel.htm" />
+    <Content Include="Docs\WebHelp\scr\FeeManagement.htm" />
+    <Content Include="Docs\WebHelp\scr\FeeManagement_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\FeeManagement_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\FeeManament.png" />
+    <Content Include="Docs\WebHelp\scr\FeeVehicleType.htm" />
+    <Content Include="Docs\WebHelp\scr\FeeVeicleType.png" />
+    <Content Include="Docs\WebHelp\scr\GetFee.png" />
+    <Content Include="Docs\WebHelp\scr\GroupUpdate.png" />
+    <Content Include="Docs\WebHelp\scr\Group_List.png" />
+    <Content Include="Docs\WebHelp\scr\Group_Permission.png" />
+    <Content Include="Docs\WebHelp\scr\Group_User.png" />
+    <Content Include="Docs\WebHelp\scr\GS1.htm" />
+    <Content Include="Docs\WebHelp\scr\GS1_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\GS1_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\GS1_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\GS1_files\image002.jpg" />
+    <Content Include="Docs\WebHelp\scr\Info.htm" />
+    <Content Include="Docs\WebHelp\scr\Introduce.html" />
+    <Content Include="Docs\WebHelp\scr\KetnoiCSDL.htm" />
+    <Content Include="Docs\WebHelp\scr\ketnoiCSDL.png" />
+    <Content Include="Docs\WebHelp\scr\ketnoiCSDLHaiQuan.png" />
+    <Content Include="Docs\WebHelp\scr\ListDecla.htm" />
+    <Content Include="Docs\WebHelp\scr\listDecla.png" />
+    <Content Include="Docs\WebHelp\scr\ListDeclar.png" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\image002.jpg" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\image003.png" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\image004.jpg" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\image005.png" />
+    <Content Include="Docs\WebHelp\scr\ListDecla_files\image006.jpg" />
+    <Content Include="Docs\WebHelp\scr\MenuBarSearch.png" />
+    <Content Include="Docs\WebHelp\scr\MenuDeclarExport.png" />
+    <Content Include="Docs\WebHelp\scr\menuketnoiCSDLHaiQuan.png" />
+    <Content Include="Docs\WebHelp\scr\MenuListDecla.png" />
+    <Content Include="Docs\WebHelp\scr\MenuSearch.png" />
+    <Content Include="Docs\WebHelp\scr\MenuXeBaiXuat.png" />
+    <Content Include="Docs\WebHelp\scr\MenuXeTQ.png" />
+    <Content Include="Docs\WebHelp\scr\Menu_newDeclar.png" />
+    <Content Include="Docs\WebHelp\scr\NewDeclaraImport.png" />
+    <Content Include="Docs\WebHelp\scr\NewDeclaration.htm" />
+    <Content Include="Docs\WebHelp\scr\NewDeclaration_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\NewDeclaration_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\NewDeclarExport.htm" />
+    <Content Include="Docs\WebHelp\scr\NewDeclarExport_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\NewDeclarExport_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\Phuongtienxekhong.htm" />
+    <Content Include="Docs\WebHelp\scr\phuongtienxekhong.png" />
+    <Content Include="Docs\WebHelp\scr\Phuongtienxekhong_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\Phuongtienxekhong_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\Phuongtienxekhong_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\Phuongtienxekhong_files\image002.jpg" />
+    <Content Include="Docs\WebHelp\scr\Phuongtienxekhong_files\image003.png" />
+    <Content Include="Docs\WebHelp\scr\Phuongtienxekhong_files\image004.jpg" />
+    <Content Include="Docs\WebHelp\scr\Print.htm" />
+    <Content Include="Docs\WebHelp\scr\Print_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\Print_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\Print_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\Print_files\image003.png" />
+    <Content Include="Docs\WebHelp\scr\Print_files\image005.png" />
+    <Content Include="Docs\WebHelp\scr\Print_files\image007.jpg" />
+    <Content Include="Docs\WebHelp\scr\Print_files\image008.jpg" />
+    <Content Include="Docs\WebHelp\scr\Print_files\image009.jpg" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat.htm" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image002.jpg" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image003.png" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image004.jpg" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image005.png" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image006.jpg" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image007.png" />
+    <Content Include="Docs\WebHelp\scr\Quanlyhangtamnhaptaixuat_files\image008.jpg" />
+    <Content Include="Docs\WebHelp\scr\QuyTrinhxeHN.htm" />
+    <Content Include="Docs\WebHelp\scr\Reports.htm" />
+    <Content Include="Docs\WebHelp\scr\Reports.png" />
+    <Content Include="Docs\WebHelp\scr\Reports_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\Reports_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle.htm" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image002.jpg" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image003.png" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image004.jpg" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image005.png" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image006.jpg" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image007.png" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image008.jpg" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image009.png" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image010.jpg" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image011.png" />
+    <Content Include="Docs\WebHelp\scr\SeachVehicle_files\image012.jpg" />
+    <Content Include="Docs\WebHelp\scr\SystemConfig.htm" />
+    <Content Include="Docs\WebHelp\scr\SystemConfig_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\SystemConfig_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\template2\btn_next_n.gif" />
+    <Content Include="Docs\WebHelp\scr\template2\btn_prev_n.gif" />
+    <Content Include="Docs\WebHelp\scr\template2\fixedtop_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\template2\fixedtop_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\template2\techlinklogo.png" />
+    <Content Include="Docs\WebHelp\scr\template2\winchm_template_style.css" />
+    <Content Include="Docs\WebHelp\scr\Themxebaixuat.htm" />
+    <Content Include="Docs\WebHelp\scr\Themxebaixuat_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\Themxebaixuat_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\Themxebaixuat_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\Themxebaixuat_files\image002.jpg" />
+    <Content Include="Docs\WebHelp\scr\Themxevaobaixuat.png" />
+    <Content Include="Docs\WebHelp\scr\TimKiemXebaixuat.png" />
+    <Content Include="Docs\WebHelp\scr\TimkiemXeTQ.png" />
+    <Content Include="Docs\WebHelp\scr\TimKiemXeTQsangtaixeVN.png" />
+    <Content Include="Docs\WebHelp\scr\TNTX.htm" />
+    <Content Include="Docs\WebHelp\scr\TokhainhapXeSangtai.png" />
+    <Content Include="Docs\WebHelp\scr\tonghopthongtinkiemtra.png" />
+    <Content Include="Docs\WebHelp\scr\Tonghopttkiemtra.htm" />
+    <Content Include="Docs\WebHelp\scr\Tonghopttkiemtra_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\Tonghopttkiemtra_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\topic.htm" />
+    <Content Include="Docs\WebHelp\scr\topic1.htm" />
+    <Content Include="Docs\WebHelp\scr\topic1_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\topic1_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\topic_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\topic_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\UserProfile.png" />
+    <Content Include="Docs\WebHelp\scr\UserUpdate.png" />
+    <Content Include="Docs\WebHelp\scr\UserUpdate_Permission.png" />
+    <Content Include="Docs\WebHelp\scr\User_Addnew.png" />
+    <Content Include="Docs\WebHelp\scr\User_List.png" />
+    <Content Include="Docs\WebHelp\scr\VehicleAdd.htm" />
+    <Content Include="Docs\WebHelp\scr\VehicleComplete.png" />
+    <Content Include="Docs\WebHelp\scr\VehicleSearch.htm" />
+    <Content Include="Docs\WebHelp\scr\xacnhanvaonoidia.png" />
+    <Content Include="Docs\WebHelp\scr\XeTQ.htm" />
+    <Content Include="Docs\WebHelp\scr\XeTQNhapcanh.png" />
+    <Content Include="Docs\WebHelp\scr\XeTQsangtaixeVN.htm" />
+    <Content Include="Docs\WebHelp\scr\XeTQsangtaixeVN.png" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau.htm" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\colorschememapping.xml" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\filelist.xml" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image001.png" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image002.jpg" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image003.png" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image004.jpg" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image005.png" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image006.jpg" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image007.png" />
+    <Content Include="Docs\WebHelp\scr\xuatchuyencuakhau_files\image008.jpg" />
+    <Content Include="Docs\WebHelp\style.css" />
+    <Content Include="Docs\WebHelp\webhelpbookmark.htm" />
+    <Content Include="Docs\WebHelp\webhelpcontents.htm" />
+    <Content Include="Docs\WebHelp\webhelpframe.htm" />
+    <Content Include="Docs\WebHelp\webhelpindex.htm" />
+    <Content Include="Docs\WebHelp\webhelpleft.htm" />
+    <Content Include="Docs\WebHelp\webhelplefth.htm" />
+    <Content Include="Docs\WebHelp\webhelpsearch.htm" />
+    <Content Include="Docs\WebHelp\webhelptoolbar.htm" />
+    <Content Include="Docs\WebHelp\webhelptop.htm" />
+    <Content Include="Docs\WebHelp\webhelptoph.htm" />
     <Content Include="ListPrint.xml" />
     <None Include="Resources\1336316540_document-export.png" />
     <None Include="Resources\gear.png" />
