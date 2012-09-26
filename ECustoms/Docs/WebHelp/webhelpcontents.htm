@@ -1,0 +1,305 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<title>New Help</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css"> 
+<!-- 
+.selected {font-weight: normal;background-color: #E2E2E2;padding:0px,2px,0px,2px;}
+.unselected { font-weight: normal;padding:0px,2px,0px,2px;}
+.hand { cursor: hand; }
+.p {height: 16px;width: 16px;vertical-align: middle;border: 0;}
+div,body { font-family: Tahoma, Verdana; font-size: 11px; }
+A:link {text-decoration: none; color:#000000}
+A:visited {text-decoration: none; color: #000000}
+A:active {text-decoration: none; color: #000000 }
+A:hover {text-decoration: none; color: #FF0000 }
+
+-->
+</style>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var cl,pn,pm,bl;
+var path = 'icons/';
+var pos = 0;
+var icon;
+var tar = 'content';
+var display;
+var imgi;
+var AutoCollapse;
+var LastSelected = -1;
+var loaded = false;
+var max;
+var divlist;
+
+function SetEnv(v,a){
+
+if(v==0){ 
+	pn = [['daplus.gif','daminus.gif'],['tplus.gif','tminus.gif'],['uaplus.gif','uaminus.gif'],['splus.gif','sminus.gif']];
+	PreloadImg('downangle.gif','tshaped.gif','upangle.gif','sline.gif','daplus.gif','daminus.gif','tplus.gif','tminus.gif','uaplus.gif','uaminus.gif','splus.gif','sminus.gif','blank.gif','line.gif');
+}else{
+	pn = [['plus.gif','minus.gif']];
+	PreloadImg('plus.gif','minus.gif','blank.gif');
+
+}
+AutoCollapse = a;
+}
+
+ function PreloadImg(){
+if (document.images) { 
+	var imgs = PreloadImg.arguments; 
+	var pload = new Array();
+	for (var i=0; i<imgs.length; i++) { 
+		pload[i] = new Image; 
+		pload[i].src = path + imgs[i]; 
+	} 
+} 
+ } 
+
+function get(o){
+var x;
+if(document.all) x=document.all[o]; 
+if(document.getElementById) x=document.getElementById(o);
+
+return x;
+}
+
+
+function pnImg(img){
+var i,j;
+for(i=0;i<=3;i++){
+	for(j=0;j<=1;j++){
+	if(img.substr(img.lastIndexOf('/') + 1)== pn[i][j]){
+		return i;
+	}
+	}
+}
+}
+function icon(img){
+var f;
+f = img.substr(img.lastIndexOf('/') + 1);
+if( f=='1.gif' || f=='2.gif'){
+	return ['1.gif','2.gif'];
+}
+if( f=='3.gif' || f=='4.gif'){
+	return ['3.gif','4.gif'];
+}
+if( f=='5.gif' || f=='6.gif'){
+	return ['5.gif','6.gif'];
+}
+if( f=='7.gif' || f=='8.gif'){
+	return ['7.gif','8.gif'];
+}
+return [f,f];
+}
+
+function show(id){
+get('d' + id).style.display='block';
+if(get('imgn' + id )) get('imgn' + id ).src= path + pn[pnImg(get('imgn' + id ).src)][1];
+get('img' + id ).src= path + icon(get('img' + id ).src)[1];
+
+}
+
+function collapse(id){
+get('d' + id ).style.display='none';
+if(get('imgn' + id )) get('imgn' + id ).src= path + pn[pnImg(get('imgn' + id ).src)][0];
+get('img' + id ).src= path + icon(get('img' + id ).src)[0];
+
+}
+
+function collapseAll(){
+var i;
+var o;
+for(i=0;i<=divlist.length-1;i++){
+	if(o=get('d' + divlist[i])){
+		if(o.style.display!='none'){ 
+			collapse(divlist[i]);
+		}
+	}
+}
+}
+
+function showAll(){
+var i;
+var o;
+for(i=0;i<=divlist.length-1;i++){
+	if(o=get('d' + divlist[i])){
+		if(o.style.display!='block'){ 
+			show(divlist[i]);
+		}
+	}
+}
+}
+
+function unselectAll(){
+var i=0;
+while(get("l" + i)){
+	get("l" + i).className = "unselected";
+	i++;
+}
+}
+
+function clickNode(index){
+var e;
+
+e = get("l" + index);
+if(e==null) return;
+e = e.parentNode;
+if(e.nodeName == 'A'){
+	if(e.href!= window.location.href + '#'){
+		parent.parent.content.location.href = e.href;
+	}else{
+		selectNode(index);
+	}
+	e.onclick;
+}
+}
+
+function showParent(ele){
+var e;
+e = ele.parentNode;
+
+if(e==null) return;
+
+if(e.nodeName == 'DIV'){
+	if(e.id!='') show(e.id.substring(1,e.id.length ));
+}else if(e.nodeName == 'A'){
+
+}
+showParent(e);
+}
+
+function showNode(index){
+showParent(get("l" + index));
+LinkClick(index);
+}
+
+function selectNode(index){
+if(LastSelected!=index){
+//collapseAll();
+showParent(get("l" + index));
+LinkClick(index);
+get('l' + index).scrollIntoView(true);
+
+
+//alert(get('l' + index).offsetHeight + '|' + document.body.clientHeight + '|' + document.body.offsetHeight);
+window.scrollTo(0,document.body.scrollTop); // - document.body.clientHeight /3);
+}
+}
+
+
+function NodeClick(id){
+if(get('d' + id ).style.display=='none'){
+	show(id);
+}else{
+	collapse(id);
+}
+return false;
+}
+
+function LinkDblClick(id){
+if(!AutoCollapse){
+	if(get('d' + id ).style.display=='none'){
+		show(id);
+	}else{
+		collapse(id);
+	}
+}
+return false;
+}
+
+function LinkClick(index,hasChild,r){
+if(AutoCollapse && hasChild){
+	if(get('d' + index ).style.display=='none'){
+		collapseAll()
+		showParent(get('l' + index));
+		show(index);
+	}else{
+		collapseAll()
+		showParent(get('l' + index));	
+		collapse(index);
+	}
+}
+if(LastSelected!=-1){
+	get('l' + LastSelected).className = "unselected";
+}
+get('l' + index).className = "selected";
+LastSelected = index;
+return r;
+}
+
+function body_onmousemove(event){
+if(typeof(document.body.scrollTop)!='undefined'){
+if(parseInt(event.clientX)<5){
+window.scroll(0,document.body.scrollTop);}}
+if(typeof(window.scrollY)!='undefined'){
+if(parseInt(event.clientX)<5){
+window.scrollTo(0,window.scrollY);}}
+}
+
+window.defaultStatus = '';
+
+function body_onload(){
+get('loading').style.display='none';
+loaded = true;
+if(parent.parent.content.document.readyState){
+	if(parent.parent.content.document.readyState == 'complete'){
+		try{parent.parent.content.syn();}catch(e){};
+	}
+}else{
+	if(parent.parent.contentLoaded){
+		try{parent.parent.content.syn();}catch(e){};
+	}
+}
+}
+
+//-->
+</SCRIPT>
+<script language="JavaScript" src="languages.js"></script>
+
+</head>
+
+<body bgcolor="#ffffff" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5" onmousemove="body_onmousemove(event);" onload="body_onload();">
+<div id="loading"><font color="#FF0000" size="1"> Loading table of contents... 
+</font><br><br></div>
+<script>SetEnv(0,false)</script><div><nobr><img src="icons/downangle.gif" class="p"><a href="scr/GS1.htm" onclick="return LinkClick('0',false,true)" target="content" title="GS1" onmousemove="window.status='GS1'"><img src="icons/11.gif" class="p"> <span id="l0" class="unselected">GS1</span></a></nobr></div>
+<div><nobr><img src="icons/tshaped.gif" class="p"><a href="scr/Introduce.html" onclick="return LinkClick('1',false,true)" target="content" title="Giới thiệu" onmousemove="window.status='Giới thiệu'"><img src="icons/11.gif" class="p"> <span id="l1" class="unselected">Giới thiệu</span></a></nobr></div>
+<div><nobr><img src="icons/tshaped.gif" class="p"><a href="scr/KetnoiCSDL.htm" onclick="return LinkClick('2',false,true)" target="content" title="Cấu hình kết nối CSDL" onmousemove="window.status='Cấu hình kết nối CSDL'"><img src="icons/11.gif" class="p"> <span id="l2" class="unselected">Cấu hình kết nối CSDL</span></a></nobr></div>
+<div><nobr><a href="#" onClick="return NodeClick('3')"><img id="imgn3" src="icons/tplus.gif" class="p"></a><a href="#" onclick="return LinkClick('3',true,false)" onDblClick="return LinkDblClick('3')" target="content" title="Quản lý hệ thống" onmousemove="window.status='Quản lý hệ thống'"><img id="img3" src="icons/1.gif" class="p"> <span id="l3" class="unselected">Quản lý hệ thống</span></a></nobr></div>
+<div id="d3" style="display:none"><div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/topic.htm" onclick="return LinkClick('4',false,true)" target="content" title="Quản lý người dùng" onmousemove="window.status='Quản lý người dùng'"><img src="icons/11.gif" class="p"> <span id="l4" class="unselected">Quản lý người dùng</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/topic1.htm" onclick="return LinkClick('5',false,true)" target="content" title="Quản lý nhóm người dùng" onmousemove="window.status='Quản lý nhóm người dùng'"><img src="icons/11.gif" class="p"> <span id="l5" class="unselected">Quản lý nhóm người dùng</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/CauHinhGiaTriMacDinh.htm" onclick="return LinkClick('6',false,true)" target="content" title="Cấu hình giá trị mặc định" onmousemove="window.status='Cấu hình giá trị mặc định'"><img src="icons/11.gif" class="p"> <span id="l6" class="unselected">Cấu hình giá trị mặc định</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/SystemConfig.htm" onclick="return LinkClick('7',false,true)" target="content" title="Cấu hình hệ thống" onmousemove="window.status='Cấu hình hệ thống'"><img src="icons/11.gif" class="p"> <span id="l7" class="unselected">Cấu hình hệ thống</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/cauhinhCSDLHaiQuan.htm" onclick="return LinkClick('8',false,true)" target="content" title="Cấu hình kết nối CSDL hải quan" onmousemove="window.status='Cấu hình kết nối CSDL hải quan'"><img src="icons/11.gif" class="p"> <span id="l8" class="unselected">Cấu hình kết nối CSDL hải quan</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/BackupRestore.htm" onclick="return LinkClick('9',false,true)" target="content" title="Sao lưu phục hồi dữ liệu" onmousemove="window.status='Sao lưu phục hồi dữ liệu'"><img src="icons/11.gif" class="p"> <span id="l9" class="unselected">Sao lưu phục hồi dữ liệu</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/upangle.gif" class="p"><a href="scr/ChangePassword.htm" onclick="return LinkClick('10',false,true)" target="content" title="Thay đổi mật khẩu" onmousemove="window.status='Thay đổi mật khẩu'"><img src="icons/11.gif" class="p"> <span id="l10" class="unselected">Thay đổi mật khẩu</span></a></nobr></div>
+</div><div><nobr><img src="icons/tshaped.gif" class="p"><a href="scr/VehicleSearch.htm" onclick="return LinkClick('11',false,true)" target="content" title="Xe đã hoàn thành thủ tục hải quan" onmousemove="window.status='Xe đã hoàn thành thủ tục hải quan'"><img src="icons/11.gif" class="p"> <span id="l11" class="unselected">Xe đã hoàn thành thủ tục hải quan</span></a></nobr></div>
+<div><nobr><img src="icons/tshaped.gif" class="p"><a href="scr/Reports.htm" onclick="return LinkClick('12',false,true)" target="content" title="Báo cáo" onmousemove="window.status='Báo cáo'"><img src="icons/11.gif" class="p"> <span id="l12" class="unselected">Báo cáo</span></a></nobr></div>
+<div><nobr><img src="icons/tshaped.gif" class="p"><a href="scr/Print.htm" onclick="return LinkClick('13',false,true)" target="content" title="In thẻ nhiều nơi" onmousemove="window.status='In thẻ nhiều nơi'"><img src="icons/11.gif" class="p"> <span id="l13" class="unselected">In thẻ nhiều nơi</span></a></nobr></div>
+<div><nobr><a href="#" onClick="return NodeClick('14')"><img id="imgn14" src="icons/tplus.gif" class="p"></a><a href="scr/VehicleAdd.htm" onclick="return LinkClick('14',true,true)" onDblClick="return LinkDblClick('14')" target="content" title="Quản lý phương tiện" onmousemove="window.status='Quản lý phương tiện'"><img id="img14" src="icons/1.gif" class="p"> <span id="l14" class="unselected">Quản lý phương tiện</span></a></nobr></div>
+<div id="d14" style="display:none"><div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/SeachVehicle.htm" onclick="return LinkClick('15',false,true)" target="content" title="Tìm kiếm phương tiện" onmousemove="window.status='Tìm kiếm phương tiện'"><img src="icons/11.gif" class="p"> <span id="l15" class="unselected">Tìm kiếm phương tiện</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/Phuongtienxekhong.htm" onclick="return LinkClick('16',false,true)" target="content" title="Thêm phương tiện xe không" onmousemove="window.status='Thêm phương tiện xe không'"><img src="icons/11.gif" class="p"> <span id="l16" class="unselected">Thêm phương tiện xe không</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/Themxebaixuat.htm" onclick="return LinkClick('17',false,true)" target="content" title="Thêm xe vào bãi xuất" onmousemove="window.status='Thêm xe vào bãi xuất'"><img src="icons/11.gif" class="p"> <span id="l17" class="unselected">Thêm xe vào bãi xuất</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/upangle.gif" class="p"><a href="scr/XeTQ.htm" onclick="return LinkClick('18',false,true)" target="content" title="Thêm phương tiện xe Trung Quốc" onmousemove="window.status='Thêm phương tiện xe Trung Quốc'"><img src="icons/11.gif" class="p"> <span id="l18" class="unselected">Thêm phương tiện xe Trung Quốc</span></a></nobr></div>
+</div><div><nobr><a href="#" onClick="return NodeClick('19')"><img id="imgn19" src="icons/tplus.gif" class="p"></a><a href="scr/Feel.htm" onclick="return LinkClick('19',true,true)" onDblClick="return LinkDblClick('19')" target="content" title="Quản lý tính phí" onmousemove="window.status='Quản lý tính phí'"><img id="img19" src="icons/1.gif" class="p"> <span id="l19" class="unselected">Quản lý tính phí</span></a></nobr></div>
+<div id="d19" style="display:none"><div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/ConfigFee.htm" onclick="return LinkClick('20',false,true)" target="content" title="Cấu hình tính phí phương tiện" onmousemove="window.status='Cấu hình tính phí phương tiện'"><img src="icons/11.gif" class="p"> <span id="l20" class="unselected">Cấu hình tính phí phương tiện</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/FeeVehicleType.htm" onclick="return LinkClick('21',false,true)" target="content" title="Danh sách loại phương tiện và biểu phí" onmousemove="window.status='Danh sách loại phương tiện và biểu phí'"><img src="icons/11.gif" class="p"> <span id="l21" class="unselected">Danh sách loại phương tiện và biểu phí</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/upangle.gif" class="p"><a href="scr/FeeManagement.htm" onclick="return LinkClick('22',false,true)" target="content" title="Quản lý thu phí" onmousemove="window.status='Quản lý thu phí'"><img src="icons/11.gif" class="p"> <span id="l22" class="unselected">Quản lý thu phí</span></a></nobr></div>
+</div><div><nobr><a href="#" onClick="return NodeClick('23')"><img id="imgn23" src="icons/tplus.gif" class="p"></a><a href="scr/TNTX.htm" onclick="return LinkClick('23',true,true)" onDblClick="return LinkDblClick('23')" target="content" title="Quản lý TNTX, CK" onmousemove="window.status='Quản lý TNTX, CK'"><img id="img23" src="icons/1.gif" class="p"> <span id="l23" class="unselected">Quản lý TNTX, CK</span></a></nobr></div>
+<div id="d23" style="display:none"><div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/xuatchuyencuakhau.htm" onclick="return LinkClick('24',false,true)" target="content" title="Xuất chuyển cửa khẩu" onmousemove="window.status='Xuất chuyển cửa khẩu'"><img src="icons/11.gif" class="p"> <span id="l24" class="unselected">Xuất chuyển cửa khẩu</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/upangle.gif" class="p"><a href="scr/Quanlyhangtamnhaptaixuat.htm" onclick="return LinkClick('25',false,true)" target="content" title="Quản lý hàng tạm nhập tái xuất" onmousemove="window.status='Quản lý hàng tạm nhập tái xuất'"><img src="icons/11.gif" class="p"> <span id="l25" class="unselected">Quản lý hàng tạm nhập tái xuất</span></a></nobr></div>
+</div><div><nobr><a href="#" onClick="return NodeClick('26')"><img id="imgn26" src="icons/tplus.gif" class="p"></a><a href="scr/Info.htm" onclick="return LinkClick('26',true,true)" onDblClick="return LinkDblClick('26')" target="content" title="Quản lý thông tin" onmousemove="window.status='Quản lý thông tin'"><img id="img26" src="icons/1.gif" class="p"> <span id="l26" class="unselected">Quản lý thông tin</span></a></nobr></div>
+<div id="d26" style="display:none"><div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/danhsachdenhikiemtra.htm" onclick="return LinkClick('27',false,true)" target="content" title="Danh sách thông tin đề nghị kiểm tra" onmousemove="window.status='Danh sách thông tin đề nghị kiểm tra'"><img src="icons/11.gif" class="p"> <span id="l27" class="unselected">Danh sách thông tin đề nghị kiểm tra</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/Tonghopttkiemtra.htm" onclick="return LinkClick('28',false,true)" target="content" title="Tổng hợp thông tin kiểm tra" onmousemove="window.status='Tổng hợp thông tin kiểm tra'"><img src="icons/11.gif" class="p"> <span id="l28" class="unselected">Tổng hợp thông tin kiểm tra</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/upangle.gif" class="p"><a href="scr/danhsachquahan.htm" onclick="return LinkClick('29',false,true)" target="content" title="Danh sách phương tiện quá hạn" onmousemove="window.status='Danh sách phương tiện quá hạn'"><img src="icons/11.gif" class="p"> <span id="l29" class="unselected">Danh sách phương tiện quá hạn</span></a></nobr></div>
+</div><div><nobr><a href="#" onClick="return NodeClick('30')"><img id="imgn30" src="icons/tplus.gif" class="p"></a><a href="scr/DecImport.htm" onclick="return LinkClick('30',true,true)" onDblClick="return LinkDblClick('30')" target="content" title="Quy trình tạo tờ khai nhập" onmousemove="window.status='Quy trình tạo tờ khai nhập'"><img id="img30" src="icons/1.gif" class="p"> <span id="l30" class="unselected">Quy trình tạo tờ khai nhập</span></a></nobr></div>
+<div id="d30" style="display:none"><div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/NewDeclarExport.htm" onclick="return LinkClick('31',false,true)" target="content" title="Tạo tờ khai xuất" onmousemove="window.status='Tạo tờ khai xuất'"><img src="icons/11.gif" class="p"> <span id="l31" class="unselected">Tạo tờ khai xuất</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/tshaped.gif" class="p"><a href="scr/NewDeclaration.htm" onclick="return LinkClick('32',false,true)" target="content" title="Tạo tờ khai nhập" onmousemove="window.status='Tạo tờ khai nhập'"><img src="icons/11.gif" class="p"> <span id="l32" class="unselected">Tạo tờ khai nhập</span></a></nobr></div>
+<div><nobr><img src="icons/line.gif" class="p"><img src="icons/upangle.gif" class="p"><a href="scr/ListDecla.htm" onclick="return LinkClick('33',false,true)" target="content" title="Tìm kiếm tờ khai" onmousemove="window.status='Tìm kiếm tờ khai'"><img src="icons/11.gif" class="p"> <span id="l33" class="unselected">Tìm kiếm tờ khai</span></a></nobr></div>
+</div><div><nobr><a href="#" onClick="return NodeClick('34')"><img id="imgn34" src="icons/uaplus.gif" class="p"></a><a href="scr/QuyTrinhxeHN.htm" onclick="return LinkClick('34',true,true)" onDblClick="return LinkDblClick('34')" target="content" title="Quy trình CK Hữu nghị" onmousemove="window.status='Quy trình CK Hữu nghị'"><img id="img34" src="icons/1.gif" class="p"> <span id="l34" class="unselected">Quy trình CK Hữu nghị</span></a></nobr></div>
+<div id="d34" style="display:none"><div><nobr><img src="icons/blank.gif" class="p"><img src="icons/upangle.gif" class="p"><a href="scr/XeTQsangtaixeVN.htm" onclick="return LinkClick('35',false,true)" target="content" title="Xe TQ sang tải xe VN" onmousemove="window.status='Xe TQ sang tải xe VN'"><img src="icons/11.gif" class="p"> <span id="l35" class="unselected">Xe TQ sang tải xe VN</span></a></nobr></div>
+</div><script>divlist = [3,14,19,23,26,30,34]</script>
+</body>
+</html>
