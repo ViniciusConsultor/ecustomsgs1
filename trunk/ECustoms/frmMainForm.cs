@@ -277,7 +277,7 @@ namespace ECustoms
         {
             try
             {
-                var filePath = Application.StartupPath + @"\Docs\GS1_UserManual.pdf";
+                var filePath = Application.StartupPath + @"\Docs\WebHelp\index.htm";
                 Help.ShowHelp(this, filePath);
             }
             catch (Exception ex)
