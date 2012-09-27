@@ -903,8 +903,9 @@ namespace ECustoms
                         vehicle.StatusChangeGood = rbVehicleChangeVN.Checked
                                                        ? (byte) Utilities.Enums.VehicleChangeStatus.SangTaiVN
                                                        : (byte) Utilities.Enums.VehicleChangeStatus.SangTaiTQ;
-                        VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
-                        VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().Select(x => x.VehicleId).ToList());
+                        //VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
+                        //VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().Select(x => x.VehicleId).ToList());
+                        vehicle.ListVehicleChangeGood = txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().ToList();
                     }
                     VehicleFactory.UpdateVehicle(vehicle);
 
