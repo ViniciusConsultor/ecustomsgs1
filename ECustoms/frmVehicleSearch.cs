@@ -117,19 +117,18 @@ namespace ECustoms
 
                     result = result.Where(g => g.Parking != null && g.ParkingDate >= parkingDateFrom && g.ParkingDate <= parkingDateTo).ToList();
                 }
-                
+                //TODO: CuongTd -- fix tạm thời performance cho form search
+                var oldModifiedDate = result.Count > 0 ? result[result.Count - 1].ModifiedDate : null;
                 var listVehilceId = result.Select(x => x.VehicleID).Distinct().ToList();
 
                 var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
-                var allVehicles = db.ViewAllVehicles.ToList();
-                //var searchVehicles = db.ViewAllVehicles.Where(g => listVehilceId.Contains((g.VehicleID)).OrderByDescending(g => g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
+                var allVehicles = oldModifiedDate == null ?  db.ViewAllVehicles.ToList() : db.ViewAllVehicles.Where(v => v.ModifiedDate >= oldModifiedDate).ToList();
                 db.Connection.Close();
-                // var allVehicles = VehicleFactory.GetAllViewAllVehicle();
                 var q = (from x in allVehicles where listVehilceId.Contains(x.VehicleID) select x).OrderByDescending(g => g.Parking).OrderByDescending(g => g.ModifiedDate).ToList();
 
                 if (!string.IsNullOrEmpty(txtXeSangtai.Text))
                 {
-                    q = q.Where(g => g.VehicleChangeGoodVN.Contains(txtXeSangtai.Text.Trim())).ToList();
+                    q = q.Where(g => g.VehicleChangeGoodVn.Contains(txtXeSangtai.Text.Trim())).ToList();
                 }
                 if (!string.IsNullOrEmpty(txtPlateNumberChinese.Text))
                 {
@@ -157,7 +156,7 @@ namespace ECustoms
                     xeVaoNoiDia = listXeVaoNoiDia.Count;
 
                     // Set Decleration info
-                    SetDeclerationInfo(grdVehicle.Rows[0]);
+                    if (grdVehicle.Rows.Count > 0) SetDeclerationInfo(grdVehicle.Rows[0]);
                 }
                 else
                 {

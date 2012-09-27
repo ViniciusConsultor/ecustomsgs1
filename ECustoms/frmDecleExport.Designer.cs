@@ -90,6 +90,8 @@
             this.grdVehicle = new System.Windows.Forms.DataGridView();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleChangeGoodVN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehicleChangeGoodChinese = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tblVehicleTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -674,6 +676,8 @@
             this.grdVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Count,
             this.PlateNumber,
+            this.VehicleChangeGoodVN,
+            this.VehicleChangeGoodChinese,
             this.NumberOfContainer,
             this.VehicleType,
             this.ExportGoodType,
@@ -693,7 +697,7 @@
             this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grdVehicle.Location = new System.Drawing.Point(10, 25);
             this.grdVehicle.Name = "grdVehicle";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdVehicle.Size = new System.Drawing.Size(547, 214);
@@ -715,6 +719,22 @@
             this.PlateNumber.HeaderText = "Biển Kiểm soát";
             this.PlateNumber.Name = "PlateNumber";
             this.PlateNumber.Width = 140;
+            // 
+            // VehicleChangeGoodVN
+            // 
+            this.VehicleChangeGoodVN.DataPropertyName = "VehicleChangeGoodVN";
+            this.VehicleChangeGoodVN.HeaderText = "Xe sang tải";
+            this.VehicleChangeGoodVN.Name = "VehicleChangeGoodVN";
+            this.VehicleChangeGoodVN.ReadOnly = true;
+            this.VehicleChangeGoodVN.Width = 150;
+            // 
+            // VehicleChangeGoodChinese
+            // 
+            this.VehicleChangeGoodChinese.DataPropertyName = "VehicleChangeGoodChinese";
+            this.VehicleChangeGoodChinese.HeaderText = "Xe Trung Quốc";
+            this.VehicleChangeGoodChinese.Name = "VehicleChangeGoodChinese";
+            this.VehicleChangeGoodChinese.ReadOnly = true;
+            this.VehicleChangeGoodChinese.Width = 150;
             // 
             // NumberOfContainer
             // 
@@ -1173,24 +1193,6 @@
         private DataSet2 dataSet2;
         private System.Windows.Forms.BindingSource tblGoodsTypeBindingSource;
         private System.Windows.Forms.Button btnFee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfContainer;
-        private System.Windows.Forms.DataGridViewComboBoxColumn VehicleType;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ExportGoodType;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ImportGoodType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExportReceiptNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImportReceiptNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn feeExportAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn feeImportAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsExport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImportDate;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsImport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
         private System.Windows.Forms.TextBox txtTypeName;
         public System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
@@ -1219,5 +1221,25 @@
         public System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNumberTempInfo;
         private System.Windows.Forms.Button btnAddVehicleExportParking;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleChangeGoodVN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleChangeGoodChinese;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfContainer;
+        private System.Windows.Forms.DataGridViewComboBoxColumn VehicleType;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ExportGoodType;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ImportGoodType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriverName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExportReceiptNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImportReceiptNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feeExportAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feeImportAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsExport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImportDate;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsImport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
     }
 }
