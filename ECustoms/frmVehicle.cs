@@ -122,6 +122,8 @@ namespace ECustoms
                 cbVehicleType.Focus();
                 return false;    
             }
+            //Comment for http://code.google.com/p/ecustomsgs1/issues/detail?id=169
+            /*
             if (cbExportGoodType.Visible && cbExportGoodType.Enabled && cbExportGoodType.SelectedIndex == 0)
             {
                 MessageBox.Show("Bạn phải chọn loại hàng hóa xuất!");
@@ -134,6 +136,7 @@ namespace ECustoms
                 cbImportGoodType.Focus();
                 return false;
             }
+            */
             return true;
         }
 

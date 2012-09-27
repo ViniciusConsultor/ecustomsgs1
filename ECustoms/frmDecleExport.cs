@@ -289,9 +289,13 @@ namespace ECustoms
                 // TODO: Need to check return value
                 DeclarationFactory.AddDeclaration(declarationInfo, listVehicleInfo, listVehicleUpdate, _userInfo.UserID);
                 //MessageBox.Show(ConstantInfo.MESSAGE_INSERT_SUCESSFULLY);
-                FrmReceiveNumber frmReceiveNumber = new FrmReceiveNumber(declarationInfo.ReceiveNumberInYear.GetValueOrDefault());
-                frmReceiveNumber.MdiParent = this.MdiParent;
-                frmReceiveNumber.Show(this);
+                
+                if (declarationInfo.DeclarationType == (short)Common.DeclerationType.Export && declarationInfo.TypeOption == 1)
+                {
+                    FrmReceiveNumber frmReceiveNumber = new FrmReceiveNumber(declarationInfo.ReceiveNumberInYear.GetValueOrDefault());
+                    frmReceiveNumber.MdiParent = this.MdiParent;
+                    frmReceiveNumber.Show(this);
+                }
 
                 switch (this.Owner.Name.ToUpper())
                 {
@@ -440,6 +444,9 @@ namespace ECustoms
                     MessageBox.Show("Tồn tại phương tiện chưa có loại trọng tải trong danh sách phương tiện");
                     return false;
                 }
+
+                //Comment for http://code.google.com/p/ecustomsgs1/issues/detail?id=169
+                /*
                 if (_declerationType == Common.DeclerationType.Export && (vehicle.ExportGoodTypeId == null || vehicle.ExportGoodTypeId <= 0))
                 {
                     MessageBox.Show("Tồn tại phương tiện chưa có loại hàng hóa xuất cảnh trong danh sách phương tiện");
@@ -450,6 +457,8 @@ namespace ECustoms
                     MessageBox.Show("Tồn tại phương tiện chưa có loại hàng hóa nhập cảnh trong danh sách phương tiện");
                     return false;
                 }
+              */
+
             }
 
             return true;
