@@ -205,7 +205,7 @@
             this.txtNumberTempInfo.Multiline = true;
             this.txtNumberTempInfo.Name = "txtNumberTempInfo";
             this.txtNumberTempInfo.Size = new System.Drawing.Size(341, 76);
-            this.txtNumberTempInfo.TabIndex = 37;
+            this.txtNumberTempInfo.TabIndex = 15;
             // 
             // txtCustomsName
             // 
@@ -271,7 +271,7 @@
             this.pnTXTN.Location = new System.Drawing.Point(554, 135);
             this.pnTXTN.Name = "pnTXTN";
             this.pnTXTN.Size = new System.Drawing.Size(181, 57);
-            this.pnTXTN.TabIndex = 9;
+            this.pnTXTN.TabIndex = 16;
             this.pnTXTN.Visible = false;
             // 
             // txtNumberHandover
@@ -315,7 +315,7 @@
             this.txtNumberTemp.MaxLength = 50;
             this.txtNumberTemp.Name = "txtNumberTemp";
             this.txtNumberTemp.Size = new System.Drawing.Size(162, 20);
-            this.txtNumberTemp.TabIndex = 10;
+            this.txtNumberTemp.TabIndex = 14;
             this.txtNumberTemp.Leave += new System.EventHandler(this.txtNumberTemp_Leave);
             // 
             // label4
@@ -334,7 +334,7 @@
             this.cbTNTX.Location = new System.Drawing.Point(383, 137);
             this.cbTNTX.Name = "cbTNTX";
             this.cbTNTX.Size = new System.Drawing.Size(162, 21);
-            this.cbTNTX.TabIndex = 9;
+            this.cbTNTX.TabIndex = 13;
             this.cbTNTX.ValueMember = "Value";
             this.cbTNTX.SelectedIndexChanged += new System.EventHandler(this.cbTNTX_SelectedIndexChanged);
             // 
@@ -352,7 +352,7 @@
             this.txtProductAmount.Location = new System.Drawing.Point(623, 25);
             this.txtProductAmount.Name = "txtProductAmount";
             this.txtProductAmount.Size = new System.Drawing.Size(101, 20);
-            this.txtProductAmount.TabIndex = 11;
+            this.txtProductAmount.TabIndex = 9;
             // 
             // txtMoney
             // 
@@ -360,7 +360,7 @@
             this.txtMoney.Mask = "000000000000";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(101, 20);
-            this.txtMoney.TabIndex = 13;
+            this.txtMoney.TabIndex = 11;
             // 
             // label2
             // 
@@ -377,7 +377,7 @@
             this.txtExportTotalVehicles.Mask = "00000";
             this.txtExportTotalVehicles.Name = "txtExportTotalVehicles";
             this.txtExportTotalVehicles.Size = new System.Drawing.Size(101, 20);
-            this.txtExportTotalVehicles.TabIndex = 14;
+            this.txtExportTotalVehicles.TabIndex = 12;
             this.txtExportTotalVehicles.ValidatingType = typeof(int);
             this.txtExportTotalVehicles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExportTotalVehicles_KeyDown);
             this.txtExportTotalVehicles.Leave += new System.EventHandler(this.txtExportTotalVehicles_Leave);
@@ -494,6 +494,7 @@
             // 
             // txtExportCompanyName
             // 
+            this.txtExportCompanyName.AcceptsReturn = true;
             this.txtExportCompanyName.Location = new System.Drawing.Point(382, 53);
             this.txtExportCompanyName.Multiline = true;
             this.txtExportCompanyName.Name = "txtExportCompanyName";
@@ -515,7 +516,7 @@
             this.txtExportUnit.Location = new System.Drawing.Point(623, 53);
             this.txtExportUnit.Name = "txtExportUnit";
             this.txtExportUnit.Size = new System.Drawing.Size(101, 20);
-            this.txtExportUnit.TabIndex = 12;
+            this.txtExportUnit.TabIndex = 10;
             // 
             // lblUnit
             // 
@@ -556,7 +557,7 @@
             this.btnAddVehicleExportParking.Location = new System.Drawing.Point(445, 245);
             this.btnAddVehicleExportParking.Name = "btnAddVehicleExportParking";
             this.btnAddVehicleExportParking.Size = new System.Drawing.Size(172, 28);
-            this.btnAddVehicleExportParking.TabIndex = 8;
+            this.btnAddVehicleExportParking.TabIndex = 7;
             this.btnAddVehicleExportParking.Text = "Thêm phương tiện từ bãi xuất";
             this.btnAddVehicleExportParking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddVehicleExportParking.UseVisualStyleBackColor = true;
@@ -622,7 +623,7 @@
             this.btnDeleteVehicle.Location = new System.Drawing.Point(623, 245);
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
             this.btnDeleteVehicle.Size = new System.Drawing.Size(53, 28);
-            this.btnDeleteVehicle.TabIndex = 7;
+            this.btnDeleteVehicle.TabIndex = 8;
             this.btnDeleteVehicle.Text = "&Xóa";
             this.btnDeleteVehicle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteVehicle.UseVisualStyleBackColor = true;
@@ -888,7 +889,7 @@
             this.lblHeader.Location = new System.Drawing.Point(285, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(171, 24);
-            this.lblHeader.TabIndex = 21;
+            this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Khai báo xuất cảnh";
             // 
             // btnUpdate
