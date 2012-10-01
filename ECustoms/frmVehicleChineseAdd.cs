@@ -391,8 +391,12 @@ namespace ECustoms
             try
             {
                 if (VehicleInfosTemp.Count == 0)
-                    throw new Exception("Phương tiện không được để trống");
+                {
+                    MessageBox.Show("Phương tiện không được để trống");
+                    //throw new Exception("Phương tiện không được để trống");
 
+
+                }
                 foreach (var vehicleInfo in VehicleInfosTemp)
                 {
                     vehicleInfo.CreatedById = _userInfo.UserID;
