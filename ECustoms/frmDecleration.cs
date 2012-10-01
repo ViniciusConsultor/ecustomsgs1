@@ -439,7 +439,7 @@ namespace ECustoms
                     // Exported information
                     if (currentVehicle.IsExport != null && currentVehicle.IsExport.Value) // Exported
                     {
-                        vehicleInfo.Append("Đã xuất cảnh ngày " + currentVehicle.ExportDate.Value.ToString("dd/MM/yyyy HH:mm"));
+                        vehicleInfo.Append("Đã xuất cảnh ngày " + currentVehicle.ExportDate.Value.ToString("dd/MM/yyyy HH:mm") + ";");
                         System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#fff17e");
                         listViewItem.BackColor = col;
                     }
@@ -451,7 +451,7 @@ namespace ECustoms
                     // Import Information
                     if (currentVehicle.IsImport != null && currentVehicle.IsImport.Value) // Imported
                     {
-                        vehicleInfo.Append(" Đã NC ngày " + currentVehicle.ImportDate.Value.ToString("dd/MM/yyyy HH:MM"));
+                        vehicleInfo.Append(" Đã NC ngày " + currentVehicle.ImportDate.Value.ToString("dd/MM/yyyy HH:mm") + ";");
                         System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#a0c8f9");
                         listViewItem.BackColor = col;
                     }
@@ -465,7 +465,7 @@ namespace ECustoms
                     // Go to local
                     if (currentVehicle.IsGoodsImported != null && currentVehicle.IsGoodsImported.Value)
                     {
-                        vehicleInfo.Append(" Đã vào nội địa");
+                        vehicleInfo.Append(" Đã vào nội địa ngày " + currentVehicle.ImportedLocalTime.Value.ToString("dd/MM/yyyy HH:mm"));
                         System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#e2e2e2");
                         listViewItem.BackColor = col;
                     }
