@@ -376,7 +376,9 @@ namespace ECustoms
             txtExportUnit.Text = "";
             txtExportTotalVehicles.Text = "";
             txtTypeExport.Text = string.Empty;
-            txtTypeName.Text = "";
+            //txtTypeName.Text = "";
+            ddlTypeName.SelectedIndex = 0;
+            ddlCustomsName.SelectedIndex = 0;
             grdVehicle.DataSource = null;
             _vehicleInfosTemp.Clear();
             txtExportCompanyCode.Text = "";
@@ -517,6 +519,38 @@ namespace ECustoms
             txtTypeExport.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtTypeExport.AutoCompleteCustomSource = autoType;
 
+            //init dropdownlist Type name
+            var listTypeName = TypeFactory.getAllType();
+            listTypeName.Insert(0, new tblType
+                                       {
+                                           TypeName = "Tên loại hình",
+                                           TypeCode = ""
+                                       });
+            ddlTypeName.DataSource = listTypeName.Select(x => new
+                                                                  {
+                                                                      x.TypeName,
+                                                                      TypeCode = x.TypeCode.Trim()
+                                                                  }).ToList();
+            ddlTypeName.ValueMember = "TypeCode";
+            ddlTypeName.DisplayMember = "TypeName";
+            ddlTypeName.SelectedIndex = 0;
+
+            //init dropdownlist Customs name
+            var listCustomsName = CustomsFacory.getAll();
+            listCustomsName.Insert(0, new tblCustom
+                                          {
+                                              CustomsName = "Tên ĐV Hải quan",
+                                              CustomsCode = ""
+                                          });
+            ddlCustomsName.DataSource = listCustomsName.Select(x=> new
+                                                                       {
+                                                                           x.CustomsName, 
+                                                                           CustomsCode = x.CustomsCode.Trim()
+                                                                       }).ToList();
+            ddlCustomsName.ValueMember = "CustomsCode";
+            ddlCustomsName.DisplayMember = "CustomsName";
+            ddlCustomsName.SelectedIndex = 0;
+
             grdVehicle.AutoGenerateColumns = false;
             //Init data for cbTNTX
             var listTNTX = new List<ComboBoxItem>();
@@ -586,16 +620,18 @@ namespace ECustoms
                 {
                     if (config.Type == (int)ProfileConfig.TypeCode)
                     {
-                        txtTypeExport.Text = config.Value;
-                        var type = TypeFactory.FindByCode(config.Value);
-                        txtTypeName.Text = type != null ? type.TypeName : "";
+                        //var type = TypeFactory.FindByCode(config.Value);
+                        //txtTypeName.Text = type != null ? type.TypeName : "";
+                        //txtTypeExport.Text = config.Value;
+                        ddlTypeName.SelectedValue = config.Value.Trim();
                         continue;
                     }
                     if (config.Type == (int)ProfileConfig.CustomUnit)
                     {
-                        txtCustomsCode.Text = config.Value;
-                        var custom  = CustomsFacory.FindByCode(config.Value);
-                        txtCustomsName.Text = custom != null ? custom.CustomsName : "";
+                        //txtCustomsCode.Text = config.Value;
+                        //var custom = CustomsFacory.FindByCode(config.Value);
+                        //txtCustomsName.Text = custom != null ? custom.CustomsName : "";
+                        ddlCustomsName.SelectedValue = config.Value.Trim();
                     }
                 }
             }
@@ -621,11 +657,12 @@ namespace ECustoms
                     tblType type = TypeFactory.FindByCode(declarationInfo.Type);
                     if (type != null)
                     {
-                        txtTypeName.Text = type.TypeName;
+                        //txtTypeName.Text = type.TypeName;
+                        ddlTypeName.SelectedValue = type.TypeCode.Trim();
                     }
                     else
                     {
-                        txtTypeName.Text = "";
+                        //txtTypeName.Text = "";
                     }
 
                     
@@ -633,11 +670,12 @@ namespace ECustoms
                     tblCustom customs = CustomsFacory.FindByCode(declarationInfo.CustomsCode);
                     if (customs != null)
                     {
-                        txtCustomsName.Text = customs.CustomsName;
+                        //txtCustomsName.Text = customs.CustomsName;
+                        ddlCustomsName.SelectedValue = customs.CustomsCode.Trim();
                     }
                     else
                     {
-                        txtCustomsName.Text = "";
+                        //txtCustomsName.Text = "";
                     }
 
                     dtpExportRegisterDate.Value = declarationInfo.RegisterDate != null ? declarationInfo.RegisterDate.Value : CommonFactory.GetCurrentDate();
@@ -1474,11 +1512,13 @@ namespace ECustoms
             tblType type = TypeFactory.FindByCode(typeCode);
             if (type != null)
             {
-                txtTypeName.Text = type.TypeName;
+                ddlTypeName.SelectedValue = typeCode;
+                //txtTypeName.Text = type.TypeName;
             }
             else
             {
-                txtTypeName.Text = "";
+                ddlTypeName.SelectedIndex = 0;
+                //txtTypeName.Text = "";
             }
             LoadDeclaration();
         }
@@ -1502,11 +1542,13 @@ namespace ECustoms
             tblCustom customs = CustomsFacory.FindByCode(txtCustomsCode.Text.Trim());
             if (customs != null)
             {
-                txtCustomsName.Text = customs.CustomsName;
+                //txtCustomsName.Text = customs.CustomsName;
+                ddlCustomsName.SelectedValue = customs.CustomsCode.Trim();
             }
             else
             {
-                txtCustomsName.Text = "";
+                ddlCustomsName.SelectedIndex = 0;
+                //txtCustomsName.Text = "";
             }
             LoadDeclaration();
         }
@@ -1559,6 +1601,16 @@ namespace ECustoms
             var frmSelectExport = new FrmAddSelectVehichleFromExportPark(_declerationID);
             frmSelectExport.OnSelectedVehichle += new FrmAddSelectVehichleFromExportPark.OnSelectedVehicleHandler(frmSelect_OnSelectedVehichle);
             frmSelectExport.Show(this);
+        }
+
+        private void ddlTypeName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtTypeExport.Text = ddlTypeName.SelectedValue.ToString();
+        }
+
+        private void ddlCustomsName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtCustomsCode.Text = ddlCustomsName.SelectedValue.ToString();
         }
     }
 }
