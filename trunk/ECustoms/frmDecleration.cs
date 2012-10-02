@@ -465,7 +465,13 @@ namespace ECustoms
                     // Go to local
                     if (currentVehicle.IsGoodsImported != null && currentVehicle.IsGoodsImported.Value)
                     {
-                        vehicleInfo.Append(" Đã vào nội địa ngày " + currentVehicle.ImportedLocalTime.Value.ToString("dd/MM/yyyy HH:mm"));
+                        vehicleInfo.Append(" Đã vào nội địa");
+                        if  ((currentVehicle.IsChineseVehicle == true) ||
+                            (currentVehicle.StatusChangeGood == (byte)Utilities.Enums.VehicleChangeStatus.SangTaiTQ) ||
+                            (currentVehicle.StatusChangeGood == (byte)Utilities.Enums.VehicleChangeStatus.SangTaiVN))
+                        {
+                            vehicleInfo.Append(" ngày " + currentVehicle.ImportedLocalTime.Value.ToString("dd/MM/yyyy HH:mm"));
+                        }
                         System.Drawing.Color col = System.Drawing.ColorTranslator.FromHtml("#e2e2e2");
                         listViewItem.BackColor = col;
                     }
