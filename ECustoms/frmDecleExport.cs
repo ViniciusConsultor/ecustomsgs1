@@ -1577,6 +1577,13 @@ namespace ECustoms
             txtProductAmount.Text = declaration.SoLuong.ToString("#,#.###");
             txtExportUnit.Text = declaration.Dvt;
             txtExportProductName.Text = declaration.TenHang;
+            if (declaration.Ma_NT == "USD")
+            {
+                if (declaration.TongTGTT != null)
+                {
+                    txtMoney.Text = Math.Round((decimal)declaration.TongTGTT / declaration.TyGia_USD).ToString();
+                }
+            }
         }
 
         private void txtExportNumber_Leave(object sender, EventArgs e)
