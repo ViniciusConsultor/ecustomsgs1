@@ -2,12 +2,13 @@
 <xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbEcustomConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbEcustomConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ECustoms.Properties.Settings.GlobalReference.Default.dbEcustomConnectionString" Provider="System.Data.SqlClient" />
           <Connection ConnectionStringObject="Data Source=hungtv-note;Initial Catalog=eCustoms;Persist Security Info=True;User ID=sa;Password=abc@123" IsAppSettingsProperty="false" Modifier="Assembly" Name="hungtv-note.eCustoms.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="eCustomsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="eCustomsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ECustoms.Properties.Settings.GlobalReference.Default.eCustomsConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbECustomsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbECustomsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ECustoms.Properties.Settings.GlobalReference.Default.dbECustomsConnectionString" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=Cosmos-Lap;Initial Catalog=dbEcustom;Persist Security Info=True;User ID=sa;Password=123456" IsAppSettingsProperty="false" Modifier="Assembly" Name="cosmos-lap.dbEcustom.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewAllVehicleTableAdapter" GeneratorDataComponentClassName="ViewAllVehicleTableAdapter" Name="ViewAllVehicle" UserDataComponentName="ViewAllVehicleTableAdapter">
@@ -137,7 +138,7 @@ GROUP BY vehicleTypeId, GoodTypeName, Name</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewAllDeclarationTNTXTableAdapter" GeneratorDataComponentClassName="ViewAllDeclarationTNTXTableAdapter" Name="ViewAllDeclarationTNTX" UserDataComponentName="ViewAllDeclarationTNTXTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dbECustomsConnectionString (Settings)" DbObjectName="dbECustoms.dbo.ViewAllDeclarationTNTX" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="cosmos-lap.dbEcustom.dbo" DbObjectName="dbEcustom.dbo.ViewAllDeclarationTNTX" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ViewAllDeclarationTNTX.*
@@ -185,6 +186,10 @@ FROM            ViewAllDeclarationTNTX</CommandText>
               <Mapping SourceColumn="PersonHandoverID" DataSetColumn="PersonHandoverID" />
               <Mapping SourceColumn="PersonHandoverName" DataSetColumn="PersonHandoverName" />
               <Mapping SourceColumn="ReceiveNumberInYear" DataSetColumn="ReceiveNumberInYear" />
+              <Mapping SourceColumn="BranchId" DataSetColumn="BranchId" />
+              <Mapping SourceColumn="GateExportName" DataSetColumn="GateExportName" />
+              <Mapping SourceColumn="GateImport" DataSetColumn="GateImport" />
+              <Mapping SourceColumn="GateImportName" DataSetColumn="GateImportName" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -533,6 +538,14 @@ FROM            ViewAllDeclarationTNTX</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tblLoanStatus" msprop:Generator_TableClassName="tblLoanStatusDataTable" msprop:Generator_TableVarName="tabletblLoanStatus" msprop:Generator_TablePropName="tblLoanStatus" msprop:Generator_RowDeletingName="tblLoanStatusRowDeleting" msprop:Generator_UserTableName="tblLoanStatus" msprop:Generator_RowChangingName="tblLoanStatusRowChanging" msprop:Generator_RowEvHandlerName="tblLoanStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="tblLoanStatusRowDeleted" msprop:Generator_RowEvArgName="tblLoanStatusRowChangeEvent" msprop:Generator_RowChangedName="tblLoanStatusRowChanged" msprop:Generator_RowClassName="tblLoanStatusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StatusCode" msprop:Generator_ColumnVarNameInTable="columnStatusCode" msprop:Generator_ColumnPropNameInRow="StatusCode" msprop:Generator_ColumnPropNameInTable="StatusCodeColumn" msprop:Generator_UserColumnName="StatusCode" type="xs:boolean" minOccurs="0" />
+              <xs:element name="StatusName" msprop:Generator_ColumnVarNameInTable="columnStatusName" msprop:Generator_ColumnPropNameInRow="StatusName" msprop:Generator_ColumnPropNameInTable="StatusNameColumn" msprop:Generator_UserColumnName="StatusName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="ViewAllDeclarationTNTX" msprop:Generator_TableClassName="ViewAllDeclarationTNTXDataTable" msprop:Generator_TableVarName="tableViewAllDeclarationTNTX" msprop:Generator_TablePropName="ViewAllDeclarationTNTX" msprop:Generator_RowDeletingName="ViewAllDeclarationTNTXRowDeleting" msprop:Generator_UserTableName="ViewAllDeclarationTNTX" msprop:Generator_RowChangingName="ViewAllDeclarationTNTXRowChanging" msprop:Generator_RowEvHandlerName="ViewAllDeclarationTNTXRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewAllDeclarationTNTXRowDeleted" msprop:Generator_RowEvArgName="ViewAllDeclarationTNTXRowChangeEvent" msprop:Generator_RowChangedName="ViewAllDeclarationTNTXRowChanged" msprop:Generator_RowClassName="ViewAllDeclarationTNTXRow">
           <xs:complexType>
             <xs:sequence>
@@ -675,14 +688,34 @@ FROM            ViewAllDeclarationTNTX</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ReceiveNumberInYear" msprop:Generator_ColumnVarNameInTable="columnReceiveNumberInYear" msprop:Generator_ColumnPropNameInRow="ReceiveNumberInYear" msprop:Generator_ColumnPropNameInTable="ReceiveNumberInYearColumn" msprop:Generator_UserColumnName="ReceiveNumberInYear" type="xs:long" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblLoanStatus" msprop:Generator_TableClassName="tblLoanStatusDataTable" msprop:Generator_TableVarName="tabletblLoanStatus" msprop:Generator_TablePropName="tblLoanStatus" msprop:Generator_RowDeletingName="tblLoanStatusRowDeleting" msprop:Generator_UserTableName="tblLoanStatus" msprop:Generator_RowChangingName="tblLoanStatusRowChanging" msprop:Generator_RowEvHandlerName="tblLoanStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="tblLoanStatusRowDeleted" msprop:Generator_RowEvArgName="tblLoanStatusRowChangeEvent" msprop:Generator_RowChangedName="tblLoanStatusRowChanged" msprop:Generator_RowClassName="tblLoanStatusRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="StatusCode" msprop:Generator_ColumnVarNameInTable="columnStatusCode" msprop:Generator_ColumnPropNameInRow="StatusCode" msprop:Generator_ColumnPropNameInTable="StatusCodeColumn" msprop:Generator_UserColumnName="StatusCode" type="xs:boolean" minOccurs="0" />
-              <xs:element name="StatusName" msprop:Generator_ColumnVarNameInTable="columnStatusName" msprop:Generator_ColumnPropNameInRow="StatusName" msprop:Generator_ColumnPropNameInTable="StatusNameColumn" msprop:Generator_UserColumnName="StatusName" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchId" msprop:Generator_ColumnVarNameInTable="columnBranchId" msprop:Generator_ColumnPropNameInRow="BranchId" msprop:Generator_ColumnPropNameInTable="BranchIdColumn" msprop:Generator_UserColumnName="BranchId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GateExportName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGateExportName" msprop:Generator_ColumnPropNameInRow="GateExportName" msprop:Generator_ColumnPropNameInTable="GateExportNameColumn" msprop:Generator_UserColumnName="GateExportName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GateImport" msprop:Generator_ColumnVarNameInTable="columnGateImport" msprop:Generator_ColumnPropNameInRow="GateImport" msprop:Generator_ColumnPropNameInTable="GateImportColumn" msprop:Generator_UserColumnName="GateImport" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GateImportName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGateImportName" msprop:Generator_ColumnPropNameInRow="GateImportName" msprop:Generator_ColumnPropNameInTable="GateImportNameColumn" msprop:Generator_UserColumnName="GateImportName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
