@@ -2573,6 +2573,14 @@ namespace ECustoms {
             
             private global::System.Data.DataColumn columnReceiveNumberInYear;
             
+            private global::System.Data.DataColumn columnBranchId;
+            
+            private global::System.Data.DataColumn columnGateExportName;
+            
+            private global::System.Data.DataColumn columnGateImport;
+            
+            private global::System.Data.DataColumn columnGateImportName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ViewAllDeclarationTNTXDataTable() {
@@ -2904,6 +2912,38 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BranchIdColumn {
+                get {
+                    return this.columnBranchId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GateExportNameColumn {
+                get {
+                    return this.columnGateExportName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GateImportColumn {
+                get {
+                    return this.columnGateImport;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GateImportNameColumn {
+                get {
+                    return this.columnGateImportName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2976,7 +3016,11 @@ namespace ECustoms {
                         string StatusExport, 
                         int PersonHandoverID, 
                         string PersonHandoverName, 
-                        long ReceiveNumberInYear) {
+                        long ReceiveNumberInYear, 
+                        string BranchId, 
+                        string GateExportName, 
+                        string GateImport, 
+                        string GateImportName) {
                 ViewAllDeclarationTNTXRow rowViewAllDeclarationTNTXRow = ((ViewAllDeclarationTNTXRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DeclarationID,
@@ -3015,7 +3059,11 @@ namespace ECustoms {
                         StatusExport,
                         PersonHandoverID,
                         PersonHandoverName,
-                        ReceiveNumberInYear};
+                        ReceiveNumberInYear,
+                        BranchId,
+                        GateExportName,
+                        GateImport,
+                        GateImportName};
                 rowViewAllDeclarationTNTXRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewAllDeclarationTNTXRow);
                 return rowViewAllDeclarationTNTXRow;
@@ -3075,6 +3123,10 @@ namespace ECustoms {
                 this.columnPersonHandoverID = base.Columns["PersonHandoverID"];
                 this.columnPersonHandoverName = base.Columns["PersonHandoverName"];
                 this.columnReceiveNumberInYear = base.Columns["ReceiveNumberInYear"];
+                this.columnBranchId = base.Columns["BranchId"];
+                this.columnGateExportName = base.Columns["GateExportName"];
+                this.columnGateImport = base.Columns["GateImport"];
+                this.columnGateImportName = base.Columns["GateImportName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3154,6 +3206,14 @@ namespace ECustoms {
                 base.Columns.Add(this.columnPersonHandoverName);
                 this.columnReceiveNumberInYear = new global::System.Data.DataColumn("ReceiveNumberInYear", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReceiveNumberInYear);
+                this.columnBranchId = new global::System.Data.DataColumn("BranchId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBranchId);
+                this.columnGateExportName = new global::System.Data.DataColumn("GateExportName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGateExportName);
+                this.columnGateImport = new global::System.Data.DataColumn("GateImport", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGateImport);
+                this.columnGateImportName = new global::System.Data.DataColumn("GateImportName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGateImportName);
                 this.columnDeclarationID.AllowDBNull = false;
                 this.columnCompanyName.MaxLength = 500;
                 this.columnProductName.MaxLength = 500;
@@ -3177,6 +3237,13 @@ namespace ECustoms {
                 this.columnStatusExport.MaxLength = 100;
                 this.columnPersonHandoverName.ReadOnly = true;
                 this.columnPersonHandoverName.MaxLength = 500;
+                this.columnBranchId.AllowDBNull = false;
+                this.columnBranchId.MaxLength = 15;
+                this.columnGateExportName.ReadOnly = true;
+                this.columnGateExportName.MaxLength = 500;
+                this.columnGateImport.MaxLength = 500;
+                this.columnGateImportName.ReadOnly = true;
+                this.columnGateImportName.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7786,6 +7853,67 @@ namespace ECustoms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BranchId {
+                get {
+                    return ((string)(this[this.tableViewAllDeclarationTNTX.BranchIdColumn]));
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.BranchIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GateExportName {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewAllDeclarationTNTX.GateExportNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GateExportName\' in table \'ViewAllDeclarationTNTX\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.GateExportNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GateImport {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewAllDeclarationTNTX.GateImportColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GateImport\' in table \'ViewAllDeclarationTNTX\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.GateImportColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GateImportName {
+                get {
+                    try {
+                        return ((string)(this[this.tableViewAllDeclarationTNTX.GateImportNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GateImportName\' in table \'ViewAllDeclarationTNTX\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableViewAllDeclarationTNTX.GateImportNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumberNull() {
                 return this.IsNull(this.tableViewAllDeclarationTNTX.NumberColumn);
             }
@@ -8202,6 +8330,42 @@ namespace ECustoms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetReceiveNumberInYearNull() {
                 this[this.tableViewAllDeclarationTNTX.ReceiveNumberInYearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGateExportNameNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.GateExportNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGateExportNameNull() {
+                this[this.tableViewAllDeclarationTNTX.GateExportNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGateImportNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.GateImportColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGateImportNull() {
+                this[this.tableViewAllDeclarationTNTX.GateImportColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGateImportNameNull() {
+                return this.IsNull(this.tableViewAllDeclarationTNTX.GateImportNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGateImportNameNull() {
+                this[this.tableViewAllDeclarationTNTX.GateImportNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9979,6 +10143,10 @@ namespace ECustoms.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("PersonHandoverID", "PersonHandoverID");
             tableMapping.ColumnMappings.Add("PersonHandoverName", "PersonHandoverName");
             tableMapping.ColumnMappings.Add("ReceiveNumberInYear", "ReceiveNumberInYear");
+            tableMapping.ColumnMappings.Add("BranchId", "BranchId");
+            tableMapping.ColumnMappings.Add("GateExportName", "GateExportName");
+            tableMapping.ColumnMappings.Add("GateImport", "GateImport");
+            tableMapping.ColumnMappings.Add("GateImportName", "GateImportName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -9986,7 +10154,8 @@ namespace ECustoms.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ECustoms.Properties.Settings.Default.dbECustomsConnectionString;
+            this._connection.ConnectionString = "Data Source=Cosmos-Lap;Initial Catalog=dbEcustom;Persist Security Info=True;User " +
+                "ID=sa;Password=123456";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
