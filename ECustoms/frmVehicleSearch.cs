@@ -128,11 +128,11 @@ namespace ECustoms
 
                 if (!string.IsNullOrEmpty(txtXeSangtai.Text))
                 {
-                    q = q.Where(g => g.VehicleChangeGoodVn.Contains(txtXeSangtai.Text.Trim())).ToList();
+                    q = q.Where(g => g.VehicleChangeGoodVn != null && g.VehicleChangeGoodVn.Contains(txtXeSangtai.Text.Trim())).ToList();
                 }
                 if (!string.IsNullOrEmpty(txtPlateNumberChinese.Text))
                 {
-                    q = q.Where(g => g.VehicleChangeGoodChinese.Contains(txtPlateNumberChinese.Text.Trim())).ToList();
+                    q = q.Where(g => g.VehicleChangeGoodChinese != null && g.VehicleChangeGoodChinese.Contains(txtPlateNumberChinese.Text.Trim())).ToList();
                 }
                 grdVehicle.DataSource = q;
 
