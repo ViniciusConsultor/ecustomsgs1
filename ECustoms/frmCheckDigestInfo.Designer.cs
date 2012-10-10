@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckDigestInfo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.opt2 = new System.Windows.Forms.RadioButton();
             this.opt1 = new System.Windows.Forms.RadioButton();
             this.chkUserOnlineErrorChecker = new System.Windows.Forms.CheckBox();
@@ -50,8 +52,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.viewVehicleFreightTableAdapter1 = new ECustoms.DataSet2TableAdapters.ViewVehicleFreightTableAdapter();
             this.cachedXuatCanhXeKhong1 = new ECustoms.CachedXuatCanhXeKhong();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -83,25 +83,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "+";
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(110, 193);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(78, 22);
+            this.txtCode.TabIndex = 13;
+            this.txtCode.Tag = "required";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 196);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 14);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Mã đơn vị:";
+            // 
             // opt2
             // 
             this.opt2.AutoSize = true;
+            this.opt2.Checked = true;
             this.opt2.Location = new System.Drawing.Point(240, 257);
             this.opt2.Name = "opt2";
             this.opt2.Size = new System.Drawing.Size(187, 18);
             this.opt2.TabIndex = 16;
+            this.opt2.TabStop = true;
             this.opt2.Text = "Đơn vị sử dụng là cấp Chi Cục";
             this.opt2.UseVisualStyleBackColor = true;
             // 
             // opt1
             // 
             this.opt1.AutoSize = true;
-            this.opt1.Checked = true;
             this.opt1.Location = new System.Drawing.Point(24, 257);
             this.opt1.Name = "opt1";
             this.opt1.Size = new System.Drawing.Size(167, 18);
             this.opt1.TabIndex = 15;
-            this.opt1.TabStop = true;
             this.opt1.Text = "Đơn vị sử dụng là cấp Cục";
             this.opt1.UseVisualStyleBackColor = true;
             // 
@@ -122,7 +139,6 @@
             this.txtSerial.Size = new System.Drawing.Size(317, 22);
             this.txtSerial.TabIndex = 11;
             this.txtSerial.Tag = "required";
-            this.txtSerial.Text = "D62D19D5-00EB-1B03-9901-C59D07E4C910";
             // 
             // label6
             // 
@@ -140,7 +156,6 @@
             this.txtNumberOfUser.Size = new System.Drawing.Size(86, 22);
             this.txtNumberOfUser.TabIndex = 9;
             this.txtNumberOfUser.Tag = "required";
-            this.txtNumberOfUser.Text = "200";
             // 
             // label5
             // 
@@ -158,7 +173,6 @@
             this.txtNumberOfPc.Size = new System.Drawing.Size(86, 22);
             this.txtNumberOfPc.TabIndex = 7;
             this.txtNumberOfPc.Tag = "required";
-            this.txtNumberOfPc.Text = "100";
             // 
             // label4
             // 
@@ -176,7 +190,6 @@
             this.txtAddress.Size = new System.Drawing.Size(317, 22);
             this.txtAddress.TabIndex = 5;
             this.txtAddress.Tag = "required";
-            this.txtAddress.Text = "Đường Bạch Đằng, Thành Phố Lạng Sơn, Lạng Sơn";
             // 
             // label3
             // 
@@ -194,7 +207,6 @@
             this.txtDomain.Size = new System.Drawing.Size(317, 22);
             this.txtDomain.TabIndex = 3;
             this.txtDomain.Tag = "required";
-            this.txtDomain.Text = "tqdttntt.customs.gov.vn";
             // 
             // label2
             // 
@@ -212,7 +224,6 @@
             this.txtUnitName.Size = new System.Drawing.Size(317, 22);
             this.txtUnitName.TabIndex = 1;
             this.txtUnitName.Tag = "required";
-            this.txtUnitName.Text = "Cục Hải Quan Thành Phố Lạng Sơn";
             // 
             // label1
             // 
@@ -264,24 +275,6 @@
             // viewVehicleFreightTableAdapter1
             // 
             this.viewVehicleFreightTableAdapter1.ClearBeforeFill = true;
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(110, 193);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(78, 22);
-            this.txtCode.TabIndex = 13;
-            this.txtCode.Tag = "required";
-            this.txtCode.Text = "Z15Z";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 14);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Mã đơn vị:";
             // 
             // frmCheckDigestInfo
             // 
