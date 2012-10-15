@@ -96,6 +96,7 @@
             this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tblGoodsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cachedXuatCanhXeKhong1 = new ECustoms.CachedXuatCanhXeKhong();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInvalid)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -346,10 +347,10 @@
             // 
             // txtNumberOfContainer
             // 
-            this.txtNumberOfContainer.Location = new System.Drawing.Point(546, 22);
+            this.txtNumberOfContainer.Location = new System.Drawing.Point(476, 51);
             this.txtNumberOfContainer.MaxLength = 12;
             this.txtNumberOfContainer.Name = "txtNumberOfContainer";
-            this.txtNumberOfContainer.Size = new System.Drawing.Size(83, 20);
+            this.txtNumberOfContainer.Size = new System.Drawing.Size(153, 20);
             this.txtNumberOfContainer.TabIndex = 3;
             // 
             // lblNumberOfContainer
@@ -514,7 +515,7 @@
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(634, 176);
+            this.grdVehicle.Size = new System.Drawing.Size(637, 176);
             this.grdVehicle.TabIndex = 12;
             this.grdVehicle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdVehicle_CellEndEdit);
             // 
@@ -666,7 +667,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 258);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(640, 195);
+            this.groupBox1.Size = new System.Drawing.Size(643, 195);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các xe vừa nhập";
@@ -680,7 +681,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 465);
+            this.ClientSize = new System.Drawing.Size(667, 465);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -761,5 +762,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfContainer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
         private System.Windows.Forms.GroupBox groupBox1;
+        private CachedXuatCanhXeKhong cachedXuatCanhXeKhong1;
     }
 }
