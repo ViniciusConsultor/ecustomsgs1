@@ -126,17 +126,17 @@
             // 
             // txtNumberOfContainer
             // 
-            this.txtNumberOfContainer.Location = new System.Drawing.Point(540, 28);
+            this.txtNumberOfContainer.Location = new System.Drawing.Point(498, 58);
             this.txtNumberOfContainer.MaxLength = 12;
             this.txtNumberOfContainer.Name = "txtNumberOfContainer";
-            this.txtNumberOfContainer.Size = new System.Drawing.Size(69, 20);
+            this.txtNumberOfContainer.Size = new System.Drawing.Size(111, 20);
             this.txtNumberOfContainer.TabIndex = 3;
             // 
             // lblNumberOfContainer
             // 
             this.lblNumberOfContainer.AutoSize = true;
             this.lblNumberOfContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblNumberOfContainer.Location = new System.Drawing.Point(463, 32);
+            this.lblNumberOfContainer.Location = new System.Drawing.Point(495, 31);
             this.lblNumberOfContainer.Name = "lblNumberOfContainer";
             this.lblNumberOfContainer.Size = new System.Drawing.Size(68, 13);
             this.lblNumberOfContainer.TabIndex = 2;
@@ -146,7 +146,7 @@
             // 
             this.txtDriverName.Location = new System.Drawing.Point(336, 29);
             this.txtDriverName.Name = "txtDriverName";
-            this.txtDriverName.Size = new System.Drawing.Size(118, 20);
+            this.txtDriverName.Size = new System.Drawing.Size(141, 20);
             this.txtDriverName.TabIndex = 2;
             // 
             // lblDriverName
@@ -214,7 +214,6 @@
             // 
             this.grdVehicle.AllowUserToAddRows = false;
             this.grdVehicle.AllowUserToDeleteRows = false;
-            this.grdVehicle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -257,6 +256,7 @@
             this.Count.HeaderText = "STT";
             this.Count.Name = "Count";
             this.Count.ReadOnly = true;
+            this.Count.Width = 103;
             // 
             // PlateNumber
             // 
@@ -265,12 +265,14 @@
             this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle2;
             this.PlateNumber.HeaderText = "Biển Kiểm soát";
             this.PlateNumber.Name = "PlateNumber";
+            this.PlateNumber.Width = 104;
             // 
             // DriverName
             // 
             this.DriverName.DataPropertyName = "DriverName";
             this.DriverName.HeaderText = "Tên lái xe";
             this.DriverName.Name = "DriverName";
+            this.DriverName.Width = 104;
             // 
             // Vehicletype
             // 
@@ -280,6 +282,7 @@
             this.Vehicletype.HeaderText = "Loại trọng tải";
             this.Vehicletype.Name = "Vehicletype";
             this.Vehicletype.ValueMember = "VehicleTypeID";
+            this.Vehicletype.Width = 104;
             // 
             // tblVehicleTypeBindingSource
             // 
@@ -299,6 +302,7 @@
             this.GoodsType.HeaderText = "Loại hàng hóa";
             this.GoodsType.Name = "GoodsType";
             this.GoodsType.ValueMember = "TypeId";
+            this.GoodsType.Width = 105;
             // 
             // tblGoodsTypeBindingSource
             // 
@@ -310,12 +314,14 @@
             this.Status.DataPropertyName = "Status";
             this.Status.HeaderText = "Diễn giải";
             this.Status.Name = "Status";
+            this.Status.Width = 105;
             // 
             // Note
             // 
             this.Note.DataPropertyName = "Note";
             this.Note.HeaderText = "Ghi chú";
             this.Note.Name = "Note";
+            this.Note.Width = 105;
             // 
             // ExportHour
             // 
@@ -634,7 +640,7 @@
             this.cbGoodType.FormattingEnabled = true;
             this.cbGoodType.Location = new System.Drawing.Point(358, 57);
             this.cbGoodType.Name = "cbGoodType";
-            this.cbGoodType.Size = new System.Drawing.Size(173, 21);
+            this.cbGoodType.Size = new System.Drawing.Size(119, 21);
             this.cbGoodType.TabIndex = 5;
             this.cbGoodType.ValueMember = "TypeId";
             // 

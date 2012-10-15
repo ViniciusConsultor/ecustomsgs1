@@ -121,7 +121,7 @@
             this.txtNumberOfContainer.Location = new System.Drawing.Point(339, 56);
             this.txtNumberOfContainer.MaxLength = 12;
             this.txtNumberOfContainer.Name = "txtNumberOfContainer";
-            this.txtNumberOfContainer.Size = new System.Drawing.Size(55, 20);
+            this.txtNumberOfContainer.Size = new System.Drawing.Size(124, 20);
             this.txtNumberOfContainer.TabIndex = 3;
             // 
             // lblNumberOfContainer
