@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ECustoms.Utilities;
 using ECustoms.Utilities.Enums;
@@ -98,21 +99,16 @@ namespace ECustoms
         private void frmReport_Load(object sender, EventArgs e)
         {
             this.Location = new Point((_mainForm.Width - this.Width) / 2, (_mainForm.Height - this.Height) / 2);
-            List<tblBranchDatabas> list = new List<tblBranchDatabas>();
-            tblBranchDatabas branch = new tblBranchDatabas();
-            branch.Id = "0";
-            branch.BranchName = "Tất cả";
-            list.Add(branch);   
+            var list = new List<tblCustom>();
+            var custom = new tblCustom {CustomsCode = "0", CustomsName = "Tất cả"};
+            list.Add(custom);
 
             //tao danh sach don vi hai quan
-            List<tblBranchDatabas> listTblBranchDatabas=   BranchFactory.getAllBranchDatabas();
-            foreach (tblBranchDatabas obj in listTblBranchDatabas)
-            {
-                list.Add(obj);
-            }
+            var listtblCustoms = CustomsFacory.getAll();
+            list.AddRange(listtblCustoms.Select(item => new tblCustom {CustomsCode = item.CustomsCode.Trim(), CustomsName = item.CustomsName}));
 
-            cbUnit.DisplayMember = "BranchName";
-            cbUnit.ValueMember = "Id";
+            cbUnit.DisplayMember = "CustomsName";
+            cbUnit.ValueMember = "CustomsCode";
             cbUnit.DataSource = list;
             if (FDHelper.RgGetSizeOfUnit() == ConstantInfo.Branch)
             {
