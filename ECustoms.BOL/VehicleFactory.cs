@@ -298,11 +298,11 @@ namespace ECustoms.BOL
                         {
                             db.Attach(vehicleOrgin);
                             db.ApplyPropertyChanges("tblVehicles", vehicle);
-                            
-                            //update tblVehicleChange 
-                            VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
+
                             if (vehicle.ListVehicleChangeGood != null)
                             {
+                                //update tblVehicleChange 
+                                VehicleFactory.DeleteVehicleChangeByVehicleId(vehicle.VehicleID);
                                 VehicleFactory.AddVehicleChangeByVehicleId(vehicle.VehicleID, vehicle.ListVehicleChangeGood.Select(x => x.VehicleId).ToList());
                             }
                             db.Connection.Close();
@@ -744,5 +744,46 @@ namespace ECustoms.BOL
             return db.SaveChanges();
         }
 
+        public static void CheckVehicleChangeGood(long vehicleId)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var vehicleOrgirinId = db.tblVehicleChanges.Where(v => v.VehicleToID == vehicleId).FirstOrDefault();
+            if (vehicleOrgirinId != null)
+            {
+                var listVehicleIdTo = db.tblVehicleChanges.Where(v => v.VehicleFromID == vehicleOrgirinId.VehicleFromID).ToList();
+                var isAllExport = true;
+                foreach (var vehicleChange in listVehicleIdTo)
+                {
+                    var vehicle = db.tblVehicles.Where(v => v.VehicleID == vehicleChange.VehicleToID).FirstOrDefault();
+                    if (vehicle.IsExport == null || vehicle.IsExport == false)
+                    {
+                        isAllExport = false;
+                        break;
+                    }
+                }
+                if (isAllExport)
+                {
+                    var vehicleOrgirinInfo = db.tblVehicles.Where(v => v.VehicleID == vehicleOrgirinId.VehicleFromID).FirstOrDefault();
+                    if (vehicleOrgirinInfo != null)
+                    {
+                        vehicleOrgirinInfo.Status = "Hàng hóa đã xuất khẩu hết";
+                        db.SaveChanges();
+                    }
+                }
+            }
+            
+        }
+
+        public static long GetVehicleChangeGoodOrgirin(long vehicleId)
+        {
+            var db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            var vehicleOrgirinId = db.tblVehicleChanges.Where(v => v.VehicleToID == vehicleId).FirstOrDefault();
+            if (vehicleOrgirinId != null)
+            {
+                return vehicleOrgirinId.VehicleFromID ?? 0;
+            }
+            return 0;
+
+        }
     }
 }

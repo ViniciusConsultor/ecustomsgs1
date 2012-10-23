@@ -197,7 +197,10 @@ namespace ECustoms
                 // Get List vehicle 
                 var vehicleID = Convert.ToInt32(row.Cells["VehicleID"].Value);
 
-                var listDecleration = DeclarationFactory.GetByVehicleID(vehicleID);
+                //ktra xem có phải xe sang tải, nếu là xe nhận tải thì load thông tin tờ khai của xe gốc
+                var vehicleOrgirinId = VehicleFactory.GetVehicleChangeGoodOrgirin(vehicleID);
+
+                var listDecleration = vehicleOrgirinId > 0 ? DeclarationFactory.GetByVehicleID(vehicleOrgirinId) : DeclarationFactory.GetByVehicleID(vehicleID);
                 StringBuilder declerationInfo;
                 // return if does not any vehicle
                 if (listDecleration.Count <= 0) return;
@@ -658,6 +661,14 @@ namespace ECustoms
 
                     //print ticket
                     //printTicket(1, vehicleInfo);
+
+                    //Ktra có phải xe sang tải, nếu là xe sang tải, ktra xe gốc, 
+                    //nếu tất cả hàng hóa đã xuất khẩu thì đánh dấu Hàng hóa của xe gốc đã xuất khẩu hết
+                    if (vehicleInfo.StatusChangeGood != null)
+                    {
+                        VehicleFactory.CheckVehicleChangeGood(vehicleInfo.VehicleID);
+                    }
+
                 }
             }
             catch (Exception ex)
