@@ -487,6 +487,7 @@ namespace ECustoms
                 }
 
                 txtStatus.Text = vehicleInfo.Status;
+                if (vehicleInfo.Status.Equals("Hàng hóa đã xuất khẩu hết")) txtStatus.Enabled = false;
                 txtNote.Text = vehicleInfo.Note;
                 if (vehicleInfo.IsCompleted != null)
                 {
@@ -911,6 +912,13 @@ namespace ECustoms
                         vehicle.ListVehicleChangeGood = txtVehicleChangeGood.SelectedItems.Cast<VehicleNumber>().ToList();
                     }
                     VehicleFactory.UpdateVehicle(vehicle);
+
+                    //Ktra có phải xe sang tải, nếu là xe sang tải, ktra xe gốc, 
+                    //nếu tất cả hàng hóa đã xuất khẩu thì đánh dấu Hàng hóa của xe gốc đã xuất khẩu hết
+                    if (vehicle.StatusChangeGood != null)
+                    {
+                        VehicleFactory.CheckVehicleChangeGood(vehicle.VehicleID);
+                    }
 
                     MessageBox.Show("Cập nhật thành công.");
                     ((frmVehicleSearch)this._seachFrom).BindData();
