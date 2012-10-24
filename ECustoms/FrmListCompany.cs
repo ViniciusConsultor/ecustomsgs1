@@ -38,7 +38,7 @@ namespace ECustoms
 
         public void init()
         {
-            List<tblCompany> list = CompanyFactory.getAllCompany();
+            List<tblCompany> list = CompanyFactory.getTopCompany();
             grvCompany.AutoGenerateColumns = false;
             grvCompany.DataSource = list;
         }
@@ -62,16 +62,8 @@ namespace ECustoms
 
         public void search()
         {
-            List<tblCompany> list = CompanyFactory.getAllCompany();
-            if (txtCompanyCode.Text.Trim().Length > 0)
-            {
-                list = list.Where(g => g.CompanyCode.Contains(txtCompanyCode.Text.Trim())).ToList();
-            }
-            if (txtCompanyName.Text.Trim().Length > 0)
-            {
-                list = list.Where(g => g.CompanyName.Contains(txtCompanyName.Text.Trim())).ToList();
-            }
-
+            List<tblCompany> list = CompanyFactory.getTopCompany(txtCompanyName.Text.Trim(), txtCompanyCode.Text.Trim());
+            
             grvCompany.AutoGenerateColumns = false;
             grvCompany.DataSource = list;
         }

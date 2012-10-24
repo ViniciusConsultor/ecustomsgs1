@@ -31,6 +31,27 @@ namespace ECustoms.BOL
             }
         }
 
+        public static List<tblCompany> getTopCompany(string name = "", string code = "")
+        {
+            dbEcustomEntities _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
+                IQueryable<tblCompany> result = _db.tblCompanies;
+                if (!string.IsNullOrEmpty(name)) result = result.Where(x => x.CompanyName.Contains(name));
+                if (!string.IsNullOrEmpty(code)) result = result.Where(x => x.CompanyCode.Contains(code));
+                return result.Take(200).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
+
 
         public static tblCompany FindByCode(string code)
         {
