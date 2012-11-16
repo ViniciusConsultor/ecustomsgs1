@@ -1659,8 +1659,8 @@ namespace ECustoms
             }
 
             //txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
-            String PlateNumberKey = Utilities.EnCryptDecrypt.Encrypt(vehicleInfo.PlateNumber, true);
-            txtBarcode.Text = "*" + PlateNumberKey + "*";
+            //String PlateNumberKey = Utilities.EnCryptDecrypt.Encrypt(vehicleInfo.PlateNumber, true);
+            txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
             DateTime currentDate = CommonFactory.GetCurrentDate();
             //cap nhat so lan in ticket cua phuong tien vao CSDL
 

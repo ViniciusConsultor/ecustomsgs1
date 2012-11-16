@@ -422,8 +422,8 @@ namespace ECustoms
             }
 
             //txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
-            String PlateNumberKey = Utilities.EnCryptDecrypt.Encrypt(vehicleInfo.PlateNumber, true);
-            txtBarcode.Text = "*" + PlateNumberKey + "*";
+            //String PlateNumberKey = Utilities.EnCryptDecrypt.Encrypt(vehicleInfo.PlateNumber, true);
+            txtBarcode.Text = "*" + vehicleInfo.PlateNumber + "*";
 
             txtPrintUser.Text = _userInfo.Name;
             txtPrintType.Text = "Nhập xe vào bãi xuất";
