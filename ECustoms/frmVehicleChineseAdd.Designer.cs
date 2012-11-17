@@ -127,7 +127,7 @@
             // txtNumberOfContainer
             // 
             this.txtNumberOfContainer.Location = new System.Drawing.Point(498, 58);
-            this.txtNumberOfContainer.MaxLength = 12;
+            this.txtNumberOfContainer.MaxLength = 300;
             this.txtNumberOfContainer.Name = "txtNumberOfContainer";
             this.txtNumberOfContainer.Size = new System.Drawing.Size(111, 20);
             this.txtNumberOfContainer.TabIndex = 3;
