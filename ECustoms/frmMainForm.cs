@@ -491,5 +491,33 @@ namespace ECustoms
         }
         #endregion
 
+        private void tàuHàngTrungQuốcNhậpCảnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Train.frmTrainImport(0);
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void tàuHàngTrungQuốcXuấtCảnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Train.frmTrainImport(1);
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void khaiBáoToaTàuXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Train.frmPartTrainExport();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void tàuKháchXNKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Train.frmTrainPassengers();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
     }
 }
