@@ -360,6 +360,24 @@
     <Compile Include="SubFormBase.Designer.cs">
       <DependentUpon>SubFormBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Train\frmPartTrainExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Train\frmPartTrainExport.Designer.cs">
+      <DependentUpon>frmPartTrainExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Train\frmTrainImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Train\frmTrainImport.Designer.cs">
+      <DependentUpon>frmTrainImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Train\frmTrainPassengers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Train\frmTrainPassengers.Designer.cs">
+      <DependentUpon>frmTrainPassengers.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehicleFeeReport1.cs">
       <DependentUpon>VehicleFeeReport.rpt</DependentUpon>
       <SubType>Component</SubType>
@@ -750,6 +768,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubFormBase.resx">
       <DependentUpon>SubFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Train\frmPartTrainExport.resx">
+      <DependentUpon>frmPartTrainExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Train\frmTrainImport.resx">
+      <DependentUpon>frmTrainImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Train\frmTrainPassengers.resx">
+      <DependentUpon>frmTrainPassengers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleFeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1343,6 +1370,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
