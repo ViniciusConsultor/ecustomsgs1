@@ -167,6 +167,8 @@ namespace ECustoms
                         if (vehicleInfo.IsImport != null && vehicleInfo.IsImport.Value && grdVehicle.Rows[i].Cells["ImportDate"].Value != null)
                         {
                             vehicleInfo.ImportDate = Convert.ToDateTime(grdVehicle.Rows[i].Cells["ImportDate"].Value);
+                            if (grdVehicle.Rows[i].Cells["ImportStatus"].Value != null) vehicleInfo.ImportStatus = grdVehicle.Rows[i].Cells["ImportStatus"].Value.ToString();
+                            if (grdVehicle.Rows[i].Cells["HasGoodsImported"].Value != null) vehicleInfo.HasGoodsImported = bool.Parse(grdVehicle.Rows[i].Cells["HasGoodsImported"].Value.ToString());
                         }
 
                         if (grdVehicle.Rows[i].Cells["Note"].Value != null)

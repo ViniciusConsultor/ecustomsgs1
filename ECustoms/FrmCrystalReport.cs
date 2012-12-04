@@ -175,26 +175,17 @@ namespace ECustoms
                             lblHeader.Text = "Sổ theo dõi phương tiện nhập cảnh xe không";
 
                             var sql = new StringBuilder();
+                            sql.Append("SELECT * ");
+                            sql.Append(" FROM  ViewAllVehicle ");
+                            sql.Append(" WHERE IsImport = 1 ");
+                            sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
+                            sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
+                            sql.Append("' AND HasGoodsImported = 0 ");
+                            
                             if (_branchId != "0")  //tim theo chi cuc hai quan
                             {
-                                sql.Append("SELECT * ");
-                                sql.Append(" FROM  ViewAllVehicleHasGood ");
-                                sql.Append(" WHERE IsImport = 1 ");
-                                sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                                sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
-                                sql.Append("' AND DeclarationID = 0 ");
                                 sql.Append(" AND  BranchId = '" + _branchId + "'");
                             }
-                            else //tim tat cac cac chi cuc hai quan
-                            {
-                                sql.Append("SELECT * ");
-                                sql.Append(" FROM  ViewAllVehicleHasGood ");
-                                sql.Append(" WHERE IsImport = 1 ");
-                                sql.Append(" AND  ImportDate >= '" + _from.ToString("yyyy-MM-dd HH:mm"));
-                                sql.Append("' AND ImportDate < = '" + _to.ToString("yyyy-MM-dd HH:mm"));
-                                sql.Append("' AND DeclarationID = 0 ");
-                            }
-
                             if(string.IsNullOrEmpty(_type)==false)
                             {
                                 sql.Append(" AND  Type = '" + _type + "'");

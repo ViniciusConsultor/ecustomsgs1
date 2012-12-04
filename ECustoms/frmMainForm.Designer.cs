@@ -511,7 +511,6 @@
             this.mnuTauHang.Name = "mnuTauHang";
             this.mnuTauHang.Size = new System.Drawing.Size(109, 20);
             this.mnuTauHang.Text = "Quản lý tàu hàng";
-            this.mnuTauHang.Visible = false;
             // 
             // tàuHàngTrungQuốcNhậpCảnhToolStripMenuItem
             // 
@@ -665,7 +664,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ECustoms.Properties.Resources.logoBackgound;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1140, 644);
+            this.ClientSize = new System.Drawing.Size(1140, 648);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
