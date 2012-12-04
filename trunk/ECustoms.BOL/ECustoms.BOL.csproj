@@ -76,6 +76,7 @@
     <Compile Include="CheckFactory.cs" />
     <Compile Include="CommonFactory.cs" />
     <Compile Include="CompanyFactory.cs" />
+    <Compile Include="TrainFacory.cs" />
     <Compile Include="IDataModelCommand.cs" />
     <Compile Include="DeclarationLoanFactory.cs" />
     <Compile Include="LoadDeclarationFacory.cs" />

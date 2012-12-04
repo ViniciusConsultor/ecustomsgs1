@@ -74,6 +74,7 @@
     <Compile Include="ConstantInfo.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="EnCryptDecrypt.cs" />
+    <Compile Include="Enums\TrainType.cs" />
     <Compile Include="Enums\VehicleChangeStatus.cs" />
     <Compile Include="Enums\ProfileConfig.cs" />
     <Compile Include="Enums\DeclarationType.cs" />

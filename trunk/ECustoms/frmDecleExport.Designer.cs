@@ -43,6 +43,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDecleExport));
             this.gbExportDeclaration = new System.Windows.Forms.GroupBox();
+            this.ddlCustomsName = new System.Windows.Forms.ComboBox();
             this.ddlTypeName = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNumberTempInfo = new System.Windows.Forms.TextBox();
@@ -136,9 +137,10 @@
             this.IsExport = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ImportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsImport = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ImportStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HasGoodsImported = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ddlCustomsName = new System.Windows.Forms.ComboBox();
             this.gbExportDeclaration.SuspendLayout();
             this.pnTXTN.SuspendLayout();
             this.groupBoxVehicle.SuspendLayout();
@@ -191,6 +193,17 @@
             this.gbExportDeclaration.TabIndex = 0;
             this.gbExportDeclaration.TabStop = false;
             this.gbExportDeclaration.Text = "Thông tin tờ khai xuất cảnh";
+            // 
+            // ddlCustomsName
+            // 
+            this.ddlCustomsName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ddlCustomsName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ddlCustomsName.FormattingEnabled = true;
+            this.ddlCustomsName.Location = new System.Drawing.Point(108, 138);
+            this.ddlCustomsName.Name = "ddlCustomsName";
+            this.ddlCustomsName.Size = new System.Drawing.Size(142, 21);
+            this.ddlCustomsName.TabIndex = 40;
+            this.ddlCustomsName.SelectedIndexChanged += new System.EventHandler(this.ddlCustomsName_SelectedIndexChanged);
             // 
             // ddlTypeName
             // 
@@ -690,6 +703,8 @@
             this.IsExport,
             this.ImportDate,
             this.IsImport,
+            this.ImportStatus,
+            this.HasGoodsImported,
             this.VehicleID,
             this.ExportDate});
             this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
@@ -1109,6 +1124,20 @@
             this.IsImport.Name = "IsImport";
             this.IsImport.Visible = false;
             // 
+            // ImportStatus
+            // 
+            this.ImportStatus.DataPropertyName = "ImportStatus";
+            this.ImportStatus.HeaderText = "Trạng thái nhập cảnh";
+            this.ImportStatus.Name = "ImportStatus";
+            this.ImportStatus.Visible = false;
+            // 
+            // HasGoodsImported
+            // 
+            this.HasGoodsImported.DataPropertyName = "HasGoodsImported";
+            this.HasGoodsImported.HeaderText = "Nhập cảnh có hàng";
+            this.HasGoodsImported.Name = "HasGoodsImported";
+            this.HasGoodsImported.Visible = false;
+            // 
             // VehicleID
             // 
             this.VehicleID.DataPropertyName = "VehicleID";
@@ -1126,17 +1155,6 @@
             this.ExportDate.Name = "ExportDate";
             this.ExportDate.Visible = false;
             this.ExportDate.Width = 110;
-            // 
-            // ddlCustomsName
-            // 
-            this.ddlCustomsName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.ddlCustomsName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ddlCustomsName.FormattingEnabled = true;
-            this.ddlCustomsName.Location = new System.Drawing.Point(108, 138);
-            this.ddlCustomsName.Name = "ddlCustomsName";
-            this.ddlCustomsName.Size = new System.Drawing.Size(142, 21);
-            this.ddlCustomsName.TabIndex = 40;
-            this.ddlCustomsName.SelectedIndexChanged += new System.EventHandler(this.ddlCustomsName_SelectedIndexChanged);
             // 
             // FrmDecleExport
             // 
@@ -1251,6 +1269,10 @@
         public System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNumberTempInfo;
         private System.Windows.Forms.Button btnAddVehicleExportParking;
+        private System.Windows.Forms.ComboBox ddlTypeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.ComboBox ddlCustomsName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlateNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleChangeGoodVN;
@@ -1269,11 +1291,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImportDate;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsImport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImportStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HasGoodsImported;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExportDate;
-        private System.Windows.Forms.ComboBox ddlTypeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.ComboBox ddlCustomsName;
     }
 }

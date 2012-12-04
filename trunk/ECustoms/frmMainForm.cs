@@ -514,7 +514,7 @@ namespace ECustoms
 
         private void tàuKháchXNKToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Train.frmTrainPassengers();
+            var frm = new Train.frmTrainPassengers(_userInfo);
             frm.MdiParent = this;
             frm.Show();
         }
