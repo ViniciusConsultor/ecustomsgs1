@@ -30,25 +30,27 @@
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.gbInfoTrain = new System.Windows.Forms.GroupBox();
+            this.txtNumberStaff = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNumberPersonForegin = new System.Windows.Forms.MaskedTextBox();
+            this.txtNumberPersonVN = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtJourney = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.ddlTypeName = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpExportRegisterDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpRegisterDate = new System.Windows.Forms.DateTimePicker();
             this.txtNumberTrain = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumber = new System.Windows.Forms.Label();
-            this.txtJourney = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNumberPersonVN = new System.Windows.Forms.MaskedTextBox();
-            this.maskedNumberPersonCN = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumberStaff = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
             this.gbInfoTrain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -69,7 +71,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gbInfoTrain.Controls.Add(this.txtNumberStaff);
             this.gbInfoTrain.Controls.Add(this.label6);
-            this.gbInfoTrain.Controls.Add(this.maskedNumberPersonCN);
+            this.gbInfoTrain.Controls.Add(this.txtNumberPersonForegin);
             this.gbInfoTrain.Controls.Add(this.txtNumberPersonVN);
             this.gbInfoTrain.Controls.Add(this.label4);
             this.gbInfoTrain.Controls.Add(this.label3);
@@ -77,7 +79,7 @@
             this.gbInfoTrain.Controls.Add(this.label2);
             this.gbInfoTrain.Controls.Add(this.ddlTypeName);
             this.gbInfoTrain.Controls.Add(this.label5);
-            this.gbInfoTrain.Controls.Add(this.dtpExportRegisterDate);
+            this.gbInfoTrain.Controls.Add(this.dtpRegisterDate);
             this.gbInfoTrain.Controls.Add(this.txtNumberTrain);
             this.gbInfoTrain.Controls.Add(this.label1);
             this.gbInfoTrain.Controls.Add(this.lblNumber);
@@ -88,6 +90,78 @@
             this.gbInfoTrain.TabIndex = 3;
             this.gbInfoTrain.TabStop = false;
             this.gbInfoTrain.Text = "Thông tin tàu khách XNK";
+            // 
+            // txtNumberStaff
+            // 
+            this.txtNumberStaff.Location = new System.Drawing.Point(580, 88);
+            this.txtNumberStaff.Mask = "00000";
+            this.txtNumberStaff.Name = "txtNumberStaff";
+            this.txtNumberStaff.Size = new System.Drawing.Size(133, 20);
+            this.txtNumberStaff.TabIndex = 49;
+            this.txtNumberStaff.Tag = "required";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(490, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Số NV tàu";
+            // 
+            // txtNumberPersonForegin
+            // 
+            this.txtNumberPersonForegin.Location = new System.Drawing.Point(348, 88);
+            this.txtNumberPersonForegin.Mask = "00000";
+            this.txtNumberPersonForegin.Name = "txtNumberPersonForegin";
+            this.txtNumberPersonForegin.Size = new System.Drawing.Size(106, 20);
+            this.txtNumberPersonForegin.TabIndex = 47;
+            this.txtNumberPersonForegin.Tag = "required";
+            // 
+            // txtNumberPersonVN
+            // 
+            this.txtNumberPersonVN.Location = new System.Drawing.Point(108, 88);
+            this.txtNumberPersonVN.Mask = "00000";
+            this.txtNumberPersonVN.Name = "txtNumberPersonVN";
+            this.txtNumberPersonVN.Size = new System.Drawing.Size(105, 20);
+            this.txtNumberPersonVN.TabIndex = 46;
+            this.txtNumberPersonVN.Tag = "required";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(256, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Số lượng HK NN";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Số lượng HK VN";
+            // 
+            // txtJourney
+            // 
+            this.txtJourney.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtJourney.Location = new System.Drawing.Point(108, 55);
+            this.txtJourney.Name = "txtJourney";
+            this.txtJourney.Size = new System.Drawing.Size(605, 20);
+            this.txtJourney.TabIndex = 41;
+            this.txtJourney.Tag = "required";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Hành trình";
             // 
             // ddlTypeName
             // 
@@ -109,14 +183,14 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Loại hình XNC";
             // 
-            // dtpExportRegisterDate
+            // dtpRegisterDate
             // 
-            this.dtpExportRegisterDate.CustomFormat = "dd/MM/yyyy";
-            this.dtpExportRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportRegisterDate.Location = new System.Drawing.Point(371, 26);
-            this.dtpExportRegisterDate.Name = "dtpExportRegisterDate";
-            this.dtpExportRegisterDate.Size = new System.Drawing.Size(83, 20);
-            this.dtpExportRegisterDate.TabIndex = 5;
+            this.dtpRegisterDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRegisterDate.Location = new System.Drawing.Point(371, 26);
+            this.dtpRegisterDate.Name = "dtpRegisterDate";
+            this.dtpRegisterDate.Size = new System.Drawing.Size(83, 20);
+            this.dtpRegisterDate.TabIndex = 5;
             // 
             // txtNumberTrain
             // 
@@ -144,75 +218,6 @@
             this.lblNumber.Size = new System.Drawing.Size(89, 13);
             this.lblNumber.TabIndex = 0;
             this.lblNumber.Text = "Số hiệu đoàn tàu";
-            // 
-            // txtJourney
-            // 
-            this.txtJourney.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtJourney.Location = new System.Drawing.Point(108, 55);
-            this.txtJourney.Name = "txtJourney";
-            this.txtJourney.Size = new System.Drawing.Size(605, 20);
-            this.txtJourney.TabIndex = 41;
-            this.txtJourney.Tag = "required";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Hành trình";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Số lượng HK VN";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(256, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Số lượng HK NN";
-            // 
-            // txtNumberPersonVN
-            // 
-            this.txtNumberPersonVN.Location = new System.Drawing.Point(108, 88);
-            this.txtNumberPersonVN.Mask = "0000000000";
-            this.txtNumberPersonVN.Name = "txtNumberPersonVN";
-            this.txtNumberPersonVN.Size = new System.Drawing.Size(105, 20);
-            this.txtNumberPersonVN.TabIndex = 46;
-            // 
-            // maskedNumberPersonCN
-            // 
-            this.maskedNumberPersonCN.Location = new System.Drawing.Point(348, 88);
-            this.maskedNumberPersonCN.Mask = "0000000000";
-            this.maskedNumberPersonCN.Name = "maskedNumberPersonCN";
-            this.maskedNumberPersonCN.Size = new System.Drawing.Size(106, 20);
-            this.maskedNumberPersonCN.TabIndex = 47;
-            // 
-            // txtNumberStaff
-            // 
-            this.txtNumberStaff.Location = new System.Drawing.Point(580, 88);
-            this.txtNumberStaff.Mask = "0000000000";
-            this.txtNumberStaff.Name = "txtNumberStaff";
-            this.txtNumberStaff.Size = new System.Drawing.Size(133, 20);
-            this.txtNumberStaff.TabIndex = 49;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(490, 88);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Số NV tàu";
             // 
             // btnDelete
             // 
@@ -243,6 +248,7 @@
             this.btnAddNew.Text = "&Thêm mới";
             this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnClose
             // 
@@ -259,6 +265,7 @@
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpdate
             // 
@@ -275,6 +282,10 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
+            // techlinkErrorProvider1
+            // 
+            this.techlinkErrorProvider1.ContainerControl = this;
+            // 
             // frmTrainPassengers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,10 +298,13 @@
             this.Controls.Add(this.gbInfoTrain);
             this.Controls.Add(this.lblHeader);
             this.Name = "frmTrainPassengers";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTrainPassengers";
             this.Load += new System.EventHandler(this.frmTrainPassengers_Load);
             this.gbInfoTrain.ResumeLayout(false);
             this.gbInfoTrain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,17 +319,18 @@
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ddlTypeName;
         public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpExportRegisterDate;
+        private System.Windows.Forms.DateTimePicker dtpRegisterDate;
         private System.Windows.Forms.TextBox txtNumberTrain;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblNumber;
         private System.Windows.Forms.MaskedTextBox txtNumberStaff;
         public System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox maskedNumberPersonCN;
+        private System.Windows.Forms.MaskedTextBox txtNumberPersonForegin;
         private System.Windows.Forms.MaskedTextBox txtNumberPersonVN;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnUpdate;
+        private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
     }
 }

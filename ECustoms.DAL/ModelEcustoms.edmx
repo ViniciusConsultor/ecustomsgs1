@@ -897,6 +897,7 @@
         </EntityType>
         <EntityType Name="tblTrain">
           <Key>
+            <PropertyRef Name="TrainID" />
             <PropertyRef Name="BranchId" />
           </Key>
           <Property Name="TrainID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
@@ -2909,6 +2910,7 @@
         </EntityType>
         <EntityType Name="tblTrain">
           <Key>
+            <PropertyRef Name="TrainID" />
             <PropertyRef Name="BranchId" />
           </Key>
           <Property Type="Int64" Name="TrainID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />

@@ -11,7 +11,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
 
 // Original file name:
-// Generation date: 12/4/2012 8:32:27 AM
+// Generation date: 12/5/2012 2:43:55 AM
 namespace ECustoms.DAL
 {
     
@@ -850,7 +850,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToLogs(Log log)
         {
-            base.AddObject("Logs", log);
+            AddObject("Logs", log);
         }
         /// <summary>
         /// There are no comments for tblApplicationObjects in the schema.
@@ -858,7 +858,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblApplicationObjects(tblApplicationObject tblApplicationObject)
         {
-            base.AddObject("tblApplicationObjects", tblApplicationObject);
+            AddObject("tblApplicationObjects", tblApplicationObject);
         }
         /// <summary>
         /// There are no comments for tblBranchDatabases in the schema.
@@ -866,7 +866,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblBranchDatabases(tblBranchDatabas tblBranchDatabas)
         {
-            base.AddObject("tblBranchDatabases", tblBranchDatabas);
+            AddObject("tblBranchDatabases", tblBranchDatabas);
         }
         /// <summary>
         /// There are no comments for tblChecks in the schema.
@@ -874,7 +874,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblChecks(tblCheck tblCheck)
         {
-            base.AddObject("tblChecks", tblCheck);
+            AddObject("tblChecks", tblCheck);
         }
         /// <summary>
         /// There are no comments for tblCompanies in the schema.
@@ -882,7 +882,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblCompanies(tblCompany tblCompany)
         {
-            base.AddObject("tblCompanies", tblCompany);
+            AddObject("tblCompanies", tblCompany);
         }
         /// <summary>
         /// There are no comments for tblCustoms in the schema.
@@ -890,7 +890,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblCustoms(tblCustom tblCustom)
         {
-            base.AddObject("tblCustoms", tblCustom);
+            AddObject("tblCustoms", tblCustom);
         }
         /// <summary>
         /// There are no comments for tblDeclarations in the schema.
@@ -898,7 +898,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblDeclarations(tblDeclaration tblDeclaration)
         {
-            base.AddObject("tblDeclarations", tblDeclaration);
+            AddObject("tblDeclarations", tblDeclaration);
         }
         /// <summary>
         /// There are no comments for tblDeclarationLoans in the schema.
@@ -906,7 +906,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblDeclarationLoans(tblDeclarationLoan tblDeclarationLoan)
         {
-            base.AddObject("tblDeclarationLoans", tblDeclarationLoan);
+            AddObject("tblDeclarationLoans", tblDeclarationLoan);
         }
         /// <summary>
         /// There are no comments for tblDeclarationVehicles in the schema.
@@ -914,7 +914,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblDeclarationVehicles(tblDeclarationVehicle tblDeclarationVehicle)
         {
-            base.AddObject("tblDeclarationVehicles", tblDeclarationVehicle);
+            AddObject("tblDeclarationVehicles", tblDeclarationVehicle);
         }
         /// <summary>
         /// There are no comments for tblGates in the schema.
@@ -922,7 +922,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblGates(tblGate tblGate)
         {
-            base.AddObject("tblGates", tblGate);
+            AddObject("tblGates", tblGate);
         }
         /// <summary>
         /// There are no comments for tblGoodsTypes in the schema.
@@ -930,7 +930,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblGoodsTypes(tblGoodsType tblGoodsType)
         {
-            base.AddObject("tblGoodsTypes", tblGoodsType);
+            AddObject("tblGoodsTypes", tblGoodsType);
         }
         /// <summary>
         /// There are no comments for tblGroups in the schema.
@@ -938,7 +938,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblGroups(tblGroup tblGroup)
         {
-            base.AddObject("tblGroups", tblGroup);
+            AddObject("tblGroups", tblGroup);
         }
         /// <summary>
         /// There are no comments for tblPermissions in the schema.
@@ -946,7 +946,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblPermissions(tblPermission tblPermission)
         {
-            base.AddObject("tblPermissions", tblPermission);
+            AddObject("tblPermissions", tblPermission);
         }
         /// <summary>
         /// There are no comments for tblPermissionTypes in the schema.
@@ -954,7 +954,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblPermissionTypes(tblPermissionType tblPermissionType)
         {
-            base.AddObject("tblPermissionTypes", tblPermissionType);
+            AddObject("tblPermissionTypes", tblPermissionType);
         }
         /// <summary>
         /// There are no comments for tblProfileConfigs in the schema.
@@ -962,7 +962,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblProfileConfigs(tblProfileConfig tblProfileConfig)
         {
-            base.AddObject("tblProfileConfigs", tblProfileConfig);
+            AddObject("tblProfileConfigs", tblProfileConfig);
         }
         /// <summary>
         /// There are no comments for tblRoleInGroups in the schema.
@@ -970,7 +970,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblRoleInGroups(tblRoleInGroup tblRoleInGroup)
         {
-            base.AddObject("tblRoleInGroups", tblRoleInGroup);
+            AddObject("tblRoleInGroups", tblRoleInGroup);
         }
         /// <summary>
         /// There are no comments for tblSettings in the schema.
@@ -978,7 +978,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblSettings(tblSetting tblSetting)
         {
-            base.AddObject("tblSettings", tblSetting);
+            AddObject("tblSettings", tblSetting);
         }
         /// <summary>
         /// There are no comments for tblTypes in the schema.
@@ -986,7 +986,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblTypes(tblType tblType)
         {
-            base.AddObject("tblTypes", tblType);
+            AddObject("tblTypes", tblType);
         }
         /// <summary>
         /// There are no comments for tblUsers in the schema.
@@ -994,7 +994,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblUsers(tblUser tblUser)
         {
-            base.AddObject("tblUsers", tblUser);
+            AddObject("tblUsers", tblUser);
         }
         /// <summary>
         /// There are no comments for tblUserGroupPermissions in the schema.
@@ -1002,7 +1002,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblUserGroupPermissions(tblUserGroupPermission tblUserGroupPermission)
         {
-            base.AddObject("tblUserGroupPermissions", tblUserGroupPermission);
+            AddObject("tblUserGroupPermissions", tblUserGroupPermission);
         }
         /// <summary>
         /// There are no comments for tblUserInGroups in the schema.
@@ -1010,7 +1010,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblUserInGroups(tblUserInGroup tblUserInGroup)
         {
-            base.AddObject("tblUserInGroups", tblUserInGroup);
+            AddObject("tblUserInGroups", tblUserInGroup);
         }
         /// <summary>
         /// There are no comments for tblVehicles in the schema.
@@ -1018,7 +1018,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblVehicles(tblVehicle tblVehicle)
         {
-            base.AddObject("tblVehicles", tblVehicle);
+            AddObject("tblVehicles", tblVehicle);
         }
         /// <summary>
         /// There are no comments for tblVehicleChanges in the schema.
@@ -1026,7 +1026,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblVehicleChanges(tblVehicleChange tblVehicleChange)
         {
-            base.AddObject("tblVehicleChanges", tblVehicleChange);
+            AddObject("tblVehicleChanges", tblVehicleChange);
         }
         /// <summary>
         /// There are no comments for tblVehicleChecks in the schema.
@@ -1034,7 +1034,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblVehicleChecks(tblVehicleCheck tblVehicleCheck)
         {
-            base.AddObject("tblVehicleChecks", tblVehicleCheck);
+            AddObject("tblVehicleChecks", tblVehicleCheck);
         }
         /// <summary>
         /// There are no comments for tblVehicleFeeSettings in the schema.
@@ -1042,7 +1042,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblVehicleFeeSettings(tblVehicleFeeSetting tblVehicleFeeSetting)
         {
-            base.AddObject("tblVehicleFeeSettings", tblVehicleFeeSetting);
+            AddObject("tblVehicleFeeSettings", tblVehicleFeeSetting);
         }
         /// <summary>
         /// There are no comments for tblVehicleTypes in the schema.
@@ -1050,7 +1050,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblVehicleTypes(tblVehicleType tblVehicleType)
         {
-            base.AddObject("tblVehicleTypes", tblVehicleType);
+            AddObject("tblVehicleTypes", tblVehicleType);
         }
         /// <summary>
         /// There are no comments for tlbRoles in the schema.
@@ -1058,7 +1058,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotlbRoles(tlbRole tlbRole)
         {
-            base.AddObject("tlbRoles", tlbRole);
+            AddObject("tlbRoles", tlbRole);
         }
         /// <summary>
         /// There are no comments for ViewAllChecks in the schema.
@@ -1066,7 +1066,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewAllChecks(ViewAllCheck viewAllCheck)
         {
-            base.AddObject("ViewAllChecks", viewAllCheck);
+            AddObject("ViewAllChecks", viewAllCheck);
         }
         /// <summary>
         /// There are no comments for ViewAllCheckResults in the schema.
@@ -1074,7 +1074,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewAllCheckResults(ViewAllCheckResult viewAllCheckResult)
         {
-            base.AddObject("ViewAllCheckResults", viewAllCheckResult);
+            AddObject("ViewAllCheckResults", viewAllCheckResult);
         }
         /// <summary>
         /// There are no comments for ViewAllDeclarations in the schema.
@@ -1082,7 +1082,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewAllDeclarations(ViewAllDeclaration viewAllDeclaration)
         {
-            base.AddObject("ViewAllDeclarations", viewAllDeclaration);
+            AddObject("ViewAllDeclarations", viewAllDeclaration);
         }
         /// <summary>
         /// There are no comments for ViewAllDeclarationTNTXes in the schema.
@@ -1090,7 +1090,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewAllDeclarationTNTXes(ViewAllDeclarationTNTX viewAllDeclarationTNTX)
         {
-            base.AddObject("ViewAllDeclarationTNTXes", viewAllDeclarationTNTX);
+            AddObject("ViewAllDeclarationTNTXes", viewAllDeclarationTNTX);
         }
         /// <summary>
         /// There are no comments for ViewAllVehicles in the schema.
@@ -1098,7 +1098,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewAllVehicles(ViewAllVehicle viewAllVehicle)
         {
-            base.AddObject("ViewAllVehicles", viewAllVehicle);
+            AddObject("ViewAllVehicles", viewAllVehicle);
         }
         /// <summary>
         /// There are no comments for ViewAllVehicleHasGoods in the schema.
@@ -1106,7 +1106,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewAllVehicleHasGoods(ViewAllVehicleHasGood viewAllVehicleHasGood)
         {
-            base.AddObject("ViewAllVehicleHasGoods", viewAllVehicleHasGood);
+            AddObject("ViewAllVehicleHasGoods", viewAllVehicleHasGood);
         }
         /// <summary>
         /// There are no comments for viewDeclarationLoans in the schema.
@@ -1114,7 +1114,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToviewDeclarationLoans(viewDeclarationLoan viewDeclarationLoan)
         {
-            base.AddObject("viewDeclarationLoans", viewDeclarationLoan);
+            AddObject("viewDeclarationLoans", viewDeclarationLoan);
         }
         /// <summary>
         /// There are no comments for ViewDeclarationManagements in the schema.
@@ -1122,7 +1122,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewDeclarationManagements(ViewDeclarationManagement viewDeclarationManagement)
         {
-            base.AddObject("ViewDeclarationManagements", viewDeclarationManagement);
+            AddObject("ViewDeclarationManagements", viewDeclarationManagement);
         }
         /// <summary>
         /// There are no comments for ViewDeclarationVechicleExports in the schema.
@@ -1130,7 +1130,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewDeclarationVechicleExports(ViewDeclarationVechicleExport viewDeclarationVechicleExport)
         {
-            base.AddObject("ViewDeclarationVechicleExports", viewDeclarationVechicleExport);
+            AddObject("ViewDeclarationVechicleExports", viewDeclarationVechicleExport);
         }
         /// <summary>
         /// There are no comments for viewDeclarationVehicles in the schema.
@@ -1138,7 +1138,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToviewDeclarationVehicles(viewDeclarationVehicle viewDeclarationVehicle)
         {
-            base.AddObject("viewDeclarationVehicles", viewDeclarationVehicle);
+            AddObject("viewDeclarationVehicles", viewDeclarationVehicle);
         }
         /// <summary>
         /// There are no comments for ViewDeclarationVehicleImports in the schema.
@@ -1146,7 +1146,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewDeclarationVehicleImports(ViewDeclarationVehicleImport viewDeclarationVehicleImport)
         {
-            base.AddObject("ViewDeclarationVehicleImports", viewDeclarationVehicleImport);
+            AddObject("ViewDeclarationVehicleImports", viewDeclarationVehicleImport);
         }
         /// <summary>
         /// There are no comments for ViewDeclarationVehicleImportExportFees in the schema.
@@ -1154,7 +1154,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewDeclarationVehicleImportExportFees(ViewDeclarationVehicleImportExportFee viewDeclarationVehicleImportExportFee)
         {
-            base.AddObject("ViewDeclarationVehicleImportExportFees", viewDeclarationVehicleImportExportFee);
+            AddObject("ViewDeclarationVehicleImportExportFees", viewDeclarationVehicleImportExportFee);
         }
         /// <summary>
         /// There are no comments for ViewGetCurrentDates in the schema.
@@ -1162,7 +1162,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewGetCurrentDates(ViewGetCurrentDate viewGetCurrentDate)
         {
-            base.AddObject("ViewGetCurrentDates", viewGetCurrentDate);
+            AddObject("ViewGetCurrentDates", viewGetCurrentDate);
         }
         /// <summary>
         /// There are no comments for ViewUserGroups in the schema.
@@ -1170,7 +1170,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewUserGroups(ViewUserGroup viewUserGroup)
         {
-            base.AddObject("ViewUserGroups", viewUserGroup);
+            AddObject("ViewUserGroups", viewUserGroup);
         }
         /// <summary>
         /// There are no comments for ViewVehicleFees in the schema.
@@ -1178,7 +1178,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewVehicleFees(ViewVehicleFee viewVehicleFee)
         {
-            base.AddObject("ViewVehicleFees", viewVehicleFee);
+            AddObject("ViewVehicleFees", viewVehicleFee);
         }
         /// <summary>
         /// There are no comments for viewVehicleFeeSettings in the schema.
@@ -1186,7 +1186,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToviewVehicleFeeSettings(viewVehicleFeeSetting viewVehicleFeeSetting)
         {
-            base.AddObject("viewVehicleFeeSettings", viewVehicleFeeSetting);
+            AddObject("viewVehicleFeeSettings", viewVehicleFeeSetting);
         }
         /// <summary>
         /// There are no comments for ViewVehicleFreights in the schema.
@@ -1194,7 +1194,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewVehicleFreights(ViewVehicleFreight viewVehicleFreight)
         {
-            base.AddObject("ViewVehicleFreights", viewVehicleFreight);
+            AddObject("ViewVehicleFreights", viewVehicleFreight);
         }
         /// <summary>
         /// There are no comments for ViewVehicleOverdues in the schema.
@@ -1202,7 +1202,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddToViewVehicleOverdues(ViewVehicleOverdue viewVehicleOverdue)
         {
-            base.AddObject("ViewVehicleOverdues", viewVehicleOverdue);
+            AddObject("ViewVehicleOverdues", viewVehicleOverdue);
         }
         /// <summary>
         /// There are no comments for tblDelarationTrains in the schema.
@@ -1210,7 +1210,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblDelarationTrains(tblDelarationTrain tblDelarationTrain)
         {
-            base.AddObject("tblDelarationTrains", tblDelarationTrain);
+            AddObject("tblDelarationTrains", tblDelarationTrain);
         }
         /// <summary>
         /// There are no comments for tblTrains in the schema.
@@ -1218,7 +1218,7 @@ namespace ECustoms.DAL
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public void AddTotblTrains(tblTrain tblTrain)
         {
-            base.AddObject("tblTrains", tblTrain);
+            AddObject("tblTrains", tblTrain);
         }
     }
     /// <summary>
@@ -23947,6 +23947,7 @@ namespace ECustoms.DAL
     /// There are no comments for dbEcustomModel.tblTrain in the schema.
     /// </summary>
     /// <KeyProperties>
+    /// TrainID
     /// BranchId
     /// </KeyProperties>
     [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="dbEcustomModel", Name="tblTrain")]
@@ -23970,7 +23971,7 @@ namespace ECustoms.DAL
         /// <summary>
         /// There are no comments for property TrainID in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public long TrainID
