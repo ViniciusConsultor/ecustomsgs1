@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ECustoms.Utilities;
+using ECustoms.Utilities.Enums;
 
 namespace ECustoms
 {
@@ -493,21 +494,21 @@ namespace ECustoms
 
         private void tàuHàngTrungQuốcNhậpCảnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Train.frmTrainImport(0);
+            var frm = new Train.frmTrainImport(_userInfo, 1);
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void tàuHàngTrungQuốcXuấtCảnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Train.frmTrainImport(1);
+            var frm = new Train.frmTrainImport(_userInfo, 0);
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void khaiBáoToaTàuXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Train.frmPartTrainExport();
+            var frm = new Train.frmPartTrainExport(_userInfo);
             frm.MdiParent = this;
             frm.Show();
         }

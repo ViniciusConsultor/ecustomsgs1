@@ -160,4 +160,18 @@ namespace ECustoms.Utilities
         }
         #endregion
     }
+    public class ComboBoxItem
+    {
+        public object Value;
+        public string Text;
+        public ComboBoxItem(object val, string text)
+        {
+            Value = val;
+            Text = text;
+        }
+        public override string ToString()
+        {
+            return Text;
+        }
+    }
 }

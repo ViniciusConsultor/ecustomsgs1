@@ -10,7 +10,7 @@ using log4net;
 
 namespace ECustoms.BOL
 {
-    public class TrainFacory : IDataModelCommand
+    public class TrainFactory : IDataModelCommand
     {
         public static List<tblTrain> GetAll()
         {
@@ -35,7 +35,6 @@ namespace ECustoms.BOL
             var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             _db.Connection.Open();
             train.CreatedDate = CommonFactory.GetCurrentDate();
-            train.ModifiedDate = train.CreatedDate;
             train.BranchId= FDHelper.RgCodeOfUnit();
             _db.AddTotblTrains(train);
             try
@@ -89,6 +88,8 @@ namespace ECustoms.BOL
             }
         }
 
+        #region Implementation of IDataModelCommand
+        
         public bool DeleteItem(string[] itemParams)
         {
             throw new NotImplementedException();
@@ -108,5 +109,7 @@ namespace ECustoms.BOL
         {
             throw new NotImplementedException();
         }
+        
+        #endregion
     }
 }

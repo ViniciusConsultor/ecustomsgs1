@@ -29,31 +29,33 @@
         private void InitializeComponent()
         {
             this.gbImportTrain = new System.Windows.Forms.GroupBox();
+            this.txtNumberPartofTrain = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.ddlTypeName = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpExportRegisterDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpRegisterDate = new System.Windows.Forms.DateTimePicker();
             this.txtNumberTrain = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumber = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.txtNumber = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
             this.gbImportTrain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbImportTrain
             // 
             this.gbImportTrain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbImportTrain.Controls.Add(this.txtNumber);
+            this.gbImportTrain.Controls.Add(this.txtNumberPartofTrain);
             this.gbImportTrain.Controls.Add(this.label2);
             this.gbImportTrain.Controls.Add(this.ddlTypeName);
             this.gbImportTrain.Controls.Add(this.label5);
-            this.gbImportTrain.Controls.Add(this.dtpExportRegisterDate);
+            this.gbImportTrain.Controls.Add(this.dtpRegisterDate);
             this.gbImportTrain.Controls.Add(this.txtNumberTrain);
             this.gbImportTrain.Controls.Add(this.label1);
             this.gbImportTrain.Controls.Add(this.lblNumber);
@@ -64,6 +66,23 @@
             this.gbImportTrain.TabIndex = 3;
             this.gbImportTrain.TabStop = false;
             this.gbImportTrain.Text = "Thông tin tàu hàng";
+            // 
+            // txtNumberPartofTrain
+            // 
+            this.txtNumberPartofTrain.Location = new System.Drawing.Point(108, 57);
+            this.txtNumberPartofTrain.Name = "txtNumberPartofTrain";
+            this.txtNumberPartofTrain.Size = new System.Drawing.Size(142, 20);
+            this.txtNumberPartofTrain.TabIndex = 41;
+            this.txtNumberPartofTrain.Tag = "required";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Số toa tàu";
             // 
             // ddlTypeName
             // 
@@ -85,14 +104,14 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Loại hình XNC";
             // 
-            // dtpExportRegisterDate
+            // dtpRegisterDate
             // 
-            this.dtpExportRegisterDate.CustomFormat = "dd/MM/yyyy";
-            this.dtpExportRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportRegisterDate.Location = new System.Drawing.Point(371, 26);
-            this.dtpExportRegisterDate.Name = "dtpExportRegisterDate";
-            this.dtpExportRegisterDate.Size = new System.Drawing.Size(83, 20);
-            this.dtpExportRegisterDate.TabIndex = 5;
+            this.dtpRegisterDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRegisterDate.Location = new System.Drawing.Point(371, 26);
+            this.dtpRegisterDate.Name = "dtpRegisterDate";
+            this.dtpRegisterDate.Size = new System.Drawing.Size(83, 20);
+            this.dtpRegisterDate.TabIndex = 5;
             // 
             // txtNumberTrain
             // 
@@ -133,24 +152,6 @@
             this.lblHeader.Text = "Khai báo toa tàu xuất";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtNumber
-            // 
-            this.txtNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNumber.Location = new System.Drawing.Point(108, 57);
-            this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(142, 20);
-            this.txtNumber.TabIndex = 41;
-            this.txtNumber.Tag = "required";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Số toa tàu";
-            // 
             // btnDelete
             // 
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -180,6 +181,7 @@
             this.btnAddNew.Text = "&Thêm mới";
             this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnClose
             // 
@@ -196,6 +198,7 @@
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpdate
             // 
@@ -212,6 +215,10 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
+            // techlinkErrorProvider1
+            // 
+            this.techlinkErrorProvider1.ContainerControl = this;
+            // 
             // frmPartTrainExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,10 +231,12 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.gbImportTrain);
             this.Name = "frmPartTrainExport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPartTrainExport";
             this.Load += new System.EventHandler(this.frmPartTrainExport_Load);
             this.gbImportTrain.ResumeLayout(false);
             this.gbImportTrain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,16 +246,17 @@
         private System.Windows.Forms.GroupBox gbImportTrain;
         private System.Windows.Forms.ComboBox ddlTypeName;
         public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpExportRegisterDate;
+        private System.Windows.Forms.DateTimePicker dtpRegisterDate;
         private System.Windows.Forms.TextBox txtNumberTrain;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblNumber;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.TextBox txtNumberPartofTrain;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnUpdate;
+        private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
     }
 }

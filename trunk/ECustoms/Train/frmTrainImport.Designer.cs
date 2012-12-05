@@ -28,55 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHeader = new System.Windows.Forms.Label();
             this.gbImportTrain = new System.Windows.Forms.GroupBox();
             this.ddlTypeName = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpExportRegisterDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpRegisterDate = new System.Windows.Forms.DateTimePicker();
             this.txtNumberTrain = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumber = new System.Windows.Forms.Label();
             this.pnChangeStation = new System.Windows.Forms.Panel();
-            this.txtNumberHandover = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtStart = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtEnd = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.grdVehicle = new System.Windows.Forms.DataGridView();
+            this.txtStatusGood = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtStatusVehicle = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPartner = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtCompanyCode = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtPartner = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtStatusVehicle = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtStatusGood = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.grdVehicle = new System.Windows.Forms.DataGridView();
-            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feeExportAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feeImportAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEnd = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtStart = new System.Windows.Forms.TextBox();
+            this.dtpHandover = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNumberHandover = new System.Windows.Forms.TextBox();
             this.pnNormally = new System.Windows.Forms.Panel();
+            this.grdToaTauNormal = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
             this.ddlCustomsName = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -91,27 +93,40 @@
             this.lblProductName = new System.Windows.Forms.Label();
             this.txtExportProductName = new System.Windows.Forms.TextBox();
             this.txtExportNumber = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.grdToaTauNormal = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.techlinkErrorProvider1 = new ECustoms.Utilities.TechlinkErrorProvider();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberOfContainer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeExportAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feeImportAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbImportTrain.SuspendLayout();
             this.pnChangeStation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVehicle)).BeginInit();
             this.pnNormally.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdToaTauNormal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -132,7 +147,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gbImportTrain.Controls.Add(this.ddlTypeName);
             this.gbImportTrain.Controls.Add(this.label5);
-            this.gbImportTrain.Controls.Add(this.dtpExportRegisterDate);
+            this.gbImportTrain.Controls.Add(this.dtpRegisterDate);
             this.gbImportTrain.Controls.Add(this.txtNumberTrain);
             this.gbImportTrain.Controls.Add(this.label1);
             this.gbImportTrain.Controls.Add(this.lblNumber);
@@ -154,6 +169,7 @@
             this.ddlTypeName.Name = "ddlTypeName";
             this.ddlTypeName.Size = new System.Drawing.Size(142, 21);
             this.ddlTypeName.TabIndex = 39;
+            this.ddlTypeName.SelectedIndexChanged += new System.EventHandler(this.ddlTypeName_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -164,14 +180,14 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Loại hình XNC";
             // 
-            // dtpExportRegisterDate
+            // dtpRegisterDate
             // 
-            this.dtpExportRegisterDate.CustomFormat = "dd/MM/yyyy";
-            this.dtpExportRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExportRegisterDate.Location = new System.Drawing.Point(371, 26);
-            this.dtpExportRegisterDate.Name = "dtpExportRegisterDate";
-            this.dtpExportRegisterDate.Size = new System.Drawing.Size(83, 20);
-            this.dtpExportRegisterDate.TabIndex = 5;
+            this.dtpRegisterDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRegisterDate.Location = new System.Drawing.Point(371, 26);
+            this.dtpRegisterDate.Name = "dtpRegisterDate";
+            this.dtpRegisterDate.Size = new System.Drawing.Size(83, 20);
+            this.dtpRegisterDate.TabIndex = 5;
             // 
             // txtNumberTrain
             // 
@@ -202,7 +218,6 @@
             // 
             // pnChangeStation
             // 
-            this.pnChangeStation.Controls.Add(this.pnNormally);
             this.pnChangeStation.Controls.Add(this.grdVehicle);
             this.pnChangeStation.Controls.Add(this.txtStatusGood);
             this.pnChangeStation.Controls.Add(this.label12);
@@ -220,7 +235,7 @@
             this.pnChangeStation.Controls.Add(this.txtEnd);
             this.pnChangeStation.Controls.Add(this.label4);
             this.pnChangeStation.Controls.Add(this.txtStart);
-            this.pnChangeStation.Controls.Add(this.dateTimePicker1);
+            this.pnChangeStation.Controls.Add(this.dtpHandover);
             this.pnChangeStation.Controls.Add(this.label3);
             this.pnChangeStation.Controls.Add(this.label2);
             this.pnChangeStation.Controls.Add(this.txtNumberHandover);
@@ -228,92 +243,92 @@
             this.pnChangeStation.Name = "pnChangeStation";
             this.pnChangeStation.Size = new System.Drawing.Size(851, 274);
             this.pnChangeStation.TabIndex = 3;
+            this.pnChangeStation.Visible = false;
             // 
-            // txtNumberHandover
+            // grdVehicle
             // 
-            this.txtNumberHandover.Location = new System.Drawing.Point(64, 12);
-            this.txtNumberHandover.Name = "txtNumberHandover";
-            this.txtNumberHandover.Size = new System.Drawing.Size(135, 20);
-            this.txtNumberHandover.TabIndex = 0;
+            this.grdVehicle.AllowUserToAddRows = false;
+            this.grdVehicle.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Count,
+            this.PlateNumber,
+            this.NumberOfContainer,
+            this.feeExportAmount,
+            this.feeImportAmount,
+            this.Status,
+            this.ImportDate,
+            this.Note});
+            this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.grdVehicle.Location = new System.Drawing.Point(9, 160);
+            this.grdVehicle.Name = "grdVehicle";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdVehicle.Size = new System.Drawing.Size(832, 100);
+            this.grdVehicle.TabIndex = 59;
             // 
-            // label2
+            // txtStatusGood
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Số BBBG";
+            this.txtStatusGood.Location = new System.Drawing.Point(526, 126);
+            this.txtStatusGood.Multiline = true;
+            this.txtStatusGood.Name = "txtStatusGood";
+            this.txtStatusGood.Size = new System.Drawing.Size(315, 20);
+            this.txtStatusGood.TabIndex = 57;
+            this.txtStatusGood.Tag = "required";
             // 
-            // dateTimePicker1
+            // label12
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(299, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePicker1.TabIndex = 41;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(417, 129);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 13);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "Tình trạng hàng hóa";
             // 
-            // label3
+            // txtStatusVehicle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(236, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Ngày XNC";
+            this.txtStatusVehicle.Location = new System.Drawing.Point(114, 125);
+            this.txtStatusVehicle.Multiline = true;
+            this.txtStatusVehicle.Name = "txtStatusVehicle";
+            this.txtStatusVehicle.Size = new System.Drawing.Size(268, 20);
+            this.txtStatusVehicle.TabIndex = 55;
+            this.txtStatusVehicle.Tag = "required";
             // 
-            // label4
+            // label11
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(417, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Ga xuất phát";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 129);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.TabIndex = 56;
+            this.label11.Text = "Tình trạng PTVT";
             // 
-            // txtStart
+            // txtPartner
             // 
-            this.txtStart.Location = new System.Drawing.Point(491, 12);
-            this.txtStart.Name = "txtStart";
-            this.txtStart.Size = new System.Drawing.Size(135, 20);
-            this.txtStart.TabIndex = 43;
+            this.txtPartner.Location = new System.Drawing.Point(588, 69);
+            this.txtPartner.Multiline = true;
+            this.txtPartner.Name = "txtPartner";
+            this.txtPartner.Size = new System.Drawing.Size(253, 20);
+            this.txtPartner.TabIndex = 53;
+            this.txtPartner.Tag = "required";
             // 
-            // label6
+            // label10
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(653, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Ga đích";
-            // 
-            // txtEnd
-            // 
-            this.txtEnd.Location = new System.Drawing.Point(706, 12);
-            this.txtEnd.Name = "txtEnd";
-            this.txtEnd.Size = new System.Drawing.Size(135, 20);
-            this.txtEnd.TabIndex = 45;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 13);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Đơn vị nhập khẩu:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(490, 47);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Đơn vị xuất khẩu:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(490, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 13);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "Tên đơn vị đối tác";
             // 
             // txtCompanyCode
             // 
@@ -352,142 +367,93 @@
             this.txtCompanyName.Size = new System.Drawing.Size(268, 20);
             this.txtCompanyName.TabIndex = 51;
             // 
-            // txtPartner
+            // label8
             // 
-            this.txtPartner.Location = new System.Drawing.Point(588, 69);
-            this.txtPartner.Multiline = true;
-            this.txtPartner.Name = "txtPartner";
-            this.txtPartner.Size = new System.Drawing.Size(253, 20);
-            this.txtPartner.TabIndex = 53;
-            this.txtPartner.Tag = "required";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(490, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 13);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Đơn vị xuất khẩu:";
             // 
-            // label10
+            // label7
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(490, 73);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 13);
-            this.label10.TabIndex = 54;
-            this.label10.Text = "Tên đơn vị đối tác";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 13);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "Đơn vị nhập khẩu:";
             // 
-            // txtStatusVehicle
+            // label6
             // 
-            this.txtStatusVehicle.Location = new System.Drawing.Point(114, 125);
-            this.txtStatusVehicle.Multiline = true;
-            this.txtStatusVehicle.Name = "txtStatusVehicle";
-            this.txtStatusVehicle.Size = new System.Drawing.Size(268, 20);
-            this.txtStatusVehicle.TabIndex = 55;
-            this.txtStatusVehicle.Tag = "required";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(653, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Ga đích";
             // 
-            // label11
+            // txtEnd
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 129);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
-            this.label11.TabIndex = 56;
-            this.label11.Text = "Tình trạng PTVT";
+            this.txtEnd.Location = new System.Drawing.Point(706, 12);
+            this.txtEnd.Name = "txtEnd";
+            this.txtEnd.Size = new System.Drawing.Size(135, 20);
+            this.txtEnd.TabIndex = 45;
+            this.txtEnd.Tag = "required";
             // 
-            // txtStatusGood
+            // label4
             // 
-            this.txtStatusGood.Location = new System.Drawing.Point(526, 126);
-            this.txtStatusGood.Multiline = true;
-            this.txtStatusGood.Name = "txtStatusGood";
-            this.txtStatusGood.Size = new System.Drawing.Size(315, 20);
-            this.txtStatusGood.TabIndex = 57;
-            this.txtStatusGood.Tag = "required";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(417, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Ga xuất phát";
             // 
-            // label12
+            // txtStart
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(417, 129);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 13);
-            this.label12.TabIndex = 58;
-            this.label12.Text = "Tình trạng hàng hóa";
+            this.txtStart.Location = new System.Drawing.Point(491, 12);
+            this.txtStart.Name = "txtStart";
+            this.txtStart.Size = new System.Drawing.Size(135, 20);
+            this.txtStart.TabIndex = 43;
+            this.txtStart.Tag = "required";
             // 
-            // grdVehicle
+            // dtpHandover
             // 
-            this.grdVehicle.AllowUserToAddRows = false;
-            this.grdVehicle.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.grdVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Count,
-            this.PlateNumber,
-            this.NumberOfContainer,
-            this.feeExportAmount,
-            this.feeImportAmount,
-            this.Status,
-            this.ImportDate,
-            this.Note});
-            this.grdVehicle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.grdVehicle.Location = new System.Drawing.Point(9, 160);
-            this.grdVehicle.Name = "grdVehicle";
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.grdVehicle.RowsDefaultCellStyle = dataGridViewCellStyle20;
-            this.grdVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdVehicle.Size = new System.Drawing.Size(832, 100);
-            this.grdVehicle.TabIndex = 59;
+            this.dtpHandover.CustomFormat = "dd/MM/yyyy";
+            this.dtpHandover.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHandover.Location = new System.Drawing.Point(299, 12);
+            this.dtpHandover.Name = "dtpHandover";
+            this.dtpHandover.Size = new System.Drawing.Size(83, 20);
+            this.dtpHandover.TabIndex = 41;
             // 
-            // Count
+            // label3
             // 
-            this.Count.HeaderText = "STT";
-            this.Count.Name = "Count";
-            this.Count.Width = 50;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(236, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Ngày XNC";
             // 
-            // PlateNumber
+            // label2
             // 
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle17;
-            this.PlateNumber.HeaderText = "SH Toa tàu";
-            this.PlateNumber.Name = "PlateNumber";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Số BBBG";
             // 
-            // NumberOfContainer
+            // txtNumberHandover
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NumberOfContainer.DefaultCellStyle = dataGridViewCellStyle18;
-            this.NumberOfContainer.HeaderText = "Số Vận đơn";
-            this.NumberOfContainer.Name = "NumberOfContainer";
-            // 
-            // feeExportAmount
-            // 
-            this.feeExportAmount.HeaderText = "Tên hàng";
-            this.feeExportAmount.Name = "feeExportAmount";
-            this.feeExportAmount.Width = 200;
-            // 
-            // feeImportAmount
-            // 
-            this.feeImportAmount.HeaderText = "Trọng lượng";
-            this.feeImportAmount.Name = "feeImportAmount";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Số Seal hãng vận tải";
-            this.Status.Name = "Status";
-            this.Status.Width = 130;
-            // 
-            // ImportDate
-            // 
-            dataGridViewCellStyle19.Format = "dd/MM/yyyy";
-            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle19;
-            this.ImportDate.HeaderText = "Số Seal Hải quan";
-            this.ImportDate.Name = "ImportDate";
-            this.ImportDate.Width = 130;
-            // 
-            // Note
-            // 
-            this.Note.DataPropertyName = "Note";
-            this.Note.HeaderText = "Ghi chú";
-            this.Note.Name = "Note";
-            this.Note.Width = 150;
+            this.txtNumberHandover.Location = new System.Drawing.Point(64, 12);
+            this.txtNumberHandover.Name = "txtNumberHandover";
+            this.txtNumberHandover.Size = new System.Drawing.Size(135, 20);
+            this.txtNumberHandover.TabIndex = 0;
             // 
             // pnNormally
             // 
@@ -510,11 +476,75 @@
             this.pnNormally.Controls.Add(this.lblProductName);
             this.pnNormally.Controls.Add(this.txtExportProductName);
             this.pnNormally.Controls.Add(this.txtExportNumber);
-            this.pnNormally.Location = new System.Drawing.Point(0, 0);
+            this.pnNormally.Location = new System.Drawing.Point(12, 99);
             this.pnNormally.Name = "pnNormally";
             this.pnNormally.Size = new System.Drawing.Size(841, 274);
             this.pnNormally.TabIndex = 4;
-            this.pnNormally.Visible = false;
+            // 
+            // grdToaTauNormal
+            // 
+            this.grdToaTauNormal.AllowUserToAddRows = false;
+            this.grdToaTauNormal.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdToaTauNormal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grdToaTauNormal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdToaTauNormal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.grdToaTauNormal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.grdToaTauNormal.Location = new System.Drawing.Point(9, 101);
+            this.grdToaTauNormal.Name = "grdToaTauNormal";
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.grdToaTauNormal.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.grdToaTauNormal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdToaTauNormal.Size = new System.Drawing.Size(832, 170);
+            this.grdToaTauNormal.TabIndex = 60;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(96, 68);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(142, 20);
+            this.textBox1.TabIndex = 59;
+            this.textBox1.Tag = "";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 71);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(84, 13);
+            this.label21.TabIndex = 58;
+            this.label21.Text = "Mã ĐV hải quan";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(354, 8);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(83, 20);
+            this.dateTimePicker2.TabIndex = 55;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(260, 11);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(74, 13);
+            this.label19.TabIndex = 56;
+            this.label19.Text = "Ngày đăng ký";
             // 
             // ddlCustomsName
             // 
@@ -552,7 +582,7 @@
             this.txtCustomsCode.Name = "txtCustomsCode";
             this.txtCustomsCode.Size = new System.Drawing.Size(142, 20);
             this.txtCustomsCode.TabIndex = 45;
-            this.txtCustomsCode.Tag = "required";
+            this.txtCustomsCode.Tag = "";
             // 
             // label14
             // 
@@ -596,7 +626,7 @@
             this.txtTypeExport.Name = "txtTypeExport";
             this.txtTypeExport.Size = new System.Drawing.Size(79, 20);
             this.txtTypeExport.TabIndex = 43;
-            this.txtTypeExport.Tag = "required";
+            this.txtTypeExport.Tag = "";
             // 
             // label17
             // 
@@ -641,112 +671,6 @@
             this.txtExportNumber.Size = new System.Drawing.Size(142, 20);
             this.txtExportNumber.TabIndex = 42;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(354, 8);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePicker2.TabIndex = 55;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(260, 11);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 13);
-            this.label19.TabIndex = 56;
-            this.label19.Text = "Ngày đăng ký";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 71);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(84, 13);
-            this.label21.TabIndex = 58;
-            this.label21.Text = "Mã ĐV hải quan";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(96, 68);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 20);
-            this.textBox1.TabIndex = 59;
-            this.textBox1.Tag = "required";
-            // 
-            // grdToaTauNormal
-            // 
-            this.grdToaTauNormal.AllowUserToAddRows = false;
-            this.grdToaTauNormal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdToaTauNormal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.grdToaTauNormal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdToaTauNormal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.grdToaTauNormal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.grdToaTauNormal.Location = new System.Drawing.Point(9, 101);
-            this.grdToaTauNormal.Name = "grdToaTauNormal";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.grdToaTauNormal.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.grdToaTauNormal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdToaTauNormal.Size = new System.Drawing.Size(832, 170);
-            this.grdToaTauNormal.TabIndex = 60;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn2.HeaderText = "SH Toa tàu";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Số Vận đơn";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Số Seal hãng vận tải";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle14.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Số Seal Hải quan";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Note";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Ghi chú";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -762,6 +686,7 @@
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpdate
             // 
@@ -792,6 +717,7 @@
             this.btnAddNew.Text = "&Thêm mới";
             this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnReport
             // 
@@ -823,6 +749,162 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
+            // techlinkErrorProvider1
+            // 
+            this.techlinkErrorProvider1.ContainerControl = this;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn2.HeaderText = "SH Toa tàu";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Số Vận đơn";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Note";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Số Seal hãng vận tải";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewCellStyle13.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Số Seal Hải quan";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Note";
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Số Seal hãng vận tải";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle10.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Số Seal Hải quan";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Note";
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Ghi chú";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Số Vận đơn";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Tên hàng";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Trọng lượng";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Số Seal hãng vận tải";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            dataGridViewCellStyle15.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewTextBoxColumn13.HeaderText = "Số Seal Hải quan";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Note";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Ghi chú";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 150;
+            // 
+            // Count
+            // 
+            this.Count.HeaderText = "STT";
+            this.Count.Name = "Count";
+            this.Count.Width = 50;
+            // 
+            // PlateNumber
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlateNumber.DefaultCellStyle = dataGridViewCellStyle2;
+            this.PlateNumber.HeaderText = "SH Toa tàu";
+            this.PlateNumber.Name = "PlateNumber";
+            // 
+            // NumberOfContainer
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NumberOfContainer.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NumberOfContainer.HeaderText = "Số Vận đơn";
+            this.NumberOfContainer.Name = "NumberOfContainer";
+            // 
+            // feeExportAmount
+            // 
+            this.feeExportAmount.HeaderText = "Tên hàng";
+            this.feeExportAmount.Name = "feeExportAmount";
+            this.feeExportAmount.Width = 200;
+            // 
+            // feeImportAmount
+            // 
+            this.feeImportAmount.HeaderText = "Trọng lượng";
+            this.feeImportAmount.Name = "feeImportAmount";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Số Seal hãng vận tải";
+            this.Status.Name = "Status";
+            this.Status.Width = 130;
+            // 
+            // ImportDate
+            // 
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.ImportDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ImportDate.HeaderText = "Số Seal Hải quan";
+            this.ImportDate.Name = "ImportDate";
+            this.ImportDate.Width = 130;
+            // 
+            // Note
+            // 
+            this.Note.DataPropertyName = "Note";
+            this.Note.HeaderText = "Ghi chú";
+            this.Note.Name = "Note";
+            this.Note.Width = 150;
+            // 
             // frmTrainImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,8 +918,9 @@
             this.Controls.Add(this.gbImportTrain);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnChangeStation);
+            this.Controls.Add(this.pnNormally);
             this.Name = "frmTrainImport";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTrainImport";
             this.Load += new System.EventHandler(this.frmTrainImport_Load);
             this.gbImportTrain.ResumeLayout(false);
@@ -848,6 +931,7 @@
             this.pnNormally.ResumeLayout(false);
             this.pnNormally.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdToaTauNormal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techlinkErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -858,7 +942,7 @@
         private System.Windows.Forms.GroupBox gbImportTrain;
         private System.Windows.Forms.ComboBox ddlTypeName;
         public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpExportRegisterDate;
+        private System.Windows.Forms.DateTimePicker dtpRegisterDate;
         private System.Windows.Forms.TextBox txtNumberTrain;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblNumber;
@@ -869,7 +953,7 @@
         private System.Windows.Forms.TextBox txtEnd;
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStart;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpHandover;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNumberHandover;
@@ -923,5 +1007,14 @@
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnDelete;
+        private Utilities.TechlinkErrorProvider techlinkErrorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }

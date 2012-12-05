@@ -33,7 +33,21 @@ namespace ECustoms.Utilities
                                     this.SetError(control as Control, string.Empty);
                                     (control as Control).BackColor = System.Drawing.Color.White;
                                 }
-                            }    
+                            }
+                            else if (control is MaskedTextBox)
+                            {
+                                if ((control as MaskedTextBox).Text.Trim().Length == 0)
+                                {
+                                    this.SetError(control as Control, "Trường cần phải nhập thông tin!");
+                                    (control as Control).BackColor = System.Drawing.Color.Yellow;
+                                    hasError = true;
+                                }
+                                else
+                                {
+                                    this.SetError(control as Control, string.Empty);
+                                    (control as Control).BackColor = System.Drawing.Color.White;
+                                }
+                            }
                         }
                         else
                         {
