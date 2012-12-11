@@ -520,5 +520,19 @@ namespace ECustoms
             frm.Show();
         }
 
+        private void quảnLýTàuHàngTrungQuốcXNCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Train.frmSearchTrain();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void quảnLýTàuKháchXNCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Train.frmSearchTrainPassenger();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
     }
 }

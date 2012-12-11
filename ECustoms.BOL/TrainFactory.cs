@@ -88,6 +88,28 @@ namespace ECustoms.BOL
             }
         }
 
+        public static List<tblTrain> SearchPassenger(string numberTrain, int type, DateTime date)
+        {
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
+                IQueryable<tblTrain> lst = _db.tblTrains;//.Where(x => (x.DateExport == date) || (x.DateImport == date));
+                if (!string.IsNullOrEmpty(numberTrain)) lst = lst.Where(x => x.Number.Contains(numberTrain));
+                if (type >= 0) lst = lst.Where(x => x.Type == type);
+
+                return lst.ToList();
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
+
         #region Implementation of IDataModelCommand
         
         public bool DeleteItem(string[] itemParams)

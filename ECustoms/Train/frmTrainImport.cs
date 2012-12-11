@@ -129,5 +129,11 @@ namespace ECustoms.Train
                 if (GlobalInfo.IsDebug) MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnAddToaTau_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemToaTau(_userInfo);
+            frm.ShowDialog(this);
+        }
     }
 }
