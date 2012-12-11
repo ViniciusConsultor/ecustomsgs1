@@ -360,6 +360,24 @@
     <Compile Include="SubFormBase.Designer.cs">
       <DependentUpon>SubFormBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Train\frmSearchTrainPassenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Train\frmSearchTrainPassenger.Designer.cs">
+      <DependentUpon>frmSearchTrainPassenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Train\frmSearchTrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Train\frmSearchTrain.Designer.cs">
+      <DependentUpon>frmSearchTrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Train\frmThemToaTau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Train\frmThemToaTau.Designer.cs">
+      <DependentUpon>frmThemToaTau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Train\frmPartTrainExport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -768,6 +786,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubFormBase.resx">
       <DependentUpon>SubFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Train\frmSearchTrainPassenger.resx">
+      <DependentUpon>frmSearchTrainPassenger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Train\frmSearchTrain.resx">
+      <DependentUpon>frmSearchTrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Train\frmThemToaTau.resx">
+      <DependentUpon>frmThemToaTau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Train\frmPartTrainExport.resx">
       <DependentUpon>frmPartTrainExport.cs</DependentUpon>

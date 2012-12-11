@@ -34,6 +34,7 @@
           <EntitySet Name="tblProfileConfig" EntityType="dbEcustomModel.Store.tblProfileConfig" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblRoleInGroup" EntityType="dbEcustomModel.Store.tblRoleInGroup" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblSettings" EntityType="dbEcustomModel.Store.tblSettings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblToaTau" EntityType="dbEcustomModel.Store.tblToaTau" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblTrain" EntityType="dbEcustomModel.Store.tblTrain" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblType" EntityType="dbEcustomModel.Store.tblType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblUser" EntityType="dbEcustomModel.Store.tblUser" store:Type="Tables" Schema="dbo" />
@@ -894,6 +895,23 @@
           <Property Name="SyncInterval" Type="int" />
           <Property Name="SyncTime" Type="nvarchar" MaxLength="6" />
           <Property Name="IsStartingSync" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblToaTau">
+          <Key>
+            <PropertyRef Name="ToaTauID" />
+            <PropertyRef Name="TrainID" />
+          </Key>
+          <Property Name="ToaTauID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ma_ToaTau" Type="nvarchar" MaxLength="50" />
+          <Property Name="So_VanTai_Don" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ten_Hang" Type="nvarchar" MaxLength="250" />
+          <Property Name="Trong_Luong" Type="nvarchar" MaxLength="50" />
+          <Property Name="Seal_VanTai" Type="nvarchar" MaxLength="50" />
+          <Property Name="Seal_HaiQuan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="TrainID" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblTrain">
           <Key>
@@ -1831,6 +1849,7 @@
           <EntitySet Name="ViewVehicleOverdues" EntityType="dbEcustomModel.ViewVehicleOverdue" />
           <EntitySet Name="tblDelarationTrains" EntityType="dbEcustomModel.tblDelarationTrain" />
           <EntitySet Name="tblTrains" EntityType="dbEcustomModel.tblTrain" />
+          <EntitySet Name="tblToaTaus" EntityType="dbEcustomModel.tblToaTau" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2938,6 +2957,23 @@
           <Property Type="DateTime" Name="ModifiedDate" />
           <Property Type="Int32" Name="ModifiedBy" />
           <Property Type="String" Name="BranchId" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblToaTau">
+          <Key>
+            <PropertyRef Name="ToaTauID" />
+            <PropertyRef Name="TrainID" />
+          </Key>
+          <Property Type="Int64" Name="ToaTauID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ma_ToaTau" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="So_VanTai_Don" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ten_Hang" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Trong_Luong" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Seal_VanTai" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Seal_HaiQuan" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ghi_Chu" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="Int64" Name="TrainID" Nullable="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -4048,6 +4084,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblToaTaus">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblToaTau">
+              <MappingFragment StoreEntitySet="tblToaTau">
+                <ScalarProperty Name="TrainID" ColumnName="TrainID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+                <ScalarProperty Name="Seal_HaiQuan" ColumnName="Seal_HaiQuan" />
+                <ScalarProperty Name="Seal_VanTai" ColumnName="Seal_VanTai" />
+                <ScalarProperty Name="Trong_Luong" ColumnName="Trong_Luong" />
+                <ScalarProperty Name="Ten_Hang" ColumnName="Ten_Hang" />
+                <ScalarProperty Name="So_VanTai_Don" ColumnName="So_VanTai_Don" />
+                <ScalarProperty Name="Ma_ToaTau" ColumnName="Ma_ToaTau" />
+                <ScalarProperty Name="ToaTauID" ColumnName="ToaTauID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -4116,6 +4169,7 @@
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleOverdue" Width="1.5" PointX="22.75" PointY="8.75" Height="2.7494921874999818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblDelarationTrain" Width="1.5" PointX="15.375" PointY="22.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="dbEcustomModel.tblTrain" Width="1.5" PointX="23.375" PointY="12.75" Height="5.8263151041666674" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblToaTau" Width="1.5" PointX="23.375" PointY="19.75" Height="3.1340950520833246" />
       </Diagram>
     </Diagrams>
   </Designer>
