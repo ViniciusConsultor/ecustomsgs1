@@ -110,6 +110,28 @@ namespace ECustoms.BOL
             }
         }
 
+        public static int InsertToKhai(tblToKhaiTau tokhai)
+        {
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            _db.Connection.Open();
+            tokhai.CreatedDate = CommonFactory.GetCurrentDate();
+            tokhai.BranchId = FDHelper.RgCodeOfUnit();
+            _db.AddTotblToKhaiTaus(tokhai);
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
+                return _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
+
         #region Implementation of IDataModelCommand
         
         public bool DeleteItem(string[] itemParams)

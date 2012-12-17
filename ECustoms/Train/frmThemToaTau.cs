@@ -17,17 +17,20 @@ namespace ECustoms.Train
     {
         private UserInfo _userInfo;
         private short _mode; //0: addnew, 1: edit
-        private long _TrainId;
+        private List<tblToaTau> _listToaTau;
+
 
         public frmThemToaTau()
         {
             InitializeComponent();
         }
 
-        public frmThemToaTau(UserInfo userInfo)
+        public frmThemToaTau(short mode, UserInfo userInfo, ref List<tblToaTau> listToaTau)
         {
             InitializeComponent();
             _userInfo = userInfo;
+            _mode = mode;
+            _listToaTau = listToaTau;
             //_TrainId = trainId;
         }
 
@@ -58,7 +61,8 @@ namespace ECustoms.Train
 
         private void Reset()
         {
-            txtNumber.Text = txtSoVanDon.Text = txtTenHang.Text = txtTrongLuong.Text = txtSealVT.Text = txtSealHQ.Text = string.Empty;
+            txtNumber.Text = txtSoVanDon.Text = txtTenHang.Text = txtTrongLuong.Text = txtSealVT.Text = txtSealHQ.Text = txtDVT.Text = txtPartner.Text = txtCompanyCode.Text = txtCompanyName.Text = txtNote.Text = string.Empty;
+            dtpVanDon.Value = DateTime.Now;
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
@@ -66,28 +70,26 @@ namespace ECustoms.Train
             try
             {
                 if (!Validate()) return;
-                //var train = new tblTrain();
-                //train.Number = txtNumber.Text.Trim();
-                //train.Type = (short)((ComboBoxItem)ddlTypeName.SelectedItem).Value;
-                //if (train.Type == (short)TrainType.TypeExport)
-                //{
-                //    train.IsExport = true;
-                //    train.DateExport = dtpRegisterDate.Value;
-                //}
-                //else if (train.Type == (short)TrainType.TypeImport)
-                //{
-                //    train.IsImport = true;
-                //    train.DateImport = dtpRegisterDate.Value;
-                //}
-                //train.NumberPartTrain = txtSoVanDon.Text.Trim();
+                var toaTau = new tblToaTau()
+                                 {
+                                     CreatedBy = _userInfo.UserID,
+                                     Ma_ToaTau = txtNumber.Text.Trim(),
+                                     So_VanTai_Don = txtSoVanDon.Text.Trim(),
+                                     Ngay_VanTai_Don = dtpVanDon.Value,
+                                     Ten_DoiTac = txtPartner.Text.Trim(),
+                                     Ma_DoanhNghiep = txtCompanyCode.Text.Trim(),
+                                     Ten_Hang = txtTenHang.Text.Trim(),
+                                     Trong_Luong = txtTrongLuong.Text.Trim(),
+                                     Don_Vi_Tinh = txtDVT.Text.Trim(),
+                                     Seal_VanTai = txtSealVT.Text.Trim(),
+                                     Seal_HaiQuan = txtSealHQ.Text.Trim(),
+                                     Ghi_Chu = txtNote.Text.Trim()
+                                 };
 
-                //train.CreatedBy = _userInfo.UserID;
-                //if (TrainFactory.Insert(train) > 0)
-                //{
-                //    MessageBox.Show("Thêm mới thành công!");
-                //    Reset();
-                //}
-                //else MessageBox.Show("Thêm mới không thành công!");
+                _listToaTau.Add(toaTau);
+                ((frmTrainImport)this.Owner.ActiveMdiChild).BindToaTau();
+                MessageBox.Show("Thêm mới thành công!");
+                Reset();
 
             }
             catch (Exception ex)
@@ -99,6 +101,13 @@ namespace ECustoms.Train
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCompanyCode_Leave(object sender, EventArgs e)
+        {
+            var companyCode = txtCompanyCode.Text.Trim();
+            var company = CompanyFactory.FindByCode(companyCode);
+            txtCompanyName.Text = company != null ? Converter.TCVN3ToUnicode(company.CompanyName) : "";
         }
     }
 }
