@@ -25,7 +25,6 @@
           <EntitySet Name="tblDeclaration" EntityType="dbEcustomModel.Store.tblDeclaration" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclarationLoan" EntityType="dbEcustomModel.Store.tblDeclarationLoan" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblDeclarationVehicle" EntityType="dbEcustomModel.Store.tblDeclarationVehicle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblDelarationTrain" EntityType="dbEcustomModel.Store.tblDelarationTrain" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblGate" EntityType="dbEcustomModel.Store.tblGate" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblGoodsType" EntityType="dbEcustomModel.Store.tblGoodsType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblGroup" EntityType="dbEcustomModel.Store.tblGroup" store:Type="Tables" Schema="dbo" />
@@ -35,6 +34,7 @@
           <EntitySet Name="tblRoleInGroup" EntityType="dbEcustomModel.Store.tblRoleInGroup" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblSettings" EntityType="dbEcustomModel.Store.tblSettings" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblToaTau" EntityType="dbEcustomModel.Store.tblToaTau" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblToKhaiTau" EntityType="dbEcustomModel.Store.tblToKhaiTau" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblTrain" EntityType="dbEcustomModel.Store.tblTrain" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblType" EntityType="dbEcustomModel.Store.tblType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tblUser" EntityType="dbEcustomModel.Store.tblUser" store:Type="Tables" Schema="dbo" />
@@ -791,16 +791,6 @@
           <Property Name="IsSynced" Type="bit" />
           <Property Name="BranchId" Type="nvarchar" Nullable="false" MaxLength="15" />
         </EntityType>
-        <EntityType Name="tblDelarationTrain">
-          <Key>
-            <PropertyRef Name="DeclarationID" />
-            <PropertyRef Name="TrainID" />
-            <PropertyRef Name="BranchId" />
-          </Key>
-          <Property Name="DeclarationID" Type="bigint" Nullable="false" />
-          <Property Name="TrainID" Type="bigint" Nullable="false" />
-          <Property Name="BranchId" Type="nvarchar" Nullable="false" MaxLength="15" />
-        </EntityType>
         <EntityType Name="tblGate">
           <Key>
             <PropertyRef Name="GateCode" />
@@ -900,17 +890,44 @@
           <Key>
             <PropertyRef Name="ToaTauID" />
             <PropertyRef Name="TrainID" />
+            <PropertyRef Name="BranchId" />
           </Key>
           <Property Name="ToaTauID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Ma_ToaTau" Type="nvarchar" MaxLength="50" />
           <Property Name="So_VanTai_Don" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ngay_VanTai_Don" Type="datetime" />
+          <Property Name="Ten_DoiTac" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ma_DoanhNghiep" Type="nvarchar" MaxLength="50" />
           <Property Name="Ten_Hang" Type="nvarchar" MaxLength="250" />
           <Property Name="Trong_Luong" Type="nvarchar" MaxLength="50" />
+          <Property Name="Don_Vi_Tinh" Type="nvarchar" MaxLength="50" />
           <Property Name="Seal_VanTai" Type="nvarchar" MaxLength="50" />
           <Property Name="Seal_HaiQuan" Type="nvarchar" MaxLength="50" />
           <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="500" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="TrainID" Type="bigint" Nullable="false" />
+          <Property Name="BranchId" Type="nvarchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="tblToKhaiTau">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="BranchId" />
+            <PropertyRef Name="TrainID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="int" />
+          <Property Name="DateDeclaration" Type="datetime" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="BranchId" Type="nvarchar" Nullable="false" MaxLength="15" />
           <Property Name="TrainID" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblTrain">
@@ -927,10 +944,8 @@
           <Property Name="DateExport" Type="datetime" />
           <Property Name="NumberHandover" Type="nvarchar" MaxLength="50" />
           <Property Name="DateHandover" Type="datetime" />
-          <Property Name="StationStart" Type="nvarchar" MaxLength="200" />
-          <Property Name="StationEnd" Type="nvarchar" MaxLength="200" />
-          <Property Name="CompanyCode" Type="nvarchar" MaxLength="50" />
-          <Property Name="Partner" Type="nvarchar" MaxLength="200" />
+          <Property Name="CodeStation" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeStationFromTo" Type="nvarchar" MaxLength="50" />
           <Property Name="StatusVehicle" Type="nvarchar" MaxLength="200" />
           <Property Name="StatusGoods" Type="nvarchar" MaxLength="200" />
           <Property Name="NumberPartTrain" Type="nchar" MaxLength="10" />
@@ -1847,9 +1862,9 @@
           <EntitySet Name="viewVehicleFeeSettings" EntityType="dbEcustomModel.viewVehicleFeeSetting" />
           <EntitySet Name="ViewVehicleFreights" EntityType="dbEcustomModel.ViewVehicleFreight" />
           <EntitySet Name="ViewVehicleOverdues" EntityType="dbEcustomModel.ViewVehicleOverdue" />
-          <EntitySet Name="tblDelarationTrains" EntityType="dbEcustomModel.tblDelarationTrain" />
-          <EntitySet Name="tblTrains" EntityType="dbEcustomModel.tblTrain" />
           <EntitySet Name="tblToaTaus" EntityType="dbEcustomModel.tblToaTau" />
+          <EntitySet Name="tblTrains" EntityType="dbEcustomModel.tblTrain" />
+          <EntitySet Name="tblToKhaiTaus" EntityType="dbEcustomModel.tblToKhaiTau" />
         </EntityContainer>
         <EntityType Name="Log">
           <Key>
@@ -2917,13 +2932,28 @@
           <Property Type="Boolean" Name="IsChineseVehicle" />
           <Property Type="Boolean" Name="IsCompleted" />
         </EntityType>
-        <EntityType Name="tblDelarationTrain">
+        <EntityType Name="tblToaTau">
           <Key>
-            <PropertyRef Name="DeclarationID" />
+            <PropertyRef Name="ToaTauID" />
             <PropertyRef Name="TrainID" />
             <PropertyRef Name="BranchId" />
           </Key>
-          <Property Type="Int64" Name="DeclarationID" Nullable="false" />
+          <Property Type="Int64" Name="ToaTauID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ma_ToaTau" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="So_VanTai_Don" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Ngay_VanTai_Don" />
+          <Property Type="String" Name="Ten_DoiTac" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ma_DoanhNghiep" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ten_Hang" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Trong_Luong" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Don_Vi_Tinh" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Seal_VanTai" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Seal_HaiQuan" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ghi_Chu" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
           <Property Type="Int64" Name="TrainID" Nullable="false" />
           <Property Type="String" Name="BranchId" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -2941,10 +2971,8 @@
           <Property Type="DateTime" Name="DateExport" />
           <Property Type="String" Name="NumberHandover" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="DateHandover" />
-          <Property Type="String" Name="StationStart" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="StationEnd" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="CompanyCode" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Partner" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodeStation" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodeStationFromTo" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="StatusVehicle" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="StatusGoods" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="NumberPartTrain" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -2958,21 +2986,23 @@
           <Property Type="Int32" Name="ModifiedBy" />
           <Property Type="String" Name="BranchId" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="tblToaTau">
+        <EntityType Name="tblToKhaiTau">
           <Key>
-            <PropertyRef Name="ToaTauID" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="BranchId" />
             <PropertyRef Name="TrainID" />
           </Key>
-          <Property Type="Int64" Name="ToaTauID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Ma_ToaTau" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="So_VanTai_Don" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Ten_Hang" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Trong_Luong" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Seal_VanTai" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Seal_HaiQuan" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Ghi_Chu" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Number" />
+          <Property Type="DateTime" Name="DateDeclaration" />
+          <Property Type="String" Name="TypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompanyCode" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreatedDate" />
           <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="String" Name="BranchId" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Type="Int64" Name="TrainID" Nullable="false" />
         </EntityType>
         </Schema>
@@ -4044,12 +4074,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblDelarationTrains">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblDelarationTrain">
-              <MappingFragment StoreEntitySet="tblDelarationTrain">
+          <EntitySetMapping Name="tblToaTaus">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblToaTau">
+              <MappingFragment StoreEntitySet="tblToaTau">
                 <ScalarProperty Name="BranchId" ColumnName="BranchId" />
                 <ScalarProperty Name="TrainID" ColumnName="TrainID" />
-                <ScalarProperty Name="DeclarationID" ColumnName="DeclarationID" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+                <ScalarProperty Name="Seal_HaiQuan" ColumnName="Seal_HaiQuan" />
+                <ScalarProperty Name="Seal_VanTai" ColumnName="Seal_VanTai" />
+                <ScalarProperty Name="Don_Vi_Tinh" ColumnName="Don_Vi_Tinh" />
+                <ScalarProperty Name="Trong_Luong" ColumnName="Trong_Luong" />
+                <ScalarProperty Name="Ten_Hang" ColumnName="Ten_Hang" />
+                <ScalarProperty Name="Ma_DoanhNghiep" ColumnName="Ma_DoanhNghiep" />
+                <ScalarProperty Name="Ten_DoiTac" ColumnName="Ten_DoiTac" />
+                <ScalarProperty Name="Ngay_VanTai_Don" ColumnName="Ngay_VanTai_Don" />
+                <ScalarProperty Name="So_VanTai_Don" ColumnName="So_VanTai_Don" />
+                <ScalarProperty Name="Ma_ToaTau" ColumnName="Ma_ToaTau" />
+                <ScalarProperty Name="ToaTauID" ColumnName="ToaTauID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4068,10 +4113,8 @@
                 <ScalarProperty Name="NumberPartTrain" ColumnName="NumberPartTrain" />
                 <ScalarProperty Name="StatusGoods" ColumnName="StatusGoods" />
                 <ScalarProperty Name="StatusVehicle" ColumnName="StatusVehicle" />
-                <ScalarProperty Name="Partner" ColumnName="Partner" />
-                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
-                <ScalarProperty Name="StationEnd" ColumnName="StationEnd" />
-                <ScalarProperty Name="StationStart" ColumnName="StationStart" />
+                <ScalarProperty Name="CodeStationFromTo" ColumnName="CodeStationFromTo" />
+                <ScalarProperty Name="CodeStation" ColumnName="CodeStation" />
                 <ScalarProperty Name="DateHandover" ColumnName="DateHandover" />
                 <ScalarProperty Name="NumberHandover" ColumnName="NumberHandover" />
                 <ScalarProperty Name="DateExport" ColumnName="DateExport" />
@@ -4084,20 +4127,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblToaTaus">
-            <EntityTypeMapping TypeName="dbEcustomModel.tblToaTau">
-              <MappingFragment StoreEntitySet="tblToaTau">
+          <EntitySetMapping Name="tblToKhaiTaus">
+            <EntityTypeMapping TypeName="dbEcustomModel.tblToKhaiTau">
+              <MappingFragment StoreEntitySet="tblToKhaiTau">
                 <ScalarProperty Name="TrainID" ColumnName="TrainID" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
-                <ScalarProperty Name="Seal_HaiQuan" ColumnName="Seal_HaiQuan" />
-                <ScalarProperty Name="Seal_VanTai" ColumnName="Seal_VanTai" />
-                <ScalarProperty Name="Trong_Luong" ColumnName="Trong_Luong" />
-                <ScalarProperty Name="Ten_Hang" ColumnName="Ten_Hang" />
-                <ScalarProperty Name="So_VanTai_Don" ColumnName="So_VanTai_Don" />
-                <ScalarProperty Name="Ma_ToaTau" ColumnName="Ma_ToaTau" />
-                <ScalarProperty Name="ToaTauID" ColumnName="ToaTauID" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="CustomCode" ColumnName="CustomCode" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="DateDeclaration" ColumnName="DateDeclaration" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4167,9 +4211,9 @@
         <EntityTypeShape EntityType="dbEcustomModel.viewVehicleFeeSetting" Width="1.5" PointX="22.75" PointY="0.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleFreight" Width="1.5" PointX="22.75" PointY="4.75" Height="3.134095052083353" />
         <EntityTypeShape EntityType="dbEcustomModel.ViewVehicleOverdue" Width="1.5" PointX="22.75" PointY="8.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblDelarationTrain" Width="1.5" PointX="15.375" PointY="22.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblTrain" Width="1.5" PointX="23.375" PointY="12.75" Height="5.8263151041666674" />
-        <EntityTypeShape EntityType="dbEcustomModel.tblToaTau" Width="1.5" PointX="23.375" PointY="19.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblToaTau" Width="1.5" PointX="15.375" PointY="22.75" Height="4.4802050781249818" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblTrain" Width="1.5" PointX="23.375" PointY="17.75" Height="5.4417122395833246" />
+        <EntityTypeShape EntityType="dbEcustomModel.tblToKhaiTau" Width="1.5" PointX="23.375" PointY="12.75" Height="3.3263964843749818" />
       </Diagram>
     </Diagrams>
   </Designer>
