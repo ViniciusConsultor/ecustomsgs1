@@ -166,6 +166,8 @@ namespace ECustoms.Train
             dtpRegisterDate.Value = dtpDeclaration.Value = DateTime.Now;
             ddlTypeExport.SelectedIndex =
             ddlCustomsName.SelectedIndex = ddlCuaKhau.SelectedIndex = ddlGaDenDi.SelectedIndex = 0;
+
+            grdToaTau.DataSource = null;
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
@@ -205,6 +207,20 @@ namespace ECustoms.Train
                         TrainFactory.InsertToKhai(declare);
 
                     }
+                    //insert toa tàu
+                    if (grdToaTau.Rows.Count > 0)
+                    {
+                        var listToaTau = new List<tblToaTau>();
+                        for (int i = 0; i < grdToaTau.Rows.Count; i++)
+                        {
+                            var toaTau = (tblToaTau) grdToaTau.Rows[i].DataBoundItem;
+                            toaTau.CreatedBy = _userInfo.UserID;
+                            toaTau.TrainID = train.TrainID;
+                            listToaTau.Add(toaTau);
+                        }
+                        TrainFactory.InsertToaTau(listToaTau);
+                    }
+
                     MessageBox.Show("Thêm mới thành công!");
                     Reset();
                 }
@@ -299,8 +315,14 @@ namespace ECustoms.Train
         {
             grdToaTau.DataSource = null;
             // Bind count column
-            grdToaTau.AutoGenerateColumns = true;
+            grdToaTau.AutoGenerateColumns = false;
             grdToaTau.DataSource = listToaTau;
+
+            for (var i = 0; i < grdToaTau.Rows.Count; i++)
+            {
+                // Add to count Column
+                grdToaTau.Rows[i].Cells[0].Value = (i + 1).ToString();
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using ECustoms.DAL;
 using ECustoms.Utilities;
 using System.Configuration;
 using System.Data;
+using ECustoms.Utilities.Enums;
 using log4net;
 
 namespace ECustoms.BOL
@@ -88,7 +89,7 @@ namespace ECustoms.BOL
             }
         }
 
-        public static List<tblTrain> SearchPassenger(string numberTrain, int type, DateTime date)
+        public static List<tblTrain> SearchTrain(string numberTrain, int type, DateTime date)
         {
             var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
             try
@@ -97,6 +98,15 @@ namespace ECustoms.BOL
                 IQueryable<tblTrain> lst = _db.tblTrains;//.Where(x => (x.DateExport == date) || (x.DateImport == date));
                 if (!string.IsNullOrEmpty(numberTrain)) lst = lst.Where(x => x.Number.Contains(numberTrain));
                 if (type >= 0) lst = lst.Where(x => x.Type == type);
+                else if (type == -1) // search tau hang 
+                {
+                    lst = lst.Where(x => x.Type == (short)TrainType.TypeExportNormal || x.Type == (short)TrainType.TypeExportChange || x.Type == (short)TrainType.TypeImportNormal || x.Type == (short)TrainType.TypeImportChange);
+                }
+                else
+                {
+                    //search tau khach
+                    lst = lst.Where(x => x.Type == (short)TrainType.TypeExport || x.Type == (short)TrainType.TypeImport);
+                }
 
                 return lst.ToList();
             }
@@ -117,6 +127,52 @@ namespace ECustoms.BOL
             tokhai.CreatedDate = CommonFactory.GetCurrentDate();
             tokhai.BranchId = FDHelper.RgCodeOfUnit();
             _db.AddTotblToKhaiTaus(tokhai);
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
+                return _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
+
+        public static int InsertToaTau(tblToaTau toaTau)
+        {
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            _db.Connection.Open();
+            toaTau.CreatedDate = CommonFactory.GetCurrentDate();
+            toaTau.BranchId = FDHelper.RgCodeOfUnit();
+            _db.AddTotblToaTaus(toaTau);
+            try
+            {
+                if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
+                return _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                _db.Connection.Close();
+            }
+        }
+        
+        public static int InsertToaTau(List<tblToaTau> listToaTau)
+        {
+            var _db = new dbEcustomEntities(Common.Decrypt(ConfigurationManager.ConnectionStrings["dbEcustomEntities"].ConnectionString, true));
+            _db.Connection.Open();
+            foreach (var toaTau in listToaTau)
+            {
+                toaTau.CreatedDate = CommonFactory.GetCurrentDate();
+                _db.AddTotblToaTaus(toaTau);   
+            }
             try
             {
                 if (_db.Connection.State == ConnectionState.Closed) _db.Connection.Open();
