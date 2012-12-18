@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Objects.DataClasses;
 using ECustoms.Utilities;
 using System.Linq;
+using ECustoms.Utilities.Enums;
 
 namespace ECustoms.DAL
 {
@@ -129,5 +131,60 @@ namespace ECustoms.DAL
     public partial class tblVehicle : EntityObject
     {
         public List<VehicleNumber> ListVehicleChangeGood { get; set; }
+    }
+
+    public partial class tblTrain : EntityObject
+    {
+        private string _typeExImport;
+
+        public string TypeExImport
+        {
+            get
+            {
+                if (_typeExImport == null)
+                    switch (Type)
+                    {
+                        case (short)TrainType.TypeExport:
+                            _typeExImport = "Xuất cảnh";
+                            break;
+                        case (short)TrainType.TypeExportNormal:
+                            _typeExImport = "Xuất cảnh thông thường";
+                            break;
+                        case (short)TrainType.TypeExportChange:
+                            _typeExImport = "Xuất cảnh chuyển cảng";
+                            break;
+                        case (short)TrainType.TypeImport:
+                            _typeExImport = "Nhập cảnh";
+                            break;
+                        case (short)TrainType.TypeImportNormal:
+                            _typeExImport = "Nhập cảnh thông thường";
+                            break;
+                        case (short)TrainType.TypeImportChange:
+                            _typeExImport = "Nhập cảnh chuyển cảng";
+                            break;
+                        default:
+                            _typeExImport = "Không xác định";
+                            break;
+                    }
+                return _typeExImport;
+
+            }
+        }
+
+        public DateTime? DateExImport
+        {
+            get
+            {
+                if (IsExport != null && IsExport == true)
+                {
+                    return DateExport;
+                }
+                if (IsImport != null && IsImport == true)
+                {
+                    return DateImport;
+                }
+                return null;
+            }
+        }
     }
 }

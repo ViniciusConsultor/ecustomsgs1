@@ -179,6 +179,16 @@ namespace ECustoms.Train
                 train.Number = txtNumberTrain.Text.Trim();
                 var type = (short)((ComboBoxItem)ddlTypeName.SelectedItem).Value;
                 train.Type = type;
+                if (type == (short)TrainType.TypeExport || type == (short)TrainType.TypeExportChange || type == (short)TrainType.TypeExportNormal)
+                {
+                    train.IsExport = true;
+                    train.DateExport = CommonFactory.GetCurrentDate();
+                }
+                else
+                {
+                    train.IsImport = true;
+                    train.DateImport = CommonFactory.GetCurrentDate();
+                }
                 if (type == (short)TrainType.TypeExportChange || type == (short)TrainType.TypeImportChange)
                 {
                     train.NumberHandover = txtNumberHandover.Text.Trim();
