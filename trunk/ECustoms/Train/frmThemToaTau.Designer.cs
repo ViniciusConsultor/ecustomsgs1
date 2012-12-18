@@ -95,19 +95,18 @@
             this.gbImportTrain.Location = new System.Drawing.Point(12, 45);
             this.gbImportTrain.Name = "gbImportTrain";
             this.gbImportTrain.Size = new System.Drawing.Size(726, 240);
-            this.gbImportTrain.TabIndex = 3;
+            this.gbImportTrain.TabIndex = 0;
             this.gbImportTrain.TabStop = false;
             this.gbImportTrain.Text = "Thông tin toa tàu";
             // 
             // txtNote
             // 
-            this.txtNote.Enabled = false;
             this.txtNote.Location = new System.Drawing.Point(108, 182);
             this.txtNote.MaxLength = 4000;
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(612, 48);
-            this.txtNote.TabIndex = 64;
+            this.txtNote.TabIndex = 11;
             // 
             // label10
             // 
@@ -120,11 +119,10 @@
             // 
             // txtDVT
             // 
-            this.txtDVT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDVT.Location = new System.Drawing.Point(373, 130);
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(152, 20);
-            this.txtDVT.TabIndex = 61;
+            this.txtDVT.TabIndex = 8;
             this.txtDVT.Tag = "required";
             // 
             // label2
@@ -142,7 +140,7 @@
             this.txtCompanyCode.Multiline = true;
             this.txtCompanyCode.Name = "txtCompanyCode";
             this.txtCompanyCode.Size = new System.Drawing.Size(142, 20);
-            this.txtCompanyCode.TabIndex = 57;
+            this.txtCompanyCode.TabIndex = 4;
             this.txtCompanyCode.Tag = "required";
             this.txtCompanyCode.Leave += new System.EventHandler(this.txtCompanyCode_Leave);
             // 
@@ -172,15 +170,14 @@
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.ReadOnly = true;
             this.txtCompanyName.Size = new System.Drawing.Size(347, 20);
-            this.txtCompanyName.TabIndex = 58;
+            this.txtCompanyName.TabIndex = 5;
             // 
             // txtPartner
             // 
-            this.txtPartner.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPartner.Location = new System.Drawing.Point(154, 52);
             this.txtPartner.Name = "txtPartner";
             this.txtPartner.Size = new System.Drawing.Size(566, 20);
-            this.txtPartner.TabIndex = 55;
+            this.txtPartner.TabIndex = 3;
             this.txtPartner.Tag = "required";
             // 
             // label8
@@ -199,7 +196,7 @@
             this.dtpVanDon.Location = new System.Drawing.Point(637, 26);
             this.dtpVanDon.Name = "dtpVanDon";
             this.dtpVanDon.Size = new System.Drawing.Size(83, 20);
-            this.dtpVanDon.TabIndex = 52;
+            this.dtpVanDon.TabIndex = 2;
             // 
             // label7
             // 
@@ -221,11 +218,10 @@
             // 
             // txtSoVanDon
             // 
-            this.txtSoVanDon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSoVanDon.Location = new System.Drawing.Point(373, 26);
             this.txtSoVanDon.Name = "txtSoVanDon";
             this.txtSoVanDon.Size = new System.Drawing.Size(152, 20);
-            this.txtSoVanDon.TabIndex = 50;
+            this.txtSoVanDon.TabIndex = 1;
             this.txtSoVanDon.Tag = "required";
             // 
             // txtSealHQ
@@ -233,7 +229,7 @@
             this.txtSealHQ.Location = new System.Drawing.Point(373, 156);
             this.txtSealHQ.Name = "txtSealHQ";
             this.txtSealHQ.Size = new System.Drawing.Size(152, 20);
-            this.txtSealHQ.TabIndex = 49;
+            this.txtSealHQ.TabIndex = 10;
             this.txtSealHQ.Tag = "required";
             // 
             // label5
@@ -250,7 +246,7 @@
             this.txtSealVT.Location = new System.Drawing.Point(108, 156);
             this.txtSealVT.Name = "txtSealVT";
             this.txtSealVT.Size = new System.Drawing.Size(142, 20);
-            this.txtSealVT.TabIndex = 47;
+            this.txtSealVT.TabIndex = 9;
             this.txtSealVT.Tag = "required";
             // 
             // label4
@@ -264,11 +260,10 @@
             // 
             // txtTrongLuong
             // 
-            this.txtTrongLuong.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTrongLuong.Location = new System.Drawing.Point(108, 130);
             this.txtTrongLuong.Name = "txtTrongLuong";
             this.txtTrongLuong.Size = new System.Drawing.Size(142, 20);
-            this.txtTrongLuong.TabIndex = 45;
+            this.txtTrongLuong.TabIndex = 7;
             this.txtTrongLuong.Tag = "required";
             // 
             // label3
@@ -282,11 +277,10 @@
             // 
             // txtTenHang
             // 
-            this.txtTenHang.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTenHang.Location = new System.Drawing.Point(108, 104);
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.Size = new System.Drawing.Size(612, 20);
-            this.txtTenHang.TabIndex = 43;
+            this.txtTenHang.TabIndex = 6;
             this.txtTenHang.Tag = "required";
             // 
             // label1
@@ -304,7 +298,7 @@
             this.txtNumber.Location = new System.Drawing.Point(108, 26);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(142, 20);
-            this.txtNumber.TabIndex = 1;
+            this.txtNumber.TabIndex = 0;
             this.txtNumber.Tag = "required";
             // 
             // lblNumber
@@ -338,7 +332,7 @@
             this.btnDelete.Location = new System.Drawing.Point(200, 291);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(53, 28);
-            this.btnDelete.TabIndex = 28;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -354,7 +348,7 @@
             this.btnAddNew.Location = new System.Drawing.Point(12, 291);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(83, 28);
-            this.btnAddNew.TabIndex = 27;
+            this.btnAddNew.TabIndex = 1;
             this.btnAddNew.Text = "&Thêm mới";
             this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -371,7 +365,7 @@
             this.btnClose.Location = new System.Drawing.Point(278, 291);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(63, 28);
-            this.btnClose.TabIndex = 26;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Th&oát";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
@@ -387,7 +381,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(117, 291);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(57, 28);
-            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "&Lưu";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;

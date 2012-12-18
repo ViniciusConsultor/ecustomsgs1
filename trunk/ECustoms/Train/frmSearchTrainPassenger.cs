@@ -29,7 +29,7 @@ namespace ECustoms.Train
         {
             //init data for Type
             var listType = new List<ComboBoxItem>();
-            listType.Add(new ComboBoxItem(-1, "Tất cả"));
+            listType.Add(new ComboBoxItem(-2, "Tất cả"));
             listType.Add(new ComboBoxItem((short)TrainType.TypeExport, "Xuất cảnh"));
             listType.Add(new ComboBoxItem((short)TrainType.TypeImport, "Nhập cảnh"));
 
@@ -41,10 +41,18 @@ namespace ECustoms.Train
         {
             try
             {
-                var listTrain = TrainFactory.SearchPassenger(txtNumberTrain.Text.Trim(),
-                                                             (int) ((ComboBoxItem) ddlTypeName.SelectedItem).Value,
+                var listTrain = TrainFactory.SearchTrain(txtNumberTrain.Text.Trim(),
+                                                             Convert.ToInt32(((ComboBoxItem)ddlTypeName.SelectedItem).Value),
                                                              dtpDateXNC.Value);
+                grdTrain.AutoGenerateColumns = false;
                 grdTrain.DataSource = listTrain;
+
+
+                for (var i = 0; i < grdTrain.Rows.Count; i++)
+                {
+                    // Add to count Column
+                    grdTrain.Rows[i].Cells[0].Value = (i + 1).ToString();
+                }
             }
             catch (Exception ex)
             {

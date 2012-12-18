@@ -72,7 +72,6 @@ namespace ECustoms.Train
                 if (!Validate()) return;
                 var toaTau = new tblToaTau()
                                  {
-                                     CreatedBy = _userInfo.UserID,
                                      Ma_ToaTau = txtNumber.Text.Trim(),
                                      So_VanTai_Don = txtSoVanDon.Text.Trim(),
                                      Ngay_VanTai_Don = dtpVanDon.Value,
@@ -88,7 +87,7 @@ namespace ECustoms.Train
 
                 _listToaTau.Add(toaTau);
                 ((frmTrainImport)this.Owner.ActiveMdiChild).BindToaTau();
-                MessageBox.Show("Thêm mới thành công!");
+                MessageBox.Show("Thêm mới toa tàu thành công!");
                 Reset();
 
             }
